@@ -98,16 +98,24 @@ OWNER_NAMES = [("dev", "Программисты"), ("content", "Наш конт
                ("catalog", "Каталог / BaseLinker")]
 
 
-def attach_shots(groups, gallery_dir):
-    """A screenshot answers "это где?" faster than any description."""
-    import base64
+def attach_crops(groups, crops_dir):
+    """Each fix gets a cut-out of the spot it is about, with the place outlined.
+
+    A whole-page screenshot proves the page exists; it does not show the
+    mistake, which is what was asked for."""
+    if not crops_dir or not os.path.isdir(crops_dir):
+        return groups, 0
+    n = 0
     for g in groups:
-        path = (g.get("path") or "").lstrip("/") or "index"
-        f = os.path.join(gallery_dir, "pl", path.replace("/", "__") + ".jpg")
-        if os.path.exists(f):
-            g["shot"] = ("data:image/jpeg;base64,"
-                         + base64.b64encode(open(f, "rb").read()).decode())
-    return groups
+        # collect_partial already copied the fixes into "items"; writing to
+        # "fixes" here would decorate objects nobody renders.
+        for f in g.get("items", g["fixes"]):
+            path = os.path.join(crops_dir, f["id"] + ".jpg")
+            if os.path.exists(path):
+                f["crop"] = ("data:image/jpeg;base64,"
+                             + base64.b64encode(open(path, "rb").read()).decode())
+                n += 1
+    return groups, n
 
 
 def collect_partial(checklist):
@@ -210,11 +218,14 @@ ol.items>li:first-child{border-top:0}
 .see a{color:var(--accent);font-family:ui-monospace,Menlo,monospace;font-size:.76rem;
  text-decoration:none;border-bottom:1px solid var(--line);margin-right:.4rem}
 .see a:hover{border-color:var(--accent)}
-.shotbox{margin:.2rem 0 .9rem;border:1px solid var(--hair);background:var(--sunken)}
-.shotbox summary{cursor:pointer;padding:.45rem .7rem;font-size:.8rem;color:var(--muted)}
-.shotbox summary:hover{color:var(--ink)}
-.shotbox img{display:block;width:100%;max-width:380px;height:auto;margin:.2rem .7rem .7rem;
- border:1px solid var(--line);background:#fff}
+.fld{margin:.28rem 0;font-size:.87rem}
+.fld b{font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+ margin-right:.4rem}
+.crop{margin:.5rem 0;border:1px solid var(--hair);background:var(--sunken)}
+.crop summary{cursor:pointer;padding:.4rem .7rem;font-size:.79rem;color:var(--accent)}
+.crop summary:hover{color:var(--ink)}
+.crop img{display:block;width:100%;height:auto;border-top:1px solid var(--line);
+ background:#fff}
 .legend{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0 0;font-size:.83rem;
  color:var(--muted)}
 .legend div{display:flex;gap:.4rem;align-items:baseline}
@@ -351,15 +362,23 @@ def item_block(f):
             f'<a href="{esc(u)}" target="_blank" rel="noopener">'
             f'{esc(u.replace("https://lapetitebloom.com", "") or "/")}</a>'
             for u in see[:4]) + "</p>")
+    place = f.get("title") or ""
+    crop = ""
+    if f.get("crop"):
+        crop = (f'<details class="crop"><summary>Показать это место на странице'
+                f'</summary><img loading="lazy" src="{f["crop"]}" '
+                f'alt="Место правки {esc(f["id"])}"></details>')
     return f"""
 <li data-owner="{esc(owner)}">
   <div class="ihead"><span class="inum"></span>
     {badge}
     <span class="ikind k-{k}">{esc(label)}</span>
-    <span class="iact">{esc(f.get('action') or f.get('title'))}</span></div>
+    <span class="iact">{esc(f.get('action') or place)}</span></div>
+  {f'<p class="fld"><b>Где</b> {esc(place)}</p>' if place else ''}
   {see_html}
+  {f'<p class="fld"><b>Почему</b> {esc(f.get("why"))}</p>' if f.get('why') else ''}
+  {crop}
   {swap}
-  {f'<p class="why">{esc(f.get("why"))}</p>' if f.get('why') and k == 'do' else ''}
 </li>"""
 
 
@@ -373,10 +392,6 @@ def partial_block(g):
                      f'{esc(dict(d for d in OWNER_NAMES)[o])}</span>'
                      for o in g.get("owners", []))
     shot = ""
-    if g.get("shot"):
-        shot = (f'<details class="shotbox"><summary>Как эта страница выглядит '
-                f'сейчас</summary><img loading="lazy" src="{g["shot"]}" '
-                f'alt="{esc(g["title"])} — снимок страницы"></details>')
     return f"""
 <section class="doc closed" data-owners="{esc(' '.join(g.get('owners', [])))}">
   <header class="dochead">
@@ -400,8 +415,8 @@ def main():
     tr = json.load(open(tr_path, encoding="utf-8"))
 
     full = collect_full(pages_dir, tr)
-    partial = attach_shots(collect_partial(checklist),
-                           os.environ.get("GALLERY_DIR", ""))
+    partial, n_crops = attach_crops(collect_partial(checklist),
+                                    os.environ.get("CROPS_DIR", ""))
     n_items = sum(len(g["items"]) for g in partial)
 
     doc = f"""<title>La Petite Bloom — что менять на сайте</title>
@@ -447,6 +462,7 @@ def main():
     open(out_path, "w", encoding="utf-8").write(doc)
     size = len(doc.encode("utf-8")) / 1024 / 1024
     print(f"{out_path}  {size:.2f} МБ")
+    print(f"  вырезок с местом ошибки: {n_crops}")
     print(f"  заменить целиком: {len(full)} страниц")
     print(f"  по абзацам: {len(partial)} страниц, {n_items} правок")
     kinds = {}
