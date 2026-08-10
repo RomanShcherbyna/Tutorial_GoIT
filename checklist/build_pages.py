@@ -46,20 +46,28 @@ def esc_with_links(s):
 def classify(line):
     """What this paragraph is, so the markup carries its structure.
 
-    These documents mark sections two ways: numbered ("§7. Dostawa", "3. Zgody")
-    and bare ("Metody płatności"). The bare ones are recognised by shape — short,
-    no closing punctuation, no sentence inside — which is what a heading looks
-    like and a paragraph does not."""
-    if SECTION.match(line) and len(line) < 120:
+    The documents use "1." for two different things: a section title
+    ("1. Prawo do odstąpienia od umowy") and a clause inside it ("1. Mają
+    Państwo prawo odstąpić od umowy w terminie 14 dni..."). What separates them
+    is shape, not the number — a title is short and does not end a sentence,
+    a clause is a sentence and closes with a full stop.
+    """
+    if re.match(r"^\s*§\s*\d+", line):
         return "h2"
-    if NUMBERED.match(line):
-        return "li-num"
+
+    m = NUMBERED.match(line)
+    if m:
+        return "h2" if _looks_like_title(line) else "li-num"
     if BULLET.match(line):
         return "li-bul"
-    if (len(line) < 70 and not line.endswith((".", ",", ";", ":", "!", "?"))
-            and "·" not in line and line.count(" ") < 8):
+    if _looks_like_title(line) and "·" not in line:
         return "h2"
     return "p"
+
+
+def _looks_like_title(line):
+    return (len(line) < 90
+            and not line.endswith((".", ",", ";", ":", "!", "?")))
 
 
 def build_html(doc, lang):
@@ -77,19 +85,23 @@ def build_html(doc, lang):
         line = (b.get(lang) or "").strip()
         if not line:
             continue
-        kind = classify(line)
+        # Role comes from the Polish source so all three languages keep the
+        # same structure — a heading in one is a heading in all.
+        kind = classify((b.get("pl") or "").strip() or line)
         if kind == "li-num":
             if open_list != "ol":
                 close()
                 parts.append("<ol>")
                 open_list = "ol"
-            parts.append(f"  <li>{esc_with_links(NUMBERED.match(line).group(2))}</li>")
+            m = NUMBERED.match(line)
+            parts.append(f"  <li>{esc_with_links(m.group(2) if m else line)}</li>")
         elif kind == "li-bul":
             if open_list != "ul":
                 close()
                 parts.append("<ul>")
                 open_list = "ul"
-            parts.append(f"  <li>{esc_with_links(BULLET.match(line).group(1))}</li>")
+            m = BULLET.match(line)
+            parts.append(f"  <li>{esc_with_links(m.group(1) if m else line)}</li>")
         elif kind == "h2":
             close()
             parts.append(f"<h2>{esc_with_links(line)}</h2>")
@@ -123,14 +135,16 @@ def build_docx(doc, lang, path):
         line = (b.get(lang) or "").strip()
         if not line:
             continue
-        kind = classify(line)
+        kind = classify((b.get("pl") or "").strip() or line)
         text = strip_links(line)
         if kind == "h2":
             d.add_heading(text, level=1)
         elif kind == "li-num":
-            d.add_paragraph(NUMBERED.match(text).group(2), style="List Number")
+            m = NUMBERED.match(text)
+            d.add_paragraph(m.group(2) if m else text, style="List Number")
         elif kind == "li-bul":
-            d.add_paragraph(BULLET.match(text).group(1), style="List Bullet")
+            m = BULLET.match(text)
+            d.add_paragraph(m.group(1) if m else text, style="List Bullet")
         else:
             d.add_paragraph(text)
 

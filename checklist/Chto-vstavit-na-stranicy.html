@@ -1,0 +1,146 @@
+<title>La Petite Bloom — что вставить на страницы</title>
+<style>
+:root{--ground:#eef0f3;--surface:#fff;--sunken:#e4e7ec;--ink:#171b24;
+ --muted:#626b7c;--line:#cfd5de;--hair:#dde2e9;--accent:#2b4b7d;--warn:#b3261e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --ground:#12151b;--surface:#191d25;--sunken:#0d1015;--ink:#e6e9ef;
+ --muted:#9099a8;--line:#333b47;--hair:#262d37;--accent:#8fb0e6;--warn:#ff9089}}
+:root[data-theme="dark"]{--ground:#12151b;--surface:#191d25;--sunken:#0d1015;
+ --ink:#e6e9ef;--muted:#9099a8;--line:#333b47;--hair:#262d37;--accent:#8fb0e6;--warn:#ff9089}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+ font:15px/1.65 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.sheet{max-width:900px;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+h1{margin:0 0 .4rem;font-size:clamp(1.4rem,3.2vw,2rem);font-weight:650;letter-spacing:-.015em}
+.lede{margin:0 0 1.6rem;color:var(--muted);max-width:64ch}
+.eyebrow{margin:0 0 .5rem;font-size:.7rem;font-weight:700;letter-spacing:.16em;
+ text-transform:uppercase;color:var(--accent)}
+.mast{border-bottom:2px solid var(--ink);padding-bottom:1.1rem;margin-bottom:2rem}
+.page{background:var(--surface);border:1px solid var(--line);margin:0 0 1.5rem;
+ padding:1.1rem 1.2rem}
+.page h2{margin:0 0 .2rem;font-size:1.05rem;font-weight:700}
+.addr{margin:.5rem 0 1rem;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.addr div{background:var(--surface);padding:.4rem .6rem;display:flex;gap:.7rem;
+ align-items:baseline;font-size:.86rem}
+.addr b{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+ min-width:2.2rem}
+.addr code{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;word-break:break-all}
+h3{margin:1.1rem 0 .4rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--muted);font-weight:700}
+.files{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+ background:var(--line);border:1px solid var(--line)}
+.files div{background:var(--surface);padding:.45rem .6rem;font-size:.82rem;
+ font-family:ui-monospace,Menlo,monospace}
+ol.rm{margin:.3rem 0;padding-left:1.3rem;font-size:.9rem}
+ol.rm li{margin-bottom:.35rem}
+.q{margin:.3rem 0 0;padding-left:.8rem;border-left:2px solid var(--warn);font-size:.88rem;
+ color:var(--muted)}
+.warn{background:var(--surface);border:1px solid var(--warn);padding:1.1rem 1.2rem;margin:0 0 1.5rem}
+.warn h2{color:var(--warn)}
+.warn code{font-family:ui-monospace,Menlo,monospace;font-size:.82rem}
+table{border-collapse:collapse;width:100%;font-size:.88rem;margin:.5rem 0 2rem}
+th,td{text-align:left;padding:.45rem .7rem;border-bottom:1px solid var(--hair);vertical-align:top}
+th{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td code{font-family:ui-monospace,Menlo,monospace;font-size:.8rem}
+</style>
+<div class="sheet">
+  <header class="mast">
+    <p class="eyebrow">Рабочий документ · lapetitebloom.com</p>
+    <h1>Что вставить на страницы</h1>
+    <p class="lede">Восемь страниц, у каждой готовый текст на трёх языках.
+      Адреса остаются прежними — ничего не создаётся и не переносится.
+      Файлы <code>.docx</code> для чтения и согласования, <code>.html</code> —
+      чтобы вставить в редактор страницы как есть.</p>
+  </header>
+
+  <table>
+    <thead><tr><th>Страница</th><th>Документ</th><th>Объём</th><th>Убрать</th></tr></thead>
+    <tbody><tr><td><code>/terms-of-use</code></td><td>Регламент магазина</td><td>108 блоков</td><td>0</td></tr><tr><td><code>/privacy-policy</code></td><td>Политика конфиденциальности</td><td>48 блоков</td><td>0</td></tr><tr><td><code>/polityka-cookies</code></td><td>Политика cookies</td><td>18 блоков</td><td>4</td></tr><tr><td><code>/claims-and-complaints</code></td><td>Политика возвратов и рекламаций</td><td>30 блоков</td><td>0</td></tr><tr><td><code>/zgody-klauzule-i-regulamin-newslettera</code></td><td>Согласия и newsletter</td><td>20 блоков</td><td>1</td></tr><tr><td><code>/delivery-and-payment</code></td><td>Доставка и оплата</td><td>15 блоков</td><td>3</td></tr><tr><td><code>/regulamin-kart-podarunkowych</code></td><td>Регламент подарочных карт</td><td>10 блоков</td><td>3</td></tr><tr><td><code>/deklaracja-dostepnosci</code></td><td>Декларация доступности</td><td>10 блоков</td><td>3</td></tr></tbody>
+  </table>
+
+  <section class="warn">
+    <h2>Снять с публикации</h2>
+    <p><code>/warranty-and-returns</code> <code>/warranty-and-returns/polityka-zwrotow</code> <code>/warranty-and-returns/gwarancja-na-produkt</code> </p>
+    <p>Документа у этих страниц нет, подвал на них не ссылается, а текст — французское потребительское право (art. L217-3, Kodeks Cywilny 1641–1649) и чужой бренд «Bloom» с его аутлетами. Всё нужное уже есть на странице возвратов.</p>
+    <p>Во всех трёх локалях это 9 адресов. Их также надо убрать из карты сайта, иначе sitemap.xml будет отдавать 404. Редиректы не нужны: сайт закрыт от индексации, поисковой истории у страниц нет.</p>
+  </section>
+
+  
+<section class="page">
+  <h2>Регламент магазина</h2>
+  <div class="addr"><div><b>PL</b><code>lapetitebloom.com/terms-of-use</code></div><div><b>UA</b><code>lapetitebloom.com/ua/terms-of-use</code></div><div><b>EN</b><code>lapetitebloom.com/en/terms-of-use</code></div></div>
+  <h3>Файлы — .docx читать, .html вставлять</h3>
+  <div class="files"><div>terms-of-use.pl.docx<br>terms-of-use.pl.html</div><div>terms-of-use.ua.docx<br>terms-of-use.ua.html</div><div>terms-of-use.en.docx<br>terms-of-use.en.html</div></div>
+  <h3>Что убрать с текущей страницы</h3>
+  <p class='q'>Ничего лишнего не найдено — текст просто заменяется.</p>
+  <h3>Нужен ваш ответ</h3><p class='q'><b>Номер отдела суда.</b> В реквизитах KRS не заполнен Wydział Gospodarczy — XIII или XIV.</p>
+</section>
+<section class="page">
+  <h2>Политика конфиденциальности</h2>
+  <div class="addr"><div><b>PL</b><code>lapetitebloom.com/privacy-policy</code></div><div><b>UA</b><code>lapetitebloom.com/ua/privacy-policy</code></div><div><b>EN</b><code>lapetitebloom.com/en/privacy-policy</code></div></div>
+  <h3>Файлы — .docx читать, .html вставлять</h3>
+  <div class="files"><div>privacy-policy.pl.docx<br>privacy-policy.pl.html</div><div>privacy-policy.ua.docx<br>privacy-policy.ua.html</div><div>privacy-policy.en.docx<br>privacy-policy.en.html</div></div>
+  <h3>Что убрать с текущей страницы</h3>
+  <p class='q'>Ничего лишнего не найдено — текст просто заменяется.</p>
+  
+</section>
+<section class="page">
+  <h2>Политика cookies</h2>
+  <div class="addr"><div><b>PL</b><code>lapetitebloom.com/polityka-cookies</code></div><div><b>UA</b><code>lapetitebloom.com/ua/polityka-cookies</code></div><div><b>EN</b><code>lapetitebloom.com/en/polityka-cookies</code></div></div>
+  <h3>Файлы — .docx читать, .html вставлять</h3>
+  <div class="files"><div>polityka-cookies.pl.docx<br>polityka-cookies.pl.html</div><div>polityka-cookies.ua.docx<br>polityka-cookies.ua.html</div><div>polityka-cookies.en.docx<br>polityka-cookies.en.html</div></div>
+  <h3>Что убрать с текущей страницы</h3>
+  <ol class='rm'><li>Название документа: UA «Політика щодо файлів cookie», EN «Cookie policy» (глоссарий, расхождение №11: сейчас в EN-футере стоит непереведённое «Polityka cookies»…</li><li>Блок 9 против блока 12 — противоречие в оригинале: cookies платёжных провайдеров названы «funkcjonalne» и подаются как работающие «в необходимом объёме» без упо…</li><li>Блок 10: конкретный перечень cookies (названия, цели, срок хранения) в самом документе отсутствует и целиком делегирован баннеру Cookiebot. Если Cookiebot отклю…</li><li>В документе нет ссылки на срок действия согласия и на то, как часто баннер показывается повторно (обычно 12 месяцев) — типичное требование к cookie-политике, се…</li></ol>
+  
+</section>
+<section class="page">
+  <h2>Политика возвратов и рекламаций</h2>
+  <div class="addr"><div><b>PL</b><code>lapetitebloom.com/claims-and-complaints</code></div><div><b>UA</b><code>lapetitebloom.com/ua/claims-and-complaints</code></div><div><b>EN</b><code>lapetitebloom.com/en/claims-and-complaints</code></div></div>
+  <h3>Файлы — .docx читать, .html вставлять</h3>
+  <div class="files"><div>claims-and-complaints.pl.docx<br>claims-and-complaints.pl.html</div><div>claims-and-complaints.ua.docx<br>claims-and-complaints.ua.html</div><div>claims-and-complaints.en.docx<br>claims-and-complaints.en.html</div></div>
+  <h3>Что убрать с текущей страницы</h3>
+  <p class='q'>Ничего лишнего не найдено — текст просто заменяется.</p>
+  <h3>Нужен ваш ответ</h3><p class='q'><b>Адрес бутика.</b> В документе «ul. Mokotowska 51/53, Warszawa», без номера помещения и индекса. Для адреса возврата это существенно.</p>
+</section>
+<section class="page">
+  <h2>Согласия и newsletter</h2>
+  <div class="addr"><div><b>PL</b><code>lapetitebloom.com/zgody-klauzule-i-regulamin-newslettera</code></div><div><b>UA</b><code>lapetitebloom.com/ua/zgody-klauzule-i-regulamin-newslettera</code></div><div><b>EN</b><code>lapetitebloom.com/en/zgody-klauzule-i-regulamin-newslettera</code></div></div>
+  <h3>Файлы — .docx читать, .html вставлять</h3>
+  <div class="files"><div>zgody-klauzule-i-regulamin-newslettera.pl.docx<br>zgody-klauzule-i-regulamin-newslettera.pl.html</div><div>zgody-klauzule-i-regulamin-newslettera.ua.docx<br>zgody-klauzule-i-regulamin-newslettera.ua.html</div><div>zgody-klauzule-i-regulamin-newslettera.en.docx<br>zgody-klauzule-i-regulamin-newslettera.en.html</div></div>
+  <h3>Что убрать с текущей страницы</h3>
+  <ol class='rm'><li>Убрать /zgody-klauzule-i-regulamin-newslettera из публичной части — это внутренний документ</li></ol>
+  <h3>Нужен ваш ответ</h3><p class='q'><b>Ошибка в польском оригинале.</b> «Zgody muszą być dobrowolne, NIE odznaczone domyślnie» читается как «предвыбранные» — противоположное смыслу и GDPR. Должно быть «NIE zaznaczone». Правится в исходном документе.</p>
+</section>
+<section class="page">
+  <h2>Доставка и оплата</h2>
+  <div class="addr"><div><b>PL</b><code>lapetitebloom.com/delivery-and-payment</code></div><div><b>UA</b><code>lapetitebloom.com/ua/delivery-and-payment</code></div><div><b>EN</b><code>lapetitebloom.com/en/delivery-and-payment</code></div></div>
+  <h3>Файлы — .docx читать, .html вставлять</h3>
+  <div class="files"><div>delivery-and-payment.pl.docx<br>delivery-and-payment.pl.html</div><div>delivery-and-payment.ua.docx<br>delivery-and-payment.ua.html</div><div>delivery-and-payment.en.docx<br>delivery-and-payment.en.html</div></div>
+  <h3>Что убрать с текущей страницы</h3>
+  <ol class='rm'><li>Удалить чужой банковский счёт Bebe Concept с украинской страницы оплаты</li><li>Заменить оператора платежей Tpay.com на Przelewy24 (PayPro S.A.) на украинской странице</li><li>Перевести раздел «Metody płatności» на польской странице — сейчас там украинский текст</li></ol>
+  <h3>Нужен ваш ответ</h3><p class='q'><b>Наложенный платёж.</b> В документе вилка «+20–23 zł». Покупателю нужна одна сумма или правило расчёта.</p><p class='q'><b>Порог бесплатной доставки.</b> 500 zł считается до или после скидки?</p><p class='q'><b>Заграничная доставка.</b> В тексте DHL, отдельно упомянуты Nova Poshta и Meest для Украины — так и оставляем?</p><p class='q'><b>Дата вступления в силу.</b> У документа о доставке её нет, у остальных семи — 24.06.2026.</p>
+</section>
+<section class="page">
+  <h2>Регламент подарочных карт</h2>
+  <div class="addr"><div><b>PL</b><code>lapetitebloom.com/regulamin-kart-podarunkowych</code></div><div><b>UA</b><code>lapetitebloom.com/ua/regulamin-kart-podarunkowych</code></div><div><b>EN</b><code>lapetitebloom.com/en/regulamin-kart-podarunkowych</code></div></div>
+  <h3>Файлы — .docx читать, .html вставлять</h3>
+  <div class="files"><div>regulamin-kart-podarunkowych.pl.docx<br>regulamin-kart-podarunkowych.pl.html</div><div>regulamin-kart-podarunkowych.ua.docx<br>regulamin-kart-podarunkowych.ua.html</div><div>regulamin-kart-podarunkowych.en.docx<br>regulamin-kart-podarunkowych.en.html</div></div>
+  <h3>Что убрать с текущей страницы</h3>
+  <ol class='rm'><li>Противоречие внутри документа: блок 1 объявляет «obowiązuje od dnia 24.06.2026», а блок 2 говорит, что правила вступают в силу «с момента предоставления карт в …</li><li>Блок 8: «prawo to wygasa z chwilą wykorzystania (aktywacji) kodu» — в скобках оригинала «использование» и «активация» приравнены, хотя это не обязательно одно и…</li><li>Документ не задаёт номиналы карт и не говорит, продаются ли они за деньги или выдаются, а также не описывает, что происходит при частичном возврате заказа, опла…</li></ol>
+  
+</section>
+<section class="page">
+  <h2>Декларация доступности</h2>
+  <div class="addr"><div><b>PL</b><code>lapetitebloom.com/deklaracja-dostepnosci</code></div><div><b>UA</b><code>lapetitebloom.com/ua/deklaracja-dostepnosci</code></div><div><b>EN</b><code>lapetitebloom.com/en/deklaracja-dostepnosci</code></div></div>
+  <h3>Файлы — .docx читать, .html вставлять</h3>
+  <div class="files"><div>deklaracja-dostepnosci.pl.docx<br>deklaracja-dostepnosci.pl.html</div><div>deklaracja-dostepnosci.ua.docx<br>deklaracja-dostepnosci.ua.html</div><div>deklaracja-dostepnosci.en.docx<br>deklaracja-dostepnosci.en.html</div></div>
+  <h3>Что убрать с текущей страницы</h3>
+  <ol class='rm'><li>Блок 4: утверждение о статусе микропредприятия («Jako mikroprzedsiębiorca») — юридически значимое основание освобождения. Проверить, что LPB Sp. z o.o. действит…</li><li>Адрес kontakt@lapetitebloom.com — тот же, что в документах 4 и 7. По глоссарию на сайте параллельно живут hello@ и rodo@, а kontakt@ не указан ни в контактах, н…</li><li>Блок 6 («Znane ograniczenia») не называет ни одного конкретного ограничения. По практике деклараций доступности здесь ожидается перечень нерешённых проблем и ср…</li></ol>
+  
+</section>
+
+  <section class="page">
+    <h2>Общие вопросы</h2>
+    <p class='q'><b>Почта в исходных .docx.</b> Решение — hello@ и rodo@. В готовых текстах заменено, в самих .docx остаётся kontakt@: 11 мест в шести документах.</p>
+  </section>
+</div>
