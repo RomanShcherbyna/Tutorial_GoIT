@@ -49,7 +49,7 @@
       '<span class="mark">' + esc(f.severity_label) + '</span>' +
       '<span class="fid">' + esc(f.id) + '</span>' + sel(f.id) + '</div>' +
       '<p class="action">' + esc(f.action || f.title) + '</p>' +
-      '<p class="where"><b>Где править</b> &nbsp;' + esc(f.where) + '</p>' +
+      (f.doc ? '<p class="where"><b>Источник</b> &nbsp;' + esc(f.doc) + '</p>' : '') +
       (f.current ? '<div class="evidence">' + esc(f.current) + '</div>' : '') +
       (f.why ? '<p class="why">' + esc(f.why) + '</p>' : '') + steps +
       (f.done_when ? '<p class="why"><b>Готово, когда:</b> ' + esc(f.done_when) + '</p>' : '') +

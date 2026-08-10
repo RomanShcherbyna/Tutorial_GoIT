@@ -11,7 +11,7 @@
   "pl": "To pole jest wymagane",
   "ua": "Це поле обов’язкове",
   "en": "This field is required",
-  "note": "Ключ validate.required в объекте FenixTranslations (админка → переводы UI, группа validate). Отдельное сообщение про повтор пароля должно жить в своём ключе (например validate.passwordConfirm), а не в required.",
+  "note": "Ключ validate.required в объекте FenixTranslations (Отдельное сообщение про повтор пароля должно жить в своём ключе (например validate.passwordConfirm), а не в required.",
   "agent": "12",
   "edits": [
    "UA: прямий апостроф замість типографського «’»"
@@ -44,7 +44,7 @@
   "pl": "Slajd 2 — nagłówek: «The Campamento», podpis: «Kolekcja jesień–zima 2026», przycisk: «Odkryj kolekcję», alt: «The Campamento — kolekcja jesień–zima 2026». Slajd 3 — «Liewood» / «Kolekcja jesień–zima 2026» / «Odkryj kolekcję» / alt: «Liewood — kolekcja jesień–zima 2026». Slajd 4 — «Bobo Choses» / «Kolekcja jesień–zima 2026» / «Odkryj kolekcję» / alt: «Bobo Choses — kolekcja jesień–zima 2026».",
   "ua": "Слайд 2 — заголовок: «The Campamento», підпис: «Колекція осінь–зима 2026», кнопка: «Відкрити колекцію», alt: «The Campamento — колекція осінь–зима 2026». Слайд 3 — «Liewood» / «Колекція осінь–зима 2026» / «Відкрити колекцію» / alt: «Liewood — колекція осінь–зима 2026». Слайд 4 — «Bobo Choses» / «Колекція осінь–зима 2026» / «Відкрити колекцію» / alt: «Bobo Choses — колекція осінь–зима 2026».",
   "en": "Slide 2 — heading: “The Campamento”, caption: “Autumn–winter 2026 collection”, button: “Explore the collection”, alt: “The Campamento — autumn–winter 2026 collection”. Slide 3 — “Liewood” / “Autumn–winter 2026 collection” / “Explore the collection” / alt: “Liewood — autumn–winter 2026 collection”. Slide 4 — “Bobo Choses” / “Autumn–winter 2026 collection” / “Explore the collection” / alt: “Bobo Choses — autumn–winter 2026 collection”.",
-  "note": "Админка → Слайдеры → Главный слайдер, элементы 11, 12, 13 (storage/tmp_media/sliders_item/11,12,13). Заполнить заголовок, подзаголовок, текст кнопки, ссылку (на страницу бренда /brands/liewood, /brands/bobo-choses) и alt изображения в каждой из трёх локалей. У слайда 2 проверить мобильную картинку.",
+  "note": "Заполнить заголовок, подзаголовок, текст кнопки, ссылку (на страницу бренда /brands/liewood, /brands/bobo-choses) и alt изображения в каждой из трёх локалей. У слайда 2 проверить мобильную картинку.",
   "agent": "01"
  },
  {
@@ -59,7 +59,7 @@
   "pl": "",
   "ua": "",
   "en": "",
-  "note": "Админка → Слайдеры → Главный слайдер, элемент 10. Либо завести бренд Akro by Olivier Cresp с товарами и вести кнопку на /brands/<slug>, либо заменить слайд на бренд, который реально есть в каталоге. Ссылку /catalog проверить отдельно — судя по картам сайта, такой страницы нет. [уточнить: продаётся ли Akro by Olivier Cresp и та ли это картинка]",
+  "note": "Либо завести бренд Akro by Olivier Cresp с товарами и вести кнопку на /brands/<slug>, либо заменить слайд на бренд, который реально есть в каталоге. Ссылку /catalog проверить отдельно — судя по картам сайта, такой страницы нет. [уточнить: продаётся ли Akro by Olivier Cresp и та ли это картинка]",
   "agent": "01"
  },
  {
@@ -74,7 +74,7 @@
   "pl": "Bez względu na porę roku wybieramy dla dzieci ubrania i dodatki, w których wygoda jest równie ważna jak dobry krój.",
   "ua": "Незалежно від пори року ми обираємо для дітей одяг та аксесуари, у яких зручність і турбота йдуть поруч із гарним стилем.",
   "en": "Whatever the season, we choose clothing and accessories for children in which comfort and care go hand in hand with good style.",
-  "note": "Админка → Главная → блок «Bestsellery» → подпись каждой вкладки. Проверить все вкладки во всех трёх локалях: текст встречается 2 раза в PL, 2 раза в EN, 2 раза в UA.",
+  "note": "Проверить все вкладки во всех трёх локалях: текст встречается 2 раза в PL, 2 раза в EN, 2 раза в UA.",
   "agent": "01",
   "edits": [
    "PL: „wygoda i troska idą w parze z dobrym stylem” to wciąż kalka zdania Bonpoint („comfort and care meet chic”), a „troska” nie może być cechą ubrania — zamiana na własne, naturalne sformułowanie."
@@ -92,7 +92,7 @@
   "pl": "Do czasu publikacji prawdziwych wpisów zostawić w bloku wyłącznie gotowe artykuły (obecnie: «Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych») albo ukryć sekcję. Nagłówek sekcji: «Najnowsze wpisy», przycisk: «Zobacz wszystkie».",
   "ua": "До публікації справжніх матеріалів залишити в блоці лише готові статті (зараз: «Ковдри Klippan — природне тепло та скандинавська якість для найменших») або приховати секцію. Заголовок секції: «Останні записи», кнопка: «Дивитися всі».",
   "en": "Until real posts are published, keep only the finished articles in this block (currently: “Klippan blankets — natural warmth and Scandinavian quality for the little ones”) or hide the section. Section heading: “Latest news”, button: “See all”.",
-  "note": "Пересекается со срезом агента 08 (сам блог), но здесь речь именно о выдаче lorem-карточек на главной. Админка → Главная → блок «Новости»: либо ограничить выборку опубликованными материалами, либо снять с публикации записи sit-rerum-labore23250, odit-ut-voluptates3981, aut-est2794, saepe-consequatur-architecto-est15163.",
+  "note": "Пересекается со срезом агента 08 (сам блог), но здесь речь именно о выдаче lorem-карточек на главной.",
   "agent": "01",
   "edits": [
    "UA: коротке тире замість довгого в назві статті",
@@ -166,7 +166,7 @@
   "pl": "Kocyk to pierwsza rzecz, która towarzyszy dziecku od pierwszych dni w szpitalu po pierwsze spacery w wózku. Szwedzka manufaktura Klippan tka swoje pledy z naturalnych włókien — wełny i bawełny — stawiając na trwałość zamiast sezonowych trendów. Dzięki temu jeden kocyk potrafi przejść przez kilka lat i kilkoro dzieci, nie tracąc miękkości. W tym tekście tłumaczymy, czym w praktyce różnią się wełna merino, lambswool i bawełna, jak dobrać rozmiar do wózka, łóżeczka i podróży oraz jak prać kocyk, żeby służył długo. [уточнить: dokładne składy, certyfikaty i wymiary modeli dostępnych w La Petite Bloom]",
   "ua": "Ковдра — перша річ, яка супроводжує дитину від пологового будинку до перших прогулянок у візку. Шведська мануфактура Klippan тче свої пледи з натуральних волокон — вовни та бавовни — обираючи довговічність замість сезонних трендів. Завдяки цьому одна ковдра здатна прослужити кілька років і кільком дітям, не втрачаючи м’якості. У цьому тексті пояснюємо, чим на практиці відрізняються меринос, ламсвул і бавовна, як підібрати розмір для візка, ліжечка та подорожі й як прати плед, щоб він служив довго. [уточнити: точні склади, сертифікати та розміри моделей, доступних у La Petite Bloom]",
   "en": "A blanket is the first thing that travels with a child, from the maternity ward to the first walks in the pram. The Swedish mill Klippan weaves its blankets from natural fibres — wool and cotton — choosing durability over seasonal trends. One blanket can therefore last several years and more than one child without losing its softness. In this piece we explain how merino, lambswool and cotton differ in everyday use, how to choose a size for the pram, the cot and travelling, and how to wash a blanket so that it lasts. [уточнить: exact compositions, certifications and dimensions of the models stocked by La Petite Bloom]",
-  "note": "Заголовок статьи трогать не надо — он настоящий и переведён корректно на все три локали (PL «Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych» / UA «Ковдри Klippan – природне тепло та скандинавська якість для найменших» / EN «Klippan blankets – natural warmth and Scandinavian quality for the little ones»). Заменить нужно только тело.\n\nПЛАН СТАТЬИ PL: 1) Klippan — szwedzka manufaktura i jej podejście do wełny; 2) Wełna merino, lambswool czy bawełna — co wybrać dla noworodka; 3) Rozmiary: kocyk do wózka, do łóżeczka, na podróż; 4) Jak prać i wietrzyć kocyk wełniany; 5) Kocyk jako prezent — dlaczego zostaje na lata.\nПЛАН UA: 1) Klippan — шведська мануфактура та її підхід до вовни; 2) Меринос, ламсвул чи бавовна — що обрати для новонародженого; 3) Розміри: плед для візка, для ліжечка, у дорогу; 4) Як прати й провітрювати вовняний плед; 5) Плед як подарунок — чому він лишається на роки.\nПЛАН EN: 1) Klippan — the Swedish mill and its approach to wool; 2) Merino, lambswool or cotton — what to choose for a newborn; 3) Sizes: pram blanket, cot blanket, travel blanket; 4) Washing and airing a wool blanket; 5) A blanket as a gift — why it stays for years.\n\nАдминка → Blog → Статьи → kocyki-klippan-... → поле «Текст» в каждой из трёх локалей.",
+  "note": "Заголовок статьи трогать не надо — он настоящий и переведён корректно на все три локали (PL «Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych» / UA «Ковдри Klippan – природне тепло та скандинавська якість для найменших» / EN «Klippan blankets – natural warmth and Scandinavian quality for the little ones»). Заменить нужно только тело.\n\nПЛАН СТАТЬИ PL: 1) Klippan — szwedzka manufaktura i jej podejście do wełny; 2) Wełna merino, lambswool czy bawełna — co wybrać dla noworodka; 3) Rozmiary: kocyk do wózka, do łóżeczka, na podróż; 4) Jak prać i wietrzyć kocyk wełniany; 5) Kocyk jako prezent — dlaczego zostaje na lata.\nПЛАН UA: 1) Klippan — шведська мануфактура та її підхід до вовни; 2) Меринос, ламсвул чи бавовна — що обрати для новонародженого; 3) Розміри: плед для візка, для ліжечка, у дорогу; 4) Як прати й провітрювати вовняний плед; 5) Плед як подарунок — чому він лишається на роки.\nПЛАН EN: 1) Klippan — the Swedish mill and its approach to wool; 2) Merino, lambswool or cotton — what to choose for a newborn; 3) Sizes: pram blanket, cot blanket, travel blanket; 4) Washing and airing a wool blanket; 5) A blanket as a gift — why it stays for years.\n\n.. → поле «Текст» в каждой из трёх локалей.",
   "agent": "08",
   "edits": [
    "PL: „od porodówki” to potoczyzm, który nie pasuje do spokojnego, premium tonu marki.",
@@ -185,7 +185,7 @@
   "pl": "Kocyki Klippan – naturalne ciepło i skandynawska jakość | La Petite Bloom",
   "ua": "Ковдри Klippan — природне тепло та скандинавська якість | La Petite Bloom",
   "en": "Klippan blankets — natural warmth, Scandinavian quality | La Petite Bloom",
-  "note": "Админка → Blog → Статьи → kocyki-klippan-... → SEO-блок польской локали, поле «Title» (сейчас там буквально строка «%tytuł%»). Заодно заполнить meta description — сейчас она пустая во всех трёх локалях (см. 08-03).",
+  "note": ".. → SEO-блок польской локали, поле «Title» (сейчас там буквально строка «%tytuł%»). Заодно заполнить meta description — сейчас она пустая во всех трёх локалях (см. 08-03).",
   "agent": "08",
   "edits": [
    "UA: коротке тире замість довгого",
@@ -245,7 +245,7 @@
   "path": "/brands/liewood",
   "locale": "pl,ua,en",
   "block": "Filtr «Kolor», dwie osobne wartości na liście",
-  "current": "Brzoskwiniowy / Muszla   ORAZ   Peach / Sea shell",
+  "current": "Brzoskwiniowy / Muszla ORAZ Peach / Sea shell",
   "issue": "WRONG",
   "severity": "blocker",
   "why": "To jeden i ten sam kolor wpisany do katalogu dwa razy — raz po polsku, raz po angielsku. Dowód jest w kodzie strony: na karcie tego samego produktu Liewood stoją obok siebie dwa warianty, data-value=1374 «Peach / Sea shell» i data-value=1236 «Brzoskwiniowy / Muszla», i oba wskazują dokładnie ten sam plik miniatury (adapt_13431033.png). Klient filtrujący po jednej z tych wartości nigdy nie zobaczy produktów przypiętych do drugiej.",
@@ -260,7 +260,7 @@
   "path": "/brands/liewood",
   "locale": "pl,ua,en",
   "block": "Filtr «Kolor», dwie osobne wartości na liście",
-  "current": "Toskańska róża multi mix   ORAZ   Tuscany rose multi mix",
+  "current": "Toskańska róża multi mix ORAZ Tuscany rose multi mix",
   "issue": "WRONG",
   "severity": "blocker",
   "why": "Ten sam kolor Liewood zapisany dwa razy: raz przetłumaczony na polski, raz w oryginale angielskim. Slugi filtrów to color-toskanska_roza_multi_mix i color-tuscany_rose_multi_mix — dwa niezależne wpisy w katalogu. W wersji angielskiej obie pozycje wyświetlają się jako «Tuscany rose multi mix», więc klient widzi dwa nierozróżnialne wiersze albo — po deduplikacji na liście — traci połowę produktów.",
@@ -334,7 +334,7 @@
   "pl": "LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska",
   "ua": "LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща",
   "en": "LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland",
-  "note": "Админка: страница /contacts → поле описания под заголовком (page-top__descr, text-formatted). Сейчас там два <p>, второй начинается с &nbsp;. Полный блок на замену — в 19-04.",
+  "note": "Сейчас там два <p>, второй начинается с &nbsp;. Полный блок на замену — в 19-04.",
   "agent": "19",
   "edits": [
    "UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»"
@@ -352,7 +352,7 @@
   "pl": "Dane firmy\n\nLPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.)\nAdres siedziby: ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska\nSąd rejestrowy: [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS]\nKRS: 0001190730\nNIP: 5273179673\nREGON: 542537097\nKapitał zakładowy: 5 000,00 PLN\nData rejestracji w KRS: 26.08.2025\nReprezentacja: każdy członek zarządu samodzielnie\nPrzedmiot przeważającej działalności (PKD): 47.71.Z — sprzedaż detaliczna odzieży",
   "ua": "Дані компанії\n\nLPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.)\nАдреса місцезнаходження: ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща\nРеєстраційний суд: [уточнити за витягом з KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS]\nKRS: 0001190730\nNIP: 5273179673\nREGON: 542537097\nСтатутний капітал: 5 000,00 PLN\nДата реєстрації в KRS: 26.08.2025\nПредставництво: кожен член правління самостійно\nОсновний вид діяльності (PKD): 47.71.Z — роздрібна торгівля одягом",
   "en": "Company details\n\nLPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.)\nRegistered office: ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland\nRegistry court: [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS]\nKRS (Polish National Court Register): 0001190730\nNIP (tax identification number): 5273179673\nREGON (statistical identification number): 542537097\nShare capital: PLN 5,000.00\nRegistered in the KRS on: 26 August 2025\nRepresentation: each member of the management board acting individually\nPrincipal activity (PKD): 47.71.Z — retail sale of clothing",
-  "note": "Админка: /contacts → описание под заголовком (page-top__descr), либо отдельный блок «Dane firmy» в низу страницы. Обязательный минимум — первые семь строк (до kapitału zakładowego включительно); дата регистрации, представительство и PKD необязательны по закону, но полезны при верификации Przelewy24 — если блок кажется перегруженным, эти три строки можно убрать. В украинской и английской версиях аббревиатуры NIP/REGON/KRS и название компании остаются латиницей — не транслитерировать.",
+  "note": "Обязательный минимум — первые семь строк (до kapitału zakładowego включительно); дата регистрации, представительство и PKD необязательны по закону, но полезны при верификации Przelewy24 — если блок кажется перегруженным, эти три строки можно убрать. В украинской и английской версиях аббревиатуры NIP/REGON/KRS и название компании остаются латиницей — не транслитерировать.",
   "agent": "19",
   "edits": [
    "UA: російська вставка «по выписке KRS»; росіянізм «уточнить» замість «уточнити»; у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»",
@@ -371,7 +371,7 @@
   "pl": "Płatności online obsługuje Przelewy24 (PayPro S.A.). Dostępne metody: BLIK, karty płatnicze, szybki przelew bankowy, Apple Pay, Google Pay, Klarna i PayPo. Osobno dostępna jest płatność za pobraniem, rozliczana przy odbiorze przesyłki [уточнить: czy pobranie jest dostępne także w Paczkomacie InPost, czy wyłącznie u kuriera]. Ceny podajemy w złotych polskich (PLN) i zawierają one podatek VAT (ceny brutto).",
   "ua": "Онлайн-платежі обробляє Przelewy24 (PayPro S.A.). Доступні способи: BLIK, платіжні картки, швидкий банківський переказ, Apple Pay, Google Pay, Klarna та PayPo. Окремо доступна післяплата — оплата при отриманні відправлення [уточнити: чи доступна післяплата також у поштоматі InPost, чи лише у кур’єра]. Ціни вказані в польських злотих (PLN) і включають ПДВ (ціни брутто).",
   "en": "Online payments are handled by Przelewy24 (PayPro S.A.). Available methods: BLIK, payment cards, instant bank transfer, Apple Pay, Google Pay, Klarna and PayPo. Cash on delivery is also available and is settled when you collect the parcel [уточнить: whether cash on delivery is also available at InPost parcel lockers or only with the courier]. All prices are shown in Polish złoty (PLN) and include VAT (gross prices).",
-  "note": "Админка → страницы → «Dostawa i płatność» (PL) → карточка «Metody płatności», поле описания. Текст в pl/ua/en ниже — канонический комплект: этой же формулировкой чинится и украинская версия (см. 04-02), английская правится по 04-05. Дополнительные обязательные абзацы (момент списания, валюта, возвраты, неудачная оплата) — находки 04-06…04-09.",
+  "note": "Текст в pl/ua/en ниже — канонический комплект: этой же формулировкой чинится и украинская версия (см. 04-02), английская правится по 04-05. Дополнительные обязательные абзацы (момент списания, валюта, возвраты, неудачная оплата) — находки 04-06…04-09.",
   "agent": "04",
   "edits": [
    "UA: росіянізм «уточнить» замість «уточнити»",
@@ -945,7 +945,7 @@
   "path": "*",
   "locale": "pl,ua,en",
   "block": "Футер, контактный блок (footer-contact-item), адрес",
-  "current": "Marcina Kasprzaka 31/119   (в UA и EN: ul. Marcina Kasprzaka 31/119)",
+  "current": "Marcina Kasprzaka 31/119 (в UA и EN: ul. Marcina Kasprzaka 31/119)",
   "issue": "MISSING",
   "severity": "high",
   "why": "Адрес в футере оборван: нет индекса, города и страны — на каждой странице всех трёх локалей. На /contacts тот же адрес выведен полностью («Marcina Kasprzaka 31/119 01-234 Warszawa»), то есть данные в системе есть, в футер их просто не вывели. Плюс в PL-версии потерян префикс «ul.», который в UA и EN на месте. Для покупателя из UA/EN футер вообще не сообщает, что магазин находится в Польше; для верификации в Przelewy24 адрес продавца в подвале — стандартное требование.",
@@ -970,7 +970,7 @@
   "pl": "To pole jest wymagane",
   "ua": "Це поле обов’язкове",
   "en": "This field is required",
-  "note": "СВОДНАЯ ТАБЛИЦА ДИФА window.FenixTranslations (проверено на всех 54 страницах × 3 локали — словарь байт-в-байт одинаков внутри каждой локали, вариантов нет). Всего 28 ключей в 6 группах: ui 4, validate 11, search 3, product 1, filter 5, favorites 4. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В UA: 0. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В EN: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ UA ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ EN ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. То есть формально словарь переведён на 100 %, MISSING в нём нет. Дефекты — качественные, 9 ключей из 28: validate.required (14-01), validate.minlength + validate.maxlength (14-02), favorites.to_favorites / in_favorites / btn_add_favorites / btn_remove_favorites — EN (14-03), search.empty_products + search.empty_categories — UA (14-04), validate.phoneFormat — UA (14-05), search.sku + product.sku (14-06). Плюс мусорные ключи: validate.uaPhoneFormat (украинский валидатор телефона в польском магазине) и validate.invalidNumber2 (полный дубль validate.invalidNumber во всех трёх локалях). Править в админке: раздел переводов интерфейса / языковые файлы движка Fenix, группа validate.",
+  "note": "СВОДНАЯ ТАБЛИЦА ДИФА window.FenixTranslations (проверено на всех 54 страницах × 3 локали — словарь байт-в-байт одинаков внутри каждой локали, вариантов нет). Всего 28 ключей в 6 группах: ui 4, validate 11, search 3, product 1, filter 5, favorites 4. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В UA: 0. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В EN: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ UA ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ EN ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. То есть формально словарь переведён на 100 %, MISSING в нём нет. Дефекты — качественные, 9 ключей из 28: validate.required (14-01), validate.minlength + validate.maxlength (14-02), favorites.to_favorites / in_favorites / btn_add_favorites / btn_remove_favorites — EN (14-03), search.empty_products + search.empty_categories — UA (14-04), validate.phoneFormat — UA (14-05), search.sku + product.sku (14-06). Плюс мусорные ключи: validate.uaPhoneFormat (украинский валидатор телефона в польском магазине) и validate.invalidNumber2 (полный дубль validate.invalidNumber во всех трёх локалях). Править в",
   "agent": "14",
   "edits": [
    "UA: прямий апостроф замість типографського «’»"
@@ -1036,7 +1036,7 @@
   "pl": "",
   "ua": "",
   "en": "",
-  "note": "Админка → Главная → блок «Prezenty» → каждая плитка: проставить ссылку на соответствующую подборку (/prezenty, /special-offers или на нужную категорию) отдельно для pl, ua, en.",
+  "note": "",
   "agent": "01"
  },
  {
@@ -1051,7 +1051,7 @@
   "pl": "Magia prezentu",
   "ua": "Магія подарунка",
   "en": "The magic of giving",
-  "note": "Админка → Главная → блок «Prezenty» → плитка 1: подпись и alt изображения. Проверить, что поля pl и en не перепутаны и в остальных плитках.",
+  "note": "Проверить, что поля pl и en не перепутаны и в остальных плитках.",
   "agent": "01"
  },
  {
@@ -1081,7 +1081,7 @@
   "pl": "Nasz butik",
   "ua": "Наш бутик",
   "en": "Our boutique",
-  "note": "Админка → Главная → блок «Sklep/Butik» → заголовок, три локали.",
+  "note": "",
   "agent": "01",
   "edits": [
    "UA: різнобій «бутік/бутик» — уніфіковано на «бутик»"
@@ -1099,7 +1099,7 @@
   "pl": "NOWOŚĆ",
   "ua": "НОВИНКА",
   "en": "NEW",
-  "note": "Админка → Метки/бейджи товаров → метка «новинка»: перевод для ua и правка pl. Заодно свести к одному слову с бейджем на главном баннере.",
+  "note": "Заодно свести к одному слову с бейджем на главном баннере.",
   "agent": "01"
  },
  {
@@ -1110,11 +1110,11 @@
   "current": "PL: <title>Główna</title>, description «Główna»; UA: «Головна»; EN: «Home»",
   "issue": "STUB",
   "severity": "high",
-  "why": "Заголовок и описание главной страницы во всех трёх локалях — служебное слово «Главная», оставшееся от названия страницы в админке. То же значение продублировано в og:title и og:description, поэтому при отправке ссылки в мессенджер сайт выглядит как страница с названием «Home». Ни бренда, ни города, ни ассортимента — ни в поиске, ни в шеринге.",
+  "why": "Заголовок и описание главной страницы во всех трёх локалях — служебное слово «Главная», оставшееся от названия страницы в То же значение продублировано в og:title и og:description, поэтому при отправке ссылки в мессенджер сайт выглядит как страница с названием «Home». Ни бренда, ни города, ни ассортимента — ни в поиске, ни в шеринге.",
   "pl": "title: «La Petite Bloom — ubrania, obuwie i zabawki dla dzieci | Warszawa»; description: «Butik dla dzieci i mam: ubrania, obuwie, kosmetyki i zabawki marek Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg i Veja. Sklep online z wysyłką i butik przy ul. Mokotowskiej w Warszawie.»",
   "ua": "title: «La Petite Bloom — дитячий одяг, взуття та іграшки | Варшава»; description: «Бутик для дітей і мам: одяг, взуття, косметика та іграшки брендів Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg і Veja. Інтернет-магазин із доставкою та бутік на вул. Mokotowska у Варшаві.»",
   "en": "title: “La Petite Bloom — children’s clothing, footwear and toys | Warsaw”; description: “A boutique for children and mothers: clothing, footwear, skincare and toys by Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg and Veja. Online shop with delivery and a boutique on Mokotowska Street in Warsaw.”",
-  "note": "Админка → Страницы → Главная → SEO-поля для каждой локали. Длину description держать в пределах ~155 знаков.",
+  "note": "Длину description держать в пределах ~155 знаков.",
   "agent": "01",
   "edits": [
    "UA: різнобій «бутік/бутик» — уніфіковано на «бутик»"
@@ -1210,7 +1210,7 @@
   "path": "/accessories",
   "locale": "pl,ua,en",
   "block": "Filtr «Kolor», dwie osobne wartości na liście",
-  "current": "Złoty   ORAZ   Golden",
+  "current": "Złoty ORAZ Golden",
   "issue": "WRONG",
   "severity": "high",
   "why": "Jeden kolor w dwóch wpisach — polskim i angielskim. Widać to najlepiej w wersji angielskiej, gdzie na liście stoją obok siebie «Gold» (tłumaczenie polskiego «Złoty») i «Golden» (wartość nieprzetłumaczona), czyli dwie pozycje o tym samym znaczeniu. Rozbija to biżuterię dziecięcą na dwa niepełne zbiory.",
@@ -1225,7 +1225,7 @@
   "path": "/accessories",
   "locale": "pl,ua,en",
   "block": "Filtr «Kolor», dwie osobne wartości na liście",
-  "current": "Biały   ORAZ   Blanc",
+  "current": "Biały ORAZ Blanc",
   "issue": "WRONG",
   "severity": "high",
   "why": "«Blanc» to po francusku biały — ta sama barwa co polskie «Biały», zapisana jako druga, niezależna wartość katalogu. W wersji angielskiej polskie «Biały» tłumaczone jest na… francuskie «Blanc», więc obie wartości zlewają się w jedną nierozróżnialną etykietę, a anglojęzyczny klient nigdzie nie widzi słowa «White».",
@@ -1343,7 +1343,7 @@
   "pl": "Title: «Blog La Petite Bloom — poradniki o dziecięcej garderobie». Description: «Rozmiary, materiały i pielęgnacja ubranek, pomysły na prezenty i zabawki według wieku. Poradniki zespołu La Petite Bloom dla rodziców.»",
   "ua": "Title: «Блог La Petite Bloom — поради про дитячий гардероб». Description: «Розміри, матеріали та догляд за одягом, ідеї подарунків та іграшки за віком. Поради команди La Petite Bloom для батьків.»",
   "en": "Title: “La Petite Bloom blog — guides for parents”. Description: “Sizing, fabrics and garment care, gift ideas and toys by age. Guides written by the La Petite Bloom team for parents.”",
-  "note": "Админка → Blog → Настройки раздела / SEO страницы списка. Заодно стоит переименовать H1: «Aktualności» звучит как лента пресс-релизов, а раздел по факту должен быть блогом (в футере и хлебных крошках он уже называется «Blog» / «Блог» — сейчас H1 и крошки не совпадают).",
+  "note": "Заодно стоит переименовать H1: «Aktualności» звучит как лента пресс-релизов, а раздел по факту должен быть блогом (в футере и хлебных крошках он уже называется «Blog» / «Блог» — сейчас H1 и крошки не совпадают).",
   "agent": "08",
   "edits": [
    "EN: Guillemets used around English copy instead of curly double quotes."
@@ -1357,7 +1357,7 @@
   "current": "UA: «Odit ut voluptates», «Aut est», «Saepe consequatur architecto est»; EN: то же самое",
   "issue": "MISSING",
   "severity": "high",
-  "why": "Три записи из пяти в украинской и английской версии выводятся латинскими заголовками из генератора: перевод для них никогда не заводили, и система показывает исходное значение. В польской версии те же записи получили хотя бы машинные польские заголовки. Для пользователя UA/EN витрина блога выглядит как незаполненная админка.",
+  "why": "Три записи из пяти в украинской и английской версии выводятся латинскими заголовками из генератора: перевод для них никогда не заводили, и система показывает исходное значение. В польской версии те же записи получили хотя бы машинные польские заголовки. Для пользователя UA/EN витрина блога выглядит как незаполненная",
   "pl": "",
   "ua": "Готові українські заголовки — у пропозиціях 08-16…08-19 (по одному на кожен запис).",
   "en": "Ready English titles are given in proposals 08-16…08-19 (one per post).",
@@ -1442,7 +1442,7 @@
   "pl": "Szwedzkie kocyki Klippan z naturalnej wełny i bawełny: jak wybrać rozmiar do wózka i łóżeczka, czym różni się merino od lambswool i jak prać kocyk, by służył latami.",
   "ua": "Шведські пледи Klippan із натуральної вовни та бавовни: як обрати розмір для візка й ліжечка, чим меринос відрізняється від ламсвулу та як прати плед, щоб він служив роками.",
   "en": "Swedish Klippan blankets in natural wool and cotton: choosing a size for the pram and the cot, merino versus lambswool, and how to wash a blanket so it lasts for years.",
-  "note": "Админка → Blog → Статьи → kocyki-klippan-... → SEO-блок каждой локали, поле «Description». Отдельно попросить разработчика прокидывать в JSON-LD NewsArticle реальный description, а не копию headline.",
+  "note": ".. → SEO-блок каждой локали, поле «Description». Отдельно попросить разработчика прокидывать в JSON-LD NewsArticle реальный description, а не копию headline.",
   "agent": "08"
  },
  {
@@ -1493,7 +1493,7 @@
   "pl": "Aktualności → /blog/aktualnosci; Nasze wydarzenia → /blog/nasze-wydarzenia; Publikacje → /blog/publikacje",
   "ua": "Новини → /ua/blog/aktualnosci; Наші івенти → /ua/blog/nasze-wydarzenia; Публікації → /ua/blog/publikacje",
   "en": "News → /en/blog/aktualnosci; Our events → /en/blog/nasze-wydarzenia; Publications → /en/blog/publikacje",
-  "note": "Заменить слаги на человекочитаемые и поставить 301 со старых. Готовые SEO-тексты рубрик:\nAKTUALNOŚCI — title PL «Aktualności | La Petite Bloom», UA «Новини | La Petite Bloom», EN «News | La Petite Bloom». Description PL: «Nowości w La Petite Bloom: nowe kolekcje, marki i to, co właśnie pojawiło się w sklepie.» UA: «Новини La Petite Bloom: нові колекції, бренди й те, що щойно з'явилося в магазині.» EN: «News from La Petite Bloom: new collections, new labels and what has just arrived in store.»\nNASZE WYDARZENIA — title PL «Nasze wydarzenia | La Petite Bloom», UA «Наші івенти | La Petite Bloom», EN «Our events | La Petite Bloom». Description PL: «Spotkania, premiery kolekcji i wydarzenia, w których bierze udział La Petite Bloom.» UA: «Зустрічі, презентації колекцій та події, у яких бере участь La Petite Bloom.» EN: «Meet-ups, collection launches and events La Petite Bloom takes part in.»\nPUBLIKACJE — title PL «Publikacje i poradniki | La Petite Bloom», UA «Публікації та поради | La Petite Bloom», EN «Guides and features | La Petite Bloom». Description PL: «Poradniki o dziecięcej garderobie: rozmiary, materiały, pielęgnacja i pomysły na prezenty.» UA: «Поради про дитячий гардероб: розміри, матеріали, догляд та ідеї подарунків.» EN: «Guides to a child's wardrobe: sizing, materials, care and gift ideas.»\nАдминка → Blog → Рубрики.",
+  "note": "Заменить слаги на человекочитаемые и поставить 301 со старых. Готовые SEO-тексты рубрик:\nAKTUALNOŚCI — title PL «Aktualności | La Petite Bloom», UA «Новини | La Petite Bloom», EN «News | La Petite Bloom». Description PL: «Nowości w La Petite Bloom: nowe kolekcje, marki i to, co właśnie pojawiło się w sklepie.» UA: «Новини La Petite Bloom: нові колекції, бренди й те, що щойно з'явилося в магазині.» EN: «News from La Petite Bloom: new collections, new labels and what has just arrived in store.»\nNASZE WYDARZENIA — title PL «Nasze wydarzenia | La Petite Bloom», UA «Наші івенти | La Petite Bloom», EN «Our events | La Petite Bloom». Description PL: «Spotkania, premiery kolekcji i wydarzenia, w których bierze udział La Petite Bloom.» UA: «Зустрічі, презентації колекцій та події, у яких бере участь La Petite Bloom.» EN: «Meet-ups, collection launches and events La Petite Bloom takes part in.»\nPUBLIKACJE — title PL «Publikacje i poradniki | La Petite Bloom», UA «Публікації та поради | La Petite Bloom», EN «Guides and features | La Petite Bloom». Description PL: «Poradniki o dziecięcej garderobie: rozmiary, materiały, pielęgnacja i pomysły na prezenty.» UA: «Поради про дитячий гардероб: розміри, матеріали, догляд та ідеї подарунків.» EN: «Guides to a child's wardrobe: sizing, materials, care and gift ideas.»",
   "agent": "08"
  },
  {
@@ -1920,7 +1920,7 @@
   "pl": "Napisz do nas\nSprawy ogólne i zamówienia: hello@lapetitebloom.com\nZwroty i reklamacje: kontakt@lapetitebloom.com\nDane osobowe (RODO): rodo@lapetitebloom.com",
   "ua": "Напишіть нам\nЗагальні питання та замовлення: hello@lapetitebloom.com\nПовернення та претензії: kontakt@lapetitebloom.com\nПерсональні дані (GDPR): rodo@lapetitebloom.com",
   "en": "Write to us\nGeneral enquiries and orders: hello@lapetitebloom.com\nReturns and complaints: kontakt@lapetitebloom.com\nPersonal data (GDPR): rodo@lapetitebloom.com",
-  "note": "Админка: /contacts → карточка «Skontaktuj się z nami» → блок e-mail. Перед публикацией проверить, что kontakt@ и rodo@ действительно заведены и читаются — публиковать неработающий адрес хуже, чем не публиковать. Если решите оставить один hello@, тогда правьте регламент и политику конфиденциальности, а не контакты.",
+  "note": "Перед публикацией проверить, что kontakt@ и rodo@ действительно заведены и читаются — публиковать неработающий адрес хуже, чем не публиковать. Если решите оставить один hello@, тогда правьте регламент и политику конфиденциальности, а не контакты.",
   "agent": "19",
   "edits": [
    "UA: різнобій «рекламації/претензії» — уніфіковано на «претензії»"
@@ -1957,7 +1957,7 @@
   "pl": "Deklaracja dostępności",
   "ua": "Заява про доступність",
   "en": "Accessibility statement",
-  "note": "Админка → страница «Deklaracja dostepnosci» → поле названия (PL). UA и EN названия корректны, менять не нужно. Слаг URL правится отдельно, см. 07-15.",
+  "note": "UA и EN названия корректны, менять не нужно. Слаг URL правится отдельно, см. 07-15.",
   "agent": "07"
  },
  {
@@ -2154,7 +2154,7 @@
   "pl": "Tytuł i h1: Polityka cookies\nMeta description: Zasady stosowania plików cookies w sklepie La Petite Bloom: rodzaje plików, cele, czas przechowywania i zarządzanie zgodą.",
   "ua": "Title і h1: Політика щодо файлів cookie\nMeta description: Правила використання файлів cookie в інтернет-магазині La Petite Bloom: види файлів, цілі, строки зберігання та керування згодою.",
   "en": "Title and h1: Cookie policy\nMeta description: How La Petite Bloom uses cookies: categories, purposes, retention periods and how to manage your consent.",
-  "note": "Админка → страницы → Polityka cookies → вкладка EN: заполнить заголовок, h1 и meta description. Заодно переписать meta description на PL и UA — сейчас там дубль title.",
+  "note": "Заодно переписать meta description на PL и UA — сейчас там дубль title.",
   "agent": "06",
   "edits": [
    "UA: різнобій «файли cookie / файли cookies» — уніфіковано на «cookie» (як у футері, 02-08)"
@@ -2202,7 +2202,7 @@
   "path": "/kids",
   "locale": "pl,ua,en",
   "block": "Baner promocyjny wpleciony w siatkę produktów (class «category-grid-banner»), pojawia się dwukrotnie na każdej stronie każdej kategorii",
-  "current": "Nowość\nAkro by Olivier Cresp\nWyświetl wszystko  →  href=\"https://lapetitebloom.com/brands/liewood\" target=\"_blank\" rel=\"nofollow\"",
+  "current": "Nowość\nAkro by Olivier Cresp\nWyświetl wszystko → href=\"https://lapetitebloom.com/brands/liewood\" target=\"_blank\" rel=\"nofollow\"",
   "issue": "BROKEN",
   "severity": "high",
   "why": "Baner ogłasza markę «Akro by Olivier Cresp», której nie ma w katalogu — nie występuje ani w spisie na /brands, ani w filtrze marek na żadnej kategorii. Przycisk «Wyświetl wszystko» prowadzi natomiast do zupełnie innej marki, /brands/liewood, otwiera ją w nowej karcie i ma rel=\"nofollow\" na własnym linku wewnętrznym. Ten sam baner powtarza się dwa razy na jednym ekranie listingu i we wszystkich kategoriach.",
@@ -2299,7 +2299,7 @@
   "path": "/kids",
   "locale": "pl,ua,en",
   "block": "Filtr «Kolor», dwie osobne wartości na liście",
-  "current": "Melanżowy niebieski horyzont   ORAZ   Bleu horizon chiné",
+  "current": "Melanżowy niebieski horyzont ORAZ Bleu horizon chiné",
   "issue": "WRONG",
   "severity": "high",
   "why": "«Melanżowy niebieski horyzont» to dosłowne tłumaczenie francuskiego «Bleu horizon chiné» — ten sam kolor Tartine et Chocolat zapisany dwa razy. W wersji angielskiej rozjazd jest widoczny gołym okiem: na liście stoją obok siebie «Bleu horizon chine» i «Bleu horizon chiné», różniące się wyłącznie brakującym akcentem, czyli dwie pozycje wyglądające na literówkę wobec siebie.",
@@ -2314,7 +2314,7 @@
   "path": "/kids",
   "locale": "pl,ua,en",
   "block": "Filtr «Kolor», dwie osobne wartości na liście",
-  "current": "Perłowy   ORAZ   Nacre",
+  "current": "Perłowy ORAZ Nacre",
   "issue": "WRONG",
   "severity": "high",
   "why": "«Nacre» to po francusku masa perłowa, czyli dokładnie to samo co polskie «Perłowy» — obie wartości są w katalogu równocześnie. W wersji angielskiej obie renderują się jako «Nacre», a więc anglojęzyczny klient dostaje francuskie słowo zamiast «Mother-of-pearl», i to w dwóch nierozróżnialnych kopiach.",
@@ -2508,13 +2508,13 @@
   "path": "/privacy-policy",
   "locale": "pl",
   "block": "Раздел «4. Odbiorcy danych», список получателей",
-  "current": "- Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania).",
+  "current": "Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania).",
   "issue": "LEGAL",
   "severity": "high",
   "why": "Два документа противоречат друг другу. Политика cookies называет Meta Pixel, TikTok, Klarna и PayPo, а в списке получателей данных в политике конфиденциальности их нет — там только Google и Cookiebot. Также не назван поставщик рассылки, через которого уходит newsletter, и не назван хостинг-провайдер. Для покупателя это значит, что часть получателей его данных не раскрыта.",
-  "pl": "- Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania);\n- dostawcy narzędzi marketingowych — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — wpisać wyłącznie te, które faktycznie zostaną uruchomione];\n- dostawcy płatności odroczonych — Klarna i PayPo, w zakresie wybranej metody płatności;\n- dostawca systemu wysyłki newslettera — [уточнить: nazwa i siedziba];\n- dostawca hostingu — [уточнить: nazwa i siedziba].",
-  "ua": "- Google (Google Analytics / Google Ads), а також постачальнику банера керування згодами Cookiebot (Usercentrics A/S, Данія);\n- постачальникам маркетингових інструментів — [уточнити у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — вказати лише ті, що будуть фактично активовані];\n- постачальникам послуг відстроченої оплати — Klarna та PayPo, в обсязі обраного способу оплати;\n- постачальнику системи розсилки — [уточнити: назва та місцезнаходження];\n- постачальнику хостингу — [уточнити: назва та місцезнаходження].",
-  "en": "- Google (Google Analytics / Google Ads) and the provider of the Cookiebot consent banner (Usercentrics A/S, Denmark);\n- providers of marketing tools — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — list only those actually enabled];\n- deferred-payment providers — Klarna and PayPo, where you choose that payment method;\n- the newsletter delivery provider — [уточнить: name and registered office];\n- the hosting provider — [уточнить: name and registered office].",
+  "pl": "Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania);\n- dostawcy narzędzi marketingowych — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — wpisać wyłącznie te, które faktycznie zostaną uruchomione];\n- dostawcy płatności odroczonych — Klarna i PayPo, w zakresie wybranej metody płatności;\n- dostawca systemu wysyłki newslettera — [уточнить: nazwa i siedziba];\n- dostawca hostingu — [уточнить: nazwa i siedziba].",
+  "ua": "Google (Google Analytics / Google Ads), а також постачальнику банера керування згодами Cookiebot (Usercentrics A/S, Данія);\n- постачальникам маркетингових інструментів — [уточнити у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — вказати лише ті, що будуть фактично активовані];\n- постачальникам послуг відстроченої оплати — Klarna та PayPo, в обсязі обраного способу оплати;\n- постачальнику системи розсилки — [уточнити: назва та місцезнаходження];\n- постачальнику хостингу — [уточнити: назва та місцезнаходження].",
+  "en": "Google (Google Analytics / Google Ads) and the provider of the Cookiebot consent banner (Usercentrics A/S, Denmark);\n- providers of marketing tools — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — list only those actually enabled];\n- deferred-payment providers — Klarna and PayPo, where you choose that payment method;\n- the newsletter delivery provider — [уточнить: name and registered office];\n- the hosting provider — [уточнить: name and registered office].",
   "note": "Раздел 4 политики конфиденциальности во всех трёх локалях. Список получателей должен совпадать с перечнем инструментов в политике cookies и с реально подключёнными скриптами.",
   "agent": "06",
   "edits": [
@@ -2685,13 +2685,13 @@
   "path": "/terms-of-use",
   "locale": "pl",
   "block": "§2. Sprzedawca i kontakt, второй пункт блока «Kontakt»",
-  "current": "- Zwroty i reklamacje – kontakt@lapetitebloom.com (opcjonalnie alias zwroty@/reklamacje@)",
+  "current": "Zwroty i reklamacje – kontakt@lapetitebloom.com (opcjonalnie alias zwroty@/reklamacje@)",
   "issue": "STUB",
   "severity": "high",
   "why": "В опубликованный регламент попала служебная пометка автора черновика — «опционально алиас». Покупатель читает документ, по которому подаёт рекламацию, и видит внутреннюю заметку о том, что адреса, возможно, ещё не заведены. Присутствует во всех трёх локалях: «(за бажанням аліаси zwroty@/reklamacje@)», «(optionally the zwroty@/reklamacje@ aliases)».",
-  "pl": "- Zwroty i reklamacje — hello@lapetitebloom.com",
-  "ua": "- Повернення та претензії — hello@lapetitebloom.com",
-  "en": "- Returns and complaints — hello@lapetitebloom.com",
+  "pl": "Zwroty i reklamacje — hello@lapetitebloom.com",
+  "ua": "Повернення та претензії — hello@lapetitebloom.com",
+  "en": "Returns and complaints — hello@lapetitebloom.com",
   "note": "Убрать скобку целиком. Если алиасы zwroty@/reklamacje@ будут заведены — вписать конкретный рабочий адрес вместо hello@; см. 06-12 о разнобое адресов.",
   "agent": "06",
   "edits": [
@@ -3017,10 +3017,10 @@
   "path": "*",
   "locale": "pl",
   "block": "Футер, колонка «Klientowi» + бургер-меню (ссылка на /zgody-klauzule-i-regulamin-newslettera)",
-  "current": "Zgody, klauzule i regulamin  newslettera",
+  "current": "Zgody, klauzule i regulamin newslettera",
   "issue": "TYPO",
   "severity": "medium",
-  "why": "Двойной пробел перед «newslettera» — видно в разметке (<span class=\"text\">Zgody, klauzule i regulamin  newslettera</span>) и при копировании текста. Повторяется в футере и в бургер-меню, то есть дважды на каждой странице.",
+  "why": "Двойной пробел перед «newslettera» — видно в разметке (<span class=\"text\">Zgody, klauzule i regulamin newslettera</span>) и при копировании текста. Повторяется в футере и в бургер-меню, то есть дважды на каждой странице.",
   "pl": "Zgody, klauzule i regulamin newslettera",
   "ua": "Згоди, застереження та правила розсилки",
   "en": "Consents, clauses and newsletter terms",
@@ -3417,7 +3417,7 @@
   "pl": "Hrywna (UAH) / Dolar amerykański (USD) / Euro (EUR) / Złoty polski (PLN)",
   "ua": "Гривня (UAH) / Долар США (USD) / Євро (EUR) / Польський злотий (PLN)",
   "en": "Hryvnia (UAH) / US dollar (USD) / Euro (EUR) / Polish złoty (PLN)",
-  "note": "Справочник валют в админке, поля названий для украинской и английской локали. В английском также стоит вернуть диакритику в «Złoty» — это имя собственное валюты. Отмечу пересечение: сам попап языка и валюты разбирает агент 02, здесь зафиксированы только неверные значения в справочнике валют как системный остаток чужого языка.",
+  "note": "Справочник валют в В английском также стоит вернуть диакритику в «Złoty» — это имя собственное валюты. Отмечу пересечение: сам попап языка и валюты разбирает агент 02, здесь зафиксированы только неверные значения в справочнике валют как системный остаток чужого языка.",
   "agent": "14",
   "edits": [
    "EN: Currency names title-cased; English uses lower case, and 02-26 already sets the pattern."
@@ -3435,7 +3435,7 @@
   "pl": "Kafelek 2: «Świąteczne sukienki»; kafelek 3: «Prezenty dla najmłodszych»",
   "ua": "Плитка 2: «Святкові сукні»; плитка 3: «Подарунки для найменших»",
   "en": "Tile 2: “Festive dresses”; tile 3: “Gifts for the little ones”",
-  "note": "Админка → Главная → блок «Prezenty» → плитки 2 и 3: подпись + alt. [уточнить: какие именно подборки должны стоять на этих плитках]",
+  "note": "[уточнить: какие именно подборки должны стоять на этих плитках]",
   "agent": "01",
   "edits": [
    "PL: „plitka” to rusycyzm (плитка); po polsku element kafelkowej siatki to „kafelek”."
@@ -3453,7 +3453,7 @@
   "pl": "NOWOŚĆ",
   "ua": "НОВИНКА",
   "en": "NEW IN",
-  "note": "Админка → Слайдеры → Главный слайдер, элемент 10 → надпись над заголовком, локаль en.",
+  "note": "",
   "agent": "01"
  },
  {
@@ -3483,7 +3483,7 @@
   "pl": "Ubrania, akcesoria, artykuły do pielęgnacji i elementy wystroju, które łączą pokolenia i stają się częścią rodzinnych historii.",
   "ua": "Одяг, аксесуари, засоби догляду та предмети декору, які пов’язують покоління та стають частиною сімейних історій.",
   "en": "Clothing, accessories, care products and décor pieces that connect generations and become part of family stories.",
-  "note": "Админка → Главная → блок «O nas» → текст, локаль pl. Перебить абзац вручную, не вставкой из буфера. Заодно прогнать все длинные тексты сайта на U+200B.",
+  "note": "Перебить абзац вручную, не вставкой из буфера. Заодно прогнать все длинные тексты сайта на U+200B.",
   "agent": "01"
  },
  {
@@ -3498,7 +3498,7 @@
   "pl": "Pn: 10:00–19:00 / Wt: 10:00–19:00 / Śr: 10:00–19:00 / Czw: 10:00–19:00 / Pt: 10:00–19:00 / Sb: 10:00–19:00 / Nd: nieczynne",
   "ua": "Нд: зачинено / Пн: 10:00–19:00 / Вт: 10:00–19:00 / Ср: 10:00–19:00 / Чт: 10:00–19:00 / Пт: 10:00–19:00 / Сб: 10:00–19:00",
   "en": "Sun: Closed / Mon: 10:00–19:00 / Tue: 10:00–19:00 / Wed: 10:00–19:00 / Thu: 10:00–19:00 / Fri: 10:00–19:00 / Sat: 10:00–19:00",
-  "note": "Админка → Главная → блок «Sklep/Butik» → часы работы, локаль en. Перенабрать «Closed» латиницей. Заодно во всех локалях привести разделитель времени к тире без пробелов (сейчас «10:00 - 19:00»).",
+  "note": "Перенабрать «Closed» латиницей. Заодно во всех локалях привести разделитель времени к тире без пробелов (сейчас «10:00 - 19:00»).",
   "agent": "01",
   "edits": [
    "PL: Niekonsekwentne skróty dni („Pon”, „Sob” obok „Nd”, „Wt”), tydzień zaczynał się od niedzieli, a „Zamknięte” to kalka — w polskich godzinach otwarcia pisze się „nieczynne”. Skróty ujednolicone z zapisem w stopce (02-33)."
@@ -3516,7 +3516,7 @@
   "pl": "Bestsellery",
   "ua": "Бестселери",
   "en": "Bestsellers",
-  "note": "Админка → Главная → блок «Bestsellery» → заголовок, локаль ua.",
+  "note": "",
   "agent": "01"
  },
  {
@@ -3531,7 +3531,7 @@
   "pl": "Zobacz wszystko",
   "ua": "Дивитися все",
   "en": "See all",
-  "note": "Админка → переводы интерфейса: свести все три строки к одному значению. В блоке новостей корректно «Дивитися всі» (о записях) — если хочется точности, оставить именно эту форму только там.",
+  "note": "В блоке новостей корректно «Дивитися всі» (о записях) — если хочется точности, оставить именно эту форму только там.",
   "agent": "01"
  },
  {
@@ -3546,7 +3546,7 @@
   "pl": "Wyrażam zgodę na otrzymywanie newslettera La Petite Bloom z informacjami o nowościach, ofertach i promocjach. Zapisując się, akceptuję regulamin i politykę prywatności.",
   "ua": "Я даю згоду на отримання розсилки La Petite Bloom з інформацією про новинки, пропозиції та акції. Підписуючись, я приймаю правила та політику конфіденційності.",
   "en": "I agree to receive the La Petite Bloom newsletter with information about new arrivals, offers and promotions. By subscribing, I accept the terms and conditions and the privacy policy.",
-  "note": "Админка → Главная → блок «Newsletter» → текст согласия, три локали. Отдельно решить, нужна ли форма подписки дважды на одной странице: сейчас дублируются и заголовок, и текст согласия, и якорь #subscribe.",
+  "note": "Отдельно решить, нужна ли форма подписки дважды на одной странице: сейчас дублируются и заголовок, и текст согласия, и якорь #subscribe.",
   "agent": "01"
  },
  {
@@ -3561,7 +3561,7 @@
   "pl": "Podpis dla trzeciej zakładki: «Miękkie skarpetki i rajstopy na pierwsze miesiące — bawełna, płaskie szwy, delikatna gumka.»",
   "ua": "Підпис для третьої вкладки: «М’які шкарпетки та колготки на перші місяці — бавовна, пласкі шви, делікатна гумка.»",
   "en": "Caption for the third tab: “Soft socks and tights for the first months — cotton, flat seams, a gentle cuff.”",
-  "note": "Админка → Главная → блок «Bestsellery» → вкладка «Skarpetki i rajstopy 0-2»: либо добавить в подборку ещё товары, либо убрать вкладку до наполнения. Подпись вкладки заполнить во всех трёх локалях, как у двух других.",
+  "note": "Подпись вкладки заполнить во всех трёх локалях, как у двух других.",
   "agent": "01"
  },
  {
@@ -3576,7 +3576,7 @@
   "pl": "Prezenty / Na prezent / «Wybieramy rzeczy, które dobrze się pakuje i jeszcze lepiej dostaje: miękkie kocyki, pierwsze przytulanki, ceramikę do domu i drobiazgi dla mam. Do każdego zamówienia dołączamy opakowanie prezentowe.»",
   "ua": "Подарунки / На подарунок / «Ми обираємо речі, які приємно пакувати й ще приємніше отримувати: м’які пледи, перші іграшки-обіймашки, кераміку для дому та дрібниці для мам. До кожного замовлення додаємо подарункову упаковку.»",
   "en": "Gifts / For gifting / “We choose things that are a pleasure to wrap and an even greater pleasure to receive: soft blankets, first cuddly toys, ceramics for the home and small treats for mothers. Every order comes with gift wrapping.”",
-  "note": "Админка → Главная → блок «Prezenty». [уточнить: действительно ли к каждому заказу кладётся подарочная упаковка — если нет, убрать последнее предложение] Если новогодняя витрина всё же планируется, её стоит включать по расписанию, а не держать постоянно.",
+  "note": "[уточнить: действительно ли к каждому заказу кладётся подарочная упаковка — если нет, убрать последнее предложение] Если новогодняя витрина всё же планируется, её стоит включать по расписанию, а не держать постоянно.",
   "agent": "01"
  },
  {
@@ -3591,7 +3591,7 @@
   "pl": "«Wysyłka na cały świat» (link do /delivery-and-payment); «Ręczna robota & Fairtrade» → «Marki odpowiedzialne i fair trade»; «Zwrot w ciągu 30 dni» (link do /warranty-and-returns/polityka-zwrotow); «Bezpieczna płatność» → «Bezpieczne płatności» (link do /delivery-and-payment)",
   "ua": "«Доставка по всьому світу» → «Міжнародна доставка»; «Ручна робота & Fairtrade» → «Відповідальні бренди та fair trade»; «Повернення протягом 30 днів» → «30 днів на повернення»; «Безпечна оплата» → «Безпечні платежі»",
   "en": "“Worldwide shipping” → “International delivery”; “Handmade & Fairtrade” → “Responsible brands and fair trade”; “30 days return” → “30-day returns”; “Safe payment” → “Secure payments”",
-  "note": "Админка → Настройки → блок УТП: добавить ссылку каждой плашке и поправить формулировки в трёх локалях. [уточнить: в какие страны реально идёт доставка — формулировка должна совпадать со страницей /delivery-and-payment]",
+  "note": "[уточнить: в какие страны реально идёт доставка — формулировка должна совпадать со страницей /delivery-and-payment]",
   "agent": "01",
   "edits": [
    "PL: Ten sam pasek USP opisuje też 02-30, ale innymi słowami („Wysyłka międzynarodowa” / „30 dni na zwrot” vs „Wysyłka na cały świat” / „Zwrot w ciągu 30 dni”). Ujednolicono na brzmienie używane w pozostałych tekstach (m.in. meta description 09-04)."
@@ -3775,7 +3775,7 @@
   "pl": "",
   "ua": "",
   "en": "",
-  "note": "Админка → Blog → Статьи → kocyki-klippan-... → поле «Рубрики»: назначить «Publikacje» (текст поясняющий, а не новостной). Правка техническая, тексты не нужны.",
+  "note": ".. → поле «Рубрики»: назначить «Publikacje» (текст поясняющий, а не новостной). Правка техническая, тексты не нужны.",
   "agent": "08"
  },
  {
@@ -4032,7 +4032,7 @@
   "pl": "ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska",
   "ua": "ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща",
   "en": "ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland",
-  "note": "Админка: /contacts → карточка контактов «Skontaktuj się z nami» → поле адреса. Правится в польской локали; в UA и EN достаточно добавить запятые и страну.",
+  "note": "Правится в польской локали; в UA и EN достаточно добавить запятые и страну.",
   "agent": "19",
   "edits": [
    "UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»"
@@ -4050,7 +4050,7 @@
   "pl": "Adres siedziby (dane rejestrowe, korespondencja urzędowa): ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska\nAdres do zwrotów i reklamacji: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, Polska\nProsimy nie wysyłać zwrotów na adres siedziby.",
   "ua": "Адреса місцезнаходження (реєстраційні дані, офіційне листування): ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща\nАдреса для повернень і претензій: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, Польща\nПросимо не надсилати повернення на адресу місцезнаходження.",
   "en": "Registered office (company records, official correspondence): ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland\nAddress for returns and complaints: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warsaw, Poland\nPlease do not send returns to the registered office.",
-  "note": "Админка: /contacts, отдельная строка под блоком реквизитов из 19-04. Сверить с /warranty-and-returns/polityka-zwrotow и §8-§9 регламента, чтобы адрес возвратов везде был записан одинаково, вместе с номером помещения lok. 44.",
+  "note": "Сверить с /warranty-and-returns/polityka-zwrotow и §8-§9 регламента, чтобы адрес возвратов везде был записан одинаково, вместе с номером помещения lok. 44.",
   "agent": "19",
   "edits": [
    "UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»; різнобій «рекламації/претензії»"
@@ -4068,7 +4068,7 @@
   "pl": "Odpowiadamy w dni robocze, zwykle w ciągu [уточнить: 1-2 dni roboczych] od otrzymania wiadomości. Reklamacje rozpatrujemy i informujemy o wyniku w terminie 14 dni od zgłoszenia. Wiadomości wysłane w weekend odbieramy w najbliższy dzień roboczy.",
   "ua": "Відповідаємо в робочі дні, зазвичай протягом [уточнити: 1–2 робочі дні] від отримання повідомлення. Претензії розглядаємо та повідомляємо про результат протягом 14 днів із дня звернення. Повідомлення, надіслані у вихідні, опрацьовуємо найближчого робочого дня.",
   "en": "We usually reply within [уточнить: 1–2 working days] of receiving your message. Complaints are reviewed and answered within 14 days of submission. Messages sent at the weekend are picked up on the next working day.",
-  "note": "Админка: /contacts, под часами работы и рядом с формой «Twoja wiadomość» / «Ваше повідомлення» / «Your message». Срок 14 дней взят из §10 регламента — не выдуман; срок первичного ответа надо подтвердить у заказчика.",
+  "note": "Срок 14 дней взят из §10 регламента — не выдуман; срок первичного ответа надо подтвердить у заказчика.",
   "agent": "19",
   "edits": [
    "UA: росіянізм «уточнить» замість «уточнити»; неперекладене польське «1-2 dni roboczych» усередині українського речення; різнобій «рекламації/претензії»",
@@ -4087,7 +4087,7 @@
   "pl": "Obsługa klienta\nTelefon i e-mail: pn.–pt. 9:00–18:00. W soboty i niedziele biuro jest nieczynne — wiadomości odbieramy w najbliższy dzień roboczy. Godziny otwarcia butiku przy ul. Mokotowskiej podajemy osobno, poniżej.\nFormularz kontaktowy: wiadomość trafia do naszego zespołu obsługi klienta pod adres hello@lapetitebloom.com. Po wysłaniu otrzymasz potwierdzenie na podany adres e-mail.\nReklamacje i zwroty: kontakt@lapetitebloom.com oraz adres do odesłania towaru podany wyżej.",
   "ua": "Служба підтримки\nТелефон і електронна пошта: пн–пт, 9:00–18:00. У суботу та неділю офіс не працює — повідомлення опрацьовуємо найближчого робочого дня. Години роботи бутика на вул. Mokotowska вказані окремо, нижче.\nФорма зв’язку: повідомлення надходить до нашої служби підтримки на адресу hello@lapetitebloom.com. Після надсилання ви отримаєте підтвердження на вказану електронну пошту.\nПретензії та повернення: kontakt@lapetitebloom.com, а також адреса для відправлення товару, зазначена вище.",
   "en": "Customer service\nPhone and email: Mon–Fri, 9:00–18:00. The office is closed at the weekend — messages are picked up on the next working day. Opening hours of the Mokotowska boutique are listed separately below.\nContact form: your message reaches our customer service team at hello@lapetitebloom.com. You will receive a confirmation at the email address you provide.\nReturns and complaints: kontakt@lapetitebloom.com, and the return address given above.",
-  "note": "Админка: /contacts, вводный текст над карточками контактов. Пункт про подтверждение отправки формы требует технической проверки — сейчас после «Wyślij wiadomość» не видно ни экрана благодарности, ни письма-подтверждения; если их нет, обещание в тексте давать нельзя, пока не сделают.",
+  "note": "Пункт про подтверждение отправки формы требует технической проверки — сейчас после «Wyślij wiadomość» не видно ни экрана благодарности, ни письма-подтверждения; если их нет, обещание в тексте давать нельзя, пока не сделают.",
   "agent": "19",
   "edits": [
    "PL: Łączniki zamiast półpauz w zakresie dni i godzin oraz trzeci wariant skrótu dni na stronie („pon.-pt.” obok „Pn–Pt” i „pn-pt”).",
@@ -4155,7 +4155,7 @@
   "pl": "/deklaracja-dostepnosci — Jak dbamy o dostępność sklepu La Petite Bloom: status zgodności z WCAG 2.1 AA, znane ograniczenia i kontakt w sprawie barier.\n/regulamin-kart-podarunkowych — Zasady kart podarunkowych La Petite Bloom: termin ważności, płatność kartą, rozliczenie różnicy i zwroty.\n/zgody-klauzule-i-regulamin-newslettera — Treść zgód marketingowych, klauzula informacyjna i regulamin newslettera La Petite Bloom.\n/personal-data-requests — Jak skorzystać z praw wynikających z RODO w La Petite Bloom: gdzie złożyć wniosek i w jakim terminie odpowiadamy.",
   "ua": "/ua/deklaracja-dostepnosci — Як ми дбаємо про доступність магазину La Petite Bloom: відповідність WCAG 2.1 AA, відомі обмеження та контакти щодо бар’єрів.\n/ua/regulamin-kart-podarunkowych — Правила подарункових карток La Petite Bloom: термін дії, оплата карткою, доплата різниці та повернення.\n/ua/zgody-klauzule-i-regulamin-newslettera — Тексти маркетингових згод, інформаційне повідомлення та правила розсилки La Petite Bloom.\n/ua/personal-data-requests — Як скористатися правами за GDPR у La Petite Bloom: куди надіслати запит і в який термін ми відповідаємо.",
   "en": "/en/deklaracja-dostepnosci — How La Petite Bloom approaches accessibility: WCAG 2.1 AA compliance status, known limitations and where to report barriers.\n/en/regulamin-kart-podarunkowych — La Petite Bloom gift card terms: validity, paying with a card, settling the difference and returns.\n/en/zgody-klauzule-i-regulamin-newslettera — Marketing consent wording, privacy notice and newsletter terms at La Petite Bloom.\n/en/personal-data-requests — How to exercise your GDPR rights at La Petite Bloom: where to send a request and how quickly we reply.",
-  "note": "Четыре страницы × три локали = 12 полей meta description в админке. Тексты сгруппированы по локали, адрес страницы указан перед каждым.",
+  "note": "Четыре страницы × три локали = 12 полей meta description в Тексты сгруппированы по локали, адрес страницы указан перед каждым.",
   "agent": "07"
  },
  {
@@ -4217,7 +4217,7 @@
   "path": "/delivery-and-payment",
   "locale": "pl",
   "block": "Карточка «Sposoby i koszty dostawy», строка о зарубежной доставке + подраздел «Dostawa zagraniczna»",
-  "current": "- Dostawa zagraniczna — DHL, według taryfy przewoźnika … Wysyłamy na terenie Unii Europejskiej i poza nią. Dla Ukrainy dostępne są Nova Poshta oraz Meest.",
+  "current": "Dostawa zagraniczna — DHL, według taryfy przewoźnika … Wysyłamy na terenie Unii Europejskiej i poza nią. Dla Ukrainy dostępne są Nova Poshta oraz Meest.",
   "issue": "MISSING",
   "severity": "medium",
   "why": "Тарифов зарубежной доставки на странице нет вообще: ни таблицы по странам, ни диапазона цен, ни сроков для Nova Poshta и Meest — при том что для Польши сроки и цены расписаны подробно. Формулировка «według taryfy przewoźnika» не даёт покупателю узнать сумму до оформления, а это обязательный элемент информации о цене по ustawa o prawach konsumenta (art. 12 ust. 1 pkt 5): все дополнительные расходы должны быть известны до оформления заказа. Сроки 2–5 рабочих дней указаны только для DHL, для украинских перевозчиков — нет.",
@@ -4254,13 +4254,13 @@
   "path": "/delivery-and-payment",
   "locale": "ua",
   "block": "Карточка «Способи та вартість доставки», перечень тарифов — все четыре строки (те же строки в EN)",
-  "current": "- Поштомат InPost 24/7—13,99 zł\n- Кур’єр InPost / DPD—17 zł; післяплата: +20–23 zł\n- Великогабаритне відправлення (понад 25 kg)—99 zł\n- Міжнародна доставка—DHL, відповідно до тарифу перевізника",
+  "current": "Поштомат InPost 24/7—13,99 zł\n- Кур’єр InPost / DPD—17 zł; післяплата: +20–23 zł\n- Великогабаритне відправлення (понад 25 kg)—99 zł\n- Міжнародна доставка—DHL, відповідно до тарифу перевізника",
   "issue": "TYPO",
   "severity": "medium",
   "why": "В украинской и английской версиях длинное тире приклеено к тексту без пробелов («24/7—13,99 zł»), тогда как в польской версии оно набрано с пробелами («Paczkomat InPost 24/7 — 13,99 zł») — цены в переведённых версиях читаются как сплошная строка. В украинской строке единица веса осталась латиницей — «понад 25 kg» вместо «25 кг» (ниже на той же странице уже написано «25 кг», то есть внутри одной локали два варианта). В английской версии десятичная запятая «13,99 zł» для британского набора должна быть точкой — «13.99 zł».",
-  "pl": "- Paczkomat InPost 24/7 — 13,99 zł\n- Kurier InPost / DPD — 17 zł; za pobraniem +20–23 zł\n- Przesyłka gabarytowa (powyżej 25 kg) — 99 zł\n- Dostawa zagraniczna — DHL, według taryfy przewoźnika",
-  "ua": "- Поштомат InPost 24/7 — 13,99 zł\n- Кур’єр InPost / DPD — 17 zł; післяплата +20–23 zł\n- Великогабаритне відправлення (понад 25 кг) — 99 zł\n- Міжнародна доставка — DHL, за тарифом перевізника",
-  "en": "- InPost 24/7 parcel locker — 13.99 zł\n- InPost / DPD courier — 17 zł; cash on delivery +20–23 zł\n- Oversized shipment (over 25 kg) — 99 zł\n- International delivery — DHL, at the carrier’s tariff",
+  "pl": "Paczkomat InPost 24/7 — 13,99 zł\n- Kurier InPost / DPD — 17 zł; za pobraniem +20–23 zł\n- Przesyłka gabarytowa (powyżej 25 kg) — 99 zł\n- Dostawa zagraniczna — DHL, według taryfy przewoźnika",
+  "ua": "Поштомат InPost 24/7 — 13,99 zł\n- Кур’єр InPost / DPD — 17 zł; післяплата +20–23 zł\n- Великогабаритне відправлення (понад 25 кг) — 99 zł\n- Міжнародна доставка — DHL, за тарифом перевізника",
+  "en": "InPost 24/7 parcel locker — 13.99 zł\n- InPost / DPD courier — 17 zł; cash on delivery +20–23 zł\n- Oversized shipment (over 25 kg) — 99 zł\n- International delivery — DHL, at the carrier’s tariff",
   "note": "Сами цифры во всех трёх локалях совпадают (13,99 / 17 / +20–23 / 99 / порог 500 zł / 13:00 / 1 день / 2–5 дней / 30 дней / 7 дней) — правка чисто типографская. Единственное расхождение сумм было внутри украинской карточки оплаты, см. 04-04.",
   "agent": "04",
   "edits": [
@@ -4316,7 +4316,7 @@
   "pl": "Nd: nieczynne",
   "ua": "Нд: зачинено",
   "en": "Sun: Closed",
-  "note": "Проверено сплошным сканом на смешанные скрипты по всем 162 снимкам (54 страницы × 3 локали), и по HTML, и по видимому тексту: это ЕДИНСТВЕННАЯ подмена буквы на сайте, других гомоглифов нет — ни в брендах, ни в заголовках, ни в мета-тегах. Править в админке: карточка бутика, поле часов работы, воскресенье, английская локаль. Заодно выровнять сокращения дней в EN — сейчас «Thur» вместо стандартного «Thu», и неделя начинается с воскресенья, хотя в футере той же страницы «Mon-Fri».",
+  "note": "Проверено сплошным сканом на смешанные скрипты по всем 162 снимкам (54 страницы × 3 локали), и по HTML, и по видимому тексту: это ЕДИНСТВЕННАЯ подмена буквы на сайте, других гомоглифов нет — ни в брендах, ни в заголовках, ни в мета-тегах. Править в Заодно выровнять сокращения дней в EN — сейчас «Thur» вместо стандартного «Thu», и неделя начинается с воскресенья, хотя в футере той же страницы «Mon-Fri».",
   "agent": "14",
   "edits": [
    "PL: „Zamknięte” to kalka z „Closed”; polskie godziny otwarcia podaje się jako „nieczynne”.",
@@ -4343,7 +4343,7 @@
   "path": "/en/zabawki",
   "locale": "ua,en",
   "block": "Adresy URL kategorii i produktów w lokalizacjach UA i EN",
-  "current": "https://lapetitebloom.com/en/zabawki  •  https://lapetitebloom.com/en/niemowleta  •  https://lapetitebloom.com/en/pielegnacja-i-kosmetyki  •  https://lapetitebloom.com/en/czekolada-do-kapieli-inuwet-jagoda-dla-dzieci-bl647631521",
+  "current": "https://lapetitebloom.com/en/zabawki • https://lapetitebloom.com/en/niemowleta • https://lapetitebloom.com/en/pielegnacja-i-kosmetyki • https://lapetitebloom.com/en/czekolada-do-kapieli-inuwet-jagoda-dla-dzieci-bl647631521",
   "issue": "WRONG",
   "severity": "medium",
   "why": "Część slugów kategorii pozostała po polsku we wszystkich lokalizacjach: angielski klient ogląda stronę «Toys» pod adresem /en/zabawki, «Babies 0-2» pod /en/niemowleta, «Care and cosmetics» pod /en/pielegnacja-i-kosmetyki. Katalog jest przy tym niekonsekwentny — /kids, /girls, /boys, /footwear, /accessories i /brands mają slugi angielskie, więc trzy polskie wyglądają na przeoczenie, a nie na decyzję. To samo dotyczy wszystkich adresów produktów (/en/…, /ua/… ze zbitką polskich słów).",
@@ -4940,7 +4940,7 @@
   "pl": "Płeć",
   "ua": "Стать",
   "en": "Gender",
-  "note": "Переименовать атрибут в админке. В той же таблице: EN «Color» → «Colour». В хлебных крошках и футере EN «Catalog» → «Catalogue».",
+  "note": "Переименовать атрибут в В той же таблице: EN «Color» → «Colour». В хлебных крошках и футере EN «Catalog» → «Catalogue».",
   "agent": "11"
  },
  {
@@ -5151,7 +5151,7 @@
   "pl": "Zgody, klauzule i regulamin newslettera",
   "ua": "Згоди, застереження та правила розсилки",
   "en": "Consents, clauses and newsletter terms",
-  "note": "Админка → страница newsletter → поля названия в трёх локалях. Тот же текст продублирован в футере — заменить и там (согласовать со срезом 02).",
+  "note": "Тот же текст продублирован в футере — заменить и там (согласовать со срезом 02).",
   "agent": "07"
  },
  {
@@ -5218,7 +5218,7 @@
   "pl": "La Petite Bloom to historia zrodzona z miłości — miłości do dzieci, do domu i do drobnych detali, które upiększają codzienność.",
   "ua": "La Petite Bloom — це історія, народжена з любові: до дітей, до дому й до дрібниць, які роблять щоденне життя гарнішим.",
   "en": "La Petite Bloom is a story born out of love — love for children, for home, and for the little details that make everyday life beautiful.",
-  "note": "Админка → Главная → блок «Про нас», локаль ua: снять кавычки вокруг названия во всех четырёх местах, заменить дефис на длинное тире.",
+  "note": "",
   "agent": "01",
   "edits": [
    "UA: той самий абзац про бренд звучав по-різному в 01-24 і 03-14 — зведено до одного формулювання"
@@ -5229,14 +5229,14 @@
   "path": "/",
   "locale": "en",
   "block": "Блок новостей на главной — заголовок первой карточки (текст и alt изображения)",
-  "current": "Klippan blankets – natural warmth and Scandinavian quality  for the little ones",
+  "current": "Klippan blankets – natural warmth and Scandinavian quality for the little ones",
   "issue": "TYPO",
   "severity": "low",
   "why": "Двойной пробел между «quality» и «for» в заголовке единственной настоящей новости на главной; он же продублирован в alt картинки. В PL и UA версиях этого заголовка пробел одинарный.",
   "pl": "Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych",
   "ua": "Ковдри Klippan — природне тепло та скандинавська якість для найменших",
   "en": "Klippan blankets — natural warmth and Scandinavian quality for the little ones",
-  "note": "Админка → Блог → запись «Kocyki Klippan…» → заголовок, локаль en. Заодно во всех трёх локалях заменить короткое тире на длинное.",
+  "note": "Заодно во всех трёх локалях заменить короткое тире на длинное.",
   "agent": "01"
  },
  {
@@ -5251,7 +5251,7 @@
   "pl": "Kupuj według kategorii",
   "ua": "Обирайте за категоріями",
   "en": "Shop by category / New arrivals / Popular brands / Latest news / Bestsellers / About us — привести все заголовки к sentence case",
-  "note": "Админка → Главная → заголовки секций. Выбрать один регистр для английских заголовков и применить его ко всем блокам главной.",
+  "note": "Выбрать один регистр для английских заголовков и применить его ко всем блокам главной.",
   "agent": "01"
  },
  {
@@ -5311,14 +5311,14 @@
   "path": "/blog/kocyki-klippan-naturalne-cieplo-i-skandynawska-jakosc-dla-najmlodszych",
   "locale": "en",
   "block": "H1 / og:title / JSON-LD headline",
-  "current": "Klippan blankets – natural warmth and Scandinavian quality  for the little ones",
+  "current": "Klippan blankets – natural warmth and Scandinavian quality for the little ones",
   "issue": "TYPO",
   "severity": "low",
   "why": "В английском заголовке двойной пробел между «quality» и «for». Виден в разметке Schema.org и попадает в шеринг.",
   "pl": "Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych",
   "ua": "Ковдри Klippan — природне тепло та скандинавська якість для найменших",
   "en": "Klippan blankets — natural warmth and Scandinavian quality for the little ones",
-  "note": "Админка → Blog → Статьи → kocyki-klippan-... → английская локаль, поле «Заголовок»: убрать лишний пробел.",
+  "note": ".. → английская локаль, поле «Заголовок»: убрать лишний пробел.",
   "agent": "08",
   "edits": [
    "UA: коротке тире замість довгого",
@@ -5402,7 +5402,7 @@
   "pl": "Dostawa InPost, DPD i DHL od 13,99 zł, bezpłatnie od 500 zł. Płatności online przez Przelewy24: BLIK, karty, szybki przelew, Apple Pay, Google Pay, Klarna i PayPo.",
   "ua": "Доставка InPost, DPD і DHL від 13,99 zł, безкоштовно від 500 zł. Онлайн-оплата через Przelewy24: BLIK, картки, швидкий переказ, Apple Pay, Google Pay, Klarna та PayPo.",
   "en": "Delivery by InPost, DPD and DHL from 13.99 zł, free on orders over 500 zł. Online payments via Przelewy24: BLIK, cards, instant transfer, Apple Pay, Google Pay, Klarna and PayPo.",
-  "note": "Админка → SEO-поля страницы «Dostawa i płatność» в каждой локали. Держать до ~160 знаков.",
+  "note": "Держать до ~160 знаков.",
   "agent": "04",
   "edits": [
    "EN: \"free over 500 zł\" is elliptical; a shopper expects \"free on orders over\"."
@@ -5477,13 +5477,13 @@
   "path": "/privacy-policy",
   "locale": "pl",
   "block": "Раздел «4. Odbiorcy danych», первый пункт списка — против раздела «5. Przekazywanie danych poza EOG»",
-  "current": "- dostawca hostingu (serwer w Unii Europejskiej);",
+  "current": "dostawca hostingu (serwer w Unii Europejskiej);",
   "issue": "WRONG",
   "severity": "low",
   "why": "Внутреннее расхождение: в п. 4 сервер описан как находящийся в Евросоюзе, в п. 5 — в Европейской экономической зоне. Это разные территории, и в тексте о трансграничной передаче данных разница существенна. Повторяется во всех трёх локалях («у Європейському Союзі» / «Європейському економічному просторі», «European Union» / «European Economic Area»).",
-  "pl": "- dostawca hostingu (serwery w Europejskim Obszarze Gospodarczym);",
-  "ua": "- постачальнику послуг хостингу (сервери в Європейському економічному просторі);",
-  "en": "- the hosting provider (servers located in the European Economic Area);",
+  "pl": "dostawca hostingu (serwery w Europejskim Obszarze Gospodarczym);",
+  "ua": "постачальнику послуг хостингу (сервери в Європейському економічному просторі);",
+  "en": "the hosting provider (servers located in the European Economic Area);",
   "note": "Раздел 4 политики конфиденциальности. Если сервер на самом деле в ЕС, а не в ЕЭЗ — [уточнить у юриста: какую формулировку оставить], но обе точки текста должны говорить одно и то же.",
   "agent": "06"
  },
@@ -5499,7 +5499,7 @@
   "pl": "Administratorem danych osobowych jest LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska, wpisana do rejestru przedsiębiorców KRS prowadzonego przez [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] pod numerem KRS 0001190730, NIP 5273179673, REGON 542537097.",
   "ua": "Контролером персональних даних є LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) із місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща, внесена до реєстру підприємців KRS, який веде [уточнити за витягом з KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS], за номером KRS 0001190730, NIP 5273179673, REGON 542537097.",
   "en": "The data controller is LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), with its registered office at ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland, entered in the register of entrepreneurs of the KRS kept by [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] under KRS number 0001190730, NIP 5273179673, REGON 542537097.",
-  "note": "Админка: /privacy-policy → пункт 1. Правится во всех трёх локалях одинаково: меняются только слова вокруг номеров, сами номера и название компании остаются как есть.",
+  "note": "Правится во всех трёх локалях одинаково: меняются только слова вокруг номеров, сами номера и название компании остаются как есть.",
   "agent": "19",
   "edits": [
    "UA: російська вставка «по выписке KRS»; росіянізм «уточнить» замість «уточнити»; у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»",
@@ -5518,7 +5518,7 @@
   "pl": "Regulamin kart podarunkowych",
   "ua": "Правила подарункових карток",
   "en": "Gift card terms and conditions",
-  "note": "Заголовок правится в админке в трёх местах: название страницы (UA), H1 и пункт меню в подвале. Скрытие пункта футера до запуска карт — отдельное решение заказчика.",
+  "note": "Заголовок правится в Скрытие пункта футера до запуска карт — отдельное решение заказчика.",
   "agent": "07"
  },
  {

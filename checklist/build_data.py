@@ -192,24 +192,6 @@ PAGE_DOCS = {
 }
 
 
-def where_to_fix(f):
-    note = (f.get("note") or "").strip()
-    if note:
-        return note
-    agent, path = f.get("agent", ""), f.get("path", "")
-    if f.get("issue") == "BROKEN":
-        return "Шаблон или маршруты — поправить ссылку"
-    if agent == "10":
-        return "Админка → Каталог → атрибуты и их значения"
-    if agent in ("02", "14"):
-        return "Админка → Переводы интерфейса, либо шаблон темы"
-    if path.startswith("/blog"):
-        return "Админка → Блог → запись"
-    if path and path.startswith("/"):
-        return f"Админка → Страницы → {path}"
-    return "Админка → настройки витрины"
-
-
 def fix_from_finding(f):
     return {
         "id": f["id"],
@@ -224,7 +206,6 @@ def fix_from_finding(f):
         "why": f.get("why", ""),
         "pl": f.get("pl", ""), "ua": f.get("ua", ""), "en": f.get("en", ""),
         "action": action_line(f),
-        "where": where_to_fix(f),
         "steps": [], "done_when": "", "note": "",
     }
 
@@ -243,7 +224,7 @@ def fix_from_doc_task(t):
         "why": t.get("target", ""),
         "pl": "", "ua": "", "en": "",
         "action": t.get("title", ""),
-        "where": t.get("doc", ""),
+        "doc": t.get("doc", ""),
         "steps": t.get("steps", []),
         "done_when": t.get("done_when", ""),
         "note": t.get("note", ""),

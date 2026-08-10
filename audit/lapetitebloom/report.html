@@ -209,10 +209,8 @@ ul.plain b{color:var(--ink)}
   <h2>Что проверили</h2>
   <p>Обойдено <b>54 страницы</b>
     в трёх локалях — польской, украинской и английской, всего
-    <b>162 снимка</b>. Витрина
-    закрыта заглушкой «Opening Soon», поэтому обход шёл под сессией
-    администратора. Разбор вели 15 параллельных агентов, каждый по своему
-    срезу.</p>
+    <b>162 снимка</b>.
+    Разбор вели 15 параллельных агентов, каждый по своему срезу.</p>
   <p class="dim">Глубина — «быстрая»: все статические страницы, весь блог,
     категории верхнего уровня и выборка товаров по типам.</p>
 
@@ -258,7 +256,7 @@ ul.plain b{color:var(--ink)}
     <div class="evidence">pl: &quot;Podaj hasło ponownie&quot; | ua: &quot;Вкажіть пароль ще раз&quot; | en: &quot;Enter password again&quot;</div>
     <p class="why">Это универсальный текст для ЛЮБОГО незаполненного обязательного поля, а написан он про пароль. В чекауте покупатель, не заполнив имя, телефон, город или индекс, увидит «Podaj hasło ponownie» / «Enter password again». Это прямая потеря заказов и провал ручной проверки формы верификатором Przelewy24. Одинаково сломано во всех трёх локалях.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>To pole jest wymagane</pre></div><div class="lane"><h4>Українська</h4><pre>Це поле обов’язкове</pre></div><div class="lane"><h4>English</h4><pre>This field is required</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Ключ validate.required в объекте FenixTranslations (админка → переводы UI, группа validate). Отдельное сообщение про повтор пароля должно жить в своём ключе (например validate.passwordConfirm), а не в required.</p>
+    <p class="note"><b>Куда вписать</b><br>Ключ validate.required в объекте FenixTranslations (Отдельное сообщение про повтор пароля должно жить в своём ключе (например validate.passwordConfirm), а не в required.</p>
     <p class="edits">UA: прямий апостроф замість типографського «’»</p>
   </div>
 </section>
@@ -296,7 +294,7 @@ ul.plain b{color:var(--ink)}
     <div class="evidence">&lt;div class=&quot;main-slider-item swiper-slide&quot;&gt; … &lt;img src=&quot;…adapt_the-campamento-aw-2026.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;500&quot;&gt; … &lt;/div&gt; (без текста, без ссылки, без alt)</div>
     <p class="why">Из четырёх слайдов главного баннера три (The Campamento AW 2026, Liewood AW 2026, Bobo Choses AW 2026) — просто картинки: нет заголовка, нет подзаголовка, нет кнопки, у &lt;img&gt; вообще отсутствует атрибут alt, и весь слайд не кликабельный (нет &lt;a href&gt;). Пользователь видит красивую картинку, но не может ни понять, что это, ни перейти в коллекцию. Одинаково во всех трёх локалях. Плюс у слайда 2 мобильная картинка (iutb-z-ta-1-z.png) не совпадает по названию с десктопной (the-campamento-aw-2026.png) — вероятно, залита не та.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Slajd 2 — nagłówek: «The Campamento», podpis: «Kolekcja jesień–zima 2026», przycisk: «Odkryj kolekcję», alt: «The Campamento — kolekcja jesień–zima 2026». Slajd 3 — «Liewood» / «Kolekcja jesień–zima 2026» / «Odkryj kolekcję» / alt: «Liewood — kolekcja jesień–zima 2026». Slajd 4 — «Bobo Choses» / «Kolekcja jesień–zima 2026» / «Odkryj kolekcję» / alt: «Bobo Choses — kolekcja jesień–zima 2026».</pre></div><div class="lane"><h4>Українська</h4><pre>Слайд 2 — заголовок: «The Campamento», підпис: «Колекція осінь–зима 2026», кнопка: «Відкрити колекцію», alt: «The Campamento — колекція осінь–зима 2026». Слайд 3 — «Liewood» / «Колекція осінь–зима 2026» / «Відкрити колекцію» / alt: «Liewood — колекція осінь–зима 2026». Слайд 4 — «Bobo Choses» / «Колекція осінь–зима 2026» / «Відкрити колекцію» / alt: «Bobo Choses — колекція осінь–зима 2026».</pre></div><div class="lane"><h4>English</h4><pre>Slide 2 — heading: “The Campamento”, caption: “Autumn–winter 2026 collection”, button: “Explore the collection”, alt: “The Campamento — autumn–winter 2026 collection”. Slide 3 — “Liewood” / “Autumn–winter 2026 collection” / “Explore the collection” / alt: “Liewood — autumn–winter 2026 collection”. Slide 4 — “Bobo Choses” / “Autumn–winter 2026 collection” / “Explore the collection” / alt: “Bobo Choses — autumn–winter 2026 collection”.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Слайдеры → Главный слайдер, элементы 11, 12, 13 (storage/tmp_media/sliders_item/11,12,13). Заполнить заголовок, подзаголовок, текст кнопки, ссылку (на страницу бренда /brands/liewood, /brands/bobo-choses) и alt изображения в каждой из трёх локалей. У слайда 2 проверить мобильную картинку.</p>
+    <p class="note"><b>Куда вписать</b><br>Заполнить заголовок, подзаголовок, текст кнопки, ссылку (на страницу бренда /brands/liewood, /brands/bobo-choses) и alt изображения в каждой из трёх локалей. У слайда 2 проверить мобильную картинку.</p>
     
   </div>
 </section>
@@ -315,7 +313,7 @@ ul.plain b{color:var(--ink)}
     <div class="evidence">NOWOŚĆ / Akro by Olivier Cresp / Odkryj markę → href=&quot;https://lapetitebloom.com/catalog&quot;</div>
     <p class="why">Первый экран сайта рекламирует бренд Akro by Olivier Cresp, которого нет в каталоге: слова «akro», «olivier», «cresp» не встречаются ни в brands.xml, ни в products.xml, ни в categories.xml, а страницы /brands/akro не существует. Поэтому кнопка «Odkryj markę» ведёт не на бренд, а на общий /catalog — этого адреса тоже нет ни в одной карте сайта и он не отдавался при обходе. Посетитель кликает по главному промо-баннеру и попадает в никуда. Картинка слайда при этом называется tartine-aw-2026.png (Tartine et Chocolat), то есть изображение и подпись, скорее всего, вообще из разных кампаний.</p>
     
-    <p class="note"><b>Куда вписать</b><br>Админка → Слайдеры → Главный слайдер, элемент 10. Либо завести бренд Akro by Olivier Cresp с товарами и вести кнопку на /brands/&lt;slug&gt;, либо заменить слайд на бренд, который реально есть в каталоге. Ссылку /catalog проверить отдельно — судя по картам сайта, такой страницы нет. [уточнить: продаётся ли Akro by Olivier Cresp и та ли это картинка]</p>
+    <p class="note"><b>Куда вписать</b><br>Либо завести бренд Akro by Olivier Cresp с товарами и вести кнопку на /brands/&lt;slug&gt;, либо заменить слайд на бренд, который реально есть в каталоге. Ссылку /catalog проверить отдельно — судя по картам сайта, такой страницы нет. [уточнить: продаётся ли Akro by Olivier Cresp и та ли это картинка]</p>
     
   </div>
 </section>
@@ -334,7 +332,7 @@ ul.plain b{color:var(--ink)}
     <div class="evidence">Be it winter or summer, Bonpoint creates clothing and accessories for children where comfort and care meet chic</div>
     <p class="why">В польской и английской версии в двух блоках бестселлеров стоит рекламный текст конкурента — французского бренда Bonpoint, дословно с его сайта. В украинской версии он переведён и в первом блоке имя Bonpoint осталось («Чи то зима, чи літо, Bonpoint створює одяг…»), во втором его вручную вычистили. Это чужой копирайт и прямая реклама конкурента на главной странице магазина. Плюс в PL-версии текст вообще на английском.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Bez względu na porę roku wybieramy dla dzieci ubrania i dodatki, w których wygoda jest równie ważna jak dobry krój.</pre></div><div class="lane"><h4>Українська</h4><pre>Незалежно від пори року ми обираємо для дітей одяг та аксесуари, у яких зручність і турбота йдуть поруч із гарним стилем.</pre></div><div class="lane"><h4>English</h4><pre>Whatever the season, we choose clothing and accessories for children in which comfort and care go hand in hand with good style.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Bestsellery» → подпись каждой вкладки. Проверить все вкладки во всех трёх локалях: текст встречается 2 раза в PL, 2 раза в EN, 2 раза в UA.</p>
+    <p class="note"><b>Куда вписать</b><br>Проверить все вкладки во всех трёх локалях: текст встречается 2 раза в PL, 2 раза в EN, 2 раза в UA.</p>
     <p class="edits">PL: „wygoda i troska idą w parze z dobrym stylem” to wciąż kalka zdania Bonpoint („comfort and care meet chic”), a „troska” nie może być cechą ubrania — zamiana na własne, naturalne sformułowanie.</p>
   </div>
 </section>
@@ -353,7 +351,7 @@ ul.plain b{color:var(--ink)}
     <div class="evidence">PL: «Odrzuca przyjemności.», «Albo jest», «Często konsekwencją jest architektura.» — «Akulka u nas rzuca, — z pozwoleniem powiedzieć, w całej swej sile…»; UA/EN: «Odit ut voluptates», «Aut est», «Saepe consequatur architecto est»</div>
     <p class="why">Из пяти карточек в новостном блоке главной только одна настоящая (Kocyki Klippan). Остальные четыре — рыба: в PL это машинный перевод «Мёртвых душ» Гоголя, в UA — куски «Захара Беркута» Франко, в EN — «Алиса в Стране чудес». Заголовки в UA и EN вообще остались латинской lorem-заглушкой («Odit ut voluptates», «Aut est», «Saepe consequatur architecto est»). Это первое, что видит пользователь и верификатор Przelewy24 в самом низу главной.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Do czasu publikacji prawdziwych wpisów zostawić w bloku wyłącznie gotowe artykuły (obecnie: «Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych») albo ukryć sekcję. Nagłówek sekcji: «Najnowsze wpisy», przycisk: «Zobacz wszystkie».</pre></div><div class="lane"><h4>Українська</h4><pre>До публікації справжніх матеріалів залишити в блоці лише готові статті (зараз: «Ковдри Klippan — природне тепло та скандинавська якість для найменших») або приховати секцію. Заголовок секції: «Останні записи», кнопка: «Дивитися всі».</pre></div><div class="lane"><h4>English</h4><pre>Until real posts are published, keep only the finished articles in this block (currently: “Klippan blankets — natural warmth and Scandinavian quality for the little ones”) or hide the section. Section heading: “Latest news”, button: “See all”.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Пересекается со срезом агента 08 (сам блог), но здесь речь именно о выдаче lorem-карточек на главной. Админка → Главная → блок «Новости»: либо ограничить выборку опубликованными материалами, либо снять с публикации записи sit-rerum-labore23250, odit-ut-voluptates3981, aut-est2794, saepe-consequatur-architecto-est15163.</p>
+    <p class="note"><b>Куда вписать</b><br>Пересекается со срезом агента 08 (сам блог), но здесь речь именно о выдаче lorem-карточек на главной.</p>
     <p class="edits">UA: коротке тире замість довгого в назві статті; EN: Section heading inconsistent with the agreed set of homepage headings (&quot;Latest news&quot;).</p>
   </div>
 </section>
@@ -435,7 +433,7 @@ ul.plain b{color:var(--ink)}
 ПЛАН UA: 1) Klippan — шведська мануфактура та її підхід до вовни; 2) Меринос, ламсвул чи бавовна — що обрати для новонародженого; 3) Розміри: плед для візка, для ліжечка, у дорогу; 4) Як прати й провітрювати вовняний плед; 5) Плед як подарунок — чому він лишається на роки.
 ПЛАН EN: 1) Klippan — the Swedish mill and its approach to wool; 2) Merino, lambswool or cotton — what to choose for a newborn; 3) Sizes: pram blanket, cot blanket, travel blanket; 4) Washing and airing a wool blanket; 5) A blanket as a gift — why it stays for years.
 
-Админка → Blog → Статьи → kocyki-klippan-... → поле «Текст» в каждой из трёх локалей.</p>
+.. → поле «Текст» в каждой из трёх локалей.</p>
     <p class="edits">PL: „od porodówki” to potoczyzm, który nie pasuje do spokojnego, premium tonu marki.; UA: росіянізм «уточнить» замість «уточнити»; прямий апостроф замість типографського «’»</p>
   </div>
 </section>
@@ -454,7 +452,7 @@ ul.plain b{color:var(--ink)}
     <div class="evidence">%tytuł%</div>
     <p class="why">В польской версии в &lt;title&gt;, og:title и twitter:title подставлен незаполненный плейсхолдер «%tytuł%» вместо заголовка. Он же виден во вкладке браузера и попадёт в шеринг в соцсетях. В UA и EN на этой же странице title заполнен корректно.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Kocyki Klippan – naturalne ciepło i skandynawska jakość | La Petite Bloom</pre></div><div class="lane"><h4>Українська</h4><pre>Ковдри Klippan — природне тепло та скандинавська якість | La Petite Bloom</pre></div><div class="lane"><h4>English</h4><pre>Klippan blankets — natural warmth, Scandinavian quality | La Petite Bloom</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Blog → Статьи → kocyki-klippan-... → SEO-блок польской локали, поле «Title» (сейчас там буквально строка «%tytuł%»). Заодно заполнить meta description — сейчас она пустая во всех трёх локалях (см. 08-03).</p>
+    <p class="note"><b>Куда вписать</b><br>.. → SEO-блок польской локали, поле «Title» (сейчас там буквально строка «%tytuł%»). Заодно заполнить meta description — сейчас она пустая во всех трёх локалях (см. 08-03).</p>
     <p class="edits">UA: коротке тире замість довгого; EN: En dash used where the house style for titles is an em dash (cf. 01-25, 08-04–08-07).</p>
   </div>
 </section>
@@ -527,7 +525,7 @@ ul.plain b{color:var(--ink)}
       <span class="path">/brands/liewood</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Filtr «Kolor», dwie osobne wartości na liście</p>
-    <div class="evidence">Brzoskwiniowy / Muszla   ORAZ   Peach / Sea shell</div>
+    <div class="evidence">Brzoskwiniowy / Muszla ORAZ Peach / Sea shell</div>
     <p class="why">To jeden i ten sam kolor wpisany do katalogu dwa razy — raz po polsku, raz po angielsku. Dowód jest w kodzie strony: na karcie tego samego produktu Liewood stoją obok siebie dwa warianty, data-value=1374 «Peach / Sea shell» i data-value=1236 «Brzoskwiniowy / Muszla», i oba wskazują dokładnie ten sam plik miniatury (adapt_13431033.png). Klient filtrujący po jednej z tych wartości nigdy nie zobaczy produktów przypiętych do drugiej.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Brzoskwiniowy / Muszla</pre></div><div class="lane"><h4>Українська</h4><pre>Персиковий / Мушля</pre></div><div class="lane"><h4>English</h4><pre>Peach / Sea shell</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>SCALIĆ: wartość «Peach / Sea shell» (ID 1374) → «Brzoskwiniowy / Muszla» (ID 1236). Przepiąć wszystkie warianty produktowe na jedno ID, drugie usunąć, potem uzupełnić tłumaczenia UA/EN. Dotyczy też pochodnych: «Mini brzoskwiniowy / Muszla» i «Brzoskwiniowa muszla / Bladotoskańska» muszą po scaleniu używać tej samej nazwy bazowej.</p>
@@ -546,7 +544,7 @@ ul.plain b{color:var(--ink)}
       <span class="path">/brands/liewood</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Filtr «Kolor», dwie osobne wartości na liście</p>
-    <div class="evidence">Toskańska róża multi mix   ORAZ   Tuscany rose multi mix</div>
+    <div class="evidence">Toskańska róża multi mix ORAZ Tuscany rose multi mix</div>
     <p class="why">Ten sam kolor Liewood zapisany dwa razy: raz przetłumaczony na polski, raz w oryginale angielskim. Slugi filtrów to color-toskanska_roza_multi_mix i color-tuscany_rose_multi_mix — dwa niezależne wpisy w katalogu. W wersji angielskiej obie pozycje wyświetlają się jako «Tuscany rose multi mix», więc klient widzi dwa nierozróżnialne wiersze albo — po deduplikacji na liście — traci połowę produktów.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Toskańska róża multi mix</pre></div><div class="lane"><h4>Українська</h4><pre>Тосканська троянда, мультимікс</pre></div><div class="lane"><h4>English</h4><pre>Tuscany rose multi mix</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>SCALIĆ: «Tuscany rose multi mix» → «Toskańska róża multi mix». Sprawdzić przy okazji parę pokrewną «Toskańska róża / Bladotoskańska» (EN «Tuscany rose / Pale tuscany») — po scaleniu obie muszą korzystać z tej samej wartości bazowej.</p>
@@ -626,7 +624,7 @@ NIP: 5273179673; REGON: 542537097; KRS: 0001190730</div>
     <div class="evidence">LPB Sp. z o.o. ul.</div>
     <p class="why">Строка оборвана: после сокращения фирмы стоит одинокое «ul.» без улицы — вёрстка разорвала «LPB Sp. z o.o. ul. Marcina Kasprzaka…» на два поля, и адрес остался в другом блоке. В таком виде реквизиты не выполняют art. 206 § 1 KSH: нет полного фирменного наименования (LPB Spółka z ograniczoną odpowiedzialnością — сокращение допустимо только рядом с полным), нет суда регистрации и номера отдела KRS, нет kapitału zakładowego. Нет и страны — для UA и EN локалей, где покупатель может быть не из Польши, отсутствие «Polska / Польща / Poland» само по себе дефект по art. 12 ust. 1 ustawy o prawach konsumenta. Дополнительно: обрывок «ul.» — польское слово, которое в UA и EN версиях висит без перевода и без смысла. Заменить весь подзаголовок на полный блок реквизитов из находки 19-04.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska</pre></div><div class="lane"><h4>Українська</h4><pre>LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща</pre></div><div class="lane"><h4>English</h4><pre>LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка: страница /contacts → поле описания под заголовком (page-top__descr, text-formatted). Сейчас там два &lt;p&gt;, второй начинается с &amp;nbsp;. Полный блок на замену — в 19-04.</p>
+    <p class="note"><b>Куда вписать</b><br>Сейчас там два &lt;p&gt;, второй начинается с &amp;nbsp;. Полный блок на замену — в 19-04.</p>
     <p class="edits">UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»</p>
   </div>
 </section>
@@ -679,7 +677,7 @@ Share capital: PLN 5,000.00
 Registered in the KRS on: 26 August 2025
 Representation: each member of the management board acting individually
 Principal activity (PKD): 47.71.Z — retail sale of clothing</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка: /contacts → описание под заголовком (page-top__descr), либо отдельный блок «Dane firmy» в низу страницы. Обязательный минимум — первые семь строк (до kapitału zakładowego включительно); дата регистрации, представительство и PKD необязательны по закону, но полезны при верификации Przelewy24 — если блок кажется перегруженным, эти три строки можно убрать. В украинской и английской версиях аббревиатуры NIP/REGON/KRS и название компании остаются латиницей — не транслитерировать.</p>
+    <p class="note"><b>Куда вписать</b><br>Обязательный минимум — первые семь строк (до kapitału zakładowego включительно); дата регистрации, представительство и PKD необязательны по закону, но полезны при верификации Przelewy24 — если блок кажется перегруженным, эти три строки можно убрать. В украинской и английской версиях аббревиатуры NIP/REGON/KRS и название компании остаются латиницей — не транслитерировать.</p>
     <p class="edits">UA: російська вставка «по выписке KRS»; росіянізм «уточнить» замість «уточнити»; у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»; EN: Date written in Polish numeric format; the agreed English date format (14-20) is &quot;24 June 2026&quot;.</p>
   </div>
 </section>
@@ -698,7 +696,7 @@ Principal activity (PKD): 47.71.Z — retail sale of clothing</pre></div></div>
     <div class="evidence">Онлайн-платежі обробляє Przelewy24 (PayPro S.A.). Доступні способи: BLIK, платіжні картки, швидкий банківський переказ, Apple Pay, Google Pay, Klarna, PayPo та післяплата. Ціни зазначаються в польських злотих (PLN) і включають податок VAT (брутто).</div>
     <p class="why">На польской версии страницы весь раздел о способах оплаты набран по-украински — польский покупатель не может прочитать условия оплаты на языке договора. Это одна из двух страниц, которые Przelewy24 открывает при верификации мерчанта: раздел «способы оплаты» на нерабочем для локали языке — прямой повод не пройти проверку. Кроме того, польский потребитель по ustawa o prawach konsumenta должен получить информацию о способах оплаты на польском языке до заключения договора.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Płatności online obsługuje Przelewy24 (PayPro S.A.). Dostępne metody: BLIK, karty płatnicze, szybki przelew bankowy, Apple Pay, Google Pay, Klarna i PayPo. Osobno dostępna jest płatność za pobraniem, rozliczana przy odbiorze przesyłki [уточнить: czy pobranie jest dostępne także w Paczkomacie InPost, czy wyłącznie u kuriera]. Ceny podajemy w złotych polskich (PLN) i zawierają one podatek VAT (ceny brutto).</pre></div><div class="lane"><h4>Українська</h4><pre>Онлайн-платежі обробляє Przelewy24 (PayPro S.A.). Доступні способи: BLIK, платіжні картки, швидкий банківський переказ, Apple Pay, Google Pay, Klarna та PayPo. Окремо доступна післяплата — оплата при отриманні відправлення [уточнити: чи доступна післяплата також у поштоматі InPost, чи лише у кур’єра]. Ціни вказані в польських злотих (PLN) і включають ПДВ (ціни брутто).</pre></div><div class="lane"><h4>English</h4><pre>Online payments are handled by Przelewy24 (PayPro S.A.). Available methods: BLIK, payment cards, instant bank transfer, Apple Pay, Google Pay, Klarna and PayPo. Cash on delivery is also available and is settled when you collect the parcel [уточнить: whether cash on delivery is also available at InPost parcel lockers or only with the courier]. All prices are shown in Polish złoty (PLN) and include VAT (gross prices).</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → страницы → «Dostawa i płatność» (PL) → карточка «Metody płatności», поле описания. Текст в pl/ua/en ниже — канонический комплект: этой же формулировкой чинится и украинская версия (см. 04-02), английская правится по 04-05. Дополнительные обязательные абзацы (момент списания, валюта, возвраты, неудачная оплата) — находки 04-06…04-09.</p>
+    <p class="note"><b>Куда вписать</b><br>Текст в pl/ua/en ниже — канонический комплект: этой же формулировкой чинится и украинская версия (см. 04-02), английская правится по 04-05. Дополнительные обязательные абзацы (момент списания, валюта, возвраты, неудачная оплата) — находки 04-06…04-09.</p>
     <p class="edits">UA: росіянізм «уточнить» замість «уточнити»; EN: &quot;available separately&quot; is unclear; the point is that it is an additional option.</p>
   </div>
 </section>
@@ -1466,7 +1464,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
       <span class="path">*</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Футер, контактный блок (footer-contact-item), адрес</p>
-    <div class="evidence">Marcina Kasprzaka 31/119   (в UA и EN: ul. Marcina Kasprzaka 31/119)</div>
+    <div class="evidence">Marcina Kasprzaka 31/119 (в UA и EN: ul. Marcina Kasprzaka 31/119)</div>
     <p class="why">Адрес в футере оборван: нет индекса, города и страны — на каждой странице всех трёх локалей. На /contacts тот же адрес выведен полностью («Marcina Kasprzaka 31/119 01-234 Warszawa»), то есть данные в системе есть, в футер их просто не вывели. Плюс в PL-версии потерян префикс «ul.», который в UA и EN на месте. Для покупателя из UA/EN футер вообще не сообщает, что магазин находится в Польше; для верификации в Przelewy24 адрес продавца в подвале — стандартное требование.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska</pre></div><div class="lane"><h4>Українська</h4><pre>LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща</pre></div><div class="lane"><h4>English</h4><pre>LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>Настройки → Контакты → адрес для футера. Индекс 01-234 и город взяты со страницы /contacts и подтверждены записью в KRS — не выдуманы. Название компании латиницей во всех локалях. Полные реквизиты (NIP/REGON/KRS) — зона агента 19, здесь только почтовый адрес.</p>
@@ -1488,7 +1486,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
     <div class="evidence">&quot;validate&quot;: { &quot;required&quot;: &quot;Podaj hasło ponownie&quot; }</div>
     <p class="why">Ключ validate.required — это универсальное сообщение для ЛЮБОГО обязательного поля любой формы движка (регистрация, вход, оформление заказа, форма контакта, подписка). Сейчас в него зашит текст про пароль: пользователь, не заполнивший имя, город или e-mail, увидит «Podaj hasło ponownie». Ошибка идентична во всех трёх локалях — это один и тот же дефект словаря, размноженный переводом.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>To pole jest wymagane</pre></div><div class="lane"><h4>Українська</h4><pre>Це поле обов’язкове</pre></div><div class="lane"><h4>English</h4><pre>This field is required</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>СВОДНАЯ ТАБЛИЦА ДИФА window.FenixTranslations (проверено на всех 54 страницах × 3 локали — словарь байт-в-байт одинаков внутри каждой локали, вариантов нет). Всего 28 ключей в 6 группах: ui 4, validate 11, search 3, product 1, filter 5, favorites 4. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В UA: 0. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В EN: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ UA ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ EN ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. То есть формально словарь переведён на 100 %, MISSING в нём нет. Дефекты — качественные, 9 ключей из 28: validate.required (14-01), validate.minlength + validate.maxlength (14-02), favorites.to_favorites / in_favorites / btn_add_favorites / btn_remove_favorites — EN (14-03), search.empty_products + search.empty_categories — UA (14-04), validate.phoneFormat — UA (14-05), search.sku + product.sku (14-06). Плюс мусорные ключи: validate.uaPhoneFormat (украинский валидатор телефона в польском магазине) и validate.invalidNumber2 (полный дубль validate.invalidNumber во всех трёх локалях). Править в админке: раздел переводов интерфейса / языковые файлы движка Fenix, группа validate.</p>
+    <p class="note"><b>Куда вписать</b><br>СВОДНАЯ ТАБЛИЦА ДИФА window.FenixTranslations (проверено на всех 54 страницах × 3 локали — словарь байт-в-байт одинаков внутри каждой локали, вариантов нет). Всего 28 ключей в 6 группах: ui 4, validate 11, search 3, product 1, filter 5, favorites 4. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В UA: 0. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В EN: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ UA ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ EN ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. То есть формально словарь переведён на 100 %, MISSING в нём нет. Дефекты — качественные, 9 ключей из 28: validate.required (14-01), validate.minlength + validate.maxlength (14-02), favorites.to_favorites / in_favorites / btn_add_favorites / btn_remove_favorites — EN (14-03), search.empty_products + search.empty_categories — UA (14-04), validate.phoneFormat — UA (14-05), search.sku + product.sku (14-06). Плюс мусорные ключи: validate.uaPhoneFormat (украинский валидатор телефона в польском магазине) и validate.invalidNumber2 (полный дубль validate.invalidNumber во всех трёх локалях). Править в</p>
     <p class="edits">UA: прямий апостроф замість типографського «’»</p>
   </div>
 </section>
@@ -1564,7 +1562,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
     <div class="evidence">&lt;a href=&quot;#&quot; class=&quot;thematic-item&quot;&gt; ×3 (плитки «The Magic Of Gift», «Sukienka dla dziewczynki», «Sukienka dla dziewczynki»)</div>
     <p class="why">Все три плитки промо-блока подарков — пустые якоря href=&quot;#&quot;. Они выглядят кликабельными (курсор-рука), но никуда не ведут. Одинаково во всех трёх локалях.</p>
     
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Prezenty» → каждая плитка: проставить ссылку на соответствующую подборку (/prezenty, /special-offers или на нужную категорию) отдельно для pl, ua, en.</p>
+    
     
   </div>
 </section>
@@ -1583,7 +1581,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
     <div class="evidence">PL: «The Magic Of Gift»; EN: «Magia prezentu»; UA: «Магія подарунка»</div>
     <p class="why">Локали перепутаны местами: в польской версии подпись на английском, в английской — на польском. Украинская переведена правильно. Тот же текст стоит и в alt изображения, то есть ошибка уходит ещё и в поиск.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Magia prezentu</pre></div><div class="lane"><h4>Українська</h4><pre>Магія подарунка</pre></div><div class="lane"><h4>English</h4><pre>The magic of giving</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Prezenty» → плитка 1: подпись и alt изображения. Проверить, что поля pl и en не перепутаны и в остальных плитках.</p>
+    <p class="note"><b>Куда вписать</b><br>Проверить, что поля pl и en не перепутаны и в остальных плитках.</p>
     
   </div>
 </section>
@@ -1621,7 +1619,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
     <div class="evidence">Butik</div>
     <p class="why">Заголовок секции в английской версии остался польским словом «Butik» — причём это &lt;h2&gt;, один из главных заголовков страницы. Заодно три локали расходятся по смыслу: PL «Sklep» (магазин), UA «Бутік», EN «Butik». Текст под заголовком во всех трёх локалях говорит именно о бутике, так что «Sklep» в польской версии тоже стоит поправить.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Nasz butik</pre></div><div class="lane"><h4>Українська</h4><pre>Наш бутик</pre></div><div class="lane"><h4>English</h4><pre>Our boutique</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Sklep/Butik» → заголовок, три локали.</p>
+    
     <p class="edits">UA: різнобій «бутік/бутик» — уніфіковано на «бутик»</p>
   </div>
 </section>
@@ -1640,7 +1638,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
     <div class="evidence">NEW</div>
     <p class="why">На украинской главной бейдж новинки остался английским «NEW» на всех девяти карточках, хотя соседний бейдж бестселлера переведён («Бестселер»), а на баннере используется «НОВИНКА». В польской версии бейдж — «NOWY»: прилагательное мужского рода без существительного, рядом с «NOWOŚĆ» на баннере выглядит как две разные системы обозначений.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>NOWOŚĆ</pre></div><div class="lane"><h4>Українська</h4><pre>НОВИНКА</pre></div><div class="lane"><h4>English</h4><pre>NEW</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Метки/бейджи товаров → метка «новинка»: перевод для ua и правка pl. Заодно свести к одному слову с бейджем на главном баннере.</p>
+    <p class="note"><b>Куда вписать</b><br>Заодно свести к одному слову с бейджем на главном баннере.</p>
     
   </div>
 </section>
@@ -1657,9 +1655,9 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
     </div>
     <p class="where"><b>Где</b> &nbsp;&lt;title&gt; и &lt;meta name=&quot;description&quot;&gt;, а также og:title / og:description главной</p>
     <div class="evidence">PL: &lt;title&gt;Główna&lt;/title&gt;, description «Główna»; UA: «Головна»; EN: «Home»</div>
-    <p class="why">Заголовок и описание главной страницы во всех трёх локалях — служебное слово «Главная», оставшееся от названия страницы в админке. То же значение продублировано в og:title и og:description, поэтому при отправке ссылки в мессенджер сайт выглядит как страница с названием «Home». Ни бренда, ни города, ни ассортимента — ни в поиске, ни в шеринге.</p>
+    <p class="why">Заголовок и описание главной страницы во всех трёх локалях — служебное слово «Главная», оставшееся от названия страницы в То же значение продублировано в og:title и og:description, поэтому при отправке ссылки в мессенджер сайт выглядит как страница с названием «Home». Ни бренда, ни города, ни ассортимента — ни в поиске, ни в шеринге.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>title: «La Petite Bloom — ubrania, obuwie i zabawki dla dzieci | Warszawa»; description: «Butik dla dzieci i mam: ubrania, obuwie, kosmetyki i zabawki marek Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg i Veja. Sklep online z wysyłką i butik przy ul. Mokotowskiej w Warszawie.»</pre></div><div class="lane"><h4>Українська</h4><pre>title: «La Petite Bloom — дитячий одяг, взуття та іграшки | Варшава»; description: «Бутик для дітей і мам: одяг, взуття, косметика та іграшки брендів Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg і Veja. Інтернет-магазин із доставкою та бутік на вул. Mokotowska у Варшаві.»</pre></div><div class="lane"><h4>English</h4><pre>title: “La Petite Bloom — children’s clothing, footwear and toys | Warsaw”; description: “A boutique for children and mothers: clothing, footwear, skincare and toys by Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg and Veja. Online shop with delivery and a boutique on Mokotowska Street in Warsaw.”</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Страницы → Главная → SEO-поля для каждой локали. Длину description держать в пределах ~155 знаков.</p>
+    <p class="note"><b>Куда вписать</b><br>Длину description держать в пределах ~155 знаков.</p>
     <p class="edits">UA: різнобій «бутік/бутик» — уніфіковано на «бутик»</p>
   </div>
 </section>
@@ -1770,7 +1768,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
       <span class="path">/accessories</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Filtr «Kolor», dwie osobne wartości na liście</p>
-    <div class="evidence">Złoty   ORAZ   Golden</div>
+    <div class="evidence">Złoty ORAZ Golden</div>
     <p class="why">Jeden kolor w dwóch wpisach — polskim i angielskim. Widać to najlepiej w wersji angielskiej, gdzie na liście stoją obok siebie «Gold» (tłumaczenie polskiego «Złoty») i «Golden» (wartość nieprzetłumaczona), czyli dwie pozycje o tym samym znaczeniu. Rozbija to biżuterię dziecięcą na dwa niepełne zbiory.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Złoty</pre></div><div class="lane"><h4>Українська</h4><pre>Золотий</pre></div><div class="lane"><h4>English</h4><pre>Gold</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>SCALIĆ: «Golden» → «Złoty». Nie mylić z «Golden Stripe» (złote paski) — to osobny, poprawny wzór, który zostaje.</p>
@@ -1789,7 +1787,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
       <span class="path">/accessories</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Filtr «Kolor», dwie osobne wartości na liście</p>
-    <div class="evidence">Biały   ORAZ   Blanc</div>
+    <div class="evidence">Biały ORAZ Blanc</div>
     <p class="why">«Blanc» to po francusku biały — ta sama barwa co polskie «Biały», zapisana jako druga, niezależna wartość katalogu. W wersji angielskiej polskie «Biały» tłumaczone jest na… francuskie «Blanc», więc obie wartości zlewają się w jedną nierozróżnialną etykietę, a anglojęzyczny klient nigdzie nie widzi słowa «White».</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Biały</pre></div><div class="lane"><h4>Українська</h4><pre>Білий</pre></div><div class="lane"><h4>English</h4><pre>White</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>SCALIĆ: «Blanc» → «Biały» i poprawić tłumaczenie EN na «White». Uwaga: «Blanc» występuje też w nazwach produktów Tartine et Chocolat (np. «Skarpetki Tartine et Chocolat Blanc») — tam zostaje bez zmian, bo to część nazwy handlowej.</p>
@@ -1925,7 +1923,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
     <div class="evidence">title PL «Aktualności» / UA «Новини» / EN «News»; meta description — пустая во всех трёх локалях</div>
     <p class="why">У главной страницы блога односложный title без названия магазина и полностью пустой meta description во всех трёх локалях. Для страницы, которая должна собирать информационный трафик, это потеря сниппета.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Title: «Blog La Petite Bloom — poradniki o dziecięcej garderobie». Description: «Rozmiary, materiały i pielęgnacja ubranek, pomysły na prezenty i zabawki według wieku. Poradniki zespołu La Petite Bloom dla rodziców.»</pre></div><div class="lane"><h4>Українська</h4><pre>Title: «Блог La Petite Bloom — поради про дитячий гардероб». Description: «Розміри, матеріали та догляд за одягом, ідеї подарунків та іграшки за віком. Поради команди La Petite Bloom для батьків.»</pre></div><div class="lane"><h4>English</h4><pre>Title: “La Petite Bloom blog — guides for parents”. Description: “Sizing, fabrics and garment care, gift ideas and toys by age. Guides written by the La Petite Bloom team for parents.”</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Blog → Настройки раздела / SEO страницы списка. Заодно стоит переименовать H1: «Aktualności» звучит как лента пресс-релизов, а раздел по факту должен быть блогом (в футере и хлебных крошках он уже называется «Blog» / «Блог» — сейчас H1 и крошки не совпадают).</p>
+    <p class="note"><b>Куда вписать</b><br>Заодно стоит переименовать H1: «Aktualności» звучит как лента пресс-релизов, а раздел по факту должен быть блогом (в футере и хлебных крошках он уже называется «Blog» / «Блог» — сейчас H1 и крошки не совпадают).</p>
     <p class="edits">EN: Guillemets used around English copy instead of curly double quotes.</p>
   </div>
 </section>
@@ -1942,7 +1940,7 @@ The Seller is liable for any lack of conformity of the Goods with the contract t
     </div>
     <p class="where"><b>Где</b> &nbsp;Заголовки записей на витрине блога и в блоке «Najnowsze wiadomości»</p>
     <div class="evidence">UA: «Odit ut voluptates», «Aut est», «Saepe consequatur architecto est»; EN: то же самое</div>
-    <p class="why">Три записи из пяти в украинской и английской версии выводятся латинскими заголовками из генератора: перевод для них никогда не заводили, и система показывает исходное значение. В польской версии те же записи получили хотя бы машинные польские заголовки. Для пользователя UA/EN витрина блога выглядит как незаполненная админка.</p>
+    <p class="why">Три записи из пяти в украинской и английской версии выводятся латинскими заголовками из генератора: перевод для них никогда не заводили, и система показывает исходное значение. В польской версии те же записи получили хотя бы машинные польские заголовки. Для пользователя UA/EN витрина блога выглядит как незаполненная</p>
     <div class="lanes"><div class="lane"><h4>Українська</h4><pre>Готові українські заголовки — у пропозиціях 08-16…08-19 (по одному на кожен запис).</pre></div><div class="lane"><h4>English</h4><pre>Ready English titles are given in proposals 08-16…08-19 (one per post).</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>Правится вместе с заменой самих записей (находки 08-04…08-07): при заполнении новых заголовков нужно обязательно заполнить все три локали, включая поля «Announce», «Title» и «Description». Сейчас в блоге не переведена ни одна запись, кроме Klippan.</p>
     
@@ -2095,7 +2093,7 @@ META DESCRIPTION EN: Temperature, detergent, drying and stains: practical rules 
     <div class="evidence">(пусто — тега description на странице нет; JSON-LD NewsArticle подставляет в description дубль заголовка)</div>
     <p class="why">У единственной содержательной записи блога нет meta description ни в одной локали. В разметке Schema.org NewsArticle поле description механически дублирует headline. В выдаче и при шеринге сниппет будет собран поисковиком из lorem ipsum.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Szwedzkie kocyki Klippan z naturalnej wełny i bawełny: jak wybrać rozmiar do wózka i łóżeczka, czym różni się merino od lambswool i jak prać kocyk, by służył latami.</pre></div><div class="lane"><h4>Українська</h4><pre>Шведські пледи Klippan із натуральної вовни та бавовни: як обрати розмір для візка й ліжечка, чим меринос відрізняється від ламсвулу та як прати плед, щоб він служив роками.</pre></div><div class="lane"><h4>English</h4><pre>Swedish Klippan blankets in natural wool and cotton: choosing a size for the pram and the cot, merino versus lambswool, and how to wash a blanket so it lasts for years.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Blog → Статьи → kocyki-klippan-... → SEO-блок каждой локали, поле «Description». Отдельно попросить разработчика прокидывать в JSON-LD NewsArticle реальный description, а не копию headline.</p>
+    <p class="note"><b>Куда вписать</b><br>.. → SEO-блок каждой локали, поле «Description». Отдельно попросить разработчика прокидывать в JSON-LD NewsArticle реальный description, а не копию headline.</p>
     
   </div>
 </section>
@@ -2183,8 +2181,7 @@ META DESCRIPTION EN: A muted palette, natural fabrics and pieces that combine ea
     <p class="note"><b>Куда вписать</b><br>Заменить слаги на человекочитаемые и поставить 301 со старых. Готовые SEO-тексты рубрик:
 AKTUALNOŚCI — title PL «Aktualności | La Petite Bloom», UA «Новини | La Petite Bloom», EN «News | La Petite Bloom». Description PL: «Nowości w La Petite Bloom: nowe kolekcje, marki i to, co właśnie pojawiło się w sklepie.» UA: «Новини La Petite Bloom: нові колекції, бренди й те, що щойно з&#x27;явилося в магазині.» EN: «News from La Petite Bloom: new collections, new labels and what has just arrived in store.»
 NASZE WYDARZENIA — title PL «Nasze wydarzenia | La Petite Bloom», UA «Наші івенти | La Petite Bloom», EN «Our events | La Petite Bloom». Description PL: «Spotkania, premiery kolekcji i wydarzenia, w których bierze udział La Petite Bloom.» UA: «Зустрічі, презентації колекцій та події, у яких бере участь La Petite Bloom.» EN: «Meet-ups, collection launches and events La Petite Bloom takes part in.»
-PUBLIKACJE — title PL «Publikacje i poradniki | La Petite Bloom», UA «Публікації та поради | La Petite Bloom», EN «Guides and features | La Petite Bloom». Description PL: «Poradniki o dziecięcej garderobie: rozmiary, materiały, pielęgnacja i pomysły na prezenty.» UA: «Поради про дитячий гардероб: розміри, матеріали, догляд та ідеї подарунків.» EN: «Guides to a child&#x27;s wardrobe: sizing, materials, care and gift ideas.»
-Админка → Blog → Рубрики.</p>
+PUBLIKACJE — title PL «Publikacje i poradniki | La Petite Bloom», UA «Публікації та поради | La Petite Bloom», EN «Guides and features | La Petite Bloom». Description PL: «Poradniki o dziecięcej garderobie: rozmiary, materiały, pielęgnacja i pomysły na prezenty.» UA: «Поради про дитячий гардероб: розміри, матеріали, догляд та ідеї подарунків.» EN: «Guides to a child&#x27;s wardrobe: sizing, materials, care and gift ideas.»</p>
     
   </div>
 </section>
@@ -2745,7 +2742,7 @@ Dane osobowe (RODO): rodo@lapetitebloom.com</pre></div><div class="lane"><h4>У�
 General enquiries and orders: hello@lapetitebloom.com
 Returns and complaints: kontakt@lapetitebloom.com
 Personal data (GDPR): rodo@lapetitebloom.com</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка: /contacts → карточка «Skontaktuj się z nami» → блок e-mail. Перед публикацией проверить, что kontakt@ и rodo@ действительно заведены и читаются — публиковать неработающий адрес хуже, чем не публиковать. Если решите оставить один hello@, тогда правьте регламент и политику конфиденциальности, а не контакты.</p>
+    <p class="note"><b>Куда вписать</b><br>Перед публикацией проверить, что kontakt@ и rodo@ действительно заведены и читаются — публиковать неработающий адрес хуже, чем не публиковать. Если решите оставить один hello@, тогда правьте регламент и политику конфиденциальности, а не контакты.</p>
     <p class="edits">UA: різнобій «рекламації/претензії» — уніфіковано на «претензії»</p>
   </div>
 </section>
@@ -2783,7 +2780,7 @@ Personal data (GDPR): rodo@lapetitebloom.com</pre></div></div>
     <div class="evidence">Deklaracja dostepnosci</div>
     <p class="why">В польском названии страницы потеряна диакритика: «dostepnosci» вместо «dostępności». Эта же строка стоит в &lt;title&gt;, meta description, H1, хлебной крошке и в пункте меню — ошибка в языке-источнике видна во вкладке браузера, в выдаче и при верификации Przelewy24. Для магазина, который декларирует заботу о доступности, опечатка именно в названии этой страницы читается особенно плохо.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Deklaracja dostępności</pre></div><div class="lane"><h4>Українська</h4><pre>Заява про доступність</pre></div><div class="lane"><h4>English</h4><pre>Accessibility statement</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → страница «Deklaracja dostepnosci» → поле названия (PL). UA и EN названия корректны, менять не нужно. Слаг URL правится отдельно, см. 07-15.</p>
+    <p class="note"><b>Куда вписать</b><br>UA и EN названия корректны, менять не нужно. Слаг URL правится отдельно, см. 07-15.</p>
     
   </div>
 </section>
@@ -3060,7 +3057,7 @@ Additional information
 Meta description: Zasady stosowania plików cookies w sklepie La Petite Bloom: rodzaje plików, cele, czas przechowywania i zarządzanie zgodą.</pre></div><div class="lane"><h4>Українська</h4><pre>Title і h1: Політика щодо файлів cookie
 Meta description: Правила використання файлів cookie в інтернет-магазині La Petite Bloom: види файлів, цілі, строки зберігання та керування згодою.</pre></div><div class="lane"><h4>English</h4><pre>Title and h1: Cookie policy
 Meta description: How La Petite Bloom uses cookies: categories, purposes, retention periods and how to manage your consent.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → страницы → Polityka cookies → вкладка EN: заполнить заголовок, h1 и meta description. Заодно переписать meta description на PL и UA — сейчас там дубль title.</p>
+    <p class="note"><b>Куда вписать</b><br>Заодно переписать meta description на PL и UA — сейчас там дубль title.</p>
     <p class="edits">UA: різнобій «файли cookie / файли cookies» — уніфіковано на «cookie» (як у футері, 02-08)</p>
   </div>
 </section>
@@ -3122,7 +3119,7 @@ meta description: Clothing, footwear, care and toys for children from 0 to 12. L
     <p class="where"><b>Где</b> &nbsp;Baner promocyjny wpleciony w siatkę produktów (class «category-grid-banner»), pojawia się dwukrotnie na każdej stronie każdej kategorii</p>
     <div class="evidence">Nowość
 Akro by Olivier Cresp
-Wyświetl wszystko  →  href=&quot;https://lapetitebloom.com/brands/liewood&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;</div>
+Wyświetl wszystko → href=&quot;https://lapetitebloom.com/brands/liewood&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;</div>
     <p class="why">Baner ogłasza markę «Akro by Olivier Cresp», której nie ma w katalogu — nie występuje ani w spisie na /brands, ani w filtrze marek na żadnej kategorii. Przycisk «Wyświetl wszystko» prowadzi natomiast do zupełnie innej marki, /brands/liewood, otwiera ją w nowej karcie i ma rel=&quot;nofollow&quot; na własnym linku wewnętrznym. Ten sam baner powtarza się dwa razy na jednym ekranie listingu i we wszystkich kategoriach.</p>
     
     <p class="note"><b>Куда вписать</b><br>Poprawka techniczna w admin → banery → baner kategorii nr 1: albo podmienić link na właściwą markę i dodać ją do katalogu, albo wyłączyć baner do czasu wprowadzenia Akro. Zdjąć target=&quot;_blank&quot; i rel=&quot;nofollow&quot; z linku wewnętrznego. Grafika banera jest podpięta tylko w wariancie /pl/ (ścieżka …/banners/1/category/pl/…) i wyświetla się też na /ua i /en.</p>
@@ -3236,7 +3233,7 @@ Wyświetl wszystko  →  href=&quot;https://lapetitebloom.com/brands/liewood&quo
       <span class="path">/kids</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Filtr «Kolor», dwie osobne wartości na liście</p>
-    <div class="evidence">Melanżowy niebieski horyzont   ORAZ   Bleu horizon chiné</div>
+    <div class="evidence">Melanżowy niebieski horyzont ORAZ Bleu horizon chiné</div>
     <p class="why">«Melanżowy niebieski horyzont» to dosłowne tłumaczenie francuskiego «Bleu horizon chiné» — ten sam kolor Tartine et Chocolat zapisany dwa razy. W wersji angielskiej rozjazd jest widoczny gołym okiem: na liście stoją obok siebie «Bleu horizon chine» i «Bleu horizon chiné», różniące się wyłącznie brakującym akcentem, czyli dwie pozycje wyglądające na literówkę wobec siebie.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Melanżowy błękit horyzontu</pre></div><div class="lane"><h4>Українська</h4><pre>Меланжевий блакитний горизонт</pre></div><div class="lane"><h4>English</h4><pre>Heather horizon blue</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>SCALIĆ: «Bleu horizon chiné» → «Melanżowy niebieski horyzont» (jedna wartość bazowa), a następnie poprawić samo tłumaczenie: «Melanżowy niebieski horyzont» to kalka, poprawnie po polsku «Melanżowy błękit horyzontu». Przy okazji znika duplikat akcentowy chine/chiné w EN.</p>
@@ -3255,7 +3252,7 @@ Wyświetl wszystko  →  href=&quot;https://lapetitebloom.com/brands/liewood&quo
       <span class="path">/kids</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Filtr «Kolor», dwie osobne wartości na liście</p>
-    <div class="evidence">Perłowy   ORAZ   Nacre</div>
+    <div class="evidence">Perłowy ORAZ Nacre</div>
     <p class="why">«Nacre» to po francusku masa perłowa, czyli dokładnie to samo co polskie «Perłowy» — obie wartości są w katalogu równocześnie. W wersji angielskiej obie renderują się jako «Nacre», a więc anglojęzyczny klient dostaje francuskie słowo zamiast «Mother-of-pearl», i to w dwóch nierozróżnialnych kopiach.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Perłowy</pre></div><div class="lane"><h4>Українська</h4><pre>Перламутровий</pre></div><div class="lane"><h4>English</h4><pre>Mother-of-pearl</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>SCALIĆ: «Nacre» → «Perłowy», potem uzupełnić tłumaczenia UA/EN. Ta sama logika dotyczy wariantów «… MOP» (Cream MOP, Linen MOP, Moss MOP, Nude MOP, Dark Chocolate MOP) — MOP to skrót od mother-of-pearl i również powinien być rozwinięty w tłumaczeniach, a nie zostawiony jako kod.</p>
@@ -3509,17 +3506,17 @@ You can change or withdraw your consent at any time — open Cookie settings. Yo
       <span class="path">/privacy-policy</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Раздел «4. Odbiorcy danych», список получателей</p>
-    <div class="evidence">- Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania).</div>
+    <div class="evidence">Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania).</div>
     <p class="why">Два документа противоречат друг другу. Политика cookies называет Meta Pixel, TikTok, Klarna и PayPo, а в списке получателей данных в политике конфиденциальности их нет — там только Google и Cookiebot. Также не назван поставщик рассылки, через которого уходит newsletter, и не назван хостинг-провайдер. Для покупателя это значит, что часть получателей его данных не раскрыта.</p>
-    <div class="lanes"><div class="lane"><h4>Polski</h4><pre>- Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania);
+    <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania);
 - dostawcy narzędzi marketingowych — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — wpisać wyłącznie te, które faktycznie zostaną uruchomione];
 - dostawcy płatności odroczonych — Klarna i PayPo, w zakresie wybranej metody płatności;
 - dostawca systemu wysyłki newslettera — [уточнить: nazwa i siedziba];
-- dostawca hostingu — [уточнить: nazwa i siedziba].</pre></div><div class="lane"><h4>Українська</h4><pre>- Google (Google Analytics / Google Ads), а також постачальнику банера керування згодами Cookiebot (Usercentrics A/S, Данія);
+- dostawca hostingu — [уточнить: nazwa i siedziba].</pre></div><div class="lane"><h4>Українська</h4><pre>Google (Google Analytics / Google Ads), а також постачальнику банера керування згодами Cookiebot (Usercentrics A/S, Данія);
 - постачальникам маркетингових інструментів — [уточнити у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — вказати лише ті, що будуть фактично активовані];
 - постачальникам послуг відстроченої оплати — Klarna та PayPo, в обсязі обраного способу оплати;
 - постачальнику системи розсилки — [уточнити: назва та місцезнаходження];
-- постачальнику хостингу — [уточнити: назва та місцезнаходження].</pre></div><div class="lane"><h4>English</h4><pre>- Google (Google Analytics / Google Ads) and the provider of the Cookiebot consent banner (Usercentrics A/S, Denmark);
+- постачальнику хостингу — [уточнити: назва та місцезнаходження].</pre></div><div class="lane"><h4>English</h4><pre>Google (Google Analytics / Google Ads) and the provider of the Cookiebot consent banner (Usercentrics A/S, Denmark);
 - providers of marketing tools — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — list only those actually enabled];
 - deferred-payment providers — Klarna and PayPo, where you choose that payment method;
 - the newsletter delivery provider — [уточнить: name and registered office];
@@ -3737,9 +3734,9 @@ Dziewczynka</div>
       <span class="path">/terms-of-use</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;§2. Sprzedawca i kontakt, второй пункт блока «Kontakt»</p>
-    <div class="evidence">- Zwroty i reklamacje – kontakt@lapetitebloom.com (opcjonalnie alias zwroty@/reklamacje@)</div>
+    <div class="evidence">Zwroty i reklamacje – kontakt@lapetitebloom.com (opcjonalnie alias zwroty@/reklamacje@)</div>
     <p class="why">В опубликованный регламент попала служебная пометка автора черновика — «опционально алиас». Покупатель читает документ, по которому подаёт рекламацию, и видит внутреннюю заметку о том, что адреса, возможно, ещё не заведены. Присутствует во всех трёх локалях: «(за бажанням аліаси zwroty@/reklamacje@)», «(optionally the zwroty@/reklamacje@ aliases)».</p>
-    <div class="lanes"><div class="lane"><h4>Polski</h4><pre>- Zwroty i reklamacje — hello@lapetitebloom.com</pre></div><div class="lane"><h4>Українська</h4><pre>- Повернення та претензії — hello@lapetitebloom.com</pre></div><div class="lane"><h4>English</h4><pre>- Returns and complaints — hello@lapetitebloom.com</pre></div></div>
+    <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Zwroty i reklamacje — hello@lapetitebloom.com</pre></div><div class="lane"><h4>Українська</h4><pre>Повернення та претензії — hello@lapetitebloom.com</pre></div><div class="lane"><h4>English</h4><pre>Returns and complaints — hello@lapetitebloom.com</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>Убрать скобку целиком. Если алиасы zwroty@/reklamacje@ будут заведены — вписать конкретный рабочий адрес вместо hello@; см. 06-12 о разнобое адресов.</p>
     <p class="edits">UA: різнобій «рекламації/претензії» — уніфіковано на «претензії»</p>
   </div>
@@ -4172,8 +4169,8 @@ You choose which cookies we may use in the consent window shown on your first vi
       <span class="path">*</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Футер, колонка «Klientowi» + бургер-меню (ссылка на /zgody-klauzule-i-regulamin-newslettera)</p>
-    <div class="evidence">Zgody, klauzule i regulamin  newslettera</div>
-    <p class="why">Двойной пробел перед «newslettera» — видно в разметке (&lt;span class=&quot;text&quot;&gt;Zgody, klauzule i regulamin  newslettera&lt;/span&gt;) и при копировании текста. Повторяется в футере и в бургер-меню, то есть дважды на каждой странице.</p>
+    <div class="evidence">Zgody, klauzule i regulamin newslettera</div>
+    <p class="why">Двойной пробел перед «newslettera» — видно в разметке (&lt;span class=&quot;text&quot;&gt;Zgody, klauzule i regulamin newslettera&lt;/span&gt;) и при копировании текста. Повторяется в футере и в бургер-меню, то есть дважды на каждой странице.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Zgody, klauzule i regulamin newslettera</pre></div><div class="lane"><h4>Українська</h4><pre>Згоди, застереження та правила розсилки</pre></div><div class="lane"><h4>English</h4><pre>Consents, clauses and newsletter terms</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>Контент → Страницы → /zgody-klauzule-i-regulamin-newslettera → название. Проверить, что двойной пробел не остался в самом заголовке страницы.</p>
     <p class="edits">UA: полонізм «регламент» (regulamin) — уніфіковано на «правила розсилки»</p>
@@ -4631,7 +4628,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">Гривня (UAH) / Доллар США (USD) / Евро (EUR) / Польський злотий (PLN)</div>
     <p class="why">Два названия валют из четырёх написаны по-русски: «Доллар США» (українською «Долар США», з однією «л») и «Евро» (українською «Євро», через Є). Русской локали на сайте нет, эти строки — остаток от исходного языка движка, попавший в украинский словарь. В английском списке та же группа сломана иначе: «Dollar USA» — неверный порядок слов, по-английски это «US Dollar».</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Hrywna (UAH) / Dolar amerykański (USD) / Euro (EUR) / Złoty polski (PLN)</pre></div><div class="lane"><h4>Українська</h4><pre>Гривня (UAH) / Долар США (USD) / Євро (EUR) / Польський злотий (PLN)</pre></div><div class="lane"><h4>English</h4><pre>Hryvnia (UAH) / US dollar (USD) / Euro (EUR) / Polish złoty (PLN)</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Справочник валют в админке, поля названий для украинской и английской локали. В английском также стоит вернуть диакритику в «Złoty» — это имя собственное валюты. Отмечу пересечение: сам попап языка и валюты разбирает агент 02, здесь зафиксированы только неверные значения в справочнике валют как системный остаток чужого языка.</p>
+    <p class="note"><b>Куда вписать</b><br>Справочник валют в В английском также стоит вернуть диакритику в «Złoty» — это имя собственное валюты. Отмечу пересечение: сам попап языка и валюты разбирает агент 02, здесь зафиксированы только неверные значения в справочнике валют как системный остаток чужого языка.</p>
     <p class="edits">EN: Currency names title-cased; English uses lower case, and 02-26 already sets the pattern.</p>
   </div>
 </section>
@@ -4650,7 +4647,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">PL: «Sukienka dla dziewczynki» и «Sukienka dla dziewczynki»; UA: «Сукня для дівчинки» и «Сукня для дівчинки»; EN: «Baby girl dress» и «Girl dress»</div>
     <p class="why">Две из трёх плиток подарочного блока несут одну и ту же подпись — «Платье для девочки» дважды подряд. В английской версии их к тому же назвали по-разному («Baby girl dress» / «Girl dress»), хотя в PL и UA подписи идентичны. Похоже на незаполненный черновик: подписи-заглушки вместо названий подборок.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Kafelek 2: «Świąteczne sukienki»; kafelek 3: «Prezenty dla najmłodszych»</pre></div><div class="lane"><h4>Українська</h4><pre>Плитка 2: «Святкові сукні»; плитка 3: «Подарунки для найменших»</pre></div><div class="lane"><h4>English</h4><pre>Tile 2: “Festive dresses”; tile 3: “Gifts for the little ones”</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Prezenty» → плитки 2 и 3: подпись + alt. [уточнить: какие именно подборки должны стоять на этих плитках]</p>
+    <p class="note"><b>Куда вписать</b><br>[уточнить: какие именно подборки должны стоять на этих плитках]</p>
     <p class="edits">PL: „plitka” to rusycyzm (плитка); po polsku element kafelkowej siatki to „kafelek”.</p>
   </div>
 </section>
@@ -4669,7 +4666,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">NOVELTY</div>
     <p class="why">«Novelty» по-английски означает «безделушка, забавная мелочь» — в фэшн-ритейле так товар не маркируют. Машинный перевод польского «NOWOŚĆ». Правильная метка на первом экране премиального магазина — «NEW IN» или «NEW».</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>NOWOŚĆ</pre></div><div class="lane"><h4>Українська</h4><pre>НОВИНКА</pre></div><div class="lane"><h4>English</h4><pre>NEW IN</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Слайдеры → Главный слайдер, элемент 10 → надпись над заголовком, локаль en.</p>
+    
     
   </div>
 </section>
@@ -4707,7 +4704,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">Ubrania, akcesoria, artykuły do ​​pielęgnacji i elementy wystroju</div>
     <p class="why">Между «do» и «pielęgnacji» стоят два невидимых символа U+200B (zero-width space) — характерный след копирования из Google Translate. Визуально выглядит как двойной пробел, ломает поиск по странице и может ломать перенос строки. В UA и EN версиях того же абзаца этих символов нет.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Ubrania, akcesoria, artykuły do pielęgnacji i elementy wystroju, które łączą pokolenia i stają się częścią rodzinnych historii.</pre></div><div class="lane"><h4>Українська</h4><pre>Одяг, аксесуари, засоби догляду та предмети декору, які пов’язують покоління та стають частиною сімейних історій.</pre></div><div class="lane"><h4>English</h4><pre>Clothing, accessories, care products and décor pieces that connect generations and become part of family stories.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «O nas» → текст, локаль pl. Перебить абзац вручную, не вставкой из буфера. Заодно прогнать все длинные тексты сайта на U+200B.</p>
+    <p class="note"><b>Куда вписать</b><br>Перебить абзац вручную, не вставкой из буфера. Заодно прогнать все длинные тексты сайта на U+200B.</p>
     
   </div>
 </section>
@@ -4726,7 +4723,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">Sun: Сlosed</div>
     <p class="why">В слове «Closed» первая буква — кириллическая «С» (U+0421) вместо латинской «C». Гомоглиф: визуально не отличить, но поиск по странице слово не найдёт, а скринридер прочитает его как русскую букву. Там же сокращение четверга записано как «Thur» — принятое английское сокращение «Thu».</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Pn: 10:00–19:00 / Wt: 10:00–19:00 / Śr: 10:00–19:00 / Czw: 10:00–19:00 / Pt: 10:00–19:00 / Sb: 10:00–19:00 / Nd: nieczynne</pre></div><div class="lane"><h4>Українська</h4><pre>Нд: зачинено / Пн: 10:00–19:00 / Вт: 10:00–19:00 / Ср: 10:00–19:00 / Чт: 10:00–19:00 / Пт: 10:00–19:00 / Сб: 10:00–19:00</pre></div><div class="lane"><h4>English</h4><pre>Sun: Closed / Mon: 10:00–19:00 / Tue: 10:00–19:00 / Wed: 10:00–19:00 / Thu: 10:00–19:00 / Fri: 10:00–19:00 / Sat: 10:00–19:00</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Sklep/Butik» → часы работы, локаль en. Перенабрать «Closed» латиницей. Заодно во всех локалях привести разделитель времени к тире без пробелов (сейчас «10:00 - 19:00»).</p>
+    <p class="note"><b>Куда вписать</b><br>Перенабрать «Closed» латиницей. Заодно во всех локалях привести разделитель времени к тире без пробелов (сейчас «10:00 - 19:00»).</p>
     <p class="edits">PL: Niekonsekwentne skróty dni („Pon”, „Sob” obok „Nd”, „Wt”), tydzień zaczynał się od niedzieli, a „Zamknięte” to kalka — w polskich godzinach otwarcia pisze się „nieczynne”. Skróty ujednolicone z zapisem w stopce (02-33).</p>
   </div>
 </section>
@@ -4745,7 +4742,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">Бестселлери</div>
     <p class="why">«Бестселлери» с двойной «л» — калька с русского написания; по-украински «бестселери». Причём на карточках товаров в этой же секции метка написана правильно — «Бестселер». Ошибка в одном из главных заголовков страницы.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Bestsellery</pre></div><div class="lane"><h4>Українська</h4><pre>Бестселери</pre></div><div class="lane"><h4>English</h4><pre>Bestsellers</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Bestsellery» → заголовок, локаль ua.</p>
+    
     
   </div>
 </section>
@@ -4764,7 +4761,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">«Дивитися все» (мега-меню и блок «Подарунки»), «Дивитись все» (блоки «Новинки» и «Бестселлери»), «Дивитись всі» (блок новостей)</div>
     <p class="why">На одной странице три разных варианта одной и той же кнопки. В польской и английской версиях формулировка одна («Zobacz wszystko» / «See all»), в украинской — разнобой. Литературная форма — «Дивитися»; «Дивитись» — разговорный усечённый вариант.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Zobacz wszystko</pre></div><div class="lane"><h4>Українська</h4><pre>Дивитися все</pre></div><div class="lane"><h4>English</h4><pre>See all</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → переводы интерфейса: свести все три строки к одному значению. В блоке новостей корректно «Дивитися всі» (о записях) — если хочется точности, оставить именно эту форму только там.</p>
+    <p class="note"><b>Куда вписать</b><br>В блоке новостей корректно «Дивитися всі» (о записях) — если хочется точности, оставить именно эту форму только там.</p>
     
   </div>
 </section>
@@ -4783,7 +4780,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">Wyrażam zgodę na otrzymywanie informacji o ofertach, promocjach i możliwościach od La Petite Bloom w formie newslettera. Zapisując się do newslettera, akceptujesz regulamin i politykę prywatności.</div>
     <p class="why">Два дефекта. Первый — «informacji o […] możliwościach» / «можливості» / «opportunities»: калька с английского, по-польски о рассылке так не пишут, речь должна идти о новинках. Второй — сбитое лицо: предложение начинается от первого лица («Wyrażam zgodę»), а заканчивается обращением на «ты» («akceptujesz»); то же в UA и EN. Кроме того, весь блок подписки выводится на главной дважды — отдельной секцией и ещё раз в подвале, то есть на странице две одинаковые формы с одинаковым id-якорем.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Wyrażam zgodę na otrzymywanie newslettera La Petite Bloom z informacjami o nowościach, ofertach i promocjach. Zapisując się, akceptuję regulamin i politykę prywatności.</pre></div><div class="lane"><h4>Українська</h4><pre>Я даю згоду на отримання розсилки La Petite Bloom з інформацією про новинки, пропозиції та акції. Підписуючись, я приймаю правила та політику конфіденційності.</pre></div><div class="lane"><h4>English</h4><pre>I agree to receive the La Petite Bloom newsletter with information about new arrivals, offers and promotions. By subscribing, I accept the terms and conditions and the privacy policy.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Newsletter» → текст согласия, три локали. Отдельно решить, нужна ли форма подписки дважды на одной странице: сейчас дублируются и заголовок, и текст согласия, и якорь #subscribe.</p>
+    <p class="note"><b>Куда вписать</b><br>Отдельно решить, нужна ли форма подписки дважды на одной странице: сейчас дублируются и заголовок, и текст согласия, и якорь #subscribe.</p>
     
   </div>
 </section>
@@ -4802,7 +4799,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">Skarpetki i rajstopy 0-2 / Zobacz wszystko / Bestseller — Skarpetki dziecięce Tiny Cottons Pink Stripes &amp; Blossom — bawełniane, 92 zł</div>
     <p class="why">Третья вкладка бестселлеров содержит ровно один товар — в слайдере на всю ширину экрана это выглядит как ошибка загрузки. У первых двух вкладок при этом есть подпись под заголовком, у третьей её нет вообще, так что блок ещё и визуально «обрывается». Одинаково во всех трёх локалях.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Podpis dla trzeciej zakładki: «Miękkie skarpetki i rajstopy na pierwsze miesiące — bawełna, płaskie szwy, delikatna gumka.»</pre></div><div class="lane"><h4>Українська</h4><pre>Підпис для третьої вкладки: «М’які шкарпетки та колготки на перші місяці — бавовна, пласкі шви, делікатна гумка.»</pre></div><div class="lane"><h4>English</h4><pre>Caption for the third tab: “Soft socks and tights for the first months — cotton, flat seams, a gentle cuff.”</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Bestsellery» → вкладка «Skarpetki i rajstopy 0-2»: либо добавить в подборку ещё товары, либо убрать вкладку до наполнения. Подпись вкладки заполнить во всех трёх локалях, как у двух других.</p>
+    <p class="note"><b>Куда вписать</b><br>Подпись вкладки заполнить во всех трёх локалях, как у двух других.</p>
     
   </div>
 </section>
@@ -4821,7 +4818,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">Prezenty / Nowy Rok / «W tym sezonie aksamit i tafta tworzą świąteczne sylwetki z ponadczasową gracją. Zarówno dla matek, dzieci, jak i niemowląt, dopasowane stroje i delikatne detale tworzą historię wspólnej elegancji i świętowania.»</div>
     <p class="why">Единственный тематический блок главной посвящён Новому году, тогда как остальная страница показывает коллекции AW 2026, а подписи баннеров — бархат и тафту для праздничных силуэтов. Текст выглядит как переведённый образец праздничной кампании чужого бренда (тот же источник, что и абзац про Bonpoint): он не называет ни одного товара и ни одной марки из ассортимента. На запуске магазин показывает несезонную витрину.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Prezenty / Na prezent / «Wybieramy rzeczy, które dobrze się pakuje i jeszcze lepiej dostaje: miękkie kocyki, pierwsze przytulanki, ceramikę do domu i drobiazgi dla mam. Do każdego zamówienia dołączamy opakowanie prezentowe.»</pre></div><div class="lane"><h4>Українська</h4><pre>Подарунки / На подарунок / «Ми обираємо речі, які приємно пакувати й ще приємніше отримувати: м’які пледи, перші іграшки-обіймашки, кераміку для дому та дрібниці для мам. До кожного замовлення додаємо подарункову упаковку.»</pre></div><div class="lane"><h4>English</h4><pre>Gifts / For gifting / “We choose things that are a pleasure to wrap and an even greater pleasure to receive: soft blankets, first cuddly toys, ceramics for the home and small treats for mothers. Every order comes with gift wrapping.”</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Prezenty». [уточнить: действительно ли к каждому заказу кладётся подарочная упаковка — если нет, убрать последнее предложение] Если новогодняя витрина всё же планируется, её стоит включать по расписанию, а не держать постоянно.</p>
+    <p class="note"><b>Куда вписать</b><br>[уточнить: действительно ли к каждому заказу кладётся подарочная упаковка — если нет, убрать последнее предложение] Если новогодняя витрина всё же планируется, её стоит включать по расписанию, а не держать постоянно.</p>
     
   </div>
 </section>
@@ -4840,7 +4837,7 @@ You choose which cookies we may use in the consent window shown on your first vi
     <div class="evidence">PL: «Wysyłka na cały świat», «Ręczna robota &amp; Fairtrade», «Zwrot w ciągu 30 dni», «Bezpieczna płatność»; EN: «Worldwide shipping», «Handmade &amp; Fairtrade», «30 days return», «Safe payment»</div>
     <p class="why">Четыре обещания, которые для Przelewy24 читаются как условия оферты, поданы одними иконками без ссылок: ни одна из четырёх плашек не кликабельна, поэтому «возврат 30 дней» и «безопасная оплата» нечем подтвердить. По формулировкам: «30 days return» — не по-английски (нужно «30-day returns»), «Ręczna robota &amp; Fairtrade» дословно значит «ручная работа», хотя магазин продаёт готовые марки, а «Wysyłka na cały świat» — сильное заявление о доставке по всему миру, которое должно совпадать со страницей доставки.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>«Wysyłka na cały świat» (link do /delivery-and-payment); «Ręczna robota &amp; Fairtrade» → «Marki odpowiedzialne i fair trade»; «Zwrot w ciągu 30 dni» (link do /warranty-and-returns/polityka-zwrotow); «Bezpieczna płatność» → «Bezpieczne płatności» (link do /delivery-and-payment)</pre></div><div class="lane"><h4>Українська</h4><pre>«Доставка по всьому світу» → «Міжнародна доставка»; «Ручна робота &amp; Fairtrade» → «Відповідальні бренди та fair trade»; «Повернення протягом 30 днів» → «30 днів на повернення»; «Безпечна оплата» → «Безпечні платежі»</pre></div><div class="lane"><h4>English</h4><pre>“Worldwide shipping” → “International delivery”; “Handmade &amp; Fairtrade” → “Responsible brands and fair trade”; “30 days return” → “30-day returns”; “Safe payment” → “Secure payments”</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Настройки → блок УТП: добавить ссылку каждой плашке и поправить формулировки в трёх локалях. [уточнить: в какие страны реально идёт доставка — формулировка должна совпадать со страницей /delivery-and-payment]</p>
+    <p class="note"><b>Куда вписать</b><br>[уточнить: в какие страны реально идёт доставка — формулировка должна совпадать со страницей /delivery-and-payment]</p>
     <p class="edits">PL: Ten sam pasek USP opisuje też 02-30, ale innymi słowami („Wysyłka międzynarodowa” / „30 dni na zwrot” vs „Wysyłka na cały świat” / „Zwrot w ciągu 30 dni”). Ujednolicono na brzmienie używane w pozostałych tekstach (m.in. meta description 09-04).</p>
   </div>
 </section>
@@ -5052,7 +5049,7 @@ Children’s jewellery</pre></div></div>
     <div class="evidence">&lt;div class=&quot;article-header&quot;&gt; &lt;div class=&quot;date&quot;&gt; 04 marca 2026 &lt;/div&gt; &lt;div class=&quot;article-rubrics-wrap&quot;&gt; &lt;/div&gt; &lt;/div&gt;</div>
     <p class="why">Единственной содержательной записи не назначена ни одна рубрика, поэтому она не попадает ни во вкладку «Aktualności», ни в «Nasze wydarzenia», ни в «Publikacje» — её видно только во вкладке «Wszystko». В шапке статьи на её месте пустой блок. Рубрики распределены так: Aktualności — 1 запись, Nasze wydarzenia — 2, Publikacje — 1.</p>
     
-    <p class="note"><b>Куда вписать</b><br>Админка → Blog → Статьи → kocyki-klippan-... → поле «Рубрики»: назначить «Publikacje» (текст поясняющий, а не новостной). Правка техническая, тексты не нужны.</p>
+    <p class="note"><b>Куда вписать</b><br>.. → поле «Рубрики»: назначить «Publikacje» (текст поясняющий, а не новостной). Правка техническая, тексты не нужны.</p>
     
   </div>
 </section>
@@ -5365,7 +5362,7 @@ If you disagree with our decision, you may use out-of-court complaint procedures
     <div class="evidence">Marcina Kasprzaka 31/119 01-234 Warszawa</div>
     <p class="why">В польской версии адрес начинается без «ul.», хотя в украинской и английской версиях того же блока стоит «ul. Marcina Kasprzaka 31/119 01-234 Warszawa». Расхождение между локалями в юридическом адресе — ровно то, на чём спотыкается автоматическая сверка при верификации Przelewy24 и что выглядит небрежно в основной, польской версии. Заодно нет разделителя между номером дома и почтовым индексом и нет страны. Написание должно быть одинаковым во всех трёх локалях, различаться могут только город и страна.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska</pre></div><div class="lane"><h4>Українська</h4><pre>ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща</pre></div><div class="lane"><h4>English</h4><pre>ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка: /contacts → карточка контактов «Skontaktuj się z nami» → поле адреса. Правится в польской локали; в UA и EN достаточно добавить запятые и страну.</p>
+    <p class="note"><b>Куда вписать</b><br>Правится в польской локали; в UA и EN достаточно добавить запятые и страну.</p>
     <p class="edits">UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»</p>
   </div>
 </section>
@@ -5390,7 +5387,7 @@ Prosimy nie wysyłać zwrotów na adres siedziby.</pre></div><div class="lane"><
 Просимо не надсилати повернення на адресу місцезнаходження.</pre></div><div class="lane"><h4>English</h4><pre>Registered office (company records, official correspondence): ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland
 Address for returns and complaints: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warsaw, Poland
 Please do not send returns to the registered office.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка: /contacts, отдельная строка под блоком реквизитов из 19-04. Сверить с /warranty-and-returns/polityka-zwrotow и §8-§9 регламента, чтобы адрес возвратов везде был записан одинаково, вместе с номером помещения lok. 44.</p>
+    <p class="note"><b>Куда вписать</b><br>Сверить с /warranty-and-returns/polityka-zwrotow и §8-§9 регламента, чтобы адрес возвратов везде был записан одинаково, вместе с номером помещения lok. 44.</p>
     <p class="edits">UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»; різнобій «рекламації/претензії»</p>
   </div>
 </section>
@@ -5410,7 +5407,7 @@ Please do not send returns to the registered office.</pre></div></div>
 Sb-Nd: Zamknięte</div>
     <p class="why">Часы работы указаны, а срок ответа — нет: покупатель, отправивший сообщение через форму, не знает, ждать ему сутки или неделю. Регламент при этом уже называет конкретный срок для рекламаций — 14 дней («Sprzedawca rozpatrzy reklamację i poinformuje Klienta o jej wyniku drogą elektroniczną w terminie 14 dni»), и его стоит повторить на контактах, чтобы страница и регламент не расходились. Для Przelewy24 наличие заявленного времени ответа и работающего канала связи — часть проверки того, что за магазином стоит живая поддержка. Формулировка ниже опирается только на то, что уже написано в регламенте, кроме срока первичного ответа — его надо подтвердить.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Odpowiadamy w dni robocze, zwykle w ciągu [уточнить: 1-2 dni roboczych] od otrzymania wiadomości. Reklamacje rozpatrujemy i informujemy o wyniku w terminie 14 dni od zgłoszenia. Wiadomości wysłane w weekend odbieramy w najbliższy dzień roboczy.</pre></div><div class="lane"><h4>Українська</h4><pre>Відповідаємо в робочі дні, зазвичай протягом [уточнити: 1–2 робочі дні] від отримання повідомлення. Претензії розглядаємо та повідомляємо про результат протягом 14 днів із дня звернення. Повідомлення, надіслані у вихідні, опрацьовуємо найближчого робочого дня.</pre></div><div class="lane"><h4>English</h4><pre>We usually reply within [уточнить: 1–2 working days] of receiving your message. Complaints are reviewed and answered within 14 days of submission. Messages sent at the weekend are picked up on the next working day.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка: /contacts, под часами работы и рядом с формой «Twoja wiadomość» / «Ваше повідомлення» / «Your message». Срок 14 дней взят из §10 регламента — не выдуман; срок первичного ответа надо подтвердить у заказчика.</p>
+    <p class="note"><b>Куда вписать</b><br>Срок 14 дней взят из §10 регламента — не выдуман; срок первичного ответа надо подтвердить у заказчика.</p>
     <p class="edits">UA: росіянізм «уточнить» замість «уточнити»; неперекладене польське «1-2 dni roboczych» усередині українського речення; різнобій «рекламації/претензії»; EN: Polish left inside the English placeholder; hyphen instead of an en dash; &quot;working days&quot; repeated.</p>
   </div>
 </section>
@@ -5443,7 +5440,7 @@ Reklamacje i zwroty: kontakt@lapetitebloom.com oraz adres do odesłania towaru p
 Phone and email: Mon–Fri, 9:00–18:00. The office is closed at the weekend — messages are picked up on the next working day. Opening hours of the Mokotowska boutique are listed separately below.
 Contact form: your message reaches our customer service team at hello@lapetitebloom.com. You will receive a confirmation at the email address you provide.
 Returns and complaints: kontakt@lapetitebloom.com, and the return address given above.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка: /contacts, вводный текст над карточками контактов. Пункт про подтверждение отправки формы требует технической проверки — сейчас после «Wyślij wiadomość» не видно ни экрана благодарности, ни письма-подтверждения; если их нет, обещание в тексте давать нельзя, пока не сделают.</p>
+    <p class="note"><b>Куда вписать</b><br>Пункт про подтверждение отправки формы требует технической проверки — сейчас после «Wyślij wiadomość» не видно ни экрана благодарности, ни письма-подтверждения; если их нет, обещание в тексте давать нельзя, пока не сделают.</p>
     <p class="edits">PL: Łączniki zamiast półpauz w zakresie dni i godzin oraz trzeci wariant skrótu dni na stronie („pon.-pt.” obok „Pn–Pt” i „pn-pt”).; UA: прямий апостроф замість типографського «’»; дефіси замість тире в діапазонах; різнобій «бутік/бутик» — уніфіковано на «бутик»; різнобій «рекламації/претензії»; EN: Hyphens instead of en dashes in the day and time ranges.</p>
   </div>
 </section>
@@ -5528,7 +5525,7 @@ Returns and complaints: kontakt@lapetitebloom.com, and the return address given 
 /en/regulamin-kart-podarunkowych — La Petite Bloom gift card terms: validity, paying with a card, settling the difference and returns.
 /en/zgody-klauzule-i-regulamin-newslettera — Marketing consent wording, privacy notice and newsletter terms at La Petite Bloom.
 /en/personal-data-requests — How to exercise your GDPR rights at La Petite Bloom: where to send a request and how quickly we reply.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Четыре страницы × три локали = 12 полей meta description в админке. Тексты сгруппированы по локали, адрес страницы указан перед каждым.</p>
+    <p class="note"><b>Куда вписать</b><br>Четыре страницы × три локали = 12 полей meta description в Тексты сгруппированы по локали, адрес страницы указан перед каждым.</p>
     
   </div>
 </section>
@@ -5601,7 +5598,7 @@ Returns and complaints: kontakt@lapetitebloom.com, and the return address given 
       <span class="path">/delivery-and-payment</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Карточка «Sposoby i koszty dostawy», строка о зарубежной доставке + подраздел «Dostawa zagraniczna»</p>
-    <div class="evidence">- Dostawa zagraniczna — DHL, według taryfy przewoźnika … Wysyłamy na terenie Unii Europejskiej i poza nią. Dla Ukrainy dostępne są Nova Poshta oraz Meest.</div>
+    <div class="evidence">Dostawa zagraniczna — DHL, według taryfy przewoźnika … Wysyłamy na terenie Unii Europejskiej i poza nią. Dla Ukrainy dostępne są Nova Poshta oraz Meest.</div>
     <p class="why">Тарифов зарубежной доставки на странице нет вообще: ни таблицы по странам, ни диапазона цен, ни сроков для Nova Poshta и Meest — при том что для Польши сроки и цены расписаны подробно. Формулировка «według taryfy przewoźnika» не даёт покупателю узнать сумму до оформления, а это обязательный элемент информации о цене по ustawa o prawach konsumenta (art. 12 ust. 1 pkt 5): все дополнительные расходы должны быть известны до оформления заказа. Сроки 2–5 рабочих дней указаны только для DHL, для украинских перевозчиков — нет.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Koszt dostawy zagranicznej wyliczamy według taryfy przewoźnika i pokazujemy w koszyku przed potwierdzeniem zamówienia. Orientacyjny czas dostawy: DHL 2–5 dni roboczych; Nova Poshta i Meest do Ukrainy [уточнить: liczba dni roboczych i koszt lub widełki kosztu]. Pełną listę krajów, do których wysyłamy, znajdziesz [уточнить: gdzie — w koszyku czy w regulaminie].</pre></div><div class="lane"><h4>Українська</h4><pre>Вартість міжнародної доставки розраховуємо за тарифом перевізника й показуємо в кошику перед підтвердженням замовлення. Орієнтовний строк доставки: DHL — 2–5 робочих днів; «Нова пошта» та Meest в Україну — [уточнити: кількість робочих днів і вартість або діапазон вартості]. Повний перелік країн, куди ми відправляємо, дивіться [уточнити: де — у кошику чи в правилах магазину].</pre></div><div class="lane"><h4>English</h4><pre>International delivery is charged at the carrier’s rates, and the cost is shown in your basket before you confirm the order. Estimated delivery times: DHL 2–5 working days; Nova Poshta and Meest to Ukraine [уточнить: number of working days and cost or cost range]. The full list of countries we ship to is available [уточнить: where — in the basket or in the shop terms].</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>Сроки и суммы для Nova Poshta / Meest не выдуманы — их надо получить у магазина. Заодно решить, показывается ли стоимость зарубежной доставки в корзине: если нет, это отдельная задача разработке.</p>
@@ -5639,18 +5636,18 @@ Returns and complaints: kontakt@lapetitebloom.com, and the return address given 
       <span class="path">/delivery-and-payment</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Карточка «Способи та вартість доставки», перечень тарифов — все четыре строки (те же строки в EN)</p>
-    <div class="evidence">- Поштомат InPost 24/7—13,99 zł
+    <div class="evidence">Поштомат InPost 24/7—13,99 zł
 - Кур’єр InPost / DPD—17 zł; післяплата: +20–23 zł
 - Великогабаритне відправлення (понад 25 kg)—99 zł
 - Міжнародна доставка—DHL, відповідно до тарифу перевізника</div>
     <p class="why">В украинской и английской версиях длинное тире приклеено к тексту без пробелов («24/7—13,99 zł»), тогда как в польской версии оно набрано с пробелами («Paczkomat InPost 24/7 — 13,99 zł») — цены в переведённых версиях читаются как сплошная строка. В украинской строке единица веса осталась латиницей — «понад 25 kg» вместо «25 кг» (ниже на той же странице уже написано «25 кг», то есть внутри одной локали два варианта). В английской версии десятичная запятая «13,99 zł» для британского набора должна быть точкой — «13.99 zł».</p>
-    <div class="lanes"><div class="lane"><h4>Polski</h4><pre>- Paczkomat InPost 24/7 — 13,99 zł
+    <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Paczkomat InPost 24/7 — 13,99 zł
 - Kurier InPost / DPD — 17 zł; za pobraniem +20–23 zł
 - Przesyłka gabarytowa (powyżej 25 kg) — 99 zł
-- Dostawa zagraniczna — DHL, według taryfy przewoźnika</pre></div><div class="lane"><h4>Українська</h4><pre>- Поштомат InPost 24/7 — 13,99 zł
+- Dostawa zagraniczna — DHL, według taryfy przewoźnika</pre></div><div class="lane"><h4>Українська</h4><pre>Поштомат InPost 24/7 — 13,99 zł
 - Кур’єр InPost / DPD — 17 zł; післяплата +20–23 zł
 - Великогабаритне відправлення (понад 25 кг) — 99 zł
-- Міжнародна доставка — DHL, за тарифом перевізника</pre></div><div class="lane"><h4>English</h4><pre>- InPost 24/7 parcel locker — 13.99 zł
+- Міжнародна доставка — DHL, за тарифом перевізника</pre></div><div class="lane"><h4>English</h4><pre>InPost 24/7 parcel locker — 13.99 zł
 - InPost / DPD courier — 17 zł; cash on delivery +20–23 zł
 - Oversized shipment (over 25 kg) — 99 zł
 - International delivery — DHL, at the carrier’s tariff</pre></div></div>
@@ -5711,7 +5708,7 @@ Returns and complaints: kontakt@lapetitebloom.com, and the return address given 
     <div class="evidence">Sun: Сlosed</div>
     <p class="why">В слове «Closed» стоит кириллическая «С» (U+0421) вместо латинской «C» (U+0043). Внешне неотличимо, но строка выпадает из поиска по странице, ломает индексацию и попадает в отчёты о смешанных скриптах. Значение введено вручную в поле часов работы, поэтому одна ошибка тиражируется на три страницы: /en/contacts, /en/about и главную /en. В польской версии там «Zamknięte», в украинской «Зачинено» — эти корректны.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Nd: nieczynne</pre></div><div class="lane"><h4>Українська</h4><pre>Нд: зачинено</pre></div><div class="lane"><h4>English</h4><pre>Sun: Closed</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Проверено сплошным сканом на смешанные скрипты по всем 162 снимкам (54 страницы × 3 локали), и по HTML, и по видимому тексту: это ЕДИНСТВЕННАЯ подмена буквы на сайте, других гомоглифов нет — ни в брендах, ни в заголовках, ни в мета-тегах. Править в админке: карточка бутика, поле часов работы, воскресенье, английская локаль. Заодно выровнять сокращения дней в EN — сейчас «Thur» вместо стандартного «Thu», и неделя начинается с воскресенья, хотя в футере той же страницы «Mon-Fri».</p>
+    <p class="note"><b>Куда вписать</b><br>Проверено сплошным сканом на смешанные скрипты по всем 162 снимкам (54 страницы × 3 локали), и по HTML, и по видимому тексту: это ЕДИНСТВЕННАЯ подмена буквы на сайте, других гомоглифов нет — ни в брендах, ни в заголовках, ни в мета-тегах. Править в Заодно выровнять сокращения дней в EN — сейчас «Thur» вместо стандартного «Thu», и неделя начинается с воскресенья, хотя в футере той же страницы «Mon-Fri».</p>
     <p class="edits">PL: „Zamknięte” to kalka z „Closed”; polskie godziny otwarcia podaje się jako „nieczynne”.; UA: зайва велика літера</p>
   </div>
 </section>
@@ -5746,7 +5743,7 @@ Returns and complaints: kontakt@lapetitebloom.com, and the return address given 
       <span class="path">/en/zabawki</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Adresy URL kategorii i produktów w lokalizacjach UA i EN</p>
-    <div class="evidence">https://lapetitebloom.com/en/zabawki  •  https://lapetitebloom.com/en/niemowleta  •  https://lapetitebloom.com/en/pielegnacja-i-kosmetyki  •  https://lapetitebloom.com/en/czekolada-do-kapieli-inuwet-jagoda-dla-dzieci-bl647631521</div>
+    <div class="evidence">https://lapetitebloom.com/en/zabawki • https://lapetitebloom.com/en/niemowleta • https://lapetitebloom.com/en/pielegnacja-i-kosmetyki • https://lapetitebloom.com/en/czekolada-do-kapieli-inuwet-jagoda-dla-dzieci-bl647631521</div>
     <p class="why">Część slugów kategorii pozostała po polsku we wszystkich lokalizacjach: angielski klient ogląda stronę «Toys» pod adresem /en/zabawki, «Babies 0-2» pod /en/niemowleta, «Care and cosmetics» pod /en/pielegnacja-i-kosmetyki. Katalog jest przy tym niekonsekwentny — /kids, /girls, /boys, /footwear, /accessories i /brands mają slugi angielskie, więc trzy polskie wyglądają na przeoczenie, a nie na decyzję. To samo dotyczy wszystkich adresów produktów (/en/…, /ua/… ze zbitką polskich słów).</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>/zabawki • /niemowleta • /pielegnacja-i-kosmetyki</pre></div><div class="lane"><h4>Українська</h4><pre>/ua/igrashky • /ua/nemovliata • /ua/dohliad-i-kosmetyka</pre></div><div class="lane"><h4>English</h4><pre>/en/toys • /en/babies • /en/care-and-cosmetics</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>Jedna decyzja do podjęcia świadomie: albo slugi lokalizowane (wtedy trzeba dodać przekierowania 301 ze starych adresów), albo jeden wspólny slug dla wszystkich języków — wtedy dla spójności przenieść /zabawki, /niemowleta, /pielegnacja-i-kosmetyki na angielskie odpowiedniki, jak reszta katalogu. Slugi produktów zostawić na osobny etap.</p>
@@ -6554,7 +6551,7 @@ Przeglądane</div>
 Dziewczynka</div>
     <p class="why">Подпись «Artykuł» (артикул, товарная позиция) стоит над значением «Dziewczynka» — это поле пола/адресата. В украинской и английской версиях та же строка называется «Стать» и «Gender», то есть неверна именно польская подпись — на основном языке магазина. Заодно английская подпись цвета «Color» написана по-американски, тогда как по гайдлайну английская локаль британская.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Płeć</pre></div><div class="lane"><h4>Українська</h4><pre>Стать</pre></div><div class="lane"><h4>English</h4><pre>Gender</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Переименовать атрибут в админке. В той же таблице: EN «Color» → «Colour». В хлебных крошках и футере EN «Catalog» → «Catalogue».</p>
+    <p class="note"><b>Куда вписать</b><br>Переименовать атрибут в В той же таблице: EN «Color» → «Colour». В хлебных крошках и футере EN «Catalog» → «Catalogue».</p>
     
   </div>
 </section>
@@ -6810,7 +6807,7 @@ VEJA</div>
     <div class="evidence">Consents, clauses and newsleter terms and conditions</div>
     <p class="why">В английском названии страницы «newsleter» вместо «newsletter». Строка используется как &lt;title&gt;, meta description и H1. Заодно украинский заголовок «Згоди, положення та правила інформаційної розсилки» неточен: «klauzule» — это оговорки/застереження, а не «положення», и «інформаційна розсилка» — калька, бренд везде говорит просто «розсилка».</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Zgody, klauzule i regulamin newslettera</pre></div><div class="lane"><h4>Українська</h4><pre>Згоди, застереження та правила розсилки</pre></div><div class="lane"><h4>English</h4><pre>Consents, clauses and newsletter terms</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → страница newsletter → поля названия в трёх локалях. Тот же текст продублирован в футере — заменить и там (согласовать со срезом 02).</p>
+    <p class="note"><b>Куда вписать</b><br>Тот же текст продублирован в футере — заменить и там (согласовать со срезом 02).</p>
     
   </div>
 </section>
@@ -6905,7 +6902,7 @@ VEJA</div>
     <div class="evidence">«La Petite Bloom» – це історія, народжена з любові … Ласкаво просимо до світу «La Petite Bloom».</div>
     <p class="why">В украинской версии название бренда четыре раза взято в кавычки-ёлочки, как название учреждения в официальном документе. В польской и английской версиях оно набрано без кавычек. Кавычки вокруг латинского названия читаются канцелярски и расходятся с оформлением бренда на остальных страницах. Там же длинное тире заменено на короткое: «La Petite Bloom» – це історія.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>La Petite Bloom to historia zrodzona z miłości — miłości do dzieci, do domu i do drobnych detali, które upiększają codzienność.</pre></div><div class="lane"><h4>Українська</h4><pre>La Petite Bloom — це історія, народжена з любові: до дітей, до дому й до дрібниць, які роблять щоденне життя гарнішим.</pre></div><div class="lane"><h4>English</h4><pre>La Petite Bloom is a story born out of love — love for children, for home, and for the little details that make everyday life beautiful.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → блок «Про нас», локаль ua: снять кавычки вокруг названия во всех четырёх местах, заменить дефис на длинное тире.</p>
+    
     <p class="edits">UA: той самий абзац про бренд звучав по-різному в 01-24 і 03-14 — зведено до одного формулювання</p>
   </div>
 </section>
@@ -6921,10 +6918,10 @@ VEJA</div>
       <span class="path">/</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Блок новостей на главной — заголовок первой карточки (текст и alt изображения)</p>
-    <div class="evidence">Klippan blankets – natural warmth and Scandinavian quality  for the little ones</div>
+    <div class="evidence">Klippan blankets – natural warmth and Scandinavian quality for the little ones</div>
     <p class="why">Двойной пробел между «quality» и «for» в заголовке единственной настоящей новости на главной; он же продублирован в alt картинки. В PL и UA версиях этого заголовка пробел одинарный.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych</pre></div><div class="lane"><h4>Українська</h4><pre>Ковдри Klippan — природне тепло та скандинавська якість для найменших</pre></div><div class="lane"><h4>English</h4><pre>Klippan blankets — natural warmth and Scandinavian quality for the little ones</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Блог → запись «Kocyki Klippan…» → заголовок, локаль en. Заодно во всех трёх локалях заменить короткое тире на длинное.</p>
+    <p class="note"><b>Куда вписать</b><br>Заодно во всех трёх локалях заменить короткое тире на длинное.</p>
     
   </div>
 </section>
@@ -6943,7 +6940,7 @@ VEJA</div>
     <div class="evidence">UA: «Купувати за категорією»; EN: «New Arrivals», «Popular Brands», «Latest News» рядом с «Bestsellers», «Shop by category», «About us»</div>
     <p class="why">Украинский заголовок «Купувати за категорією» — дословный перевод инфинитивом, по-украински заголовок навигации звучит как «Обирайте за категоріями». В английской версии половина заголовков набрана в Title Case («New Arrivals», «Popular Brands», «Latest News»), половина — в sentence case («Shop by category», «About us»): на одной странице два разных типографских стандарта.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Kupuj według kategorii</pre></div><div class="lane"><h4>Українська</h4><pre>Обирайте за категоріями</pre></div><div class="lane"><h4>English</h4><pre>Shop by category / New arrivals / Popular brands / Latest news / Bestsellers / About us — привести все заголовки к sentence case</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Главная → заголовки секций. Выбрать один регистр для английских заголовков и применить его ко всем блокам главной.</p>
+    <p class="note"><b>Куда вписать</b><br>Выбрать один регистр для английских заголовков и применить его ко всем блокам главной.</p>
     
   </div>
 </section>
@@ -7019,10 +7016,10 @@ Oli &amp; Carol Charly the Chili dummy clip — natural rubber</pre></div></div>
       <span class="path">/blog/kocyki-klippan-naturalne-cieplo-i-skandynawska-jakosc-dla-najmlodszych</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;H1 / og:title / JSON-LD headline</p>
-    <div class="evidence">Klippan blankets – natural warmth and Scandinavian quality  for the little ones</div>
+    <div class="evidence">Klippan blankets – natural warmth and Scandinavian quality for the little ones</div>
     <p class="why">В английском заголовке двойной пробел между «quality» и «for». Виден в разметке Schema.org и попадает в шеринг.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych</pre></div><div class="lane"><h4>Українська</h4><pre>Ковдри Klippan — природне тепло та скандинавська якість для найменших</pre></div><div class="lane"><h4>English</h4><pre>Klippan blankets — natural warmth and Scandinavian quality for the little ones</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → Blog → Статьи → kocyki-klippan-... → английская локаль, поле «Заголовок»: убрать лишний пробел.</p>
+    <p class="note"><b>Куда вписать</b><br>.. → английская локаль, поле «Заголовок»: убрать лишний пробел.</p>
     <p class="edits">UA: коротке тире замість довгого; EN: En dash used where the same headline elsewhere (01-25) uses an em dash.</p>
   </div>
 </section>
@@ -7117,7 +7114,7 @@ Oli &amp; Carol Charly the Chili dummy clip — natural rubber</pre></div></div>
     <div class="evidence">title: Dostawa i płatność / meta description: Dostawa i płatność (в ua — «Доставка та оплата» / «Доставка та оплата», в en — «Delivery and payment» / «Delivery and payment»)</div>
     <p class="why">Мета-описание во всех трёх локалях просто дублирует заголовок — поле заполнено формально. Страница про доставку и оплату — одна из самых востребованных в поиске и одна из тех, что смотрит Przelewy24; описание должно называть перевозчиков, порог бесплатной доставки и способы оплаты.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Dostawa InPost, DPD i DHL od 13,99 zł, bezpłatnie od 500 zł. Płatności online przez Przelewy24: BLIK, karty, szybki przelew, Apple Pay, Google Pay, Klarna i PayPo.</pre></div><div class="lane"><h4>Українська</h4><pre>Доставка InPost, DPD і DHL від 13,99 zł, безкоштовно від 500 zł. Онлайн-оплата через Przelewy24: BLIK, картки, швидкий переказ, Apple Pay, Google Pay, Klarna та PayPo.</pre></div><div class="lane"><h4>English</h4><pre>Delivery by InPost, DPD and DHL from 13.99 zł, free on orders over 500 zł. Online payments via Przelewy24: BLIK, cards, instant transfer, Apple Pay, Google Pay, Klarna and PayPo.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка → SEO-поля страницы «Dostawa i płatność» в каждой локали. Держать до ~160 знаков.</p>
+    <p class="note"><b>Куда вписать</b><br>Держать до ~160 знаков.</p>
     <p class="edits">EN: &quot;free over 500 zł&quot; is elliptical; a shopper expects &quot;free on orders over&quot;.</p>
   </div>
 </section>
@@ -7209,9 +7206,9 @@ Oli &amp; Carol Charly the Chili dummy clip — natural rubber</pre></div></div>
       <span class="path">/privacy-policy</span>
     </div>
     <p class="where"><b>Где</b> &nbsp;Раздел «4. Odbiorcy danych», первый пункт списка — против раздела «5. Przekazywanie danych poza EOG»</p>
-    <div class="evidence">- dostawca hostingu (serwer w Unii Europejskiej);</div>
+    <div class="evidence">dostawca hostingu (serwer w Unii Europejskiej);</div>
     <p class="why">Внутреннее расхождение: в п. 4 сервер описан как находящийся в Евросоюзе, в п. 5 — в Европейской экономической зоне. Это разные территории, и в тексте о трансграничной передаче данных разница существенна. Повторяется во всех трёх локалях («у Європейському Союзі» / «Європейському економічному просторі», «European Union» / «European Economic Area»).</p>
-    <div class="lanes"><div class="lane"><h4>Polski</h4><pre>- dostawca hostingu (serwery w Europejskim Obszarze Gospodarczym);</pre></div><div class="lane"><h4>Українська</h4><pre>- постачальнику послуг хостингу (сервери в Європейському економічному просторі);</pre></div><div class="lane"><h4>English</h4><pre>- the hosting provider (servers located in the European Economic Area);</pre></div></div>
+    <div class="lanes"><div class="lane"><h4>Polski</h4><pre>dostawca hostingu (serwery w Europejskim Obszarze Gospodarczym);</pre></div><div class="lane"><h4>Українська</h4><pre>постачальнику послуг хостингу (сервери в Європейському економічному просторі);</pre></div><div class="lane"><h4>English</h4><pre>the hosting provider (servers located in the European Economic Area);</pre></div></div>
     <p class="note"><b>Куда вписать</b><br>Раздел 4 политики конфиденциальности. Если сервер на самом деле в ЕС, а не в ЕЭЗ — [уточнить у юриста: какую формулировку оставить], но обе точки текста должны говорить одно и то же.</p>
     
   </div>
@@ -7231,7 +7228,7 @@ Oli &amp; Carol Charly the Chili dummy clip — natural rubber</pre></div></div>
     <div class="evidence">Administratorem danych osobowych jest LPB Sp. z o.o. z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730, NIP 5273179673, REGON 542537097.</div>
     <p class="why">Реквизиты администратора данных приведены в третьей редакции — отличной и от регламента (там есть суд и kapitał), и от страницы контактов (там только три номера). Разнобой между тремя документами на одном сайте — то, что бросается в глаза при проверке и создаёт впечатление, что данные копировали наспех. Достаточно привести все три места к одной формулировке из 19-06: добавить страну и суд регистрации, полное фирменное наименование дать один раз, дальше пользоваться сокращением.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Administratorem danych osobowych jest LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska, wpisana do rejestru przedsiębiorców KRS prowadzonego przez [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] pod numerem KRS 0001190730, NIP 5273179673, REGON 542537097.</pre></div><div class="lane"><h4>Українська</h4><pre>Контролером персональних даних є LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) із місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща, внесена до реєстру підприємців KRS, який веде [уточнити за витягом з KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS], за номером KRS 0001190730, NIP 5273179673, REGON 542537097.</pre></div><div class="lane"><h4>English</h4><pre>The data controller is LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), with its registered office at ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland, entered in the register of entrepreneurs of the KRS kept by [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] under KRS number 0001190730, NIP 5273179673, REGON 542537097.</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Админка: /privacy-policy → пункт 1. Правится во всех трёх локалях одинаково: меняются только слова вокруг номеров, сами номера и название компании остаются как есть.</p>
+    <p class="note"><b>Куда вписать</b><br>Правится во всех трёх локалях одинаково: меняются только слова вокруг номеров, сами номера и название компании остаются как есть.</p>
     <p class="edits">UA: російська вставка «по выписке KRS»; росіянізм «уточнить» замість «уточнити»; у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»; EN: GDPR term is &quot;data controller&quot;; the city was repeated in the registered-office clause.</p>
   </div>
 </section>
@@ -7250,7 +7247,7 @@ Oli &amp; Carol Charly the Chili dummy clip — natural rubber</pre></div></div>
     <div class="evidence">Правила використання подарункових карт</div>
     <p class="why">В украинской версии заголовок говорит «подарункових карт», а весь текст регламента ниже — «подарункова картка», «подарункової картки». Разнобой в одном документе, причём в самом заметном месте. По украинской норме для платёжного/подарочного носителя корректнее «картка». Отдельно: сама страница опубликована и стоит в футере, хотя первый же абзац сообщает, что карт в продаже нет — до запуска пункт из футера лучше убрать, чтобы покупатель не приходил в тупик.</p>
     <div class="lanes"><div class="lane"><h4>Polski</h4><pre>Regulamin kart podarunkowych</pre></div><div class="lane"><h4>Українська</h4><pre>Правила подарункових карток</pre></div><div class="lane"><h4>English</h4><pre>Gift card terms and conditions</pre></div></div>
-    <p class="note"><b>Куда вписать</b><br>Заголовок правится в админке в трёх местах: название страницы (UA), H1 и пункт меню в подвале. Скрытие пункта футера до запуска карт — отдельное решение заказчика.</p>
+    <p class="note"><b>Куда вписать</b><br>Заголовок правится в Скрытие пункта футера до запуска карт — отдельное решение заказчика.</p>
     
   </div>
 </section>
@@ -7355,7 +7352,7 @@ Oli &amp; Carol Charly the Chili dummy clip — natural rubber</pre></div></div>
   
 <section class="intro outro">
   <h2>Что не проверяли</h2>
-  <ul class="plain"><li><b>1247 карточек товара из 1307</b> — Проверено 8 штук разных типов — одежда, обувь, косметика, игрушки, текстиль. Найденные дефекты системные, значит повторяются, но поимённого списка непереведённых карточек нет.</li><li><b>100 категорий из 108 и 41 бренд из 44</b> — Взяты все категории верхнего уровня и три бренда.</li><li><b>Письма покупателю</b> — Подтверждение заказа, статусы, восстановление пароля — они отправляются из админки и в обходе сайта не видны.</li><li><b>Реальное прохождение оплаты</b> — Тестовый заказ не оформлялся: это действие на живом магазине с реальным платёжным оператором.</li><li><b>PDF-документы и вложения</b> — Если регламент дублируется файлом, он не проверялся.</li><li><b>Вёрстка и отображение</b> — Аудит текстовый, по HTML. Как длинные украинские и английские строки ложатся в кнопки и плитки, проверяется только глазами в браузере.</li></ul>
+  <ul class="plain"><li><b>1247 карточек товара из 1307</b> — Проверено 8 штук разных типов — одежда, обувь, косметика, игрушки, текстиль. Найденные дефекты системные, значит повторяются, но поимённого списка непереведённых карточек нет.</li><li><b>100 категорий из 108 и 41 бренд из 44</b> — Взяты все категории верхнего уровня и три бренда.</li><li><b>Письма покупателю</b> — Подтверждение заказа, статусы, восстановление пароля — они приходят письмами, а не показываются на страницах, поэтому в обход не попали.</li><li><b>Реальное прохождение оплаты</b> — Тестовый заказ не оформлялся: это действие на живом магазине с реальным платёжным оператором.</li><li><b>PDF-документы и вложения</b> — Если регламент дублируется файлом, он не проверялся.</li><li><b>Вёрстка и отображение</b> — Аудит текстовый, по HTML. Как длинные украинские и английские строки ложатся в кнопки и плитки, проверяется только глазами в браузере.</li></ul>
   <p class="dim">Полный проход по всем 1307 карточкам, 108 категориям и 44 брендам в трёх локалях — это примерно 4600 страниц. Он найдёт каждый непереведённый товар поимённо и займёт несколько часов машинного времени.</p>
 </section>
 </div>
