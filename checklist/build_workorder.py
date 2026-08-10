@@ -200,13 +200,39 @@ def attach_crops(groups, crops_dir):
     return groups, n
 
 
+# This document is about wording only: what is written on the site and how it
+# is spelled. Two things are deliberately not here. Attribute values and
+# product copy come down from BaseLinker, so fixing them on the page is
+# pointless — the next import overwrites it. And required legal paragraphs are
+# new writing rather than proofreading; they live in their own document.
+TEXT_ISSUES = {"TYPO", "WRONG", "MISSING", "LEFTOVER", "STUB", "CONFLICT"}
+FROM_BASELINKER = "catalog"
+
+# Three product-card fixes are filed against the template but read the feed:
+# the raw supplier name in the heading, the country of origin, and the
+# manufacturer contact. Whoever edits the page cannot hold them — the next
+# import writes over the field.
+FEED_FED = {"11-01", "11-06", "11-07"}
+
+
+def is_wording(f):
+    return (f.get("owner") != FROM_BASELINKER
+            and f.get("issue") in TEXT_ISSUES
+            and f.get("id") not in FEED_FED)
+
+
 def collect_partial(checklist):
     out = []
     for g in checklist["groups"]:
         if g.get("path") in FULL_PAGES or g.get("key") in COVERED_BY_DOCS:
             continue
-        items = [dict(f, _kind=kind_of(f)) for f in g["fixes"]]
-        out.append({**g, "items": items})
+        items = [dict(f, _kind=kind_of(f))
+                 for f in g["fixes"] if is_wording(f)]
+        if not items:
+            continue
+        owners = [o for o in g.get("owners", [])
+                  if any(f.get("owner") == o for f in items)]
+        out.append({**g, "items": items, "owners": owners})
     return out
 
 
@@ -765,15 +791,21 @@ def main():
   <header class="mast">
     <p class="eyebrow">Рабочий документ · lapetitebloom.com</p>
     <h1>Что менять на сайте</h1>
-    <p class="lede">Две части. Там, где есть ваш документ, страница
-      заменяется целиком — берёте файл и вставляете. Там, где документа нет,
-      меняются отдельные абзацы, и на каждый показано что стоит сейчас и что
-      должно стать, на трёх языках. Адреса страниц не меняются.</p>
+    <p class="lede">Только текст: опечатки, кривой перевод, непереведённые
+      куски, чужой язык на странице, заглушки и расхождения с вашими
+      документами. Две части. Там, где есть ваш документ, страница заменяется
+      целиком — берёте файл и вставляете. Там, где документа нет, меняются
+      отдельные абзацы, и на каждый показано что стоит сейчас и что должно
+      стать, на трёх языках. Адреса страниц не меняются.</p>
+    <p class="lede" style="margin-top:.5rem">Сюда не вошло то, что тянется
+      из BaseLinker: значения атрибутов, фильтры и тексты товаров. Править их
+      на сайте бесполезно — следующая выгрузка перезапишет. Обязательные
+      юридические абзацы тоже вынесены отдельно: это не вычитка, а написание
+      нового текста.</p>
     <div class="toolbar">
       <button class="btn" data-own="all" aria-selected="true">Все правки</button>
       <button class="btn" data-own="dev" aria-selected="false">Программистам</button>
       <button class="btn" data-own="content" aria-selected="false">Наш контент</button>
-      <button class="btn" data-own="catalog" aria-selected="false">Каталог / BaseLinker</button>
       <button class="btn" id="theme" type="button">Тема</button>
     </div>
     <div class="answers">
@@ -795,7 +827,6 @@ def main():
     <div class="legend">
       <div><span class="owner o-dev">Программисты</span> шаблон, ссылки, строки движка</div>
       <div><span class="owner o-content">Наш контент</span> меню, акции, баннеры — пишем сами</div>
-      <div><span class="owner o-catalog">Каталог / BaseLinker</span> значения атрибутов и товары</div>
     </div>
   </header>
 
