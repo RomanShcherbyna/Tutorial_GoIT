@@ -164,11 +164,20 @@ FROM_BASELINKER = "catalog"
 # import writes over the field.
 FEED_FED = {"11-01", "11-06", "11-07"}
 
+# Placeholders that are pictures, not wording. Four sit on the home page — the
+# bare slides 2–4, the gift tiles, the one-product bestseller tab, the New Year
+# block — and two more are the Baner1–Baner4 stubs in the search overlay, which
+# rides on every page. Closing them means shooting or picking artwork and
+# deciding what the block sells; no proofreader can do it from a text list.
+# Alt attributes stay: an alt is a sentence, and someone has to write it.
+PICTURE_WORK = {"01-01", "01-08", "01-21", "01-22", "13-12", "03-20"}
+
 
 def is_wording(f):
     return (f.get("owner") != FROM_BASELINKER
             and f.get("issue") in TEXT_ISSUES
-            and f.get("id") not in FEED_FED)
+            and f.get("id") not in FEED_FED
+            and f.get("id") not in PICTURE_WORK)
 
 
 def collect_partial(checklist):
