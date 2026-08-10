@@ -70,7 +70,18 @@ def _looks_like_title(line):
             and not line.endswith((".", ",", ";", ":", "!", "?")))
 
 
-def build_html(doc, lang):
+def blocks_for(doc, which="page"):
+    """A document may declare which of its blocks belong on the page and which
+    are interface texts — checkbox labels, a cookie banner — that must not be
+    published to customers."""
+    keys = doc.get(f"{which}_blocks")
+    if not keys:
+        return doc["blocks"] if which == "page" else []
+    wanted = set(keys)
+    return [b for b in doc["blocks"] if b["n"] in wanted]
+
+
+def build_html(doc, lang, which="page"):
     title = doc.get(f"title_{lang}") or doc.get("title_pl") or doc["title"]
     parts = [f"<h1>{html.escape(title)}</h1>"]
     open_list = None
@@ -81,7 +92,7 @@ def build_html(doc, lang):
             parts.append(f"</{open_list}>")
             open_list = None
 
-    for b in doc["blocks"]:
+    for b in blocks_for(doc, which):
         line = (b.get(lang) or "").strip()
         if not line:
             continue
@@ -112,7 +123,7 @@ def build_html(doc, lang):
     return "\n".join(parts) + "\n"
 
 
-def build_docx(doc, lang, path):
+def build_docx(doc, lang, path, which="page"):
     import docx
     from docx.shared import Pt
 
@@ -131,7 +142,7 @@ def build_docx(doc, lang, path):
         run.italic = True
         run.font.size = Pt(9)
 
-    for b in doc["blocks"]:
+    for b in blocks_for(doc, which):
         line = (b.get(lang) or "").strip()
         if not line:
             continue
@@ -153,7 +164,7 @@ def build_docx(doc, lang, path):
     links = [l for l in (doc.get("links") or [])
              if l["url"].endswith(l["url"].split("/")[-1])]
     seen, rows = set(), []
-    for b in doc["blocks"]:
+    for b in blocks_for(doc, which):
         for name, u in LINK.findall(b.get(lang) or ""):
             if u in seen:
                 continue
@@ -189,6 +200,17 @@ def main():
             open(base + ".html", "w", encoding="utf-8").write(build_html(doc, lang))
             build_docx(doc, lang, base + ".docx")
             made += 2
+
+        if doc.get("ui_blocks"):
+            ui_dir = os.path.join(out_root, f"{slug}-ui")
+            os.makedirs(ui_dir, exist_ok=True)
+            for lang, _ in LANGS:
+                base = os.path.join(ui_dir, f"{slug}-ui.{lang}")
+                open(base + ".html", "w", encoding="utf-8").write(
+                    build_html(doc, lang, "ui"))
+                build_docx(doc, lang, base + ".docx", "ui")
+                made += 2
+            print(f"  {slug}-ui — {doc.get('ui_title','')}")
 
         print(f"  {slug:<42} {doc['title']}")
         for lang, _ in LANGS:

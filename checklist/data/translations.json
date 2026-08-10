@@ -82,9 +82,9 @@
     },
     {
      "n": 13,
-     "pl": "Sklep prowadzi LPB Spółka z ograniczoną odpowiedzialnością z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, kapitał zakładowy 5 000 zł.",
-     "ua": "Магазин веде LPB Spółka z ograniczoną odpowiedzialnością з місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, статутний капітал 5 000 zł.",
-     "en": "The Store is operated by LPB Spółka z ograniczoną odpowiedzialnością with its registered office in Warsaw, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, share capital 5 000 zł."
+     "pl": "Sklep prowadzi LPB Spółka z ograniczoną odpowiedzialnością z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, XIII Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, kapitał zakładowy 5 000 zł.",
+     "ua": "Магазин веде LPB Spółka z ograniczoną odpowiedzialnością з місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, XIII Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, статутний капітал 5 000 zł.",
+     "en": "The Store is operated by LPB Spółka z ograniczoną odpowiedzialnością with its registered office in Warsaw, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, XIII Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, share capital 5 000 zł."
     },
     {
      "n": 14,
@@ -1140,9 +1140,9 @@
     },
     {
      "n": 9,
-     "pl": "4. Funkcjonalne dostawców płatności — Przelewy24, Klarna, PayPo — w zakresie niezbędnym do obsługi płatności.",
-     "ua": "4. Функціональні файли постачальників платежів — Przelewy24, Klarna, PayPo — в обсязі, необхідному для обробки платежів.",
-     "en": "4. Functional cookies of payment providers — Przelewy24, Klarna, PayPo — to the extent necessary to process payments."
+     "pl": "4. Dostawcy płatności — Przelewy24, Klarna, PayPo — wyłącznie w zakresie niezbędnym do realizacji płatności zainicjowanej przez Użytkownika; traktowane są jako niezbędne i nie wymagają zgody.",
+     "ua": "4. Постачальники платежів — Przelewy24, Klarna, PayPo — виключно в обсязі, необхідному для здійснення платежу, ініційованого Користувачем; вважаються необхідними та не потребують згоди.",
+     "en": "4. Payment providers — Przelewy24, Klarna, PayPo — only to the extent necessary to complete a payment initiated by the User; treated as strictly necessary and not requiring consent."
     },
     {
      "n": 10,
@@ -1519,15 +1519,15 @@
     },
     {
      "n": 10,
-     "pl": "Zgody muszą być dobrowolne, NIE odznaczone domyślnie i oddzielone od akceptacji [[Regulaminu|https://lapetitebloom.com/terms-of-use]].",
+     "pl": "Zgody muszą być dobrowolne, NIE zaznaczone domyślnie i oddzielone od akceptacji [[Regulaminu|https://lapetitebloom.com/terms-of-use]].",
      "ua": "Згоди мають бути добровільними, НЕ позначеними за замовчуванням і відокремленими від прийняття [[Правил|https://lapetitebloom.com/ua/terms-of-use]].",
      "en": "Consents must be voluntary, NOT ticked by default and separate from the acceptance of [[the Terms and Conditions|https://lapetitebloom.com/en/terms-of-use]]."
     },
     {
      "n": 11,
-     "pl": "3. [[Regulamin|https://lapetitebloom.com/terms-of-use]] newslettera",
-     "ua": "3. [[Правила|https://lapetitebloom.com/ua/terms-of-use]] розсилки",
-     "en": "3. Newsletter terms"
+     "pl": "2. Regulamin newslettera",
+     "ua": "2. Правила розсилки",
+     "en": "2. Newsletter terms"
     },
     {
      "n": 12,
@@ -1684,7 +1684,32 @@
      "name": "Правила",
      "url": "https://lapetitebloom.com/ua/terms-of-use"
     }
-   ]
+   ],
+   "page_blocks": [
+    1,
+    2,
+    3,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "ui_blocks": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "ui_title": "Тексты для интерфейса — чекбоксы согласий и cookie-баннер"
   },
   {
    "doc": "6-dostawa-i-platnosci",

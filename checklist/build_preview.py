@@ -40,8 +40,13 @@ def collect(pages_dir, tr):
     out = []
     for folder in sorted(glob.glob(os.path.join(pages_dir, "*/"))):
         slug = folder.rstrip("/").split(os.sep)[-1]
-        entry = {"slug": slug, "title": titles.get(slug, slug),
-                 "urls": pages_meta.get(slug, {}), "langs": {}}
+        base = slug[:-3] if slug.endswith("-ui") else slug
+        title = titles.get(base, base)
+        if slug.endswith("-ui"):
+            title += " — тексты для интерфейса, не на страницу"
+        entry = {"slug": slug, "title": title,
+                 "urls": {} if slug.endswith("-ui") else pages_meta.get(slug, {}),
+                 "langs": {}}
         for code, _ in LANGS:
             h = os.path.join(folder, f"{slug}.{code}.html")
             d = os.path.join(folder, f"{slug}.{code}.docx")
@@ -214,7 +219,8 @@ def main():
   <header class="dochead">
     <span class="arrow">{'▸' if i else '▾'}</span>
     <span class="dtitle">{p['title']}</span>
-    <code class="durl">{p['urls'].get('pl','').replace('https://','')}</code>
+    {f'<code class="durl">{p["urls"]["pl"].replace("https://","")}</code>'
+     if p['urls'].get('pl') else '<code class="durl">чекаут · регистрация · cookie-баннер</code>'}
     <span class="dmeta">{words} слов · 3 языка · 6 файлов</span>
   </header>
   <div class="docbody">
