@@ -235,7 +235,8 @@ def collect_partial(checklist, verdicts):
             continue
         items = [dict(f, _kind=kind_of(f), _v=verdicts.get(f["id"], {}))
                  for f in g["fixes"] if is_wording(f)
-                 and verdicts.get(f["id"], {}).get("v") != "no"]
+                 and verdicts.get(f["id"], {}).get("v") != "no"
+                 and f.get("verified") != "не подтвердилось"]
         if not items:
             continue
         owners = [o for o in g.get("owners", [])
@@ -361,6 +362,9 @@ ul.urls code{font-size:.82rem;word-break:break-all}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .o-catalog{color:#e0c37a}}
 :root[data-theme="dark"] .o-catalog{color:#e0c37a}
 .see{margin:.3rem 0 .1rem;font-size:.82rem;color:var(--muted)}
+.ver{margin:.35rem 0 .1rem;padding-left:.6rem;font-size:.82rem;color:var(--muted)}
+.ver.ok{border-left:2px solid var(--now)}
+.ver.eyes{border-left:2px solid var(--was)}
 .see b{font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink)}
 .see a{color:var(--accent);font-family:ui-monospace,Menlo,monospace;font-size:.76rem;
  text-decoration:none;border-bottom:1px solid var(--line);margin-right:.4rem}
@@ -669,6 +673,16 @@ def item_block(f):
             f'<a href="{esc(u)}" target="_blank" rel="noopener">'
             f'{esc(u.replace("https://lapetitebloom.com", "") or "/")}</a>'
             for u in see[:4]) + "</p>")
+    # Сверено ли утверждение с самой страницей. Две правки уже описывали то,
+    # чего на сайте нет, поэтому отметка стоит на каждой: читающий должен
+    # видеть, чему верить без перепроверки, а что открыть глазами.
+    ver = ""
+    if f.get("verified") == "подтверждено":
+        ver = (f'<p class="ver ok"><b>Сверено с сайтом.</b> '
+               f'{esc(f.get("verified_note", ""))}</p>')
+    elif f.get("verified") == "проверить на месте":
+        ver = (f'<p class="ver eyes"><b>Не сверено — нужен ваш взгляд.</b> '
+               f'{esc(f.get("verified_note", ""))}</p>')
     place = f.get("title") or ""
     crop = ""
     if f.get("crop"):
@@ -685,6 +699,7 @@ def item_block(f):
   {f'<p class="fld"><b>Где</b> {esc(place)}</p>' if place else ''}
   {see_html}
   {f'<p class="fld"><b>Почему</b> {esc(f.get("why"))}</p>' if f.get('why') else ''}
+  {ver}
   {crop}
   {swap}
   {verdict_block(f['id'])}

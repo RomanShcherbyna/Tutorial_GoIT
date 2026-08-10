@@ -142,7 +142,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-03",
@@ -168,7 +170,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-12",
@@ -194,7 +198,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-13",
@@ -226,7 +232,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-14",
@@ -258,7 +266,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-04",
@@ -284,7 +294,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-05",
@@ -310,7 +322,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-06",
@@ -414,7 +428,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-15",
@@ -445,7 +461,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-10",
@@ -471,7 +489,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-11",
@@ -523,7 +543,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-13",
@@ -549,7 +571,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-14",
@@ -575,7 +599,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-15",
@@ -601,7 +627,9 @@
       "https://lapetitebloom.com/delivery-and-payment",
       "https://lapetitebloom.com/ua/delivery-and-payment",
       "https://lapetitebloom.com/en/delivery-and-payment"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "04-16",
@@ -670,7 +698,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-01",
@@ -695,7 +725,9 @@
      "see": [
       "https://lapetitebloom.com/auth/register",
       "https://lapetitebloom.com/checkout"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "подтверждено вашим снимком формы регистрации"
     },
     {
      "id": "DOC-09",
@@ -752,7 +784,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-02",
@@ -774,7 +808,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-03",
@@ -796,7 +832,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-05",
@@ -818,7 +856,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-06",
@@ -840,7 +880,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-08",
@@ -862,7 +904,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-09",
@@ -884,7 +928,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-10",
@@ -906,7 +952,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-12",
@@ -928,7 +976,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-13",
@@ -950,7 +1000,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-14",
@@ -972,7 +1024,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-17",
@@ -994,7 +1048,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-18",
@@ -1060,7 +1116,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-32",
@@ -1082,7 +1140,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "адрес «Kasprzaka 31/119» в футере снимка есть — цитата не нашлась из-за скобок в тексте правки"
     },
     {
      "id": "12-02",
@@ -1104,7 +1164,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-03",
@@ -1126,7 +1188,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-06",
@@ -1148,7 +1212,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-01",
@@ -1170,7 +1236,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-03",
@@ -1192,7 +1260,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-10",
@@ -1214,7 +1284,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-16",
@@ -1243,7 +1315,9 @@
      "note": "РЕШЕНИЕ ЗАКАЗЧИКА: остаются hello@ (общий) и rodo@ (RODO). kontakt@ из документов заменить на hello@ — 11 мест в 6 документах (1, 4, 5, 7, 8 и инструкция). В готовых переводах замена уже применена.",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-30",
@@ -1333,7 +1407,9 @@
      "note": "[уточнить у заказчика: какие счётчики подключать — в текущем коде GA4/Meta/TikTok отсутствуют]",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-34",
@@ -1385,7 +1461,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-07",
@@ -1407,7 +1485,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-11",
@@ -1429,7 +1509,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-15",
@@ -1473,7 +1555,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-19",
@@ -1495,7 +1579,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-20",
@@ -1517,7 +1603,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-21",
@@ -1539,7 +1627,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-22",
@@ -1561,7 +1651,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-23",
@@ -1583,7 +1675,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-24",
@@ -1605,7 +1699,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-25",
@@ -1627,7 +1723,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-27",
@@ -1649,7 +1747,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-28",
@@ -1671,7 +1771,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-29",
@@ -1693,7 +1795,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "02-30",
@@ -1759,7 +1863,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-04",
@@ -1781,7 +1887,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-05",
@@ -1803,7 +1911,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-07",
@@ -1847,7 +1957,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-04",
@@ -1869,7 +1981,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-05",
@@ -1891,7 +2005,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-06",
@@ -1913,7 +2029,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "search.sku = \"Artykuł\", product.sku = \" Artykuł\" — с ведущим пробелом, как и сказано"
     },
     {
      "id": "14-08",
@@ -1935,7 +2053,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-17",
@@ -2001,7 +2121,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "в UA-версии валюты названы по-русски: «Доллар США», «Евро» — проверено и на живом сайте"
     },
     {
      "id": "DOC-22",
@@ -2056,7 +2178,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-25",
@@ -2083,7 +2207,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-33",
@@ -2164,7 +2290,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-23",
@@ -2191,7 +2319,9 @@
      "note": "[уточнить у заказчика: оставлять ли подпись подрядчика в подвале]",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-39",
@@ -2398,7 +2528,9 @@
      "note": "",
      "owner": "catalog",
      "owner_label": "Каталог / BaseLinker",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-07",
@@ -2423,7 +2555,9 @@
      "see": [],
      "see_values": [
       "https://lapetitebloom.com/en/kids"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-10",
@@ -2451,7 +2585,9 @@
       "https://lapetitebloom.com/boys",
       "https://lapetitebloom.com/brands/liewood",
       "https://lapetitebloom.com/about"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-11",
@@ -2495,7 +2631,9 @@
      "note": "",
      "owner": "catalog",
      "owner_label": "Каталог / BaseLinker",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-16",
@@ -2713,7 +2851,9 @@
       "https://lapetitebloom.com/accessories",
       "https://lapetitebloom.com/kids",
       "https://lapetitebloom.com/niemowleta"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-26",
@@ -2766,7 +2906,9 @@
      "see_values": [
       "https://lapetitebloom.com/boys",
       "https://lapetitebloom.com/niemowleta"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-02",
@@ -2788,7 +2930,9 @@
      "note": "",
      "owner": "catalog",
      "owner_label": "Каталог / BaseLinker",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-04",
@@ -2837,7 +2981,9 @@
       "https://lapetitebloom.com/en/boys",
       "https://lapetitebloom.com/en/brands/liewood",
       "https://lapetitebloom.com/en/kids"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-09",
@@ -2908,7 +3054,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-27",
@@ -2989,7 +3137,9 @@
      "see_values": [
       "https://lapetitebloom.com/ua/boys",
       "https://lapetitebloom.com/ua/kids"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "10-08",
@@ -3091,7 +3241,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-03",
@@ -3117,7 +3269,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-04",
@@ -3143,7 +3297,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-05",
@@ -3169,7 +3325,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-06",
@@ -3221,7 +3379,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "«Магія подарунка» есть на украинской главной"
     },
     {
      "id": "01-09",
@@ -3247,7 +3407,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-10",
@@ -3351,7 +3513,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "<h1> на главной нет ни в одной из трёх локалей — пересчитано по снимку"
     },
     {
      "id": "01-08",
@@ -3377,7 +3541,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-12",
@@ -3429,7 +3595,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-16",
@@ -3455,7 +3623,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-17",
@@ -3481,7 +3651,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-18",
@@ -3507,7 +3679,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-19",
@@ -3533,7 +3707,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-20",
@@ -3559,7 +3735,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-21",
@@ -3637,7 +3815,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-24",
@@ -3663,7 +3843,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-25",
@@ -3689,7 +3871,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "01-26",
@@ -3715,7 +3899,9 @@
       "https://lapetitebloom.com",
       "https://lapetitebloom.com/ua",
       "https://lapetitebloom.com/en"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 26,
@@ -3764,7 +3950,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-01",
@@ -3790,7 +3978,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-02",
@@ -3816,7 +4006,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-04",
@@ -3842,7 +4034,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-02",
@@ -3868,7 +4062,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-03",
@@ -3894,7 +4090,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-07",
@@ -3920,7 +4118,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-08",
@@ -3946,7 +4146,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-09",
@@ -3972,7 +4174,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-05",
@@ -3998,7 +4202,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-08",
@@ -4024,7 +4230,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-17",
@@ -4082,7 +4290,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-05",
@@ -4108,7 +4318,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-18",
@@ -4160,7 +4372,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-09",
@@ -4186,7 +4400,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-10",
@@ -4212,7 +4428,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-11",
@@ -4238,7 +4456,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-18",
@@ -4295,7 +4515,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-17",
@@ -4321,7 +4543,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 22,
@@ -4372,7 +4596,9 @@
       "https://lapetitebloom.com/warranty-and-returns",
       "https://lapetitebloom.com/ua/warranty-and-returns",
       "https://lapetitebloom.com/en/warranty-and-returns"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-08",
@@ -4398,7 +4624,9 @@
       "https://lapetitebloom.com/warranty-and-returns",
       "https://lapetitebloom.com/ua/warranty-and-returns",
       "https://lapetitebloom.com/en/warranty-and-returns"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-10",
@@ -4430,7 +4658,9 @@
       "https://lapetitebloom.com/warranty-and-returns",
       "https://lapetitebloom.com/ua/warranty-and-returns",
       "https://lapetitebloom.com/en/warranty-and-returns"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-11",
@@ -4461,7 +4691,9 @@
       "https://lapetitebloom.com/warranty-and-returns",
       "https://lapetitebloom.com/ua/warranty-and-returns",
       "https://lapetitebloom.com/en/warranty-and-returns"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-06",
@@ -4487,7 +4719,9 @@
       "https://lapetitebloom.com/warranty-and-returns",
       "https://lapetitebloom.com/ua/warranty-and-returns",
       "https://lapetitebloom.com/en/warranty-and-returns"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-07",
@@ -4539,7 +4773,9 @@
       "https://lapetitebloom.com/warranty-and-returns",
       "https://lapetitebloom.com/ua/warranty-and-returns",
       "https://lapetitebloom.com/en/warranty-and-returns"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-12",
@@ -4988,7 +5224,9 @@
       "https://lapetitebloom.com/checkout",
       "https://lapetitebloom.com/ua/checkout",
       "https://lapetitebloom.com/en/checkout"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-26",
@@ -5022,7 +5260,9 @@
       "https://lapetitebloom.com/checkout",
       "https://lapetitebloom.com/ua/checkout",
       "https://lapetitebloom.com/en/checkout"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-27",
@@ -5107,7 +5347,9 @@
       "https://lapetitebloom.com/checkout",
       "https://lapetitebloom.com/ua/checkout",
       "https://lapetitebloom.com/en/checkout"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-11",
@@ -5133,7 +5375,9 @@
       "https://lapetitebloom.com/checkout",
       "https://lapetitebloom.com/ua/checkout",
       "https://lapetitebloom.com/en/checkout"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-17",
@@ -5159,7 +5403,9 @@
       "https://lapetitebloom.com/checkout",
       "https://lapetitebloom.com/ua/checkout",
       "https://lapetitebloom.com/en/checkout"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-07",
@@ -5277,7 +5523,9 @@
       "https://lapetitebloom.com/checkout",
       "https://lapetitebloom.com/ua/checkout",
       "https://lapetitebloom.com/en/checkout"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "«Кошик порожній» и «Cart is empty» есть в чекауте"
     },
     {
      "id": "12-15",
@@ -5303,7 +5551,9 @@
       "https://lapetitebloom.com/checkout",
       "https://lapetitebloom.com/ua/checkout",
       "https://lapetitebloom.com/en/checkout"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-14",
@@ -5329,7 +5579,9 @@
       "https://lapetitebloom.com/checkout",
       "https://lapetitebloom.com/ua/checkout",
       "https://lapetitebloom.com/en/checkout"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 13,
@@ -5382,7 +5634,9 @@
       "https://lapetitebloom.com/auth/register",
       "https://lapetitebloom.com/ua/auth/register",
       "https://lapetitebloom.com/en/auth/register"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-05",
@@ -5442,7 +5696,9 @@
       "https://lapetitebloom.com/auth/register",
       "https://lapetitebloom.com/ua/auth/register",
       "https://lapetitebloom.com/en/auth/register"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-03",
@@ -5468,7 +5724,9 @@
       "https://lapetitebloom.com/auth/register",
       "https://lapetitebloom.com/ua/auth/register",
       "https://lapetitebloom.com/en/auth/register"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-18",
@@ -5494,7 +5752,9 @@
       "https://lapetitebloom.com/auth/register",
       "https://lapetitebloom.com/ua/auth/register",
       "https://lapetitebloom.com/en/auth/register"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "подтверждено вашим снимком: правило про 8 знаков, сообщение о нём выводится"
     },
     {
      "id": "13-19",
@@ -5520,7 +5780,9 @@
       "https://lapetitebloom.com/auth/register",
       "https://lapetitebloom.com/ua/auth/register",
       "https://lapetitebloom.com/en/auth/register"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 6,
@@ -5560,7 +5822,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-02",
@@ -5585,7 +5849,9 @@
      "see": [],
      "see_values": [
       "https://lapetitebloom.com/little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-03",
@@ -5610,7 +5876,9 @@
      "see": [],
      "see_values": [
       "https://lapetitebloom.com/ua/little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-04",
@@ -5635,7 +5903,9 @@
      "see": [],
      "see_values": [
       "https://lapetitebloom.com/ua/sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-06",
@@ -5657,7 +5927,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-07",
@@ -5679,7 +5951,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-08",
@@ -5701,7 +5975,9 @@
      "note": "",
      "owner": "catalog",
      "owner_label": "Каталог / BaseLinker",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-10",
@@ -5726,7 +6002,9 @@
      "see": [],
      "see_values": [
       "https://lapetitebloom.com/ua/little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-11",
@@ -5748,7 +6026,9 @@
      "note": "",
      "owner": "catalog",
      "owner_label": "Каталог / BaseLinker",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-14",
@@ -5770,7 +6050,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-16",
@@ -5792,7 +6074,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-19",
@@ -5841,7 +6125,9 @@
       "https://lapetitebloom.com/accessories",
       "https://lapetitebloom.com/sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042",
       "https://lapetitebloom.com/zabawki"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-09",
@@ -5863,7 +6149,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-12",
@@ -5888,7 +6176,9 @@
      "see": [],
      "see_values": [
       "https://lapetitebloom.com/ua/sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-13",
@@ -5913,7 +6203,9 @@
      "see": [],
      "see_values": [
       "https://lapetitebloom.com/en/little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-15",
@@ -5935,7 +6227,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-17",
@@ -5957,7 +6251,9 @@
      "note": "",
      "owner": "catalog",
      "owner_label": "Каталог / BaseLinker",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-18",
@@ -6006,7 +6302,9 @@
       "https://lapetitebloom.com/krem-pod-oczy-skin-minimalism-eye-revival-pielegnacja-okolic-oczu-sm-eye-revival",
       "https://lapetitebloom.com/little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031",
       "https://lapetitebloom.com/trampki-veja-small-volley-atlantic-ouro-bark-zlote-sportowe-buty-ve-smallvolb"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-21",
@@ -6028,7 +6326,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-22",
@@ -6050,7 +6350,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "у карточки товара <title> и meta description совпадают дословно"
     },
     {
      "id": "11-23",
@@ -6077,7 +6379,9 @@
       "https://lapetitebloom.com/koszulka-bobo-choses-booo-z-nadrukiem-dla-dzieci-b226ac017-2-3",
       "https://lapetitebloom.com/krem-pod-oczy-skin-minimalism-eye-revival-pielegnacja-okolic-oczu-sm-eye-revival",
       "https://lapetitebloom.com/little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-24",
@@ -6099,7 +6403,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-25",
@@ -6124,7 +6430,9 @@
      "see": [],
      "see_values": [
       "https://lapetitebloom.com/trampki-veja-small-volley-atlantic-ouro-bark-zlote-sportowe-buty-ve-smallvolb"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "11-26",
@@ -6151,7 +6459,9 @@
       "https://lapetitebloom.com/koszulka-bobo-choses-booo-z-nadrukiem-dla-dzieci-b226ac017-2-3",
       "https://lapetitebloom.com/krem-pod-oczy-skin-minimalism-eye-revival-pielegnacja-okolic-oczu-sm-eye-revival",
       "https://lapetitebloom.com/little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 26,
@@ -6236,7 +6546,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-04",
@@ -6258,7 +6570,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "у категории kids <title> и meta description совпадают дословно во всех трёх языках"
     },
     {
      "id": "09-09",
@@ -6280,7 +6594,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-11",
@@ -6302,7 +6618,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-12",
@@ -6324,7 +6642,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-14",
@@ -6346,7 +6666,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-15",
@@ -6368,7 +6690,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-10",
@@ -6412,7 +6736,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-16",
@@ -6434,7 +6760,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-17",
@@ -6456,7 +6784,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-18",
@@ -6478,7 +6808,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-19",
@@ -6500,7 +6832,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-20",
@@ -6522,7 +6856,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-21",
@@ -6544,7 +6880,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-22",
@@ -6566,7 +6904,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-23",
@@ -6588,7 +6928,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-24",
@@ -6610,7 +6952,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-25",
@@ -6632,7 +6976,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "товар Inuwet в листинге найден"
     },
     {
      "id": "09-26",
@@ -6676,7 +7022,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-28",
@@ -6698,7 +7046,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 24,
@@ -6801,7 +7151,9 @@
       "https://lapetitebloom.com/deklaracja-dostepnosci",
       "https://lapetitebloom.com/ua/deklaracja-dostepnosci",
       "https://lapetitebloom.com/en/deklaracja-dostepnosci"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-03",
@@ -6827,7 +7179,9 @@
       "https://lapetitebloom.com/deklaracja-dostepnosci",
       "https://lapetitebloom.com/ua/deklaracja-dostepnosci",
       "https://lapetitebloom.com/en/deklaracja-dostepnosci"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-N92",
@@ -6880,7 +7234,9 @@
       "https://lapetitebloom.com/deklaracja-dostepnosci",
       "https://lapetitebloom.com/ua/deklaracja-dostepnosci",
       "https://lapetitebloom.com/en/deklaracja-dostepnosci"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-05",
@@ -6906,7 +7262,9 @@
       "https://lapetitebloom.com/deklaracja-dostepnosci",
       "https://lapetitebloom.com/ua/deklaracja-dostepnosci",
       "https://lapetitebloom.com/en/deklaracja-dostepnosci"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-15",
@@ -6932,7 +7290,9 @@
       "https://lapetitebloom.com/deklaracja-dostepnosci",
       "https://lapetitebloom.com/ua/deklaracja-dostepnosci",
       "https://lapetitebloom.com/en/deklaracja-dostepnosci"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-16",
@@ -6984,7 +7344,9 @@
       "https://lapetitebloom.com/deklaracja-dostepnosci",
       "https://lapetitebloom.com/ua/deklaracja-dostepnosci",
       "https://lapetitebloom.com/en/deklaracja-dostepnosci"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-N89",
@@ -7603,7 +7965,9 @@
       "https://lapetitebloom.com/warranty-and-returns/polityka-zwrotow",
       "https://lapetitebloom.com/ua/warranty-and-returns/polityka-zwrotow",
       "https://lapetitebloom.com/en/warranty-and-returns/polityka-zwrotow"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-04",
@@ -7629,7 +7993,9 @@
       "https://lapetitebloom.com/warranty-and-returns/polityka-zwrotow",
       "https://lapetitebloom.com/ua/warranty-and-returns/polityka-zwrotow",
       "https://lapetitebloom.com/en/warranty-and-returns/polityka-zwrotow"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-14",
@@ -7681,7 +8047,9 @@
       "https://lapetitebloom.com/warranty-and-returns/polityka-zwrotow",
       "https://lapetitebloom.com/ua/warranty-and-returns/polityka-zwrotow",
       "https://lapetitebloom.com/en/warranty-and-returns/polityka-zwrotow"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 4,
@@ -7757,7 +8125,9 @@
       "https://lapetitebloom.com/warranty-and-returns/gwarancja-na-produkt",
       "https://lapetitebloom.com/ua/warranty-and-returns/gwarancja-na-produkt",
       "https://lapetitebloom.com/en/warranty-and-returns/gwarancja-na-produkt"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 2,
@@ -8407,7 +8777,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-10",
@@ -8433,7 +8805,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-11",
@@ -8459,7 +8833,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-12",
@@ -8485,7 +8861,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-13",
@@ -8511,7 +8889,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-14",
@@ -8537,7 +8917,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-06",
@@ -8594,7 +8976,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-16",
@@ -8620,7 +9004,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-17",
@@ -8646,7 +9032,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-18",
@@ -8672,7 +9060,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-19",
@@ -8698,7 +9088,9 @@
       "https://lapetitebloom.com/terms-of-use",
       "https://lapetitebloom.com/ua/terms-of-use",
       "https://lapetitebloom.com/en/terms-of-use"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 12,
@@ -8775,7 +9167,9 @@
       "https://lapetitebloom.com/search",
       "https://lapetitebloom.com/ua/search",
       "https://lapetitebloom.com/en/search"
-     ]
+     ],
+     "verified": "не подтвердилось",
+     "verified_note": "«Przypadkowo» нет ни на одной странице ни в снимке, ни живьём. Первая опция сортировки — «Według popularności», и с ней всё в порядке."
     },
     {
      "id": "13-10",
@@ -8801,7 +9195,9 @@
       "https://lapetitebloom.com/search",
       "https://lapetitebloom.com/ua/search",
       "https://lapetitebloom.com/en/search"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-12",
@@ -8827,7 +9223,9 @@
       "https://lapetitebloom.com/search",
       "https://lapetitebloom.com/ua/search",
       "https://lapetitebloom.com/en/search"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-11",
@@ -8879,7 +9277,9 @@
       "https://lapetitebloom.com/search",
       "https://lapetitebloom.com/ua/search",
       "https://lapetitebloom.com/en/search"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-20",
@@ -8905,7 +9305,9 @@
       "https://lapetitebloom.com/search",
       "https://lapetitebloom.com/ua/search",
       "https://lapetitebloom.com/en/search"
-     ]
+     ],
+     "verified": "проверить на месте",
+     "verified_note": "«Ilość na stronę» в отдаваемом HTML нет — либо подпись рисует скрипт, либо её нет вовсе. Нужен взгляд на страницу поиска."
     }
    ],
    "count": 7,
@@ -8953,7 +9355,9 @@
       "https://lapetitebloom.com/polityka-cookies",
       "https://lapetitebloom.com/ua/polityka-cookies",
       "https://lapetitebloom.com/en/polityka-cookies"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-03",
@@ -8979,7 +9383,9 @@
       "https://lapetitebloom.com/polityka-cookies",
       "https://lapetitebloom.com/ua/polityka-cookies",
       "https://lapetitebloom.com/en/polityka-cookies"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-04",
@@ -9005,7 +9411,9 @@
       "https://lapetitebloom.com/polityka-cookies",
       "https://lapetitebloom.com/ua/polityka-cookies",
       "https://lapetitebloom.com/en/polityka-cookies"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-N34",
@@ -9139,7 +9547,9 @@
       "https://lapetitebloom.com/polityka-cookies",
       "https://lapetitebloom.com/ua/polityka-cookies",
       "https://lapetitebloom.com/en/polityka-cookies"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-03",
@@ -9171,7 +9581,9 @@
       "https://lapetitebloom.com/polityka-cookies",
       "https://lapetitebloom.com/ua/polityka-cookies",
       "https://lapetitebloom.com/en/polityka-cookies"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-N33",
@@ -9359,7 +9771,9 @@
       "https://lapetitebloom.com/polityka-cookies",
       "https://lapetitebloom.com/ua/polityka-cookies",
       "https://lapetitebloom.com/en/polityka-cookies"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 16,
@@ -9410,7 +9824,9 @@
       "https://lapetitebloom.com/regulamin-kart-podarunkowych",
       "https://lapetitebloom.com/ua/regulamin-kart-podarunkowych",
       "https://lapetitebloom.com/en/regulamin-kart-podarunkowych"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-N81",
@@ -9517,7 +9933,9 @@
       "https://lapetitebloom.com/regulamin-kart-podarunkowych",
       "https://lapetitebloom.com/ua/regulamin-kart-podarunkowych",
       "https://lapetitebloom.com/en/regulamin-kart-podarunkowych"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-06",
@@ -9550,7 +9968,9 @@
       "https://lapetitebloom.com/regulamin-kart-podarunkowych",
       "https://lapetitebloom.com/ua/regulamin-kart-podarunkowych",
       "https://lapetitebloom.com/en/regulamin-kart-podarunkowych"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-N80",
@@ -9738,7 +10158,9 @@
       "https://lapetitebloom.com/regulamin-kart-podarunkowych",
       "https://lapetitebloom.com/ua/regulamin-kart-podarunkowych",
       "https://lapetitebloom.com/en/regulamin-kart-podarunkowych"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 13,
@@ -10481,7 +10903,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-11",
@@ -10503,7 +10927,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-14",
@@ -10525,7 +10951,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "на 404: «Niestety, nic nie znaleziono dla Twojego zapytania» и «Na główną»"
     },
     {
      "id": "14-15",
@@ -10547,7 +10975,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-18",
@@ -10591,7 +11021,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "&amp;times; и &amp;mdash; встречаются в alt по 6 раз — двойное экранирование настоящее"
     },
     {
      "id": "14-13",
@@ -10613,7 +11045,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-16",
@@ -10635,7 +11069,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "14-19",
@@ -10657,7 +11093,9 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 9,
@@ -10758,7 +11196,9 @@
       "https://lapetitebloom.com/about",
       "https://lapetitebloom.com/ua/about",
       "https://lapetitebloom.com/en/about"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-11",
@@ -10810,7 +11250,9 @@
       "https://lapetitebloom.com/about",
       "https://lapetitebloom.com/ua/about",
       "https://lapetitebloom.com/en/about"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-15",
@@ -10888,7 +11330,9 @@
       "https://lapetitebloom.com/about",
       "https://lapetitebloom.com/ua/about",
       "https://lapetitebloom.com/en/about"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "03-14",
@@ -10914,7 +11358,9 @@
       "https://lapetitebloom.com/about",
       "https://lapetitebloom.com/ua/about",
       "https://lapetitebloom.com/en/about"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 9,
@@ -10963,7 +11409,9 @@
       "https://lapetitebloom.com/claims-and-complaints",
       "https://lapetitebloom.com/ua/claims-and-complaints",
       "https://lapetitebloom.com/en/claims-and-complaints"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-10",
@@ -10989,7 +11437,9 @@
       "https://lapetitebloom.com/claims-and-complaints",
       "https://lapetitebloom.com/ua/claims-and-complaints",
       "https://lapetitebloom.com/en/claims-and-complaints"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-11",
@@ -11015,7 +11465,9 @@
       "https://lapetitebloom.com/claims-and-complaints",
       "https://lapetitebloom.com/ua/claims-and-complaints",
       "https://lapetitebloom.com/en/claims-and-complaints"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-12",
@@ -11041,7 +11493,9 @@
       "https://lapetitebloom.com/claims-and-complaints",
       "https://lapetitebloom.com/ua/claims-and-complaints",
       "https://lapetitebloom.com/en/claims-and-complaints"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-13",
@@ -11067,7 +11521,9 @@
       "https://lapetitebloom.com/claims-and-complaints",
       "https://lapetitebloom.com/ua/claims-and-complaints",
       "https://lapetitebloom.com/en/claims-and-complaints"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-15",
@@ -11093,7 +11549,9 @@
       "https://lapetitebloom.com/claims-and-complaints",
       "https://lapetitebloom.com/ua/claims-and-complaints",
       "https://lapetitebloom.com/en/claims-and-complaints"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "05-18",
@@ -11169,7 +11627,9 @@
       "https://lapetitebloom.com/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/ua/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/en/zgody-klauzule-i-regulamin-newslettera"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-11",
@@ -11195,7 +11655,9 @@
       "https://lapetitebloom.com/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/ua/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/en/zgody-klauzule-i-regulamin-newslettera"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "DOC-08",
@@ -11228,7 +11690,9 @@
       "https://lapetitebloom.com/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/ua/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/en/zgody-klauzule-i-regulamin-newslettera"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-02",
@@ -11254,7 +11718,9 @@
       "https://lapetitebloom.com/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/ua/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/en/zgody-klauzule-i-regulamin-newslettera"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-09",
@@ -11280,7 +11746,9 @@
       "https://lapetitebloom.com/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/ua/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/en/zgody-klauzule-i-regulamin-newslettera"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-12",
@@ -11306,7 +11774,9 @@
       "https://lapetitebloom.com/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/ua/zgody-klauzule-i-regulamin-newslettera",
       "https://lapetitebloom.com/en/zgody-klauzule-i-regulamin-newslettera"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 6,
@@ -11357,7 +11827,9 @@
       "https://lapetitebloom.com/privacy-policy",
       "https://lapetitebloom.com/ua/privacy-policy",
       "https://lapetitebloom.com/en/privacy-policy"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-08",
@@ -11383,7 +11855,9 @@
       "https://lapetitebloom.com/privacy-policy",
       "https://lapetitebloom.com/ua/privacy-policy",
       "https://lapetitebloom.com/en/privacy-policy"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-07",
@@ -11409,7 +11883,9 @@
       "https://lapetitebloom.com/privacy-policy",
       "https://lapetitebloom.com/ua/privacy-policy",
       "https://lapetitebloom.com/en/privacy-policy"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "06-09",
@@ -11435,7 +11911,9 @@
       "https://lapetitebloom.com/privacy-policy",
       "https://lapetitebloom.com/ua/privacy-policy",
       "https://lapetitebloom.com/en/privacy-policy"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "19-12",
@@ -11461,7 +11939,9 @@
       "https://lapetitebloom.com/privacy-policy",
       "https://lapetitebloom.com/ua/privacy-policy",
       "https://lapetitebloom.com/en/privacy-policy"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 5,
@@ -11538,7 +12018,9 @@
       "https://lapetitebloom.com/special-offers",
       "https://lapetitebloom.com/ua/special-offers",
       "https://lapetitebloom.com/en/special-offers"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "12-20",
@@ -11590,7 +12072,9 @@
       "https://lapetitebloom.com/special-offers",
       "https://lapetitebloom.com/ua/special-offers",
       "https://lapetitebloom.com/en/special-offers"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "«Wyprzedaż» / «Гарячий розпродаж» / «Hot sale» есть на /special-offers во всех трёх"
     },
     {
      "id": "12-22",
@@ -11616,7 +12100,9 @@
       "https://lapetitebloom.com/special-offers",
       "https://lapetitebloom.com/ua/special-offers",
       "https://lapetitebloom.com/en/special-offers"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "пустое состояние акций найдено во всех трёх локалях"
     }
    ],
    "count": 5,
@@ -11665,7 +12151,9 @@
       "https://lapetitebloom.com/auth/login",
       "https://lapetitebloom.com/ua/auth/login",
       "https://lapetitebloom.com/en/auth/login"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-15",
@@ -11691,7 +12179,9 @@
       "https://lapetitebloom.com/auth/login",
       "https://lapetitebloom.com/ua/auth/login",
       "https://lapetitebloom.com/en/auth/login"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-16",
@@ -11717,7 +12207,9 @@
       "https://lapetitebloom.com/auth/login",
       "https://lapetitebloom.com/ua/auth/login",
       "https://lapetitebloom.com/en/auth/login"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "на /auth/login: <title>Wejście, крошки «Logowanie», кнопка «Zaloguj się» — все три на месте"
     },
     {
      "id": "13-17",
@@ -11743,7 +12235,9 @@
       "https://lapetitebloom.com/auth/login",
       "https://lapetitebloom.com/ua/auth/login",
       "https://lapetitebloom.com/en/auth/login"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 4,
@@ -11791,7 +12285,9 @@
       "https://lapetitebloom.com/brands",
       "https://lapetitebloom.com/ua/brands",
       "https://lapetitebloom.com/en/brands"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-06",
@@ -11817,7 +12313,9 @@
       "https://lapetitebloom.com/brands",
       "https://lapetitebloom.com/ua/brands",
       "https://lapetitebloom.com/en/brands"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-07",
@@ -11843,7 +12341,9 @@
       "https://lapetitebloom.com/brands",
       "https://lapetitebloom.com/ua/brands",
       "https://lapetitebloom.com/en/brands"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "09-08",
@@ -11869,7 +12369,9 @@
       "https://lapetitebloom.com/brands",
       "https://lapetitebloom.com/ua/brands",
       "https://lapetitebloom.com/en/brands"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 4,
@@ -11918,7 +12420,9 @@
       "https://lapetitebloom.com/favorites",
       "https://lapetitebloom.com/ua/favorites",
       "https://lapetitebloom.com/en/favorites"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-07",
@@ -11944,7 +12448,9 @@
       "https://lapetitebloom.com/favorites",
       "https://lapetitebloom.com/ua/favorites",
       "https://lapetitebloom.com/en/favorites"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "13-09",
@@ -11970,7 +12476,9 @@
       "https://lapetitebloom.com/favorites",
       "https://lapetitebloom.com/ua/favorites",
       "https://lapetitebloom.com/en/favorites"
-     ]
+     ],
+     "verified": "не подтвердилось",
+     "verified_note": "Расхождения нет: и на /favorites, и на /search список одинаковый — «By popularity / Price ascending / Price descending / Discounted products». Строк «By coincidence» и «Promotional products» не существует."
     },
     {
      "id": "13-14",
@@ -11996,7 +12504,9 @@
       "https://lapetitebloom.com/favorites",
       "https://lapetitebloom.com/ua/favorites",
       "https://lapetitebloom.com/en/favorites"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 4,
@@ -12045,7 +12555,9 @@
       "https://lapetitebloom.com/personal-data-requests",
       "https://lapetitebloom.com/ua/personal-data-requests",
       "https://lapetitebloom.com/en/personal-data-requests"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-07",
@@ -12071,7 +12583,9 @@
       "https://lapetitebloom.com/personal-data-requests",
       "https://lapetitebloom.com/ua/personal-data-requests",
       "https://lapetitebloom.com/en/personal-data-requests"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     },
     {
      "id": "07-08",
@@ -12097,7 +12611,9 @@
       "https://lapetitebloom.com/personal-data-requests",
       "https://lapetitebloom.com/ua/personal-data-requests",
       "https://lapetitebloom.com/en/personal-data-requests"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "цитата найдена на странице в снимке сайта"
     }
    ],
    "count": 3,
@@ -12145,7 +12661,9 @@
       "https://lapetitebloom.com/auth/forgot",
       "https://lapetitebloom.com/ua/auth/forgot",
       "https://lapetitebloom.com/en/auth/forgot"
-     ]
+     ],
+     "verified": "подтверждено",
+     "verified_note": "на живой /auth/forgot: «Zapomniałeś hasła?», «Wróć do logowania», <title>Wprowadź nowe hasło"
     }
    ],
    "count": 1,
