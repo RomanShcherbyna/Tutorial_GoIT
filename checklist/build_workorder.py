@@ -1,0 +1,375 @@
+#!/usr/bin/env python3
+"""The work order: what to do on every page, in the form the page needs.
+
+Two kinds of page, and they are worked differently.
+
+Where the client has a document, the page is replaced whole — the old text goes,
+the new text arrives, and listing what to delete is noise. Where there is no
+document, only some paragraphs change, and a developer needs the pair: this is
+what stands there now, this is what replaces it, in each language.
+
+Usage:  python3 build_workorder.py <checklist.json> <translations.json> <pages_dir> <out.html>
+"""
+import base64
+import glob
+import html
+import json
+import mimetypes
+import os
+import re
+import sys
+
+LANGS = (("pl", "Polski"), ("ua", "Українська"), ("en", "English"))
+DOCX = ("application/vnd.openxmlformats-officedocument"
+        ".wordprocessingml.document")
+
+# Pages the client's documents cover — these get replaced in full.
+FULL_PAGES = {
+    "/terms-of-use", "/privacy-policy", "/polityka-cookies",
+    "/claims-and-complaints", "/zgody-klauzule-i-regulamin-newslettera",
+    "/delivery-and-payment", "/regulamin-kart-podarunkowych",
+    "/deklaracja-dostepnosci",
+}
+
+KIND = {
+    "replace": ("Заменить", "Такой текст стоит на странице сейчас — его меняем"),
+    "add": ("Добавить", "Этого на странице нет, надо дописать"),
+    "do": ("Сделать", "Правка техническая, готового текста не требует"),
+}
+
+
+def esc(s):
+    return html.escape(str(s or ""))
+
+
+def data_uri(path):
+    raw = open(path, "rb").read()
+    mime = mimetypes.guess_type(path)[0] or DOCX
+    return f"data:{mime};base64," + base64.b64encode(raw).decode(), len(raw)
+
+
+def kind_of(f):
+    has_text = any(f.get(k) for k in ("pl", "ua", "en"))
+    if f.get("current") and has_text:
+        return "replace"
+    if has_text:
+        return "add"
+    return "do"
+
+
+def collect_full(pages_dir, tr):
+    """Pages replaced whole, with their finished text and files."""
+    out = []
+    for doc in tr["documents"]:
+        page = doc.get("page") or {}
+        if not page:
+            continue
+        slug = page["pl"].rstrip("/").split("/")[-1]
+        folder = os.path.join(pages_dir, slug)
+        if not os.path.isdir(folder):
+            continue
+        langs = {}
+        for code, _ in LANGS:
+            h = os.path.join(folder, f"{slug}.{code}.html")
+            d = os.path.join(folder, f"{slug}.{code}.docx")
+            if not os.path.exists(h):
+                continue
+            html_uri, hs = data_uri(h)
+            docx_uri, ds = data_uri(d) if os.path.exists(d) else ("", 0)
+            langs[code] = {"body": open(h, encoding="utf-8").read(),
+                           "html": html_uri, "html_size": hs,
+                           "docx": docx_uri, "docx_size": ds,
+                           "file": f"{slug}.{code}"}
+        ui = []
+        ui_folder = os.path.join(pages_dir, f"{slug}-ui")
+        if os.path.isdir(ui_folder):
+            for code, _ in LANGS:
+                h = os.path.join(ui_folder, f"{slug}-ui.{code}.html")
+                if os.path.exists(h):
+                    ui.append((code, open(h, encoding="utf-8").read()))
+        out.append({"slug": slug, "title": doc["title"], "urls": page,
+                    "langs": langs, "ui": ui, "ui_title": doc.get("ui_title", "")})
+    return out
+
+
+def collect_partial(checklist):
+    out = []
+    for g in checklist["groups"]:
+        if g.get("path") in FULL_PAGES:
+            continue
+        items = [dict(f, _kind=kind_of(f)) for f in g["fixes"]]
+        out.append({**g, "items": items})
+    return out
+
+
+CSS = """
+:root{--ground:#eef0f3;--surface:#fff;--sunken:#e4e7ec;--ink:#171b24;
+ --muted:#626b7c;--line:#cfd5de;--hair:#dde2e9;--accent:#2b4b7d;
+ --was:#a3352c;--now:#2f6b4f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --ground:#12151b;--surface:#191d25;--sunken:#0d1015;--ink:#e6e9ef;
+ --muted:#9099a8;--line:#333b47;--hair:#262d37;--accent:#8fb0e6;
+ --was:#ff9089;--now:#7fc9a4}}
+:root[data-theme="dark"]{--ground:#12151b;--surface:#191d25;--sunken:#0d1015;
+ --ink:#e6e9ef;--muted:#9099a8;--line:#333b47;--hair:#262d37;--accent:#8fb0e6;
+ --was:#ff9089;--now:#7fc9a4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+ font:15px/1.65 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+ -webkit-font-smoothing:antialiased}
+.sheet{max-width:1000px;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+.mast{border-bottom:2px solid var(--ink);padding-bottom:1.1rem;margin-bottom:1.5rem}
+.eyebrow{margin:0 0 .5rem;font-size:.7rem;font-weight:700;letter-spacing:.16em;
+ text-transform:uppercase;color:var(--accent)}
+h1{margin:0 0 .4rem;font-size:clamp(1.4rem,3.2vw,2rem);font-weight:650;letter-spacing:-.015em}
+.lede{margin:0;color:var(--muted);max-width:68ch}
+h2.sec{margin:2.5rem 0 .3rem;font-size:1.15rem;font-weight:700}
+p.secnote{margin:0 0 1.1rem;color:var(--muted);font-size:.92rem;max-width:70ch}
+.toolbar{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.2rem 0 0}
+.btn{font:inherit;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;
+ background:transparent;border:1px solid var(--line);color:var(--muted);
+ padding:.4rem .75rem;cursor:pointer;white-space:nowrap}
+.btn:hover{color:var(--ink);border-color:var(--muted)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--ground)}
+.doc{border:1px solid var(--line);background:var(--surface);margin:0 0 .8rem}
+.dochead{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;padding:.75rem .95rem;cursor:pointer}
+.dochead:hover{background:var(--sunken)}
+.arrow{color:var(--muted);width:1rem;flex:none;font-size:.8rem}
+.dtitle{font-weight:650;font-size:.98rem}
+.durl{font-family:ui-monospace,Menlo,monospace;font-size:.74rem;color:var(--accent);
+ background:var(--sunken);padding:.05rem .35rem;word-break:break-all}
+.dmeta{margin-left:auto;font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tagfull{font-size:.63rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+ border:1px solid var(--now);color:var(--now);padding:.05rem .35rem}
+.docbody{border-top:1px solid var(--line);padding:.85rem .95rem 1.1rem}
+.tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.6rem}
+.dl{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:0 0 .9rem;
+ padding-bottom:.7rem;border-bottom:1px solid var(--hair)}
+.dl a{color:var(--accent);text-decoration:none;border:1px solid var(--line);
+ padding:.25rem .6rem;font-family:ui-monospace,Menlo,monospace;font-size:.76rem}
+.dl a:hover{border-color:var(--accent)}
+.render{background:var(--ground);border:1px solid var(--hair);padding:1.3rem 1.5rem}
+.render h1{font-size:1.2rem;margin:0 0 .8rem;font-weight:650}
+.render h2{font-size:.96rem;margin:1.3rem 0 .5rem;font-weight:700;
+ padding-bottom:.25rem;border-bottom:1px solid var(--hair)}
+.render p{margin:.55rem 0;font-size:.9rem}
+.render ol,.render ul{margin:.55rem 0;padding-left:1.4rem;font-size:.9rem}
+.render a{color:var(--accent)}
+.pane{display:none}.pane.on{display:block}
+.doc.closed .docbody{display:none}
+ol.items{margin:0;padding:0;list-style:none;counter-reset:it}
+ol.items>li{counter-increment:it;padding:.9rem 0;border-top:1px solid var(--hair)}
+ol.items>li:first-child{border-top:0}
+.ihead{display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap;margin-bottom:.4rem}
+.inum{font-weight:700;font-variant-numeric:tabular-nums;min-width:1.6rem}
+.inum::before{content:counter(it) "."}
+.ikind{font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+ border:1px solid var(--line);padding:.05rem .4rem;color:var(--muted)}
+.k-replace{color:var(--accent);border-color:currentColor}
+.k-add{color:var(--now);border-color:currentColor}
+.iact{font-size:.92rem}
+.swap{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin:.5rem 0 0}
+.swap>div{background:var(--surface);padding:.5rem .7rem}
+.swap b{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+ margin-bottom:.25rem}
+.was b{color:var(--was)} .now b{color:var(--now)}
+.swap pre{margin:0;font-family:ui-monospace,Menlo,monospace;font-size:.79rem;
+ line-height:1.5;white-space:pre-wrap;overflow-x:auto}
+.lang3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.lang3>div{background:var(--surface);padding:.45rem .65rem;min-width:0}
+.lang3 h4{margin:0 0 .25rem;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+ color:var(--accent);font-weight:700}
+.why{margin:.35rem 0 0;font-size:.85rem;color:var(--muted)}
+#totop{position:fixed;right:1rem;bottom:1rem;z-index:30;background:var(--surface);
+ box-shadow:0 1px 6px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .2s}
+#totop.on{opacity:1;pointer-events:auto}
+@media (max-width:700px){.lang3{grid-template-columns:1fr}.dmeta{margin-left:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+"""
+
+JS = """
+document.addEventListener('click', function (e) {
+  var head = e.target.closest('.dochead');
+  if (head && !e.target.closest('a')) {
+    var d = head.closest('.doc');
+    d.classList.toggle('closed');
+    head.querySelector('.arrow').textContent = d.classList.contains('closed') ? '▸' : '▾';
+    return;
+  }
+  var tab = e.target.closest('.tabs .btn');
+  if (tab) {
+    var body = tab.closest('.docbody');
+    [].forEach.call(body.querySelectorAll('.tabs .btn'), function (b) {
+      b.setAttribute('aria-selected', String(b === tab));
+    });
+    [].forEach.call(body.querySelectorAll('.pane'), function (p) {
+      p.classList.toggle('on', p.dataset.lang === tab.dataset.lang);
+    });
+    return;
+  }
+  if (e.target.closest('#theme')) {
+    var r = document.documentElement;
+    var dark = r.getAttribute('data-theme') === 'dark' ||
+      (!r.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var n = dark ? 'light' : 'dark';
+    r.setAttribute('data-theme', n);
+    try { localStorage.setItem('lpb-theme', n); } catch (_) { }
+  }
+});
+addEventListener('scroll', function () {
+  document.getElementById('totop').classList.toggle('on', scrollY > 700);
+}, { passive: true });
+document.getElementById('totop').addEventListener('click', function () {
+  scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+});
+try { var t = localStorage.getItem('lpb-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (_) { }
+"""
+
+
+def kb(n):
+    return f"{max(1, round(n / 1024))} КБ"
+
+
+def full_block(p, i):
+    tabs, panes = [], []
+    for code, label in LANGS:
+        d = p["langs"].get(code)
+        if not d:
+            continue
+        first = code == "pl"
+        tabs.append(f'<button class="btn" type="button" data-lang="{code}" '
+                    f'aria-selected="{str(first).lower()}">{label}</button>')
+        panes.append(f"""
+<div class="pane{' on' if first else ''}" data-lang="{code}">
+  <div class="dl">
+    <a href="{d['docx']}" download="{d['file']}.docx">{d['file']}.docx · {kb(d['docx_size'])}</a>
+    <a href="{d['html']}" download="{d['file']}.html">{d['file']}.html · {kb(d['html_size'])}</a>
+  </div>
+  <div class="render">{d['body']}</div>
+</div>""")
+    ui = ""
+    if p["ui"]:
+        ui = ('<p class="why"><b>Отдельно:</b> ' + esc(p["ui_title"]) +
+              ' — это не идёт на страницу, тексты вставляются в чекаут, '
+              'регистрацию и настройки cookie-баннера. Файлы в архиве, папка '
+              f'<code>{esc(p["slug"])}-ui</code>.</p>')
+    return f"""
+<section class="doc{' closed' if i else ''}">
+  <header class="dochead">
+    <span class="arrow">{'▸' if i else '▾'}</span>
+    <span class="dtitle">{esc(p['title'])}</span>
+    <code class="durl">{esc(p['urls'].get('pl','').replace('https://',''))}</code>
+    <span class="tagfull">заменить целиком</span>
+    <span class="dmeta">3 языка · 6 файлов</span>
+  </header>
+  <div class="docbody">
+    <p class="why">Содержимое страницы заменяется полностью — всё, что стоит
+      там сейчас, уходит вместе с заменой. Адрес не меняется.</p>
+    {ui}
+    <div class="tabs">{''.join(tabs)}</div>
+    {''.join(panes)}
+  </div>
+</section>"""
+
+
+def item_block(f):
+    k = f["_kind"]
+    label, _ = KIND[k]
+    langs = [(c, l, f.get(c)) for c, l in LANGS if f.get(c)]
+    lang_html = ""
+    if langs:
+        lang_html = ('<div class="lang3">' + "".join(
+            f'<div><h4>{esc(l)}</h4><pre>{esc(t)}</pre></div>'
+            for _, l, t in langs) + "</div>")
+    swap = ""
+    if k == "replace":
+        swap = (f'<div class="swap"><div class="was"><b>Было на странице</b>'
+                f'<pre>{esc(f["current"])[:1200]}</pre></div>'
+                f'<div class="now"><b>Стало</b>{lang_html}</div></div>')
+    elif k == "add":
+        swap = f'<div class="swap"><div class="now"><b>Добавить</b>{lang_html}</div></div>'
+    return f"""
+<li>
+  <div class="ihead"><span class="inum"></span>
+    <span class="ikind k-{k}">{esc(label)}</span>
+    <span class="iact">{esc(f.get('action') or f.get('title'))}</span></div>
+  {swap}
+  {f'<p class="why">{esc(f.get("why"))}</p>' if f.get('why') and k == 'do' else ''}
+</li>"""
+
+
+def partial_block(g):
+    counts = {}
+    for f in g["items"]:
+        counts[f["_kind"]] = counts.get(f["_kind"], 0) + 1
+    meta = " · ".join(f"{KIND[k][0].lower()}: {n}" for k, n in counts.items())
+    url = g.get("url_label", "")
+    return f"""
+<section class="doc closed">
+  <header class="dochead">
+    <span class="arrow">▸</span>
+    <span class="dtitle">{esc(g['title'])}</span>
+    {f'<code class="durl">{esc(url)}</code>' if url else ''}
+    <span class="dmeta">{g['count']} правок · {meta}</span>
+  </header>
+  <div class="docbody">
+    {f'<p class="why">{esc(g["desc"])}</p>' if g.get('desc') else ''}
+    <ol class="items">{''.join(item_block(f) for f in g['items'])}</ol>
+  </div>
+</section>"""
+
+
+def main():
+    cl_path, tr_path, pages_dir, out_path = sys.argv[1:5]
+    checklist = json.load(open(cl_path, encoding="utf-8"))
+    tr = json.load(open(tr_path, encoding="utf-8"))
+
+    full = collect_full(pages_dir, tr)
+    partial = collect_partial(checklist)
+    n_items = sum(len(g["items"]) for g in partial)
+
+    doc = f"""<title>La Petite Bloom — что менять на сайте</title>
+<style>{CSS}</style>
+<div class="sheet">
+  <header class="mast">
+    <p class="eyebrow">Рабочий документ · lapetitebloom.com</p>
+    <h1>Что менять на сайте</h1>
+    <p class="lede">Две части. Там, где есть ваш документ, страница
+      заменяется целиком — берёте файл и вставляете. Там, где документа нет,
+      меняются отдельные абзацы, и на каждый показано что стоит сейчас и что
+      должно стать, на трёх языках. Адреса страниц не меняются.</p>
+    <div class="toolbar"><button class="btn" id="theme" type="button">Тема</button></div>
+  </header>
+
+  <h2 class="sec">1. Заменить целиком — {len(full)} страниц</h2>
+  <p class="secnote">Содержимое страницы меняется полностью: старый текст уходит
+    вместе с заменой, отдельно ничего удалять не нужно. Файл
+    <code>.docx</code> — читать и согласовывать, <code>.html</code> — вставлять
+    в редактор страницы.</p>
+  {''.join(full_block(p, i) for i, p in enumerate(full))}
+
+  <h2 class="sec">2. Поменять по абзацам — {len(partial)} страниц, {n_items} правок</h2>
+  <p class="secnote">Здесь готового документа нет, поэтому меняется не вся
+    страница, а отдельные места. У каждой правки свой номер: слева то, что
+    стоит на странице сейчас, справа то, что должно стать, на трёх языках.</p>
+  {''.join(partial_block(g) for g in partial)}
+</div>
+<button class="btn" id="totop" type="button">↑ Наверх</button>
+<script>{JS}</script>"""
+
+    open(out_path, "w", encoding="utf-8").write(doc)
+    size = len(doc.encode("utf-8")) / 1024 / 1024
+    print(f"{out_path}  {size:.2f} МБ")
+    print(f"  заменить целиком: {len(full)} страниц")
+    print(f"  по абзацам: {len(partial)} страниц, {n_items} правок")
+    kinds = {}
+    for g in partial:
+        for f in g["items"]:
+            kinds[f["_kind"]] = kinds.get(f["_kind"], 0) + 1
+    for k, n in kinds.items():
+        print(f"     {KIND[k][0]}: {n}")
+
+
+if __name__ == "__main__":
+    main()
