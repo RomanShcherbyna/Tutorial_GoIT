@@ -2058,7 +2058,154 @@
     "en": "https://lapetitebloom.com/en/deklaracja-dostepnosci"
    },
    "links": []
+  },
+  {
+   "doc": "9-wnioski-o-dane-osobowe",
+   "title": "Запросы по персональным данным",
+   "target_path": "/personal-data-requests",
+   "title_pl": "Wnioski dotyczące danych osobowych",
+   "title_ua": "Запити щодо персональних даних",
+   "title_en": "Personal data requests",
+   "notes": [
+    "Документа от заказчика на эту страницу не было: текст собран из правок аудита 07-07 и 07-08 и из того, что уже стоит на странице. Список прав перенесён без изменений — к нему претензий нет.",
+    "Заголовок страницы разъезжался по локалям: PL «Kontakt w sprawie danych osobowych» обещал контакт, EN «Personal data requests» — запросы. Взято второе во всех трёх: страница не про адрес почты, а про подачу запроса.",
+    "«RODO» остаётся только в польском. В UA и EN — «GDPR», в украинском с расшифровкой при первом упоминании, как в остальных восьми документах.",
+    "Отдельно от текста: на страницу не ведёт ни одна ссылка — её нет ни в футере, ни в меню, ни в политике конфиденциальности. Пока ссылки нет, готовый текст никто не прочитает. Правка 07-06, делают программисты.",
+    "Срок «месяц, в сложных случаях +2» и право жалобы в UODO — это ст. 12 п. 3 и ст. 77 GDPR. Формулировки стандартные, но перед публикацией их стоит показать юристу вместе с остальным пакетом."
+   ],
+   "applied_decisions": [
+    "rodo@lapetitebloom.com — адрес для вопросов по данным (решение заказчика)",
+    "Kasprzaka 31/119 — адрес фирмы в реквизитах (решение заказчика)"
+   ],
+   "page": {
+    "pl": "https://lapetitebloom.com/personal-data-requests",
+    "ua": "https://lapetitebloom.com/ua/personal-data-requests",
+    "en": "https://lapetitebloom.com/en/personal-data-requests"
+   },
+   "links": [],
+   "blocks": [
+    {
+     "n": 1,
+     "pl": "Jeśli masz pytania dotyczące przetwarzania Twoich danych osobowych lub chcesz skorzystać ze swoich praw wynikających z RODO, napisz do nas. Zasady przetwarzania danych opisaliśmy w [[Polityce prywatności|https://lapetitebloom.com/privacy-policy]].",
+     "ua": "Якщо у вас є запитання щодо обробки ваших персональних даних або ви хочете скористатися своїми правами за GDPR (Загальним регламентом про захист даних), напишіть нам. Правила обробки описані в [[Політиці конфіденційності|https://lapetitebloom.com/ua/privacy-policy]].",
+     "en": "If you have questions about how we process your personal data, or you would like to exercise your rights under the GDPR, write to us. How we process data is described in our [[Privacy policy|https://lapetitebloom.com/en/privacy-policy]]."
+    },
+    {
+     "n": 2,
+     "pl": "Możesz przesłać wniosek dotyczący:",
+     "ua": "Ви можете надіслати запит щодо:",
+     "en": "You may submit a request regarding:"
+    },
+    {
+     "n": 3,
+     "pl": "- dostępu do Twoich danych osobowych;",
+     "ua": "- доступу до ваших персональних даних;",
+     "en": "- access to your personal data;"
+    },
+    {
+     "n": 4,
+     "pl": "- sprostowania nieprawidłowych lub niekompletnych danych;",
+     "ua": "- виправлення неточних або неповних даних;",
+     "en": "- correction of inaccurate or incomplete data;"
+    },
+    {
+     "n": 5,
+     "pl": "- usunięcia Twoich danych osobowych;",
+     "ua": "- видалення ваших персональних даних;",
+     "en": "- deletion of your personal data;"
+    },
+    {
+     "n": 6,
+     "pl": "- ograniczenia przetwarzania danych osobowych;",
+     "ua": "- обмеження обробки персональних даних;",
+     "en": "- restriction of the processing of personal data;"
+    },
+    {
+     "n": 7,
+     "pl": "- przeniesienia danych osobowych;",
+     "ua": "- перенесення персональних даних;",
+     "en": "- data portability;"
+    },
+    {
+     "n": 8,
+     "pl": "- wniesienia sprzeciwu wobec przetwarzania danych osobowych;",
+     "ua": "- заперечення проти обробки персональних даних;",
+     "en": "- objection to the processing of personal data;"
+    },
+    {
+     "n": 9,
+     "pl": "- wycofania zgody na przetwarzanie danych osobowych;",
+     "ua": "- відкликання згоди на обробку персональних даних;",
+     "en": "- withdrawal of consent to the processing of personal data;"
+    },
+    {
+     "n": 10,
+     "pl": "- wycofania zgody na otrzymywanie newslettera drogą elektroniczną;",
+     "ua": "- відкликання згоди на отримання розсилки електронною поштою;",
+     "en": "- withdrawal of consent to receive the newsletter by email;"
+    },
+    {
+     "n": 11,
+     "pl": "- innych spraw związanych z przetwarzaniem danych osobowych.",
+     "ua": "- інших питань, пов’язаних з обробкою персональних даних.",
+     "en": "- other matters related to the processing of personal data."
+    },
+    {
+     "n": 12,
+     "pl": "Jak złożyć wniosek",
+     "ua": "Як подати запит",
+     "en": "How to submit a request"
+    },
+    {
+     "n": 13,
+     "pl": "Napisz na adres rodo@lapetitebloom.com i podaj: imię i nazwisko, adres e-mail powiązany z zamówieniem lub kontem, czego dotyczy wniosek oraz — jeśli sprawa dotyczy newslettera — adres, na który przychodzą wiadomości. Jeżeli nie będziemy w stanie potwierdzić Twojej tożsamości na podstawie tych danych, poprosimy o dodatkowe informacje.",
+     "ua": "Напишіть на адресу rodo@lapetitebloom.com і вкажіть: ім’я та прізвище, адресу електронної пошти, пов’язану із замовленням або обліковим записом, суть запиту та — якщо йдеться про розсилку — адресу, на яку надходять листи. Якщо за цими даними ми не зможемо підтвердити вашу особу, ми попросимо додаткову інформацію.",
+     "en": "Write to rodo@lapetitebloom.com and include: your name, the email address linked to your order or account, what your request concerns and — if it relates to the newsletter — the address the messages are sent to. If we cannot verify your identity from those details, we will ask for further information."
+    },
+    {
+     "n": 14,
+     "pl": "Dane, które prześlesz nam w zgłoszeniu, wykorzystamy wyłącznie w celu rozpatrzenia i obsługi Twojego wniosku.",
+     "ua": "Дані, які ви надішлете у зверненні, ми використаємо лише для розгляду та опрацювання вашого запиту.",
+     "en": "The data you send us in your request will be used only to review and handle that request."
+    },
+    {
+     "n": 15,
+     "pl": "Administrator danych",
+     "ua": "Контролер даних",
+     "en": "Data controller"
+    },
+    {
+     "n": 16,
+     "pl": "Administratorem danych jest LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa.",
+     "ua": "Контролер персональних даних — LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa.",
+     "en": "The data controller is LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland."
+    },
+    {
+     "n": 17,
+     "pl": "Termin i koszt",
+     "ua": "Термін і вартість",
+     "en": "Timescale and cost"
+    },
+    {
+     "n": 18,
+     "pl": "Rozpatrzenie wniosku jest bezpłatne. Odpowiadamy bez zbędnej zwłoki, najpóźniej w ciągu miesiąca od otrzymania zgłoszenia. Jeżeli sprawa jest złożona, możemy przedłużyć ten termin o kolejne dwa miesiące — poinformujemy Cię o tym wraz z uzasadnieniem.",
+     "ua": "Розгляд запиту безкоштовний. Ми відповідаємо без зайвої затримки, щонайпізніше протягом місяця з дня отримання звернення. Якщо справа складна, ми можемо подовжити цей термін ще на два місяці — і повідомимо вас про це з поясненням причини.",
+     "en": "Handling your request is free of charge. We reply without undue delay and no later than one month from receipt. If the matter is complex we may extend that period by a further two months, and we will tell you why."
+    },
+    {
+     "n": 19,
+     "pl": "Skarga",
+     "ua": "Скарга",
+     "en": "Complaints"
+    },
+    {
+     "n": 20,
+     "pl": "Jeżeli uznasz, że przetwarzamy Twoje dane niezgodnie z prawem, możesz wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warszawa (uodo.gov.pl).",
+     "ua": "Якщо ви вважаєте, що ми обробляємо ваші дані неправомірно, ви можете подати скаргу до Голови Управління охорони персональних даних Польщі (Prezes Urzędu Ochrony Danych Osobowych), ul. Stawki 2, 00-193 Warszawa (uodo.gov.pl).",
+     "en": "If you believe we are processing your data unlawfully, you may lodge a complaint with the President of the Personal Data Protection Office (Prezes Urzędu Ochrony Danych Osobowych), ul. Stawki 2, 00-193 Warsaw, Poland (uodo.gov.pl)."
+    }
+   ]
   }
  ],
- "total_blocks": 259
+ "total_blocks": 279
 }

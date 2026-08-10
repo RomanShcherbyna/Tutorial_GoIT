@@ -31,6 +31,25 @@ FULL_PAGES = {
     "/deklaracja-dostepnosci",
 }
 
+# The ninth page has no document behind it — it was written here, out of the
+# audit's own findings. It is listed apart from FULL_PAGES because the checklist
+# artifact uses that set to mean "already solved by the client's text", and one
+# fix on this page is not: nothing on the site links to it, and a replaced page
+# nobody can reach is still unreachable.
+WRITTEN_PAGES = {"/personal-data-requests"}
+
+# Said in full on the page's own card, because the reader of the work order will
+# otherwise take the finished text for the whole job.
+PAGE_NOTE = {
+    "/personal-data-requests":
+        "На эту страницу не ведёт ни одна ссылка — её нет ни в футере, ни в "
+        "меню, ни в политике конфиденциальности. Текст ниже готов, но, пока "
+        "ссылку не поставят, его никто не откроет: пункт «Wnioski dotyczące "
+        "danych osobowych» / «Запити щодо персональних даних» / «Personal "
+        "data requests» нужен в футере, в блоке «Klientowi» / «Клієнту» / "
+        "«Information», во всех трёх локалях.",
+}
+
 # Groups whose every item disappears the moment the page above is replaced.
 #
 # The audit found these before the documents arrived, so the same page shows up
@@ -195,7 +214,8 @@ def is_wording(f):
 def collect_partial(checklist):
     out = []
     for g in checklist["groups"]:
-        if g.get("path") in FULL_PAGES or g.get("key") in COVERED_BY_DOCS:
+        if (g.get("path") in FULL_PAGES or g.get("path") in WRITTEN_PAGES
+                or g.get("key") in COVERED_BY_DOCS):
             continue
         items = [dict(f, _kind=kind_of(f))
                  for f in g["fixes"] if is_wording(f)]
@@ -570,6 +590,9 @@ def full_block(p, i):
   </div>
   <div class="render">{d['body']}</div>
 </div>""")
+    note = PAGE_NOTE.get("/" + p["slug"], "")
+    if note:
+        note = f'<p class="why"><b>Мало заменить текст:</b> {esc(note)}</p>'
     ui = ""
     if p["ui"]:
         ui = ('<p class="why"><b>Отдельно:</b> ' + esc(p["ui_title"]) +
@@ -588,6 +611,7 @@ def full_block(p, i):
   <div class="docbody">
     <p class="why">Содержимое страницы заменяется полностью — всё, что стоит
       там сейчас, уходит вместе с заменой. Адрес не меняется.</p>
+    {note}
     {ui}
     <div class="tabs">{''.join(tabs)}</div>
     {''.join(panes)}
@@ -737,15 +761,17 @@ def main():
     <h1>Что менять на сайте</h1>
     <p class="lede">Только текст: опечатки, кривой перевод, непереведённые
       куски, чужой язык на странице, заглушки и расхождения с вашими
-      документами. Две части. Там, где есть ваш документ, страница заменяется
-      целиком — берёте файл и вставляете. Там, где документа нет, меняются
+      документами. Две части. Там, где текст готов целиком, страница
+      заменяется — берёте файл и вставляете. Там, где готов не весь, меняются
       отдельные абзацы, и на каждый показано что стоит сейчас и что должно
       стать, на трёх языках. Адреса страниц не меняются.</p>
     <p class="lede" style="margin-top:.5rem">Сюда не вошло то, что тянется
       из BaseLinker: значения атрибутов, фильтры и тексты товаров. Править их
       на сайте бесполезно — следующая выгрузка перезапишет. Обязательные
       юридические абзацы тоже вынесены отдельно: это не вычитка, а написание
-      нового текста.</p>
+      нового текста. Одно исключение — страница запросов по GDPR: там писать
+      было почти нечего, кроме этих абзацев, поэтому она лежит в первой части
+      готовой страницей.</p>
     <div class="toolbar">
       <button class="btn" data-own="all" aria-selected="true">Все правки</button>
       <button class="btn" data-own="dev" aria-selected="false">Программистам</button>
@@ -776,7 +802,9 @@ def main():
 
   <h2 class="sec">1. Заменить целиком — {len(full)} страниц</h2>
   <p class="secnote">Содержимое страницы меняется полностью: старый текст уходит
-    вместе с заменой, отдельно ничего удалять не нужно. Файл
+    вместе с заменой, отдельно ничего удалять не нужно. Восемь страниц — ваши
+    документы; девятая, запросы по GDPR, собрана нами: документа на неё не
+    было, а на самой странице не хватало половины обязательного. Файл
     <code>.docx</code> — читать и согласовывать, <code>.html</code> — вставлять
     в редактор страницы.</p>
   {''.join(full_block(p, i) for i, p in enumerate(full))}
