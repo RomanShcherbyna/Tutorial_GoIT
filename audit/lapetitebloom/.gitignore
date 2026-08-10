@@ -1,2 +1,4 @@
 raw/
 cmp/
+__pycache__/
+*.pyc

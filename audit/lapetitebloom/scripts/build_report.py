@@ -10,6 +10,8 @@ import os
 import sys
 from collections import Counter, defaultdict
 
+import summary
+
 SEV_ORDER = {"blocker": 0, "high": 1, "medium": 2, "low": 3}
 SEV_LABEL = {"blocker": "Блокер", "high": "Критично",
              "medium": "Средне", "low": "Мелочь"}
@@ -76,10 +78,9 @@ def md_report(items, stats):
     w = L.append
     w("# Контент-аудит lapetitebloom.com — PL / UA / EN\n")
     w("Аудит трёх языковых версий магазина перед запуском и верификацией в Przelewy24.\n")
-    w(f"Проверено **{stats['pages']} страниц** × 3 локали = "
-      f"**{stats['pages'] * 3} снимков**. Найдено **{len(items)}** проблем.\n")
+    w(summary.md(stats, len(items)))
 
-    w("\n## Сводка\n")
+    w("\n---\n\n## Сводка по находкам\n")
     w("| Уровень | Сколько |")
     w("|---|---|")
     for s in ("blocker", "high", "medium", "low"):
@@ -112,6 +113,7 @@ def md_report(items, stats):
                         w(f"\n*{lab}:*\n\n```\n{f[lang]}\n```\n")
             if f.get("note"):
                 w(f"\n**Куда вписать / примечание:** {f['note']}\n")
+    w(summary.md_tail())
     return "\n".join(L)
 
 
@@ -281,6 +283,50 @@ h1{
   .fid{margin-top:0}
   .lanes{grid-template-columns:1fr}
 }
+
+/* ---------- narrative sections ---------- */
+.intro{margin:0 0 2.5rem;max-width:74ch}
+.intro h2{
+  margin:2.25rem 0 .8rem;font-size:1.12rem;font-weight:700;
+  letter-spacing:.02em;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+  text-wrap:balance;
+}
+.intro h2:first-child{margin-top:0}
+.intro h3.sub{margin:1.5rem 0 .5rem;font-size:.92rem;font-weight:700}
+.intro p{margin:.6rem 0}
+.intro .dim{color:var(--muted);font-size:.92rem}
+ol.headline{margin:1rem 0 0;padding:0;list-style:none;counter-reset:hl}
+ol.headline li{
+  counter-increment:hl;position:relative;padding:0 0 1.1rem 2.4rem;
+  margin-bottom:1.1rem;border-bottom:1px solid var(--hair);
+}
+ol.headline li:last-child{border-bottom:0;margin-bottom:0}
+ol.headline li::before{
+  content:counter(hl,decimal-leading-zero);position:absolute;left:0;top:.1rem;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;
+  font-weight:700;color:var(--blocker);
+}
+ol.headline.legal li::before{color:var(--accent)}
+ol.headline h3{margin:0 0 .3rem;font-size:.97rem;font-weight:650;line-height:1.35}
+ol.headline code{
+  display:inline-block;margin-bottom:.35rem;font-size:.76rem;color:var(--accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all;
+}
+ol.headline p{margin:0;font-size:.93rem;color:var(--muted)}
+table.company{
+  border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem;
+  display:block;overflow-x:auto;
+}
+table.company th,table.company td{
+  text-align:left;padding:.4rem .8rem .4rem 0;border-bottom:1px solid var(--hair);
+  vertical-align:top;
+}
+table.company th{font-weight:600;color:var(--muted);white-space:nowrap;width:14rem}
+table.company td{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+ul.plain{margin:.8rem 0;padding-left:1.1rem}
+ul.plain li{margin-bottom:.5rem;font-size:.93rem;color:var(--muted)}
+ul.plain b{color:var(--ink)}
+.outro{margin:3rem 0 0;padding-top:1.5rem;border-top:2px solid var(--ink)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 """
 
@@ -376,11 +422,15 @@ def html_report(items, stats):
 
   <div class="tally">{tally}</div>
 
+  {summary.html(stats, len(items), esc)}
+
   <nav class="filters" aria-label="Фильтр находок">{"".join(filters)}</nav>
 
   {"".join(blocks)}
 
   <p class="empty" hidden>Ничего не подошло под фильтр.</p>
+
+  {summary.html_tail(esc)}
 </div>
 
 <script>{JS}</script>"""
