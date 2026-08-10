@@ -1,0 +1,14353 @@
+# Контент-аудит lapetitebloom.com — PL / UA / EN
+
+Аудит трёх языковых версий магазина перед запуском и верификацией в Przelewy24.
+
+## Что проверили
+
+Обойдено **54 страницы** в трёх локалях — польской, украинской и английской, всего **162 снимка**. Витрина закрыта заглушкой «Opening Soon», поэтому обход шёл под сессией администратора. Разбор вели 15 параллельных агентов, каждый по своему срезу: главная, сквозные элементы, юридические страницы, блог, категории, фильтры, карточки товара, оформление заказа, аккаунт, UI-строки движка и юридические реквизиты.
+
+Глубина — «быстрая»: все статические страницы, весь блог, категории верхнего уровня и выборка товаров по типам. Что осталось за рамками — в конце отчёта.
+
+
+## Главное
+
+Найдено **334** проблемы, из них **39** нельзя оставлять к запуску. Заглушки и недопереводы оказались меньшей частью беды: куда серьёзнее то, что на сайт попали куски чужих сайтов — чужой банковский счёт, чужие юридические условия и реклама конкурента.
+
+
+**1. Чужой банковский счёт на странице оплаты**  
+`/ua/delivery-and-payment`  
+Украинская версия предлагает переводить деньги на счёт другой компании — «Bebe Concept», mBank 89 1140 2004 0000 3402 8312 5269 — и называет оператором Tpay.com. Przelewy24 не упомянут в этой локали ни разу. Снять до запуска.
+
+
+**2. Условия возврата написаны по французскому праву**  
+`/warranty-and-returns и 2 подстраницы, все 3 локали`  
+Текст ссылается на artykuł L.221-18 и L.221-24 francuskiego Kodeksu Konsumenta и статьи 1641–1649 французского Гражданского кодекса. Он скопирован у чужого бренда вместе с его сетью бутиков. Продавец — польская LPB Sp. z o.o., применимо польское право.
+
+
+**3. Сайт даёт два разных срока отказа от покупки**  
+`/warranty-and-returns против /claims-and-complaints и §8 регламента`  
+30 дней в одном месте, 14 дней в другом, «Zwrot w ciągu 30 dni» в футере на каждой странице. Для покупателя это прямое противоречие в условиях договора.
+
+
+**4. Украинский текст в польской версии страницы оплаты**  
+`/delivery-and-payment`  
+Блок «Metody płatności» на польской странице набран по-украински: «Онлайн-платежі обробляє Przelewy24 (PayPro S.A.)…».
+
+
+**5. Реклама конкурента в блоке «Bestsellery»**  
+`главная, PL и EN`  
+«Be it winter or summer, Bonpoint creates clothing and accessories for children…» — маркетинговый текст Bonpoint, дважды в польской версии и дважды в английской.
+
+
+**6. Главный баннер продвигает несуществующий бренд**  
+`главная, все 3 локали`  
+«Akro by Olivier Cresp» нет ни в каталоге, ни в карте брендов, кнопка «Odkryj markę» ведёт на /catalog, которого не существует. Ещё три слайда из четырёх — немые картинки без заголовка, ссылки и alt.
+
+
+**7. Ссылка в анонс-баре на каждой странице ведёт на 404**  
+`/special-offers/sezonowa-wyprzedaz-kolekcji-2025`  
+Один и тот же href во всех локалях, без префикса — с /ua и /en он ещё и выбрасывает посетителя из его языка.
+
+
+**8. Контактная форма собирает персональные данные без клаузулы RODO**  
+`/contacts`  
+Имя, фамилия, email и телефон уходят без согласия и без ссылки на политику конфиденциальности. У формы newsletter чекбокс есть, у контактной — нет.
+
+
+## Ответ на вопрос: Нам вписывать KRS, NIP, REGON — и на трёх языках?
+
+
+**Да, и это обязанность, а не пожелание.** Для sp. z o.o. art. 206 § 1 Кодекса торговых обществ требует на сайте полное наименование, адрес, суд регистрации, номер KRS, NIP и kapitał zakładowy. Art. 5 ustawy o świadczeniu usług drogą elektroniczną — те же данные в постоянной и легкодоступной форме. Art. 12 ust. 1 ustawy o prawach konsumenta — до заключения договора. Przelewy24 при верификации проверяет ровно это: идентификацию продавца, регламент, политику возвратов и рабочий контакт.
+
+
+**Да, на всех трёх языках — но цифры везде одни и те же.** Каждая локаль несёт данные сама, а не отсылает к польской версии: art. 12 требует их на языке продажи. При этом номера NIP, REGON и KRS — идентификаторы: их не переводят, не транслитерируют и не переформатируют.
+
+
+**Переводятся только подписи полей.** «Sąd rejestrowy» / «Реєстраційний суд» / «Registry court». Сами аббревиатуры NIP, REGON, KRS остаются латиницей и в украинской версии — это названия польских регистров, эквивалента у них нет. В UA и EN стоит добавить короткую расшифровку в скобках.
+
+
+**Название компании и улица не переводятся.** «LPB Spółka z ograniczoną odpowiedzialnością» латиницей во всех локалях, «ul. Marcina Kasprzaka 31/119» тоже. Переводятся только город и страна: Warszawa / Варшава / Warsaw, Polska / Польща / Poland.
+
+
+**REGON по закону не обязателен, но оставьте.** На сайте его не требует ни одна норма, однако его принято указывать рядом с NIP и KRS, и он упрощает верификацию в Przelewy24.
+
+
+### Как обстоит дело сейчас
+
+На `/contacts` реквизиты уже есть, но сломаны: во всех трёх локалях под заголовком стоит необработанный польский фрагмент «LPB Sp. z o.o. ul.» — улица оторвалась в соседний блок, — а рядом «NIP: 5273179673; REGON: 542537097;  KRS: 0001190730» с двойным пробелом. Нет полного наименования, суда, kapitału zakładowego и страны. В футере не указано вообще ничего, кроме улицы и номера дома. Плюс продавец описан тремя разными редакциями — в контактах, в §2 регламента и в политике конфиденциальности. Задача не «добавить с нуля», а привести к одному виду и достроить.
+
+
+### Данные компании
+
+Сверены с официальным API Министерства юстиции Польши (`api-krs.ms.gov.pl`, KRS 0001190730), не по вторичным источникам.
+
+
+| Поле | Значение |
+|---|---|
+| Полное наименование | LPB Spółka z ograniczoną odpowiedzialnością |
+| Сокращённо | LPB Sp. z o.o. |
+| KRS | 0001190730 |
+| NIP | 5273179673 |
+| REGON | 542537097 |
+| Юридический адрес | ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska |
+| Kapitał zakładowy | 5 000,00 PLN |
+| Дата регистрации | 26.08.2025 |
+| Суд регистрации | в выписке не указан — заполнить один раз и одинаково во всех местах |
+
+Готовые блоки реквизитов для страницы контактов, футера, регламента и чекаута на PL/UA/EN — в находках `19-04`, `19-05`, `19-06`, `19-07`.
+
+
+---
+
+## Сводка по находкам
+
+| Уровень | Сколько |
+|---|---|
+| Блокер | 39 |
+| Критично | 136 |
+| Средне | 134 |
+| Мелочь | 25 |
+
+| Тип проблемы | Сколько |
+|---|---|
+| Кривой перевод | 112 |
+| Юр. требование | 56 |
+| Заглушка | 53 |
+| Нет перевода | 45 |
+| Опечатка | 41 |
+| Битая ссылка | 19 |
+| Чужой язык | 8 |
+
+---
+
+## Блокер (39)
+
+
+### 12-01 · (global JS) window.FenixTranslations.validate.required — działa m.in. na /checkout · Кривой перевод [pl,ua,en]
+
+**Где:** Walidacja formularzy — komunikat dla pustego pola wymaganego (klucz validate.required)
+
+
+**Сейчас:**
+
+> pl: "Podaj hasło ponownie" | ua: "Вкажіть пароль ще раз" | en: "Enter password again"
+
+
+**Почему проблема:** Это универсальный текст для ЛЮБОГО незаполненного обязательного поля, а написан он про пароль. В чекауте покупатель, не заполнив имя, телефон, город или индекс, увидит «Podaj hasło ponownie» / «Enter password again». Это прямая потеря заказов и провал ручной проверки формы верификатором Przelewy24. Одинаково сломано во всех трёх локалях.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+To pole jest wymagane
+```
+
+
+*UA:*
+
+```
+Це поле обов’язкове
+```
+
+
+*EN:*
+
+```
+This field is required
+```
+
+
+**Куда вписать / примечание:** Ключ validate.required в объекте FenixTranslations (админка → переводы UI, группа validate). Отдельное сообщение про повтор пароля должно жить в своём ключе (например validate.passwordConfirm), а не в required.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»*
+
+
+### 02-01 · * · Битая ссылка [pl,ua,en]
+
+**Где:** Анонс-бар в шапке, ссылка вокруг текста акции (header__announcement-link)
+
+
+**Сейчас:**
+
+> <a href="/special-offers/sezonowa-wyprzedaz-kolekcji-2025" class="header__announcement-link">
+
+
+**Почему проблема:** Единственная ссылка в анонс-баре ведёт на /special-offers/sezonowa-wyprzedaz-kolekcji-2025 → 404. Бар выводится на каждой странице во всех трёх локалях, во всех трёх href одинаковый (без языкового префикса), то есть на /ua и /en он к тому же уводит из локали. Это первый кликабельный элемент сайта.
+
+
+**Куда вписать / примечание:** Техническая правка. Раздел /special-offers существует и отдаёт 200 (h1 «Akcje»), но сейчас на нём «Obecnie nie ma żadnych aktywnych promocji» — вести туда бессмысленно. Два рабочих варианта: (1) создать страницу коллекции и указать локализованные ссылки /special-offers/<slug>, /ua/special-offers/<slug>, /en/special-offers/<slug>; (2) до запуска коллекции убрать анонс-бар целиком (Настройки → Анонс в шапке → выключить), а не оставлять битую ссылку. В любом случае ссылка обязана наследовать языковой префикс локали.
+
+
+### 01-01 · / · Заглушка [pl,ua,en]
+
+**Где:** Главный слайдер (main-slider-section), слайды 2, 3 и 4
+
+
+**Сейчас:**
+
+> <div class="main-slider-item swiper-slide"> … <img src="…adapt_the-campamento-aw-2026.png" loading="lazy" width="1400" height="500"> … </div> (без текста, без ссылки, без alt)
+
+
+**Почему проблема:** Из четырёх слайдов главного баннера три (The Campamento AW 2026, Liewood AW 2026, Bobo Choses AW 2026) — просто картинки: нет заголовка, нет подзаголовка, нет кнопки, у <img> вообще отсутствует атрибут alt, и весь слайд не кликабельный (нет <a href>). Пользователь видит красивую картинку, но не может ни понять, что это, ни перейти в коллекцию. Одинаково во всех трёх локалях. Плюс у слайда 2 мобильная картинка (iutb-z-ta-1-z.png) не совпадает по названию с десктопной (the-campamento-aw-2026.png) — вероятно, залита не та.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Slajd 2 — nagłówek: «The Campamento», podpis: «Kolekcja jesień–zima 2026», przycisk: «Odkryj kolekcję», alt: «The Campamento — kolekcja jesień–zima 2026». Slajd 3 — «Liewood» / «Kolekcja jesień–zima 2026» / «Odkryj kolekcję» / alt: «Liewood — kolekcja jesień–zima 2026». Slajd 4 — «Bobo Choses» / «Kolekcja jesień–zima 2026» / «Odkryj kolekcję» / alt: «Bobo Choses — kolekcja jesień–zima 2026».
+```
+
+
+*UA:*
+
+```
+Слайд 2 — заголовок: «The Campamento», підпис: «Колекція осінь–зима 2026», кнопка: «Відкрити колекцію», alt: «The Campamento — колекція осінь–зима 2026». Слайд 3 — «Liewood» / «Колекція осінь–зима 2026» / «Відкрити колекцію» / alt: «Liewood — колекція осінь–зима 2026». Слайд 4 — «Bobo Choses» / «Колекція осінь–зима 2026» / «Відкрити колекцію» / alt: «Bobo Choses — колекція осінь–зима 2026».
+```
+
+
+*EN:*
+
+```
+Slide 2 — heading: “The Campamento”, caption: “Autumn–winter 2026 collection”, button: “Explore the collection”, alt: “The Campamento — autumn–winter 2026 collection”. Slide 3 — “Liewood” / “Autumn–winter 2026 collection” / “Explore the collection” / alt: “Liewood — autumn–winter 2026 collection”. Slide 4 — “Bobo Choses” / “Autumn–winter 2026 collection” / “Explore the collection” / alt: “Bobo Choses — autumn–winter 2026 collection”.
+```
+
+
+**Куда вписать / примечание:** Админка → Слайдеры → Главный слайдер, элементы 11, 12, 13 (storage/tmp_media/sliders_item/11,12,13). Заполнить заголовок, подзаголовок, текст кнопки, ссылку (на страницу бренда /brands/liewood, /brands/bobo-choses) и alt изображения в каждой из трёх локалей. У слайда 2 проверить мобильную картинку.
+
+
+### 01-02 · / · Битая ссылка [pl,ua,en]
+
+**Где:** Главный слайдер, слайд 1 — баннер «Akro by Olivier Cresp»
+
+
+**Сейчас:**
+
+> NOWOŚĆ / Akro by Olivier Cresp / Odkryj markę → href="https://lapetitebloom.com/catalog"
+
+
+**Почему проблема:** Первый экран сайта рекламирует бренд Akro by Olivier Cresp, которого нет в каталоге: слова «akro», «olivier», «cresp» не встречаются ни в brands.xml, ни в products.xml, ни в categories.xml, а страницы /brands/akro не существует. Поэтому кнопка «Odkryj markę» ведёт не на бренд, а на общий /catalog — этого адреса тоже нет ни в одной карте сайта и он не отдавался при обходе. Посетитель кликает по главному промо-баннеру и попадает в никуда. Картинка слайда при этом называется tartine-aw-2026.png (Tartine et Chocolat), то есть изображение и подпись, скорее всего, вообще из разных кампаний.
+
+
+**Куда вписать / примечание:** Админка → Слайдеры → Главный слайдер, элемент 10. Либо завести бренд Akro by Olivier Cresp с товарами и вести кнопку на /brands/<slug>, либо заменить слайд на бренд, который реально есть в каталоге. Ссылку /catalog проверить отдельно — судя по картам сайта, такой страницы нет. [уточнить: продаётся ли Akro by Olivier Cresp и та ли это картинка]
+
+
+### 01-03 · / · Заглушка [pl,ua,en]
+
+**Где:** Блок «Bestsellery» — подпись под заголовком вкладок «Dla domu» и «Bluzki i bluzy» (section-bestsellers__notice)
+
+
+**Сейчас:**
+
+> Be it winter or summer, Bonpoint creates clothing and accessories for children where comfort and care meet chic
+
+
+**Почему проблема:** В польской и английской версии в двух блоках бестселлеров стоит рекламный текст конкурента — французского бренда Bonpoint, дословно с его сайта. В украинской версии он переведён и в первом блоке имя Bonpoint осталось («Чи то зима, чи літо, Bonpoint створює одяг…»), во втором его вручную вычистили. Это чужой копирайт и прямая реклама конкурента на главной странице магазина. Плюс в PL-версии текст вообще на английском.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Bez względu na porę roku wybieramy dla dzieci ubrania i dodatki, w których wygoda jest równie ważna jak dobry krój.
+```
+
+
+*UA:*
+
+```
+Незалежно від пори року ми обираємо для дітей одяг та аксесуари, у яких зручність і турбота йдуть поруч із гарним стилем.
+```
+
+
+*EN:*
+
+```
+Whatever the season, we choose clothing and accessories for children in which comfort and care go hand in hand with good style.
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Bestsellery» → подпись каждой вкладки. Проверить все вкладки во всех трёх локалях: текст встречается 2 раза в PL, 2 раза в EN, 2 раза в UA.
+
+
+*Правки носителей: PL: „wygoda i troska idą w parze z dobrym stylem” to wciąż kalka zdania Bonpoint („comfort and care meet chic”), a „troska” nie może być cechą ubrania — zamiana na własne, naturalne sformułowanie.*
+
+
+### 01-04 · / · Заглушка [pl,ua,en]
+
+**Где:** Блок «Najnowsze wiadomości» / «Останні новини» / «Latest News»
+
+
+**Сейчас:**
+
+> PL: «Odrzuca przyjemności.», «Albo jest», «Często konsekwencją jest architektura.» — «Akulka u nas rzuca, — z pozwoleniem powiedzieć, w całej swej sile…»; UA/EN: «Odit ut voluptates», «Aut est», «Saepe consequatur architecto est»
+
+
+**Почему проблема:** Из пяти карточек в новостном блоке главной только одна настоящая (Kocyki Klippan). Остальные четыре — рыба: в PL это машинный перевод «Мёртвых душ» Гоголя, в UA — куски «Захара Беркута» Франко, в EN — «Алиса в Стране чудес». Заголовки в UA и EN вообще остались латинской lorem-заглушкой («Odit ut voluptates», «Aut est», «Saepe consequatur architecto est»). Это первое, что видит пользователь и верификатор Przelewy24 в самом низу главной.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Do czasu publikacji prawdziwych wpisów zostawić w bloku wyłącznie gotowe artykuły (obecnie: «Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych») albo ukryć sekcję. Nagłówek sekcji: «Najnowsze wpisy», przycisk: «Zobacz wszystkie».
+```
+
+
+*UA:*
+
+```
+До публікації справжніх матеріалів залишити в блоці лише готові статті (зараз: «Ковдри Klippan — природне тепло та скандинавська якість для найменших») або приховати секцію. Заголовок секції: «Останні записи», кнопка: «Дивитися всі».
+```
+
+
+*EN:*
+
+```
+Until real posts are published, keep only the finished articles in this block (currently: “Klippan blankets — natural warmth and Scandinavian quality for the little ones”) or hide the section. Section heading: “Latest news”, button: “See all”.
+```
+
+
+**Куда вписать / примечание:** Пересекается со срезом агента 08 (сам блог), но здесь речь именно о выдаче lorem-карточек на главной. Админка → Главная → блок «Новости»: либо ограничить выборку опубликованными материалами, либо снять с публикации записи sit-rerum-labore23250, odit-ut-voluptates3981, aut-est2794, saepe-consequatur-architecto-est15163.
+
+
+*Правки носителей: UA: коротке тире замість довгого в назві статті; EN: Section heading inconsistent with the agreed set of homepage headings ("Latest news").*
+
+
+### 13-02 · /auth/register · Заглушка [PL]
+
+**Где:** <title> strony rejestracji (identycznie w /ua/auth/register i /en/auth/register)
+
+
+**Сейчас:**
+
+> App Name
+
+
+**Почему проблема:** Karta przeglądarki na stronie zakładania konta nosi domyślną nazwę szablonu „App Name” we wszystkich trzech lokalizacjach. Strona zbiera dane osobowe (imię, nazwisko, data urodzenia, e-mail) i jest jednym z ekranów oglądanych przy weryfikacji Przelewy24. Dodatkowo strona nie ma żadnego <h1> (nagłówek „Utwórz konto” to zwykły <div class="form-title">), a ostatni element okruszków jest pusty: <span class="breadcrumbs-nav-item breadcrumbs-nav-item-last"></span>.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Załóż konto — La Petite Bloom
+```
+
+
+*UA:*
+
+```
+Створити акаунт — La Petite Bloom
+```
+
+
+*EN:*
+
+```
+Create an account — La Petite Bloom
+```
+
+
+**Куда вписать / примечание:** Ustawić meta title strony /auth/register w trzech lokalizacjach; przy okazji podnieść „Utwórz konto / Створити акаунт / Create an account” do <h1> i uzupełnić ostatni element okruszków. Ta sama nazwa powinna trafić do breadcrumbs.
+
+
+*Правки носителей: PL: Ten sam <title> strony rejestracji proponuje 14-15 jako „Załóż konto — La Petite Bloom”; „Załóż konto” jest po polsku naturalniejsze niż „Utwórz konto”. Ujednolicenie.*
+
+
+### 13-05 · /auth/register · Юр. требование [PL]
+
+**Где:** Obowiązkowy checkbox zgody nad przyciskiem „Wyślij” (name="agreement" required)
+
+
+**Сейчас:**
+
+> Klikając "Wyślij", potwierdzasz, że akceptujesz Warunki sprzedaży i naszą politykę prywatności, która informuje Cię o sposobach przetwarzania Twoich danych osobowych oraz Twoich prawach dotyczących tych danych. Twój adres e-mail jest używany wyłącznie do wysyłania newsletterów, które Cię interesują.*
+
+
+**Почему проблема:** Cztery problemy naraz. (1) Treść mówi „Klikając »Wyślij«, potwierdzasz…”, a jest to checkbox wymagany — mechanika zgody nie zgadza się z jej opisem. (2) Powołuje się na „Warunki sprzedaży”, dokument, którego sklep nie ma — obowiązujący dokument nazywa się „Regulamin sklepu internetowego”. (3) Ani regulamin, ani polityka prywatności nie są linkami — w kodzie to zwykły tekst wewnątrz <span class="text">, więc klient nie może się z nimi zapoznać przed akceptacją. (4) Zdanie „Twój adres e-mail jest używany wyłącznie do wysyłania newsletterów” jest nieprawdziwe dla konta w sklepie (e-mail służy też do obsługi zamówień) i miesza zgodę marketingową z akceptacją regulaminu, które muszą być rozdzielone. To jeden z punktów sprawdzanych przy weryfikacji Przelewy24.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Akceptuję Regulamin sklepu internetowego i zapoznałam/em się z Polityką prywatności, która wyjaśnia, jak przetwarzamy dane osobowe i jakie masz prawa. *
+```
+
+
+*UA:*
+
+```
+Приймаю Правила інтернет-магазину та ознайомився/ознайомилася з Політикою конфіденційності, яка пояснює, як ми обробляємо персональні дані та які у вас права. *
+```
+
+
+*EN:*
+
+```
+I accept the Online shop terms and conditions and I have read the Privacy policy, which explains how we process personal data and what your rights are. *
+```
+
+
+**Куда вписать / примечание:** Nazwy obu dokumentów muszą być linkami do /terms-of-use i /privacy-policy (w UA/EN — do wersji z prefiksem lokalizacji). Zgodę marketingową zostawić jako osobny, nieobowiązkowy checkbox (patrz 13-03). Ostateczne brzmienie klauzuli do potwierdzenia przez prawnika — powyżej propozycja tekstu interfejsu, nie opinia prawna.
+
+
+*Правки носителей: UA: пробіли навколо скісної риски (пор. 12-10); EN: "Online store" is an Americanism and clashes with "online shop" used elsewhere.*
+
+
+### 08-06 · /blog/aut-est2794 · Заглушка [pl+ua+en]
+
+**Где:** H1, <title>, meta description, тело статьи, анонс
+
+
+**Сейчас:**
+
+> H1 PL: «Albo jest»; H1 UA/EN: «Aut est»; анонс PL: «Wydaje się, że jesteś człowiekiem dość rozumnym, posiadasz wiadomości — wykształcenia. Przecież przedmiot to tylko fu-fu.»
+
+
+**Почему проблема:** Полная рыба. Заголовок «Albo jest» / «Aut est» — обрывок латыни из генератора. Анонс, который виден на /blog и в блоке «Najnowsze wiadomości», — куски «Мёртвых душ» Гоголя в польском переводе, в UA — «Захар Беркут» Франко, в EN — «Alice in Wonderland». Тело — lorem ipsum, meta description — латынь.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Jak prać i pielęgnować ubranka dziecięce, żeby służyły dłużej
+```
+
+
+*UA:*
+
+```
+Як прати та доглядати за дитячим одягом, щоб він служив довше
+```
+
+
+*EN:*
+
+```
+How to wash and care for children’s clothes so they last longer
+```
+
+
+**Куда вписать / примечание:** Готовый каркас замены — в находке 08-18. Слаг заменить на jak-prac-ubranka-dzieciece, со старого — 301. Анонс (поле «Announce») переписать вручную: сейчас туда попадает литературная рыба, и она видна на витрине блога.
+
+
+*Правки носителей: EN: Straight apostrophe instead of a typographic one.*
+
+
+### 08-01 · /blog/kocyki-klippan-naturalne-cieplo-i-skandynawska-jakosc-dla-najmlodszych · Заглушка [pl+ua+en]
+
+**Где:** Тело статьи, все абзацы (article-text-wrap → page-description)
+
+
+**Сейчас:**
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ante ut dolor commodo fringilla. Fusce erat metus, eleifend non porttitor hendrerit, suscipit egestas arcu.
+
+
+**Почему проблема:** Единственная запись блога с настоящим заголовком имеет тело из чистого lorem ipsum — одинаковое во всех трёх локалях (9 абзацев латыни). То есть настоящего контента в блоге нет вообще ни одной статьи: заголовок Klippan переведён на UA и EN качественно, но под ним пусто. Запускаться с таким блогом нельзя: это единственная страница, на которую ведут блоки «Najnowsze wiadomości» со всех статей.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kocyk to pierwsza rzecz, która towarzyszy dziecku od pierwszych dni w szpitalu po pierwsze spacery w wózku. Szwedzka manufaktura Klippan tka swoje pledy z naturalnych włókien — wełny i bawełny — stawiając na trwałość zamiast sezonowych trendów. Dzięki temu jeden kocyk potrafi przejść przez kilka lat i kilkoro dzieci, nie tracąc miękkości. W tym tekście tłumaczymy, czym w praktyce różnią się wełna merino, lambswool i bawełna, jak dobrać rozmiar do wózka, łóżeczka i podróży oraz jak prać kocyk, żeby służył długo. [уточнить: dokładne składy, certyfikaty i wymiary modeli dostępnych w La Petite Bloom]
+```
+
+
+*UA:*
+
+```
+Ковдра — перша річ, яка супроводжує дитину від пологового будинку до перших прогулянок у візку. Шведська мануфактура Klippan тче свої пледи з натуральних волокон — вовни та бавовни — обираючи довговічність замість сезонних трендів. Завдяки цьому одна ковдра здатна прослужити кілька років і кільком дітям, не втрачаючи м’якості. У цьому тексті пояснюємо, чим на практиці відрізняються меринос, ламсвул і бавовна, як підібрати розмір для візка, ліжечка та подорожі й як прати плед, щоб він служив довго. [уточнити: точні склади, сертифікати та розміри моделей, доступних у La Petite Bloom]
+```
+
+
+*EN:*
+
+```
+A blanket is the first thing that travels with a child, from the maternity ward to the first walks in the pram. The Swedish mill Klippan weaves its blankets from natural fibres — wool and cotton — choosing durability over seasonal trends. One blanket can therefore last several years and more than one child without losing its softness. In this piece we explain how merino, lambswool and cotton differ in everyday use, how to choose a size for the pram, the cot and travelling, and how to wash a blanket so that it lasts. [уточнить: exact compositions, certifications and dimensions of the models stocked by La Petite Bloom]
+```
+
+
+**Куда вписать / примечание:** Заголовок статьи трогать не надо — он настоящий и переведён корректно на все три локали (PL «Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych» / UA «Ковдри Klippan – природне тепло та скандинавська якість для найменших» / EN «Klippan blankets – natural warmth and Scandinavian quality for the little ones»). Заменить нужно только тело.
+
+ПЛАН СТАТЬИ PL: 1) Klippan — szwedzka manufaktura i jej podejście do wełny; 2) Wełna merino, lambswool czy bawełna — co wybrać dla noworodka; 3) Rozmiary: kocyk do wózka, do łóżeczka, na podróż; 4) Jak prać i wietrzyć kocyk wełniany; 5) Kocyk jako prezent — dlaczego zostaje na lata.
+ПЛАН UA: 1) Klippan — шведська мануфактура та її підхід до вовни; 2) Меринос, ламсвул чи бавовна — що обрати для новонародженого; 3) Розміри: плед для візка, для ліжечка, у дорогу; 4) Як прати й провітрювати вовняний плед; 5) Плед як подарунок — чому він лишається на роки.
+ПЛАН EN: 1) Klippan — the Swedish mill and its approach to wool; 2) Merino, lambswool or cotton — what to choose for a newborn; 3) Sizes: pram blanket, cot blanket, travel blanket; 4) Washing and airing a wool blanket; 5) A blanket as a gift — why it stays for years.
+
+Админка → Blog → Статьи → kocyki-klippan-... → поле «Текст» в каждой из трёх локалей.
+
+
+*Правки носителей: PL: „od porodówki” to potoczyzm, który nie pasuje do spokojnego, premium tonu marki.; UA: росіянізм «уточнить» замість «уточнити»; прямий апостроф замість типографського «’»*
+
+
+### 08-02 · /blog/kocyki-klippan-naturalne-cieplo-i-skandynawska-jakosc-dla-najmlodszych · Заглушка [PL]
+
+**Где:** <title>, og:title, twitter:title
+
+
+**Сейчас:**
+
+> %tytuł%
+
+
+**Почему проблема:** В польской версии в <title>, og:title и twitter:title подставлен незаполненный плейсхолдер «%tytuł%» вместо заголовка. Он же виден во вкладке браузера и попадёт в шеринг в соцсетях. В UA и EN на этой же странице title заполнен корректно.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kocyki Klippan – naturalne ciepło i skandynawska jakość | La Petite Bloom
+```
+
+
+*UA:*
+
+```
+Ковдри Klippan — природне тепло та скандинавська якість | La Petite Bloom
+```
+
+
+*EN:*
+
+```
+Klippan blankets — natural warmth, Scandinavian quality | La Petite Bloom
+```
+
+
+**Куда вписать / примечание:** Админка → Blog → Статьи → kocyki-klippan-... → SEO-блок польской локали, поле «Title» (сейчас там буквально строка «%tytuł%»). Заодно заполнить meta description — сейчас она пустая во всех трёх локалях (см. 08-03).
+
+
+*Правки носителей: UA: коротке тире замість довгого; EN: En dash used where the house style for titles is an em dash (cf. 01-25, 08-04–08-07).*
+
+
+### 08-05 · /blog/odit-ut-voluptates3981 · Заглушка [pl+ua+en]
+
+**Где:** H1, <title>, meta description, тело статьи
+
+
+**Сейчас:**
+
+> H1 PL: «Odrzuca przyjemności.»; H1 UA/EN: «Odit ut voluptates»; title PL: «Zepsuty nikt skąd wynalazca rozkosz.»; meta description PL: «Qui nemo velit error harum. Ea dolores blanditiis est et.»; текст: «Lorem ipsum dolor sit amet…»
+
+
+**Почему проблема:** Полная рыба. Польский заголовок — бессмысленная машинная фраза («Odrzuca przyjemności.»), украинский и английский вообще остались латынью из генератора. Тело — lorem ipsum, meta description — латынь. Дата публикации 09.10.2025.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Bawełna organiczna i certyfikaty GOTS oraz OEKO-TEX — co naprawdę oznaczają
+```
+
+
+*UA:*
+
+```
+Органічна бавовна та сертифікати GOTS і OEKO-TEX — що вони означають насправді
+```
+
+
+*EN:*
+
+```
+Organic cotton and the GOTS and OEKO-TEX labels — what they actually mean
+```
+
+
+**Куда вписать / примечание:** Готовый каркас замены — в находке 08-17. Рубрика записи сейчас «Nasze wydarzenia»; для этой темы логичнее «Publikacje». Слаг заменить на bawelna-organiczna-certyfikaty-gots-oeko-tex, со старого поставить 301.
+
+
+### 08-07 · /blog/saepe-consequatur-architecto-est15163 · Заглушка [pl+ua+en]
+
+**Где:** H1, <title>, meta description, тело статьи, анонс
+
+
+**Сейчас:**
+
+> H1 PL: «Często konsekwencją jest architektura.»; H1 UA/EN: «Saepe consequatur architecto est»; анонс PL: «Akulka u nas rzuca, — z pozwoleniem powiedzieć, w całej swej sile. Potem pili jakiś balsam…»
+
+
+**Почему проблема:** Полная рыба. Польский заголовок — дословный машинный перевод латинской строки генератора, UA и EN остались латынью. Запись занимает широкую двухколоночную карточку внизу /blog, то есть визуально это самый заметный блок витрины блога.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Co podarować noworodkowi — prezenty, które naprawdę się przydają
+```
+
+
+*UA:*
+
+```
+Що подарувати новонародженому — подарунки, які справді знадобляться
+```
+
+
+*EN:*
+
+```
+What to give a newborn — gifts that actually get used
+```
+
+
+**Куда вписать / примечание:** Готовый каркас замены — в находке 08-19. Слаг заменить на co-podarowac-noworodkowi, со старого — 301. Рубрика сейчас «Aktualności»; для подарочного гайда точнее «Publikacje».
+
+
+### 08-04 · /blog/sit-rerum-labore23250 · Заглушка [pl+ua+en]
+
+**Где:** H1, <title>, meta description, тело статьи
+
+
+**Сейчас:**
+
+> H1 PL: «Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych»; title PL: «Asperiores delectus maiores dicta ut ducimus excepturi velit.»; текст: «Lorem ipsum dolor sit amet, consectetur adipiscing elit.»
+
+
+**Почему проблема:** Это тестовый дубль записи про Klippan: H1 и заголовок карточки во всех трёх локалях слово в слово повторяют настоящую статью, но по другому URL, с другой датой (22.12.2025) и с телом из lorem ipsum. На /blog две карточки подряд с одинаковым названием и одинаковой картинкой — выглядит как ошибка сайта. SEO-title при этом — латинская рыба.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Jak dobrać rozmiar ubranek dziecięcych — poradnik dla rodziców
+```
+
+
+*UA:*
+
+```
+Як підібрати розмір дитячого одягу — порадник для батьків
+```
+
+
+*EN:*
+
+```
+How to choose the right size of children’s clothing — a parent’s guide
+```
+
+
+**Куда вписать / примечание:** Два решения на выбор. (1) Быстрое: удалить запись sit-rerum-labore23250 целиком — она ничего не добавляет, а дублирует настоящую. (2) Содержательное: переиспользовать её как первую полезную статью — готовый каркас в находке 08-16 (размеры детской одежды). Если запись удаляется, проверить, что с неё не остаётся ссылок в рубрике «Nasze wydarzenia» (/blog/assumenda-molestias-minima-aut-unde3877).
+
+
+*Правки носителей: EN: Straight apostrophes instead of typographic ones.*
+
+
+### 10-14 · /brands/liewood · Кривой перевод [pl,ua,en]
+
+**Где:** Filtr «Kolor», dwie osobne wartości na liście
+
+
+**Сейчас:**
+
+> Brzoskwiniowy / Muszla   ORAZ   Peach / Sea shell
+
+
+**Почему проблема:** To jeden i ten sam kolor wpisany do katalogu dwa razy — raz po polsku, raz po angielsku. Dowód jest w kodzie strony: na karcie tego samego produktu Liewood stoją obok siebie dwa warianty, data-value=1374 «Peach / Sea shell» i data-value=1236 «Brzoskwiniowy / Muszla», i oba wskazują dokładnie ten sam plik miniatury (adapt_13431033.png). Klient filtrujący po jednej z tych wartości nigdy nie zobaczy produktów przypiętych do drugiej.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Brzoskwiniowy / Muszla
+```
+
+
+*UA:*
+
+```
+Персиковий / Мушля
+```
+
+
+*EN:*
+
+```
+Peach / Sea shell
+```
+
+
+**Куда вписать / примечание:** SCALIĆ: wartość «Peach / Sea shell» (ID 1374) → «Brzoskwiniowy / Muszla» (ID 1236). Przepiąć wszystkie warianty produktowe na jedno ID, drugie usunąć, potem uzupełnić tłumaczenia UA/EN. Dotyczy też pochodnych: «Mini brzoskwiniowy / Muszla» i «Brzoskwiniowa muszla / Bladotoskańska» muszą po scaleniu używać tej samej nazwy bazowej.
+
+
+### 10-15 · /brands/liewood · Кривой перевод [pl,ua,en]
+
+**Где:** Filtr «Kolor», dwie osobne wartości na liście
+
+
+**Сейчас:**
+
+> Toskańska róża multi mix   ORAZ   Tuscany rose multi mix
+
+
+**Почему проблема:** Ten sam kolor Liewood zapisany dwa razy: raz przetłumaczony na polski, raz w oryginale angielskim. Slugi filtrów to color-toskanska_roza_multi_mix i color-tuscany_rose_multi_mix — dwa niezależne wpisy w katalogu. W wersji angielskiej obie pozycje wyświetlają się jako «Tuscany rose multi mix», więc klient widzi dwa nierozróżnialne wiersze albo — po deduplikacji na liście — traci połowę produktów.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Toskańska róża multi mix
+```
+
+
+*UA:*
+
+```
+Тосканська троянда, мультимікс
+```
+
+
+*EN:*
+
+```
+Tuscany rose multi mix
+```
+
+
+**Куда вписать / примечание:** SCALIĆ: «Tuscany rose multi mix» → «Toskańska róża multi mix». Sprawdzić przy okazji parę pokrewną «Toskańska róża / Bladotoskańska» (EN «Tuscany rose / Pale tuscany») — po scaleniu obie muszą korzystać z tej samej wartości bazowej.
+
+
+### 12-08 · /checkout · Юр. требование [pl,ua,en]
+
+**Где:** Krok płatności — etykieta przycisku finalizującego zamówienie
+
+
+**Сейчас:**
+
+> W dostarczonym HTML strony /checkout nie ma żadnego formularza zamówienia ani przycisku płatności — jedyna treść to: "Koszyk jest pusty" + "Kontynuuj zakupy"
+
+
+**Почему проблема:** Форма заказа целиком инжектится скриптом /front/js/checkout.js, поэтому в снимке её нет и текст кнопки не проверяется. Проверить обязательно: art. 17 ust. 3 ustawy o prawach konsumenta требует, чтобы кнопка, которой потребитель завершает заказ, была подписана «zamówienie z obowiązkiem zapłaty» или столь же однозначно. Кнопка «Zapłać», «Wyślij» или «Zamów» без этой формулировки означает, что договор не считается заключённым, и это же смотрит верификатор Przelewy24.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zamawiam z obowiązkiem zapłaty
+```
+
+
+*UA:*
+
+```
+Замовляю з обов’язком оплати
+```
+
+
+*EN:*
+
+```
+Order with an obligation to pay
+```
+
+
+**Куда вписать / примечание:** Проверить на непустой корзине под /checkout во всех трёх локалях. Если кнопка сейчас подписана иначе — заменить на этот текст.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»*
+
+
+### 03-01 · /contacts · Юр. требование [PL]
+
+**Где:** Formularz kontaktowy «Masz pytania? Napisz do nas» — brak klauzuli informacyjnej RODO pod przyciskiem
+
+
+**Сейчас:**
+
+> Wyślij wiadomość
+
+
+**Почему проблема:** Formularz zbiera imię, nazwisko, e-mail i telefon, ale nigdzie nie ma informacji o administratorze danych, celu przetwarzania ani odesłania do polityki prywatności. Art. 13 RODO wymaga podania tych informacji w momencie zbierania danych. Formularz newslettera ma checkbox zgody, formularz kontaktowy nie ma nic. Przy weryfikacji Przelewy24 i przy pierwszej kontroli UODO to jest realne ryzyko.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wysyłając wiadomość, przekazujesz nam swoje dane osobowe. Administratorem jest LPB Sp. z o.o. z siedzibą w Warszawie. Przetwarzamy je wyłącznie po to, żeby odpowiedzieć na Twoje pytanie. Szczegóły znajdziesz w polityce prywatności.
+```
+
+
+*UA:*
+
+```
+Надсилаючи повідомлення, ви передаєте нам свої персональні дані. Контролер персональних даних — LPB Sp. z o.o. з місцезнаходженням у Варшаві. Ми обробляємо їх лише для того, щоб відповісти на ваше звернення. Докладніше — у політиці конфіденційності.
+```
+
+
+*EN:*
+
+```
+By sending this message you share your personal data with us. The data controller is LPB Sp. z o.o., registered in Warsaw. We process it only to answer your enquiry. Full details are in our privacy policy.
+```
+
+
+**Куда вписать / примечание:** Wstawić pod przyciskiem «Wyślij wiadomość» we wszystkich trzech lokalizacjach, ze linkiem do /privacy-policy. Ostateczne brzmienie klauzuli powinien zatwierdzić prawnik — powyższe to szkielet minimum. Rozważyć też checkbox zgody analogiczny do newslettera.
+
+
+*Правки носителей: UA: різнобій «володілець/контролер даних» — уніфіковано на «контролер»; EN: GDPR term is "data controller"; "solely" is stiff in customer-facing copy.*
+
+
+### 19-01 · /contacts · Юр. требование [все]
+
+**Где:** Ответ по существу вопроса заказчика: «нам вписывать KRS, NIP, REGON, на трёх языках?» — блок под h1 «Kontakt» (page-top__descr)
+
+
+**Сейчас:**
+
+> LPB Sp. z o.o. ul.
+NIP: 5273179673; REGON: 542537097; KRS: 0001190730
+
+
+**Почему проблема:** Короткий ответ: да, вписывать — и да, во всех трёх локалях, но не переводя сами номера. Развёрнуто. (1) KRS и NIP обязательны по art. 206 § 1 Kodeksu spółek handlowych: sp. z o.o. обязана указывать на своих сайтах и в коммерческой переписке фирменное наименование, местонахождение и адрес, суд регистрации и номер KRS, NIP и размер kapitału zakładowego. Это относится к сайту как таковому, независимо от языка страницы. (2) art. 5 ustawy o świadczeniu usług drogą elektroniczną требует, чтобы поставщик услуг сделал доступными в постоянной и легкодоступной форме своё наименование, адрес местонахождения, электронный адрес и — для субъектов из реестра — номер в реестре и орган, который его ведёт. (3) art. 12 ust. 1 pkt 2-3 ustawy o prawach konsumenta требует до заключения договора сообщить потребителю данные продавца, адрес предприятия, телефон и e-mail — на языке, на котором ведётся продажа. Раз магазин продаёт на PL, UA и EN, каждая локаль должна нести эти данные сама, а не отсылать к польской версии. (4) Przelewy24 при верификации продавца сверяет данные из заявки (название, NIP, KRS, адрес местонахождения) с тем, что опубликовано на сайте; расхождение или отсутствие реквизитов — типичная причина отказа или запроса дополнительных документов. Сейчас на /contacts номера есть, но нет полного наименования (только сокращение), нет суда регистрации, нет kapitału zakładowego, нет страны, и весь блок оборван фрагментом «ul.». Про три языка. Сами номера — KRS 0001190730, NIP 5273179673, REGON 542537097 — идентичны во всех локалях; их не переводят, не транслитерируют и не переформатируют (никаких «ЄДРПОУ», никаких пробелов внутри номера). Аббревиатуры NIP, REGON, KRS остаются латиницей в том числе в украинской версии — это не слова, а официальные названия польских идентификаторов, у них нет украинского эквивалента. Переводятся только подписи и пояснения вокруг них («Dane firmy» / «Дані компанії» / «Company details», «Sąd rejestrowy» / «Реєстраційний суд» / «Registry court», «Kapitał zakładowy» / «Статутний капітал» / «Share capital»). Название компании не переводится: LPB Spółka z ograniczoną odpowiedzialnością и сокращение LPB Sp. z o.o. остаются латиницей во всех трёх локалях — это зарегистрированная фирма из KRS, а не описание. Улица не переводится и сохраняет польское написание с «ul.» — «ul. Marcina Kasprzaka 31/119»; переводятся только город и страна: Warszawa / Варшава / Warsaw, Polska / Польща / Poland. REGON по закону на сайте не обязателен (art. 206 KSH его не требует), но его принято указывать рядом с NIP и KRS, и он помогает при верификации Przelewy24 и в спорах — оставляем во всех локалях.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Dane firmy · Sąd rejestrowy · KRS · NIP · REGON · Kapitał zakładowy · Adres siedziby
+```
+
+
+*UA:*
+
+```
+Дані компанії · Реєстраційний суд · KRS · NIP · REGON · Статутний капітал · Адреса місцезнаходження
+```
+
+
+*EN:*
+
+```
+Company details · Registry court · KRS · NIP · REGON · Share capital · Registered office address
+```
+
+
+**Куда вписать / примечание:** В pl/ua/en вынесен именно тот слой, который переводится — подписи полей. Всё остальное (номера, название компании, улица) во всех трёх локалях одинаково. Готовые блоки целиком — в находках 19-04 (страница контактов), 19-05 (футер), 19-06 (регламент и чекаут). Эту находку ставить в отчёт первой.
+
+
+### 19-02 · /contacts · Юр. требование [все]
+
+**Где:** Подзаголовок под h1 «Kontakt» / «Контакти» / «Contacts» (page-top__descr), одинаковый во всех трёх локалях
+
+
+**Сейчас:**
+
+> LPB Sp. z o.o. ul.
+
+
+**Почему проблема:** Строка оборвана: после сокращения фирмы стоит одинокое «ul.» без улицы — вёрстка разорвала «LPB Sp. z o.o. ul. Marcina Kasprzaka…» на два поля, и адрес остался в другом блоке. В таком виде реквизиты не выполняют art. 206 § 1 KSH: нет полного фирменного наименования (LPB Spółka z ograniczoną odpowiedzialnością — сокращение допустимо только рядом с полным), нет суда регистрации и номера отдела KRS, нет kapitału zakładowego. Нет и страны — для UA и EN локалей, где покупатель может быть не из Польши, отсутствие «Polska / Польща / Poland» само по себе дефект по art. 12 ust. 1 ustawy o prawach konsumenta. Дополнительно: обрывок «ul.» — польское слово, которое в UA и EN версиях висит без перевода и без смысла. Заменить весь подзаголовок на полный блок реквизитов из находки 19-04.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska
+```
+
+
+*UA:*
+
+```
+LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща
+```
+
+
+*EN:*
+
+```
+LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland
+```
+
+
+**Куда вписать / примечание:** Админка: страница /contacts → поле описания под заголовком (page-top__descr, text-formatted). Сейчас там два <p>, второй начинается с &nbsp;. Полный блок на замену — в 19-04.
+
+
+*Правки носителей: UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»*
+
+
+### 19-04 · /contacts · Юр. требование [все]
+
+**Где:** ГОТОВЫЙ БЛОК: полные юридические реквизиты для страницы контактов (на замену подзаголовку из 19-02)
+
+
+**Сейчас:**
+
+> LPB Sp. z o.o. ul.
+NIP: 5273179673; REGON: 542537097; KRS: 0001190730
+
+
+**Почему проблема:** Готовый к копированию блок, закрывающий art. 206 § 1 KSH (наименование, местонахождение и адрес, суд и номер KRS, NIP, kapitał zakładowy), art. 5 ustawy o świadczeniu usług drogą elektroniczną (наименование, адрес, e-mail, номер в реестре и ведущий его орган) и art. 12 ust. 1 ustawy o prawach konsumenta (данные продавца до заключения договора). Номера во всех трёх локалях идентичны, переведены только подписи, название компании и улица оставлены латиницей, переведены город и страна. Регистрационный суд в выписке KRS не указан — оставлен плейсхолдер, его надо заполнить по бумажной выписке перед публикацией.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Dane firmy
+
+LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.)
+Adres siedziby: ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska
+Sąd rejestrowy: [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS]
+KRS: 0001190730
+NIP: 5273179673
+REGON: 542537097
+Kapitał zakładowy: 5 000,00 PLN
+Data rejestracji w KRS: 26.08.2025
+Reprezentacja: każdy członek zarządu samodzielnie
+Przedmiot przeważającej działalności (PKD): 47.71.Z — sprzedaż detaliczna odzieży
+```
+
+
+*UA:*
+
+```
+Дані компанії
+
+LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.)
+Адреса місцезнаходження: ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща
+Реєстраційний суд: [уточнити за витягом з KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS]
+KRS: 0001190730
+NIP: 5273179673
+REGON: 542537097
+Статутний капітал: 5 000,00 PLN
+Дата реєстрації в KRS: 26.08.2025
+Представництво: кожен член правління самостійно
+Основний вид діяльності (PKD): 47.71.Z — роздрібна торгівля одягом
+```
+
+
+*EN:*
+
+```
+Company details
+
+LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.)
+Registered office: ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland
+Registry court: [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS]
+KRS (Polish National Court Register): 0001190730
+NIP (tax identification number): 5273179673
+REGON (statistical identification number): 542537097
+Share capital: PLN 5,000.00
+Registered in the KRS on: 26 August 2025
+Representation: each member of the management board acting individually
+Principal activity (PKD): 47.71.Z — retail sale of clothing
+```
+
+
+**Куда вписать / примечание:** Админка: /contacts → описание под заголовком (page-top__descr), либо отдельный блок «Dane firmy» в низу страницы. Обязательный минимум — первые семь строк (до kapitału zakładowego включительно); дата регистрации, представительство и PKD необязательны по закону, но полезны при верификации Przelewy24 — если блок кажется перегруженным, эти три строки можно убрать. В украинской и английской версиях аббревиатуры NIP/REGON/KRS и название компании остаются латиницей — не транслитерировать.
+
+
+*Правки носителей: UA: російська вставка «по выписке KRS»; росіянізм «уточнить» замість «уточнити»; у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»; EN: Date written in Polish numeric format; the agreed English date format (14-20) is "24 June 2026".*
+
+
+### 04-01 · /delivery-and-payment · Чужой язык [PL]
+
+**Где:** Карточка «Metody płatności» (div.info-page-payment__description), единственный абзац — весь текст блока
+
+
+**Сейчас:**
+
+> Онлайн-платежі обробляє Przelewy24 (PayPro S.A.). Доступні способи: BLIK, платіжні картки, швидкий банківський переказ, Apple Pay, Google Pay, Klarna, PayPo та післяплата. Ціни зазначаються в польських злотих (PLN) і включають податок VAT (брутто).
+
+
+**Почему проблема:** На польской версии страницы весь раздел о способах оплаты набран по-украински — польский покупатель не может прочитать условия оплаты на языке договора. Это одна из двух страниц, которые Przelewy24 открывает при верификации мерчанта: раздел «способы оплаты» на нерабочем для локали языке — прямой повод не пройти проверку. Кроме того, польский потребитель по ustawa o prawach konsumenta должен получить информацию о способах оплаты на польском языке до заключения договора.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Płatności online obsługuje Przelewy24 (PayPro S.A.). Dostępne metody: BLIK, karty płatnicze, szybki przelew bankowy, Apple Pay, Google Pay, Klarna i PayPo. Osobno dostępna jest płatność za pobraniem, rozliczana przy odbiorze przesyłki [уточнить: czy pobranie jest dostępne także w Paczkomacie InPost, czy wyłącznie u kuriera]. Ceny podajemy w złotych polskich (PLN) i zawierają one podatek VAT (ceny brutto).
+```
+
+
+*UA:*
+
+```
+Онлайн-платежі обробляє Przelewy24 (PayPro S.A.). Доступні способи: BLIK, платіжні картки, швидкий банківський переказ, Apple Pay, Google Pay, Klarna та PayPo. Окремо доступна післяплата — оплата при отриманні відправлення [уточнити: чи доступна післяплата також у поштоматі InPost, чи лише у кур’єра]. Ціни вказані в польських злотих (PLN) і включають ПДВ (ціни брутто).
+```
+
+
+*EN:*
+
+```
+Online payments are handled by Przelewy24 (PayPro S.A.). Available methods: BLIK, payment cards, instant bank transfer, Apple Pay, Google Pay, Klarna and PayPo. Cash on delivery is also available and is settled when you collect the parcel [уточнить: whether cash on delivery is also available at InPost parcel lockers or only with the courier]. All prices are shown in Polish złoty (PLN) and include VAT (gross prices).
+```
+
+
+**Куда вписать / примечание:** Админка → страницы → «Dostawa i płatność» (PL) → карточка «Metody płatności», поле описания. Текст в pl/ua/en ниже — канонический комплект: этой же формулировкой чинится и украинская версия (см. 04-02), английская правится по 04-05. Дополнительные обязательные абзацы (момент списания, валюта, возвраты, неудачная оплата) — находки 04-06…04-09.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: "available separately" is unclear; the point is that it is an additional option.*
+
+
+### 04-02 · /delivery-and-payment · Кривой перевод [UA]
+
+**Где:** Карточка «Способи оплати» → список «Доступні способи оплати», 1-й пункт
+
+
+**Сейчас:**
+
+> «Швидка оплата – Tpay.com та оплата карткою» – онлайн-перекази, BLIK, оплата карткою онлайн
+
+
+**Почему проблема:** В украинской версии оператором онлайн-платежей назван Tpay.com — конкурирующий платёжный оператор, которого магазин не подключает. Przelewy24 / PayPro S.A. в украинской версии не упомянут ни разу, при том что польская и английская версии называют именно Przelewy24. Верификатор Przelewy24 сравнивает языковые версии одной и той же страницы: указание чужого оператора читается как то, что магазин работает с другим PSP, и это отдельное основание отказать. Плюс покупатель получает разные условия договора в зависимости от языка.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Płatności online obsługuje Przelewy24 (PayPro S.A.). Dostępne metody: BLIK, karty płatnicze, szybki przelew bankowy, Apple Pay, Google Pay, Klarna i PayPo.
+```
+
+
+*UA:*
+
+```
+Онлайн-платежі обробляє Przelewy24 (PayPro S.A.). Доступні способи: BLIK, платіжні картки, швидкий банківський переказ, Apple Pay, Google Pay, Klarna та PayPo.
+```
+
+
+*EN:*
+
+```
+Online payments are handled by Przelewy24 (PayPro S.A.). Available methods: BLIK, payment cards, instant bank transfer, Apple Pay, Google Pay, Klarna and PayPo.
+```
+
+
+**Куда вписать / примечание:** Украинская карточка «Способи оплати» сейчас содержит не перевод польской, а совершенно другой текст, унаследованный от другого магазина. Правильно не править по пунктам, а заменить содержимое карточки целиком на перевод канонического текста из 04-01. Упоминание Tpay.com удалить полностью.
+
+
+### 04-03 · /delivery-and-payment · Кривой перевод [UA]
+
+**Где:** Карточка «Способи оплати» → список «Доступні способи оплати», 2-й пункт
+
+
+**Сейчас:**
+
+> «Переказ на рахунок» – традиційний банківський переказ Bebe Concept mBank 89 1140 2004 0000 3402 8312 5269
+
+
+**Почему проблема:** На странице опубликован банковский счёт с названием получателя «Bebe Concept» — это не LPB Sp. z o.o. Покупатель, выбравший обычный перевод, отправит деньги стороннему получателю: магазин не увидит платёж, покупатель останется без товара и без основания для рекламации. Для Przelewy24 несовпадение названия получателя платежа с юридическим лицом мерчанта — красный флаг при верификации (проверка бенефициара). Номер счёта на публичной странице без владельца-магазина нужно снять немедленно, до запуска.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Przelew tradycyjny — na rachunek bankowy LPB Sp. z o.o.: [уточнить: nazwa banku i numer rachunku firmowego LPB Sp. z o.o.]. W tytule przelewu prosimy podać numer zamówienia. Zamówienie przekazujemy do realizacji po zaksięgowaniu wpłaty, co może wydłużyć czas przygotowania paczki.
+```
+
+
+*UA:*
+
+```
+Звичайний банківський переказ — на рахунок LPB Sp. z o.o.: [уточнити: назва банку та номер рахунку компанії LPB Sp. z o.o.]. У призначенні платежу вкажіть, будь ласка, номер замовлення. Замовлення передаємо до виконання після зарахування коштів, тому час підготовки посилки може збільшитися.
+```
+
+
+*EN:*
+
+```
+Standard bank transfer — to the account of LPB Sp. z o.o.: [уточнить: bank name and company account number for LPB Sp. z o.o.]. Please quote your order number as the payment reference. We begin processing the order once the payment has been credited, so the parcel may take longer to prepare.
+```
+
+
+**Куда вписать / примечание:** Первый шаг — удалить строку со счётом Bebe Concept из украинской карточки. Если обычный перевод как способ оплаты вообще не поддерживается (в польской и английской версиях его нет), пункт удалить целиком и не заменять. Реквизиты счёта, если они всё-таки нужны, должны совпадать с данными LPB Sp. z o.o. в regulamin.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; калька «передати у виконання» замість «до виконання»; EN: "transfer title" is a calque of "tytuł przelewu"; English uses "payment reference".*
+
+
+### 12-12 · /delivery-and-payment (blok wpływający na krok płatności) · Чужой язык [UA]
+
+**Где:** Sekcja «Способи оплати» — nazwa operatora płatności i numer rachunku
+
+
+**Сейчас:**
+
+> «Швидка оплата – Tpay.com та оплата карткою» – онлайн-перекази, BLIK, оплата карткою онлайн … «Переказ на рахунок» – традиційний банківський переказ Bebe Concept mBank 89 1140 2004 0000 3402 8312 5269
+
+
+**Почему проблема:** Украинская версия называет другого оператора платежей (Tpay.com) и чужой банковский счёт на имя Bebe Concept, тогда как польская и английская версии говорят про Przelewy24 (PayPro S.A.). Это остаток чужого шаблона: на сайте одновременно два взаимоисключающих оператора и реквизиты постороннего юрлица. Для верификации в Przelewy24 это стоп-фактор, а для покупателя — прямой риск отправить деньги не туда.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Płatności online obsługuje Przelewy24 (PayPro S.A.): BLIK, karta płatnicza, szybki przelew bankowy, Apple Pay, Google Pay, Klarna, PayPo oraz płatność przy odbiorze. Ceny podajemy w złotych (PLN); są to ceny brutto, zawierające podatek VAT.
+```
+
+
+*UA:*
+
+```
+Онлайн-платежі обслуговує Przelewy24 (PayPro S.A.): BLIK, платіжна картка, швидкий банківський переказ, Apple Pay, Google Pay, Klarna, PayPo, а також післяплата — оплата при отриманні. Ціни вказані в польських злотих (PLN) і включають ПДВ.
+```
+
+
+*EN:*
+
+```
+Online payments are handled by Przelewy24 (PayPro S.A.): BLIK, payment cards, instant bank transfer, Apple Pay, Google Pay, Klarna, PayPo and cash on delivery. Prices are shown in złoty (PLN) and include VAT.
+```
+
+
+**Куда вписать / примечание:** Удалить упоминание Tpay.com и счёт Bebe Concept целиком. Если банковский перевод остаётся способом оплаты, реквизиты должны быть счётом LPB Sp. z o.o. [уточнить: numer rachunku LPB Sp. z o.o.]. Пересекается со срезом страницы /delivery-and-payment — там же лежит украинский текст в польской версии этого блока.
+
+
+*Правки носителей: PL: Jak w 12-11 — urwane złożenie „Ceny podajemy … i zawierają podatek VAT”.; UA: польський «VAT» в українському тексті — це ПДВ; уніфіковано з 04-01 і 04-09; той самий спосіб оплати в 04-01 і 04-05 названо «післяплата»*
+
+
+### 09-01 · /kids · Заглушка [pl,ua,en]
+
+**Где:** Opis kategorii pod H1 «Dzieci» / «Діти» / «Kids» (blok nad paskiem sortowania)
+
+
+**Сейчас:**
+
+> Nos collections subliment le quotidien comme les moments d’exception où les matières naturelles sont privilégiées. Fidèle à son esprit de transmission, la Maison perpétue l’art de créer des pièces d’exception, conçues pour être chéries, conservées et pour
+
+
+**Почему проблема:** Największa kategoria sklepu ma zamiast opisu francuski tekst-rybę, urwany w połowie zdania na «et pour». Identyczny francuski akapit stoi we wszystkich trzech wersjach językowych — polskiej, ukraińskiej i angielskiej. W wersji UA ten sam akapit powtarza się drugi raz pod listingiem produktów, tym razem w pełnej długości.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ubrania, buty i zabawki dla dzieci od pierwszych dni do dwunastu lat. Wybieramy marki, które pracują na naturalnych tkaninach i szyją tak, by rzecz przetrwała kolejne dziecko: Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Tiny Cottons. Kolekcje uzupełniamy delikatnymi kosmetykami do kąpieli i zabawkami, które zostają w domu na lata.
+```
+
+
+*UA:*
+
+```
+Одяг, взуття та іграшки для дітей від перших днів до дванадцяти років. Ми обираємо бренди, які працюють із натуральними тканинами й шиють так, щоб річ перейшла наступній дитині: Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Tiny Cottons. Колекції доповнюємо делікатною косметикою для купання та іграшками, які лишаються вдома на роки.
+```
+
+
+*EN:*
+
+```
+Clothing, footwear and toys for children from their first days to twelve years. We choose labels that work with natural fabrics and cut their clothes to be passed down: Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Tiny Cottons. The collections are rounded out with gentle bath care and toys that stay in the house for years.
+```
+
+
+**Куда вписать / примечание:** Admin: katalog → kategoria «Dzieci» → pole opisu, osobno dla pl/ua/en. Sprawdzić też drugie, zdublowane pole opisu, które renderuje się pod listingiem w wersji UA.
+
+
+*Правки носителей: UA: різнобій «марки/бренди» — на сайті фільтр і меню називаються «Бренд(и)»; EN: "cut their pieces to be handed on" is opaque; "passed down" is the phrase used elsewhere (01-14).*
+
+
+### 10-13 · /kids · Нет перевода [pl,ua,en]
+
+**Где:** Panel filtrów, filtr «Kolor» / «Колір» / «Color» — cała lista wartości
+
+
+**Сейчас:**
+
+> Azalia, Basil, Berry, Beżowy, Biały, Black Satin, Bladotoskańska, Blanc, Bleu horizon chiné, Bone, Bright Red, Brzoskwiniowy / Muszla, Bubblegum, CAMEL, Caramel, Cherry, Chocolate, Ciemny beż, Clear Ocean, Cream MOP, Creme, Cytrusowy, Czarny, Czerwony, Dark Berry … zielony, Złoty
+
+
+**Почему проблема:** Filtr koloru to jedna lista, w której mieszają się cztery języki: polski (Beżowy, Czerwony, Bladotoskańska), angielski (Bright Red, Old Rose, Oyster White), francuski (Blanc, Rosée, Nacre, Bleu horizon chiné) i sklejki polsko-angielskie (Cool kids / Jasny dżinsowy). W wersji ukraińskiej na 117 wartości przetłumaczonych jest 6 (Бежевий, Білий, Рожевий, Синій, Червоний, Чорний) — czyli 95% listy ukraiński klient widzi po polsku i angielsku. To najbardziej widoczny element strony kategorii i pierwsze, po czym klient filtruje ofertę odzieżową.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kolor
+```
+
+
+*UA:*
+
+```
+Колір
+```
+
+
+*EN:*
+
+```
+Colour
+```
+
+
+**Куда вписать / примечание:** PEŁNA LISTA WARTOŚCI ANGIELSKICH I FRANCUSKICH Z FILTRA «Kolor» — PL | UA | EN.
+Wartości podstawowe:
+Basil — Bazyliowy | Базиліковий | Basil
+Berry — Jagodowy | Ягідний | Berry
+Black Satin — Czarny satynowy | Чорний сатин | Black satin
+Blanc — Biały | Білий | White
+Bone — Kostny | Кістяний | Bone
+Bright Red — Jaskrawa czerwień | Яскраво-червоний | Bright red
+Bubblegum — Guma balonowa | Бабл-гам | Bubblegum
+CAMEL — Wielbłądzi | Кемел | Camel
+Caramel — Karmelowy | Карамельний | Caramel
+Cherry — Wiśniowy | Вишневий | Cherry
+Chocolate — Czekoladowy | Шоколадний | Chocolate
+Citrus — Cytrusowy | Цитрусовий | Citrus
+Clear Ocean — Przejrzysty ocean | Прозорий океан | Clear ocean
+Cream MOP — Kremowa masa perłowa | Кремовий перламутр | Cream mother-of-pearl
+Creme — Kremowy | Кремовий | Cream
+Dark Berry — Ciemnojagodowy | Темно-ягідний | Dark berry
+Dark Chocolate MOP — Ciemna masa perłowa | Темно-шоколадний перламутр | Dark chocolate mother-of-pearl
+Dark Jeans — Ciemny dżins | Темний денім | Dark denim
+Dove — Gołębi szary | Голубиний сірий | Dove grey
+ECRU — Ecru | Екрю | Ecru
+FG Goldplated — Złocony | Позолочений | Gold-plated
+FS Silverplated — Srebrzony | Посріблений | Silver-plated
+Gold / Golden — Złoty | Золотий | Gold
+Golden Stripe — Złote paski | Золота смужка | Gold stripe
+Green Stripe — Zielone paski | Зелена смужка | Green stripe
+Indigo — Indygo | Індиго | Indigo
+Ivory — Kość słoniowa | Слонова кістка | Ivory
+Light blue — Jasnoniebieski | Блакитний | Light blue
+Light Yellow Glitter — Jasnożółty brokat | Світло-жовтий глітер | Light yellow glitter
+Linen — Lniany | Льняний | Linen
+Linen MOP — Lniana masa perłowa | Льняний перламутр | Linen mother-of-pearl
+Midnight — Głęboki granat | Опівнічний синій | Midnight
+Moss MOP — Mchowa masa perłowa | Моховий перламутр | Moss mother-of-pearl
+Multi — Wielokolorowy | Різнокольоровий | Multicolour
+NAVY BLUE / Marine — Granatowy | Темно-синій | Navy
+Nacre — Perłowy | Перламутровий | Mother-of-pearl
+Nude — Nude | Нюд | Nude
+Nude MOP — Nude masa perłowa | Нюдовий перламутр | Nude mother-of-pearl
+Old Rose — Przygaszony róż | Приглушений рожевий | Old rose
+Oyster White — Perłowa biel | Перлинно-білий | Oyster white
+Powder — Pudrowy | Пудровий | Powder
+Rose — Różany | Трояндовий | Rose
+Rosée — Rosa | Роса | Dew
+Sage — Szałwiowy | Шавлієвий | Sage
+Silver — Srebrny | Срібний | Silver
+Skin — Cielisty | Тілесний | Skin
+Sky / Ciel — Błękitny | Небесно-блакитний | Sky blue
+Spring Green — Wiosenna zieleń | Весняна зелень | Spring green
+Vanilla — Waniliowy | Ванільний | Vanilla
+Vintage Rose — Róż vintage | Вінтажний рожевий | Vintage rose
+Wine — Winny | Винний | Wine
+Zebra — Zebra | Зебра | Zebra
+Azalée — Azaliowy | Азалієвий | Azalea
+Beige — Beżowy | Бежевий | Beige
+Beige foncé — Ciemny beż | Темно-бежевий | Dark beige
+Black — Czarny | Чорний | Black
+Bleu électrique — Niebieski elektryczny | Електрик | Electric blue
+Bleu horizon chiné — Melanżowy błękit horyzontu | Меланжевий блакитний горизонт | Heather horizon blue
+Pink — Różowy | Рожевий | Pink
+Rose pâle — Jasny róż | Світло-рожевий | Pale pink
+Rose transparent — Róża przezroczysta | Прозорий рожевий | Translucent rose
+Peppermint transparent — Mięta przezroczysta | Прозора м'ята | Translucent peppermint
+Czerwony — Czerwony | Червоний | Red
+zielony — Zielony | Зелений | Green
+Wartości kolekcjonerskie Liewood (nazwy wzorów):
+All together / Sandy — All together / Piaskowy | All together / Пісочний | All together / Sandy
+Butterfly / Apple blossom — Motylek / Kwiat jabłoni | Метелик / Яблуневий цвіт | Butterfly / Apple blossom
+Cherries / Apple blossom — Wiśnie / Kwiat jabłoni | Вишні / Яблуневий цвіт | Cherries / Apple blossom
+Classic navy / Creme de la creme — Granatowy / Creme de la creme | Темно-синій / Creme de la creme | Classic navy / Creme de la creme
+Classic navy multi mix — Granatowy multi mix | Темно-синій, мультимікс | Classic navy multi mix
+Cool kids / Beach blue — Cool kids / Niebieski plażowy | Cool kids / Пляжний блакитний | Cool kids / Beach blue
+Cool kids / Light blue denim — Cool kids / Jasny dżins | Cool kids / Світлий денім | Cool kids / Light blue denim
+Coral blush / Creme de la creme — Koralowy / Creme de la creme | Кораловий / Creme de la creme | Coral blush / Creme de la creme
+Dot / Dusty lavender — Kropki / Pyłkowa lawenda | Горошок / Припилена лаванда | Dot / Dusty lavender
+Dune — Wydma | Дюна | Dune
+Dusty rose — Pyłkowa róża | Припилений рожевий | Dusty rose
+Flower / Lemon yellow — Kwiat / Cytrynowy żółty | Квітка / Лимонно-жовтий | Flower / Lemon yellow
+Leo spots / Mist — Cętki Leo / Mgła | Плями лео / Туман | Leo spots / Mist
+Mini Butterfly / Apple blossom — Mini Motylek / Kwiat jabłoni | Міні метелик / Яблуневий цвіт | Mini butterfly / Apple blossom
+Mist — Mgła | Туман | Mist
+Pale tuscany — Bladotoskańska | Бліда тоскана | Pale tuscany
+Pale tuscany mix — Bladotoskańska mix | Бліда тоскана, мікс | Pale tuscany mix
+Peach / Sea shell — Brzoskwiniowy / Muszla | Персиковий / Мушля | Peach / Sea shell
+Peach mini / Sea shell — Mini brzoskwiniowy / Muszla | Міні персиковий / Мушля | Peach mini / Sea shell
+Peach Seashell / Pale tuscany — Brzoskwiniowa muszla / Bladotoskańska | Персикова мушля / Бліда тоскана | Peach seashell / Pale tuscany
+Peppermint / Sandy — Mięta / Piaskowy | М'ята / Пісочний | Peppermint / Sandy
+Peppermint mix — Mięta mix | М'ята, мікс | Peppermint mix
+Peppermint multi mix — Mięta multi mix | М'ята, мультимікс | Peppermint multi mix
+Pineapple / light apricot / mix — Ananas / Jasna morela / mix | Ананас / Світлий абрикос / мікс | Pineapple / Light apricot / mix
+Pufferfish / peppermint / mix — Rozdymka / Mięta / mix | Риба-їжак / М'ята / мікс | Pufferfish / Peppermint / mix
+Riverside / Creme de la creme — Riverside / Creme de la creme | Riverside / Creme de la creme | Riverside / Creme de la creme
+Riverside mix — Riverside mix | Riverside, мікс | Riverside mix
+Rose / Riverside — Róża / Riverside | Троянда / Riverside | Rose / Riverside
+Sandy — Piaskowy | Пісочний | Sandy
+Shark / Dove blue — Rekin / Gołębi błękit | Акула / Голубиний блакитний | Shark / Dove blue
+Sweethearts / Pale tuscany — Sweethearts / Bladotoskańska | Sweethearts / Бліда тоскана | Sweethearts / Pale tuscany
+Sweethearts / light blue denim — Sweethearts / Jasny dżins | Sweethearts / Світлий денім | Sweethearts / Light blue denim
+Tiger / Beach blue — Tygrys / Niebieski plażowy | Тигр / Пляжний блакитний | Tiger / Beach blue
+Tuscany rose / Pale tuscany — Toskańska róża / Bladotoskańska | Тосканська троянда / Бліда тоскана | Tuscany rose / Pale tuscany
+Tuscany rose multi mix — Toskańska róża multi mix | Тосканська троянда, мультимікс | Tuscany rose multi mix
+Whale blue mix — Wielorybi błękit mix | Китовий блакитний, мікс | Whale blue mix
+UWAGA: nazwy własne kolekcji Liewood (All together, Cool kids, Riverside, Sweethearts, Creme de la creme) zostają w oryginale we wszystkich lokalach — to nazwy wzorów, nie kolory.
+
+
+### 10-30 · /kids · Нет перевода [ua,en]
+
+**Где:** Filtr «Kolor» / «Колір» — pokrycie tłumaczeń
+
+
+**Сейчас:**
+
+> Bladotoskańska, Mgła, Cytrusowy, Mięta przezroczysta, Jasny róż, Perłowy, Złoty, Granatowy, Indygo, Ciemny beż, Melanżowy niebieski horyzont, Motylek / Kwiat jabłoni, Rekin / Gołębi błękit, Kropki / Pyłkowa lawenda (wszystkie te wartości stoją po polsku na stronie /ua/kids)
+
+
+**Почему проблема:** Odpowiedź na pytanie, czy wartości atrybutów w ogóle się tłumaczą: tak, mechanizm działa, ale jest wypełniony w kilku procentach. W lokalu UA przetłumaczonych jest 6 wartości koloru ze 117 (Бежевий, Білий, Рожевий, Синій, Червоний, Чорний) — reszta, w tym wszystkie kolory Liewood i całe nazewnictwo Tartine et Chocolat, wyświetla się ukraińskiemu klientowi po polsku. W lokalu EN pokrycie jest wyższe, ale niespójne: część wartości przetłumaczona na angielski, część na francuski, jedna («Czerwony») została po polsku. To samo dotyczy filtra płci, gdzie w UA cztery z sześciu wartości są polskie.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kolor
+```
+
+
+*UA:*
+
+```
+Колір
+```
+
+
+*EN:*
+
+```
+Colour
+```
+
+
+**Куда вписать / примечание:** To jest zadanie ilościowe, nie redakcyjne: trzeba przejść całą listę wartości atrybutów «Kolor», «Artykuł/Płeć», «Kolekcja» i uzupełnić kolumny UA i EN. Gotowa tabela dla wszystkich wartości koloru w trzech językach jest w findingu 10-13, wartości płci w findingu 10-12. Przed uzupełnianiem tłumaczeń warto najpierw scalić duplikaty (findings 10-14…10-19) i usunąć śmieciowe wartości (10-21), żeby nie tłumaczyć dwa razy tego samego.
+
+
+### 11-02 · /little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031 · Чужой язык [PL]
+
+**Где:** Вкладка «Opis produktu», 5-й пункт списка
+
+
+**Сейчас:**
+
+> Wielofunkcyjny - do tulenia, укладки czy transportu
+
+
+**Почему проблема:** Внутри польского описания стоит кириллическое слово «укладки» — обрывок чужого языка в основной локали магазина, видимый покупателю в первом же блоке карточки. Это единственный найденный случай кириллицы в польских описаниях по восьми проверенным карточкам, но он показывает, что описания собирались копипастом между языками, поэтому нужен прогон всех 1307 карточек регуляркой на [А-Яа-яЄІЇґ] в польском поле «Opis».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wielofunkcyjny — do tulenia, układania do snu i podróży
+```
+
+
+*UA:*
+
+```
+Багатофункціональна — для сповивання, сну та подорожей
+```
+
+
+*EN:*
+
+```
+Multi-purpose — for cuddling, settling to sleep and travelling
+```
+
+
+**Куда вписать / примечание:** Поле «Opis produktu» карточки te12194031. Заодно заменить дефис на тире: во всех описаниях списком стоит «-», а не «—».
+
+
+### 09-02 · /niemowleta · Заглушка [pl,ua,en]
+
+**Где:** Opis kategorii pod H1 «Niemowlęta 0-2» / «Малюки 0-2» / «Babies 0-2»
+
+
+**Сейчас:**
+
+> Nos collections subliment le quotidien comme les moments d’exception où les matières naturelles sont privilégiées. Fidèle à son esprit de transmission, la Maison perpétue l’art de créer des pièces d’exception, conçues pour être chéries, conservées et pour
+
+
+**Почему проблема:** Ten sam francuski tekst-ryba co na /kids, we wszystkich trzech lokalizacjach. Kategoria niemowlęca jest wizytówką sklepu premium — francuski placeholder podważa wiarygodność przy weryfikacji Przelewy24.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Pierwsza garderoba: body, pajacyki, kombinezony i śpiochy dla dzieci od urodzenia do drugiego roku życia. Bawełna organiczna, płaskie szwy i zapięcia, które da się rozpiąć jedną ręką. Marki, które szyją dla najmłodszych od lat — Liewood, Tartine et Chocolat, Mini Rodini, Tiny Cottons.
+```
+
+
+*UA:*
+
+```
+Перший гардероб: боді, пісочники, комбінезони та повзунки для дітей від народження до двох років. Органічна бавовна, пласкі шви та застібки, які розстібаються однією рукою. Марки, що роками шиють для найменших, — Liewood, Tartine et Chocolat, Mini Rodini, Tiny Cottons.
+```
+
+
+*EN:*
+
+```
+A first wardrobe: bodysuits, rompers, all-in-ones and sleepsuits for children from birth to two. Organic cotton, flat seams and fastenings that open with one hand. Labels that have been dressing the youngest for years — Liewood, Tartine et Chocolat, Mini Rodini, Tiny Cottons.
+```
+
+
+**Куда вписать / примечание:** Admin: katalog → kategoria «Niemowlęta 0-2» → pole opisu, osobno dla pl/ua/en.
+
+
+*Правки носителей: EN: "have been making for the youngest" is ungrammatical (no object).*
+
+
+### 13-01 · /search?term=atlantic · Битая ссылка [PL]
+
+**Где:** Strona wyników wyszukiwania, licznik pod nagłówkiem (<div class="product-count">)
+
+
+**Сейчас:**
+
+> count towar
+
+
+**Почему проблема:** Polska forma pojedyncza licznika nie podstawia liczby — na stronie dosłownie widnieje słowo „count”. Sprawdzone na dwóch zapytaniach dających 1 wynik (term=atlantic, term=swans bows). Dla 2–4 i 5+ formy działają poprawnie („2 towary”, „3 towary”, „18 towarów”), UA i EN też są poprawne („1 товар”, „1 product”). Błąd dotyczy wyłącznie polskiej formy pojedynczej, czyli języka głównego rynku.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+:count produkt | :count produkty | :count produktów
+```
+
+
+*UA:*
+
+```
+:count товар | :count товари | :count товарів
+```
+
+
+*EN:*
+
+```
+:count product | :count products
+```
+
+
+**Куда вписать / примечание:** Tłumaczenia → grupa katalogu/wyszukiwania, klucz licznika produktów renderowany w `div.product-count`. W formie pojedynczej PL wpisany jest literał „count” zamiast placeholdera liczby. Przy okazji warto zmienić „towar” na „produkt” — brzmi lepiej w segmencie premium; ten sam ciąg jest współdzielony ze stronami kategorii.
+
+
+### 06-15 · /terms-of-use · Юр. требование [PL]
+
+**Где:** §8 п. 1 «Prawo odstąpienia od umowy»
+
+
+**Сейчас:**
+
+> Konsument oraz PNPK, który zawarł umowę na odległość za pośrednictwem Sklepu internetowego, może odstąpić od niej bez podania przyczyny w terminie 14 dni od objęcia Towaru w posiadanie.
+
+
+**Почему проблема:** Три источника на одном сайте говорят разное о сроке возврата. Регламент §8 — 14 дней по польскому праву. Плашка в футере на каждой странице — «Zwrot w ciągu 30 dni» / «Повернення протягом 30 днів» / «30 days return». А страница /warranty-and-returns/polityka-zwrotow ссылается на ФРАНЦУЗСКИЙ Кодекс потребителя («Zgodnie z artykułem L.221-18 francuskiego Kodeksu Konsumenta… Bloom wydłuża ten termin do 30 dni») — то есть в польский магазин попал чужой шаблон с чужой юрисдикцией. При споре потребитель вправе опереться на более выгодное для него публичное обещание в 30 дней, а ссылка на французское право в документах польской спółки не работает вовсе. До запуска нужно выбрать один срок и одну юрисдикцию и синхронизировать все три места.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+[уточнить у юриста: czy Sprzedawca oferuje ustawowe 14 dni, czy umowne wydłużenie do 30 dni] — po decyzji ten sam termin musi znaleźć się w §8 Regulaminu, na stronie polityki zwrotów oraz w bloku zaufania w stopce. Odwołania do francuskiego Kodeksu Konsumenta należy usunąć — Sprzedawcę i Klienta wiąże prawo polskie (§16 ust. 1 Regulaminu).
+```
+
+
+*UA:*
+
+```
+[уточнити у юриста: чи надає Продавець законні 14 днів, чи договірне продовження до 30 днів] — після рішення той самий строк має бути в §8 Правил, на сторінці політики повернення та в блоці довіри у футері. Посилання на французький Кодекс споживача слід вилучити — до Продавця і Клієнта застосовується законодавство Польщі (§16 п. 1 Правил).
+```
+
+
+*EN:*
+
+```
+[уточнить у юриста: whether the Seller grants the statutory 14 days or a contractual extension to 30 days] — once decided, the same period must appear in §8 of the Terms, on the returns policy page and in the footer trust block. References to the French Consumer Code must be removed: the contract between the Seller and the Customer is governed by Polish law (§16(1) of the Terms).
+```
+
+
+**Куда вписать / примечание:** Пересекается со срезом по /warranty-and-returns/polityka-zwrotow — здесь фиксируется со стороны регламента, потому что противоречие делает §8 неисполнимым. Затронуты: /terms-of-use §8, /warranty-and-returns/polityka-zwrotow (все три локали), плашка в футере, /claims-and-complaints.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: Parties are not "governed by" law — the contract between them is.*
+
+
+### 11-01 · /trampki-veja-small-volley-atlantic-ouro-bark-zlote-sportowe-buty-ve-smallvolb · Нет перевода [pl,en]
+
+**Где:** H1 карточки, <title>, meta description, alt галереи
+
+
+**Сейчас:**
+
+> Buty Small Volley ATLANTIC_OURO_BARK
+
+
+**Почему проблема:** H1, title и meta description карточки берут сырое название из фида поставщика: латиница, подчёркивания, размер внутри названия. При этом готовое торговое название существует и на той же странице показывается в блоке недавно просмотренных — «Trampki VEJA Small Volley Atlantic Ouro Bark — ekologiczne buty dla dzieci», а в украинской локали оно же стоит и в h1. То есть данные есть, но карточка тянет не то поле. В выборке из 8 товаров так у трёх: VEJA («Buty Small Volley ATLANTIC_OURO_BARK» / EN «Small Volley ATLANTIC_OURO_BARK»), футболка Bobo Choses («Bobo Choses Booo Bo Choses T-shirt 2-3» — с задвоенным «Booo Bo Choses», в PL и EN) и носки Bobo Choses («Bobo Choses Hug Hairy Monster short socks 23-25», в PL и EN). Это 37% выборки; при 1307 карточках порядка 400–500 страниц, где в польской, то есть основной, локали покупателю показывают английское служебное название.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Trampki VEJA Small Volley Atlantic Ouro Bark — ekologiczne buty dla dzieci
+```
+
+
+*UA:*
+
+```
+Кеди VEJA Small Volley Atlantic Ouro Bark — екологічні кеди для дітей
+```
+
+
+*EN:*
+
+```
+VEJA Small Volley Atlantic Ouro Bark trainers — eco-friendly shoes for children
+```
+
+
+**Куда вписать / примечание:** Не переписывать вручную по одной карточке: h1/title/meta должны брать то же поле названия, что и листинги и блок рекомендаций (там название корректное во всех трёх локалях). Два других примера: koszulka B226AC017 → PL «Koszulka Bobo Choses Booo — z nadrukiem, dla dzieci», EN «Bobo Choses Booo T-shirt — printed, for children»; skarpetki B226AI001 → PL «Skarpetki Bobo Choses Hug Hairy Monster — dla dzieci», EN «Bobo Choses Hug Hairy Monster socks — for children». Размер (2-3, 23-25) из названия убрать — он выбирается селектором.
+
+
+### 05-01 · /warranty-and-returns, /warranty-and-returns/polityka-zwrotow · Юр. требование [все]
+
+**Где:** Раздел «Polityka zwrotów» / «Політика повернення» / «Return Policy», 1-й абзац (и далее по всему тексту)
+
+
+**Сейчас:**
+
+> Zgodnie z artykułem L.221-18 francuskiego Kodeksu Konsumenta Klient ma prawo odstąpić od umowy w ciągu 14 dni kalendarzowych.
+
+
+**Почему проблема:** Вся политика возврата построена на ФРАНЦУЗСКОМ Кодексе потребителя (art. L.221-18, L.221-24). Продавец — LPB Sp. z o.o., Варшава, продаёт польским потребителям; применимое право — польское (ustawa o prawach konsumenta z 30.05.2014). Ссылки на французские нормы юридически не работают, прямо противоречат §16 Регламента («stosuje się prawo polskie») и /claims-and-complaints. Przelewy24 проверяет именно соответствие правил возврата польскому праву — в таком виде верификация не пройдёт.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zgodnie z ustawą z dnia 30 maja 2014 r. o prawach konsumenta Klient będący Konsumentem — oraz przedsiębiorca na prawach konsumenta — może odstąpić od umowy zawartej na odległość w terminie 14 dni od dnia objęcia Towaru w posiadanie, bez podania przyczyny i bez ponoszenia kosztów innych niż wskazane poniżej. Do zachowania terminu wystarczy wysłanie oświadczenia przed jego upływem. W przypadku zamówienia dostarczanego w częściach termin liczy się od dnia otrzymania ostatniej części.
+```
+
+
+*UA:*
+
+```
+Відповідно до Закону Польщі про права споживачів від 30 травня 2014 року Клієнт, який є споживачем — а також підприємець на правах споживача — може відмовитися від договору, укладеного дистанційно, протягом 14 днів з дня отримання Товару, без зазначення причини та без жодних витрат, крім зазначених нижче. Для дотримання строку достатньо надіслати заяву до його спливу. Якщо замовлення доставляється частинами, строк відлічується від дня отримання останньої частини.
+```
+
+
+*EN:*
+
+```
+Under the Polish Consumer Rights Act of 30 May 2014, a Customer who is a consumer — and a sole trader with consumer status — may withdraw from a distance contract within 14 days of taking possession of the Goods, without giving a reason and without any costs other than those set out below. Sending the notice before the deadline expires is sufficient. Where an order is delivered in instalments, the period runs from the day the final instalment is received.
+```
+
+
+**Куда вписать / примечание:** Страницы /warranty-and-returns и /warranty-and-returns/polityka-zwrotow во всех трёх локалях. Текст перенесён от чужого бренда (Bloom, французский ритейл) — его нужно заменить целиком, а не править по абзацу; готовая польскоправовая версия уже есть на /claims-and-complaints и в §8 регламента, проще синхронизировать с ней. Финальную редакцию должен утвердить юрист.
+
+
+### 05-08 · /warranty-and-returns, /warranty-and-returns/polityka-zwrotow · Юр. требование [все]
+
+**Где:** «Polityka zwrotów» — весь раздел, между абзацем о формуляре возврата и абзацем о возврате денег
+
+
+**Сейчас:**
+
+> W celu uzyskania zwrotu środków w ramach prawa odstąpienia należy postępować zgodnie z procedurą zwrotu opisaną na stronie Bloom.
+
+
+**Почему проблема:** На странице возврата не указан адрес, на который возвращают товар, и нет срока на отправку товара после заявления об отказе. Вместо этого — отсылка «к процедуре, описанной на сайте Bloom», которой не существует. Адрес возврата и срок отправки — обязательная информация по ustawa o prawach konsumenta (art. 12) и один из пунктов, которые смотрит Przelewy24. Покупатель, дочитавший эту страницу, не знает, куда отправлять посылку.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Towar prosimy odesłać w terminie 14 dni od złożenia oświadczenia o odstąpieniu na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: kod pocztowy] Warszawa. Do przesyłki prosimy dołączyć numer zamówienia — przyspiesza to rozpatrzenie zwrotu. Nie przyjmujemy przesyłek wysłanych za pobraniem.
+```
+
+
+*UA:*
+
+```
+Товар просимо надіслати протягом 14 днів з дня подання заяви про відмову на адресу: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнити: поштовий індекс] Warszawa. До посилки додайте номер замовлення — це прискорить розгляд повернення. Посилки, надіслані післяплатою, ми не приймаємо.
+```
+
+
+*EN:*
+
+```
+Please send the Goods back to the following address within 14 days of submitting your withdrawal notice: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: postcode] Warsaw, Poland. Please include your order number with the parcel — it speeds up the return. We do not accept cash-on-delivery parcels.
+```
+
+
+**Куда вписать / примечание:** Адрес взят из /claims-and-complaints и §8.3 Регламента; почтовый индекс на сайте нигде не указан — запросить у клиента. Сверить с находкой 05-13 (в подвале указан другой адрес).
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: The address clause was stranded after the deadline, making the sentence ambiguous; "speeds the return up" is awkward.*
+
+
+### 05-02 · /warranty-and-returns/gwarancja-na-produkt, /warranty-and-returns · Юр. требование [все]
+
+**Где:** Раздел «Gwarancja na produkt», вводный абзац и подзаголовок «Rękojmia za wady ukryte»
+
+
+**Сейчас:**
+
+> Klient korzysta z ustawowej gwarancji zgodności zgodnie z artykułami L217-3 i następnymi francuskiego Kodeksu Konsumenta, a także z rękojmi za wady ukryte przewidzianej w artykułach 1641–1649 Kodeksu Cywilnego.
+
+
+**Почему проблема:** Гарантийная страница тоже ссылается на французское право: art. L217-3 Code de la consommation и art. 1641–1649 французского Code civil («vices cachés»). В польском Kodeksie cywilnym эти номера статей означают совсем другое (rękojmia — art. 556–576). Кроме того, с 01.01.2023 к потребителю применяется не rękojmia, а «niezgodność towaru z umową» (rozdział 5a ustawy o prawach konsumenta) — терминология страницы противоречит и закону, и §9 Регламента.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Sprzedawca odpowiada wobec Konsumenta za zgodność Towaru z umową na zasadach rozdziału 5a ustawy z dnia 30 maja 2014 r. o prawach konsumenta — za brak zgodności istniejący w chwili dostarczenia Towaru i ujawniony w ciągu dwóch lat od tej chwili. Konsument nie musi udowadniać, że brak zgodności istniał w chwili dostarczenia, jeżeli ujawnił się on w ciągu dwóch lat od tego dnia. Do Kupujących niebędących Konsumentami ani przedsiębiorcami na prawach konsumenta stosuje się przepisy o rękojmi z Kodeksu cywilnego, w zakresie wskazanym w Regulaminie sklepu.
+```
+
+
+*UA:*
+
+```
+Продавець відповідає перед Споживачем за відповідність Товару Договору згідно з розділом 5a Закону Польщі про права споживачів від 30 травня 2014 року — за невідповідність, яка існувала на момент доставки Товару та була виявлена протягом двох років від цього моменту. Споживач не зобов’язаний доводити, що невідповідність існувала на момент доставки, якщо вона виявилася протягом двох років від цього дня. До Покупців, які не є споживачами або підприємцями на правах споживача, застосовуються положення Цивільного кодексу Польщі про відповідальність продавця за недоліки товару (rękojmia), в обсязі, визначеному Правилами інтернет-магазину.
+```
+
+
+*EN:*
+
+```
+The Seller is liable to the Consumer for the conformity of the Goods with the contract under Chapter 5a of the Polish Consumer Rights Act of 30 May 2014 — for any lack of conformity existing at the time of delivery and revealed within two years of that date. The Consumer does not have to prove that the lack of conformity existed at delivery if it becomes apparent within two years of that day. Buyers who are neither consumers nor sole traders with consumer status are covered by the statutory warranty (rękojmia) under the Polish Civil Code, to the extent set out in the Terms and Conditions.
+```
+
+
+**Куда вписать / примечание:** Заменить и на подстранице /warranty-and-returns/gwarancja-na-produkt, и в дублирующем блоке на /warranty-and-returns. Подзаголовок «Rękojmia za wady ukryte» / «Гарантія щодо прихованих недоліків» / «Legal Warranty Against Hidden Defects» заменить на «Niezgodność Towaru z umową» / «Невідповідність Товару Договору» / «Lack of conformity of the Goods».
+
+
+*Правки носителей: UA: неперекладений і невідмінений польський юридичний термін «rękojmia»*
+
+
+### 05-05 · /warranty-and-returns/gwarancja-na-produkt, /warranty-and-returns · Заглушка [PL]
+
+**Где:** Раздел «Rękojmia za wady ukryte», единственный абзац под подзаголовком
+
+
+**Сейчас:**
+
+> (Treść artykułów 1641–1648 została zachowana merytorycznie i przedstawiona w sposób analogiczny do wersji angielskiej.)
+
+
+**Почему проблема:** Служебная заметка редактора/переводчика опубликована как контент. На месте целого раздела о ответственности за дефекты в польской версии — скобка «содержание сохранено по смыслу, см. английскую версию». В UA то же самое: «(Далі статті 1641–1648 із переформульованим змістом, аналогічним англійській версії — юридично збережені за змістом.)». В EN раздел раскрыт полностью (Article 1641 … Article 1648). То есть в основной, польской локали ключевой юридический блок фактически пуст.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Niezgodność Towaru z umową
+Sprzedawca odpowiada za brak zgodności Towaru z umową istniejący w chwili jego dostarczenia i ujawniony w ciągu dwóch lat od tego dnia. W pierwszej kolejności Konsument może żądać naprawy lub wymiany Towaru; jeżeli naprawa albo wymiana są niemożliwe lub wymagałyby nadmiernych kosztów, Konsument może złożyć oświadczenie o obniżeniu ceny albo o odstąpieniu od umowy. Naprawa i wymiana są dla Konsumenta bezpłatne, a Sprzedawca odbiera Towar na własny koszt. Szczegółowy tryb zgłoszenia opisuje Polityka zwrotów i reklamacji.
+```
+
+
+*UA:*
+
+```
+Невідповідність Товару Договору
+Продавець відповідає за невідповідність Товару Договору, яка існувала на момент його доставки та була виявлена протягом двох років від цього дня. Насамперед Споживач може вимагати ремонту або заміни Товару; якщо ремонт чи заміна неможливі або потребували б надмірних витрат, Споживач може заявити про зменшення ціни або про відмову від Договору. Ремонт і заміна здійснюються безкоштовно для Споживача, а Продавець забирає Товар власним коштом. Докладний порядок звернення описано в Політиці повернення та претензій.
+```
+
+
+*EN:*
+
+```
+Lack of conformity of the Goods
+The Seller is liable for any lack of conformity of the Goods with the contract that existed at the time of delivery and becomes apparent within two years of that day. The Consumer may first request repair or replacement of the Goods; if repair or replacement is impossible or would involve excessive cost, the Consumer may declare a price reduction or withdraw from the contract. Repair and replacement are free of charge for the Consumer, and the Seller collects the Goods at its own expense. The procedure for making a claim is set out in the Returns and Complaints Policy.
+```
+
+
+**Куда вписать / примечание:** Правится в тексте страницы /warranty-and-returns/gwarancja-na-produkt (PL и UA) и в том же блоке на /warranty-and-returns. Английская версия этого раздела тоже подлежит замене — она пересказывает французские статьи 1641–1648 (см. 05-02).
+
+
+### 05-03 · /warranty-and-returns/polityka-zwrotow, /claims-and-complaints · Юр. требование [все]
+
+**Где:** «Polityka zwrotów», 1-й абзац — против «Polityka zworotow i reklamacji», п. 1.1
+
+
+**Сейчас:**
+
+> Bloom wydłuża ten termin do 30 dni w przypadku produktów zamówionych za pośrednictwem strony internetowej.
+
+
+**Почему проблема:** Прямое расхождение цифр между двумя действующими страницами: /warranty-and-returns обещает 30 дней на возврат, /claims-and-complaints и §8 Регламента дают 14 дней («Mają Państwo prawo odstąpić od umowy w terminie 14 dni od otrzymania Towaru»). Плашка в подвале и на карточках товара обещает «Zwrot w ciągu 30 dni». Покупатель, который вернёт товар на 20-й день, получит отказ по одной странице и приёмку по другой. Для Przelewy24 несогласованный срок отказа от договора — стоп-фактор; кроме того, публично обещанные 30 дней связывают продавца.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Na odstąpienie od umowy zawartej w Sklepie internetowym mają Państwo [уточнить: 14 czy 30] dni od dnia otrzymania Towaru. Ten sam termin obowiązuje w Regulaminie, w Polityce zwrotów i reklamacji oraz w informacji prezentowanej w stopce i na kartach produktów.
+```
+
+
+*UA:*
+
+```
+На відмову від договору, укладеного в інтернет-магазині, ви маєте [уточнити: 14 чи 30] днів з дня отримання Товару. Той самий строк діє у Правилах магазину, у Політиці повернення та претензій і в інформації, що показана в підвалі сайту та на картках товарів.
+```
+
+
+*EN:*
+
+```
+You have [уточнить: 14 or 30] days from the day you receive the Goods to withdraw from a contract concluded in the online shop. The same period applies in the Terms and Conditions, in the Returns and Complaints Policy and in the information shown in the site footer and on product cards.
+```
+
+
+**Куда вписать / примечание:** Решение о цифре принимает клиент, но она должна быть одна на всём сайте: /warranty-and-returns, /warranty-and-returns/polityka-zwrotow, /claims-and-complaints, /terms-of-use §8, плашка «Zwrot w ciągu 30 dni» в подвале. Если оставляют 30 дней — это добровольное расширение сверх 14 законных, так и надо написать.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 05-04 · /warranty-and-returns/polityka-zwrotow, /claims-and-complaints · Юр. требование [все]
+
+**Где:** «Polityka zwrotów», 3-й абзац — против «Polityka zworotow i reklamacji», п. 1.3
+
+
+**Сейчас:**
+
+> Aby skorzystać z prawa odstąpienia, należy wypełnić formularz zwrotu dołączony do zamówienia oraz odesłać niechciane produkty przy użyciu opłaconej etykiety zwrotnej znajdującej się w paczce.
+
+
+**Почему проблема:** Кто платит за обратную доставку — на сайте два противоположных ответа. /warranty-and-returns обещает предоплаченную этикетку в посылке (то есть возврат бесплатный для покупателя), /claims-and-complaints и §8.3 Регламента говорят «Bezpośrednie koszty zwrotu ponosi Klient». Ни бланка возврата, ни этикетки в реальности к заказу, судя по остальным страницам, не прилагается. Обещание бесплатного возврата — коммерческое обязательство, которое продавец обязан выполнять; расхождение прямо ведёт к спорам и чарджбэкам.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Bezpośrednie koszty odesłania Towaru ponosi Klient — Towar można odesłać dowolnym przewoźnikiem na adres wskazany poniżej. [уточнить: czy sklep udostępnia opłaconą etykietę zwrotną — jeśli tak, opisać, w jakich przypadkach przysługuje i jak ją pobrać; jeśli nie, usunąć wszystkie wzmianki o etykiecie i formularzu dołączanym do paczki]
+```
+
+
+*UA:*
+
+```
+Прямі витрати на зворотне відправлення Товару несе Клієнт — Товар можна надіслати будь-яким перевізником на адресу, зазначену нижче. [уточнити: чи надає магазин передплачену етикетку для повернення — якщо так, описати, у яких випадках вона надається і як її отримати; якщо ні, прибрати всі згадки про етикетку та бланк, що нібито вкладається в посилку]
+```
+
+
+*EN:*
+
+```
+The Customer bears the direct cost of returning the Goods — you may send them back with any carrier to the address given below. [уточнить: whether the shop provides a prepaid return label — if so, state when it applies and how to obtain it; if not, remove every mention of a label and a return form enclosed with the parcel]
+```
+
+
+**Куда вписать / примечание:** Затрагивает также абзац «W przypadku potrzeby uzyskania pomocy lub ponownego wydania formularza czy etykiety zwrotnej…» и его UA/EN версии — они опираются на ту же несуществующую этикетку.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+---
+
+## Критично (136)
+
+
+### 12-06 · (global JS) window.FenixTranslations.favorites + karta produktu · Кривой перевод [EN]
+
+**Где:** Przyciski «ulubione» w karcie produktu i w liście produktów
+
+
+**Сейчас:**
+
+> "To the selected" / "From the selected" / "In the selected"; na karcie produktu title="To the selected" i etykieta "Add to favorite"
+
+
+**Почему проблема:** Машинный перевод украинского «До обраного / З обраного / В обраному». По-английски «To the selected» не значит ничего; кнопка сохранения товара — ключевой шаг к покупке, и в EN-версии она подписана бессмыслицей. Рядом ещё и «Add to favorite» в единственном числе. Британский вариант — favourites.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Do ulubionych / Usuń z ulubionych / W ulubionych
+```
+
+
+*UA:*
+
+```
+До обраного / Видалити з обраного / В обраному
+```
+
+
+*EN:*
+
+```
+Add to favourites / Remove from favourites / In favourites
+```
+
+
+**Куда вписать / примечание:** Ключи favorites.btn_add_favorites, btn_remove_favorites, in_favorites, to_favorites плюс подпись под сердечком на карточке товара.
+
+
+### 12-02 · (global JS) window.FenixTranslations.validate.minlength / maxlength · Кривой перевод [pl,ua,en]
+
+**Где:** Walidacja formularzy — komunikaty o długości pola
+
+
+**Сейчас:**
+
+> pl: "Minimalna liczba znaków - 2" / "Maksymalna liczba znaków - 50" | ua: "Мінімальна кількість символів - 2" / "Максимальна кількість символів - 50" | en: "Minimum number of characters - 2" / "Maximum number of characters - 50"
+
+
+**Почему проблема:** Числа 2 и 50 вшиты в текст, а не подставляются из правила поля. На адресных полях чекаута (индекс, номер дома, примечание к заказу) лимиты другие, и покупатель получит заведомо ложную подсказку: «Maksymalna liczba znaków - 50» при лимите 255 или при реальном лимите 10 для индекса. Плюс дефис вместо двоеточия и висящий дефис в конце строки — типографски неряшливо.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Minimalna liczba znaków: {0} / Maksymalna liczba znaków: {0}
+```
+
+
+*UA:*
+
+```
+Мінімальна кількість символів: {0} / Максимальна кількість символів: {0}
+```
+
+
+*EN:*
+
+```
+Minimum number of characters: {0} / Maximum number of characters: {0}
+```
+
+
+**Куда вписать / примечание:** Подставлять лимит параметром ({0} — стандартный плейсхолдер jQuery Validation), а не писать числом в тексте перевода.
+
+
+### 12-03 · (global JS) window.FenixTranslations.validate.phoneFormat · Кривой перевод [UA]
+
+**Где:** Walidacja telefonu w formularzu zamówienia
+
+
+**Сейчас:**
+
+> Введіть телефон у вірному форматі
+
+
+**Почему проблема:** «У вірному форматі» — русизм (калька с «в верном формате»); по-украински «правильному» / «коректному». Плюс «введіть телефон» вместо «номер телефону». Это сообщение видно в чекауте на шаге контактных данных — самый чувствительный момент. Ни одна из трёх локалей при этом не подсказывает ожидаемый формат.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wpisz numer telefonu wraz z numerem kierunkowym kraju, np. +48 512 345 678
+```
+
+
+*UA:*
+
+```
+Введіть номер телефону разом з кодом країни, наприклад +48 512 345 678
+```
+
+
+*EN:*
+
+```
+Enter your phone number including the country code, for example +48 512 345 678
+```
+
+
+**Куда вписать / примечание:** Ключ validate.phoneFormat. Тот же текст стоит согласовать с validate.uaPhoneFormat — сейчас это два разных сообщения об одном и том же.
+
+
+### 02-02 · * · Кривой перевод [pl,ua,en]
+
+**Где:** Анонс-бар в шапке, текст акции
+
+
+**Сейчас:**
+
+> Nowa kolekcja Jesień 2025 jest już dostępna! / Нова колекція осінь 2025 вже доступна! / The new Fall 2025 collection is now available!
+
+
+**Почему проблема:** Три проблемы в одной строке: (1) в EN американское «Fall» — по гайду нужен британский английский, для европейского покупателя это «Autumn»; (2) в UA сезон со строчной («осінь») там, где в PL и EN он капитализирован как часть названия коллекции — названия коллекции не совпадают между локалями; (3) восклицательный знак противоречит тону бренда (спокойный, взрослый, без восклицаний). Строка видна на каждой странице.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kolekcja jesień 2025 jest już dostępna
+```
+
+
+*UA:*
+
+```
+Колекція осінь 2025 вже доступна
+```
+
+
+*EN:*
+
+```
+The Autumn 2025 collection is now available
+```
+
+
+**Куда вписать / примечание:** Настройки → Анонс в шапке → текст, отдельно для каждой локали. Правится вместе с 02-01: пока целевой страницы нет, бар лучше выключить.
+
+
+*Правки носителей: PL: Nazwy pór roku po polsku pisze się małą literą — także w nazwach kolekcji (por. „kolekcja jesień–zima 2026” w 01-01).; UA: зайва велика літера в назві сезону (пор. 01-01 «колекція осінь–зима 2026»)*
+
+
+### 02-03 · * · Кривой перевод [UA]
+
+**Где:** Мега-меню и бургер-меню, первый пункт (ссылка на /ua/special-offers)
+
+
+**Сейчас:**
+
+> Школьний сезон
+
+
+**Почему проблема:** Первый пункт главного меню. Во-первых, «Школьний» — русизм/опечатка, по-украински «Шкільний». Во-вторых, тот же пункт в PL называется «Prezenty», в EN «Gifts» — три локали ведут на одну страницу под тремя разными названиями, и ни одно не совпадает с её h1 «Akcje» (акции). Пользователь в UA-версии ждёт школьный ассортимент, попадает на пустой раздел промо.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Promocje
+```
+
+
+*UA:*
+
+```
+Акції
+```
+
+
+*EN:*
+
+```
+Promotions
+```
+
+
+**Куда вписать / примечание:** Каталог → Меню → пункт, ведущий на /special-offers. Если задумывался подарочный лендинг, а не промо, то пункт нужно перевесить на /prezenty и назвать Prezenty / Подарунки / Gifts — но одинаково во всех трёх локалях.
+
+
+### 02-05 · * · Опечатка [PL]
+
+**Где:** Футер, колонка «Klientowi» + список юр. страниц в бургер-меню (ссылка на /claims-and-complaints)
+
+
+**Сейчас:**
+
+> Polityka zworotow i reklamacji
+
+
+**Почему проблема:** Опечатка («zworotow» вместо «zwrotów») плюс полностью потеряна диакритика. Это название обязательного юридического документа, выведенное в футере каждой страницы — именно то, что смотрят при верификации в Przelewy24 и что первым бросается в глаза польскому покупателю.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Polityka zwrotów i reklamacji
+```
+
+
+*UA:*
+
+```
+Політика повернення та претензій
+```
+
+
+*EN:*
+
+```
+Returns and complaints policy
+```
+
+
+**Куда вписать / примечание:** Контент → Страницы → /claims-and-complaints → название пункта меню/футера. UA сейчас «Політика повернення та претензій», EN «Claims and complaints» — привести к одному смыслу, чтобы во всех трёх локалях документ назывался одинаково.
+
+
+*Правки носителей: UA: різнобій «рекламації/претензії» — уніфіковано на «претензії»*
+
+
+### 02-06 · * · Опечатка [PL]
+
+**Где:** Футер, колонка «Klientowi» + список юр. страниц в бургер-меню (ссылка на /deklaracja-dostepnosci)
+
+
+**Сейчас:**
+
+> Deklaracja dostepnosci
+
+
+**Почему проблема:** Потеряна диакритика в названии документа, форма которого закреплена законом («Deklaracja dostępności»). Документ о доступности с ошибкой в собственном названии — на каждой странице сайта.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Deklaracja dostępności
+```
+
+
+*UA:*
+
+```
+Заява про доступність
+```
+
+
+*EN:*
+
+```
+Accessibility statement
+```
+
+
+**Куда вписать / примечание:** Контент → Страницы → /deklaracja-dostepnosci → название. Слаг менять не обязательно, но подпись в футере и меню обязана быть с диакритикой. UA сейчас «Заява про доступність» — правильнее «Декларація доступності», как называется сам документ.
+
+
+*Правки носителей: UA: «Декларація доступності» — калька з польської; на сторінці 07-01/07-03 той самий документ названо «Заява про доступність»*
+
+
+### 02-08 · * · Нет перевода [EN]
+
+**Где:** Футер, колонка «Information» + список юр. страниц в бургер-меню (ссылка на /en/polityka-cookies)
+
+
+**Сейчас:**
+
+> Polityka cookies
+
+
+**Почему проблема:** Пункт вообще не переведён — в английском футере стоит польское название. Единственная непереведённая строка в списке, поэтому бросается в глаза сразу; выводится на каждой странице EN-версии.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Polityka cookies
+```
+
+
+*UA:*
+
+```
+Політика щодо файлів cookie
+```
+
+
+*EN:*
+
+```
+Cookie policy
+```
+
+
+**Куда вписать / примечание:** Контент → Страницы → /polityka-cookies → название для локали EN. Заодно UA: сейчас «Політика щодо файлів COOKIES» — капслок в середине фразы, привести к «Політика щодо файлів cookie».
+
+
+### 02-09 · * · Опечатка [EN]
+
+**Где:** Футер, колонка «Information» + бургер-меню (ссылка на /en/zgody-klauzule-i-regulamin-newslettera)
+
+
+**Сейчас:**
+
+> Consents, clauses and newsleter terms and conditions
+
+
+**Почему проблема:** «newsleter» — опечатка (правильно newsletter), в названии юридического документа, на каждой странице EN-версии. Плюс двойное «terms and conditions» в одном списке с «Online store terms and conditions» и «Gift card terms and conditions» — строка получается неоправданно длинной.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zgody, klauzule i regulamin newslettera
+```
+
+
+*UA:*
+
+```
+Згоди, застереження та правила розсилки
+```
+
+
+*EN:*
+
+```
+Consents, clauses and newsletter terms
+```
+
+
+**Куда вписать / примечание:** Контент → Страницы → /zgody-klauzule-i-regulamin-newslettera → название для локали EN.
+
+
+*Правки носителей: UA: полонізм «регламент» (regulamin) — уніфіковано на «правила розсилки»*
+
+
+### 02-10 · * · Чужой язык [pl,ua,en]
+
+**Где:** Панель фильтров товаров (filter-sidebar), кнопки «назад» и «закрыть»
+
+
+**Сейчас:**
+
+> <button type="button" class="filter-sidebar-back" js-filter-back aria-label="Назад"> … <button type="button" class="filter-sidebar-close" js-filter-close aria-label="Закрыть">
+
+
+**Почему проблема:** Русский язык в разметке, хотя русской локали на сайте нет вообще. Захардкожено: aria-label="Назад" и aria-label="Закрыть" одинаковы в PL, UA и EN (проверено на /kids, /girls, /boys, /footwear, /accessories, /zabawki, /brands/*), всего 33 страницы. Скринридер в польской и английской версии произносит русские слова; «Закрыть» ещё и не совпадает с «Закрити», которое уже есть в UA-версии в бургер-меню. Рядом в коде остался русский комментарий разработчика «// Фильтр тоавров» (тоже с опечаткой) — на 50+ страницах.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wstecz / Zamknij
+```
+
+
+*UA:*
+
+```
+Назад / Закрити
+```
+
+
+*EN:*
+
+```
+Back / Close
+```
+
+
+**Куда вписать / примечание:** Правится в шаблоне панели фильтров (filter-sidebar-header), а не в контенте: aria-label нужно вывести через словарь локали. Заголовок панели уже локализован корректно (Filtry / Фільтр / Filter), значит словарь есть — в него не завели только две эти кнопки. Русский комментарий «// Фильтр тоавров» вычистить заодно.
+
+
+### 02-12 · * · Нет перевода [pl,ua,en]
+
+**Где:** Поиск в шапке, анимированный плейсхолдер поля ввода (PlaceholderAnimator)
+
+
+**Сейчас:**
+
+> const placeholderWord = [ "Baby", "Child", "Beauty", "Woman", "Newborn", ];
+
+
+**Почему проблема:** Подсказки, которые по очереди появляются в поле поиска, захардкожены по-английски и идентичны в PL, UA и EN. Польский покупатель видит в поиске «Baby», «Woman», «Newborn» — и подставленный по подсказке английский запрос ничего не найдёт, потому что каталог польский. Скрипт выводится на каждой странице.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Sukienka, Body, Trampki, Kocyk, Przytulanka
+```
+
+
+*UA:*
+
+```
+Малюк, Дитина, Догляд, Жінка, Новонароджений
+```
+
+
+*EN:*
+
+```
+Dress, Bodysuit, Trainers, Blanket, Soft toy
+```
+
+
+**Куда вписать / примечание:** Массив placeholderWord в bottom_html / шаблоне поиска — вынести в словарь локали. Слова должны совпадать с реальными названиями категорий, иначе поиск по подсказке вернёт пустой результат.
+
+
+*Правки носителей: PL: Dosłowne przetłumaczenie angielskiej listy („Baby, Child, Beauty, Woman, Newborn”) — hasła nie odpowiadają ani kategoriom sklepu, ani temu, czego szuka klient. Ujednolicone z 14-10, które opisuje ten sam skrypt.; EN: Search placeholder conflicted with 14-10 and listed audience segments ("Woman") rather than products; aligned with the product-word placeholder.*
+
+
+### 02-13 · * · Кривой перевод [EN]
+
+**Где:** Шапка, кнопка избранного (title) + бургер-меню, ссылка «Favorites»
+
+
+**Сейчас:**
+
+> <a class="header__btn btn-favorites" href="https://lapetitebloom.com/en/favorites" title="Favorites">
+
+
+**Почему проблема:** Американское написание в британской локали (по гайду EN — британский, под европейского покупателя): нужно «Favourites». Повторяется в шапке (title), в бургер-меню и на самой странице /en/favorites. Рядом в меню тем же образом стоит «Jewelry» вместо «Jewellery».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ulubione
+```
+
+
+*UA:*
+
+```
+Обране
+```
+
+
+*EN:*
+
+```
+Favourites
+```
+
+
+**Куда вписать / примечание:** Словарь локали EN, ключи шапки и бургер-меню. Одной вычиткой закрыть и «Jewelry» → «Jewellery» в разделе Women, и «Catalog» → «Categories» в футере.
+
+
+### 02-14 · * · Кривой перевод [EN]
+
+**Где:** Карточка товара, кнопка «в избранное» (title), все листинги и главная
+
+
+**Сейчас:**
+
+> title="To the selected"
+
+
+**Почему проблема:** Дословная калька с польского «Do ulubionych» / украинского «До обраного», по-английски бессмыслица. Это единственная подпись кнопки (иконка без текста), она повторяется по 16 раз на странице и на всех листингах EN-версии.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Do ulubionych
+```
+
+
+*UA:*
+
+```
+До обраного
+```
+
+
+*EN:*
+
+```
+Add to favourites
+```
+
+
+**Куда вписать / примечание:** Словарь локали EN, ключ кнопки избранного в карточке товара. Соседняя кнопка корзины переведена нормально («Add to cart»), так что дело в одном ключе.
+
+
+### 02-17 · * · Опечатка [EN]
+
+**Где:** Мега-меню и бургер-меню, раздел «Kids» → «Babies 0-2»
+
+
+**Сейчас:**
+
+> Rompers& snowsuits … Jackets &outerwear
+
+
+**Почему проблема:** Потерян пробел вокруг амперсанда в двух пунктах подряд: «Rompers& snowsuits» и «Jackets &outerwear». Остальные 30+ пунктов набраны как «X & Y», так что ошибка видна сразу. Меню показывается на каждой странице EN-версии. Дополнительно «Rompers» дублирует «Rompers» из соседнего пункта «Bodysuits & rompers» — покупатель не понимает, чем разделы отличаются.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kombinezony
+```
+
+
+*UA:*
+
+```
+Комбінезони
+```
+
+
+*EN:*
+
+```
+Snowsuits & pramsuits
+```
+
+
+**Куда вписать / примечание:** Каталог → Категории → /kombinezon → название для локали EN. Английское название стоит развести с «Bodysuits & rompers»: PL «Kombinezony» и UA «Комбінезони» — это верхние комбинезоны, а не боди-ромперы.
+
+
+### 02-18 · * · Кривой перевод [pl,ua,en]
+
+**Где:** Мега-меню и бургер-меню, раздел «Chłopcy 2-12» / «Хлопчики 2-12» / «Boys 2-12»
+
+
+**Сейчас:**
+
+> Skarpetki … Szorty kąpielowe … Skarpety … Szorty … Nakrycia głowy … Koszulki (UA: Шкарпетки … Купальні шорти … Носочки … Шорти; EN: Socks … Swim shorts … Socks … Shorts)
+
+
+**Почему проблема:** В подменю мальчиков продублированы категории: /skarpetki-2-12 «Skarpetki» и /skarpety «Skarpety» — два отдельных раздела носков подряд; в EN оба названы буквально одинаково («Socks» и «Socks»), в UA второй превратился в «Носочки» (уменьшительное, выбивается из тона бренда и из ряда «Шкарпетки»). Так же дублируются «Szorty kąpielowe»/«Szorty» и «Koszulki»/«T-shirty i topy». Покупатель не может выбрать между двумя одинаковыми пунктами, а в EN-версии их вообще невозможно различить.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Skarpetki
+```
+
+
+*UA:*
+
+```
+Шкарпетки
+```
+
+
+*EN:*
+
+```
+Socks
+```
+
+
+**Куда вписать / примечание:** Каталог → Категории, раздел Chłopcy 2-12. Нужно решение владельца: либо объединить /skarpetki-2-12 и /skarpety в одну категорию (и то же с /szorty-kapielowe + /shorts-2-12, /koszulki + /t-shirty-i-topy), либо развести названия по смыслу во всех трёх локалях. Пока пункты дублируются, любые переводы косметика.
+
+
+### 02-26 · * · Кривой перевод [pl,ua,en]
+
+**Где:** Попап «Język i waluta», список валют
+
+
+**Сейчас:**
+
+> Hrywna (UAH) / Dolar amerykański (USD) / Euro (EUR) / Złoty polski (PLN) — UA: Гривня (UAH) / Доллар США (USD) / Евро (EUR) / Польський злотий (PLN) — EN: Hryvnia (UAH) / Dollar USA (USD) / Euro (EUR) / Polish Zloty (PLN)
+
+
+**Почему проблема:** В UA два русизма подряд: «Доллар» (укр. «долар», одна «л») и «Евро» (укр. «Євро», с Є). В EN «Dollar USA» — калька с польского порядка слов, по-английски «US dollar»; «Polish Zloty» без диакритики и с ошибочной капитализацией (валюта — не имя собственное). Попап валют — часть платёжного контура, его смотрят при верификации Przelewy24.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Hrywna (UAH) / Dolar amerykański (USD) / Euro (EUR) / Złoty polski (PLN)
+```
+
+
+*UA:*
+
+```
+Гривня (UAH) / Долар США (USD) / Євро (EUR) / Польський злотий (PLN)
+```
+
+
+*EN:*
+
+```
+Hryvnia (UAH) / US dollar (USD) / Euro (EUR) / Polish złoty (PLN)
+```
+
+
+**Куда вписать / примечание:** Настройки → Валюты → названия по локалям. Отдельно проверить, зачем в польском магазине включены UAH и USD, если все цены отдаются в zł — если переключение валют не работает, лишние строки лучше убрать до запуска.
+
+
+### 02-31 · * · Юр. требование [pl,ua,en]
+
+**Где:** Футер, блок newsletter — текст согласия под чекбоксом (newsletter-consent)
+
+
+**Сейчас:**
+
+> Wyrażam zgodę na otrzymywanie informacji o ofertach, promocjach i możliwościach od La Petite Bloom w formie newslettera. Zapisując się do newslettera, akceptujesz regulamin i politykę prywatności.
+
+
+**Почему проблема:** Обязательный чекбокс (required) с дефектной формулировкой, на каждой странице сайта. Три проблемы: (1) фраза начинается от первого лица («Wyrażam zgodę») и тут же переходит на второе («akceptujesz») — юридически несогласованный текст; (2) не названы администратор данных и право отозвать согласие в любой момент — базовые требования RODO к маркетинговому согласию; (3) слово «regulamin» ведёт на /terms-of-use (регламент магазина), хотя у рассылки есть отдельная страница /zgody-klauzule-i-regulamin-newslettera — то есть покупатель соглашается не с тем документом, на который ссылается. «możliwościach» — калька с английского «opportunities», по-польски в этом контексте ничего не значит.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wyrażam zgodę na otrzymywanie newslettera La Petite Bloom z informacjami o nowościach i ofertach na podany adres e-mail. Administratorem danych jest LPB Sp. z o.o. Zgodę mogę wycofać w każdej chwili. Szczegóły w regulaminie newslettera i polityce prywatności.
+```
+
+
+*UA:*
+
+```
+Даю згоду на отримання розсилки La Petite Bloom з інформацією про новинки та пропозиції на вказану електронну адресу. Контролером персональних даних є LPB Sp. z o.o. Згоду можна відкликати будь-коли. Деталі — у правилах розсилки та політиці конфіденційності.
+```
+
+
+*EN:*
+
+```
+I agree to receive the La Petite Bloom newsletter with news and offers at the email address provided. The data controller is LPB Sp. z o.o. I may withdraw this consent at any time. Details are in the newsletter terms and the privacy policy.
+```
+
+
+**Куда вписать / примечание:** Настройки → Футер → блок подписки → текст согласия, по локалям. Формулировку до запуска должен утвердить юрист — здесь дан рабочий каркас, а не готовая правовая норма. Обязательно перевесить ссылку «regulamin» с /terms-of-use на /zgody-klauzule-i-regulamin-newslettera.
+
+
+*Правки носителей: UA: різнобій «володілець/контролер даних» — уніфіковано на «контролер» (як у 06-08, 07-07, 19-12); полонізм «регламент» (regulamin)*
+
+
+### 02-32 · * · Нет перевода [pl,ua,en]
+
+**Где:** Футер, контактный блок (footer-contact-item), адрес
+
+
+**Сейчас:**
+
+> Marcina Kasprzaka 31/119   (в UA и EN: ul. Marcina Kasprzaka 31/119)
+
+
+**Почему проблема:** Адрес в футере оборван: нет индекса, города и страны — на каждой странице всех трёх локалей. На /contacts тот же адрес выведен полностью («Marcina Kasprzaka 31/119 01-234 Warszawa»), то есть данные в системе есть, в футер их просто не вывели. Плюс в PL-версии потерян префикс «ul.», который в UA и EN на месте. Для покупателя из UA/EN футер вообще не сообщает, что магазин находится в Польше; для верификации в Przelewy24 адрес продавца в подвале — стандартное требование.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska
+```
+
+
+*UA:*
+
+```
+LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща
+```
+
+
+*EN:*
+
+```
+LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland
+```
+
+
+**Куда вписать / примечание:** Настройки → Контакты → адрес для футера. Индекс 01-234 и город взяты со страницы /contacts и подтверждены записью в KRS — не выдуманы. Название компании латиницей во всех локалях. Полные реквизиты (NIP/REGON/KRS) — зона агента 19, здесь только почтовый адрес.
+
+
+*Правки носителей: EN: City name given in Polish inside English copy; elsewhere "Warsaw".*
+
+
+### 14-01 · * · Кривой перевод [PL]
+
+**Где:** window.FenixTranslations → validate.required (сводный диф словаря движка)
+
+
+**Сейчас:**
+
+> "validate": { "required": "Podaj hasło ponownie" }
+
+
+**Почему проблема:** Ключ validate.required — это универсальное сообщение для ЛЮБОГО обязательного поля любой формы движка (регистрация, вход, оформление заказа, форма контакта, подписка). Сейчас в него зашит текст про пароль: пользователь, не заполнивший имя, город или e-mail, увидит «Podaj hasło ponownie». Ошибка идентична во всех трёх локалях — это один и тот же дефект словаря, размноженный переводом.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+To pole jest wymagane
+```
+
+
+*UA:*
+
+```
+Це поле обов’язкове
+```
+
+
+*EN:*
+
+```
+This field is required
+```
+
+
+**Куда вписать / примечание:** СВОДНАЯ ТАБЛИЦА ДИФА window.FenixTranslations (проверено на всех 54 страницах × 3 локали — словарь байт-в-байт одинаков внутри каждой локали, вариантов нет). Всего 28 ключей в 6 группах: ui 4, validate 11, search 3, product 1, filter 5, favorites 4. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В UA: 0. | КЛЮЧЕЙ, ОТСУТСТВУЮЩИХ В EN: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ UA ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. | КЛЮЧЕЙ, ГДЕ ЗНАЧЕНИЕ EN ДОСЛОВНО РАВНО ПОЛЬСКОМУ: 0. То есть формально словарь переведён на 100 %, MISSING в нём нет. Дефекты — качественные, 9 ключей из 28: validate.required (14-01), validate.minlength + validate.maxlength (14-02), favorites.to_favorites / in_favorites / btn_add_favorites / btn_remove_favorites — EN (14-03), search.empty_products + search.empty_categories — UA (14-04), validate.phoneFormat — UA (14-05), search.sku + product.sku (14-06). Плюс мусорные ключи: validate.uaPhoneFormat (украинский валидатор телефона в польском магазине) и validate.invalidNumber2 (полный дубль validate.invalidNumber во всех трёх локалях). Править в админке: раздел переводов интерфейса / языковые файлы движка Fenix, группа validate.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»*
+
+
+### 14-03 · * · Кривой перевод [EN]
+
+**Где:** window.FenixTranslations → группа favorites (кнопка «в избранное» на каждой карточке товара и на карточке товара)
+
+
+**Сейчас:**
+
+> "to_favorites": "To the selected", "in_favorites": "In the selected", "btn_add_favorites": "To the selected", "btn_remove_favorites": "From the selected"
+
+
+**Почему проблема:** Все четыре английские строки — машинный перевод через русское «в избранное» → «to the selected». По-английски это бессмыслица: покупатель видит на кнопке сердечка «To the selected». Строки выводятся на каждой карточке товара во всех каталогах и на всех карточках товара, то есть дефект виден на большинстве страниц EN-версии. Дополнительно нарушено правило британского английского (favourites, не favorites).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Do ulubionych / W ulubionych / Dodaj do ulubionych / Usuń z ulubionych
+```
+
+
+*UA:*
+
+```
+До обраного / В обраному / Додати до обраного / Видалити з обраного
+```
+
+
+*EN:*
+
+```
+Add to favourites / In favourites / Add to favourites / Remove from favourites
+```
+
+
+**Куда вписать / примечание:** Ключи по порядку: to_favorites, in_favorites, btn_add_favorites, btn_remove_favorites. Заодно выровнять заголовок страницы /en/favorites — там сейчас «Favorites» (амер.), нужно «Favourites». Польские и украинские значения этих ключей корректны, менять их не нужно — приведены для комплекта.
+
+
+### 14-10 · * · Нет перевода [PL]
+
+**Где:** Поле поиска в шапке, анимированный плейсхолдер (инлайн-скрипт PlaceholderAnimator), на всех 54 страницах каждой локали
+
+
+**Сейчас:**
+
+> const placeholderWord = [ "Baby", "Child", "Beauty", "Woman", "Newborn", ];
+
+
+**Почему проблема:** Массив подсказок в строке поиска захардкожен по-английски в инлайн-скрипте и не зависит от локали: в польской версии плейсхолдер циклично печатает «Baby», «Child», «Beauty», «Woman», «Newborn» рядом с польским «Szukaj...», в украинской — рядом с «Пошук...». Это самый заметный элемент шапки, он анимируется и притягивает взгляд. Дополнительно слова не совпадают с реальными разделами каталога (в меню Dzieci / Kobiety / Dla domu, никакого «Beauty» верхним уровнем нет).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Sukienka, Body, Trampki, Kocyk, Przytulanka
+```
+
+
+*UA:*
+
+```
+Сукня, Боді, Кеди, Ковдра, М’яка іграшка
+```
+
+
+*EN:*
+
+```
+Dress, Bodysuit, Trainers, Blanket, Soft toy
+```
+
+
+**Куда вписать / примечание:** Массив задаётся в инлайн-скрипте рядом с .js-placeholder-anim; его нужно вынести в языковые файлы (ключ search.placeholder_words) и отдавать по локали. Предложенные слова подобраны под реальные категории каталога — они одновременно подсказывают покупателю, что здесь вообще можно искать.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»*
+
+
+### 01-05 · / · Битая ссылка [ua,en]
+
+**Где:** Все секции главной с относительными ссылками: кнопка «Zobacz wszystko» в блоке «Prezenty» и кнопка «Znajdź nas tutaj» в блоке о бутике
+
+
+**Сейчас:**
+
+> <a href="special-offers" class="thematic__btn btn btn-default"> и <a class="two-col__btn btn btn-default" href="contacts">
+
+
+**Почему проблема:** Ссылки записаны относительно (без слэша и без префикса локали), а тега <base> на странице нет. С адреса https://lapetitebloom.com/ua они разрешаются в https://lapetitebloom.com/special-offers и https://lapetitebloom.com/contacts — то есть выбрасывают украинского и английского пользователя обратно на польскую версию и сбрасывают выбранный язык. В PL-версии проблема не видна, поэтому её легко пропустить.
+
+
+**Куда вписать / примечание:** Заменить на абсолютные ссылки с префиксом локали: /special-offers, /ua/special-offers, /en/special-offers и /contacts, /ua/contacts, /en/contacts. Проверить, нет ли такой же относительной записи в других блоках-конструкторах.
+
+
+### 01-06 · / · Битая ссылка [pl,ua,en]
+
+**Где:** Блок «Prezenty / Nowy Rok» (section thematic) — три плитки-баннера
+
+
+**Сейчас:**
+
+> <a href="#" class="thematic-item"> ×3 (плитки «The Magic Of Gift», «Sukienka dla dziewczynki», «Sukienka dla dziewczynki»)
+
+
+**Почему проблема:** Все три плитки промо-блока подарков — пустые якоря href="#". Они выглядят кликабельными (курсор-рука), но никуда не ведут. Одинаково во всех трёх локалях.
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Prezenty» → каждая плитка: проставить ссылку на соответствующую подборку (/prezenty, /special-offers или на нужную категорию) отдельно для pl, ua, en.
+
+
+### 01-07 · / · Нет перевода [pl,en]
+
+**Где:** Блок «Prezenty / Nowy Rok» — подпись первой плитки
+
+
+**Сейчас:**
+
+> PL: «The Magic Of Gift»; EN: «Magia prezentu»; UA: «Магія подарунка»
+
+
+**Почему проблема:** Локали перепутаны местами: в польской версии подпись на английском, в английской — на польском. Украинская переведена правильно. Тот же текст стоит и в alt изображения, то есть ошибка уходит ещё и в поиск.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Magia prezentu
+```
+
+
+*UA:*
+
+```
+Магія подарунка
+```
+
+
+*EN:*
+
+```
+The magic of giving
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Prezenty» → плитка 1: подпись и alt изображения. Проверить, что поля pl и en не перепутаны и в остальных плитках.
+
+
+### 01-09 · / · Битая ссылка [pl,ua,en]
+
+**Где:** Секция «Śledź nas na Instagramie» / «Слідкуйте за нами в Instagram» / «Follow us on Instagram» — все плитки и заголовок
+
+
+**Сейчас:**
+
+> href="https://www.instagram.com"
+
+
+**Почему проблема:** Все ссылки инстаграм-блока ведут на главную страницу instagram.com, а не на профиль магазина. Пользователь уходит с сайта в ленту чужого Инстаграма и не находит бренд. Одинаково во всех трёх локалях и во всех плитках.
+
+
+**Куда вписать / примечание:** Проставить реальный адрес профиля (https://www.instagram.com/<профиль>/) в настройках блока Instagram и в социальных ссылках. [уточнить: точный ник профиля]
+
+
+### 01-10 · / · Нет перевода [EN]
+
+**Где:** Секция о бутике (two-col--revers) — заголовок
+
+
+**Сейчас:**
+
+> Butik
+
+
+**Почему проблема:** Заголовок секции в английской версии остался польским словом «Butik» — причём это <h2>, один из главных заголовков страницы. Заодно три локали расходятся по смыслу: PL «Sklep» (магазин), UA «Бутік», EN «Butik». Текст под заголовком во всех трёх локалях говорит именно о бутике, так что «Sklep» в польской версии тоже стоит поправить.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nasz butik
+```
+
+
+*UA:*
+
+```
+Наш бутик
+```
+
+
+*EN:*
+
+```
+Our boutique
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Sklep/Butik» → заголовок, три локали.
+
+
+*Правки носителей: UA: різнобій «бутік/бутик» — уніфіковано на «бутик»*
+
+
+### 01-11 · / · Нет перевода [UA]
+
+**Где:** Карточки товаров в блоках «Новинки» — бейдж новинки
+
+
+**Сейчас:**
+
+> NEW
+
+
+**Почему проблема:** На украинской главной бейдж новинки остался английским «NEW» на всех девяти карточках, хотя соседний бейдж бестселлера переведён («Бестселер»), а на баннере используется «НОВИНКА». В польской версии бейдж — «NOWY»: прилагательное мужского рода без существительного, рядом с «NOWOŚĆ» на баннере выглядит как две разные системы обозначений.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+NOWOŚĆ
+```
+
+
+*UA:*
+
+```
+НОВИНКА
+```
+
+
+*EN:*
+
+```
+NEW
+```
+
+
+**Куда вписать / примечание:** Админка → Метки/бейджи товаров → метка «новинка»: перевод для ua и правка pl. Заодно свести к одному слову с бейджем на главном баннере.
+
+
+### 01-13 · / · Заглушка [pl,ua,en]
+
+**Где:** <title> и <meta name="description">, а также og:title / og:description главной
+
+
+**Сейчас:**
+
+> PL: <title>Główna</title>, description «Główna»; UA: «Головна»; EN: «Home»
+
+
+**Почему проблема:** Заголовок и описание главной страницы во всех трёх локалях — служебное слово «Главная», оставшееся от названия страницы в админке. То же значение продублировано в og:title и og:description, поэтому при отправке ссылки в мессенджер сайт выглядит как страница с названием «Home». Ни бренда, ни города, ни ассортимента — ни в поиске, ни в шеринге.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+title: «La Petite Bloom — ubrania, obuwie i zabawki dla dzieci | Warszawa»; description: «Butik dla dzieci i mam: ubrania, obuwie, kosmetyki i zabawki marek Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg i Veja. Sklep online z wysyłką i butik przy ul. Mokotowskiej w Warszawie.»
+```
+
+
+*UA:*
+
+```
+title: «La Petite Bloom — дитячий одяг, взуття та іграшки | Варшава»; description: «Бутик для дітей і мам: одяг, взуття, косметика та іграшки брендів Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg і Veja. Інтернет-магазин із доставкою та бутік на вул. Mokotowska у Варшаві.»
+```
+
+
+*EN:*
+
+```
+title: “La Petite Bloom — children’s clothing, footwear and toys | Warsaw”; description: “A boutique for children and mothers: clothing, footwear, skincare and toys by Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg and Veja. Online shop with delivery and a boutique on Mokotowska Street in Warsaw.”
+```
+
+
+**Куда вписать / примечание:** Админка → Страницы → Главная → SEO-поля для каждой локали. Длину description держать в пределах ~155 знаков.
+
+
+*Правки носителей: UA: різнобій «бутік/бутик» — уніфіковано на «бутик»*
+
+
+### 01-14 · / · Заглушка [pl,ua,en]
+
+**Где:** Структура заголовков главной страницы
+
+
+**Сейчас:**
+
+> h1: [] — тег <h1> на странице отсутствует во всех трёх локалях; первый заголовок страницы — <h2>Nowości</h2>
+
+
+**Почему проблема:** На главной нет ни одного <h1>: страница начинается сразу с <h2>. Поисковик не понимает, о чём сайт, а скринридер не получает точку входа. Отсутствует и текстовый SEO-блок внизу главной — на странице вообще нет ни одного связного абзаца о том, что продаёт магазин, кроме раздела «O nas».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+H1: «Ubrania, obuwie i zabawki dla dzieci». Blok tekstowy na dole strony: «La Petite Bloom to warszawski butik dla dzieci i mam. Zbieramy marki, którym ufamy — Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg, Veja — i wybieramy z nich to, co dobrze leży, długo służy i wraca do młodszego rodzeństwa. Ubrania i obuwie dla niemowląt, dziewczynek i chłopców, zabawki, kosmetyki oraz dodatki do domu. Zamówienia wysyłamy z Warszawy, a w butiku przy ul. Mokotowskiej 51/53 pomożemy dobrać rozmiar i prezent.»
+```
+
+
+*UA:*
+
+```
+H1: «Дитячий одяг, взуття та іграшки». Текстовий блок унизу сторінки: «La Petite Bloom — це варшавський бутік для дітей і мам. Ми збираємо бренди, яким довіряємо, — Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg, Veja — і обираємо з них те, що добре сидить, довго служить і переходить до молодших. Одяг і взуття для немовлят, дівчаток і хлопчиків, іграшки, косметика та речі для дому. Замовлення відправляємо з Варшави, а в бутику на вул. Mokotowska 51/53 допоможемо підібрати розмір і подарунок.»
+```
+
+
+*EN:*
+
+```
+H1: “Children’s clothing, footwear and toys”. Text block at the foot of the page: “La Petite Bloom is a Warsaw boutique for children and mothers. We gather the labels we trust — Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Maileg, Veja — and choose the pieces that fit well, last long and get passed down. Clothing and footwear for babies, girls and boys, along with toys, skincare and things for the home. Orders are shipped from Warsaw, and at our boutique at ul. Mokotowska 51/53 we will help you find the right size and the right gift.”
+```
+
+
+**Куда вписать / примечание:** H1 можно повесить на первый экран слайдера (визуально скрытый — допустимо) либо на заголовок первой секции. SEO-блок добавить отдельным текстовым виджетом под секцией Instagram.
+
+
+*Правки носителей: UA: різнобій «бутік/бутик» — уніфіковано на «бутик»; EN: Wrong preposition/format for the boutique address; every other text uses "at ul. Mokotowska 51/53".*
+
+
+### 14-14 · /404 (любой несуществующий URL) · Кривой перевод [PL]
+
+**Где:** Тело страницы 404, единственный абзац под цифрой «404»
+
+
+**Сейчас:**
+
+> 404 / Niestety, nic nie znaleziono dla Twojego zapytania / Na główną
+
+
+**Почему проблема:** На странице 404 выводится текст пустой выдачи поиска, а не сообщение о несуществующей странице. Никакого «запроса» пользователь не делал — он перешёл по битой ссылке или ошибся в адресе, и текст его дезориентирует. Тот же дефект во всех трёх локалях: UA «На жаль, по вашому запиту нічого не знайдено», EN «Unfortunately, nothing was found for your query.» Дополнительно: у страницы нет ни одного h1 (цифра «404» свёрстана не заголовком), пунктуация не согласована между локалями (в EN точка есть, в PL и UA нет), а единственный выход — одна ссылка на главную, без поиска и без ссылок на каталог.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nie znaleźliśmy tej strony. Być może zmieniła adres albo już jej nie ma. Wróć na stronę główną albo zajrzyj do katalogu — na pewno znajdziesz tam coś dla siebie.
+```
+
+
+*UA:*
+
+```
+Ми не знайшли цю сторінку. Можливо, вона змінила адресу або її вже немає. Поверніться на головну або загляньте до каталогу — там напевно знайдеться щось для вас.
+```
+
+
+*EN:*
+
+```
+We couldn’t find this page. It may have moved or no longer exists. Return to the homepage, or take a look at the catalogue — you’re sure to find something there.
+```
+
+
+**Куда вписать / примечание:** Полный комплект текстов для страницы 404. ЗАГОЛОВОК H1 (сейчас его нет вообще, добавить): PL «Nie ma takiej strony», UA «Такої сторінки немає», EN «This page doesn't exist». TITLE (сейчас PL «Błąd - strona nie została znaleziona!», UA «Помилка – сторінка не знайдена!», EN «Error – page not found!» — восклицательный знак и слово «Błąd/Помилка» звучат тревожно и не в тоне бренда; в PL к тому же дефис вместо тире, а в UA «сторінка не знайдена» — калька): PL «Strona nie została znaleziona (404) — La Petite Bloom», UA «Сторінку не знайдено (404) — La Petite Bloom», EN «Page not found (404) — La Petite Bloom». КНОПКИ (сейчас одна, PL «Na główną» — обрывочно, EN «To the main page» — калька с русского «на главную»): первая PL «Strona główna» / UA «На головну» / EN «Homepage», вторую добавить — PL «Przeglądaj katalog» / UA «Переглянути каталог» / EN «Browse the catalogue». На 404 также стоит показать строку поиска. Хорошая новость: сама страница 404 переведена на все три локали, отдаёт корректный HTTP 404 и корректный html lang (pl/uk/en) — ломаются только формулировки и разметка.
+
+
+*Правки носителей: EN: Straight apostrophes instead of typographic ones.*
+
+
+### 03-10 · /about · Нет перевода [EN]
+
+**Где:** Sekcja o butiku — nagłówek h2 nad zdjęciem sklepu
+
+
+**Сейчас:**
+
+> Butik
+
+
+**Почему проблема:** Na angielskiej wersji /about nagłówek sekcji został po polsku — «Butik». Na /en/contacts ta sama sekcja nazywa się już poprawnie «Boutique», więc w obrębie jednej lokalizacji są dwie różne nazwy tego samego miejsca. Ten sam nagłówek jest niespójny również po polsku: /about mówi «Sklep», a /contacts «Butik». Alt zdjęcia powiela ten sam błąd (alt="Butik" na /en, alt="Sklep" na /pl).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Butik
+```
+
+
+*UA:*
+
+```
+Бутик
+```
+
+
+*EN:*
+
+```
+Boutique
+```
+
+
+**Куда вписать / примечание:** Blok statyczny nr 1 (static_blocks/1). Poprawić nagłówek h2 i atrybut alt zdjęcia img-7704.JPG we wszystkich trzech lokalizacjach; ujednolicić z kartą na /contacts.
+
+
+### 03-20 · /about · Заглушка [PL]
+
+**Где:** Nakładka wyszukiwarki (blok «star-result-list» pod polem wyszukiwania) — cztery kafelki promowane
+
+
+**Сейчас:**
+
+> Baner1 / Baner2 / Baner3 / Baner4
+
+
+**Почему проблема:** Zaślepki z etapu wdrożenia. Ważne sprostowanie do wcześniejszej notatki: to NIE jest element strony /about — ten blok siedzi w nakładce wyszukiwarki i jest obecny na wszystkich 54 zebranych stronach, w każdej z trzech lokalizacji (sprawdzone w cmp/*.md: 54 z 54 plików zawierają «Baner1»). Zobaczy go każdy, kto kliknie lupę na dowolnej podstronie. Do tego wszystkie cztery kafelki — i obrazek, i podpis — mają puste href="#", więc nawet po poprawieniu tekstu nigdzie nie prowadzą. Nazwy plików zdjęć zdradzają, co miało tam być: blog-2.png, about-us-2.png, brands-anna-i-nina.png.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Blog | O nas | Marki | [uzupełnić: czwarty kafelek — plik iutb-tbtvz-tc-tv.png, nazwa sekcji do potwierdzenia]
+```
+
+
+*UA:*
+
+```
+Блог | Про нас | Бренди | [уточнити: четверта плитка — файл iutb-tbtvz-tc-tv.png, назву розділу треба підтвердити]
+```
+
+
+*EN:*
+
+```
+Blog | About us | Brands | [to confirm: fourth tile — file iutb-tbtvz-tc-tv.png, section name to be supplied]
+```
+
+
+**Куда вписать / примечание:** Admin: slajdy/banery, pozycje sliders_item 23-26. Poza tekstem trzeba ustawić linki (dziś href="#" przy obrazku i przy podpisie): /blog, /about, /brands i czwarty do ustalenia. Atrybuty alt zdjęć też zawierają «Baner1»-«Baner4».
+
+
+*Правки носителей: UA: «кафель» — це керамічна плитка на стіні; елемент інтерфейсу називається «плитка» (як у 01-08)*
+
+
+### 10-12 · /accessories · Нет перевода [ua,en]
+
+**Где:** Filtr «Стать» / «Gender», lista wartości
+
+
+**Сейчас:**
+
+> Kobieta / Kobieta i dziewczynka
+
+
+**Почему проблема:** Dwie wartości płci są w wersji ukraińskiej i angielskiej podane po polsku. W tym samym filtrze inne wartości są już przetłumaczone («Унісекс», «Unisex»), więc mechanizm tłumaczenia wartości działa — po prostu nikt nie uzupełnił tych dwóch pozycji. W UA dochodzą do tego nieprzetłumaczone «Dziewczynka» i «GIRL».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kobieta / Kobieta i dziewczynka
+```
+
+
+*UA:*
+
+```
+Жінка / Жінка та дівчинка
+```
+
+
+*EN:*
+
+```
+Woman / Woman & girl
+```
+
+
+**Куда вписать / примечание:** Komplet wartości filtra płci we wszystkich lokalach: PL Chłopiec / Dziewczynka / Unisex / Kobieta / Kobieta i dziewczynka; UA Хлопчик / Дівчинка / Унісекс / Жінка / Жінка та дівчинка; EN Boy / Girl / Unisex / Woman / Woman & girl.
+
+
+### 10-18 · /accessories · Кривой перевод [pl,ua,en]
+
+**Где:** Filtr «Kolor», dwie osobne wartości na liście
+
+
+**Сейчас:**
+
+> Złoty   ORAZ   Golden
+
+
+**Почему проблема:** Jeden kolor w dwóch wpisach — polskim i angielskim. Widać to najlepiej w wersji angielskiej, gdzie na liście stoją obok siebie «Gold» (tłumaczenie polskiego «Złoty») i «Golden» (wartość nieprzetłumaczona), czyli dwie pozycje o tym samym znaczeniu. Rozbija to biżuterię dziecięcą na dwa niepełne zbiory.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Złoty
+```
+
+
+*UA:*
+
+```
+Золотий
+```
+
+
+*EN:*
+
+```
+Gold
+```
+
+
+**Куда вписать / примечание:** SCALIĆ: «Golden» → «Złoty». Nie mylić z «Golden Stripe» (złote paski) — to osobny, poprawny wzór, który zostaje.
+
+
+### 10-19 · /accessories · Кривой перевод [pl,ua,en]
+
+**Где:** Filtr «Kolor», dwie osobne wartości na liście
+
+
+**Сейчас:**
+
+> Biały   ORAZ   Blanc
+
+
+**Почему проблема:** «Blanc» to po francusku biały — ta sama barwa co polskie «Biały», zapisana jako druga, niezależna wartość katalogu. W wersji angielskiej polskie «Biały» tłumaczone jest na… francuskie «Blanc», więc obie wartości zlewają się w jedną nierozróżnialną etykietę, a anglojęzyczny klient nigdzie nie widzi słowa «White».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Biały
+```
+
+
+*UA:*
+
+```
+Білий
+```
+
+
+*EN:*
+
+```
+White
+```
+
+
+**Куда вписать / примечание:** SCALIĆ: «Blanc» → «Biały» i poprawić tłumaczenie EN na «White». Uwaga: «Blanc» występuje też w nazwach produktów Tartine et Chocolat (np. «Skarpetki Tartine et Chocolat Blanc») — tam zostaje bez zmian, bo to część nazwy handlowej.
+
+
+### 10-22 · /accessories · Кривой перевод [EN]
+
+**Где:** Filtr «Color», wartości francuskie w wersji angielskiej
+
+
+**Сейчас:**
+
+> Azalée, Beige foncé, Blanc, Bleu horizon chiné, Bleu électrique, Ciel, Marine, Nacre, Rose pâle, Rosée
+
+
+**Почему проблема:** Wersja angielska podstawia pod polskie kolory ich francuskie odpowiedniki zamiast angielskich: «Ciemny beż» → «Beige foncé», «Niebieski elektryczny» → «Bleu électrique», «Niebieski» → «Ciel», «Granatowy» → «Marine», «Jasny róż» → «Rose pâle», «Perłowy» → «Nacre». Anglojęzyczny klient dostaje listę kolorów, której w większości nie rozumie, a obok stoją poprawnie angielskie «Light blue», «Old Rose», «Oyster White» — czyli niekonsekwencja w obrębie jednej listy.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ciemny beż / Niebieski elektryczny / Niebieski / Granatowy / Jasny róż / Perłowy / Azaliowy / Rosa
+```
+
+
+*UA:*
+
+```
+Темно-бежевий / Електрик / Синій / Темно-синій / Світло-рожевий / Перламутровий / Азалієвий / Роса
+```
+
+
+*EN:*
+
+```
+Dark beige / Electric blue / Blue / Navy / Pale pink / Mother-of-pearl / Azalea / Dew
+```
+
+
+**Куда вписать / примечание:** Kolejność odpowiada kolejności wartości w polu current. Pełna tabela wszystkich kolorów w trzech językach — patrz finding 10-13.
+
+
+### 10-23 · /accessories · Нет перевода [EN]
+
+**Где:** Filtr «Color», wartość polska w wersji angielskiej
+
+
+**Сейчас:**
+
+> Czerwony
+
+
+**Почему проблема:** Polska nazwa koloru stoi nieprzetłumaczona w angielskiej liście filtrów, pomiędzy «Creme» a «Dark Berry». Tłumaczenie ukraińskie tej samej wartości istnieje («Червоний»), więc mechanizm działa — brakuje tylko wpisu dla EN. Obok w tej samej liście jest już angielskie «Bright Red», co dodatkowo sugeruje klientowi dwa różne czerwone.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Czerwony
+```
+
+
+*UA:*
+
+```
+Червоний
+```
+
+
+*EN:*
+
+```
+Red
+```
+
+
+### 13-04 · /auth/login · Кривой перевод [PL]
+
+**Где:** Komunikaty walidacji formularzy, window.FenixTranslations.validate.required
+
+
+**Сейчас:**
+
+> Podaj hasło ponownie
+
+
+**Почему проблема:** Klucz `required` to uniwersalny komunikat dla każdego pustego pola wymaganego — imienia, nazwiska, adresu e-mail, zgody. Zamiast „to pole jest wymagane” użytkownik zobaczy „Podaj hasło ponownie” / „Вкажіть пароль ще раз” / „Enter password again”, co przy pustym polu „Imię” jest po prostu nieprawdziwe. Dodatkowo w żadnym formularzu na stronie nie ma pola powtórzenia hasła, więc komunikat odsyła do nieistniejącego pola.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+To pole jest wymagane
+```
+
+
+*UA:*
+
+```
+Це поле обов’язкове
+```
+
+
+*EN:*
+
+```
+This field is required
+```
+
+
+**Куда вписать / примечание:** window.FenixTranslations.validate.required, wszystkie trzy lokalizacje. Komunikat działa na /auth/login, /auth/register, /auth/forgot, w newsletterze i w koszyku.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»*
+
+
+### 13-16 · /auth/login · Кривой перевод [PL]
+
+**Где:** Nazwa strony logowania: <title>, okruszki, nagłówek formularza, przycisk wysyłki
+
+
+**Сейчас:**
+
+> Wejście (title) / Logowanie (okruszki) / Zaloguj się (nagłówek i przycisk)
+
+
+**Почему проблема:** Jedna strona ma trzy nazwy w PL i cztery w EN. Polski <title> brzmi „Wejście”, co znaczy „wejście do budynku”, a nie logowanie; okruszki mówią „Logowanie”, formularz „Zaloguj się”. W wersji angielskiej: karta „Login”, nagłówek „Log in”, okruszki „Authorization” (kalka, po angielsku to autoryzacja płatności, nie logowanie), przycisk w nagłówku „Sign in”, a przycisk wysyłki formularza to zwykłe „Submit” — klient klika „Wyślij” zamiast „Zaloguj się”. W UA analogicznie: karta „Вхід”, okruszki „Авторизація”.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zaloguj się
+```
+
+
+*UA:*
+
+```
+Увійти
+```
+
+
+*EN:*
+
+```
+Log in
+```
+
+
+**Куда вписать / примечание:** Ustawić jedną nazwę we wszystkich czterech miejscach: <title> (z dopiskiem „— La Petite Bloom”), okruszki, nagłówek formularza i przycisk submit. Przycisk EN „Submit” → „Log in”. Strona nie ma też żadnego <h1> — nagłówek formularza to <div class="form-title">.
+
+
+### 13-18 · /auth/register · Нет перевода [PL]
+
+**Где:** Pole hasła w formularzu rejestracji (placeholder) i reguła validate.minlength
+
+
+**Сейчас:**
+
+> placeholder="Hasło *" — walidacja: „Minimalna liczba znaków - 2”
+
+
+**Почему проблема:** Przy zakładaniu konta nigdzie nie ma informacji, jakie hasło jest wymagane — ani pod polem, ani w podpowiedzi. Jedyna reguła długości w tłumaczeniach to minimum 2 znaki, co dla konta z historią zamówień i danymi adresowymi jest za słabe i źle wygląda przy weryfikacji operatora płatności. Nie ma też pola powtórzenia hasła, mimo że komunikat walidacji o nie prosi (patrz 13-04).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Hasło * — co najmniej 8 znaków, w tym cyfra i wielka litera
+```
+
+
+*UA:*
+
+```
+Пароль * — щонайменше 8 символів, серед них — цифра та велика літера
+```
+
+
+*EN:*
+
+```
+Password * — at least 8 characters, including a number and a capital letter
+```
+
+
+**Куда вписать / примечание:** Dodać tekst pomocniczy pod polem hasła na /auth/register i wyrównać do niego regułę serwerową; [do potwierdzenia: docelowa polityka haseł — powyżej propozycja standardowa, do potwierdzenia z zespołem technicznym]. Klucz window.FenixTranslations.validate.minlength ustawiony na 2 znaki.
+
+
+*Правки носителей: UA: незграбне «зокрема цифра» після «щонайменше 8 символів»*
+
+
+### 14-15 · /auth/register · Заглушка [PL]
+
+**Где:** Тег <title> страницы регистрации
+
+
+**Сейчас:**
+
+> <title>App Name</title>
+
+
+**Почему проблема:** На странице регистрации стоит дефолтный заголовок фреймворка «App Name» — во всех трёх локалях одинаково (/auth/register, /ua/auth/register, /en/auth/register). Это единственная страница сайта с таким плейсхолдером. Покупатель видит «App Name» во вкладке браузера и в истории ровно в тот момент, когда решает завести аккаунт; для верификации в Przelewy24 это выглядит как незаконченный сайт.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Załóż konto — La Petite Bloom
+```
+
+
+*UA:*
+
+```
+Створити акаунт — La Petite Bloom
+```
+
+
+*EN:*
+
+```
+Create an account — La Petite Bloom
+```
+
+
+**Куда вписать / примечание:** Значение по умолчанию берётся из конфигурации приложения (APP_NAME) там, где у страницы не задан свой SEO-заголовок. Заодно заполнить meta description этой страницы — сейчас она пустая, как и ещё у 44 снимков. Проверено: у /special-offers во всех трёх локалях <title> вообще пустой — тот же дефект, но с другим симптомом.
+
+
+### 08-09 · /blog · Заглушка [pl+ua+en]
+
+**Где:** <title> и meta description витрины блога
+
+
+**Сейчас:**
+
+> title PL «Aktualności» / UA «Новини» / EN «News»; meta description — пустая во всех трёх локалях
+
+
+**Почему проблема:** У главной страницы блога односложный title без названия магазина и полностью пустой meta description во всех трёх локалях. Для страницы, которая должна собирать информационный трафик, это потеря сниппета.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Title: «Blog La Petite Bloom — poradniki o dziecięcej garderobie». Description: «Rozmiary, materiały i pielęgnacja ubranek, pomysły na prezenty i zabawki według wieku. Poradniki zespołu La Petite Bloom dla rodziców.»
+```
+
+
+*UA:*
+
+```
+Title: «Блог La Petite Bloom — поради про дитячий гардероб». Description: «Розміри, матеріали та догляд за одягом, ідеї подарунків та іграшки за віком. Поради команди La Petite Bloom для батьків.»
+```
+
+
+*EN:*
+
+```
+Title: “La Petite Bloom blog — guides for parents”. Description: “Sizing, fabrics and garment care, gift ideas and toys by age. Guides written by the La Petite Bloom team for parents.”
+```
+
+
+**Куда вписать / примечание:** Админка → Blog → Настройки раздела / SEO страницы списка. Заодно стоит переименовать H1: «Aktualności» звучит как лента пресс-релизов, а раздел по факту должен быть блогом (в футере и хлебных крошках он уже называется «Blog» / «Блог» — сейчас H1 и крошки не совпадают).
+
+
+*Правки носителей: EN: Guillemets used around English copy instead of curly double quotes.*
+
+
+### 08-15 · /blog (карточки записей), /ua/blog, /en/blog · Нет перевода [ua+en]
+
+**Где:** Заголовки записей на витрине блога и в блоке «Najnowsze wiadomości»
+
+
+**Сейчас:**
+
+> UA: «Odit ut voluptates», «Aut est», «Saepe consequatur architecto est»; EN: то же самое
+
+
+**Почему проблема:** Три записи из пяти в украинской и английской версии выводятся латинскими заголовками из генератора: перевод для них никогда не заводили, и система показывает исходное значение. В польской версии те же записи получили хотя бы машинные польские заголовки. Для пользователя UA/EN витрина блога выглядит как незаполненная админка.
+
+
+**Предлагаемый текст:**
+
+
+*UA:*
+
+```
+Готові українські заголовки — у пропозиціях 08-16…08-19 (по одному на кожен запис).
+```
+
+
+*EN:*
+
+```
+Ready English titles are given in proposals 08-16…08-19 (one per post).
+```
+
+
+**Куда вписать / примечание:** Правится вместе с заменой самих записей (находки 08-04…08-07): при заполнении новых заголовков нужно обязательно заполнить все три локали, включая поля «Announce», «Title» и «Description». Сейчас в блоге не переведена ни одна запись, кроме Klippan.
+
+
+### 08-17 · /blog/bawelna-organiczna-certyfikaty-gots-oeko-tex · Заглушка [pl+ua+en]
+
+**Где:** Новая запись блога вместо рыбы
+
+
+**Сейчас:**
+
+> (предложение — на месте этой записи сейчас lorem ipsum)
+
+
+**Почему проблема:** Тема прямо поддерживает премиальное позиционирование и обещания в футере («Ręczna robota & Fairtrade»), объясняя, за что покупатель платит.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Bawełna organiczna i certyfikaty GOTS oraz OEKO-TEX — co naprawdę oznaczają
+```
+
+
+*UA:*
+
+```
+Органічна бавовна та сертифікати GOTS і OEKO-TEX — що вони означають насправді
+```
+
+
+*EN:*
+
+```
+Organic cotton and the GOTS and OEKO-TEX labels — what they actually mean
+```
+
+
+**Куда вписать / примечание:** Замена для /blog/odit-ut-voluptates3981 (сейчас «Odrzuca przyjemności.» / «Odit ut voluptates» + lorem ipsum).
+СЛАГ: /blog/bawelna-organiczna-certyfikaty-gots-oeko-tex (единый слаг для всех локалей, как принято на сайте: /ua/blog/bawelna-organiczna-certyfikaty-gots-oeko-tex, /en/blog/bawelna-organiczna-certyfikaty-gots-oeko-tex). Со старого адреса поставить 301.
+SEO TITLE PL: Bawełna organiczna: certyfikaty GOTS i OEKO-TEX | La Petite Bloom
+SEO TITLE UA: Органічна бавовна: сертифікати GOTS і OEKO-TEX | La Petite Bloom
+SEO TITLE EN: Organic cotton: the GOTS and OEKO-TEX labels | La Petite Bloom
+META DESCRIPTION PL: Czym bawełna organiczna różni się od zwykłej i co dokładnie potwierdzają certyfikaty GOTS oraz OEKO-TEX STANDARD 100. Krótki przewodnik po metkach ubranek dziecięcych.
+META DESCRIPTION UA: Чим органічна бавовна відрізняється від звичайної та що саме підтверджують сертифікати GOTS і OEKO-TEX STANDARD 100. Короткий путівник по етикетках дитячого одягу.
+META DESCRIPTION EN: How organic cotton differs from conventional cotton, and what GOTS and OEKO-TEX STANDARD 100 actually certify. A short guide to the labels in children's clothing.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ PL: Na metkach ubranek dziecięcych coraz częściej pojawiają się te same skróty: GOTS, OEKO-TEX, „organic”. Brzmią podobnie, ale mówią o zupełnie różnych rzeczach — jedne o uprawie i całym łańcuchu produkcji, inne o tym, czego w gotowej tkaninie nie ma. Dla rodzica ma to praktyczne znaczenie, bo skóra niemowlęcia jest cieńsza i bardziej przepuszczalna niż skóra dorosłego. W tym tekście tłumaczymy, co potwierdza każdy z certyfikatów i jak czytać metkę bez marketingowego szumu.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ UA: На етикетках дитячого одягу дедалі частіше з'являються ті самі скорочення: GOTS, OEKO-TEX, «organic». Звучать вони схоже, але говорять про різні речі — одні про вирощування бавовни й увесь ланцюг виробництва, інші про те, чого в готовій тканині немає. Для батьків це має практичне значення, адже шкіра немовляти тонша й проникніша, ніж шкіра дорослого. У цьому тексті пояснюємо, що підтверджує кожен сертифікат і як читати етикетку без маркетингового шуму.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ EN: Labels on children's clothing increasingly carry the same abbreviations: GOTS, OEKO-TEX, 'organic'. They sound alike but describe different things — some cover how the cotton is grown and the whole production chain, others cover what the finished fabric does not contain. For a parent this matters in practice, because a baby's skin is thinner and more permeable than an adult's. This article explains what each certificate confirms and how to read a label without the marketing noise.
+ПЛАН PL: 1) Bawełna organiczna a konwencjonalna — różnica zaczyna się na polu; 2) GOTS: co obejmuje certyfikat od włókna do gotowego ubranka; 3) OEKO-TEX STANDARD 100: badanie na substancje szkodliwe; 4) Czym te dwa certyfikaty się różnią i dlaczego bywają obok siebie; 5) Jak czytać metkę: skład, symbole, numer certyfikatu; 6) Dlaczego to ma znaczenie przy skórze niemowlęcia.
+ПЛАН UA: 1) Органічна бавовна проти звичайної — різниця починається в полі; 2) GOTS: що охоплює сертифікат від волокна до готової речі; 3) OEKO-TEX STANDARD 100: перевірка на шкідливі речовини; 4) Чим ці два сертифікати різняться і чому часто стоять поруч; 5) Як читати етикетку: склад, символи, номер сертифіката; 6) Чому це важливо для шкіри немовляти.
+ПЛАН EN: 1) Organic versus conventional cotton — the difference starts in the field; 2) GOTS: what the certificate covers, from fibre to finished garment; 3) OEKO-TEX STANDARD 100: testing for harmful substances; 4) How the two differ and why they often appear together; 5) Reading the label: composition, symbols, certificate number; 6) Why it matters for a baby's skin.
+Не приписывать конкретным брендам сертификаты, которых нет в их описании на сайте. Общие факты о GOTS и OEKO-TEX проверяемы и безопасны; конкретику по товарам оставить как [уточнить: какие позиции ассортимента имеют сертификаты и какие именно].
+
+
+### 08-19 · /blog/co-podarowac-noworodkowi · Заглушка [pl+ua+en]
+
+**Где:** Новая запись блога вместо рыбы
+
+
+**Сейчас:**
+
+> (предложение — на месте этой записи сейчас lorem ipsum)
+
+
+**Почему проблема:** Подарочная тема — самый коммерческий информационный запрос магазина; напрямую ведёт в разделы «Prezenty», «Kartki okolicznościowe» и «Opakowania prezentowe», которые уже есть в меню.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Co podarować noworodkowi — prezenty, które naprawdę się przydają
+```
+
+
+*UA:*
+
+```
+Що подарувати новонародженому — подарунки, які справді знадобляться
+```
+
+
+*EN:*
+
+```
+What to give a newborn — gifts that actually get used
+```
+
+
+**Куда вписать / примечание:** Замена для /blog/saepe-consequatur-architecto-est15163 (сейчас «Często konsekwencją jest architektura.» + lorem ipsum).
+СЛАГ: /blog/co-podarowac-noworodkowi (единый слаг для всех локалей, как принято на сайте: /ua/blog/co-podarowac-noworodkowi, /en/blog/co-podarowac-noworodkowi). Со старого адреса поставить 301.
+SEO TITLE PL: Prezent dla noworodka — co wybrać | La Petite Bloom
+SEO TITLE UA: Подарунок новонародженому — що обрати | La Petite Bloom
+SEO TITLE EN: A gift for a newborn — what to choose | La Petite Bloom
+META DESCRIPTION PL: Kocyk, otulacz, pierwsza przytulanka czy zestaw do kąpieli? Podpowiadamy, jakie prezenty dla noworodka sprawdzają się w pierwszych miesiącach i jaki rozmiar wybrać.
+META DESCRIPTION UA: Плед, пелюшка-кокон, перша іграшка-обіймашка чи набір для купання? Підказуємо, які подарунки новонародженому знадобляться в перші місяці й який розмір обрати.
+META DESCRIPTION EN: A blanket, a swaddle, a first comforter or a bath set? Newborn gifts that earn their place in the first months — and how to get the size right.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ PL: Prezent dla noworodka najłatwiej kupić i najtrudniej trafić. Ubranka w rozmiarze 56 często okazują się za małe, zanim ktokolwiek zdąży je założyć, a trzecia grzechotka ląduje w pudle. Sprawdzają się rzeczy używane codziennie przez wiele miesięcy: dobry kocyk, otulacz, miękka przytulanka, delikatne kosmetyki. Zebraliśmy kategorie prezentów, które rodzice naprawdę zużywają — z podpowiedzią, jaki rozmiar wybrać, jeśli dziecko ma się urodzić dopiero za kilka tygodni.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ UA: Подарунок новонародженому легко купити й важко вгадати. Одяг розміру 56 нерідко стає замалим ще до того, як його встигають вдягнути, а третє брязкальце осідає в коробці. Працюють речі, якими користуються щодня протягом багатьох місяців: хороший плед, пелюшка-кокон, м'яка іграшка-обіймашка, делікатна косметика. Ми зібрали категорії подарунків, які батьки справді зношують, — із підказкою, який розмір обрати, якщо дитина має народитися лише за кілька тижнів.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ EN: A newborn gift is easy to buy and hard to get right. Clothes in size 56 are often outgrown before anyone has had the chance to use them, and the third rattle ends up in a box. What works are the things used every day for months: a good blanket, a swaddle, a soft comforter, gentle skincare. Below are the gift categories parents genuinely wear out — with a note on which size to choose when the baby is still a few weeks away.
+ПЛАН PL: 1) Zasada pierwsza: wybieraj rozmiar większy; 2) Tekstylia, które pracują codziennie — kocyk, otulacz, ręcznik; 3) Pierwsza przytulanka: Jellycat, Maileg, Little Dutch; 4) Kąpiel i pielęgnacja delikatnej skóry; 5) Prezent dla rodziców, nie tylko dla dziecka; 6) Gdy nie znasz gustu: opakowanie, kartka i karta podarunkowa.
+ПЛАН UA: 1) Перше правило: обирайте розмір більший; 2) Текстиль, який працює щодня — плед, пелюшка-кокон, рушник; 3) Перша іграшка-обіймашка: Jellycat, Maileg, Little Dutch; 4) Купання та догляд за делікатною шкірою; 5) Подарунок батькам, а не лише дитині; 6) Якщо не знаєте смаків: упаковка, листівка та подарункова картка.
+ПЛАН EN: 1) Rule one: choose the larger size; 2) Textiles that work every day — blanket, swaddle, towel; 3) The first comforter: Jellycat, Maileg, Little Dutch; 4) Bath time and gentle skincare; 5) A gift for the parents, not only the baby; 6) When you don't know their taste: wrapping, a card and a gift card.
+Не называть цен и не обещать сроков доставки к дате. Про подарочную карту ссылаться на «Regulamin kart podarunkowych». [уточнить: доступна ли подарочная упаковка и открытка как отдельная услуга при оформлении заказа]
+
+
+### 08-16 · /blog/jak-dobrac-rozmiar-ubranek-dzieciecych · Заглушка [pl+ua+en]
+
+**Где:** Новая запись блога вместо рыбы
+
+
+**Сейчас:**
+
+> (предложение — на месте этой записи сейчас lorem ipsum)
+
+
+**Почему проблема:** Самая востребованная информационная тема для магазина детской одежды: перед покупкой размер — главный барьер. Статья закрывает возражение и снижает долю возвратов.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Jak dobrać rozmiar ubranek dziecięcych — poradnik dla rodziców
+```
+
+
+*UA:*
+
+```
+Як підібрати розмір дитячого одягу — порадник для батьків
+```
+
+
+*EN:*
+
+```
+How to choose the right size of children’s clothing — a parent’s guide
+```
+
+
+**Куда вписать / примечание:** Замена для /blog/sit-rerum-labore23250 (сейчас дубль записи про Klippan с телом из lorem ipsum).
+СЛАГ: /blog/jak-dobrac-rozmiar-ubranek-dzieciecych (единый слаг для всех локалей, как принято на сайте: /ua/blog/jak-dobrac-rozmiar-ubranek-dzieciecych, /en/blog/jak-dobrac-rozmiar-ubranek-dzieciecych). Со старого адреса поставить 301.
+SEO TITLE PL: Jak dobrać rozmiar ubranek dziecięcych | La Petite Bloom
+SEO TITLE UA: Як підібрати розмір дитячого одягу | La Petite Bloom
+SEO TITLE EN: How to choose children's clothing sizes | La Petite Bloom
+META DESCRIPTION PL: Rozmiary skandynawskich marek podaje się w centymetrach wzrostu. Wyjaśniamy, jak czytać tabele, jak zmierzyć dziecko w domu i kiedy wybrać rozmiar większy.
+META DESCRIPTION UA: Розміри скандинавських брендів указують у сантиметрах зросту. Пояснюємо, як читати таблиці, як виміряти дитину вдома й коли брати розмір більший.
+META DESCRIPTION EN: Scandinavian brands size by height in centimetres. We explain how to read the charts, how to measure your child at home and when to size up.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ PL: Rozmiarówka dziecięca bywa myląca: jedne marki podają wiek, inne wzrost w centymetrach, a liczba na metce rzadko odpowiada rocznikowi dziecka. W markach skandynawskich, takich jak Liewood, Mini Rodini czy Konges Sløjd, punktem odniesienia jest zwykle wzrost, nie wiek. Dlatego zamiast zgadywać, wystarczy raz zmierzyć dziecko i zapisać kilka wymiarów. W tym poradniku pokazujemy, jak to zrobić, jak czytać tabele rozmiarów i w których kategoriach warto wziąć rozmiar większy.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ UA: Дитяча розмірна сітка часто збиває з пантелику: одні бренди позначають вік, інші — зріст у сантиметрах, і число на етикетці рідко збігається з віком дитини. У скандинавських марок — Liewood, Mini Rodini, Konges Sløjd — орієнтиром зазвичай є зріст, а не вік. Тож замість вгадувати достатньо один раз виміряти дитину й записати кілька мірок. У цьому пораднику показуємо, як це зробити, як читати таблиці розмірів і в яких категоріях варто брати розмір більший.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ EN: Children's sizing can be confusing: some brands label by age, others by height in centimetres, and the number on the label rarely matches the child wearing it. Scandinavian labels such as Liewood, Mini Rodini and Konges Sløjd usually size by height rather than by age. Measuring your child once and writing down a few numbers removes most of the guesswork. This guide shows how to take those measurements, how to read a size chart and where it makes sense to size up.
+ПЛАН PL: 1) Wzrost czy wiek — co naprawdę oznacza liczba na metce; 2) Jak zmierzyć dziecko w domu: cztery wymiary i jeden trik; 3) Jak czytać tabele rozmiarów marek skandynawskich; 4) Kiedy wybrać rozmiar większy: kurtki, kombinezony, warstwa wierzchnia; 5) Ubranka niemowlęce 0–2 — czym różnią się od reszty; 6) Gdy rozmiar nie pasuje: wymiana i kontakt z naszym zespołem.
+ПЛАН UA: 1) Зріст чи вік — що насправді означає число на етикетці; 2) Як виміряти дитину вдома: чотири мірки й одна хитрість; 3) Як читати таблиці розмірів скандинавських брендів; 4) Коли брати розмір більший: куртки, комбінезони, верхній шар; 5) Одяг для малюків 0–2 — чим він відрізняється; 6) Якщо розмір не підійшов: обмін і звернення до нашої команди.
+ПЛАН EN: 1) Height or age — what the number on the label really means; 2) Measuring your child at home: four measurements and one shortcut; 3) Reading the size charts of Scandinavian brands; 4) When to size up: jackets, snowsuits and outer layers; 5) Baby sizes 0–2 and how they differ; 6) If the size is wrong: exchanges and getting help from our team.
+В разделе 6 не указывать конкретных сроков и условий возврата — сослаться на страницу «Polityka zwrotów i reklamacji» / «Dostawa i płatność». [уточнить: даёт ли магазин собственную таблицу размеров или отправляет к таблицам брендов]
+
+
+*Правки носителей: EN: Straight apostrophes instead of typographic ones.*
+
+
+### 08-18 · /blog/jak-prac-ubranka-dzieciece · Заглушка [pl+ua+en]
+
+**Где:** Новая запись блога вместо рыбы
+
+
+**Сейчас:**
+
+> (предложение — на месте этой записи сейчас lorem ipsum)
+
+
+**Почему проблема:** Практический гайд, который увеличивает срок службы вещей и работает на обещание бренда о долговечности; хорошо линкуется на карточки товаров и категорию «Odzież przeciwdeszczowa».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Jak prać i pielęgnować ubranka dziecięce, żeby służyły dłużej
+```
+
+
+*UA:*
+
+```
+Як прати та доглядати за дитячим одягом, щоб він служив довше
+```
+
+
+*EN:*
+
+```
+How to wash and care for children’s clothes so they last longer
+```
+
+
+**Куда вписать / примечание:** Замена для /blog/aut-est2794 (сейчас «Albo jest» / «Aut est» + lorem ipsum и анонс из Гоголя).
+СЛАГ: /blog/jak-prac-ubranka-dzieciece (единый слаг для всех локалей, как принято на сайте: /ua/blog/jak-prac-ubranka-dzieciece, /en/blog/jak-prac-ubranka-dzieciece). Со старого адреса поставить 301.
+SEO TITLE PL: Pranie ubranek dziecięcych — pielęgnacja krok po kroku | La Petite Bloom
+SEO TITLE UA: Прання дитячого одягу — догляд крок за кроком | La Petite Bloom
+SEO TITLE EN: Washing children's clothes — care step by step | La Petite Bloom
+META DESCRIPTION PL: Temperatura, detergent, suszenie i plamy: praktyczne zasady prania ubranek z bawełny organicznej, wełny merino i tkanin wodoodpornych.
+META DESCRIPTION UA: Температура, засіб для прання, сушіння та плями: практичні правила догляду за одягом з органічної бавовни, мериносу й водовідштовхувальних тканин.
+META DESCRIPTION EN: Temperature, detergent, drying and stains: practical rules for washing organic cotton, merino wool and water-repellent children's clothes.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ PL: Ubranka dziecięce pierze się częściej niż jakiekolwiek inne — i to one najszybciej się zużywają. Tymczasem większość szkód powstaje nie od noszenia, lecz od zbyt wysokiej temperatury, płynu do płukania i suszarki. Dobre materiały, takie jak bawełna organiczna czy wełna merino, wymagają mniej zabiegów, a nie więcej. Zebraliśmy proste zasady, dzięki którym rzeczy zachowują kolor, kształt i miękkość — i spokojnie służą jeszcze młodszemu dziecku.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ UA: Дитячий одяг перуть частіше за будь-який інший — і саме він зношується найшвидше. Хоча більшість пошкоджень виникає не від носіння, а від надто високої температури, кондиціонера для білизни й сушильної машини. Хороші матеріали — органічна бавовна чи вовна меринос — потребують менше зусиль, а не більше. Ми зібрали прості правила, завдяки яким речі зберігають колір, форму та м'якість і спокійно служать ще й молодшій дитині.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ EN: Children's clothes are washed more often than anything else in the house, and they are usually the first to wear out. Yet most of the damage comes not from wear but from washing too hot, from fabric softener and from the tumble dryer. Good materials such as organic cotton and merino wool ask for less care, not more. Here are the simple rules that keep colour, shape and softness intact — and keep garments wearable for a second child.
+ПЛАН PL: 1) Zanim pierwszy raz wypierzesz: co mówi metka; 2) Temperatura i program — dlaczego 30 stopni zwykle wystarcza; 3) Detergent i płyn do płukania: co szkodzi bawełnie i wełnie; 4) Wełna merino — wietrzenie zamiast prania; 5) Odzież przeciwdeszczowa i membrany: jak nie zniszczyć powłoki; 6) Plamy i przechowywanie między sezonami.
+ПЛАН UA: 1) Перед першим пранням: що каже етикетка; 2) Температура й програма — чому 30 градусів зазвичай достатньо; 3) Засіб для прання та кондиціонер: що шкодить бавовні й вовні; 4) Меринос — провітрювання замість прання; 5) Дощовий одяг і мембрани: як не зіпсувати покриття; 6) Плями та зберігання між сезонами.
+ПЛАН EN: 1) Before the first wash: what the care label says; 2) Temperature and cycle — why 30 degrees is usually enough; 3) Detergent and softener: what harms cotton and wool; 4) Merino wool — airing instead of washing; 5) Rainwear and membranes: how not to ruin the coating; 6) Stains and storing clothes between seasons.
+Не давать медицинских рекомендаций и не называть конкретных марок средств для стирки. Формулировки держать в духе «zwykle», «w większości przypadków».
+
+
+*Правки носителей: EN: Straight apostrophe instead of a typographic one.*
+
+
+### 08-03 · /blog/kocyki-klippan-naturalne-cieplo-i-skandynawska-jakosc-dla-najmlodszych · Заглушка [pl+ua+en]
+
+**Где:** meta name=description
+
+
+**Сейчас:**
+
+> (пусто — тега description на странице нет; JSON-LD NewsArticle подставляет в description дубль заголовка)
+
+
+**Почему проблема:** У единственной содержательной записи блога нет meta description ни в одной локали. В разметке Schema.org NewsArticle поле description механически дублирует headline. В выдаче и при шеринге сниппет будет собран поисковиком из lorem ipsum.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Szwedzkie kocyki Klippan z naturalnej wełny i bawełny: jak wybrać rozmiar do wózka i łóżeczka, czym różni się merino od lambswool i jak prać kocyk, by służył latami.
+```
+
+
+*UA:*
+
+```
+Шведські пледи Klippan із натуральної вовни та бавовни: як обрати розмір для візка й ліжечка, чим меринос відрізняється від ламсвулу та як прати плед, щоб він служив роками.
+```
+
+
+*EN:*
+
+```
+Swedish Klippan blankets in natural wool and cotton: choosing a size for the pram and the cot, merino versus lambswool, and how to wash a blanket so it lasts for years.
+```
+
+
+**Куда вписать / примечание:** Админка → Blog → Статьи → kocyki-klippan-... → SEO-блок каждой локали, поле «Description». Отдельно попросить разработчика прокидывать в JSON-LD NewsArticle реальный description, а не копию headline.
+
+
+### 08-21 · /blog/pierwsze-buty-dziecka · Заглушка [pl+ua+en]
+
+**Где:** Новая запись блога вместо рыбы
+
+
+**Сейчас:**
+
+> (предложение — на месте этой записи сейчас lorem ipsum)
+
+
+**Почему проблема:** Категория «Obuwie» на сайте есть, а объясняющего текста под неё нет; подбор первой обуви — запрос с высокой тревожностью и высокой конверсией.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Pierwsze buty dziecka — jak je dobrać i kiedy są potrzebne
+```
+
+
+*UA:*
+
+```
+Перше взуття дитини — як його підібрати і коли воно потрібне
+```
+
+
+*EN:*
+
+```
+A child’s first shoes — how to choose them and when they are needed
+```
+
+
+**Куда вписать / примечание:** Новая запись (сверх четырёх замен): рубрика «Publikacje».
+СЛАГ: /blog/pierwsze-buty-dziecka (единый слаг для всех локалей, как принято на сайте: /ua/blog/pierwsze-buty-dziecka, /en/blog/pierwsze-buty-dziecka). Со старого адреса поставить 301.
+SEO TITLE PL: Pierwsze buty dziecka — jak dobrać rozmiar | La Petite Bloom
+SEO TITLE UA: Перше взуття дитини — як підібрати розмір | La Petite Bloom
+SEO TITLE EN: A child's first shoes — how to get the fit right | La Petite Bloom
+META DESCRIPTION PL: Kiedy dziecku potrzebne są pierwsze buty, ile zapasu zostawić na palce i czym różnią się kapcie do nauki chodzenia od pierwszych butów na zewnątrz.
+META DESCRIPTION UA: Коли дитині потрібне перше взуття, скільки запасу лишати на пальці й чим капці для перших кроків відрізняються від вуличного взуття.
+META DESCRIPTION EN: When a child needs a first pair of shoes, how much room to leave at the toes, and how pre-walkers differ from first outdoor shoes.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ PL: Stopa małego dziecka jest miękka, szeroka i przez pierwsze lata rośnie skokowo — czasem o kilka rozmiarów w ciągu roku. But nie ma jej prowadzić ani korygować, tylko chronić przed chłodem i podłożem, zostawiając palcom miejsce do pracy. W domu i na trawie bose stopy wciąż są najlepszym rozwiązaniem. W tym poradniku tłumaczymy, kiedy pierwsze buty są naprawdę potrzebne, jak zmierzyć stopę i po czym poznać, że para pasuje.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ UA: Стопа маленької дитини м'яка, широка й у перші роки росте стрибками — інколи на кілька розмірів за рік. Взуття не має вести чи коригувати стопу: його завдання — захистити від холоду й поверхні, лишивши пальцям простір для роботи. Удома й на траві боса стопа й далі лишається найкращим варіантом. У цьому пораднику пояснюємо, коли перше взуття справді потрібне, як виміряти стопу й за якими ознаками зрозуміти, що пара підходить.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ EN: A small child's foot is soft and broad, and in the first years it grows in bursts — sometimes several sizes within a year. A shoe is not there to guide or correct the foot, but to protect it from cold and rough ground while leaving the toes room to work. Indoors and on grass, bare feet remain the best option. This guide explains when first shoes are genuinely needed, how to measure a foot and how to tell that a pair fits.
+ПЛАН PL: 1) Bose stopy najpierw — co robi stopa, gdy uczy się chodzić; 2) Kapcie i buty do nauki chodzenia a pierwsze buty na zewnątrz; 3) Jak zmierzyć stopę w domu i ile zostawić zapasu; 4) Na co patrzeć w konstrukcji: elastyczna podeszwa, szeroki nosek, naturalne materiały; 5) Sandały, buty do wody i kalosze — sezonowe wyjątki; 6) Trampki dla starszych dzieci i jak często sprawdzać rozmiar.
+ПЛАН UA: 1) Спершу боса стопа — що робить нога, коли вчиться ходити; 2) Капці та взуття для перших кроків проти вуличного; 3) Як виміряти стопу вдома й скільки лишати запасу; 4) На що дивитися в конструкції: гнучка підошва, широкий носок, натуральні матеріали; 5) Сандалі, взуття для води та гумові чоботи — сезонні винятки; 6) Кеди для старших дітей і як часто перевіряти розмір.
+ПЛАН EN: 1) Bare feet first — what the foot does while learning to walk; 2) Slippers and pre-walkers versus first outdoor shoes; 3) Measuring the foot at home and how much room to leave; 4) What to look for in construction: a flexible sole, a wide toe box, natural materials; 5) Sandals, water shoes and wellies — the seasonal exceptions; 6) Trainers for older children, and how often to re-check the size.
+Никаких медицинских утверждений и рекомендаций по ортопедии — при подозрении на проблему отправлять к специалисту. Veja и другие марки упоминать только как примеры категории, без обещаний наличия. [уточнить: есть ли в магазине измерительная стопомерка или таблица длины стельки]
+
+
+*Правки носителей: EN: Straight apostrophe instead of a typographic one.*
+
+
+### 08-20 · /blog/skandynawski-styl-w-garderobie-dziecka · Заглушка [pl+ua+en]
+
+**Где:** Новая запись блога вместо рыбы
+
+
+**Сейчас:**
+
+> (предложение — на месте этой записи сейчас lorem ipsum)
+
+
+**Почему проблема:** Имиджевая статья, объясняющая логику ассортимента магазина и связывающая бренды между собой; удобно линковать на страницы марок.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Skandynawski styl w dziecięcej garderobie — jak zbudować spójną szafę
+```
+
+
+*UA:*
+
+```
+Скандинавський стиль у дитячому гардеробі — як зібрати цілісну шафу
+```
+
+
+*EN:*
+
+```
+Scandinavian style in a child’s wardrobe — pieces that work together
+```
+
+
+**Куда вписать / примечание:** Новая запись (сверх четырёх замен): рубрика «Publikacje».
+СЛАГ: /blog/skandynawski-styl-w-garderobie-dziecka (единый слаг для всех локалей, как принято на сайте: /ua/blog/skandynawski-styl-w-garderobie-dziecka, /en/blog/skandynawski-styl-w-garderobie-dziecka). Со старого адреса поставить 301.
+SEO TITLE PL: Skandynawski styl w garderobie dziecka | La Petite Bloom
+SEO TITLE UA: Скандинавський стиль у гардеробі дитини | La Petite Bloom
+SEO TITLE EN: Scandinavian style in a child's wardrobe | La Petite Bloom
+META DESCRIPTION PL: Stonowana paleta, naturalne tkaniny i ubrania, które łatwo ze sobą łączyć. Jak zbudować dziecięcą garderobę w duchu skandynawskim i kupować rzadziej.
+META DESCRIPTION UA: Стримана палітра, натуральні тканини й речі, які легко поєднувати. Як зібрати дитячий гардероб у скандинавському дусі й купувати рідше.
+META DESCRIPTION EN: A muted palette, natural fabrics and pieces that combine easily. How to build a child's wardrobe the Scandinavian way and buy less often.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ PL: Skandynawskie podejście do dziecięcej garderoby opiera się na prostej obserwacji: dziecko ubiera się samo szybciej, gdy rzeczy do siebie pasują. Stonowana paleta, naturalne tkaniny i kroje, które znoszą ruch, sprawiają, że z dziesięciu elementów powstaje kilkanaście kompletów. To także podejście oszczędne — mniej rzeczy, dłużej noszonych, częściej przekazywanych dalej. Pokazujemy, jak zbudować taką szafę krok po kroku i na co zwrócić uwagę przy kolorach, warstwach i materiałach.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ UA: Скандинавський підхід до дитячого гардероба тримається на простому спостереженні: дитина вдягається самостійно швидше, коли речі поєднуються між собою. Стримана палітра, натуральні тканини й крої, що витримують рух, перетворюють десяток речей на півтора десятка комплектів. Це ще й ощадливий підхід — менше речей, довше носіння, частіше передавання далі. Показуємо, як зібрати таку шафу крок за кроком і на що зважати в кольорах, шарах і матеріалах.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ EN: The Scandinavian approach to a child's wardrobe rests on a simple observation: children dress themselves faster when their clothes go together. A muted palette, natural fabrics and cuts that tolerate movement turn ten pieces into a dozen or more outfits. It is also the thriftier approach — fewer garments, worn longer, passed on more often. Here is how to build that wardrobe step by step, and what to look for in colour, layering and materials.
+ПЛАН PL: 1) Paleta bazowa i dwa akcenty; 2) Warstwy zamiast grubych ubrań — zasada trzech warstw; 3) Naturalne materiały: bawełna, wełna merino, len; 4) Kroje, które rosną razem z dzieckiem: mankiety, regulowane szelki, bloomersy; 5) Charakter marek: Liewood, Mini Rodini, Bobo Choses, Konges Sløjd; 6) Kapsuła na sezon — lista dziesięciu elementów.
+ПЛАН UA: 1) Базова палітра та два акценти; 2) Шари замість товстих речей — правило трьох шарів; 3) Натуральні матеріали: бавовна, меринос, льон; 4) Крої, що ростуть разом із дитиною: манжети, регульовані шлейки, блумери; 5) Характер брендів: Liewood, Mini Rodini, Bobo Choses, Konges Sløjd; 6) Капсула на сезон — список із десяти речей.
+ПЛАН EN: 1) A base palette and two accents; 2) Layers instead of bulk — the three-layer rule; 3) Natural materials: cotton, merino wool, linen; 4) Cuts that grow with the child: turn-up cuffs, adjustable straps, bloomers; 5) The character of each label: Liewood, Mini Rodini, Bobo Choses, Konges Sløjd; 6) A seasonal capsule — a list of ten pieces.
+О брендах писать только то, что видно из их собственной эстетики (палитра, принты, крои). Не приписывать сертификатов, страны производства и истории компаний без источника.
+
+
+*Правки носителей: EN: "wardrobe" repeated twice in one headline; straight apostrophe.*
+
+
+### 08-08 · /blog/soluta-exercitationem-omnis-id32924, /blog/assumenda-molestias-minima-aut-unde3877, /blog/quas-odio-ut5808 · Заглушка [pl+ua+en]
+
+**Где:** Три URL, которые на самом деле являются страницами рубрик блога («Aktualności», «Nasze wydarzenia», «Publikacje»)
+
+
+**Сейчас:**
+
+> /blog/soluta-exercitationem-omnis-id32924 — title PL «Reprehenderit sequi natus qui facere.», description «Ipsam veritatis sit veniam quisquam laudantium eum.»; /blog/assumenda-molestias-minima-aut-unde3877 — title PL «Nienawidzę urzędu i mądrego człowieka, który jest wyjątkowy.»; /blog/quas-odio-ut5808 — title PL «Rem bóle w pracy aut.»
+
+
+**Почему проблема:** Это не статьи, а страницы рубрик — именно на них ведут вкладки «Wszystko / Aktualności / Nasze wydarzenia / Publikacje» на /blog. У всех трёх латинские слаги из генератора, латинские или бессмысленные SEO-title и латинские meta description во всех трёх локалях. H1 при этом корректный (название рубрики). Из-за слагов адрес рубрики «Новости» выглядит как /blog/soluta-exercitationem-omnis-id32924.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Aktualności → /blog/aktualnosci; Nasze wydarzenia → /blog/nasze-wydarzenia; Publikacje → /blog/publikacje
+```
+
+
+*UA:*
+
+```
+Новини → /ua/blog/aktualnosci; Наші івенти → /ua/blog/nasze-wydarzenia; Публікації → /ua/blog/publikacje
+```
+
+
+*EN:*
+
+```
+News → /en/blog/aktualnosci; Our events → /en/blog/nasze-wydarzenia; Publications → /en/blog/publikacje
+```
+
+
+**Куда вписать / примечание:** Заменить слаги на человекочитаемые и поставить 301 со старых. Готовые SEO-тексты рубрик:
+AKTUALNOŚCI — title PL «Aktualności | La Petite Bloom», UA «Новини | La Petite Bloom», EN «News | La Petite Bloom». Description PL: «Nowości w La Petite Bloom: nowe kolekcje, marki i to, co właśnie pojawiło się w sklepie.» UA: «Новини La Petite Bloom: нові колекції, бренди й те, що щойно з'явилося в магазині.» EN: «News from La Petite Bloom: new collections, new labels and what has just arrived in store.»
+NASZE WYDARZENIA — title PL «Nasze wydarzenia | La Petite Bloom», UA «Наші івенти | La Petite Bloom», EN «Our events | La Petite Bloom». Description PL: «Spotkania, premiery kolekcji i wydarzenia, w których bierze udział La Petite Bloom.» UA: «Зустрічі, презентації колекцій та події, у яких бере участь La Petite Bloom.» EN: «Meet-ups, collection launches and events La Petite Bloom takes part in.»
+PUBLIKACJE — title PL «Publikacje i poradniki | La Petite Bloom», UA «Публікації та поради | La Petite Bloom», EN «Guides and features | La Petite Bloom». Description PL: «Poradniki o dziecięcej garderobie: rozmiary, materiały, pielęgnacja i pomysły na prezenty.» UA: «Поради про дитячий гардероб: розміри, матеріали, догляд та ідеї подарунків.» EN: «Guides to a child's wardrobe: sizing, materials, care and gift ideas.»
+Админка → Blog → Рубрики.
+
+
+### 08-22 · /blog/zabawki-wedlug-wieku · Заглушка [pl+ua+en]
+
+**Где:** Новая запись блога вместо рыбы
+
+
+**Сейчас:**
+
+> (предложение — на месте этой записи сейчас lorem ipsum)
+
+
+**Почему проблема:** Раздел «Zabawki» — крупная ветка каталога с подкатегориями по типам, но не по возрасту; статья закрывает самый частый родительский вопрос и линкуется сразу в несколько подкатегорий.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zabawki według wieku — co wybrać od pierwszych miesięcy do przedszkola
+```
+
+
+*UA:*
+
+```
+Іграшки за віком — що обирати від перших місяців до садочка
+```
+
+
+*EN:*
+
+```
+Toys by age — what to choose from the first months to nursery
+```
+
+
+**Куда вписать / примечание:** Новая запись (сверх четырёх замен): рубрика «Publikacje».
+СЛАГ: /blog/zabawki-wedlug-wieku (единый слаг для всех локалей, как принято на сайте: /ua/blog/zabawki-wedlug-wieku, /en/blog/zabawki-wedlug-wieku). Со старого адреса поставить 301.
+SEO TITLE PL: Zabawki według wieku dziecka — przewodnik | La Petite Bloom
+SEO TITLE UA: Іграшки за віком дитини — путівник | La Petite Bloom
+SEO TITLE EN: Toys by age — a guide for parents | La Petite Bloom
+META DESCRIPTION PL: Grzechotki, sortery, figurki i pierwsze gry: jakie zabawki odpowiadają kolejnym etapom rozwoju i czym kierować się przy wyborze prezentu.
+META DESCRIPTION UA: Брязкальця, сортери, фігурки та перші ігри: які іграшки відповідають етапам розвитку й чим керуватися, обираючи подарунок.
+META DESCRIPTION EN: Rattles, shape sorters, figures and first games: which toys suit each stage of development, and what to consider when choosing a gift.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ PL: Zabawka jest dobra wtedy, gdy dziecko wie, co z nią zrobić — i gdy zostawia miejsce na własny pomysł. Wiek na pudełku warto więc traktować jako wskazówkę bezpieczeństwa, a nie jako regułę rozwoju. W pierwszym roku liczą się faktura, dźwięk i kontrast, później dochodzi ruch, sortowanie i pierwsza opowieść. Poniżej porządkujemy zabawki według kolejnych etapów, z podpowiedzią, czym różnią się propozycje marek takich jak Djeco, Moulin Roty, Little Dutch, Maileg czy Jellycat.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ UA: Іграшка хороша тоді, коли дитина розуміє, що з нею робити, — і коли лишається місце для власної вигадки. Тому вік на коробці варто читати як позначку безпеки, а не як правило розвитку. У перший рік важать фактура, звук і контраст, згодом додаються рух, сортування й перша історія. Нижче впорядковуємо іграшки за етапами, з підказками, чим різняться пропозиції марок Djeco, Moulin Roty, Little Dutch, Maileg чи Jellycat.
+ВСТУПИТЕЛЬНЫЙ АБЗАЦ EN: A toy works when a child knows what to do with it — and when it still leaves room for their own idea. The age on the box is best read as a safety note rather than a developmental rule. In the first year texture, sound and contrast matter most; later come movement, sorting and the first storytelling. Below we set out toys stage by stage, with notes on how labels such as Djeco, Moulin Roty, Little Dutch, Maileg and Jellycat differ in approach.
+ПЛАН PL: 1) 0–6 miesięcy: kontrast, dźwięk, faktura; 2) 6–12 miesięcy: chwyt, przyczyna i skutek, pierwsza przytulanka; 3) 1–2 lata: ruch, jeździki, sortery i klocki; 4) 2–4 lata: zabawa tematyczna, figurki i domki; 5) Od 4 lat: gry, konstrukcje, kreatywność; 6) Bezpieczeństwo i materiały — na co patrzeć niezależnie od wieku.
+ПЛАН UA: 1) 0–6 місяців: контраст, звук, фактура; 2) 6–12 місяців: захват, причина й наслідок, перша іграшка-обіймашка; 3) 1–2 роки: рух, каталки, сортери та конструктори; 4) 2–4 роки: сюжетна гра, фігурки й будиночки; 5) Від 4 років: ігри, конструювання, творчість; 6) Безпека та матеріали — на що дивитися незалежно від віку.
+ПЛАН EN: 1) 0–6 months: contrast, sound, texture; 2) 6–12 months: grasping, cause and effect, the first comforter; 3) 1–2 years: movement, ride-ons, sorters and blocks; 4) 2–4 years: pretend play, figures and dolls' houses; 5) From 4 years: games, construction, creativity; 6) Safety and materials — what to look for at any age.
+Не давать возрастных рекомендаций как медицинских норм и не обещать соответствие конкретных товаров возрасту — возрастную маркировку брать с упаковки производителя. [уточнить: есть ли на сайте фильтр по возрасту в разделе «Zabawki»]
+
+
+### 09-11 · /boys · Нет перевода [ua,en]
+
+**Где:** Karta produktu w listingu — etykieta wariantu nad nazwą (produkty Liewood Dove, kamizelki asekuracyjne)
+
+
+**Сейчас:**
+
+> Rozmiar KG: 15-19
+Rozmiar KG: 19-30
+Rozmiar KG: 11-15
+
+
+**Почему проблема:** Etykieta wariantu rozmiaru zostaje po polsku w wersji ukraińskiej i angielskiej — ukraiński klient czyta «Rozmiar KG: 15-19» tuż nad ukraińskim tytułem «Дитячий жилет для плавання Liewood Dove». Powtarza się przy pięciu produktach na /boys i przy tych samych na /niemowleta. Sama wartość (15-19) to zakres wagi w kilogramach, więc i polska etykieta jest myląca: to nie rozmiar, tylko waga dziecka.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Waga dziecka: 15–19 kg
+```
+
+
+*UA:*
+
+```
+Вага дитини, кг: 15–19
+```
+
+
+*EN:*
+
+```
+Child’s weight (kg): 15–19
+```
+
+
+**Куда вписать / примечание:** Nazwa cechy w słowniku atrybutów («Rozmiar KG» / «Розмір кг» / «Size KG») ma tłumaczenia w panelu filtrów, ale karta produktu w listingu renderuje wersję polską — sprawdzić, czy karta nie pobiera nazwy atrybutu z lokalizacji domyślnej.
+
+
+*Правки носителей: PL: Zapis „Waga dziecka, kg: 15–19” to kalka rosyjskiej/ukraińskiej konwencji („Вага, кг”); po polsku jednostka stoi przy wartości. Ujednolicone z 10-28 i 14-18, które opisują tę samą etykietę.; EN: "Child's weight, kg" is a Slavic label calque; English UI uses a bracketed unit. Straight apostrophe fixed.*
+
+
+### 10-28 · /boys · Нет перевода [ua,en]
+
+**Где:** Karty produktów Liewood na liście kategorii, etykieta wariantu
+
+
+**Сейчас:**
+
+> Rozmiar KG: 15-19
+
+
+**Почему проблема:** Polska nazwa atrybutu przecieka na karty produktów w wersji ukraińskiej i angielskiej — nad kamizelkami asekuracyjnymi Liewood widnieje «Rozmiar KG: 15-19», «Rozmiar KG: 19-30», «Rozmiar KG: 11-15». To ta sama nieprzetłumaczona etykieta, która w panelu filtrów ma już swoje wersje UA i EN, więc tłumaczenie istnieje, ale nie jest podstawiane w tym miejscu układu.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Waga dziecka: 15–19 kg
+```
+
+
+*UA:*
+
+```
+Вага дитини, кг: 15–19
+```
+
+
+*EN:*
+
+```
+Child’s weight (kg): 15–19
+```
+
+
+**Куда вписать / примечание:** Powiązane z findingiem 10-03 (zmiana nazwy atrybutu). Etykieta na karcie produktu musi pobierać nazwę atrybutu z tego samego słownika co panel filtrów.
+
+
+*Правки носителей: PL: Łącznik zamiast półpauzy w zakresie liczbowym oraz kalka „, kg”; ujednolicone z 09-11 i 14-18.; UA: дефіс замість тире в діапазоні (пор. 09-11 і 14-18, де вже «15–19»); EN: Hyphen instead of en dash; label calque; straight apostrophe.*
+
+
+### 14-07 · /boys, /niemowleta, /accessories, /zabawki, /brands/liewood и все каталоги с фильтром (11 страниц в каждой локали) · Чужой язык [PL]
+
+**Где:** Мобильная панель фильтров, шапка панели — кнопки «назад» и «закрыть»
+
+
+**Сейчас:**
+
+> <button type="button" class="filter-sidebar-back" js-filter-back aria-label="Назад"> … <button type="button" class="filter-sidebar-close" js-filter-close aria-label="Закрыть">
+
+
+**Почему проблема:** Два aria-label захардкожены по-русски прямо в шаблоне панели фильтров и не проходят через словарь переводов: одинаковый русский текст выводится в польской, украинской и английской версии. Русской локали на сайте нет вообще. Пользователь скринридера в польском магазине слышит русское «Закрыть». Рядом в том же блоке заголовок панели переведён правильно (Filtry / Фільтр / Filter), то есть перевод потерян именно на этих двух кнопках. Всего 11 страниц × 3 локали = 33 вхождения каждой строки.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wstecz / Zamknij
+```
+
+
+*UA:*
+
+```
+Назад / Закрити
+```
+
+
+*EN:*
+
+```
+Back / Close
+```
+
+
+**Куда вписать / примечание:** Строки лежат в шаблоне панели фильтров (filter-sidebar-header), а не в FenixTranslations — их нужно завести в словарь как filter.back и filter.close и подставлять по локали. Обратите внимание: украинское «Назад» пишется так же, как русское, поэтому визуально ошибка заметна только на «Закрыть» — но исправлять надо обе строки, иначе PL/EN останутся с кириллицей.
+
+
+### 14-18 · /boys, /niemowleta, /girls и все каталоги детской одежды · Нет перевода [EN]
+
+**Где:** Кнопки выбора варианта на карточке товара в списке каталога и заголовок фильтра
+
+
+**Сейчас:**
+
+> <div role="button" class="button" data-value="1527" title="Rozmiar KG: 19-30"> Rozmiar KG: 19-30 </div>
+
+
+**Почему проблема:** Значения атрибута варианта не переведены: в английской и украинской версии на кнопках выбора размера стоит польское «Rozmiar KG: 15-19», «Rozmiar KG: 19-30» — и в видимом тексте, и в title. То же самое видит покупатель в EN на /brands, где категория брендов называется «Książki (0)». Переведены только НАЗВАНИЯ групп фильтров (Rozmiar KG / Розмір кг / Size KG), а ЗНАЧЕНИЯ внутри группы отдаются из польского справочника без перевода.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Waga dziecka: 15–19 kg
+```
+
+
+*UA:*
+
+```
+Вага: 15–19 кг
+```
+
+
+*EN:*
+
+```
+Child’s weight (kg): 15–19
+```
+
+
+**Куда вписать / примечание:** Само название атрибута «Rozmiar KG» тоже неудачно во всех трёх локалях (PL «Rozmiar KG», UA «Розмір кг», EN «Size KG») — это диапазон веса ребёнка для кругов и жилетов для плавания, а не размер. Переименовать: PL «Waga dziecka, kg», UA «Вага дитини, кг», EN «Child's weight, kg», а значения записывать как «15–19 kg» с полукруглым тире. Править в справочнике атрибутов товара: у значений атрибута заполнены только польские названия, поля для UA и EN пустые и движок откатывается на польский.
+
+
+*Правки носителей: PL: Ta sama etykieta wariantu co w 09-11 i 10-28 — ujednolicona nazwa („Waga dziecka”, nie samo „Waga”) i zapis jednostki.; EN: Variant label inconsistent with 09-11 and 10-28 for the same control.*
+
+
+### 09-05 · /brands · Заглушка [pl,ua,en]
+
+**Где:** Alfabetyczny spis marek, litery B i K
+
+
+**Сейчас:**
+
+> Brend (0)
+…
+Książki (0)
+
+
+**Почему проблема:** W publicznym spisie marek stoją dwa rekordy testowe/śmieciowe: «Brend» (zniekształcone słowo «brand», zero produktów) i «Książki» (to nazwa kategorii, nie marka, zero produktów). Oba wyświetlają się identycznie we wszystkich trzech lokalizacjach — polskie słowo «Książki» widzi także klient ukraiński i angielski.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Książki
+```
+
+
+*UA:*
+
+```
+Книги
+```
+
+
+*EN:*
+
+```
+Books
+```
+
+
+**Куда вписать / примечание:** Rekord «Brend» usunąć z katalogu marek. «Książki» przenieść z listy marek do drzewa kategorii i przetłumaczyć — obecnie nie ma tłumaczenia dla ua/en.
+
+
+### 09-06 · /brands · Битая ссылка [pl,ua,en]
+
+**Где:** Alfabetyczny spis marek — pozycje z licznikiem (0)
+
+
+**Сейчас:**
+
+> Bonpoint (0)
+Crayola (0)
+Dolce & Gabbana kids (0)
+Favorite People (0)
+Gucci Kids (0)
+Le Chocolat des Français (0)
+Manucurist (0)
+Moncler enfant (0)
+SKALL STUDIO (0)
+Stella McCartney (0)
+
+
+**Почему проблема:** Dwanaście z pięćdziesięciu marek ma licznik (0) i prowadzi do pustego listingu. Wśród nich są marki luksusowe, których sklep nie sprzedaje ani jednej sztuki: Gucci Kids, Stella McCartney, Dolce & Gabbana kids, Moncler enfant, Bonpoint. Sugerowanie dostępności towaru, którego nie ma, to ryzyko zarzutu wprowadzania w błąd — istotne przy weryfikacji Przelewy24, i osobno psuje wrażenie przy wejściu z wyszukiwarki.
+
+
+**Куда вписать / примечание:** Poprawka techniczna: marki z zerową liczbą produktów ukryć na /brands (filtr count > 0) albo usunąć rekordy. Jeśli mają zostać jako zapowiedź, dodać etykietę «Wkrótce» / «Незабаром» / «Coming soon» i zablokować link.
+
+
+### 10-11 · /brands/liewood · Кривой перевод [pl,ua,en]
+
+**Где:** Filtr «Artykuł» / «Стать» / «Gender», lista wartości
+
+
+**Сейчас:**
+
+> Chłopiec / Dziewczynka / GIRL / Unisex (PL); Dziewczynka / GIRL / Унісекс / Хлопчик (UA); BOY / GIRL / Girl / Unisex (EN)
+
+
+**Почему проблема:** Wartość «GIRL» to angielski duplikat wartości «Dziewczynka» — ten sam atrybut ma dwa wpisy o tym samym znaczeniu. W wersji angielskiej widać to najdobitniej: na liście stoją obok siebie «GIRL» i «Girl», dwie pozycje nie do odróżnienia dla klienta, prowadzące do dwóch różnych zbiorów produktów. Efekt: filtrowanie po dziewczynkach nigdy nie pokazuje pełnej oferty.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Dziewczynka
+```
+
+
+*UA:*
+
+```
+Дівчинка
+```
+
+
+*EN:*
+
+```
+Girl
+```
+
+
+**Куда вписать / примечание:** SCALIĆ: «GIRL» → «Dziewczynka» (przepiąć produkty przypisane do GIRL na Dziewczynka i usunąć wartość GIRL). Analogicznie sprawdzić, czy nie istnieje bliźniacze «BOY» obok «Chłopiec» — w EN wartość wyświetla się jako «BOY» wersalikami, więc po scaleniu ustawić zapis zdaniowy: Boy / Girl / Unisex / Woman / Woman & girl.
+
+
+### 10-20 · /brands/liewood · Нет перевода [pl,ua]
+
+**Где:** Filtr «Kolor», wartość nieprzetłumaczona
+
+
+**Сейчас:**
+
+> Cherries / Apple blossom
+
+
+**Почему проблема:** Wartość została w oryginale angielskim, choć sąsiednie wzory Liewood z tej samej rodziny są przetłumaczone («Motylek / Kwiat jabłoni», «Kwiat / Cytrynowy żółty»). Ukraiński i polski klient widzi w środku polskiej listy angielski wpis.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wiśnie / Kwiat jabłoni
+```
+
+
+*UA:*
+
+```
+Вишні / Яблуневий цвіт
+```
+
+
+*EN:*
+
+```
+Cherries / Apple blossom
+```
+
+
+**Куда вписать / примечание:** WAŻNE: to NIE jest duplikat wartości «Motylek / Kwiat jabłoni». Sprawdziliśmy slugi filtrów — color-cherries_apple_blossom i color-motylek_kwiat_jabloni to dwa różne wzory Liewood (wiśnie i motylek), oba na tle apple blossom, i w wersji EN wyświetlają się poprawnie jako «Cherries / Apple blossom» i «Butterfly / Apple blossom». Ich nie wolno scalać — trzeba tylko dopisać brakujące tłumaczenia PL i UA dla wersji z wiśniami.
+
+
+### 12-09 · /checkout · Нет перевода [pl,ua,en]
+
+**Где:** Stany płatności: przetwarzanie, sukces, błąd, anulowanie
+
+
+**Сейчас:**
+
+> Brak jakichkolwiek komunikatów o stanie płatności w HTML strony; jedyne dostępne globalne teksty to ui.default_title "Wiadomość" / ui.error_title "Błąd" / ui.error "Błąd"
+
+
+**Почему проблема:** После редиректа из Przelewy24 покупатель возвращается в магазин, и ему нужно понятное сообщение: платёж обрабатывается, прошёл, отклонён или отменён. Сейчас в переводах есть только заголовок «Błąd» и пустое тело попапа (#messageDialog с пустыми .popup-title / .popup-message) — то есть в худшем случае человек увидит модалку со словом «Błąd» без объяснения, что с деньгами и с заказом. Одинаково во всех трёх локалях.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Przetwarzamy płatność. Nie zamykaj tej strony. / Dziękujemy, zamówienie zostało złożone. Potwierdzenie wysłaliśmy na Twój adres e-mail. / Płatność nie doszła do skutku. Spróbuj ponownie lub wybierz inną metodę płatności. / Płatność została anulowana. Twoje zamówienie czeka w koszyku.
+```
+
+
+*UA:*
+
+```
+Обробляємо платіж. Не закривайте цю сторінку. / Дякуємо, замовлення оформлено. Підтвердження надіслали на вашу електронну пошту. / Платіж не пройшов. Спробуйте ще раз або оберіть інший спосіб оплати. / Платіж скасовано. Ваше замовлення залишилося в кошику.
+```
+
+
+*EN:*
+
+```
+We are processing your payment. Please do not close this page. / Thank you, your order has been placed. We have sent the confirmation to your email address. / The payment did not go through. Please try again or choose another payment method. / The payment was cancelled. Your order is waiting in your basket.
+```
+
+
+**Куда вписать / примечание:** Четыре состояния подряд: processing / success / failure / cancelled. Заводить отдельными ключами, а не через общий ui.error.
+
+
+### 12-10 · /checkout · Юр. требование [pl,ua,en]
+
+**Где:** Zgody i checkboxy przy składaniu zamówienia
+
+
+**Сейчас:**
+
+> Na stronie /checkout nie ma ani jednego odnośnika do regulaminu i polityki prywatności — jedyne linki do "Regulamin sklepu internetowego" i "Polityka prywatności" są w stopce
+
+
+**Почему проблема:** При оформлении заказа нужен явный чекбокс принятия regulamin и подтверждения знакомства с политикой приватности со ссылками прямо в чекауте — этого требует и польская практика, и проверка Przelewy24. Сравните с формой регистрации: там чекбокс есть, но слова «Warunki sprzedaży i naszą politykę prywatności» не обёрнуты в ссылки вовсе — тот же дефект нельзя переносить в чекаут.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zapoznałam/em się z <a href="/terms-of-use">regulaminem sklepu</a> i <a href="/privacy-policy">polityką prywatności</a> i akceptuję ich treść.
+```
+
+
+*UA:*
+
+```
+Я ознайомився/ознайомилася з <a href="/ua/terms-of-use">Правилами інтернет-магазину</a> та <a href="/ua/privacy-policy">Політикою конфіденційності</a> і приймаю їх.
+```
+
+
+*EN:*
+
+```
+I have read and accept the <a href="/en/terms-of-use">shop terms and conditions</a> and the <a href="/en/privacy-policy">privacy policy</a>.
+```
+
+
+**Куда вписать / примечание:** Ссылки обязаны быть кликабельными и вести на локализованные версии страниц. Согласие на маркетинг — отдельным, непредотмеченным чекбоксом.
+
+
+*Правки носителей: UA: назви документів з малої літери й у скороченому вигляді — в інших місцях це «Правила інтернет-магазину» та «Політика конфіденційності»*
+
+
+### 12-11 · /checkout · Нет перевода [pl,ua,en]
+
+**Где:** Metody płatności i dostawy w kroku zamówienia
+
+
+**Сейчас:**
+
+> Na /checkout nie pada ani słowo o operatorze płatności; jedyna wzmianka o płatności to hasło w pasku USP: "Bezpieczna płatność"
+
+
+**Почему проблема:** Покупатель должен видеть, кому он платит, ещё до нажатия кнопки, а Przelewy24 при верификации проверяет, назван ли оператор и перечислены ли методы. «Bezpieczna płatność» без имени оператора этого не закрывает. Формулировка ниже собрана из фактов, уже опубликованных на /delivery-and-payment (PL/EN), ничего не додумано.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Płatności online obsługuje Przelewy24 (PayPro S.A.): BLIK, karta płatnicza, szybki przelew bankowy, Apple Pay, Google Pay, Klarna, PayPo. Dostępna jest też płatność przy odbiorze. Ceny podajemy w złotych (PLN); są to ceny brutto, zawierające podatek VAT.
+```
+
+
+*UA:*
+
+```
+Онлайн-платежі обслуговує Przelewy24 (PayPro S.A.): BLIK, платіжна картка, швидкий банківський переказ, Apple Pay, Google Pay, Klarna, PayPo. Доступна також післяплата — оплата при отриманні. Ціни вказані в польських злотих (PLN) і включають ПДВ.
+```
+
+
+*EN:*
+
+```
+Online payments are handled by Przelewy24 (PayPro S.A.): BLIK, payment cards, instant bank transfer, Apple Pay, Google Pay, Klarna, PayPo. Cash on delivery is also available. Prices are shown in złoty (PLN) and include VAT.
+```
+
+
+**Куда вписать / примечание:** Разместить рядом с выбором способа оплаты в чекауте и продублировать логотипами Przelewy24/BLIK. Стоимость доставки должна быть видна в сумме заказа до перехода к оплате.
+
+
+*Правки носителей: PL: „Ceny podajemy w złotych (PLN) i zawierają podatek VAT” — złożenie z dwoma różnymi podmiotami („my podajemy” / „ceny zawierają”) bez podmiotu przy drugim orzeczeniu.; UA: польський «VAT» в українському тексті — це ПДВ; уніфіковано з 04-01 і 04-09; той самий спосіб оплати в 04-01 і 04-05 названо «післяплата»*
+
+
+### 12-17 · /checkout · Юр. требование [pl,ua,en]
+
+**Где:** Formularz adresowy zamówienia a obietnica «Wysyłka na cały świat»
+
+
+**Сейчас:**
+
+> Pasek USP na stronie /checkout: "Wysyłka na cały świat" / "Доставка по всьому світу" / "Worldwide shipping"
+
+
+**Почему проблема:** Магазин обещает доставку по всему миру, а из того, что реально видно, международный сценарий не подготовлен: единственное телефонное правило в переводах называется uaPhoneFormat (Украина), сообщения валидации не знают про другие форматы. Форма адреса рендерится скриптом, поэтому её обязательно надо проверить вручную: нужны отдельное поле выбора страны, необязательное поле региона/воеводства, индекс без жёсткой маски 00-000 и телефон с выбором кода страны (библиотека intl-tel на странице уже подключена). Без этого покупатель из Германии или Украины не сможет оформить заказ, а обещание в USP-баре станет вводящим в заблуждение.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Imię / Nazwisko / Adres e-mail / Numer telefonu / Kraj / Ulica i numer domu / Numer lokalu (opcjonalnie) / Miasto / Województwo lub region (opcjonalnie) / Kod pocztowy / Uwagi do zamówienia (opcjonalnie)
+```
+
+
+*UA:*
+
+```
+Ім’я / Прізвище / Адреса електронної пошти / Номер телефону / Країна / Вулиця та номер будинку / Номер квартири (за потреби) / Місто / Область або регіон (за потреби) / Поштовий індекс / Коментар до замовлення (за потреби)
+```
+
+
+*EN:*
+
+```
+First name / Last name / Email address / Phone number / Country / Street and house number / Flat number (optional) / Town or city / Region or province (optional) / Postcode / Order notes (optional)
+```
+
+
+**Куда вписать / примечание:** Проверить на непустой корзине. Маска индекса должна переключаться по выбранной стране; при выборе не-Польши показывать примечание о возможных таможенных сборах — оно уже сформулировано на /delivery-and-payment.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»*
+
+
+### 19-07 · /checkout · Юр. требование [все]
+
+**Где:** Экран оформления заказа — идентификация продавца перед подтверждением оплаты
+
+
+**Почему проблема:** На чекауте нет ни названия компании, ни NIP, ни KRS — покупатель нажимает «оплатить» и переходит в Przelewy24, где на платёжной странице увидит получателя «LPB Sp. z o.o.», которого до этого на сайте не встречал ни разу. Это и типичное замечание Przelewy24 при верификации (продавец на платёжной странице должен совпадать с продавцом на сайте), и требование art. 12 ust. 1 ustawy o prawach konsumenta — данные продавца сообщаются потребителю до заключения договора, а не после. Достаточно одной строки рядом с кнопкой оплаты или в сводке заказа.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Sprzedawcą jest LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska, NIP 5273179673, KRS 0001190730. Pełne dane w Regulaminie i w zakładce Kontakt.
+```
+
+
+*UA:*
+
+```
+Продавцем є LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща, NIP 5273179673, KRS 0001190730. Повні реквізити — у Правилах магазину та в розділі «Контакти».
+```
+
+
+*EN:*
+
+```
+The seller is LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland, NIP 5273179673, KRS 0001190730. Full company details are in the Terms and Conditions and on the Contact page.
+```
+
+
+**Куда вписать / примечание:** Разместить в сводке заказа над кнопкой оплаты, мелким шрифтом. Название продавца должно посимвольно совпадать с тем, что настроено в аккаунте Przelewy24.
+
+
+*Правки носителей: UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»; EN: "Contacts page" is a calque; the English page is the Contact page.*
+
+
+### 05-10 · /claims-and-complaints · Заглушка [все]
+
+**Где:** «Załącznik — Formularz reklamacyjny», блок из семи строк с точками в конце страницы
+
+
+**Сейчас:**
+
+> Załącznik — Formularz reklamacyjny
+Imię i nazwisko: ............................
+Numer zamówienia: ............ · Data zakupu: ............
+
+
+**Почему проблема:** «Форма рекламации» — это не форма: в HTML страницы нет ни одного поля ввода (в <main> ноль <input>, <textarea>, <button>), только абзацы с многоточиями. Скачать её тоже нельзя — файла нет. Адреса kontakt@lapetitebloom.com в тексте не сделаны ссылками mailto. Покупателю предлагается вручную переписать семь строк в письмо. Для проверки Przelewy24 достаточно рабочего канала подачи рекламации, но в нынешнем виде страница не даёт ни формы, ни файла, ни кликабельного контакта.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zgłoszenie reklamacyjne
+Reklamację prosimy wysłać na kontakt@lapetitebloom.com — w treści wiadomości prosimy podać: imię i nazwisko, numer zamówienia, datę zakupu, nazwę Towaru, opis niezgodności, żądanie (naprawa, wymiana, obniżenie ceny albo odstąpienie od umowy), adres e-mail oraz numer rachunku do zwrotu. Prosimy dołączyć zdjęcia wady i dowód zakupu. Formularz do wypełnienia można też pobrać w formacie PDF [уточнить: link do pliku]. Odpowiadamy w terminie 14 dni od otrzymania zgłoszenia.
+```
+
+
+*UA:*
+
+```
+Подання претензії
+Претензію надсилайте на kontakt@lapetitebloom.com — у листі вкажіть: ім’я та прізвище, номер замовлення, дату покупки, назву Товару, опис невідповідності, вимогу (ремонт, заміна, зменшення ціни або відмова від Договору), адресу електронної пошти та номер рахунку для повернення коштів. Додайте фотографії дефекту та підтвердження покупки. Форму для заповнення також можна завантажити у форматі PDF [уточнити: посилання на файл]. Ми відповідаємо протягом 14 днів з дня отримання звернення.
+```
+
+
+*EN:*
+
+```
+Submitting a complaint
+Please send your complaint to kontakt@lapetitebloom.com, stating: your name, order number, date of purchase, name of the Goods, a description of the defect, the remedy you are asking for (repair, replacement, price reduction or withdrawal) and your email address. Please attach photographs of the defect and proof of purchase. You can also download the form as a PDF [уточнить: link to file]. We reply within 14 days of receiving the complaint.
+```
+
+
+**Куда вписать / примечание:** Если делать настоящую веб-форму, метки полей: Imię i nazwisko / Ім’я та прізвище / Full name; Adres e-mail / Електронна пошта / E-mail address; Numer zamówienia / Номер замовлення / Order number; Data zakupu / Дата покупки / Date of purchase; Nazwa Towaru / Назва Товару / Product name; Opis niezgodności / Опис невідповідності / Description of the defect; Żądanie / Вимога / Remedy requested; Numer rachunku do zwrotu / Номер рахунку для повернення / Bank account for the refund; Zdjęcia (do 5 plików) / Фотографії (до 5 файлів) / Photos (up to 5 files). Кнопка: «Wyślij zgłoszenie» / «Надіслати звернення» / «Send complaint». Ошибки: «Prosimy uzupełnić to pole» / «Заповніть це поле» / «Please complete this field»; «Prosimy podać poprawny adres e-mail» / «Вкажіть коректну адресу електронної пошти» / «Please enter a valid e-mail address»; «Nie udało się wysłać zgłoszenia — prosimy spróbować ponownie lub napisać na kontakt@lapetitebloom.com» / «Не вдалося надіслати звернення — спробуйте ще раз або напишіть на kontakt@lapetitebloom.com» / «We couldn’t send your complaint — please try again or write to kontakt@lapetitebloom.com». Подтверждение: «Dziękujemy. Odpowiemy w ciągu 14 dni» / «Дякуємо. Ми відповімо протягом 14 днів» / «Thank you. We will reply within 14 days».
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: Asking for a bank account number up front contradicts 05-15 (refund goes back to the original payment method); "e-mail" normalised to "email".*
+
+
+### 05-11 · /claims-and-complaints · Опечатка [PL]
+
+**Где:** h1 страницы, <title> и meta description
+
+
+**Сейчас:**
+
+> Polityka zworotow i reklamacji
+
+
+**Почему проблема:** В заголовке h1 и в title главной страницы возвратов две ошибки сразу: «zworotow» вместо «zwrotów» (переставлены буквы и потеряна диакритика). Это самый заметный текст на странице, которую Przelewy24 открывает первой, и он же стоит ссылкой в меню и подвале во всех трёх локалях.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Polityka zwrotów i reklamacji
+```
+
+
+*UA:*
+
+```
+Політика повернення та претензій
+```
+
+
+*EN:*
+
+```
+Returns and complaints policy
+```
+
+
+**Куда вписать / примечание:** Правится в самой странице (h1, title, meta description) и в пункте меню/подвала «Polityka zworotow i reklamacji» — тот же неверный текст стоит и в PL-меню; в EN-меню этот пункт называется «Claims and complaints», в UA — «Політика повернення та претензій».
+
+
+### 05-12 · /claims-and-complaints · Кривой перевод [все]
+
+**Где:** Пункты 1.2 и 4.2 — адрес для заявления об отказе и для рекламации
+
+
+**Сейчас:**
+
+> 2. Reklamację prosimy zgłaszać na adres kontakt@lapetitebloom.com, podając opis wady, zdjęcia oraz dowód zakupu.
+
+
+**Почему проблема:** Для отказа от договора и рекламации указан адрес kontakt@lapetitebloom.com, а во всём остальном сайте (подвал всех страниц, контакты) указан hello@lapetitebloom.com. Какой из двух ящиков рабочий — из сайта не следует. Заявление об отказе, отправленное на несуществующий адрес, юридически всё равно считается поданным, но покупатель его не получит подтверждения, а продавец пропустит 14-дневный срок возврата денег.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Reklamację prosimy zgłaszać na adres [уточнить: kontakt@lapetitebloom.com czy hello@lapetitebloom.com], podając opis wady, zdjęcia oraz dowód zakupu.
+```
+
+
+*UA:*
+
+```
+Претензію просимо надсилати на адресу [уточнити: kontakt@lapetitebloom.com чи hello@lapetitebloom.com], додаючи опис дефекту, фотографії та підтвердження покупки.
+```
+
+
+*EN:*
+
+```
+Please send your complaint to [уточнить: kontakt@lapetitebloom.com or hello@lapetitebloom.com], including a description of the defect, photographs and proof of purchase.
+```
+
+
+**Куда вписать / примечание:** Один адрес должен использоваться на /claims-and-complaints, в §8–§9 Регламента, в образце формуляра отказа и в подвале. Заодно сделать адрес ссылкой mailto — сейчас это простой текст.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 05-13 · /claims-and-complaints · Кривой перевод [все]
+
+**Где:** Пункты 1.3 и 4.3 — адрес для отправки товара
+
+
+**Сейчас:**
+
+> 3. Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, w terminie 14 dni od odstąpienia. Bezpośrednie koszty zwrotu ponosi Klient.
+
+
+**Почему проблема:** Адрес возврата (ul. Mokotowska 51/53) не совпадает с адресом компании в подвале и на странице контактов (ul. Marcina Kasprzaka 31/119). Двух адресов на сайте нигде не объясняют, почтового индекса нет ни у одного из них. Покупатель отправляет посылку по адресу, который может оказаться нерабочим, и теряет право на возврат денег из-за «неполучения товара».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: kod pocztowy] Warszawa, w terminie 14 dni od odstąpienia. Jest to adres wyłącznie do zwrotów i reklamacji; korespondencję prosimy kierować na adres siedziby podany w zakładce Kontakt.
+```
+
+
+*UA:*
+
+```
+Товар необхідно надіслати на адресу: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнити: поштовий індекс] Warszawa, протягом 14 днів з дня відмови від Договору. Це адреса лише для повернень і претензій; листування просимо надсилати на адресу компанії, зазначену в розділі «Контакти».
+```
+
+
+*EN:*
+
+```
+Please send the Goods to: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: postcode] Warsaw, Poland, within 14 days of withdrawal. This address is for returns and complaints only; general correspondence should go to the registered address shown on the Contact page.
+```
+
+
+**Куда вписать / примечание:** Если возвраты принимаются по адресу из подвала, заменить адрес здесь. Почтовый индекс нужен в обоих случаях — сейчас его нет ни на одной странице.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 05-09 · /claims-and-complaints, /warranty-and-returns/polityka-zwrotow · Юр. требование [все]
+
+**Где:** «Polityka zworotow i reklamacji», п. 1.2; приложение в конце страницы
+
+
+**Сейчас:**
+
+> 2. Oświadczenie wystarczy wysłać przed upływem terminu na adres kontakt@lapetitebloom.com lub przy użyciu formularza odstąpienia.
+
+
+**Почему проблема:** Страница ссылается на «formularz odstąpienia», но на самой странице его нет и ссылки на него тоже нет (в HTML этого абзаца нет ни одного <a>). В приложении к странице приведён только «Formularz reklamacyjny» — это другой документ. Образец формуляра отказа от договора обязателен по польскому закону (załącznik nr 2 do ustawy o prawach konsumenta) и должен быть доступен потребителю; сейчас он спрятан в «Załącznik nr 1» на /terms-of-use и ниоткуда не линкуется. На страницах /warranty-and-returns и /warranty-and-returns/polityka-zwrotow формуляра нет вообще.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wzór formularza odstąpienia od umowy
+(wypełnić i odesłać tylko w przypadku chęci odstąpienia od umowy)
+Adresat: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: kod pocztowy] Warszawa, e-mail: kontakt@lapetitebloom.com
+Niniejszym odstępuję od umowy sprzedaży następujących Towarów: ......
+Data odbioru: ...... · Numer zamówienia: ......
+Imię i nazwisko: ......
+Adres: ......
+Data i podpis (tylko w wersji papierowej): ......
+Formularz można też pobrać jako plik PDF [уточнить: link do pliku] albo skopiować z Regulaminu, Załącznik nr 1.
+```
+
+
+*UA:*
+
+```
+Зразок форми відмови від договору
+(заповніть і надішліть лише тоді, коли хочете відмовитися від договору)
+Адресат: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнити: поштовий індекс] Warszawa, e-mail: kontakt@lapetitebloom.com
+Цим повідомляю про відмову від договору купівлі-продажу таких Товарів: ......
+Дата отримання: ...... · Номер замовлення: ......
+Ім’я та прізвище: ......
+Адреса: ......
+Дата та підпис (лише для паперової версії): ......
+Форму також можна завантажити у форматі PDF [уточнити: посилання на файл] або скопіювати з Правил магазину, Додаток № 1.
+```
+
+
+*EN:*
+
+```
+Model withdrawal form
+(complete and return this form only if you wish to withdraw from the contract)
+To: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: postcode] Warsaw, Poland, email: kontakt@lapetitebloom.com
+I hereby give notice that I withdraw from the contract of sale of the following Goods: ......
+Date of receipt: ...... · Order number: ......
+Name: ......
+Address: ......
+Date and signature (paper version only): ......
+You can also download the form as a PDF [уточнить: link to file] or copy it from the Terms and Conditions, Appendix No. 1.
+```
+
+
+**Куда вписать / примечание:** Минимум — сделать слова «formularza odstąpienia» / «форми відмови від Договору» / «the withdrawal form» ссылкой на /terms-of-use#zalacznik-1 и продублировать образец на /claims-and-complaints и /warranty-and-returns/polityka-zwrotow. Оптимально — выложить PDF.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: "e-mail" spelled inconsistently across the site; modern British style is "email".*
+
+
+### 03-02 · /contacts · Кривой перевод [PL]
+
+**Где:** Formularz kontaktowy — komunikat walidacji pola wymaganego (FenixTranslations.validate.required)
+
+
+**Сейчас:**
+
+> Podaj hasło ponownie
+
+
+**Почему проблема:** To jest uniwersalny komunikat dla KAŻDEGO pustego pola wymaganego. Kto zostawi puste «Imię» albo «Email» w formularzu kontaktowym, zobaczy «Podaj hasło ponownie» — w formularzu, w którym nie ma żadnego hasła. Ten sam błąd we wszystkich trzech lokalizacjach: ua «Вкажіть пароль ще раз», en «Enter password again». Wygląda jak string skopiowany z formularza rejestracji.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+To pole jest wymagane
+```
+
+
+*UA:*
+
+```
+Це поле обов’язкове
+```
+
+
+*EN:*
+
+```
+This field is required
+```
+
+
+**Куда вписать / примечание:** Klucz tłumaczeń: validate.required (window.FenixTranslations). Poprawka jest globalna — dotyczy wszystkich formularzy w sklepie, nie tylko /contacts.
+
+
+### 03-03 · /contacts · Заглушка [PL]
+
+**Где:** Formularz kontaktowy — pole numeryczne między «Telefon» a listą tematów
+
+
+**Сейчас:**
+
+> <input class="form-control" name="order_id" type="number" id="form-contacts-callback__order_id" />
+
+
+**Почему проблема:** Pole nie ma ani etykiety, ani placeholdera — we wszystkich trzech lokalizacjach jest to pusty prostokąt przyjmujący tylko cyfry. Użytkownik nie ma szans zgadnąć, że chodzi o numer zamówienia; przy temacie «Zwroty» to najważniejsza informacja dla obsługi.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Numer zamówienia (jeśli dotyczy)
+```
+
+
+*UA:*
+
+```
+Номер замовлення (якщо є)
+```
+
+
+*EN:*
+
+```
+Order number (if applicable)
+```
+
+
+**Куда вписать / примечание:** Pole name="order_id" w formularzu contacts-callback. Dodać placeholder i etykietę <label> — dziś nie ma żadnej.
+
+
+### 03-07 · /contacts · Опечатка [PL]
+
+**Где:** Nagłówek strony pod h1 «Kontakt» oraz adres w karcie «Skontaktuj się z nami»
+
+
+**Сейчас:**
+
+> LPB Sp. z o.o. ul.
+
+
+**Почему проблема:** Skrót «ul.» wisi na końcu linii z nazwą spółki i jest oderwany od adresu. W wersji polskiej adres poniżej zaczyna się od «Marcina Kasprzaka 31/119 01-234 Warszawa» — bez «ul.» w ogóle, a w wersji ukraińskiej i angielskiej od «ul. Marcina Kasprzaka 31/119», czyli «ul.» jest zdublowane. Adres siedziby na stronie kontaktowej to jedna z rzeczy, na które patrzy Przelewy24 przy weryfikacji.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+LPB Sp. z o.o.
+ul. Marcina Kasprzaka 31/119, 01-234 Warszawa
+```
+
+
+*UA:*
+
+```
+LPB Sp. z o.o.
+ul. Marcina Kasprzaka 31/119, 01-234 Warszawa
+```
+
+
+*EN:*
+
+```
+LPB Sp. z o.o.
+ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland
+```
+
+
+**Куда вписать / примечание:** Usunąć «ul.» z akapitu z nazwą spółki i wstawić je na początek adresu w polskiej karcie; w wersji ua/en zostawić «ul.» tylko przy adresie. Numerów NIP/REGON/KRS w tym akapicie nie ruszamy — to zakres innego agenta.
+
+
+*Правки носителей: EN: Address incomplete for an international shop — country missing (other addresses give "Poland").*
+
+
+### 03-08 · /contacts · Кривой перевод [PL]
+
+**Где:** Karta «Skontaktuj się z nami» — godziny obok telefonu, w zestawieniu z kartą «Butik»
+
+
+**Сейчас:**
+
+> Pn-Pt: od 9:00 do 18:00 / Sb-Nd: Zamknięte
+
+
+**Почему проблема:** Na tej samej stronie stoją dwa sprzeczne komplety godzin: karta z adresem Kasprzaka mówi «Sb-Nd: Zamknięte», a karta «Butik» tuż obok — «Sob: 10:00 - 19:00». Żadna z kart nie wyjaśnia, że pierwszy adres to biuro i obsługa klienta, a drugi to sklep stacjonarny. Do tego /about pokazuje wyłącznie godziny butiku (pn-sob 10:00-19:00), a stopka — wyłącznie godziny biura (pn-pt 9:00-18:00) i to przy adresie Kasprzaka. Klient, który w sobotę przeczyta stopkę, uzna, że sklep jest zamknięty.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Biuro i obsługa klienta
+ul. Marcina Kasprzaka 31/119, 01-234 Warszawa [uzupełnić: dopisać, czy jest to wyłącznie adres korespondencyjny bez sprzedaży stacjonarnej]
+Obsługa klienta: pn.–pt. 9:00–18:00, sb.–nd. nieczynne
+
+Butik
+ul. Mokotowska 51/53, lok. 44, 00-542 Warszawa
+pn.–sb. 10:00–19:00, nd. nieczynne
+```
+
+
+*UA:*
+
+```
+Офіс і служба підтримки
+ul. Marcina Kasprzaka 31/119, 01-234 Warszawa [уточнити: чи це лише поштова адреса, без роздрібного продажу]
+Підтримка: пн–пт 9:00–18:00, сб–нд вихідні
+
+Бутик
+ul. Mokotowska 51/53, lok. 44, 00-542 Warszawa
+пн–сб 10:00–19:00, нд зачинено
+```
+
+
+*EN:*
+
+```
+Office and customer service
+ul. Marcina Kasprzaka 31/119, 01-234 Warsaw [to confirm: state whether this is a postal address only, with no shop on site]
+Customer service: Mon–Fri 9:00–18:00, closed Sat–Sun
+
+Boutique
+ul. Mokotowska 51/53, lok. 44, 00-542 Warsaw
+Mon–Sat 10:00–19:00, closed Sun
+```
+
+
+**Куда вписать / примечание:** Kluczowe: nazwać obie karty tak, żeby było widać różnicę między biurem a butikiem, i doprowadzić godziny w stopce, na /contacts i na /about do jednego stanu. Godziny butiku (pn-sob 10-19, nd nieczynne) są zgodne między /contacts i /about — rozjeżdża się tylko para biuro/stopka.
+
+
+*Правки носителей: PL: W zakresach godzin i dni był łącznik zamiast półpauzy, a skróty dni były niekonsekwentne („pn-pt” obok „pn-sob”) i bez kropek.; UA: дефіси замість тире в діапазонах; EN: Hyphens used for ranges instead of en dashes; "customer care" clashes with "customer service" used elsewhere.*
+
+
+### 19-05 · /contacts · Юр. требование [все]
+
+**Где:** ГОТОВЫЙ БЛОК: короткая строка реквизитов для футера (footer-contacts, под адресом)
+
+
+**Сейчас:**
+
+> Marcina Kasprzaka 31/119
+
+
+**Почему проблема:** В футере — сквозном элементе, который art. 5 ustawy o świadczeniu usług drogą elektroniczną как раз и имеет в виду под «постоянной и легкодоступной формой» — сейчас нет ни названия компании, ни города, ни индекса, ни страны, ни одного идентификатора. Только улица с номером дома, оторванная от всего. Одной строки под контактами достаточно: полное наименование покрывается ссылкой на /contacts, а NIP и KRS в футере — стандарт польского e-commerce и первое, что смотрит верификатор Przelewy24, открывая сайт. REGON в футер выносить не нужно — он не обязателен, ему хватает страницы контактов.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska · NIP 5273179673 · KRS 0001190730
+```
+
+
+*UA:*
+
+```
+LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща · NIP 5273179673 · KRS 0001190730
+```
+
+
+*EN:*
+
+```
+LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland · NIP 5273179673 · KRS 0001190730
+```
+
+
+**Куда вписать / примечание:** Футер как сквозной элемент — зона агента 02; здесь только юридическое содержание строки, вёрстку и остальные пункты футера не трогаю. Вписать в блок «Kontakt» футера первой строкой, вместо нынешней «Marcina Kasprzaka 31/119».
+
+
+*Правки носителей: UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»*
+
+
+### 19-08 · /contacts · Юр. требование [все]
+
+**Где:** Карточка «Skontaktuj się z nami» — адреса электронной почты
+
+
+**Сейчас:**
+
+> hello@lapetitebloom.com
+
+
+**Почему проблема:** На контактах указан единственный адрес hello@lapetitebloom.com, а регламент и политика конфиденциальности отсылают покупателя на другие: «Obsługa klienta i wsparcie – kontakt@lapetitebloom.com», «Zwroty i reklamacje – kontakt@lapetitebloom.com», «Sprawy danych osobowych (RODO) – rodo@lapetitebloom.com». Покупатель, который хочет подать рекламацию или отказаться от договора, на странице контактов этих адресов не найдёт. art. 5 ustawy o świadczeniu usług drogą elektroniczną требует публиковать действующий электронный адрес, а art. 12 ust. 1 pkt 3 ustawy o prawach konsumenta — адрес, по которому потребитель подаёт претензии. Либо свести всё к одному адресу, либо вывести на контактах полный список ролей, как ниже.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Napisz do nas
+Sprawy ogólne i zamówienia: hello@lapetitebloom.com
+Zwroty i reklamacje: kontakt@lapetitebloom.com
+Dane osobowe (RODO): rodo@lapetitebloom.com
+```
+
+
+*UA:*
+
+```
+Напишіть нам
+Загальні питання та замовлення: hello@lapetitebloom.com
+Повернення та претензії: kontakt@lapetitebloom.com
+Персональні дані (GDPR): rodo@lapetitebloom.com
+```
+
+
+*EN:*
+
+```
+Write to us
+General enquiries and orders: hello@lapetitebloom.com
+Returns and complaints: kontakt@lapetitebloom.com
+Personal data (GDPR): rodo@lapetitebloom.com
+```
+
+
+**Куда вписать / примечание:** Админка: /contacts → карточка «Skontaktuj się z nami» → блок e-mail. Перед публикацией проверить, что kontakt@ и rodo@ действительно заведены и читаются — публиковать неработающий адрес хуже, чем не публиковать. Если решите оставить один hello@, тогда правьте регламент и политику конфиденциальности, а не контакты.
+
+
+*Правки носителей: UA: різнобій «рекламації/претензії» — уніфіковано на «претензії»*
+
+
+### 03-09 · /contacts, /about · Опечатка [EN]
+
+**Где:** Karta «Boutique» / sekcja «Butik» — tabela godzin, wiersz niedzieli
+
+
+**Сейчас:**
+
+> Sun: Сlosed
+
+
+**Почему проблема:** Pierwsza litera to cyrylickie «С» (U+0421), nie łacińskie «C». Wizualnie nie do odróżnienia, ale dla wyszukiwarki na stronie, dla czytnika ekranu i dla tłumaczeń to inny znak — słowo nie zostanie znalezione i może zostać odczytane z rosyjskim akcentem. W tej samej wersji angielskiej, w karcie biura, stoi poprawne łacińskie «Sat-Sun: Closed» — więc niespójność jest widoczna w obrębie jednej strony. Występuje na /en/contacts i /en/about.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nd: nieczynne
+```
+
+
+*UA:*
+
+```
+Нд: зачинено
+```
+
+
+*EN:*
+
+```
+Sun: Closed
+```
+
+
+**Куда вписать / примечание:** Przepisać wartość ręcznie z klawiatury łacińskiej w polu godzin butiku (blok statyczny «Butik» oraz karta kontaktowa). Warto przy okazji przeszukać całą bazę treści pod kątem znaków U+0421, U+0430, U+0435, U+043E, U+0440, U+0445 w tekstach łacińskich.
+
+
+*Правки носителей: PL: „Zamknięte” to kalka z angielskiego „Closed”; w polskich godzinach otwarcia używa się słowa „nieczynne”.; UA: зайва велика літера (пор. 01-17 «Нд: зачинено»)*
+
+
+### 07-01 · /deklaracja-dostepnosci · Опечатка [PL]
+
+**Где:** Title, meta description, H1 и хлебная крошка страницы
+
+
+**Сейчас:**
+
+> Deklaracja dostepnosci
+
+
+**Почему проблема:** В польском названии страницы потеряна диакритика: «dostepnosci» вместо «dostępności». Эта же строка стоит в <title>, meta description, H1, хлебной крошке и в пункте меню — ошибка в языке-источнике видна во вкладке браузера, в выдаче и при верификации Przelewy24. Для магазина, который декларирует заботу о доступности, опечатка именно в названии этой страницы читается особенно плохо.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Deklaracja dostępności
+```
+
+
+*UA:*
+
+```
+Заява про доступність
+```
+
+
+*EN:*
+
+```
+Accessibility statement
+```
+
+
+**Куда вписать / примечание:** Админка → страница «Deklaracja dostepnosci» → поле названия (PL). UA и EN названия корректны, менять не нужно. Слаг URL правится отдельно, см. 07-15.
+
+
+### 07-03 · /deklaracja-dostepnosci · Юр. требование [PL]
+
+**Где:** Весь текст декларации, разделы «Status zgodności», «Informacje zwrotne i kontakt», «Data»
+
+
+**Сейчас:**
+
+> Status zgodności
+Dążymy do zgodności ze standardem WCAG 2.1 na poziomie AA.
+
+
+**Почему проблема:** Страница называется «Deklaracja dostępności» — в Польше это устоявшееся название документа по ustawa z 4.04.2019 o dostępności cyfrowej, и от него ждут фиксированного набора элементов. Сейчас отсутствуют: (1) сам статус соответствия в принятой формулировке (zgodna / częściowo zgodna / niezgodna) — «dążymy do zgodności» статусом не является; (2) дата публикации сайта; (3) дата последнего обзора и обновления декларации (есть только дата составления 24.06.2026); (4) метод оценки (самооценка или внешний аудит); (5) имя и телефон ответственного лица (сейчас только общий e-mail); (6) процедура запроса и жалобы со сроком 7 дней и предельным сроком 2 месяца; (7) ссылка на Rzecznik Praw Obywatelskich как инстанцию при отказе и на PFRON по заявлениям об обеспечении доступности; (8) раздел об архитектурной доступности; (9) информация о переводчике жестового языка. Для частного магазина эта форма обязательной не является, но раз документ назван декларацией — либо доводим до полного состава, либо переименовываем в добровольное «Oświadczenie o dostępności».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Deklaracja dostępności
+
+Status pod względem zgodności
+Strona lapetitebloom.com jest [уточнить: zgodna / częściowo zgodna / niezgodna] ze standardem WCAG 2.1 na poziomie AA. [уточнить: wskazać treści niedostępne i przyczyny niezgodności].
+
+Daty
+Data publikacji strony internetowej: [уточнить: DD.MM.RRRR]. Deklarację sporządzono dnia 24.06.2026. Data ostatniego przeglądu i aktualizacji deklaracji: [уточнить: DD.MM.RRRR].
+
+Metoda oceny
+Deklarację sporządzono na podstawie [уточнить: samooceny przeprowadzonej przez LPB Sp. z o.o. / audytu zewnętrznego przeprowadzonego przez …].
+
+Informacje zwrotne i dane kontaktowe
+W sprawach dostępności prosimy o kontakt: [уточнить: imię i nazwisko osoby odpowiedzialnej], e-mail: [уточнить: adres e-mail], telefon: +48 517 689 849. Tą samą drogą można zgłaszać bariery, prosić o udostępnienie informacji w alternatywnej formie oraz składać żądania zapewnienia dostępności.
+
+Procedura wnioskowo-skargowa
+Każdy ma prawo wystąpić z żądaniem zapewnienia dostępności strony lub jej elementu. Zgłoszenie powinno zawierać dane kontaktowe osoby zgłaszającej, wskazanie strony lub elementu oraz preferowany sposób kontaktu. Odpowiadamy najpóźniej w ciągu 7 dni od otrzymania zgłoszenia. Jeżeli dotrzymanie tego terminu nie jest możliwe, informujemy o nowym terminie — nie dłuższym niż 2 miesiące. Jeżeli zapewnienie dostępności nie jest możliwe, proponujemy alternatywny sposób dostępu do informacji. W razie odmowy można złożyć skargę do Rzecznika Praw Obywatelskich (www.rpo.gov.pl), a wnioski o zapewnienie dostępności architektonicznej i informacyjno-komunikacyjnej — do Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych (www.pfron.org.pl).
+
+Dostępność architektoniczna
+La Petite Bloom prowadzi sprzedaż wyłącznie online i [уточнить: nie prowadzi / prowadzi] obsługi klientów pod adresem ul. Marcina Kasprzaka 31/119 w Warszawie. [уточнить: jeżeli obsługa stacjonarna jest możliwa — opisać wejście, windę, szerokość drzwi, toaletę, miejsca parkingowe dla osób z niepełnosprawnością oraz zasady wstępu z psem asystującym].
+
+Informacje dodatkowe
+[уточнить: czy zapewniamy kontakt z tłumaczem polskiego języka migowego]. Serwis można obsługiwać z klawiatury; obsługiwane są standardowe skróty przeglądarki.
+```
+
+
+*UA:*
+
+```
+Заява про доступність
+
+Статус відповідності
+Сайт lapetitebloom.com [уточнити: відповідає / частково відповідає / не відповідає] стандарту WCAG 2.1 рівня AA. [уточнити: перелічити недоступні елементи та причини невідповідності].
+
+Дати
+Дата публікації сайту: [уточнити: ДД.ММ.РРРР]. Заяву складено 24.06.2026. Дата останнього перегляду та оновлення заяви: [уточнити: ДД.ММ.РРРР].
+
+Метод оцінювання
+Заяву складено на підставі [уточнити: самооцінювання, проведеного LPB Sp. z o.o. / зовнішнього аудиту, проведеного …].
+
+Зворотний зв’язок і контакти
+У питаннях доступності просимо звертатися: [уточнити: ім’я та прізвище відповідальної особи], e-mail: [уточнити: адреса], телефон: +48 517 689 849. Цим самим каналом можна повідомляти про бар’єри, просити надати інформацію в альтернативному форматі та подавати вимоги щодо забезпечення доступності.
+
+Порядок звернень і скарг
+Кожен має право вимагати забезпечення доступності сайту або його окремого елемента. У зверненні варто вказати контактні дані, посилання на сторінку чи елемент і зручний спосіб зв’язку. Ми відповідаємо не пізніше ніж протягом 7 днів від отримання звернення. Якщо дотриматися цього терміну неможливо, ми повідомляємо новий термін — не довший за 2 місяці. Якщо забезпечити доступність неможливо, ми пропонуємо альтернативний спосіб отримати інформацію. У разі відмови можна подати скаргу Уповноваженому з прав людини Польщі — Rzecznik Praw Obywatelskich (www.rpo.gov.pl), а заяви щодо архітектурної та інформаційно-комунікаційної доступності — до PFRON (www.pfron.org.pl).
+
+Архітектурна доступність
+La Petite Bloom працює лише онлайн і [уточнити: не здійснює / здійснює] обслуговування клієнтів за адресою ul. Marcina Kasprzaka 31/119 у Варшаві. [уточнити: якщо офлайн-обслуговування можливе — описати вхід, ліфт, ширину дверей, вбиральню, паркомісця для осіб з інвалідністю та правила відвідування із собакою-помічником].
+
+Додаткова інформація
+[уточнити: чи забезпечуємо зв’язок із перекладачем жестової мови]. Сайтом можна користуватися з клавіатури; підтримуються стандартні комбінації клавіш браузера.
+```
+
+
+*EN:*
+
+```
+Accessibility statement
+
+Compliance status
+The lapetitebloom.com website is [уточнить: compliant / partially compliant / non-compliant] with WCAG 2.1 level AA. [уточнить: list the non-accessible content and the reasons for non-compliance].
+
+Dates
+Website publication date: [уточнить: DD.MM.YYYY]. This statement was prepared on 24.06.2026. Date of the last review and update of this statement: [уточнить: DD.MM.YYYY].
+
+Assessment method
+This statement was prepared on the basis of [уточнить: a self-assessment carried out by LPB Sp. z o.o. / an external audit carried out by …].
+
+Feedback and contact details
+For accessibility matters please contact [уточнить: name of the responsible person], email: [уточнить: address], telephone: +48 517 689 849. You can use the same channel to report barriers, request information in an alternative format and submit requests for accessibility.
+
+Request and complaint procedure
+Anyone may request that the website or one of its elements be made accessible. A request should include your contact details, the page or element concerned and your preferred means of contact. We respond no later than 7 days after receiving a request. If we cannot meet that deadline, we will tell you when we can respond — no more than two months from the date of the request. If accessibility cannot be provided, we offer an alternative way of accessing the information. If a request is refused, a complaint may be lodged with the Polish Commissioner for Human Rights, Rzecznik Praw Obywatelskich (www.rpo.gov.pl); requests concerning architectural and communication accessibility may be addressed to PFRON (www.pfron.org.pl).
+
+Architectural accessibility
+La Petite Bloom operates online only and [уточнить: does not / does] serve customers at ul. Marcina Kasprzaka 31/119 in Warsaw. [уточнить: if on-site service is available — describe the entrance, lift, door widths, toilet, accessible parking and the rules for visitors with assistance dogs].
+
+Additional information
+[уточнить: whether a Polish sign language interpreter is available]. The site can be operated with a keyboard and supports standard browser shortcuts.
+```
+
+
+**Куда вписать / примечание:** Даты и имя ответственного лица заказчик подставляет сам. Формулировки процедуры (7 дней / 2 месяца, RPO, PFRON) взяты из польской практики для публичных субъектов — перед публикацией показать юристу, применяет ли их компания добровольно.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: "within 7 days ... at the latest" is a misplaced qualifier; the follow-up sentence was elliptical; "e-mail" normalised to "email".*
+
+
+### 04-04 · /delivery-and-payment · Чужой язык [UA]
+
+**Где:** Карточка «Способи оплати» → список «Доступні способи оплати», последние два пункта
+
+
+**Сейчас:**
+
+> 13,99 PLN доставка до поштомату InPost
+* 99 PLN доставка великогабаритних товарів (меблів) вагою понад 25 кг
+
+
+**Почему проблема:** Внутрь списка способов оплаты попали два пункта о доставке — и они противоречат самой странице: выше в блоке доставки те же тарифы уже указаны как «13,99 zł» и «99 zł», здесь валюта записана как PLN, а габаритная позиция описана как «доставка меблів» (мебель) — ассортимента, которого в магазине детской одежды и игрушек нет. Это остаток чужого шаблона. Звёздочка «*» не имеет сноски — читателю некуда её отнести. В польской и английской версиях этих пунктов нет, то есть украинский покупатель видит другой набор условий.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Przesyłka gabarytowa (powyżej 25 kg) — 99 zł.
+```
+
+
+*UA:*
+
+```
+Великогабаритне відправлення (посилки понад 25 кг) — 99 zł.
+```
+
+
+*EN:*
+
+```
+Oversized shipment (parcels over 25 kg) — 99 zł.
+```
+
+
+**Куда вписать / примечание:** Оба пункта из списка способов оплаты убрать: тарифы доставки живут в карточке «Способи доставки» выше и там уже указаны. Слово «меблів» не использовать нигде — товара такой категории на сайте нет. Валюту во всех трёх локалях писать одинаково («zł» либо «PLN», но одинаково на всей странице).
+
+
+*Правки носителей: PL: Po polsku gabarytowa jest przesyłka, nie wysyłka — „wysyłka gabarytowa” to błędna kolokacja. Zapis ujednolicony z cennikiem w 04-14.*
+
+
+### 04-05 · /delivery-and-payment · Кривой перевод [EN]
+
+**Где:** Карточка «Payment methods», единственный абзац
+
+
+**Сейчас:**
+
+> Online payments are processed by Przelewy24 (PayPro S.A.). Available methods: BLIK, payment cards, instant bank transfer, Apple Pay, Google Pay, Klarna, PayPo and cash on delivery.
+
+
+**Почему проблема:** Оплата при получении перечислена одним списком с методами Przelewy24 — получается, что наложенный платёж «обрабатывает Przelewy24 (PayPro S.A.)». Это неверно фактически: наложенный платёж принимает курьер/перевозчик, PayPro его не проводит. При верификации это читается как неточное описание услуг оператора. Плюс страница сама себе противоречит: в блоке доставки наложенный платёж стоит +20–23 zł, а здесь подан как равноправный бесплатный способ. Формулировка одинаково неверна в польской и украинской версиях после их починки, поэтому COD надо вынести отдельным предложением во всех трёх локалях.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Płatności online obsługuje Przelewy24 (PayPro S.A.): BLIK, karty płatnicze, szybki przelew bankowy, Apple Pay, Google Pay, Klarna i PayPo. Płatność za pobraniem rozliczana jest bezpośrednio przy odbiorze przesyłki i jest dodatkowo płatna (+20–23 zł).
+```
+
+
+*UA:*
+
+```
+Онлайн-платежі обробляє Przelewy24 (PayPro S.A.): BLIK, платіжні картки, швидкий банківський переказ, Apple Pay, Google Pay, Klarna та PayPo. Післяплата сплачується безпосередньо при отриманні відправлення й тарифікується додатково (+20–23 zł).
+```
+
+
+*EN:*
+
+```
+Online payments are handled by Przelewy24 (PayPro S.A.): BLIK, payment cards, instant bank transfer, Apple Pay, Google Pay, Klarna and PayPo. Cash on delivery is settled directly on collection of the parcel and carries an additional charge (+20–23 zł).
+```
+
+
+**Куда вписать / примечание:** Отдельно: в подвале страницы иконки способов оплаты включают PayPal и Maestro (front/img/payments/paypal.svg, maestro.svg), которых нет ни в одном текстовом перечне. Либо иконки привести в соответствие с текстом, либо текст — с реально подключёнными методами; расхождение картинок и текста Przelewy24 тоже проверяет.
+
+
+### 04-06 · /delivery-and-payment · Юр. требование [PL]
+
+**Где:** Карточка «Metody płatności» — отсутствующий абзац после перечня способов оплаты
+
+
+**Сейчас:**
+
+> Ceny zazначają się w PLN i zawierają VAT — на странице нет ни одного предложения о том, в какой момент списываются деньги и сколько времени есть на оплату заказа (весь блок оплаты состоит из одного абзаца).
+
+
+**Почему проблема:** Przelewy24 при верификации требует, чтобы покупатель до оплаты видел, когда именно происходит списание средств и что оплачивается. Польский закон (ustawa o prawach konsumenta, art. 12 ust. 1) обязывает до заключения договора сообщить условия оплаты и момент возникновения обязанности платежа. Сейчас страница не отвечает: списывают ли деньги сразу при оформлении, сколько заказ ждёт оплаты и что подтверждает оплату.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Płatność online pobierana jest w momencie składania zamówienia. Po autoryzacji transakcji przez Przelewy24 wysyłamy e-mail z potwierdzeniem przyjęcia zamówienia — to on oznacza zawarcie umowy. Na opłacenie zamówienia czekamy [уточнить: liczba godzin lub dni]; po tym czasie zamówienie jest anulowane, a zarezerwowany towar wraca do sprzedaży.
+```
+
+
+*UA:*
+
+```
+У разі онлайн-оплати кошти списуються в момент оформлення замовлення. Після авторизації транзакції в Przelewy24 ми надсилаємо лист із підтвердженням прийняття замовлення — саме він означає укладення договору. На оплату замовлення чекаємо [уточнити: кількість годин або днів]; після цього замовлення скасовується, а зарезервований товар повертається у продаж.
+```
+
+
+*EN:*
+
+```
+Online payments are charged at the moment the order is placed. Once Przelewy24 has authorised the transaction, we send an order confirmation email — that email marks the conclusion of the contract. We hold unpaid orders for [уточнить: number of hours or days], after which the order is cancelled and the reserved items return to sale.
+```
+
+
+**Куда вписать / примечание:** Добавить отдельным абзацем в карточку оплаты во всех трёх локалях, сразу после перечня способов.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; незграбна конструкція «кошти за онлайн-оплату списуються»; EN: Missing comma after the fronted subordinate clause.*
+
+
+### 04-07 · /delivery-and-payment · Юр. требование [PL]
+
+**Где:** Карточка «Metody płatności» — отсутствующий абзац о возврате денежных средств
+
+
+**Сейчас:**
+
+> На странице /delivery-and-payment нет ни одного упоминания возврата средств: последнее предложение блока оплаты — «Ceny zazначаются в PLN и включают VAT», дальше сразу идёт форма подписки на новостную рассылку.
+
+
+**Почему проблема:** Страница «Доставка и оплата» — одна из двух, которые Przelewy24 смотрит при верификации, и отсутствие правил возврата денег на ней — типовая причина доработки. По ustawa o prawach konsumenta (art. 32 ust. 1 и 3) продавец обязан вернуть деньги в течение 14 дней и тем же способом оплаты, каким платил покупатель, и обязан сообщить об этом до заключения договора. Дополнительно: в USP-полосе сайта заявлено «Zwrot w ciągu 30 dni» — эта цифра нигде на странице не раскрыта и требует согласования с regulamin.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zwrot środków wykonujemy tą samą metodą płatności, którą wybrano przy zamówieniu, w terminie 14 dni od otrzymania oświadczenia o odstąpieniu od umowy. Jeżeli zamówienie było opłacone za pobraniem, zwrot realizujemy przelewem na wskazany przez Ciebie rachunek bankowy. Szczegóły znajdziesz w [Polityce zwrotów i reklamacji] oraz w [Regulaminie sklepu]. [уточнить: czy sklep faktycznie przyjmuje zwroty w ciągu 30 dni, jak głosi pasek na stronie głównej — jeśli tak, termin trzeba powtórzyć tutaj i w regulaminie]
+```
+
+
+*UA:*
+
+```
+Кошти повертаємо тим самим способом оплати, який було обрано під час замовлення, протягом 14 днів з дня отримання заяви про відмову від договору. Якщо замовлення було оплачене післяплатою, повернення здійснюємо переказом на вказаний вами банківський рахунок. Деталі — у [Політиці повернення та претензій] і [Правилах інтернет-магазину]. [уточнити: чи справді магазин приймає повернення протягом 30 днів, як зазначено на головній — якщо так, цей строк треба продублювати тут і в правилах]
+```
+
+
+*EN:*
+
+```
+Refunds are issued using the same payment method you chose at checkout, within 14 days of receiving your withdrawal notice. If the order was paid cash on delivery, we refund by bank transfer to an account you provide. Full details are in our [Returns and complaints policy] and [Online shop terms and conditions]. [уточнить: whether the shop really accepts returns within 30 days as stated in the site-wide bar — if so, that period must be repeated here and in the terms]
+```
+
+
+**Куда вписать / примечание:** Названия в квадратных скобках — ссылки на существующие страницы /returns-policy и /terms-of-use. Абзац добавить в карточку оплаты во всех трёх локалях.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: Document name inconsistent with the footer link ("Online shop terms and conditions").*
+
+
+### 04-08 · /delivery-and-payment · Юр. требование [PL]
+
+**Где:** Карточка «Metody płatności» — отсутствующий абзац о неудавшейся или прерванной оплате
+
+
+**Сейчас:**
+
+> Блок оплаты состоит из одного абзаца и не содержит слов «nieudana», «nieopłacone», «ponowić» — сценарий отменённой или прерванной оплаты на странице не описан ни в одной локали.
+
+
+**Почему проблема:** Przelewy24 проверяет, понимает ли покупатель, что происходит при неуспешной транзакции: остаётся ли заказ, можно ли повторить оплату, куда писать. Без этого при отказе платежа покупатель считает, что деньги списаны, и идёт в чарджбэк — рост спорных транзакций для мерчанта. Это же требование информирования о порядке исполнения договора по ustawa o prawach konsumenta.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Jeśli płatność nie dojdzie do skutku albo zostanie przerwana, zamówienie zostaje w systemie jako nieopłacone i nie przekazujemy go do wysyłki. Link do ponowienia płatności znajdziesz w e-mailu z potwierdzeniem zamówienia oraz w historii zamówień na swoim koncie; pozostaje aktywny przez [уточнить: liczba godzin]. Jeśli kwota została pobrana, a zamówienia nie widzisz — napisz na hello@lapetitebloom.com, sprawdzimy transakcję po stronie Przelewy24.
+```
+
+
+*UA:*
+
+```
+Якщо оплата не пройшла або була перервана, замовлення залишається в системі як неоплачене й не передається у відправлення. Посилання для повторної оплати ви знайдете в листі з підтвердженням замовлення та в історії замовлень у своєму кабінеті; воно активне протягом [уточнити: кількість годин]. Якщо кошти списано, а замовлення не відображається — напишіть на hello@lapetitebloom.com, ми перевіримо транзакцію на боці Przelewy24.
+```
+
+
+*EN:*
+
+```
+If a payment fails or is interrupted, the order stays in our system as unpaid and is not passed for dispatch. A link to retry the payment is in your order confirmation email and in the order history in your account; it stays active for [уточнить: number of hours]. If the amount was taken but you cannot see the order, write to hello@lapetitebloom.com and we will check the transaction with Przelewy24.
+```
+
+
+**Куда вписать / примечание:** Добавить в карточку оплаты во всех трёх локалях, после абзаца о моменте списания (04-06).
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 04-09 · /delivery-and-payment · Юр. требование [PL]
+
+**Где:** Карточка «Metody płatności», предложение о ценах и валюте / переключатель валют в шапке и подвале
+
+
+**Сейчас:**
+
+> Ціни зазначаються в польських злотих (PLN) і включають податок VAT (брутто).
+
+
+**Почему проблема:** Страница утверждает, что цены только в PLN, но на сайте работает переключатель валют с вариантами «Hrywna (UAH)», «Dolar amerykański (USD)», «Euro (EUR)», «Złoty polski (PLN)» — в шапке украинской версии рядом с языком стоит «українська / PLN». Покупатель, переключивший валюту, не понимает, в какой валюте с него спишут. Przelewy24 рассчитывает мерчанта в валюте соглашения, и расхождение между витринной и расчётной валютой — стандартный вопрос при верификации. Нужно прямо сказать, что расчёт всегда в PLN, а прочие валюты — справочные.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ceny podajemy w złotych polskich (PLN) i zawierają one podatek VAT (ceny brutto). Rozliczenie każdej transakcji odbywa się w PLN — także wtedy, gdy przeglądasz sklep w innej walucie. Ceny w EUR, USD i UAH mają charakter poglądowy i są przeliczane po kursie [уточнить: źródło i częstotliwość aktualizacji kursu]; kwota pobrana przez Twój bank może różnić się o koszt przewalutowania po jego stronie.
+```
+
+
+*UA:*
+
+```
+Ціни вказані в польських злотих (PLN) і включають ПДВ (ціни брутто). Розрахунок за кожною транзакцією відбувається в PLN — навіть якщо ви переглядаєте магазин в іншій валюті. Ціни в EUR, USD та UAH є довідковими й перераховуються за курсом [уточнити: джерело та періодичність оновлення курсу]; сума, яку спише ваш банк, може відрізнятися на вартість конвертації на його боці.
+```
+
+
+*EN:*
+
+```
+Prices are shown in Polish złoty (PLN) and include VAT (gross prices). Every transaction is settled in PLN, even when you browse the shop in another currency. Prices in EUR, USD and UAH are indicative and converted at [уточнить: source and update frequency of the exchange rate]; the amount your bank charges you may differ because of its own currency conversion fee.
+```
+
+
+**Куда вписать / примечание:** Абзац в карточку оплаты. Плюс задача разработке: сумма к оплате в корзине и на странице оплаты должна показываться в PLN независимо от выбранной витринной валюты.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: "differ by its own currency conversion charge" is not idiomatic.*
+
+
+### 13-15 · /en/auth/login · Опечатка [EN]
+
+**Где:** Adnotacja o polach wymaganych pod formularzem (<div class="required-note">), także na /en/auth/register
+
+
+**Сейчас:**
+
+> * All fields marked with a asterisk are required
+
+
+**Почему проблема:** Błąd gramatyczny „a asterisk” zamiast „an asterisk”, widoczny na obu stronach konta w wersji angielskiej — dokładnie tam, gdzie klient decyduje, czy zostawić dane. Wersje PL i UA są poprawne.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+* Wszystkie pola oznaczone gwiazdką są wymagane
+```
+
+
+*UA:*
+
+```
+* Усі поля, позначені зірочкою, є обов’язковими
+```
+
+
+*EN:*
+
+```
+* All fields marked with an asterisk are required
+```
+
+
+**Куда вписать / примечание:** Jeden klucz tłumaczenia używany na /auth/login i /auth/register.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»*
+
+
+### 13-03 · /en/auth/register · Чужой язык [EN]
+
+**Где:** Checkbox zgody na newsletter w formularzu rejestracji (name="newsletter_subscribe")
+
+
+**Сейчас:**
+
+> Subscribe to our newsletter to stay up to date on Bonpoint News and Special Events.
+
+
+**Почему проблема:** W angielskiej wersji został nazwa konkurencyjnej marki — Bonpoint (francuski dom mody dziecięcej). Tekst został skopiowany z cudzego serwisu i nie został przepisany; wersje PL i UA tej nazwy nie zawierają, więc jest to wyciek wyłącznie w EN. To samo zdanie powtarza się w bloku informacyjnym na /en/auth/login („…stay up to date on Bonpoint News and Special Events.”).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Chcę otrzymywać newsletter La Petite Bloom — nowości, powroty do oferty i zaproszenia na wydarzenia.
+```
+
+
+*UA:*
+
+```
+Хочу отримувати розсилку La Petite Bloom — новинки, повідомлення про повернення товарів у продаж і запрошення на події.
+```
+
+
+*EN:*
+
+```
+I’d like to receive the La Petite Bloom newsletter — new arrivals, restocks and invitations to our events.
+```
+
+
+**Куда вписать / примечание:** Poprawić w dwóch miejscach: etykieta checkboxa newslettera na /auth/register oraz blok `div.account-info` na /auth/login. Warto przeszukać całą bazę tłumaczeń pod kątem ciągu „Bonpoint”.
+
+
+*Правки носителей: UA: калька «повернення в наявність»; EN: Straight apostrophe instead of a typographic one.*
+
+
+### 13-06 · /en/favorites · Кривой перевод [EN]
+
+**Где:** Etykiety przycisku ulubionych na kartach produktów, window.FenixTranslations.favorites
+
+
+**Сейчас:**
+
+> To the selected / In the selected / From the selected
+
+
+**Почему проблема:** Cała grupa `favorites` w wersji angielskiej to maszynowe tłumaczenie ukraińskiego „До обраного / В обраному / З обраного” — „the selected” nie znaczy po angielsku nic sensownego. Ciągi są używane przez front/js/favorites.js jako etykieta i atrybut title przycisku serduszka na każdej karcie produktu, więc widać je w całym katalogu. Polskie „Z ulubionych” dla akcji usuwania też jest niepełne — brakuje czasownika.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Do ulubionych / W ulubionych / Usuń z ulubionych
+```
+
+
+*UA:*
+
+```
+До обраного / В обраному / Видалити з обраного
+```
+
+
+*EN:*
+
+```
+Add to favourites / In favourites / Remove from favourites
+```
+
+
+**Куда вписать / примечание:** window.FenixTranslations.favorites: to_favorites, in_favorites, btn_add_favorites, btn_remove_favorites — cztery klucze w trzech lokalizacjach.
+
+
+*Правки носителей: UA: та сама дія в 12-06 і 14-03 називається «Видалити з обраного»*
+
+
+### 06-01 · /en/polityka-cookies · Нет перевода [EN]
+
+**Где:** title, meta description и h1 страницы «Cookie policy»
+
+
+**Сейчас:**
+
+> Polityka cookies
+
+
+**Почему проблема:** Тело документа на английской версии переведено полностью, но title, meta description и h1 остались польскими: англоязычный покупатель видит польский заголовок «Polityka cookies» и в шапке страницы, и во вкладке браузера, и в выдаче. Плюс meta description дублирует заголовок — на всех трёх локалях это просто копия title.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Tytuł i h1: Polityka cookies
+Meta description: Zasady stosowania plików cookies w sklepie La Petite Bloom: rodzaje plików, cele, czas przechowywania i zarządzanie zgodą.
+```
+
+
+*UA:*
+
+```
+Title і h1: Політика щодо файлів cookie
+Meta description: Правила використання файлів cookie в інтернет-магазині La Petite Bloom: види файлів, цілі, строки зберігання та керування згодою.
+```
+
+
+*EN:*
+
+```
+Title and h1: Cookie policy
+Meta description: How La Petite Bloom uses cookies: categories, purposes, retention periods and how to manage your consent.
+```
+
+
+**Куда вписать / примечание:** Админка → страницы → Polityka cookies → вкладка EN: заполнить заголовок, h1 и meta description. Заодно переписать meta description на PL и UA — сейчас там дубль title.
+
+
+*Правки носителей: UA: різнобій «файли cookie / файли cookies» — уніфіковано на «cookie» (як у футері, 02-08)*
+
+
+### 09-03 · /footwear · Нет перевода [pl,ua,en]
+
+**Где:** Opis kategorii — brak bloku między H1 «Obuwie» a paskiem «Filtry / 3 towary»
+
+
+**Сейчас:**
+
+> Obuwie
+Filtry
+3 towary
+Według popularności
+
+
+**Почему проблема:** Poza /kids i /niemowleta (gdzie stoi francuski placeholder) żadna kategoria nie ma opisu w ogóle: /girls, /boys, /footwear, /accessories, /zabawki, /pielegnacja-i-kosmetyki, /brands. Strona kategorii startuje od nagłówka i od razu przechodzi w listing — brak tekstu, który tłumaczy zakres kategorii, i brak jakiejkolwiek treści indeksowalnej. Poniżej wzorcowy tekst dla /footwear; ten sam zabieg trzeba powtórzyć dla pozostałych sześciu kategorii.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Buty na pierwsze kroki i na całe lato: baleriny, sandały, kapcie i buty do wody. Miękka podeszwa, naturalna skóra i bawełna, rozmiarówka od niemowlęcej wzwyż.
+```
+
+
+*UA:*
+
+```
+Взуття для перших кроків і на все літо: балетки, сандалі, домашні капці та взуття для води. М’яка підошва, натуральна шкіра й бавовна, розміри — від найменших.
+```
+
+
+*EN:*
+
+```
+Shoes for first steps and for the whole summer: ballet flats, sandals, slippers and water shoes. Soft soles, natural leather and cotton, sized from baby upwards.
+```
+
+
+**Куда вписать / примечание:** Admin: pole opisu kategorii dla /girls, /boys, /footwear, /accessories, /zabawki, /pielegnacja-i-kosmetyki, /brands — po jednym akapicie na lokalizację.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»; обірвана конструкція «розмірний ряд від немовлячого»*
+
+
+### 09-04 · /kids · Заглушка [pl,ua,en]
+
+**Где:** <title> i <meta name="description"> stron kategorii
+
+
+**Сейчас:**
+
+> title: Dzieci | meta description: Dzieci
+
+
+**Почему проблема:** Na wszystkich ośmiu stronach kategorii title i meta description są identyczne z nazwą kategorii i identyczne ze sobą: «Dzieci»/«Dzieci», «Obuwie»/«Obuwie», «Marki»/«Marki», «Догляд та косметика»/«Догляд та косметика», «Care and cosmetics»/«Care and cosmetics». Brak nazwy sklepu w title, brak zdania sprzedażowego w description. To domyślna wartość systemowa, a nie wypełniony opis SEO.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+title: Ubrania i buty dla dzieci — marki premium | La Petite Bloom
+meta description: Ubrania, buty, kosmetyki i zabawki dla dzieci od 0 do 12 lat. Liewood, Bobo Choses, Mini Rodini, Konges Sløjd. Wysyłka na cały świat, zwrot w ciągu 30 dni.
+```
+
+
+*UA:*
+
+```
+title: Дитячий одяг і взуття — преміальні бренди | La Petite Bloom
+meta description: Одяг, взуття, косметика та іграшки для дітей від 0 до 12 років. Liewood, Bobo Choses, Mini Rodini, Konges Sløjd. Доставка по всьому світу, повернення протягом 30 днів.
+```
+
+
+*EN:*
+
+```
+title: Children’s clothing and footwear — premium labels | La Petite Bloom
+meta description: Clothing, footwear, care and toys for children from 0 to 12. Liewood, Bobo Choses, Mini Rodini, Konges Sløjd. Worldwide shipping, 30-day returns.
+```
+
+
+**Куда вписать / примечание:** Powtórzyć dla każdej kategorii osobno — obecnie wszystkie dziedziczą samą nazwę. Dotyczy też /brands (title «Marki», description «Marki»).
+
+
+*Правки носителей: UA: різнобій «марки/бренди»; EN: Straight apostrophes; "shoes" in the title clashes with "footwear" in the description and across the site.*
+
+
+### 09-09 · /kids · Битая ссылка [pl,ua,en]
+
+**Где:** Baner promocyjny wpleciony w siatkę produktów (class «category-grid-banner»), pojawia się dwukrotnie na każdej stronie każdej kategorii
+
+
+**Сейчас:**
+
+> Nowość
+Akro by Olivier Cresp
+Wyświetl wszystko  →  href="https://lapetitebloom.com/brands/liewood" target="_blank" rel="nofollow"
+
+
+**Почему проблема:** Baner ogłasza markę «Akro by Olivier Cresp», której nie ma w katalogu — nie występuje ani w spisie na /brands, ani w filtrze marek na żadnej kategorii. Przycisk «Wyświetl wszystko» prowadzi natomiast do zupełnie innej marki, /brands/liewood, otwiera ją w nowej karcie i ma rel="nofollow" na własnym linku wewnętrznym. Ten sam baner powtarza się dwa razy na jednym ekranie listingu i we wszystkich kategoriach.
+
+
+**Куда вписать / примечание:** Poprawka techniczna w admin → banery → baner kategorii nr 1: albo podmienić link na właściwą markę i dodać ją do katalogu, albo wyłączyć baner do czasu wprowadzenia Akro. Zdjąć target="_blank" i rel="nofollow" z linku wewnętrznego. Grafika banera jest podpięta tylko w wariancie /pl/ (ścieżka …/banners/1/category/pl/…) i wyświetla się też na /ua i /en.
+
+
+### 09-12 · /kids · Кривой перевод [EN]
+
+**Где:** Karta produktu w listingu — ikona serca, atrybut title (dymek «Do ulubionych»)
+
+
+**Сейчас:**
+
+> <div class="action-toggle favorites-toggle" title="To the selected"
+
+
+**Почему проблема:** Dymek przycisku «do ulubionych» w wersji angielskiej brzmi «To the selected» — to tłumaczenie maszynowe, po angielsku bez sensu. Przycisk jest na każdej karcie w każdym listingu, więc błąd powtarza się setki razy. Wersja PL («Do ulubionych») i UA («До обраного») są poprawne. Brytyjska pisownia zgodnie z przyjętą dla sklepu konwencją: favourites.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Do ulubionych
+```
+
+
+*UA:*
+
+```
+До обраного
+```
+
+
+*EN:*
+
+```
+Add to favourites
+```
+
+
+**Куда вписать / примечание:** Słownik tłumaczeń, klucz dymka przycisku ulubionych na karcie produktu. Przy okazji ujednolicić z nagłówkiem, gdzie EN ma amerykańskie «Favorites».
+
+
+### 10-01 · /kids · Кривой перевод [PL]
+
+**Где:** Panel filtrów, nazwa filtra (pod «Kolor»)
+
+
+**Сейчас:**
+
+> Artykuł
+
+
+**Почему проблема:** Filtr zawiera wartości «Chłopiec / Dziewczynka / Kobieta / Unisex», czyli płeć odbiorcy, a nie «artykuł» (który po polsku znaczy towar albo tekst). W UA i EN ten sam filtr nazywa się poprawnie «Стать» / «Gender» — czyli źródłowa nazwa polska jest jedyną błędną.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Płeć
+```
+
+
+*UA:*
+
+```
+Стать
+```
+
+
+*EN:*
+
+```
+Gender
+```
+
+
+**Куда вписать / примечание:** Katalog → Atrybuty → atrybut o wartościach Chłopiec/Dziewczynka/Unisex. Zmienić nazwę atrybutu w locale PL; UA/EN już poprawne.
+
+
+### 10-03 · /kids · Кривой перевод [pl,ua,en]
+
+**Где:** Panel filtrów, nazwa filtra z wartościami 0.020 … 0.230 oraz 11-15, 15-19, 19-30
+
+
+**Сейчас:**
+
+> Rozmiar KG / Розмір кг / Size KG
+
+
+**Почему проблема:** Po pierwsze nazwa jest niepoprawna we wszystkich trzech językach — «rozmiar KG» nie znaczy nic. Po drugie filtr miesza dwie różne wielkości: 11-15 / 15-19 / 19-30 to zakresy wagi dziecka do kamizelek asekuracyjnych, a 0.020-0.230 to waga samego produktu w kilogramach, która nie ma prawa być filtrem zakupowym. Klient dostaje jedną listę, w której 0.075 i 19-30 znaczą coś zupełnie innego.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Waga dziecka (kg)
+```
+
+
+*UA:*
+
+```
+Вага дитини, кг
+```
+
+
+*EN:*
+
+```
+Child’s weight (kg)
+```
+
+
+**Куда вписать / примечание:** Rekomendacja: rozdzielić atrybut. Zostawić w filtrach tylko zakresy wagi dziecka (11-15, 15-19, 19-30), a wagę produktu (0.020-0.230) przenieść do danych logistycznych i ukryć w panelu filtrów.
+
+
+*Правки носителей: PL: „Waga dziecka, kg” — jak wyżej, jednostka po przecinku to kalka; po polsku „Waga dziecka (kg)”.; EN: "Child's weight, kg" is a Slavic label calque; straight apostrophe fixed.*
+
+
+### 10-07 · /kids · Кривой перевод [EN]
+
+**Где:** Panel filtrów, przycisk zatwierdzający na dole
+
+
+**Сейчас:**
+
+> See the (371)
+
+
+**Почему проблема:** To nie jest zdanie po angielsku — rodzajnik «the» wisi bez rzeczownika. Jest to główny przycisk akcji panelu filtrów, więc błąd widzi każdy anglojęzyczny klient przed samym zakupem.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Pokaż wyniki (371)
+```
+
+
+*UA:*
+
+```
+Показати результати (371)
+```
+
+
+*EN:*
+
+```
+Show 371 products
+```
+
+
+**Куда вписать / примечание:** Liczba w nawiasie jest dynamiczna. Wariant bez nawiasu wymagałby form mnogich (1 product / 371 products), dlatego bezpieczniejszy jest zapis z licznikiem w nawiasie.
+
+
+*Правки носителей: EN: Conflicted with 09-13 for the same filter-panel button; "Show 371 products" is the more natural label.*
+
+
+### 10-10 · /kids · Кривой перевод [pl,ua,en]
+
+**Где:** Panel filtrów, nazwa filtra ceny
+
+
+**Сейчас:**
+
+> Cena, zł / Ціна, zł / Price, PLN
+
+
+**Почему проблема:** Waluta jest wpisana na sztywno w nazwę filtra, a przełącznik w stopce oferuje cztery waluty: PLN, EUR, USD, UAH. Po przełączeniu na euro lub hrywnę klient nadal widzi «Cena, zł» i wpisuje kwoty w polu opisanym złotówkami. Dodatkowo w wersji ukraińskiej łaciński skrót «zł» stoi wewnątrz cyrylicznej etykiety, a wersja angielska używa kodu «PLN» zamiast tego samego skrótu — trzy lokale, trzy różne konwencje.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Cena
+```
+
+
+*UA:*
+
+```
+Ціна
+```
+
+
+*EN:*
+
+```
+Price
+```
+
+
+**Куда вписать / примечание:** Rozwiązanie: usunąć walutę z nazwy filtra i pokazywać aktywny kod waluty jako sufiks pól «od» / «do» (np. «od 0 PLN» — «do 500 PLN»), pobierany z tego samego przełącznika co ceny na kartach produktów. Jeśli klient chce zachować walutę w nagłówku, etykieta musi być szablonem z podstawianym kodem: PL «Cena, {waluta}», UA «Ціна, {валюта}», EN «Price, {currency}» — nigdy tekstem statycznym. Ten sam mechanizm dotyczy sufiksu «zł» przy cenach produktów.
+
+
+### 10-16 · /kids · Кривой перевод [pl,ua,en]
+
+**Где:** Filtr «Kolor», dwie osobne wartości na liście
+
+
+**Сейчас:**
+
+> Melanżowy niebieski horyzont   ORAZ   Bleu horizon chiné
+
+
+**Почему проблема:** «Melanżowy niebieski horyzont» to dosłowne tłumaczenie francuskiego «Bleu horizon chiné» — ten sam kolor Tartine et Chocolat zapisany dwa razy. W wersji angielskiej rozjazd jest widoczny gołym okiem: na liście stoją obok siebie «Bleu horizon chine» i «Bleu horizon chiné», różniące się wyłącznie brakującym akcentem, czyli dwie pozycje wyglądające na literówkę wobec siebie.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Melanżowy błękit horyzontu
+```
+
+
+*UA:*
+
+```
+Меланжевий блакитний горизонт
+```
+
+
+*EN:*
+
+```
+Heather horizon blue
+```
+
+
+**Куда вписать / примечание:** SCALIĆ: «Bleu horizon chiné» → «Melanżowy niebieski horyzont» (jedna wartość bazowa), a następnie poprawić samo tłumaczenie: «Melanżowy niebieski horyzont» to kalka, poprawnie po polsku «Melanżowy błękit horyzontu». Przy okazji znika duplikat akcentowy chine/chiné w EN.
+
+
+### 10-17 · /kids · Кривой перевод [pl,ua,en]
+
+**Где:** Filtr «Kolor», dwie osobne wartości na liście
+
+
+**Сейчас:**
+
+> Perłowy   ORAZ   Nacre
+
+
+**Почему проблема:** «Nacre» to po francusku masa perłowa, czyli dokładnie to samo co polskie «Perłowy» — obie wartości są w katalogu równocześnie. W wersji angielskiej obie renderują się jako «Nacre», a więc anglojęzyczny klient dostaje francuskie słowo zamiast «Mother-of-pearl», i to w dwóch nierozróżnialnych kopiach.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Perłowy
+```
+
+
+*UA:*
+
+```
+Перламутровий
+```
+
+
+*EN:*
+
+```
+Mother-of-pearl
+```
+
+
+**Куда вписать / примечание:** SCALIĆ: «Nacre» → «Perłowy», potem uzupełnić tłumaczenia UA/EN. Ta sama logika dotyczy wariantów «… MOP» (Cream MOP, Linen MOP, Moss MOP, Nude MOP, Dark Chocolate MOP) — MOP to skrót od mother-of-pearl i również powinien być rozwinięty w tłumaczeniach, a nie zostawiony jako kod.
+
+
+### 10-21 · /kids · Кривой перевод [pl,ua,en]
+
+**Где:** Filtr «Kolor» — wartości, które nie są kolorami
+
+
+**Сейчас:**
+
+> Animal Print & Fine Stripes Medium Socks T20, Blossoms Rib Pant L19, Blossoms Twill Jeans 104, Cherries Swimsuit R22, Cherry Medium Socks T16, Light Navy Stripes Body L16, Oranges Denim Jeans T10, Retro Stripes Bows Pant N08, Stripes Denim Pant T10
+
+
+**Почему проблема:** Do atrybutu koloru trafiło dziewięć pełnych nazw produktów Tiny Cottons razem z kodami magazynowymi (T20, L19, R22, T16, L16, T10, N08). W panelu filtrów, między «Beżowy» a «Bright Red», stoją więc wpisy w rodzaju «Blossoms Twill Jeans 104» — dla klienta to szum, a filtr koloru przestaje być użyteczny. Jest to identyczne we wszystkich trzech lokalach, bo błąd siedzi w katalogu, nie w tłumaczeniach.
+
+
+**Куда вписать / примечание:** Usunąć te dziewięć wartości z atrybutu «Kolor» i przypisać dotknięte produkty Tiny Cottons do właściwych kolorów bazowych (Cherry → Wiśniowy, Oranges → Pomarańczowy, Light Navy Stripes → Granatowy w paski, Blossoms → Kwiatowy itd.). Nazwy modeli i kody powinny żyć w nazwie produktu i w polu SKU, a nie w atrybucie koloru. Bez tekstów do tłumaczenia — poprawka jest czysto katalogowa.
+
+
+### 10-26 · /kids · Заглушка [pl,ua,en]
+
+**Где:** Panel filtrów, filtr «Linia produktów» / «Лінійка продуктів» / «Product Line»
+
+
+**Сейчас:**
+
+> 10000, CHINA, PEOPLE'S REPUBLIC OF, CN, KID
+
+
+**Почему проблема:** Do filtra widocznego dla klienta trafiły dane techniczne z importu: kod kraju pochodzenia w dwóch postaciach («CN» i «CHINA, PEOPLE'S REPUBLIC OF»), liczba «10000» i klucz «KID». Nazwa filtra obiecuje linię produktową, a klient premium sklepu dziecięcego dostaje pod nią wielkimi literami napis o Chińskiej Republice Ludowej. Identycznie we wszystkich trzech lokalach.
+
+
+**Куда вписать / примечание:** Wyłączyć atrybut «Linia produktów» z panelu filtrów do czasu wyczyszczenia danych. Kraj pochodzenia przenieść do karty produktu jako osobne pole (i zapisać jako «Chiny» / «Китай» / «China», nie kodem ISO), wartości «10000» i «KID» usunąć jako pozostałości importu.
+
+
+### 11-06 · /koszulka-bobo-choses-booo-z-nadrukiem-dla-dzieci-b226ac017-2-3 · Нет перевода [ua,en]
+
+**Где:** Блок GPSR под описанием («Producent» / «Виробник» / «Manufacturer»)
+
+
+**Сейчас:**
+
+> Виробник: BOBO HAUS S.L.U, Carrer Jaume Balmes 14, 08301 Mataró (Barcelona), Hiszpania.
+
+
+**Почему проблема:** Обязательный блок данных производителя переведён, но название страны осталось польским во всех нелокальных версиях — единственное непереведённое слово в предложении. По восьми карточкам: Hiszpania (Bobo Choses), Francja (VEJA, Tartine et Chocolat), Dania (Maileg), Holandia (Little Dutch), Niemcy (Dresdner Essenz), Polska (Skin Minimalism). Блок стоит на каждой карточке, то есть ошибка воспроизводится на 1307 страницах в двух локалях. Адрес и юридическое название не трогаем — только страну.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Producent: BOBO HAUS S.L.U, Carrer Jaume Balmes 14, 08301 Mataró (Barcelona), Hiszpania.
+```
+
+
+*UA:*
+
+```
+Виробник: BOBO HAUS S.L.U, Carrer Jaume Balmes 14, 08301 Mataró (Barcelona), Іспанія.
+```
+
+
+*EN:*
+
+```
+Manufacturer: BOBO HAUS S.L.U, Carrer Jaume Balmes 14, 08301 Mataró (Barcelona), Spain.
+```
+
+
+**Куда вписать / примечание:** Нужен справочник стран на трёх языках: Hiszpania → Іспанія / Spain; Francja → Франція / France; Dania → Данія / Denmark; Holandia → Нідерланди / the Netherlands (у Little Dutch в польской версии тоже стоит устаревшее «Holandia» — корректнее «Niderlandy»); Niemcy → Німеччина / Germany; Polska → Польща / Poland.
+
+
+### 11-03 · /little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031 · Нет перевода [ua,en]
+
+**Где:** Вкладка «Charakterystyka», строка «Skład» / «Склад» / «Composition»
+
+
+**Сейчас:**
+
+> Склад
+100% bawełna organiczna
+
+
+**Почему проблема:** Подпись строки переведена, а значение — нет: состав остаётся польским в украинской и английской версиях. Так на всех карточках с составом: ковдра — «100% bawełna organiczna», сукня — «tkanina główna: 66% poliester 34% bawełna podszewka 1.: 100% bawełna», VEJA — «Wierzch: … Panele: … Wkładka: … Podeszwa: … Podszewka: … Sznurówki: 60% guma». Обратная ошибка в польской версии: у Bobo Choses состав написан по-английски — «Organic Cotton 100%» и «Organic Cotton 74%, Polyamide 24%, Elastane 2%». Состав ткани — обязательная потребительская информация по регламенту ЕС 1007/2011 и должен быть на языке страницы.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+100% bawełna organiczna
+```
+
+
+*UA:*
+
+```
+100% органічна бавовна
+```
+
+
+*EN:*
+
+```
+100% organic cotton
+```
+
+
+**Куда вписать / примечание:** Значение атрибута «Skład» сейчас одно на три локали — нужно локализуемое поле. Другие примеры комплектом: сукня — PL «tkanina główna: 66% poliester, 34% bawełna; podszewka: 100% bawełna», UA «основна тканина: 66% поліестер, 34% бавовна; підкладка: 100% бавовна», EN «main fabric: 66% polyester, 34% cotton; lining: 100% cotton». Носки — PL «74% bawełna organiczna, 24% poliamid, 2% elastan», UA «74% органічна бавовна, 24% поліамід, 2% еластан», EN «74% organic cotton, 24% polyamide, 2% elastane».
+
+
+### 11-10 · /little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031 · Кривой перевод [UA]
+
+**Где:** Вкладка «Опис товару», весь список
+
+
+**Сейчас:**
+
+> Багатофункційний - для обгортання та сну
+
+
+**Почему проблема:** Украинское описание короче польского и теряет смысл на каждом пункте. «Багатофункційний» — несуществующая форма (нужно «багатофункціональна»), к тому же мужской род при том, что товар — ковдра; из перечисления выпало «transportu». «М'якість обгортає малюка під час сну» — потеряно «i zabawy», хотя в английской версии «during sleep and play» на месте. «Гарний 4-шаровий муслін з Fairy Blossom» — исчезли слова «ковдра» и «колекція», фраза повисает. «Зроблений з попередньо пралої органічної бавовни» — неверная форма («випраної») и потеряно «najwyższej jakości». Это не разовая опечатка, а типовая картина машинного перевода описаний с усечением.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Piękny, 4-warstwowy kocyk muślinowy z kolekcji Fairy Blossom
+Uszyty ze wstępnie pranej bawełny organicznej najwyższej jakości
+Oddychający materiał dobrze wchłania wilgoć
+Miękko otula dziecko podczas snu i zabawy
+Wielofunkcyjny — do tulenia, układania do snu i podróży
+Wymiary 110×140 cm — odpowiednie dla noworodków i starszych dzieci
+```
+
+
+*UA:*
+
+```
+Чотиришарова муслінова ковдра з колекції Fairy Blossom
+Пошита з попередньо випраної органічної бавовни найвищої якості
+Повітропроникна тканина добре вбирає вологу
+М’яко огортає малюка під час сну та гри
+Багатофункціональна — для сповивання, сну та подорожей
+Розмір 110×140 см — підходить і новонародженим, і старшим дітям
+```
+
+
+*EN:*
+
+```
+A beautiful four-layer muslin blanket from the Fairy Blossom collection
+Made of pre-washed organic cotton of the highest quality
+Breathable fabric that absorbs moisture well
+Softness that wraps your little one during sleep and play
+Multi-purpose — for cuddling, settling to sleep and travelling
+110×140 cm — suitable for newborns and older children
+```
+
+
+**Куда вписать / примечание:** Поле «Opis» карточки te12194031, украинская версия. Пятый пункт польской версии правится вместе с находкой 11-02.
+
+
+*Правки носителей: PL: „Miękkość otula maluszka” — miękkość nie może być podmiotem czynności (kalka); dodatkowo „maluszek” to zdrobnienie niepasujące do spokojnego tonu marki.; UA: прямий апостроф замість типографського «’»; порожній оцінний зачин «Гарна» (калька з «Piękny») і цифра там, де природніше слово; уособлення «м’якість огортає» звучить як машинний переклад*
+
+
+### 11-14 · /little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031 · Заглушка [pl,ua,en]
+
+**Где:** Вкладка «Dostawa i zwrot» / «Доставка та повернення» / «Delivery and return»
+
+
+**Сейчас:**
+
+> Dostarczamy na terenie całego kraju. Skontaktuj się z naszym zespołem, aby poznać szczegółowe warunki dostawy i zwrotu.
+
+
+**Почему проблема:** Единственный блок про доставку и возврат на карточке не содержит ни одного факта: ни стоимости, ни срока, ни перевозчика, ни права отказа в течение 14 дней, ни ссылки на «Dostawa i płatność» и политику возвратов. Вместо этого покупателя отправляют писать в поддержку. Текст одинаков на всех восьми карточках, то есть это шаблон на 1307 страницах × 3 локали. Плюс прямое противоречие: здесь «na terenie całego kraju», а в ленте значков ниже — «Wysyłka na cały świat». Информация о стоимости и сроке доставки и о праве на отказ должна быть доступна с карточки до добавления в корзину — это и требование польского закона о правах потребителя, и то, что смотрят при верификации в Przelewy24.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wysyłamy na terenie Polski oraz do wybranych krajów [уточнить: lista]. Koszt i czas dostawy: [уточнить]. Zamówienie możesz zwrócić w ciągu 14 dni od otrzymania, bez podawania przyczyny. Szczegóły znajdziesz w zakładce Dostawa i płatność oraz w Polityce zwrotów i reklamacji.
+```
+
+
+*UA:*
+
+```
+Доставляємо Польщею та до обраних країн [уточнити: перелік]. Вартість і строк доставки: [уточнити]. Замовлення можна повернути протягом 14 днів з дня отримання, без пояснення причин. Докладніше — у розділах «Доставка та оплата» і «Політика повернення та претензій».
+```
+
+
+*EN:*
+
+```
+We ship within Poland and to selected countries [уточнить: list]. Delivery cost and time: [уточнить]. You can return your order within 14 days of receipt, without giving a reason. Full details are in Delivery and payment and in our Returns and complaints policy.
+```
+
+
+**Куда вписать / примечание:** Шаблон вкладки в карточке товара. Добавить ссылки на /delivery-and-payment и на политику возвратов. Польский заголовок вкладки сделать «Dostawa i zwroty» — сейчас единственное число. Формулировку про мир/страну согласовать со значком «Wysyłka na cały świat».
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 07-06 · /personal-data-requests · Юр. требование [PL]
+
+**Где:** Навигация: футер, блок «Klientowi» / «Клієнту» / «Information»
+
+
+**Сейчас:**
+
+> Zgody, klauzule i regulamin newslettera
+Dostawa i płatność
+Regulamin kart podarunkowych
+Deklaracja dostepnosci
+Kontakt
+
+
+**Почему проблема:** Страница /personal-data-requests существует и лежит в sitemap, но на неё не ведёт ни одна ссылка на сайте: её нет ни в футере, ни в меню, ни в «Polityce prywatności» (проверено по всем сохранённым HTML всех трёх локалей — упоминание встречается только на самой странице). Единственный канал реализации прав по GDPR фактически недоступен пользователю, хотя GDPR требует, чтобы информация о правах была легко доступна. Это же заметит проверяющий Przelewy24. Заодно название страницы рассинхронизировано между локалями: PL «Kontakt w sprawie danych osobowych» — про контакт, EN «Personal data requests» — про запросы.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wnioski dotyczące danych osobowych
+```
+
+
+*UA:*
+
+```
+Запити щодо персональних даних
+```
+
+
+*EN:*
+
+```
+Personal data requests
+```
+
+
+**Куда вписать / примечание:** Добавить пункт в футер (блок «Klientowi») сразу после «Polityka prywatności» и поставить ссылку внутри «Polityki prywatności» в разделе о правах субъекта данных. Одновременно выровнять название страницы во всех трёх локалях по предложенному варианту.
+
+
+### 09-14 · /pielegnacja-i-kosmetyki · Кривой перевод [pl,ua,en]
+
+**Где:** Lista podkategorii w panelu bocznym, ostatnia pozycja
+
+
+**Сейчас:**
+
+> PL: «Przecinaki» | UA: «Прорізувачі» | EN: «Cutters»
+
+
+**Почему проблема:** Po polsku «przecinak» to narzędzie ślusarskie do cięcia metalu. Chodzi o gryzaki dla ząbkujących niemowląt — ukraińska wersja «Прорізувачі» jest poprawna, więc źródłowa nazwa polska jest błędna, a angielskie «Cutters» to dosłowne tłumaczenie tego błędu i znaczy «obcinaki». W sklepie z produktami dla niemowląt to nazwa, która potrafi odstraszyć.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Gryzaki
+```
+
+
+*UA:*
+
+```
+Прорізувачі
+```
+
+
+*EN:*
+
+```
+Teethers
+```
+
+
+**Куда вписать / примечание:** Admin → kategorie → podkategoria w «Pielęgnacja i kosmetyki». Poprawić najpierw polską nazwę źródłową, potem angielską.
+
+
+### 09-15 · /pielegnacja-i-kosmetyki · Кривой перевод [pl,ua,en]
+
+**Где:** Lista podkategorii w panelu bocznym, pozycja piąta
+
+
+**Сейчас:**
+
+> PL: «Samoopalacz-miasto» | UA: «Автозасмага-місти» | EN: «Self-tanner-city»
+
+
+**Почему проблема:** Nazwa jest niezrozumiała we wszystkich trzech językach. Powstała z angielskiego «self tan mist» — «mist» (mgiełka) przetłumaczono jako «miasto»/«місти»/«city». W kategorii są produkty Azure Tan (m.in. rękawica do samoopalacza), więc kategoria powinna nazywać się po prostu samoopalaczami.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Samoopalacze
+```
+
+
+*UA:*
+
+```
+Автозасмага
+```
+
+
+*EN:*
+
+```
+Self-tan
+```
+
+
+**Куда вписать / примечание:** Admin → kategorie → podkategoria w «Pielęgnacja i kosmetyki», poprawić nazwę źródłową i oba tłumaczenia. Jeśli kategoria ma obejmować wyłącznie mgiełki: «Mgiełki samoopalające» / «Спрей-автозасмага» / «Self-tan mists».
+
+
+### 06-03 · /polityka-cookies · Юр. требование [PL]
+
+**Где:** Раздел «2. Rodzaje stosowanych cookies», последний абзац
+
+
+**Сейчас:**
+
+> Szczegółowy i aktualny wykaz stosowanych plików cookies (nazwy, cele oraz czas przechowywania) dostępny jest w deklaracji zgód w banerze cookies (Cookiebot).
+
+
+**Почему проблема:** Обещанного перечня нет нигде. На странице загружается только скрипт баннера Cookiebot (uc.js, cbid 0a0eab6f-480f-43dc-be9b-ff1a90ddce34), но виджет декларации cookie (cd.js / CookieDeclaration) не встроен ни на одной из трёх локалей. То есть таблицы категорий с именами файлов, поставщиками, целями и сроками хранения — обязательного элемента cookie-политики по ePrivacy и рекомендациям UODO — на сайте физически не существует. Одинаково на PL, UA и EN.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wykaz stosowanych plików cookies
+Poniższa lista jest generowana automatycznie i aktualizowana po każdym skanowaniu Sklepu. Zawiera nazwę pliku, dostawcę, cel oraz czas przechowywania.
+```
+
+
+*UA:*
+
+```
+Перелік файлів cookie, що використовуються
+Наведений нижче перелік формується автоматично й оновлюється після кожного сканування Магазину. Він містить назву файлу, постачальника, призначення та строк зберігання.
+```
+
+
+*EN:*
+
+```
+List of cookies used
+The list below is generated automatically and updated after each scan of the website. It shows the name of each cookie, its provider, purpose and retention period.
+```
+
+
+**Куда вписать / примечание:** Под этим подзаголовком вставить виджет Cookiebot: <script id="CookieDeclaration" src="https://consent.cookiebot.com/0a0eab6f-480f-43dc-be9b-ff1a90ddce34/cd.js" type="text/javascript" async></script>. Для UA и EN добавить параметр культуры (?culture=uk / ?culture=en), иначе таблица отдаст польский. Если Cookiebot не будет использоваться — таблицу категорий нужно свёрстывать руками, содержание — [уточнить у юриста: перечень фактически устанавливаемых файлов после отключения заглушки «Opening Soon»].
+
+
+*Правки носителей: UA: різнобій «файли cookie / файли cookies» — уніфіковано на «cookie» (як у футері, 02-08); EN: A cookie scan scans the website, not "the Store"; also removes the stray Americanism.*
+
+
+### 06-04 · /polityka-cookies · Юр. требование [PL]
+
+**Где:** Раздел «3. Zarządzanie zgodą», 3-е предложение
+
+
+**Сейчас:**
+
+> Zgodę można w każdej chwili zmienić lub wycofać w ustawieniach cookies, a także poprzez ustawienia przeglądarki.
+
+
+**Почему проблема:** Никаких «ustawienia cookies» на сайте нет: в разметке ни одной из трёх локалей нет ни ссылки на повторный вызов баннера (CookieConsent.renew()), ни отдельной страницы настроек, ни пункта в футере. Отзыв согласия должен быть так же прост, как его выдача (ст. 7(3) GDPR); сейчас пользователю остаётся только чистить куки в браузере, а документ обещает обратное.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ustawienia plików cookies
+Zgodę możesz zmienić lub wycofać w każdej chwili — otwórz Ustawienia plików cookies. Możesz też usunąć zapisane pliki w ustawieniach swojej przeglądarki.
+```
+
+
+*UA:*
+
+```
+Налаштування файлів cookie
+Ви можете змінити або відкликати згоду будь-коли — відкрийте Налаштування файлів cookie. Збережені файли також можна видалити в налаштуваннях браузера.
+```
+
+
+*EN:*
+
+```
+Cookie settings
+You can change or withdraw your consent at any time — open Cookie settings. You can also delete stored cookies in your browser settings.
+```
+
+
+**Куда вписать / примечание:** Нужна ссылка-кнопка, вызывающая Cookiebot.renew(): в футере (блок «Klientowi» / «Клієнту» / «Information») и внутри §3 самой политики. Текст ссылки — из полей pl/ua/en.
+
+
+*Правки носителей: UA: різнобій «файли cookie / файли cookies» — уніфіковано на «cookie» (як у футері, 02-08)*
+
+
+### 06-06 · /privacy-policy · Юр. требование [PL]
+
+**Где:** Раздел «4. Odbiorcy danych», список получателей
+
+
+**Сейчас:**
+
+> - Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania).
+
+
+**Почему проблема:** Два документа противоречат друг другу. Политика cookies называет Meta Pixel, TikTok, Klarna и PayPo, а в списке получателей данных в политике конфиденциальности их нет — там только Google и Cookiebot. Также не назван поставщик рассылки, через которого уходит newsletter, и не назван хостинг-провайдер. Для покупателя это значит, что часть получателей его данных не раскрыта.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+- Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania);
+- dostawcy narzędzi marketingowych — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — wpisać wyłącznie te, które faktycznie zostaną uruchomione];
+- dostawcy płatności odroczonych — Klarna i PayPo, w zakresie wybranej metody płatności;
+- dostawca systemu wysyłki newslettera — [уточнить: nazwa i siedziba];
+- dostawca hostingu — [уточнить: nazwa i siedziba].
+```
+
+
+*UA:*
+
+```
+- Google (Google Analytics / Google Ads), а також постачальнику банера керування згодами Cookiebot (Usercentrics A/S, Данія);
+- постачальникам маркетингових інструментів — [уточнити у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — вказати лише ті, що будуть фактично активовані];
+- постачальникам послуг відстроченої оплати — Klarna та PayPo, в обсязі обраного способу оплати;
+- постачальнику системи розсилки — [уточнити: назва та місцезнаходження];
+- постачальнику хостингу — [уточнити: назва та місцезнаходження].
+```
+
+
+*EN:*
+
+```
+- Google (Google Analytics / Google Ads) and the provider of the Cookiebot consent banner (Usercentrics A/S, Denmark);
+- providers of marketing tools — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — list only those actually enabled];
+- deferred-payment providers — Klarna and PayPo, where you choose that payment method;
+- the newsletter delivery provider — [уточнить: name and registered office];
+- the hosting provider — [уточнить: name and registered office].
+```
+
+
+**Куда вписать / примечание:** Раздел 4 политики конфиденциальности во всех трёх локалях. Список получателей должен совпадать с перечнем инструментов в политике cookies и с реально подключёнными скриптами.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: "to the extent of the payment method chosen" is not idiomatic.*
+
+
+### 07-13 · /regulamin-kart-podarunkowych · Юр. требование [PL]
+
+**Где:** Пункты 3 и 7 регламента
+
+
+**Сейчас:**
+
+> 7. W przypadku zwrotu Towarów opłaconych kartą zwrot następuje w formie nowego kodu lub doładowania karty o odpowiedniej wartości.
+
+
+**Почему проблема:** Два пункта требуют проверки юристом до запуска карт. Пункт 7: при отказе от договора в течение 14 дней продавец обязан вернуть деньги тем же способом оплаты; возврат «в форме нового кода» лишает потребителя денег и в польской практике квалифицируется как недозволенная договорная оговорка. Пункт 3 («niewykorzystane środki nie podlegają zwrotowi» после 12 месяцев) — типичная позиция из реестра оговорок UOKiK: удержание неиспользованного номинала после истечения срока регулярно признаётся ущемлением прав потребителя. Формулировки ниже — только каркас, финальный текст должен подтвердить юрист.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+3. Karta jest ważna 12 miesięcy od dnia zakupu. Przed upływem terminu ważności przypomnimy o niewykorzystanych środkach wiadomością e-mail. [уточнить z prawnikiem: zasady postępowania z niewykorzystaną wartością po upływie terminu — czy przewidujemy przedłużenie ważności, czy zwrot środków na wniosek].
+7. Jeżeli odstąpisz od umowy sprzedaży Towarów opłaconych kartą podarunkową, zwracamy równowartość ceny [уточнить z prawnikiem: tą samą metodą płatności, którą opłacono kartę / w formie nowego kodu — wyłącznie za wyraźną zgodą konsumenta].
+```
+
+
+*UA:*
+
+```
+3. Подарункова картка дійсна 12 місяців від дня придбання. Перед завершенням строку ми нагадаємо про невикористані кошти листом на електронну пошту. [уточнити з юристом: що відбувається з невикористаною сумою після завершення строку — чи передбачаємо продовження дії, чи повернення коштів за заявою].
+7. Якщо ви відмовитеся від договору купівлі Товарів, оплачених подарунковою карткою, ми повертаємо вартість [уточнити з юристом: тим самим способом оплати, яким було оплачено картку / у формі нового коду — лише за прямою згодою споживача].
+```
+
+
+*EN:*
+
+```
+3. A Gift Card is valid for 12 months from the date of purchase. We will remind you by email about any unused balance before the card expires. [уточнить with a lawyer: what happens to the unused balance after expiry — whether we extend validity or refund on request].
+7. If you withdraw from a contract for Goods paid for with a Gift Card, we refund the value [уточнить with a lawyer: using the same payment method used to buy the card / as a new code — only with the consumer’s express agreement].
+```
+
+
+**Куда вписать / примечание:** Оба пункта — предмет консультации юриста, не редактуры. До запуска карт можно просто не публиковать регламент (см. 07-18).
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: Straight apostrophe instead of a typographic one; "e-mail" normalised to "email".*
+
+
+### 13-10 · /search · Заглушка [PL]
+
+**Где:** Strona /search bez parametru zapytania — <h1> i komunikat pod nim
+
+
+**Сейчас:**
+
+> Wynik wyszukiwania dla zapytania: ""
+
+
+**Почему проблема:** Wejście na /search bez zapytania (np. z zakładki albo po wyczyszczeniu pola) daje nagłówek z pustym cudzysłowem i komunikat „Wyszukiwanie nie dało wyników”, czyli sklep informuje o braku wyników wyszukiwania, którego nikt nie przeprowadził. To samo trafia do <title>, więc karta przeglądarki nazywa się „Wynik wyszukiwania dla zapytania: ""”. Identycznie w UA („Результат пошуку за запитом: ""”) i EN („Search result for query: ""”).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Czego szukasz? Wpisz nazwę produktu, markę lub kategorię.
+```
+
+
+*UA:*
+
+```
+Що ви шукаєте? Введіть назву товару, бренд або категорію.
+```
+
+
+*EN:*
+
+```
+What are you looking for? Enter a product name, brand or category.
+```
+
+
+**Куда вписать / примечание:** Dla pustego zapytania pokazać nagłówek „Wyszukiwanie / Пошук / Search” bez cudzysłowów i powyższy tekst zachęty zamiast komunikatu o braku wyników; tytuł karty ustawić na „Wyszukiwanie — La Petite Bloom”.
+
+
+### 13-12 · /search · Заглушка [PL]
+
+**Где:** Rozwijane okno wyszukiwania (#search-modal), blok polecanych <div class="star-result-list">
+
+
+**Сейчас:**
+
+> <a class="result-cart__title" href="#">Baner1</a>
+
+
+**Почему проблема:** Blok polecanych w rozwijanym oknie wyszukiwania zawiera cztery zaślepki Baner1–Baner4, każda z pustym linkiem href="#" i takim samym tekstem w atrybucie alt obrazka. Blok jest w kodzie każdej strony w trzech lokalizacjach — także na /search, /favorites, /auth/login i /auth/register — więc pokazuje się od razu po kliknięciu lupy, zanim klient cokolwiek wpisze. Nazwy nie są przetłumaczone (to nawet nie jest poprawne polskie „Baner”, tylko numerowana zaślepka), a kliknięcie nie prowadzi nigdzie.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Polecane
+```
+
+
+*UA:*
+
+```
+Рекомендуємо
+```
+
+
+*EN:*
+
+```
+Recommended
+```
+
+
+**Куда вписать / примечание:** Admin → slider wyszukiwania, pozycje sliders_item 23–26. Podstawić realne produkty lub kolekcje z działającymi linkami i przetłumaczonymi nazwami oraz atrybutami alt; blok potrzebuje też nagłówka (obecnie nie ma żadnego). To odrębne wystąpienie od znanych Baner1–Baner4 na /about.
+
+
+### 13-08 · /search?term=sukienka · Кривой перевод [PL]
+
+**Где:** Rozwijana lista „Sortowanie”, pierwsza opcja
+
+
+**Сейчас:**
+
+> Przypadkowo
+
+
+**Почему проблема:** Domyślna opcja sortowania nazywa się w PL „Przypadkowo” (czyli „losowo”), w UA „За співпадінням”, a w EN „By coincidence”. Trzy lokalizacje opisują trzy różne rzeczy, a angielskie „By coincidence” nie jest w ogóle nazwą sortowania — to kalka z rosyjskiego „по совпадению”. Klient nie wie, według czego są ułożone wyniki, a „przypadkowo” w sklepie premium brzmi jak awaria.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Trafność
+```
+
+
+*UA:*
+
+```
+За релевантністю
+```
+
+
+*EN:*
+
+```
+Relevance
+```
+
+
+**Куда вписать / примечание:** Rozwijana lista sortowania na stronie wyników wyszukiwania; ta sama lista jest używana na stronach kategorii.
+
+
+### 11-19 · /sol-do-kapieli-dresdner-essenz-badz-zdrow-neuro-na-katar-50-g-3-bz-katar-50 · Юр. требование [pl,ua,en]
+
+**Где:** Блок цены
+
+
+**Сейчас:**
+
+> 15
+zł
+
+
+**Почему проблема:** У цены нет ни подписи, ни указания, что она включает НДС, ни цены за единицу меры. Для косметики, продаваемой по весу или объёму, польский закон об информировании о ценах требует показывать цену за единицу (за 100 g или 100 ml) рядом с ценой продажи — это соль 50 g и крем под глаза. У крема Skin Minimalism объём вообще не указан нигде: ни в названии, ни в характеристиках, ни в описании, при цене 670 zł.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+15 zł (30 zł/100 g) · cena zawiera VAT
+```
+
+
+*UA:*
+
+```
+15 zł (30 zł/100 г) · ціна з ПДВ
+```
+
+
+*EN:*
+
+```
+15 zł (30 zł/100 g) · VAT included
+```
+
+
+**Куда вписать / примечание:** Добавить в характеристики атрибут «Pojemność / Об'єм / Volume» для всей косметики (у крема — [уточнить] ml) и выводить цену за единицу автоматически. Отдельно: как только на карточке появится перечёркнутая цена, рядом обязана быть «Najniższa cena z 30 dni przed obniżką» (директива Omnibus) — сейчас такого блока в шаблоне нет.
+
+
+### 12-18 · /special-offers, /ua/special-offers, /en/special-offers · Битая ссылка [pl,ua,en]
+
+**Где:** <title> strony akcji promocyjnych
+
+
+**Сейчас:**
+
+> Brak znacznika <title> w kodzie strony we wszystkich trzech wersjach językowych (title pusty, meta description pusty)
+
+
+**Почему проблема:** У страницы промоакций вообще нет тега <title>: во вкладке браузера, в закладках и при отправке ссылки в мессенджере отображается голый URL. Это единственная посадочная страница для распродаж — именно на неё ведут баннеры и рассылка.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Promocje | La Petite Bloom
+```
+
+
+*UA:*
+
+```
+Акції | La Petite Bloom
+```
+
+
+*EN:*
+
+```
+Special offers | La Petite Bloom
+```
+
+
+**Куда вписать / примечание:** Заполнить title и meta description в настройках страницы «Akcje» во всех трёх локалях.
+
+
+### 12-19 · /special-offers, /ua/special-offers, /en/special-offers · Заглушка [pl,ua,en]
+
+**Где:** Podtytuł pod nagłówkiem strony akcji
+
+
+**Сейчас:**
+
+> pl: "Niezależnie od tego, czy jest zima, czy lato, tworzy ubrania i akcesoria dla dzieci, w których wygoda i troska łączą się z elegancją" | ua: "Чи то зима, чи літо, створює одяг та аксесуари для дітей, де комфорт та турбота поєднуються зі стилем." | en: "Be it winter or summer, creates clothing and accessories for children where comfort and care meet chic"
+
+
+**Почему проблема:** Предложение без подлежащего во всех трёх локалях: «tworzy ubrania» — кто создаёт? Это описание бренда, вставленное в шаблон страницы акций и оставленное без правки. Читается как незаполненная заглушка на странице, куда ведут все промо-ссылки.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zebraliśmy w jednym miejscu wszystkie aktualne promocje i wyprzedaże La Petite Bloom — ubrania, buty i akcesoria w obniżonych cenach.
+```
+
+
+*UA:*
+
+```
+Ми зібрали в одному місці всі актуальні акції та розпродажі La Petite Bloom — одяг, взуття та аксесуари за зниженими цінами.
+```
+
+
+*EN:*
+
+```
+All current La Petite Bloom promotions and sales in one place — clothing, footwear and accessories at reduced prices.
+```
+
+
+**Куда вписать / примечание:** Поле подзаголовка страницы «Akcje».
+
+
+### 11-04 · /sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042 · Нет перевода [ua,en]
+
+**Где:** Вкладка «Charakterystyka», строки «Kolor» и «Artykuł»
+
+
+**Сейчас:**
+
+> Колір
+Chabrowy
+Стать
+Dziewczynka
+
+
+**Почему проблема:** Значения атрибутов в украинской версии остались польскими: «Chabrowy», «Dziewczynka». В английской цвет подтянулся вообще из французского фида — «Bleuet», хотя пол там переведён («Girl»). То есть словарь значений атрибутов заполнен частично и вразнобой по локалям, а не только для этого товара: это общий справочник цветов и категорий, значит ошибка повторяется на всех карточках одежды и обуви.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kolor: chabrowy · Płeć: dziewczynka
+```
+
+
+*UA:*
+
+```
+Колір: волошковий · Стать: дівчинка
+```
+
+
+*EN:*
+
+```
+Colour: cornflower blue · Gender: girl
+```
+
+
+**Куда вписать / примечание:** Править не в карточке, а в справочнике значений атрибутов (цвет, пол, назначение) — там нужны переводы для uk и en.
+
+
+### 11-07 · /sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042 · Заглушка [pl,ua,en]
+
+**Где:** Блок GPSR под описанием, контакт производителя
+
+
+**Сейчас:**
+
+> E-mail: contact@tartine-et-chocolat.com (zweryfikować)
+
+
+**Почему проблема:** Внутренняя редакторская пометка «(zweryfikować)» — «проверить» — попала в опубликованный текст и видна покупателю во всех трёх локалях, включая украинскую и английскую, где она к тому же по-польски. Стоит она в блоке обязательных данных производителя, то есть магазин прямым текстом сообщает, что контакт для рекламаций не проверен.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+E-mail: contact@tartine-et-chocolat.com
+```
+
+
+*UA:*
+
+```
+E-mail: contact@tartine-et-chocolat.com
+```
+
+
+*EN:*
+
+```
+E-mail: contact@tartine-et-chocolat.com
+```
+
+
+**Куда вписать / примечание:** Убрать пометку из поля GPSR карточки cc30042 и прогнать все 1307 карточек поиском рабочих пометок в скобках: «(zweryfikować)», «(sprawdzić)», «(TBD)», «(?)».
+
+
+### 11-16 · /sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042 · Нет перевода [pl,ua,en]
+
+**Где:** Блок выбора размера и кнопка «Do koszyka»
+
+
+**Сейчас:**
+
+> <div role="button" class="button variant-disabled" data-value="1739" title="6Y"> 6Y </div>
+
+
+**Почему проблема:** На карточке нигде не сказано, есть ли товар в наличии: нет статуса «dostępny / ostatnie sztuki / chwilowo niedostępny», нет срока отправки — ни в одной из трёх локалей и ни на одном из восьми товаров. При этом в разметке schema.org на каждой карточке стоит availability: InStock, то есть данные в системе есть, их просто не показывают покупателю. Недоступный размер (6Y у этой сукни) отличается только серым цветом кнопки: ни подписи, ни объяснения, ни возможности подписаться на возврат в наличие.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Dostępny — wysyłka w ciągu [уточнить] dni roboczych · Ten rozmiar jest chwilowo niedostępny · Powiadom mnie o dostępności
+```
+
+
+*UA:*
+
+```
+Є в наявності — відправимо протягом [уточнити] робочих днів · Цей розмір тимчасово недоступний · Повідомити, коли з’явиться
+```
+
+
+*EN:*
+
+```
+In stock — dispatched within [уточнить] working days · This size is currently unavailable · Notify me when it’s back in stock
+```
+
+
+**Куда вписать / примечание:** Статус наличия выводить рядом с ценой, подпись недоступного размера — под селектором. Данные брать из того же поля, что уже уходит в schema.org availability.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; прямий апостроф замість типографського «’»; EN: "Notify me when it is back" is incomplete; UK shops say "back in stock".*
+
+
+### 06-10 · /terms-of-use · Заглушка [PL]
+
+**Где:** §2. Sprzedawca i kontakt, второй пункт блока «Kontakt»
+
+
+**Сейчас:**
+
+> - Zwroty i reklamacje – kontakt@lapetitebloom.com (opcjonalnie alias zwroty@/reklamacje@)
+
+
+**Почему проблема:** В опубликованный регламент попала служебная пометка автора черновика — «опционально алиас». Покупатель читает документ, по которому подаёт рекламацию, и видит внутреннюю заметку о том, что адреса, возможно, ещё не заведены. Присутствует во всех трёх локалях: «(за бажанням аліаси zwroty@/reklamacje@)», «(optionally the zwroty@/reklamacje@ aliases)».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+- Zwroty i reklamacje — hello@lapetitebloom.com
+```
+
+
+*UA:*
+
+```
+- Повернення та претензії — hello@lapetitebloom.com
+```
+
+
+*EN:*
+
+```
+- Returns and complaints — hello@lapetitebloom.com
+```
+
+
+**Куда вписать / примечание:** Убрать скобку целиком. Если алиасы zwroty@/reklamacje@ будут заведены — вписать конкретный рабочий адрес вместо hello@; см. 06-12 о разнобое адресов.
+
+
+*Правки носителей: UA: різнобій «рекламації/претензії» — уніфіковано на «претензії»*
+
+
+### 06-11 · /terms-of-use · Юр. требование [PL]
+
+**Где:** §2. Sprzedawca i kontakt, блок «Kontakt»
+
+
+**Сейчас:**
+
+> Kontakt:
+- Obsługa klienta i wsparcie – kontakt@lapetitebloom.com
+
+
+**Почему проблема:** В контактном блоке регламента нет телефона, хотя он есть в футере и на /contacts (+48 517 689 849, пн-пт 9:00-18:00). Обязанность указать в регламенте номер телефона и адрес для контакта следует из информационных обязанностей продавца перед потребителем, и это же проверяется при верификации в Przelewy24: оператор сверяет данные продавца в регламенте с данными в заявке.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kontakt:
+- Obsługa klienta i wsparcie — hello@lapetitebloom.com, tel. +48 517 689 849 (pn–pt 9:00–18:00)
+- Zwroty i reklamacje — hello@lapetitebloom.com
+- Sprawy danych osobowych (RODO) — rodo@lapetitebloom.com
+- Adres do korespondencji — LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa
+```
+
+
+*UA:*
+
+```
+Контактні дані:
+- Обслуговування клієнтів і підтримка — hello@lapetitebloom.com, тел. +48 517 689 849 (пн–пт 9:00–18:00)
+- Повернення та претензії — hello@lapetitebloom.com
+- Питання персональних даних (GDPR) — rodo@lapetitebloom.com
+- Адреса для листування — LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa
+```
+
+
+*EN:*
+
+```
+Contact:
+- Customer service and support — hello@lapetitebloom.com, tel. +48 517 689 849 (Mon–Fri 9:00–18:00)
+- Returns and complaints — hello@lapetitebloom.com
+- Personal data matters (GDPR) — rodo@lapetitebloom.com
+- Correspondence address — LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland
+```
+
+
+**Куда вписать / примечание:** §2 регламента во всех трёх локалях. Телефон и часы взяты из футера и /contacts, новых фактов не добавлено.
+
+
+*Правки носителей: UA: різнобій «рекламації/претензії» — уніфіковано на «претензії»; EN: City name in Polish inside English copy.*
+
+
+### 06-12 · /terms-of-use · Юр. требование [PL]
+
+**Где:** §2, §8 п. 2, §9 п. 2, Załącznik nr 1 — адрес электронной почты продавца
+
+
+**Сейчас:**
+
+> Obsługa klienta i wsparcie – kontakt@lapetitebloom.com
+
+
+**Почему проблема:** Регламент, /claims-and-complaints и приложение с формой отказа отсылают на kontakt@lapetitebloom.com, а весь остальной сайт — футер на каждой странице, страница /contacts и блок новостной рассылки — на hello@lapetitebloom.com. Два разных адреса в юридически значимых местах: по kontakt@ подаются отказ от договора и рекламация, и если этот ящик не заведён, срок в 14 дней у покупателя формально соблюдён, а письмо никуда не дойдёт.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+[уточнить: który adres jest obsługiwany — hello@lapetitebloom.com czy kontakt@lapetitebloom.com] — jeden adres należy konsekwentnie wpisać w §2, §8 ust. 2, §9 ust. 2 oraz w Załączniku nr 1.
+```
+
+
+*UA:*
+
+```
+[уточнити: яка адреса обслуговується — hello@lapetitebloom.com чи kontakt@lapetitebloom.com] — одну адресу треба послідовно вказати в §2, §8 п. 2, §9 п. 2 та в Додатку № 1.
+```
+
+
+*EN:*
+
+```
+[уточнить: which mailbox is actually monitored — hello@lapetitebloom.com or kontakt@lapetitebloom.com] — a single address must be used consistently in §2, §8(2), §9(2) and in Appendix No. 1.
+```
+
+
+**Куда вписать / примечание:** Затрагивает также /claims-and-complaints и /personal-data-requests. После решения — единый поиск-замена по всем трём локалям.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 06-13 · /terms-of-use · Юр. требование [PL]
+
+**Где:** §8 п. 3 (адрес для возврата), то же в §9 п. 3 и в «Załącznik nr 1»
+
+
+**Сейчас:**
+
+> Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, w terminie 14 dni od odstąpienia.
+
+
+**Почему проблема:** Адрес для возврата товара неполон: нет номера помещения и почтового индекса. На /contacts тот же бутик указан как «ul. Mokotowska 51/53, lok. 44, 00-542 Warszawa». По такому адресу курьер посылку не примет, а покупатель формально сделал всё, что требует регламент. Одинаково во всех трёх локалях и в форме отказа от договора.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, w terminie 14 dni od odstąpienia.
+```
+
+
+*UA:*
+
+```
+Товар необхідно надіслати на адресу: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, протягом 14 днів із моменту відмови.
+```
+
+
+*EN:*
+
+```
+The Goods must be returned to: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warsaw, Poland, within 14 days of withdrawal.
+```
+
+
+**Куда вписать / примечание:** Четыре места в регламенте (§8 п. 3, §9 п. 3, §2 «Butik», адресат в Załącznik nr 1) плюс те же адреса на /claims-and-complaints. [уточнить: принимает ли бутик возвраты по почте или нужен отдельный адрес склада].
+
+
+*Правки носителей: EN: City name in Polish inside English copy; "within 14 days after withdrawal" should be "of withdrawal" (as in 05-13).*
+
+
+### 06-14 · /terms-of-use · Юр. требование [PL]
+
+**Где:** §5 п. 4 «Zamówienie i zawarcie umowy»
+
+
+**Сейчас:**
+
+> Ceny podane są w złotych (PLN) i są cenami brutto (zawierają VAT). Wiążąca jest cena z chwili złożenia zamówienia.
+
+
+**Почему проблема:** Магазин продаёт в четырёх валютах — в переключателе есть Hrywna (UAH), Dolar amerykański (USD), Euro (EUR), Złoty polski (PLN) — и доставляет за границу, а регламент знает только злотый. Не сказано, в какой валюте заключается договор, по какому курсу пересчитывается витрина, в какой валюте списывается платёж и возвращаются деньги при отказе, и кто несёт расходы на конвертацию. Стоимость доставки в §7 тоже дана только в злотых. Для украинского и англоязычного покупателя это ключевой вопрос, а для верификации в Przelewy24 — прямой вопрос о валюте расчётов.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ceny podane są w złotych polskich (PLN) i są cenami brutto (zawierają VAT). Wiążąca jest cena z chwili złożenia zamówienia. Ceny prezentowane w innych walutach (EUR, USD, UAH) mają charakter wyłącznie informacyjny i są przeliczane [уточнить у юриста: według kursu i źródła kursu]. Rozliczenie transakcji, w tym zwrot płatności, następuje w [уточнить у юриста: waluta rozliczenia]. Ewentualne koszty przewalutowania po stronie banku Klienta [уточнить у юриста].
+```
+
+
+*UA:*
+
+```
+Ціни зазначено в польських злотих (PLN); це ціни брутто, з урахуванням ПДВ. Застосовується ціна, чинна на момент оформлення замовлення. Ціни, показані в інших валютах (EUR, USD, UAH), мають виключно інформаційний характер і перераховуються [уточнити у юриста: за яким курсом і з якого джерела]. Розрахунок за операцією, зокрема повернення коштів, здійснюється в [уточнити у юриста: валюта розрахунку]. Можливі витрати на конвертацію на боці банку Клієнта [уточнити у юриста].
+```
+
+
+*EN:*
+
+```
+Prices are stated in Polish złoty (PLN) and are gross prices (including VAT). The price applicable at the time the order is placed is binding. Prices displayed in other currencies (EUR, USD, UAH) are indicative only and are converted [уточнить у юриста: exchange rate and its source]. Transactions, including refunds, are settled in [уточнить у юриста: settlement currency]. Any currency conversion costs charged by the Customer’s bank [уточнить у юриста].
+```
+
+
+**Куда вписать / примечание:** §5 регламента + §7 (стоимость доставки указана только в zł/PLN). Формулировки — каркас, конкретика по курсу и валюте расчётов только от юриста и после подтверждения настроек Przelewy24.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; збите узгодження («ціни зазначено… і вони є») та калька «обов’язковою є ціна» (wiążąca); EN: "Polish zlotys" is wrong (no diacritic, wrong form); every other text uses "Polish złoty (PLN)". Straight apostrophe fixed.*
+
+
+### 19-06 · /terms-of-use · Юр. требование [все]
+
+**Где:** ГОТОВЫЙ БЛОК «Sprzedawca / Продавець / Seller» — §2 регламента и экран чекаута
+
+
+**Сейчас:**
+
+> Sklep prowadzi LPB Spółka z ograniczoną odpowiedzialnością z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, kapitał zakładowy 5 000 zł.
+
+
+**Почему проблема:** В регламенте блок продавца уже есть и по составу почти правильный — но в нём не указан номер отдела (Wydział Gospodarczy KRS назван без номера), нет страны и kapitał записан как «5 000 zł» вместо формы из выписки «5 000,00 PLN». Для верификации Przelewy24 и для art. 12 ust. 1 pkt 2 ustawy o prawach konsumenta нужна одна и та же формулировка везде — в регламенте, в политике конфиденциальности, на контактах и на чекауте. Ниже единая редакция, которую можно вставить во все места без изменений.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Sprzedawca
+
+Sklep internetowy lapetitebloom.com prowadzi LPB Spółka z ograniczoną odpowiedzialnością z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska, wpisana do rejestru przedsiębiorców Krajowego Rejestru Sądowego prowadzonego przez [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] pod numerem KRS 0001190730, NIP 5273179673, REGON 542537097, kapitał zakładowy 5 000,00 PLN.
+Kontakt: hello@lapetitebloom.com, tel. +48 517 689 849.
+```
+
+
+*UA:*
+
+```
+Продавець
+
+Інтернет-магазин lapetitebloom.com веде LPB Spółka z ograniczoną odpowiedzialnością із місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща, внесена до реєстру підприємців Державного судового реєстру (Krajowy Rejestr Sądowy), який веде [уточнити за витягом з KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS], за номером KRS 0001190730, NIP 5273179673, REGON 542537097, статутний капітал 5 000,00 PLN.
+Контакт: hello@lapetitebloom.com, тел. +48 517 689 849.
+```
+
+
+*EN:*
+
+```
+Seller
+
+The lapetitebloom.com online shop is operated by LPB Spółka z ograniczoną odpowiedzialnością, with its registered office at ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland, entered in the register of entrepreneurs of the Polish National Court Register (Krajowy Rejestr Sądowy) kept by [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] under KRS number 0001190730, NIP 5273179673, REGON 542537097, share capital PLN 5,000.00.
+Contact: hello@lapetitebloom.com, tel. +48 517 689 849.
+```
+
+
+**Куда вписать / примечание:** Вставить: /terms-of-use → §2 «Sprzedawca» (заменить текущий абзац целиком), /privacy-policy → п.1 «Administrator danych» (там та же связка реквизитов, добавить страну и суд), /contacts → блок из 19-04. На чекауте — свёрнутая строка, см. 19-07. Плейсхолдер про суд заполнить один раз и одинаково во всех местах.
+
+
+*Правки носителей: UA: російська вставка «по выписке KRS»; росіянізм «уточнить» замість «уточнити»; у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»; EN: "online store" is an Americanism; "registered office in Warsaw, ul. … Warsaw" repeats the city twice.*
+
+
+### 11-08 · /trampki-veja-small-volley-atlantic-ouro-bark-zlote-sportowe-buty-ve-smallvolb · Заглушка [PL]
+
+**Где:** Атрибуты alt всех фотографий в галерее товара
+
+
+**Сейчас:**
+
+> alt="tytuł - zdjęcie 1"
+
+
+**Почему проблема:** В польской версии alt каждой фотографии товара — незаполненный шаблон: вместо названия подставлено само слово «tytuł». Так на всех восьми проверенных карточках и на всех кадрах галереи (до 7 фото на товар), значит на всех 1307 польских карточках. В украинской и английской версиях alt формируется правильно, из названия товара — то есть сломан именно польский шаблон. Это ломает доступность (а в футере магазин заявляет «Deklaracja dostępności») и поиск по картинкам в основной локали.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Trampki VEJA Small Volley Atlantic Ouro Bark — zdjęcie 1
+```
+
+
+*UA:*
+
+```
+Кеди VEJA Small Volley Atlantic Ouro Bark — фото 1
+```
+
+
+*EN:*
+
+```
+VEJA Small Volley Atlantic Ouro Bark trainers — photo 1
+```
+
+
+**Куда вписать / примечание:** Править в шаблоне галереи карточки: подставлять название товара, как это уже сделано для uk и en.
+
+
+### 11-11 · /trampki-veja-small-volley-atlantic-ouro-bark-zlote-sportowe-buty-ve-smallvolb · Кривой перевод [pl,ua]
+
+**Где:** Вкладка «Opis produktu» / «Опис товару», весь список
+
+
+**Сейчас:**
+
+> Атлантична експедиція натхненна морські та металізовані кольори
+
+
+**Почему проблема:** Украинский пункт грамматически не собран — слова просто выстроены в ряд, без согласования и без сказуемого. Дальше «BARK коричневий балансує теплоту та софістикованість»: «софістикованість» — не украинское слово, это калька с английского sophistication. Ещё ниже потеряно «серед дитячих кед», а из первого пункта во всех локалях, кроме английской, исчез сам цвет (в EN «rich ATLANTIC blue»). В польской версии тот же список: «BARK brąz balansuje ciepłością i elegancją w designzie» — формы «designzie» в польском нет, а «Inspirowana atlantycką ekspedycją kombinacja morska i metalizowana» — типичный машинный порядок слов.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nowa odsłona modelu Volley w głębokim odcieniu ATLANTIC z połyskującym złotem OURO
+Morsko-metaliczne zestawienie inspirowane atlantycką wyprawą
+Połyskujące złoto nadaje dziecięcym trampkom charakter premium
+Brąz BARK równoważy całość ciepłem i elegancją
+Miękkie materiały organiczne zapewniające wygodę na cały dzień
+Model dla dzieci, które lubią błyszczące detale
+```
+
+
+*UA:*
+
+```
+Нове прочитання моделі Volley у глибокому відтінку ATLANTIC із сяйливим золотом OURO
+Морсько-металеве поєднання, натхнене атлантичною експедицією
+Золоті деталі додають дитячим кедам преміальності
+Коричневий BARK урівноважує образ теплом і стриманістю
+М’які органічні матеріали, що дарують комфорт на цілий день
+Модель для дітей, які люблять блискучі деталі
+```
+
+
+*EN:*
+
+```
+A new take on the Volley in a deep ATLANTIC shade with shimmering OURO gold
+A marine-and-metallic pairing inspired by an Atlantic expedition
+The gold detailing gives these children’s trainers a premium feel
+BARK brown balances the look with warmth and restraint
+Soft organic materials for all-day comfort
+A style for children who love a little shine
+```
+
+
+**Куда вписать / примечание:** Названия оттенков ATLANTIC, OURO, BARK оставляем как есть — это цвета производителя.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»; повтор «сяйливе золото» двома рядками поспіль; EN: "Shimmering" repeated in two bullets; "A model for children" is a calque of "model" meaning style. Straight apostrophe fixed.*
+
+
+### 14-11 · /trampki-veja-small-volley-atlantic-ouro-bark-zlote-sportowe-buty-ve-smallvolb и все 8 карточек товара · Заглушка [PL]
+
+**Где:** Галерея фотографий товара, атрибут alt каждого изображения (основное фото + миниатюры)
+
+
+**Сейчас:**
+
+> alt="tytuł - zdjęcie 1" … alt="tytuł - zdjęcie 4"
+
+
+**Почему проблема:** В польской версии во все alt подставлено служебное слово «tytuł» — незаполненный плейсхолдер шаблона вместо названия товара. Затронуты все 8 карточек товара польской версии, по 8 изображений на карточку. При этом в UA и EN на тех же карточках alt заполнен нормально («Кеди VEJA Small Volley Atlantic Ouro Bark … - фото 1», «Small Volley ATLANTIC_OURO_BARK - photo 1»), то есть сломана именно польская — основная — локаль. Последствия: нулевая доступность галереи для скринридеров и потеря картиночного трафика в Google Images по главному рынку.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Trampki VEJA Small Volley Atlantic Ouro Bark — złote buty sportowe dla dzieci, zdjęcie 1
+```
+
+
+*UA:*
+
+```
+Кеди VEJA Small Volley Atlantic Ouro Bark — золоті дитячі кеди, фото 1
+```
+
+
+*EN:*
+
+```
+VEJA Small Volley Atlantic Ouro Bark trainers in gold — photo 1
+```
+
+
+**Куда вписать / примечание:** Шаблон alt должен быть «{nazwa produktu} - zdjęcie {n}» / «{назва товару} - фото {n}» / «{product name} - photo {n}». Сейчас в польской ветке подставляется литерал «tytuł» вместо переменной названия. Заодно поправить английский шаблон: там подставляется внутреннее имя варианта с подчёркиваниями («Small Volley ATLANTIC_OURO_BARK»), а не человекочитаемое название товара.
+
+
+*Правки носителей: PL: W jednym ciągu były dwa różne myślniki (półpauza i łącznik w roli pauzy); numer zdjęcia oddzielony przecinkiem, zgodnie z zapisem w 11-08.; UA: дефіс замість тире перед «фото 1» і повтор «Кеди… кеди для дітей»; EN: Repeated "trainers", and a hyphen used where the rest of the alt text uses an em dash; conflicted with 11-08.*
+
+
+### 05-16 · /warranty-and-returns, /claims-and-complaints · Юр. требование [все]
+
+**Где:** Структура раздела: /warranty-and-returns и две подстраницы против /claims-and-complaints
+
+
+**Сейчас:**
+
+> Polityka zwrotów
+Zgodnie z artykułem L.221-18 francuskiego Kodeksu Konsumenta…
+
+
+**Почему проблема:** На сайте одновременно живут две независимые и противоречащие друг другу политики возврата: /warranty-and-returns (плюс подстраницы /polityka-zwrotow и /gwarancja-na-produkt, полностью дублирующие её текст) и /claims-and-complaints. В меню и подвале стоит только вторая; на первую ведут «хлебные крошки» и внутренние ссылки, а сама страница-родитель на свои подстраницы не ссылается вообще (в <main> нет ни одной ссылки на них). Для проверяющего это выглядит как два разных набора условий продажи, что само по себе основание отказать в верификации.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zwroty i reklamacje
+Wszystkie zasady zwrotów, wymiany i reklamacji zebraliśmy w jednym miejscu — w Polityce zwrotów i reklamacji. Znajdą tam Państwo terminy, adres do odesłania Towaru, wzór formularza odstąpienia od umowy oraz formularz reklamacyjny.
+```
+
+
+*UA:*
+
+```
+Повернення та претензії
+Усі правила повернення, обміну та претензій ми зібрали в одному місці — у Політиці повернення та претензій. Там ви знайдете строки, адресу для відправлення Товару, зразок форми відмови від договору та форму претензії.
+```
+
+
+*EN:*
+
+```
+Returns and complaints
+All our rules on returns, exchanges and complaints are in one place — the Returns and Complaints Policy. There you will find the deadlines, the return address, the model withdrawal form and the complaint form.
+```
+
+
+**Куда вписать / примечание:** Рекомендация: оставить одну каноническую страницу (/claims-and-complaints, приведённую к польскому праву), а /warranty-and-returns с подстраницами либо удалить, либо превратить в короткую навигационную страницу с этим текстом и ссылкой. Сейчас списки исключений из права возврата на двух страницах тоже не совпадают (духи и косметика против списка по art. 38 ustawy o prawach konsumenta).
+
+
+### 05-06 · /warranty-and-returns, /warranty-and-returns/polityka-zwrotow, /warranty-and-returns/gwarancja-na-produkt · Кривой перевод [все]
+
+**Где:** Весь текст обеих политик — 11 упоминаний бренда в PL, столько же в UA и EN
+
+
+**Сейчас:**
+
+> W przypadku potrzeby uzyskania pomocy lub ponownego wydania formularza czy etykiety zwrotnej prosimy o kontakt z Biurem Obsługi Klienta Bloom.
+
+
+**Почему проблема:** По всему тексту продавец называется «Bloom» — это чужой бренд, от которого скопирована политика. Магазин называется La Petite Bloom, юр. лицо — LPB Sp. z o.o. Ни «Bloom», ни «Biuro Obsługi Klienta Bloom», ни «strona Bloom» на сайте не существуют. В юридическом документе неправильное обозначение продавца обесценивает весь текст.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+W razie pytań dotyczących zwrotu prosimy o kontakt z obsługą klienta La Petite Bloom: kontakt@lapetitebloom.com.
+```
+
+
+*UA:*
+
+```
+Якщо у вас виникли запитання щодо повернення, зверніться до служби підтримки La Petite Bloom: kontakt@lapetitebloom.com.
+```
+
+
+*EN:*
+
+```
+If you have any questions about a return, please contact La Petite Bloom customer service at kontakt@lapetitebloom.com.
+```
+
+
+**Куда вписать / примечание:** Заменить «Bloom» на «La Petite Bloom» (или «Sprzedawca» / «Продавець» / «the Seller» в юридических формулировках) во всех трёх локалях на трёх страницах. Адрес почты сверить с находкой 05-12.
+
+
+### 05-07 · /warranty-and-returns, /warranty-and-returns/polityka-zwrotow, /warranty-and-returns/gwarancja-na-produkt · Кривой перевод [все]
+
+**Где:** «Polityka zwrotów», абзацы о магазинах и обмене; «Gwarancja na produkt», последний абзац
+
+
+**Сейчас:**
+
+> Produkty zakupione na stronie mogą zostać wymienione wyłącznie w sklepie Bloom w kraju zakupu (z wyłączeniem domów towarowych i outletów). Jeśli wymiana nie jest możliwa, zostanie wystawiona nota kredytowa. Szczegóły znajdują się w Ogólnych Warunkach Sprzedaży dotyczących zakupów w sklepach.
+
+
+**Почему проблема:** Описана инфраструктура, которой у магазина нет: сеть «sklepów Bloom w kraju zakupu», «domy towarowe», «outlety», «Bloom Outlet», «sprzedawcy zewnętrzni», «noty kredytowe» и документ «Ogólne Warunki Sprzedaży dotyczące zakupów w sklepach», которого на сайте не существует. У La Petite Bloom один бутик на ul. Mokotowska 51/53 и интернет-магазин. Дополнительно абзац «Produkty zakupione w sklepach Bloom Outlet lub u sprzedawców zewnętrznych nie podlegają zwrotowi, wymianie, refundacji…» — это отказ потребителю в законных правах, недопустимая (abuzywna) оговорка.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wymiana Towaru kupionego w Sklepie internetowym odbywa się przez zwrot Towaru i złożenie nowego zamówienia. Towary kupione w butiku przy ul. Mokotowskiej 51/53 w Warszawie nie podlegają zwrotowi ani wymianie bez podania przyczyny; niezależnie od miejsca zakupu przysługuje reklamacja z tytułu niezgodności Towaru z umową.
+```
+
+
+*UA:*
+
+```
+Обмін Товару, придбаного в інтернет-магазині, здійснюється шляхом повернення Товару та оформлення нового замовлення. Товари, придбані в бутику на вул. Mokotowska 51/53 у Варшаві, не підлягають поверненню чи обміну без зазначення причини; незалежно від місця покупки можна подати претензію щодо невідповідності Товару Договору.
+```
+
+
+*EN:*
+
+```
+Goods bought in the online shop are exchanged by returning them and placing a new order. Goods bought at the boutique at ul. Mokotowska 51/53 in Warsaw cannot be returned or exchanged without giving a reason; whatever the place of purchase, you may make a complaint about a lack of conformity of the Goods with the contract.
+```
+
+
+**Куда вписать / примечание:** Удалить все упоминания «Bloom Outlet», «domy towarowe», «noty kredytowej» и «Ogólnych Warunków Sprzedaży» — последнего документа на сайте нет, ссылка ведёт в никуда. Формулировка про бутик уже согласована с §8.9 Регламента и /claims-and-complaints.
+
+
+*Правки носителей: UA: у суцільному тексті вживаємо «вул.»*
+
+
+### 05-14 · /warranty-and-returns/polityka-zwrotow, /claims-and-complaints · Юр. требование [все]
+
+**Где:** «Polityka zwrotów», предпоследний абзац — против «Polityka zworotow i reklamacji», п. 1.4
+
+
+**Сейчас:**
+
+> Po spełnieniu wszystkich warunków Bloom zwróci wszystkie zapłacone kwoty w ciągu 14 dni od dnia skorzystania z prawa odstąpienia, zgodnie z artykułem L.221-24 francuskiego Kodeksu Konsumenta. Zwrot nastąpi przy użyciu tej samej metody płatności.
+
+
+**Почему проблема:** Два разных описания одного срока: /warranty-and-returns считает 14 дней «od dnia skorzystania z prawa odstąpienia» и «после выполнения всех условий», /claims-and-complaints — 14 дней от получения заявления с правом придержать выплату до получения товара. Кроме того, страница возвратов молчит о возврате стоимости самой дешёвой доставки (это обязанность продавца) и обусловливает возврат денег «выполнением всех условий», чего закон не допускает.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zwrotu płatności — w tym kosztu najtańszego oferowanego przez nas sposobu dostawy — dokonujemy w terminie 14 dni od dnia otrzymania oświadczenia o odstąpieniu, tą samą metodą płatności, którą Klient zapłacił za zamówienie. Możemy wstrzymać zwrot do chwili otrzymania Towaru albo dowodu jego odesłania — w zależności od tego, co nastąpi wcześniej.
+```
+
+
+*UA:*
+
+```
+Кошти — включно з вартістю найдешевшого запропонованого нами способу доставки — ми повертаємо протягом 14 днів з дня отримання заяви про відмову, тим самим способом оплати, яким Клієнт оплатив замовлення. Ми можемо призупинити повернення до моменту отримання Товару або доказу його відправлення — залежно від того, що станеться раніше.
+```
+
+
+*EN:*
+
+```
+We refund your payment — including the cost of the least expensive delivery option we offer — within 14 days of receiving your withdrawal notice, using the same payment method you used for the order. We may withhold the refund until we receive the Goods or proof that they have been sent back, whichever happens first.
+```
+
+
+**Куда вписать / примечание:** Формулировка уже совпадает с §8.4 Регламента; страницу /warranty-and-returns/polityka-zwrotow достаточно синхронизировать с ней.
+
+
+### 07-10 · /zgody-klauzule-i-regulamin-newslettera · Заглушка [PL]
+
+**Где:** Разделы 2 «Checkboxy zgód» и 4 «Treść baneru cookies (Cookiebot)»
+
+
+**Сейчас:**
+
+> Zgody muszą być dobrowolne, NIE odznaczone domyślnie i oddzielone od akceptacji Regulaminu.
+
+
+**Почему проблема:** Публичная страница опубликована в виде внутренней постановки задачи разработчику, а не документа для покупателя: инструкции самим себе («Zgody muszą być dobrowolne, NIE odznaczone domyślnie…»), технические пометки в квадратных скобках «[pole wymagane]» / «[opcjonalne]», названия подрядчика в заголовке «4. Treść baneru cookies (Cookiebot)» и описание кнопок баннера, который пользователь и так видит. Смешение служебных заметок с юридическим текстом обесценивает документ и точно бросится в глаза при верификации Przelewy24.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zgody i regulamin newslettera
+
+Jakie zgody zbieramy
+Przy zakupie i rejestracji konta prosimy o akceptację Regulaminu i Polityki prywatności — bez niej nie możemy zrealizować zamówienia. Zgoda na newsletter i zgoda na wiadomości marketingowe są dobrowolne, zbieramy je osobno i możesz je wycofać w każdej chwili.
+
+Treść zgód
+– Akceptuję Regulamin i Politykę prywatności.
+– Chcę otrzymywać newsletter z informacjami o nowościach i promocjach La Petite Bloom na podany adres e-mail.
+– Wyrażam zgodę na otrzymywanie informacji marketingowych drogą elektroniczną zgodnie z Polityką prywatności.
+
+Pliki cookies
+Zakresem plików cookies zarządzasz w oknie zgody, które pojawia się przy pierwszej wizycie; ustawienia możesz zmienić w każdej chwili. Szczegóły opisaliśmy w Polityce cookies.
+```
+
+
+*UA:*
+
+```
+Згоди та правила розсилки
+
+Які згоди ми збираємо
+Під час покупки та реєстрації облікового запису ми просимо прийняти Правила інтернет-магазину та Політику конфіденційності — без цього ми не зможемо виконати замовлення. Згода на розсилку та згода на маркетингові повідомлення є добровільними, ми збираємо їх окремо, і ви можете відкликати їх будь-коли.
+
+Тексти згод
+– Я приймаю Правила інтернет-магазину та Політику конфіденційності.
+– Я хочу отримувати розсилку з новинками та акціями La Petite Bloom на вказану адресу електронної пошти.
+– Я надаю згоду на отримання маркетингових повідомлень електронною поштою відповідно до Політики конфіденційності.
+
+Файли cookie
+Обсяг файлів cookie ви обираєте у вікні згоди, яке з’являється під час першого візиту; налаштування можна змінити будь-коли. Подробиці — у Політиці щодо файлів cookie.
+```
+
+
+*EN:*
+
+```
+Consents and newsletter terms
+
+Which consents we collect
+When you place an order or create an account we ask you to accept our Terms and Conditions and Privacy Policy — without that we cannot process the order. Newsletter consent and marketing consent are optional, we collect them separately, and you can withdraw them at any time.
+
+Consent wording
+– I accept the Terms and Conditions and the Privacy Policy.
+– I would like to receive the La Petite Bloom newsletter with news and offers at the email address provided.
+– I consent to receiving marketing messages by email in accordance with the Privacy Policy.
+
+Cookies
+You choose which cookies we may use in the consent window shown on your first visit, and you can change those settings at any time. The details are set out in our Cookie policy.
+```
+
+
+**Куда вписать / примечание:** Служебные пометки «[pole wymagane]», «[opcjonalne]», фразу про «NIE odznaczone domyślnie» и упоминание Cookiebot убрать со страницы — это требования к реализации, их место в тикете, а не в публичном документе.
+
+
+*Правки носителей: UA: різнобій «файли cookie / файли cookies» — уніфіковано на «cookie» (як у футері, 02-08); EN: "Cookies Policy" clashes with the page name "Cookie policy"; "e-mail" normalised to "email".*
+
+
+### 07-11 · /zgody-klauzule-i-regulamin-newslettera · Юр. требование [PL]
+
+**Где:** Раздел 2 «Checkboxy zgód» — против фактической реализации формы подписки
+
+
+**Сейчас:**
+
+> Wyrażam zgodę na otrzymywanie informacji o ofertach, promocjach i możliwościach od La Petite Bloom w formie newslettera. Zapisując się do newslettera, akceptujesz regulamin i politykę prywatności.
+
+
+**Почему проблема:** Страница сама формулирует правило: согласия должны быть добровольными и отделёнными от принятия Регламента. Реальная форма подписки его нарушает — там один обязательный чекбокс (input type=checkbox name=consent required), в котором маркетинговое согласие склеено с принятием Регламента и Политики приватности. Согласие, которое нельзя дать отдельно, по GDPR не считается свободно выраженным, а документ, противоречащий собственному сайту, — прямой риск на проверке. Нужно либо разделить чекбоксы, либо переписать текст согласия так, чтобы принятие Регламента подавалось как информирование, а не как условие.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wyrażam zgodę na otrzymywanie newslettera La Petite Bloom z informacjami o nowościach i promocjach na podany adres e-mail. Zgodę możesz wycofać w każdej chwili. Zasady opisaliśmy w Polityce prywatności.
+```
+
+
+*UA:*
+
+```
+Даю згоду на отримання розсилки La Petite Bloom з новинками та акціями на вказану адресу електронної пошти. Згоду можна відкликати будь-коли. Правила описані в Політиці конфіденційності.
+```
+
+
+*EN:*
+
+```
+I agree to receive the La Petite Bloom newsletter with news and offers at the email address provided. You can withdraw your consent at any time. The details are set out in our Privacy Policy.
+```
+
+
+**Куда вписать / примечание:** Форма подписки в подвале (POST /subscribe/sales, поле consent) — оставить один обязательный чекбокс только для согласия на рассылку, а ссылки на Regulamin и Politykę prywatności вынести отдельной строкой под чекбоксом как информационную. Пересекается со срезом 02 по вёрстке подвала — фиксирую с юридической стороны.
+
+
+*Правки носителей: UA: «надаю згоду отримувати» — некоректне керування; уніфіковано з формулюванням згоди в 01-20 і 02-31; EN: "e-mail" normalised to "email" for consistency with the checkout and account copy.*
+
+
+---
+
+## Средне (134)
+
+
+### 12-07 · (global JS) window.FenixTranslations.product.sku / search.sku · Кривой перевод [PL]
+
+**Где:** Etykieta numeru katalogowego produktu w koszyku i w wynikach wyszukiwania
+
+
+**Сейчас:**
+
+> product.sku: " Artykuł" (z wiodącą spacją) | search.sku: "Artykuł"
+
+
+**Почему проблема:** «Artykuł» по-польски — это статья или товар как категория, а не номер артикула; это калька с украинского «артикул». В польской торговле поле называется «Nr katalogowy», «Indeks» или «Symbol». Плюс в product.sku строка начинается с пробела — в вёрстке получится двойной пробел перед номером.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nr katalogowy
+```
+
+
+*UA:*
+
+```
+Артикул
+```
+
+
+*EN:*
+
+```
+Item code
+```
+
+
+**Куда вписать / примечание:** Убрать ведущий пробел в ключе product.sku и привести оба ключа (product.sku, search.sku) к одному значению.
+
+
+*Правки носителей: EN: "SKU" is trade jargon for a shopper-facing label and clashes with "Item code" used on the product page (11-18).*
+
+
+### 12-04 · (global JS) window.FenixTranslations.validate — wersja angielska · Кривой перевод [EN]
+
+**Где:** Walidacja formularza zamówienia — komunikaty EN
+
+
+**Сейчас:**
+
+> "Enter phone in correct format" | "Number too short" | "Number too long" | "Please enter a valid E-mail address"
+
+
+**Почему проблема:** Английские строки собраны машинно: пропущены артикли («Enter phone in correct format»), «Number too short/long» не говорит, о каком номере речь (в чекауте рядом есть и номер дома, и индекс), «E-mail» с заглавной M посреди предложения. Для англоязычного покупателя это читается как черновик, а не как интерфейс премиального магазина.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wpisz numer telefonu w prawidłowym formacie / Numer telefonu jest za krótki / Numer telefonu jest za długi / Wpisz prawidłowy adres e-mail
+```
+
+
+*UA:*
+
+```
+Введіть номер телефону у правильному форматі / Номер телефону закороткий / Номер телефону задовгий / Введіть коректну адресу електронної пошти
+```
+
+
+*EN:*
+
+```
+Enter your phone number in the correct format / The phone number is too short / The phone number is too long / Enter a valid email address
+```
+
+
+**Куда вписать / примечание:** Ключи validate.phoneFormat, tooShort, tooLong, email.
+
+
+*Правки носителей: EN: Article inconsistent with the other phone messages; "your phone number" matches 12-03.*
+
+
+### 12-05 · (global JS) window.FenixTranslations.validate.uaPhoneFormat / invalidNumber / invalidNumber2 · Кривой перевод [pl,ua,en]
+
+**Где:** Walidacja telefonu — zduplikowane i sprzeczne komunikaty
+
+
+**Сейчас:**
+
+> uaPhoneFormat pl: "Wprowadź poprawny numer telefonu" — obok phoneFormat pl: "Wprowadź numer telefonu w prawidłowym formacie"; invalidNumber i invalidNumber2 mają identyczną treść: "Nieprawidłowy numer telefonu"
+
+
+**Почему проблема:** Четыре ключа об одной ошибке с тремя разными формулировками: покупатель на одном и том же поле получает то «Wprowadź poprawny numer telefonu», то «Nieprawidłowy numer telefonu». Отдельно: ключ называется uaPhoneFormat — украинское правило валидации в польском магазине, который декларирует «Wysyłka na cały świat»; проверка не должна быть привязана к одной стране.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wpisz numer telefonu wraz z numerem kierunkowym kraju, np. +48 512 345 678
+```
+
+
+*UA:*
+
+```
+Введіть номер телефону разом з кодом країни, наприклад +48 512 345 678
+```
+
+
+*EN:*
+
+```
+Enter your phone number including the country code, for example +48 512 345 678
+```
+
+
+**Куда вписать / примечание:** Свести uaPhoneFormat / phoneFormat / invalidNumber / invalidNumber2 к одному тексту, валидацию вести по коду страны из intl-tel (библиотека уже подключена на /checkout).
+
+
+### 02-04 · * · Кривой перевод [pl,en]
+
+**Где:** Мега-меню и бургер-меню, первый пункт (ссылка на /special-offers)
+
+
+**Сейчас:**
+
+> Prezenty / Gifts
+
+
+**Почему проблема:** Пункт назван «Prezenty»/«Gifts», но ведёт на страницу с h1 «Akcje» и текстом «Obecnie nie ma żadnych aktywnych promocji». При этом внутри раздела «Dla domu» есть отдельный пункт «Prezenty» → /prezenty. Два разных пункта с одинаковым названием ведут на разные страницы — классическая ловушка навигации.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Promocje
+```
+
+
+*UA:*
+
+```
+Акції
+```
+
+
+*EN:*
+
+```
+Promotions
+```
+
+
+**Куда вписать / примечание:** Та же правка, что и 02-03 — приводится в порядок один пункт меню сразу в трёх локалях.
+
+
+### 02-07 · * · Опечатка [PL]
+
+**Где:** Футер, колонка «Klientowi» + бургер-меню (ссылка на /zgody-klauzule-i-regulamin-newslettera)
+
+
+**Сейчас:**
+
+> Zgody, klauzule i regulamin  newslettera
+
+
+**Почему проблема:** Двойной пробел перед «newslettera» — видно в разметке (<span class="text">Zgody, klauzule i regulamin  newslettera</span>) и при копировании текста. Повторяется в футере и в бургер-меню, то есть дважды на каждой странице.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zgody, klauzule i regulamin newslettera
+```
+
+
+*UA:*
+
+```
+Згоди, застереження та правила розсилки
+```
+
+
+*EN:*
+
+```
+Consents, clauses and newsletter terms
+```
+
+
+**Куда вписать / примечание:** Контент → Страницы → /zgody-klauzule-i-regulamin-newslettera → название. Проверить, что двойной пробел не остался в самом заголовке страницы.
+
+
+*Правки носителей: UA: полонізм «регламент» (regulamin) — уніфіковано на «правила розсилки»*
+
+
+### 02-11 · * · Нет перевода [pl,ua,en]
+
+**Где:** Кнопка «наверх» в правом нижнем углу (btn-scroll-top)
+
+
+**Сейчас:**
+
+> <button class="btn-scroll-top" type="button" aria-label="scroll up">
+
+
+**Почему проблема:** Единственное текстовое описание кнопки не переведено ни в одной локали — везде английская служебная строка в нижнем регистре. Кнопка есть на каждой странице; для скринридера это единственный способ понять, что она делает.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wróć na górę strony
+```
+
+
+*UA:*
+
+```
+Нагору
+```
+
+
+*EN:*
+
+```
+Back to top
+```
+
+
+**Куда вписать / примечание:** Шаблон, aria-label кнопки btn-scroll-top — вывести через словарь локали.
+
+
+*Правки носителей: PL: Ten sam przycisk (btn-scroll-top) opisuje 14-08 jako „Wróć na górę strony”; etykieta dostępności powinna nazywać czynność, nie kierunek. Ujednolicenie.*
+
+
+### 02-15 · * · Кривой перевод [EN]
+
+**Где:** Футер, заголовок первой колонки
+
+
+**Сейчас:**
+
+> Catalog
+
+
+**Почему проблема:** Во-первых, американское написание (британское — «Catalogue»). Во-вторых, колонка не каталог, а три ссылки-рубрики (Kids, Women, Brands), и в PL/UA она называется «Kategorie»/«Категорії». Заголовок должен совпадать по смыслу во всех трёх локалях.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kategorie
+```
+
+
+*UA:*
+
+```
+Категорії
+```
+
+
+*EN:*
+
+```
+Categories
+```
+
+
+**Куда вписать / примечание:** Настройки → Футер → заголовок колонки, локаль EN.
+
+
+### 02-16 · * · Кривой перевод [pl,ua]
+
+**Где:** Футер, заголовок второй колонки (список юр. страниц и контакта)
+
+
+**Сейчас:**
+
+> Klientowi / Клієнту
+
+
+**Почему проблема:** «Klientowi» — калька с русского «Клиенту», в польском e-commerce так колонку не называют; «Клієнту» в единственном числе звучит так же неестественно. В EN та же колонка уже названа «Information» — три локали дают три разных смысла.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Informacje
+```
+
+
+*UA:*
+
+```
+Інформація
+```
+
+
+*EN:*
+
+```
+Information
+```
+
+
+**Куда вписать / примечание:** Настройки → Футер → заголовок второй колонки, отдельно для PL и UA.
+
+
+### 02-19 · * · Опечатка [PL]
+
+**Где:** Мега-меню и бургер-меню, раздел «Dla domu» → «Naczynia i kuchnia»
+
+
+**Сейчас:**
+
+> Butelki i kubki niekapk
+
+
+**Почему проблема:** Слово обрезано: «niekapk» вместо «niekapki». UA и EN переведены нормально («Пляшечки та поїльники», «Bottles & sippy cups»), то есть ошибка только в языке-источнике — и именно её видит польский покупатель на каждой странице.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Butelki i kubki niekapki
+```
+
+
+*UA:*
+
+```
+Пляшечки та поїльники
+```
+
+
+*EN:*
+
+```
+Bottles & sippy cups
+```
+
+
+**Куда вписать / примечание:** Каталог → Категории → /butelki-i-kubki-niekapk → название, локаль PL. Слаг тоже обрезан, но менять его после запуска не нужно.
+
+
+### 02-20 · * · Опечатка [PL]
+
+**Где:** Мега-меню и бургер-меню, раздел «Dzieci» → «Niemowlęta 0-2» (ссылка на /kurtki-iokrycia-wierzchnie)
+
+
+**Сейчас:**
+
+> Kurtki i okrycia
+
+
+**Почему проблема:** Название обрезано на середине устойчивого сочетания: по-польски «okrycia wierzchnie», просто «okrycia» повисает в воздухе. Слаг категории (/kurtki-iokrycia-wierzchnie) подтверждает исходный вариант; UA и EN переведены полно («Куртки та верхній одяг», «Jackets & outerwear»). В самом слаге к тому же слипло «iokrycia».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kurtki i okrycia wierzchnie
+```
+
+
+*UA:*
+
+```
+Куртки та верхній одяг
+```
+
+
+*EN:*
+
+```
+Jackets & outerwear
+```
+
+
+**Куда вписать / примечание:** Каталог → Категории → /kurtki-iokrycia-wierzchnie → название, локаль PL.
+
+
+### 02-21 · * · Кривой перевод [UA]
+
+**Где:** Мега-меню и бургер-меню, раздел «Діти» → «Аксесуари» (ссылка на /ua/rozwoj-i-kreatywnosc)
+
+
+**Сейчас:**
+
+> Розвивашки та творчість
+
+
+**Почему проблема:** «Розвивашки» — разговорное слово из мамских форумов, для премиального бренда звучит фамильярно и выбивается из ряда соседних пунктов («Догляд та косметика», «Аксесуари»). В PL и EN нейтрально: «Rozwój i kreatywność», «Development and creativity».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Rozwój i kreatywność
+```
+
+
+*UA:*
+
+```
+Розвиток і творчість
+```
+
+
+*EN:*
+
+```
+Development and creativity
+```
+
+
+**Куда вписать / примечание:** Каталог → Категории → /rozwoj-i-kreatywnosc → название, локаль UA.
+
+
+### 02-22 · * · Кривой перевод [UA]
+
+**Где:** Мега-меню и бургер-меню, раздел «Діти» → «Малюки 0-2» (ссылка на /ua/czapki-rekawiczki)
+
+
+**Сейчас:**
+
+> Шапочки, царапки, рукавички
+
+
+**Почему проблема:** «Царапки» — русизм (укр. «дряпки», «рукавички-нецарапки»), и в украинской версии в пункте три позиции против двух в PL («Czapki, rękawiczki») и EN («Hats & mittens») — состав категории разъезжается между локалями. Плюс перечисление через запятую там, где весь остальной список набран через «та».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Czapki i rękawiczki
+```
+
+
+*UA:*
+
+```
+Шапочки та рукавички
+```
+
+
+*EN:*
+
+```
+Hats & mittens
+```
+
+
+**Куда вписать / примечание:** Каталог → Категории → /czapki-rekawiczki → название, локаль UA (и запятую в PL заменить на «i» ради единообразия со списком).
+
+
+### 02-23 · * · Кривой перевод [UA]
+
+**Где:** Мега-меню и бургер-меню, разделы «Малюки 0-2» и «Дівчата 2-12» (ссылки на /ua/spodnie-i-legginsy и /ua/spodnie-i-legginsy-2-12)
+
+
+**Сейчас:**
+
+> Штани та легінси … Штани та лосини
+
+
+**Почему проблема:** Один и тот же товар в двух возрастных разделах назван по-разному: «легінси» у малышей и «лосини» у девочек. В PL обе категории называются одинаково («Spodenki i legginsy» / «Spodnie i legginsy»), в EN тоже («Trousers & leggings»). «Лосини» — ещё и разговорное слово; нормативно «легінси».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Spodnie i legginsy
+```
+
+
+*UA:*
+
+```
+Штани та легінси
+```
+
+
+*EN:*
+
+```
+Trousers & leggings
+```
+
+
+**Куда вписать / примечание:** Каталог → Категории → /spodnie-i-legginsy-2-12 → название, локаль UA. В PL стоит выровнять «Spodenki i legginsy» (0-2) и «Spodnie i legginsy» (2-12) — сейчас различие выглядит случайным.
+
+
+### 02-24 · * · Кривой перевод [UA]
+
+**Где:** Мега-меню и бургер-меню, эллиптичные названия категорий (/stroje-kapielowe, /posciel, /kosze-i-pudelka)
+
+
+**Сейчас:**
+
+> Купальне … Постільне … Кошики та бокси
+
+
+**Почему проблема:** Прилагательные без существительного: «Купальне», «Постільне» — по-украински так категорию не называют, нужно «Купальний одяг», «Постільна білизна» (в PL и EN всё полно: «Stroje kąpielowe», «Pościel», «Swimwear», «Bedding»). «Бокси» — англицизм, рядом в том же списке уже стоит нормальное «Кошики»; в PL «Kosze i pudełka», в EN «Baskets & boxes».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Stroje kąpielowe / Pościel / Kosze i pudełka
+```
+
+
+*UA:*
+
+```
+Купальний одяг / Постільна білизна / Кошики та коробки
+```
+
+
+*EN:*
+
+```
+Swimwear / Bedding / Baskets & boxes
+```
+
+
+**Куда вписать / примечание:** Каталог → Категории, локаль UA: /stroje-kapielowe, /posciel, /kosze-i-pudelka. Заодно в UA-меню «Краса - волосся» набрано дефисом, тогда как в PL и EN стоит длинное тире («Uroda — Włosy», «Beauty — Hair») — привести к «Краса — волосся».
+
+
+### 02-25 · * · Опечатка [UA]
+
+**Где:** Футер, колонка «Клієнту» + бургер-меню (ссылка на /ua/terms-of-use)
+
+
+**Сейчас:**
+
+> Правила інтернет магазину
+
+
+**Почему проблема:** Пропущен дефис: по-украински «інтернет-магазин» пишется только через дефис. Это название главного юридического документа магазина, выведенное в футере каждой страницы UA-версии.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Regulamin sklepu internetowego
+```
+
+
+*UA:*
+
+```
+Правила інтернет-магазину
+```
+
+
+*EN:*
+
+```
+Online shop terms and conditions
+```
+
+
+**Куда вписать / примечание:** Контент → Страницы → /terms-of-use → название, локаль UA.
+
+
+*Правки носителей: EN: "Store" is an Americanism and clashes with "online shop" used everywhere else.*
+
+
+### 02-27 · * · Опечатка [pl,ua,en]
+
+**Где:** Кнопка выбора языка и валюты в шапке (header__locale-btn) и её дубль в бургер-меню
+
+
+**Сейчас:**
+
+> polski / PLN … українська / PLN … English / PLN (в бургер-меню — с лишним пробелом в начале: <span class="burger-menu__currencies-link"> polski / PLN</span>)
+
+
+**Почему проблема:** Названия языков на кнопке написаны в трёх разных регистрах: «polski» и «українська» со строчной, «English» с прописной. При этом в самом попапе те же языки выведены как «Polski», «Українська», «English» — кнопка и попап противоречат друг другу. В бургер-меню строка ещё и начинается с лишнего пробела.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Polski / PLN
+```
+
+
+*UA:*
+
+```
+Українська / PLN
+```
+
+
+*EN:*
+
+```
+English / PLN
+```
+
+
+**Куда вписать / примечание:** Шаблон шапки и бургер-меню: брать подпись из того же словаря, что и попап, и убрать ведущий пробел в burger-menu__currencies-link. Там же: в бургер-меню эта строка выведена как <span>, а не как кнопка — по ней нельзя открыть попап, хотя она выглядит кликабельной.
+
+
+### 02-28 · * · Нет перевода [pl,ua,en]
+
+**Где:** Попап «Język i waluta» — заголовок и два выпадающих списка
+
+
+**Сейчас:**
+
+> <h2 class="popup__title">Język i waluta</h2> … <select name="locale" class="styler"> … <select name="currency" class="styler">
+
+
+**Почему проблема:** У обоих селектов нет ни <label>, ни aria-label — ни визуально, ни для скринридера не подписано, какой из них язык, а какой валюта. Пользователь ориентируется только по содержимому первой строки. Для сайта, у которого в футере висит «Deklaracja dostępności», это прямое противоречие заявленному. Плюс в EN заголовок набран в Title Case («Language & Currency»), тогда как PL и UA — обычным предложением.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Język / Waluta
+```
+
+
+*UA:*
+
+```
+Мова / Валюта
+```
+
+
+*EN:*
+
+```
+Language / Currency
+```
+
+
+**Куда вписать / примечание:** Шаблон попапа #popup-lang: добавить подписи к select[name=locale] и select[name=currency] (видимые label либо aria-label) и привести заголовок EN к «Language and currency».
+
+
+### 02-29 · * · Нет перевода [pl,ua,en]
+
+**Где:** Шапка, четыре кнопки действий (поиск, избранное, профиль, корзина)
+
+
+**Сейчас:**
+
+> <button class="header__btn header-search-btn js-search-btn" type="button" title="Szukaj..."> … title="Ulubione" … title="Zaloguj" … <div class="header__btn btn-cart" id="header-cart" onclick="FenixCheckout.updateAndOpenCart()" title="Koszyk">
+
+
+**Почему проблема:** Все четыре кнопки шапки — иконки без текста, и единственная подпись у них — атрибут title, который скринридер читает не всегда, а с клавиатуры и на тач-устройствах не показывается вовсе. Корзина к тому же сделана <div> с onclick: не кнопка, в таб-порядок не попадает, с клавиатуры её открыть нельзя. Это на каждой странице во всех трёх локалях. Отдельно: подпись поиска «Szukaj...» / «Пошук...» / «Search...» с многоточием — это плейсхолдер поля, а не название кнопки.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Szukaj / Ulubione / Zaloguj się / Koszyk
+```
+
+
+*UA:*
+
+```
+Пошук / Обране / Увійти / Кошик
+```
+
+
+*EN:*
+
+```
+Search / Favourites / Log in / Basket
+```
+
+
+**Куда вписать / примечание:** Шаблон header__actions: добавить aria-label каждой кнопке, корзину перевести с <div onclick> на <button type="button">, убрать многоточие из подписи поиска. Тексты — из словаря локали. См. также 02-13 по «Favorites» → «Favourites».
+
+
+*Правки носителей: EN: "Cart" is American and clashes with "basket" used throughout; "Sign in" clashes with the "Log in" page.*
+
+
+### 02-30 · * · Кривой перевод [pl,ua,en]
+
+**Где:** Футер, блок преимуществ над колонками (usp-bar), 4 пункта — текст и alt иконок
+
+
+**Сейчас:**
+
+> Wysyłka na cały świat / Ręczna robota & Fairtrade / Zwrot w ciągu 30 dni / Bezpieczna płatność — UA: Доставка по всьому світу / Ручна робота & Fairtrade / Повернення протягом 30 днів / Безпечна оплата — EN: Worldwide shipping / Handmade & Fairtrade / 30 days return / Safe payment
+
+
+**Почему проблема:** «Ręczna robota» в польском — разговорное, почти ироничное («robota» = работа в бытовом смысле); для премиального бренда нужно «Rękodzieło». Амперсанд внутри польской и украинской фразы — англицизм, в этих языках союз пишется словом. В EN «30 days return» грамматически неверно (нужно «30-day returns»), а «Safe payment» означает «безопасный платёж» как единичное событие — в e-commerce принято «Secure payments». Блок выводится на каждой странице; те же строки продублированы в alt иконок.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wysyłka na cały świat / Marki odpowiedzialne i fair trade / Zwrot w ciągu 30 dni / Bezpieczne płatności
+```
+
+
+*UA:*
+
+```
+Доставка по всьому світу / Ручна робота і Fairtrade / Повернення протягом 30 днів / Безпечні платежі
+```
+
+
+*EN:*
+
+```
+International delivery / Responsible brands and fair trade / 30-day returns / Secure payments
+```
+
+
+**Куда вписать / примечание:** Настройки → Блок преимуществ (utp_item 5–8) → текст и alt изображения, отдельно по локалям. Проверить, что «Zwrot w ciągu 30 dni» совпадает со сроком, записанным в polityce zwrotów — сейчас это единственное место, где срок обещан покупателю прямо в футере.
+
+
+*Правки носителей: PL: „Rękodzieło” jest niezgodne z faktami (sklep sprzedaje gotowe marki, nic nie wyrabia ręcznie), a „Fairtrade” wielką literą to nazwa certyfikatu — obietnica, której sklep nie potwierdza. Ujednolicone z 01-23.; EN: USP strip conflicted with 01-23, which replaces the two untranslated slogans; "delivery" is also the term used on the delivery pages.*
+
+
+### 02-33 · * · Опечатка [pl,ua,en]
+
+**Где:** Футер, контактный блок — часы работы (footer-contact-schedule)
+
+
+**Сейчас:**
+
+> Pn-Pt: od 9:00 do 18:00 / Sb-Nd: Zamknięte — UA: Пн-Пт: з 9-00 до 18-00 / Сб-Нд: вихідний — EN: Mon-Fri: 9:00-18:00 / Sat-Sun: Closed
+
+
+**Почему проблема:** Три локали набраны в трёх разных форматах: PL словами («od … do …»), UA через дефис в самом времени («9-00», «18-00» — так время не записывают, нужно «9:00»), EN диапазоном через дефис. Плюс расхождение с блоком бутика на главной и /contacts, где часы 10:00–19:00 включая субботу — покупатель видит в футере «Sb-Nd: Zamknięte», а выше на той же странице «Sob: 10:00 - 19:00».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Pn–Pt: 9:00–18:00 / Sb–Nd: nieczynne
+```
+
+
+*UA:*
+
+```
+Пн–Пт: 9:00–18:00 / Сб–Нд: вихідний
+```
+
+
+*EN:*
+
+```
+Mon–Fri: 9:00–18:00 / Sat–Sun: closed
+```
+
+
+**Куда вписать / примечание:** Настройки → Контакты → график работы. В футере это часы работы поддержки, в блоке «Sklep»/«Butik» — часы бутика; стоит подписать их по-разному (например «Obsługa klienta» в футере), иначе выглядит как противоречие. Диапазоны — через короткое тире, а не дефис.
+
+
+### 02-34 · * · Опечатка [pl,ua,en]
+
+**Где:** Футер, строка копирайта (div.copyright)
+
+
+**Сейчас:**
+
+> 2026. La petite bloom
+
+
+**Почему проблема:** Название бренда написано неверно: «La petite bloom» со строчными p и b, тогда как везде на сайте — включая alt логотипа в этом же футере (alt="La Petite Bloom") и текст «O nas» — стоит «La Petite Bloom». Нет знака ©, точка после года вместо него. Строка одинакова во всех трёх локалях и выводится на каждой странице — это последнее, что видит покупатель.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+© 2026 La Petite Bloom. Wszelkie prawa zastrzeżone.
+```
+
+
+*UA:*
+
+```
+© 2026 La Petite Bloom. Усі права захищено.
+```
+
+
+*EN:*
+
+```
+© 2026 La Petite Bloom. All rights reserved.
+```
+
+
+**Куда вписать / примечание:** Настройки → Футер → копирайт, по локалям. Год лучше подставлять автоматически, иначе в январе строка снова разъедется.
+
+
+### 14-02 · * · Кривой перевод [PL]
+
+**Где:** window.FenixTranslations → validate.minlength и validate.maxlength
+
+
+**Сейчас:**
+
+> "minlength": "Minimalna liczba znaków - 2", "maxlength": "Maksymalna liczba znaków - 50"
+
+
+**Почему проблема:** Числа 2 и 50 зашиты в строку намертво, без плейсхолдера. Сообщение показывается для всех полей независимо от их реальных ограничений: поле комментария с лимитом 500 знаков всё равно скажет «максимум 50». Плюс дефис вместо тире и лишние пробелы вокруг него. То же самое в UA и EN.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Minimalna liczba znaków: {min}
+```
+
+
+*UA:*
+
+```
+Мінімальна кількість символів: {min}
+```
+
+
+*EN:*
+
+```
+Minimum number of characters: {min}
+```
+
+
+**Куда вписать / примечание:** Аналогично для maxlength: PL «Maksymalna liczba znaków: {max}», UA «Максимальна кількість символів: {max}», EN «Maximum number of characters: {max}». Если движок не поддерживает подстановку, убрать цифру совсем: PL «Wpisana wartość jest za krótka» / «Wpisana wartość jest za długa», UA «Введене значення закоротке» / «Введене значення задовге», EN «The value entered is too short» / «The value entered is too long». Группа validate в языковых файлах.
+
+
+### 14-04 · * · Кривой перевод [UA]
+
+**Где:** window.FenixTranslations → search.empty_products и search.empty_categories (подсказка живого поиска в шапке)
+
+
+**Сейчас:**
+
+> "empty_products": "Товари не знайдені", "empty_categories": "Категорії не знайдені"
+
+
+**Почему проблема:** Калька с русской конструкции «товары не найдены». В украинском в безособовому реченні потрібна форма на -но з родовим відмінком: «Товарів не знайдено», «Категорій не знайдено». Строка показывается в выпадающей подсказке поиска, то есть при первом же вводе символов.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nie znaleziono produktów / Nie znaleziono kategorii
+```
+
+
+*UA:*
+
+```
+Товарів не знайдено / Категорій не знайдено
+```
+
+
+*EN:*
+
+```
+No products found / No categories found
+```
+
+
+**Куда вписать / примечание:** Группа search в языковых файлах. PL и EN значения корректны.
+
+
+### 14-05 · * · Кривой перевод [UA]
+
+**Где:** window.FenixTranslations → validate.phoneFormat (валидация телефона во всех формах)
+
+
+**Сейчас:**
+
+> "phoneFormat": "Введіть телефон у вірному форматі"
+
+
+**Почему проблема:** «Вірний» українською означає «відданий», а не «правильний» — це поширений русизм. Правильно: «у правильному форматі». Сообщение видит каждый украиноязычный покупатель, ошибившийся в телефоне при оформлении заказа.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wpisz numer telefonu w prawidłowym formacie
+```
+
+
+*UA:*
+
+```
+Введіть номер телефону у правильному форматі
+```
+
+
+*EN:*
+
+```
+Enter your phone number in the correct format
+```
+
+
+**Куда вписать / примечание:** Там же почистить мусор в группе validate: ключ uaPhoneFormat — украинский валидатор номера в польском магазине, его значение во всех трёх локалях дословно совпадает с phoneFormat; ключ invalidNumber2 — полный дубль invalidNumber (PL «Nieprawidłowy numer telefonu», UA «Недійсний номер телефону», EN «Invalid phone number»). Оба ключа либо удалить, либо задать им разный смысл.
+
+
+*Правки носителей: PL: Jak w 13-19 — ujednolicenie czasownika w komunikatach walidacji („Wpisz”, nie „Wprowadź”).; UA: порушено милозвучність; в 12-04 і 13-19 — «у правильному форматі»; EN: Article inconsistent with the other phone-format messages.*
+
+
+### 14-06 · * · Кривой перевод [PL]
+
+**Где:** window.FenixTranslations → search.sku и product.sku (подпись артикула в поиске и на карточке товара)
+
+
+**Сейчас:**
+
+> "search": { "sku": "Artykuł" }, "product": { "sku": " Artykuł" }
+
+
+**Почему проблема:** Два дефекта сразу. Первый: в product.sku во всех трёх локалях значение начинается с пробела (" Artykuł", " Артикул", " SKU") — на карточке товара подпись отбита лишним пробелом. Второй: польское «Artykuł» в значении «код товара» — калька с русского «артикул»; по-польски artykuł это статья/товар, а код обозначают «Nr katalogowy», «Indeks» или «Kod produktu». В UA «Артикул» и в EN «SKU» корректны.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nr katalogowy
+```
+
+
+*UA:*
+
+```
+Артикул
+```
+
+
+*EN:*
+
+```
+Item code
+```
+
+
+**Куда вписать / примечание:** Убрать ведущий пробел в product.sku во всех трёх локалях — отступ задаётся стилями, а не пробелом в строке перевода.
+
+
+*Правки носителей: EN: "SKU" is trade jargon; aligned with "Item code" used on the product page.*
+
+
+### 14-08 · * · Нет перевода [PL]
+
+**Где:** Кнопка «наверх» в правом нижнем углу — на всех 54 страницах каждой локали
+
+
+**Сейчас:**
+
+> <button class="btn-scroll-top" type="button" aria-label="scroll up">
+
+
+**Почему проблема:** aria-label захардкожен по-английски и одинаков во всех трёх локалях. В польской и украинской версии скринридер объявляет кнопку по-английски. Плюс сама формулировка не по гайдлайнам доступности: подпись должна называть действие («Wróć na górę strony»), а не направление скролла.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wróć na górę strony
+```
+
+
+*UA:*
+
+```
+Повернутися вгору сторінки
+```
+
+
+*EN:*
+
+```
+Back to top
+```
+
+
+**Куда вписать / примечание:** Завести ключ ui.scroll_top в FenixTranslations и подставлять его в шаблон btn-scroll-top.
+
+
+*Правки носителей: EN: Conflicted with 02-11 for the same button; "Back to top" is the standard label.*
+
+
+### 14-17 · * · Нет перевода [PL]
+
+**Где:** <head> — Open Graph и мета-теги, все 54 страницы каждой локали
+
+
+**Сейчас:**
+
+> <meta property="og:title" content="O nas"> <meta property="og:description" content="O nas"> <meta property="og:image" content="https://lapetitebloom.com/storage/settings/5/image/logo.svg">
+
+
+**Почему проблема:** Три системных дыры в мета-разметке, одинаковые во всех локалях. Первое: нет ни og:locale, ни og:locale:alternate, ни og:type, ни og:site_name — при шеринге в соцсетях язык страницы не объявлен, и все три языковые версии выглядят одинаково безлико. Второе: og:image и twitter:image указывают на логотип в формате SVG, а Facebook, LinkedIn и Twitter SVG не поддерживают — превью при шеринге будет пустым на всём сайте. Третье: meta description дословно повторяет заголовок страницы (у 96 снимков из 162) либо пуста (у 45), например description="O nas", description="Główna", description="Home" — это не описание, а название пункта меню.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+La Petite Bloom — butik z ubrankami, obuwiem i zabawkami dla dzieci. Starannie wybrane europejskie marki, Warszawa i wysyłka na cały świat.
+```
+
+
+*UA:*
+
+```
+La Petite Bloom — бутик дитячого одягу, взуття та іграшок. Ретельно дібрані європейські бренди, Варшава і доставка по всьому світу.
+```
+
+
+*EN:*
+
+```
+La Petite Bloom — a boutique for children’s clothing, footwear and toys. Carefully chosen European brands, based in Warsaw, shipping worldwide.
+```
+
+
+**Куда вписать / примечание:** Что добавить в <head> на каждой странице: og:type (website для статических, product для карточек товара), og:site_name="La Petite Bloom", og:locale = pl_PL / uk_UA / en_GB по локали, og:locale:alternate для двух остальных. og:image заменить на растровое изображение 1200×630 px в PNG или JPG. Meta description писать отдельно для каждой страницы — приведённые тексты подходят для главной, остальные страницы надо расписать поштучно. ХОРОШАЯ НОВОСТЬ по hreflang: сейчас он ЕСТЬ и настроен корректно — на всех проверенных страницах во всех трёх локалях присутствует полный набор из четырёх ссылок (x-default → польская версия, pl, uk, en), каждая указывает на свой перевод именно этой страницы, а не на главную; коды языков правильные (uk, а не ua). Canonical тоже есть и указывает на собственный URL в своей локали. Атрибут <html lang> корректен на всех 162 снимках: pl / uk / en. Единственная мелочь: hreflang-блок и на странице 404 тоже выводится, ссылаясь на несуществующие URL — его там надо отключить.
+
+
+*Правки носителей: EN: "a boutique of children’s clothing" is the wrong preposition; straight apostrophe.*
+
+
+### 14-20 · * · Кривой перевод [EN]
+
+**Где:** Форматы чисел, цен и дат — сквозной дефект во всех трёх локалях
+
+
+**Сейчас:**
+
+> Цена: «403 zł» (одинаково в pl, ua, en). Значения фильтра роста: «69.5», «69.5-72.5» (одинаково в pl, ua, en). Дата в юридических документах: «publication date 24.06.2026» (одинаково в pl, ua, en). Доставка в EN: «- InPost 24/7 parcel locker—13,99 zł».
+
+
+**Почему проблема:** Форматирование вообще не зависит от локали — движок печатает одну и ту же строку всем. Конкретно: (1) десятичный разделитель перепутан ровно наоборот — в значениях фильтров стоит ТОЧКА («69.5») там, где польскому и украинскому нужна ЗАПЯТАЯ («69,5»), а в английских ценах на /en/delivery-and-payment стоит ЗАПЯТАЯ («13,99 zł») там, где английскому нужна точка («13.99»); (2) дата везде в формате 24.06.2026 — это польско-украинская запись, для английской версии она неоднозначна и должна быть «24 June 2026»; (3) суффикс валюты «zł» (259 вхождений) выводится и в английской версии, где ожидается «PLN 403.00» или хотя бы «403 zł» с явным пояснением, при этом заголовок фильтра в EN уже говорит «Price, PLN» — то есть внутри одной страницы валюта названа двумя способами; (4) цены печатаются без грошей вообще — «403 zł» вместо «403,00 zł», что для магазина, готовящегося к верификации в Przelewy24, выглядит как незаконченная витрина.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+403,00 zł · 69,5 cm · 24 czerwca 2026
+```
+
+
+*UA:*
+
+```
+403,00 zł · 69,5 см · 24 червня 2026
+```
+
+
+*EN:*
+
+```
+403.00 zł · 69.5 cm · 24 June 2026
+```
+
+
+**Куда вписать / примечание:** Техническая правка на уровне движка: завести форматтер чисел и дат, привязанный к локали. PL и UA — разделитель дробной части запятая, разделитель тысяч неразрывный пробел, дата ДД.ММ.РРРР или словом; EN — разделитель дробной части точка, разделитель тысяч запятая, дата «24 June 2026» (британский формат). Валюту в EN писать как «PLN 403.00», в PL и UA — «403,00 zł». Цены всегда с двумя знаками после запятой. Сейчас все эти значения формируются как обычные строки без учёта локали, поэтому дефект проявляется одновременно на витрине, в фильтрах, на страницах доставки и во всех юридических документах.
+
+
+*Правки носителей: EN: Price format inconsistent with every price on the site, which is written "13.99 zł".*
+
+
+### 14-21 · * · Чужой язык [UA]
+
+**Где:** Селектор валюты в шапке (список валют), на всех страницах украинской версии
+
+
+**Сейчас:**
+
+> Гривня (UAH) / Доллар США (USD) / Евро (EUR) / Польський злотий (PLN)
+
+
+**Почему проблема:** Два названия валют из четырёх написаны по-русски: «Доллар США» (українською «Долар США», з однією «л») и «Евро» (українською «Євро», через Є). Русской локали на сайте нет, эти строки — остаток от исходного языка движка, попавший в украинский словарь. В английском списке та же группа сломана иначе: «Dollar USA» — неверный порядок слов, по-английски это «US Dollar».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Hrywna (UAH) / Dolar amerykański (USD) / Euro (EUR) / Złoty polski (PLN)
+```
+
+
+*UA:*
+
+```
+Гривня (UAH) / Долар США (USD) / Євро (EUR) / Польський злотий (PLN)
+```
+
+
+*EN:*
+
+```
+Hryvnia (UAH) / US dollar (USD) / Euro (EUR) / Polish złoty (PLN)
+```
+
+
+**Куда вписать / примечание:** Справочник валют в админке, поля названий для украинской и английской локали. В английском также стоит вернуть диакритику в «Złoty» — это имя собственное валюты. Отмечу пересечение: сам попап языка и валюты разбирает агент 02, здесь зафиксированы только неверные значения в справочнике валют как системный остаток чужого языка.
+
+
+*Правки носителей: EN: Currency names title-cased; English uses lower case, and 02-26 already sets the pattern.*
+
+
+### 01-08 · / · Заглушка [pl,ua,en]
+
+**Где:** Блок «Prezenty / Nowy Rok» — вторая и третья плитки
+
+
+**Сейчас:**
+
+> PL: «Sukienka dla dziewczynki» и «Sukienka dla dziewczynki»; UA: «Сукня для дівчинки» и «Сукня для дівчинки»; EN: «Baby girl dress» и «Girl dress»
+
+
+**Почему проблема:** Две из трёх плиток подарочного блока несут одну и ту же подпись — «Платье для девочки» дважды подряд. В английской версии их к тому же назвали по-разному («Baby girl dress» / «Girl dress»), хотя в PL и UA подписи идентичны. Похоже на незаполненный черновик: подписи-заглушки вместо названий подборок.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kafelek 2: «Świąteczne sukienki»; kafelek 3: «Prezenty dla najmłodszych»
+```
+
+
+*UA:*
+
+```
+Плитка 2: «Святкові сукні»; плитка 3: «Подарунки для найменших»
+```
+
+
+*EN:*
+
+```
+Tile 2: “Festive dresses”; tile 3: “Gifts for the little ones”
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Prezenty» → плитки 2 и 3: подпись + alt. [уточнить: какие именно подборки должны стоять на этих плитках]
+
+
+*Правки носителей: PL: „plitka” to rusycyzm (плитка); po polsku element kafelkowej siatki to „kafelek”.*
+
+
+### 01-12 · / · Кривой перевод [EN]
+
+**Где:** Главный слайдер, слайд 1 — бейдж над названием бренда
+
+
+**Сейчас:**
+
+> NOVELTY
+
+
+**Почему проблема:** «Novelty» по-английски означает «безделушка, забавная мелочь» — в фэшн-ритейле так товар не маркируют. Машинный перевод польского «NOWOŚĆ». Правильная метка на первом экране премиального магазина — «NEW IN» или «NEW».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+NOWOŚĆ
+```
+
+
+*UA:*
+
+```
+НОВИНКА
+```
+
+
+*EN:*
+
+```
+NEW IN
+```
+
+
+**Куда вписать / примечание:** Админка → Слайдеры → Главный слайдер, элемент 10 → надпись над заголовком, локаль en.
+
+
+### 01-15 · / · Битая ссылка [pl,ua,en]
+
+**Где:** <meta property="og:image"> главной
+
+
+**Сейчас:**
+
+> <meta property="og:image" content="https://lapetitebloom.com/storage/settings/5/image/logo.svg">
+
+
+**Почему проблема:** В качестве картинки для соцсетей отдаётся SVG-логотип. Facebook, WhatsApp, LinkedIn и Telegram формат SVG не показывают — при отправке ссылки превью будет пустым. Отсутствуют также og:type, og:site_name и og:locale.
+
+
+**Куда вписать / примечание:** Залить og:image в JPG или PNG 1200×630 (кадр из кампании AW 2026 или логотип на фирменном фоне), добавить og:type=website, og:site_name=La Petite Bloom и og:locale (pl_PL / uk_UA / en_GB) с og:locale:alternate.
+
+
+### 01-16 · / · Опечатка [PL]
+
+**Где:** Секция «O nas», третий абзац
+
+
+**Сейчас:**
+
+> Ubrania, akcesoria, artykuły do ​​pielęgnacji i elementy wystroju
+
+
+**Почему проблема:** Между «do» и «pielęgnacji» стоят два невидимых символа U+200B (zero-width space) — характерный след копирования из Google Translate. Визуально выглядит как двойной пробел, ломает поиск по странице и может ломать перенос строки. В UA и EN версиях того же абзаца этих символов нет.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ubrania, akcesoria, artykuły do pielęgnacji i elementy wystroju, które łączą pokolenia i stają się częścią rodzinnych historii.
+```
+
+
+*UA:*
+
+```
+Одяг, аксесуари, засоби догляду та предмети декору, які пов’язують покоління та стають частиною сімейних історій.
+```
+
+
+*EN:*
+
+```
+Clothing, accessories, care products and décor pieces that connect generations and become part of family stories.
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «O nas» → текст, локаль pl. Перебить абзац вручную, не вставкой из буфера. Заодно прогнать все длинные тексты сайта на U+200B.
+
+
+### 01-17 · / · Опечатка [EN]
+
+**Где:** Секция о бутике — часы работы, строка воскресенья
+
+
+**Сейчас:**
+
+> Sun: Сlosed
+
+
+**Почему проблема:** В слове «Closed» первая буква — кириллическая «С» (U+0421) вместо латинской «C». Гомоглиф: визуально не отличить, но поиск по странице слово не найдёт, а скринридер прочитает его как русскую букву. Там же сокращение четверга записано как «Thur» — принятое английское сокращение «Thu».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Pn: 10:00–19:00 / Wt: 10:00–19:00 / Śr: 10:00–19:00 / Czw: 10:00–19:00 / Pt: 10:00–19:00 / Sb: 10:00–19:00 / Nd: nieczynne
+```
+
+
+*UA:*
+
+```
+Нд: зачинено / Пн: 10:00–19:00 / Вт: 10:00–19:00 / Ср: 10:00–19:00 / Чт: 10:00–19:00 / Пт: 10:00–19:00 / Сб: 10:00–19:00
+```
+
+
+*EN:*
+
+```
+Sun: Closed / Mon: 10:00–19:00 / Tue: 10:00–19:00 / Wed: 10:00–19:00 / Thu: 10:00–19:00 / Fri: 10:00–19:00 / Sat: 10:00–19:00
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Sklep/Butik» → часы работы, локаль en. Перенабрать «Closed» латиницей. Заодно во всех локалях привести разделитель времени к тире без пробелов (сейчас «10:00 - 19:00»).
+
+
+*Правки носителей: PL: Niekonsekwentne skróty dni („Pon”, „Sob” obok „Nd”, „Wt”), tydzień zaczynał się od niedzieli, a „Zamknięte” to kalka — w polskich godzinach otwarcia pisze się „nieczynne”. Skróty ujednolicone z zapisem w stopce (02-33).*
+
+
+### 01-18 · / · Опечатка [UA]
+
+**Где:** Заголовок секции бестселлеров (<h2>)
+
+
+**Сейчас:**
+
+> Бестселлери
+
+
+**Почему проблема:** «Бестселлери» с двойной «л» — калька с русского написания; по-украински «бестселери». Причём на карточках товаров в этой же секции метка написана правильно — «Бестселер». Ошибка в одном из главных заголовков страницы.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Bestsellery
+```
+
+
+*UA:*
+
+```
+Бестселери
+```
+
+
+*EN:*
+
+```
+Bestsellers
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Bestsellery» → заголовок, локаль ua.
+
+
+### 01-19 · / · Кривой перевод [UA]
+
+**Где:** Кнопки «Смотреть все» во всех подборках главной
+
+
+**Сейчас:**
+
+> «Дивитися все» (мега-меню и блок «Подарунки»), «Дивитись все» (блоки «Новинки» и «Бестселлери»), «Дивитись всі» (блок новостей)
+
+
+**Почему проблема:** На одной странице три разных варианта одной и той же кнопки. В польской и английской версиях формулировка одна («Zobacz wszystko» / «See all»), в украинской — разнобой. Литературная форма — «Дивитися»; «Дивитись» — разговорный усечённый вариант.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zobacz wszystko
+```
+
+
+*UA:*
+
+```
+Дивитися все
+```
+
+
+*EN:*
+
+```
+See all
+```
+
+
+**Куда вписать / примечание:** Админка → переводы интерфейса: свести все три строки к одному значению. В блоке новостей корректно «Дивитися всі» (о записях) — если хочется точности, оставить именно эту форму только там.
+
+
+### 01-20 · / · Кривой перевод [pl,ua,en]
+
+**Где:** Блок подписки на новостную рассылку (section-newsletter, id="subscribe") — текст согласия
+
+
+**Сейчас:**
+
+> Wyrażam zgodę na otrzymywanie informacji o ofertach, promocjach i możliwościach od La Petite Bloom w formie newslettera. Zapisując się do newslettera, akceptujesz regulamin i politykę prywatności.
+
+
+**Почему проблема:** Два дефекта. Первый — «informacji o […] możliwościach» / «можливості» / «opportunities»: калька с английского, по-польски о рассылке так не пишут, речь должна идти о новинках. Второй — сбитое лицо: предложение начинается от первого лица («Wyrażam zgodę»), а заканчивается обращением на «ты» («akceptujesz»); то же в UA и EN. Кроме того, весь блок подписки выводится на главной дважды — отдельной секцией и ещё раз в подвале, то есть на странице две одинаковые формы с одинаковым id-якорем.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wyrażam zgodę na otrzymywanie newslettera La Petite Bloom z informacjami o nowościach, ofertach i promocjach. Zapisując się, akceptuję regulamin i politykę prywatności.
+```
+
+
+*UA:*
+
+```
+Я даю згоду на отримання розсилки La Petite Bloom з інформацією про новинки, пропозиції та акції. Підписуючись, я приймаю правила та політику конфіденційності.
+```
+
+
+*EN:*
+
+```
+I agree to receive the La Petite Bloom newsletter with information about new arrivals, offers and promotions. By subscribing, I accept the terms and conditions and the privacy policy.
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Newsletter» → текст согласия, три локали. Отдельно решить, нужна ли форма подписки дважды на одной странице: сейчас дублируются и заголовок, и текст согласия, и якорь #subscribe.
+
+
+### 01-21 · / · Заглушка [pl,ua,en]
+
+**Где:** Блок «Bestsellery» → третья вкладка «Skarpetki i rajstopy 0-2»
+
+
+**Сейчас:**
+
+> Skarpetki i rajstopy 0-2 / Zobacz wszystko / Bestseller — Skarpetki dziecięce Tiny Cottons Pink Stripes & Blossom — bawełniane, 92 zł
+
+
+**Почему проблема:** Третья вкладка бестселлеров содержит ровно один товар — в слайдере на всю ширину экрана это выглядит как ошибка загрузки. У первых двух вкладок при этом есть подпись под заголовком, у третьей её нет вообще, так что блок ещё и визуально «обрывается». Одинаково во всех трёх локалях.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Podpis dla trzeciej zakładki: «Miękkie skarpetki i rajstopy na pierwsze miesiące — bawełna, płaskie szwy, delikatna gumka.»
+```
+
+
+*UA:*
+
+```
+Підпис для третьої вкладки: «М’які шкарпетки та колготки на перші місяці — бавовна, пласкі шви, делікатна гумка.»
+```
+
+
+*EN:*
+
+```
+Caption for the third tab: “Soft socks and tights for the first months — cotton, flat seams, a gentle cuff.”
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Bestsellery» → вкладка «Skarpetki i rajstopy 0-2»: либо добавить в подборку ещё товары, либо убрать вкладку до наполнения. Подпись вкладки заполнить во всех трёх локалях, как у двух других.
+
+
+### 01-22 · / · Заглушка [pl,ua,en]
+
+**Где:** Блок «Prezenty / Nowy Rok» (section thematic) — заголовок и описание
+
+
+**Сейчас:**
+
+> Prezenty / Nowy Rok / «W tym sezonie aksamit i tafta tworzą świąteczne sylwetki z ponadczasową gracją. Zarówno dla matek, dzieci, jak i niemowląt, dopasowane stroje i delikatne detale tworzą historię wspólnej elegancji i świętowania.»
+
+
+**Почему проблема:** Единственный тематический блок главной посвящён Новому году, тогда как остальная страница показывает коллекции AW 2026, а подписи баннеров — бархат и тафту для праздничных силуэтов. Текст выглядит как переведённый образец праздничной кампании чужого бренда (тот же источник, что и абзац про Bonpoint): он не называет ни одного товара и ни одной марки из ассортимента. На запуске магазин показывает несезонную витрину.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Prezenty / Na prezent / «Wybieramy rzeczy, które dobrze się pakuje i jeszcze lepiej dostaje: miękkie kocyki, pierwsze przytulanki, ceramikę do domu i drobiazgi dla mam. Do każdego zamówienia dołączamy opakowanie prezentowe.»
+```
+
+
+*UA:*
+
+```
+Подарунки / На подарунок / «Ми обираємо речі, які приємно пакувати й ще приємніше отримувати: м’які пледи, перші іграшки-обіймашки, кераміку для дому та дрібниці для мам. До кожного замовлення додаємо подарункову упаковку.»
+```
+
+
+*EN:*
+
+```
+Gifts / For gifting / “We choose things that are a pleasure to wrap and an even greater pleasure to receive: soft blankets, first cuddly toys, ceramics for the home and small treats for mothers. Every order comes with gift wrapping.”
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Prezenty». [уточнить: действительно ли к каждому заказу кладётся подарочная упаковка — если нет, убрать последнее предложение] Если новогодняя витрина всё же планируется, её стоит включать по расписанию, а не держать постоянно.
+
+
+### 01-23 · / · Кривой перевод [pl,ua,en]
+
+**Где:** Полоса преимуществ под контентом главной (footer-usp-bar): четыре иконки
+
+
+**Сейчас:**
+
+> PL: «Wysyłka na cały świat», «Ręczna robota & Fairtrade», «Zwrot w ciągu 30 dni», «Bezpieczna płatność»; EN: «Worldwide shipping», «Handmade & Fairtrade», «30 days return», «Safe payment»
+
+
+**Почему проблема:** Четыре обещания, которые для Przelewy24 читаются как условия оферты, поданы одними иконками без ссылок: ни одна из четырёх плашек не кликабельна, поэтому «возврат 30 дней» и «безопасная оплата» нечем подтвердить. По формулировкам: «30 days return» — не по-английски (нужно «30-day returns»), «Ręczna robota & Fairtrade» дословно значит «ручная работа», хотя магазин продаёт готовые марки, а «Wysyłka na cały świat» — сильное заявление о доставке по всему миру, которое должно совпадать со страницей доставки.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+«Wysyłka na cały świat» (link do /delivery-and-payment); «Ręczna robota & Fairtrade» → «Marki odpowiedzialne i fair trade»; «Zwrot w ciągu 30 dni» (link do /warranty-and-returns/polityka-zwrotow); «Bezpieczna płatność» → «Bezpieczne płatności» (link do /delivery-and-payment)
+```
+
+
+*UA:*
+
+```
+«Доставка по всьому світу» → «Міжнародна доставка»; «Ручна робота & Fairtrade» → «Відповідальні бренди та fair trade»; «Повернення протягом 30 днів» → «30 днів на повернення»; «Безпечна оплата» → «Безпечні платежі»
+```
+
+
+*EN:*
+
+```
+“Worldwide shipping” → “International delivery”; “Handmade & Fairtrade” → “Responsible brands and fair trade”; “30 days return” → “30-day returns”; “Safe payment” → “Secure payments”
+```
+
+
+**Куда вписать / примечание:** Админка → Настройки → блок УТП: добавить ссылку каждой плашке и поправить формулировки в трёх локалях. [уточнить: в какие страны реально идёт доставка — формулировка должна совпадать со страницей /delivery-and-payment]
+
+
+*Правки носителей: PL: Ten sam pasek USP opisuje też 02-30, ale innymi słowami („Wysyłka międzynarodowa” / „30 dni na zwrot” vs „Wysyłka na cały świat” / „Zwrot w ciągu 30 dni”). Ujednolicono na brzmienie używane w pozostałych tekstach (m.in. meta description 09-04).*
+
+
+### 03-06 · /about · Нет перевода [PL]
+
+**Где:** Sekcja «O nas», przycisk pod tekstem o marce
+
+
+**Сейчас:**
+
+> Znajdź nas tutaj
+
+
+**Почему проблема:** Przycisk «Znajdź nas tutaj» / «Знайдіть нас тут» / «Find us here» prowadzi na /contacts, a tam nie ma żadnej mapy — ani osadzonej mapy Google, ani linku do nawigacji. Ani jedna z trzech lokalizacji /contacts nie zawiera elementu <iframe> ani odnośnika do map. Butik przy Mokotowskiej to lokal 44 na piętrze — bez mapy i wskazówki dojścia klient go nie znajdzie.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Znajdź nas na mapie — ul. Mokotowska 51/53, lok. 44, 00-542 Warszawa
+```
+
+
+*UA:*
+
+```
+Знайдіть нас на мапі — ul. Mokotowska 51/53, lok. 44, 00-542 Warszawa
+```
+
+
+*EN:*
+
+```
+Find us on the map — ul. Mokotowska 51/53, lok. 44, 00-542 Warsaw
+```
+
+
+**Куда вписать / примечание:** Osadzić mapę na /contacts pod kartą «Butik» albo dać link do Google Maps / Apple Maps. Adres w linku zostaje po polsku we wszystkich lokalizacjach — to adres pocztowy, nie tłumaczymy go.
+
+
+### 03-11 · /about · Опечатка [UA]
+
+**Где:** Sekcja o butiku — nagłówek h2 nad zdjęciem sklepu
+
+
+**Сейчас:**
+
+> Бутік
+
+
+**Почему проблема:** Po ukraińsku poprawnie jest «бутик» — przez «и». Formę «Бутік» widać tylko na /about (nagłówek i alt zdjęcia); na /ua/contacts ta sama karta nazywa się już poprawnie «Бутик», a nawet w akapicie tuż pod błędnym nagłówkiem stoi prawidłowe «нашого затишного бутика». Czyli literówka, nie decyzja.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Butik
+```
+
+
+*UA:*
+
+```
+Бутик
+```
+
+
+*EN:*
+
+```
+Boutique
+```
+
+
+**Куда вписать / примечание:** Blok statyczny nr 1, wersja ukraińska: nagłówek h2 oraz alt zdjęcia img-7704.JPG.
+
+
+### 03-12 · /about · Кривой перевод [EN]
+
+**Где:** Sekcja o butiku — akapit pod nagłówkiem
+
+
+**Сейчас:**
+
+> Welcome to our cozy boutique, where trusted brands for babies and moms await you.
+
+
+**Почему проблема:** Amerykańska pisownia w wersji przeznaczonej dla klienta europejskiego: «cozy» zamiast «cosy», «moms» zamiast «mums». Ten sam problem ciągnie się przez całą wersję angielską sklepu (Favorites, Jewelry, Fall 2025), ale tutaj jest w tekście o marce, czyli w miejscu, po którym ocenia się poziom butiku.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zapraszamy do naszego przytulnego butiku, gdzie czekają sprawdzone marki dla maluchów i mam. Indywidualne doradztwo i ciepła atmosfera — z miłością do każdej rodziny.
+```
+
+
+*UA:*
+
+```
+Завітайте до нашого затишного бутика, де на вас чекають перевірені бренди для малюків і мам. Індивідуальна консультація та тепла атмосфера — з любов’ю до кожної родини.
+```
+
+
+*EN:*
+
+```
+Welcome to our cosy boutique, where you will find trusted brands for little ones and their mums. Personal advice and a warm atmosphere — with love for every family.
+```
+
+
+**Куда вписать / примечание:** Blok statyczny nr 1, opis. Przy okazji: ukraińskie «Професійна консультація» jest kalką z angielskiego «Personal advice» i znaczy co innego — proponowane «Індивідуальна консультація» wraca do sensu oryginału.
+
+
+*Правки носителей: EN: "are waiting for you" is a calque; softened to natural English.*
+
+
+### 03-15 · /about · Кривой перевод [PL]
+
+**Где:** Struktura strony: h1 w banerze i h2 drugiej sekcji
+
+
+**Сейчас:**
+
+> O nas
+
+
+**Почему проблема:** Nagłówek strony i nagłówek drugiej sekcji brzmią identycznie («O nas» / «Про нас» / «About us»), a treść pod nimi też się dubluje: akapit pod banerem mówi «jesteśmy rodzinnym butikiem dla dzieci», a sekcja niżej powtarza to samo innymi słowami. Czytelnik dwa razy dostaje ten sam komunikat, a strona traci rytm: baner → kim jesteśmy → butik → kim jesteśmy.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nasza historia
+```
+
+
+*UA:*
+
+```
+Наша історія
+```
+
+
+*EN:*
+
+```
+Our story
+```
+
+
+**Куда вписать / примечание:** Blok statyczny nr 2, nagłówek h2. Same akapity są dobre — wystarczy zmienić nagłówek, żeby druga sekcja czytała się jako rozwinięcie, a nie powtórzenie.
+
+
+### 03-19 · /about · Заглушка [PL]
+
+**Где:** Meta description strony o marce
+
+
+**Сейчас:**
+
+> O nas
+
+
+**Почему проблема:** To samo co na /contacts: opis meta powiela tytuł i we wszystkich trzech lokalizacjach jest jednym słowem («O nas», «Про нас», «About us»). Strona o marce jest tą, którą najczęściej udostępnia się w social mediach — tam ten opis pokazuje się pod linkiem.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+La Petite Bloom to rodzinny butik dla dzieci w Warszawie. Starannie wybrane europejskie marki odzieży, zabawek i akcesoriów — i miejsce przy ul. Mokotowskiej, do którego można po prostu wpaść.
+```
+
+
+*UA:*
+
+```
+La Petite Bloom — родинний дитячий бутик у Варшаві. Ретельно відібрані європейські бренди одягу, іграшок та аксесуарів — і місце на ul. Mokotowska, куди можна просто завітати.
+```
+
+
+*EN:*
+
+```
+La Petite Bloom is a family-run children’s boutique in Warsaw. Carefully chosen European brands of clothing, toys and accessories — and a place on ul. Mokotowska you can simply drop into.
+```
+
+
+**Куда вписать / примечание:** Pole «Meta description» w ustawieniach strony /about, osobno dla każdej lokalizacji.
+
+
+*Правки носителей: EN: Straight apostrophe instead of a typographic one.*
+
+
+### 09-17 · /accessories · Кривой перевод [pl,en]
+
+**Где:** Lista podkategorii w panelu bocznym, pozycje 3 i 4
+
+
+**Сейчас:**
+
+> PL: «Okulary», «Dziecięca biżuteria sztuczna» | EN: «Glasses», «Children's costume jewelry»
+
+
+**Почему проблема:** «Glasses» w sklepie, który sprzedaje też «Mugs & glasses» (szklanki), jest dwuznaczne — w akcesoriach chodzi o okulary przeciwsłoneczne. Polskie «Dziecięca biżuteria sztuczna» brzmi deprecjonująco przy asortymencie premium (Mimi & Lula, Bon Dep) i ma odwróconą składnię; angielskie «jewelry» to pisownia amerykańska, przy przyjętej dla sklepu brytyjskiej — jewellery. UA «Дитяча біжутерія» jest w porządku.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Okulary przeciwsłoneczne
+Biżuteria dziecięca
+```
+
+
+*UA:*
+
+```
+Сонцезахисні окуляри
+Дитяча біжутерія
+```
+
+
+*EN:*
+
+```
+Sunglasses
+Children’s jewellery
+```
+
+
+**Куда вписать / примечание:** Admin → kategorie → podkategorie w «Akcesoria».
+
+
+*Правки носителей: EN: Straight apostrophe instead of a typographic one.*
+
+
+### 10-09 · /accessories · Кривой перевод [pl,ua,en]
+
+**Где:** Panel filtrów, blok pomiędzy «Rozmiar» a «Zresetuj wszystkie filtry»
+
+
+**Сейчас:**
+
+> Rozmiary XS–XL / Розмір XS-XL / Size XS-XL — jedyna wartość: ONE SIZE
+
+
+**Почему проблема:** To nie jest nazwa atrybutu, tylko opis jego zakresu wstawiony w miejsce nazwy. Do tego filtr ma jedną jedyną wartość «ONE SIZE», która dubluje wartości «ONESIZE» i «TU» (taille unique) z sąsiedniego filtra «Rozmiar» — klient widzi trzy zapisy tego samego rozmiaru uniwersalnego w dwóch różnych filtrach.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Rozmiar uniwersalny
+```
+
+
+*UA:*
+
+```
+Універсальний розмір
+```
+
+
+*EN:*
+
+```
+One size
+```
+
+
+**Куда вписать / примечание:** Docelowo: scalić ONESIZE / ONE SIZE / TU w jedną wartość «Uniwersalny / Універсальний / One size» wewnątrz filtra «Rozmiar» i usunąć osobny blok «Rozmiary XS–XL».
+
+
+### 13-21 · /auth/forgot · Кривой перевод [PL]
+
+**Где:** Strona odzyskiwania hasła: <title>, nagłówek, przycisk, link powrotu
+
+
+**Сейчас:**
+
+> Wprowadź nowe hasło (title) — „Zapomniałeś hasła?” / „Wyślij” / „Wróć do logowania”
+
+
+**Почему проблема:** Strona działa we wszystkich trzech lokalizacjach (status 200), ale jest niedopracowana. Polski tytuł karty brzmi „Wprowadź nowe hasło”, choć na tej stronie nowego hasła się nie wprowadza — podaje się e-mail, żeby dostać link; tytuł opisuje kolejny krok. Ukraiński tytuł „Відновлення паролю” ma błędny przypadek („пароля” w dopełniaczu). Angielski link powrotu „Back to the log in” jest niegramatyczny. Najważniejsze: na całej stronie nie ma ani jednego zdania wyjaśniającego, co się stanie po kliknięciu — jest tylko pole e-mail i przycisk „Wyślij”, więc klient nie wie, czy ma czekać na wiadomość.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Odzyskaj hasło. Podaj adres e-mail przypisany do konta — wyślemy na niego link do ustawienia nowego hasła. / Wyślij link / Wróć do logowania
+```
+
+
+*UA:*
+
+```
+Відновлення пароля. Вкажіть адресу електронної пошти, прив’язану до акаунта — надішлемо на неї посилання для створення нового пароля. / Надіслати посилання / Повернутися до входу
+```
+
+
+*EN:*
+
+```
+Reset your password. Enter the email address linked to your account and we’ll send you a link to set a new password. / Send link / Back to login
+```
+
+
+**Куда вписать / примечание:** Uwaga do listy audytowej: sprawdzany wcześniej adres /auth/forgot-password zwraca 404, ale nigdzie w serwisie nie ma do niego linku — link „Zapomniałeś hasła?” na /auth/login prowadzi do /auth/forgot, a ta strona odpowiada 200 w PL, UA i EN. Odzyskiwanie hasła nie jest więc zepsute; wymaga natomiast poprawek treści i tytułu karty.
+
+
+*Правки носителей: UA: прямий апостроф замість типографського «’»; EN: Straight apostrophe; "Back to log in" uses the verb where a noun is needed.*
+
+
+### 13-17 · /auth/login · Кривой перевод [PL]
+
+**Где:** Blok informacyjny pod przyciskami logowania (<div class="account-info">)
+
+
+**Сейчас:**
+
+> Twoje konto klienta jest unikalne dla każdego kraju. Jeśli chcesz zamówić z innego sklepu, musisz utworzyć nowe konto klienta.
+
+
+**Почему проблема:** Sklep ma jedną witrynę i jedno konto, a w pasku zalet obiecuje „Wysyłkę na cały świat”. Zdanie o koncie osobnym dla każdego kraju i o „zamówieniu z innego sklepu” pochodzi z serwisu z wieloma sklepami krajowymi i tutaj wprowadza w błąd — sugeruje, że kupując z zagranicy trzeba zakładać nowe konto. W wersji EN ten sam akapit kończy się dodatkowo nazwą konkurencyjnej marki (patrz 13-03).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Jedno konto wystarczy, żeby śledzić zamówienia, zapisywać ulubione i szybciej finalizować zakupy.
+```
+
+
+*UA:*
+
+```
+Одного акаунта достатньо, щоб стежити за замовленнями, зберігати обране й швидше оформлювати покупки.
+```
+
+
+*EN:*
+
+```
+One account is all you need to track orders, save favourites and check out faster.
+```
+
+
+**Куда вписать / примечание:** Blok `div.account-info` na /auth/login, trzy lokalizacje.
+
+
+### 08-10 · /blog · Заглушка [pl+ua+en]
+
+**Где:** Карточки статей, блок article-card__announce
+
+
+**Сейчас:**
+
+> <div class="article-card__announce"> </div> — пустой у трёх карточек из пяти (Klippan, sit-rerum-labore23250, odit-ut-voluptates3981)
+
+
+**Почему проблема:** У трёх карточек из пяти анонс пустой, поэтому карточки на витрине выглядят обрезанными: картинка, заголовок и пустота. У двух оставшихся в анонсе стоит литературная рыба. Кроме того, на карточках нет ни даты публикации, ни рубрики, ни ссылки «читать дальше» — кликабельны только картинка и заголовок, что не читается как кнопка.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Anons (przykład dla wpisu o kocykach Klippan): «Naturalna wełna, szwedzka manufaktura i jeden kocyk, który przechodzi przez kilka lat i kilkoro dzieci. Jak wybrać rozmiar i jak go prać.» Etykieta przycisku: «Czytaj dalej».
+```
+
+
+*UA:*
+
+```
+Анонс (приклад для запису про пледи Klippan): «Натуральна вовна, шведська мануфактура й один плед, який служить кілька років і кільком дітям. Як обрати розмір і як його прати.» Напис на кнопці: «Читати далі».
+```
+
+
+*EN:*
+
+```
+Announce (example for the Klippan post): “Natural wool, a Swedish mill and one blanket that lasts several years and more than one child. How to choose a size and how to wash it.” Button label: “Read more”.
+```
+
+
+**Куда вписать / примечание:** Для каждой записи заполнить поле «Announce» во всех трёх локалях (2–3 предложения, 140–200 знаков). Отдельно — задача разработчику: выводить на карточке дату публикации и рубрику и добавить видимую ссылку «Czytaj dalej / Читати далі / Read more». Дата в карточках отсутствует, хотя на странице записи она есть.
+
+
+*Правки носителей: EN: Guillemets used around English copy instead of curly double quotes.*
+
+
+### 08-11 · /blog/kocyki-klippan-naturalne-cieplo-i-skandynawska-jakosc-dla-najmlodszych · Битая ссылка [pl+ua+en]
+
+**Где:** Шапка статьи, блок article-rubrics-wrap
+
+
+**Сейчас:**
+
+> <div class="article-header"> <div class="date"> 04 marca 2026 </div> <div class="article-rubrics-wrap"> </div> </div>
+
+
+**Почему проблема:** Единственной содержательной записи не назначена ни одна рубрика, поэтому она не попадает ни во вкладку «Aktualności», ни в «Nasze wydarzenia», ни в «Publikacje» — её видно только во вкладке «Wszystko». В шапке статьи на её месте пустой блок. Рубрики распределены так: Aktualności — 1 запись, Nasze wydarzenia — 2, Publikacje — 1.
+
+
+**Куда вписать / примечание:** Админка → Blog → Статьи → kocyki-klippan-... → поле «Рубрики»: назначить «Publikacje» (текст поясняющий, а не новостной). Правка техническая, тексты не нужны.
+
+
+### 08-12 · /blog/kocyki-klippan-naturalne-cieplo-i-skandynawska-jakosc-dla-najmlodszych · Битая ссылка [pl+ua+en]
+
+**Где:** Блок «Najnowsze wiadomości» / «Останні новини» / «Latest News» внизу статьи
+
+
+**Сейчас:**
+
+> Najnowsze wiadomości → Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych (ссылка ведёт на ту же самую страницу)
+
+
+**Почему проблема:** Блок рекомендаций выводит саму открытую статью: со страницы про Klippan первая карточка ведёт на /blog/kocyki-klippan-... то есть на текущий URL. Рядом стоит вторая карточка с точно таким же заголовком (дубль sit-rerum-labore23250), так что читатель видит один и тот же заголовок трижды на одном экране.
+
+
+**Куда вписать / примечание:** Задача разработчику: исключать текущую запись из выборки «Najnowsze wiadomości». Дубль заголовка уйдёт сам после правки 08-04.
+
+
+### 08-14 · /blog/kocyki-klippan-naturalne-cieplo-i-skandynawska-jakosc-dla-najmlodszych · Битая ссылка [pl+ua+en]
+
+**Где:** Иллюстрация внутри текста статьи (первый абзац)
+
+
+**Сейчас:**
+
+> <img src="https://lapetitebloom.com/uploads/images/%C2%A6-T%D0%91%C2%A6-%C2%A6-%C2%A6-%C2%A6-%C2%A6%C2%AC%C2%A6%C2%AC%C2%A6%D0%96%20%C2%A6-%C2%A6-%C2%A6-%C2%A6%C2%A6T%D0%90%201920x480.png">
+
+
+**Почему проблема:** Имя файла картинки — «кракозябры» после потери кодировки при загрузке, и у тега <img> нет атрибута alt. Пустой alt в контентной картинке противоречит странице «Deklaracja dostępności», а нечитаемое имя файла не даёт никакого сигнала поиску по картинкам.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+alt: «Kocyk Klippan z naturalnej wełny rozłożony w łóżeczku dziecięcym»
+```
+
+
+*UA:*
+
+```
+alt: «Плед Klippan із натуральної вовни, розкладений у дитячому ліжечку»
+```
+
+
+*EN:*
+
+```
+alt: “A Klippan blanket in natural wool spread out in a child’s cot”
+```
+
+
+**Куда вписать / примечание:** Перезалить файл с латинским именем вида kocyk-klippan-welna-1920x480.png и проставить alt во всех трёх локалях. Проверить остальные загрузки в /uploads/images — имя файла указывает на системную проблему при загрузке кириллических имён.
+
+
+*Правки носителей: EN: Guillemets around English copy; straight apostrophe.*
+
+
+### 09-19 · /boys · Кривой перевод [pl,ua,en]
+
+**Где:** Lista podkategorii w panelu bocznym kategorii «Chłopcy 2-12»
+
+
+**Сейчас:**
+
+> PL: «Koszulki / Szorty / Skarpety / Nakrycia głowy / Skarpetki / Szorty kąpielowe» | UA: «Футболки / Шорти / Носочки / Головні убори / Шкарпетки / Купальні шорти» | EN: «T-shirts / Shorts / Socks / Headwear / Socks / Swim shorts»
+
+
+**Почему проблема:** Dwie osobne podkategorie na skarpetki: «Skarpety» i «Skarpetki». Po angielsku obie nazywają się dokładnie tak samo — «Socks» i «Socks» jedna pod drugą, klient nie ma jak wybrać. Po ukraińsku «Носочки» to zdrobnienie potoczne, obce tonowi marki. To samo dublowanie widać w menu głównym w gałęzi «Chłopcy 2-12».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Skarpetki
+```
+
+
+*UA:*
+
+```
+Шкарпетки
+```
+
+
+*EN:*
+
+```
+Socks
+```
+
+
+**Куда вписать / примечание:** Scalić dwie podkategorie w jedną i przenieść produkty; jeśli rozróżnienie ma sens (stopki vs. podkolanówki), nazwać je jednoznacznie: «Skarpetki» / «Podkolanówki», «Шкарпетки» / «Гольфи», «Socks» / «Knee-high socks».
+
+
+### 09-24 · /boys · Кривой перевод [pl,ua,en]
+
+**Где:** Listing kategorii «Chłopcy 2-12» — karty produktów od pozycji 14 w dół
+
+
+**Сейчас:**
+
+> Bikini dziewczęce Liewood Bello — w paski, ochrona UV40+ / Strój kąpielowy Liewood Suna — jednoczęściowy, UV40+, dla dziewczynki / Kamizelka asekuracyjna Liewood Dove — neopren, dla dziewczynki
+
+
+**Почему проблема:** W kategorii dla chłopców leżą produkty opisane wprost jako dziewczęce — bikini, jednoczęściowy strój kąpielowy i dwie kamizelki «dla dziewczynki». To samo w UA («Роздільний купальник для дівчинки») i EN («Girls' bikini»). Filtr «Artykuł» na tej samej stronie potwierdza rozjazd: w kategorii chłopięcej dostępne są wartości «Dziewczynka» i «GIRL». Klient trafia z menu na listing, który zaprzecza nagłówkowi.
+
+
+**Куда вписать / примечание:** Poprawka katalogowa, nie tekstowa: przepiąć produkty oznaczone jako dziewczęce z «Chłopcy 2-12» do «Dziewczynki 2-12» (kategoria jest obecnie pusta) albo do wspólnej kategorii kąpielowej. Przy okazji ujednolicić wartości atrybutu płci — obok siebie występują «Dziewczynka», «GIRL», «Girl», «BOY», «Chłopiec», «Kobieta».
+
+
+### 09-07 · /brands · Нет перевода [pl,ua,en]
+
+**Где:** Cała strona /brands — nagłówek H1 i spis marek
+
+
+**Сейчас:**
+
+> Marki
+A B C D E F G I J K L M O P R S T V
+Angulus (6)
+
+
+**Почему проблема:** Strona marek składa się wyłącznie z indeksu alfabetycznego i nazw z licznikami. Nie ma ani akapitu wstępnego pod H1, ani jednego zdania opisu przy którejkolwiek z pięćdziesięciu marek. Strony pojedynczych marek (/brands/liewood, /brands/maileg, /brands/veja) też są bez opisu i z pustym meta description. Dla sklepu, którego cała propozycja wartości opiera się na doborze marek, to największa nieodrobiona treść po stronie kategorii.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Marki, które wybieramy, łączy jedno: robią rzeczy powoli i na lata. Skandynawska prostota Liewood i Konges Sløjd, kolor Bobo Choses i Mini Rodini, francuska szkoła Tartine et Chocolat i Moulin Roty, duńskie myszki Maileg. Poniżej pełna lista — alfabetycznie.
+```
+
+
+*UA:*
+
+```
+Бренди, які ми обираємо, поєднує одне: вони роблять речі повільно і на роки. Скандинавська простота Liewood і Konges Sløjd, колір Bobo Choses і Mini Rodini, французька школа Tartine et Chocolat і Moulin Roty, данські мишки Maileg. Нижче — повний перелік за абеткою.
+```
+
+
+*EN:*
+
+```
+The labels we carry have one thing in common: they make things slowly and to last. The Scandinavian plainness of Liewood and Konges Sløjd, the colour of Bobo Choses and Mini Rodini, the French school of Tartine et Chocolat and Moulin Roty, the Danish mice of Maileg. The full list follows, alphabetically.
+```
+
+
+**Куда вписать / примечание:** Osobno zaplanować 2–3 zdania opisu przy każdej marce z produktami — pole opisu marki w admin, trzy lokalizacje.
+
+
+*Правки носителей: UA: різнобій «марки/бренди»*
+
+
+### 09-08 · /brands · Опечатка [pl,ua,en]
+
+**Где:** Spis marek — pisownia nazw vs. pisownia w kartach produktów w listingu
+
+
+**Сейчас:**
+
+> Konges Slojd (100)
+Jelly Cat (153)
+Mimi Lula (201)
+VEJA (14)
+Tartine et chocolat (145)
+
+
+**Почему проблема:** Nazwy marek w spisie różnią się od tych, które sklep sam drukuje na kartach produktów w listingu: spis podaje «Konges Slojd», a karta «Skarpetki Konges Sløjd żakardowe»; spis «Mimi Lula», karta «Spinki clic-clac tulipany Mimi & Lula»; spis «Jelly Cat», gdy marka nazywa się Jellycat; «Tartine et chocolat» z małym «ch» przy poprawnym «Tartine et Chocolat» na kartach; «VEJA» wersalikami przy logotypowym «Veja». Nazwy własne muszą być zapisane jednakowo we wszystkich trzech lokalizacjach.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Konges Sløjd / Jellycat / Mimi & Lula / Tartine et Chocolat / Veja
+```
+
+
+*UA:*
+
+```
+Konges Sløjd / Jellycat / Mimi & Lula / Tartine et Chocolat / Veja
+```
+
+
+*EN:*
+
+```
+Konges Sløjd / Jellycat / Mimi & Lula / Tartine et Chocolat / Veja
+```
+
+
+**Куда вписать / примечание:** Poprawiać w karcie marki (jedno pole), nie w tłumaczeniach — nazwa jest wspólna dla wszystkich lokalizacji. Uwaga na «ø» w Sløjd, żeby nie zgubiło się w slugu.
+
+
+### 10-04 · /brands/liewood · Кривой перевод [ua,en]
+
+**Где:** Panel filtrów, nazwa filtra z wartościami 48-49, 51, 53, 55
+
+
+**Сейчас:**
+
+> Розмір капелюхів / Hats Size
+
+
+**Почему проблема:** UA «капелюх» to kapelusz z rondem — w dziale dziecięcym chodzi o czapki i opaski, więc poprawnie jest «шапка». EN «Hats Size» ma zły szyk i zbędną wielką literę (obok stoi poprawne «Shoe size»). PL «Rozmiary czapek» jest w liczbie mnogiej, podczas gdy wszystkie sąsiednie filtry są w liczbie pojedynczej.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Rozmiar czapki
+```
+
+
+*UA:*
+
+```
+Розмір шапки
+```
+
+
+*EN:*
+
+```
+Hat size
+```
+
+
+### 10-25 · /brands/liewood · Битая ссылка [pl,ua,en]
+
+**Где:** Filtr «Kolor», próbki koloru przy wartościach
+
+
+**Сейчас:**
+
+> <span class="color-swatch" style="background-color: #000;">
+
+
+**Почему проблема:** Wszystkie 40 próbek koloru na stronie marki Liewood mają wpisany ten sam kod #000 — przy każdej wartości, od «Bladotoskańska» po «Wielorybi błękit mix», wyświetla się identyczna czarna kropka. Filtr koloru z próbkami, które nie pokazują koloru, jest gorszy niż filtr bez próbek: sugeruje, że cała oferta jest czarna.
+
+
+**Куда вписать / примечание:** Katalog → Atrybuty → Kolor: uzupełnić pole koloru (HEX) przy każdej wartości. Do czasu uzupełnienia lepiej ukryć próbki i zostawić samą listę tekstową. Poprawka techniczna, bez tekstów do tłumaczenia.
+
+
+### 12-13 · /checkout · Кривой перевод [pl,ua,en]
+
+**Где:** Pusty koszyk — nagłówek i przycisk
+
+
+**Сейчас:**
+
+> pl: "Koszyk jest pusty" | ua: "Кошик порожній" | en: "Cart is empty"
+
+
+**Почему проблема:** Во всех трёх локалях это безличная системная надпись без артикля и притяжательности: «Cart is empty» по-английски звучит как лог, а не как обращение к человеку. Плюс за кнопкой «Kontynuuj zakupy» покупатель попадает просто на главную — на пустой корзине уместно дать и путь в каталог.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Twój koszyk jest pusty. Zajrzyj do nowej kolekcji — coś na pewno przypadnie Ci do gustu. / Wróć do zakupów
+```
+
+
+*UA:*
+
+```
+Ваш кошик порожній. Загляньте до нової колекції — там напевно знайдеться щось для вас. / Повернутися до покупок
+```
+
+
+*EN:*
+
+```
+Your basket is empty. Have a look at the new collection — something is bound to catch your eye. / Continue shopping
+```
+
+
+**Куда вписать / примечание:** Если решите оставить слово «cart» вместо «basket», важно единообразие: тогда и «Add to cart», и «Your cart is empty». Сейчас EN-версия смешивает регистры формулировок.
+
+
+### 12-15 · /checkout, wszystkie strony (wysuwany koszyk) · Битая ссылка [pl,ua,en]
+
+**Где:** Wysuwany koszyk — przycisk zamknięcia
+
+
+**Сейчас:**
+
+> <button class="close modal-close js-cart-modal-close" type="button" onclick="FenixCheckout.closeCart()"> — wewnątrz tylko ikona SVG, bez tekstu, aria-label ani title
+
+
+**Почему проблема:** Кнопка закрытия выдвижной корзины не имеет доступного имени ни в одной из трёх локалей — скринридер прочитает её как «button». Для сравнения, попап выбора языка на той же странице сделан правильно: aria-label="Zamknij" / "Закрити" / "Close". У магазина есть «Deklaracja dostępności», так что дефект заметен и формально.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zamknij koszyk
+```
+
+
+*UA:*
+
+```
+Закрити кошик
+```
+
+
+*EN:*
+
+```
+Close the basket
+```
+
+
+**Куда вписать / примечание:** Добавить aria-label на кнопку .js-cart-modal-close в шаблоне модалки корзины (блок .cart-modal-inner в футере всех страниц).
+
+
+### 05-15 · /claims-and-complaints · Юр. требование [все]
+
+**Где:** «Załącznik — Formularz reklamacyjny», строка «Adres e-mail i numer rachunku do zwrotu»
+
+
+**Сейчас:**
+
+> Adres e-mail i numer rachunku do zwrotu: ............................
+
+
+**Почему проблема:** Единственное место, где сказано, как покупатель получает деньги обратно по рекламации, — просьба указать номер банковского счёта. Это противоречит правилу возврата тем же способом оплаты, которое действует для отказа от договора (п. 1.4), и плохо смотрится при верификации в Przelewy24: возврат онлайн-платежа должен идти обратно на ту же карту или тот же перевод, а не на произвольный счёт.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zwrot należności z tytułu uwzględnionej reklamacji wykonujemy tą samą metodą płatności, którą Klient zapłacił za zamówienie. Numer rachunku prosimy podać tylko wtedy, gdy zwrot tą samą metodą nie jest możliwy (np. wygasła karta) — poprosimy o niego w odpowiedzi na zgłoszenie.
+```
+
+
+*UA:*
+
+```
+Кошти за задоволеною претензією ми повертаємо тим самим способом оплати, яким Клієнт оплатив замовлення. Номер рахунку просимо вказувати лише тоді, коли повернення тим самим способом неможливе (наприклад, картка втратила чинність) — ми запитаємо його у відповіді на звернення.
+```
+
+
+*EN:*
+
+```
+If we uphold your complaint, we refund you using the same payment method you used for the order. Please give us a bank account number only if a refund by the original method is not possible (for example, an expired card) — we will ask for it when we reply.
+```
+
+
+**Куда вписать / примечание:** Заменить строку в приложении и добавить абзац в раздел 4 «Reklamacje».
+
+
+*Правки носителей: EN: You refund a customer, not a complaint.*
+
+
+### 05-18 · /claims-and-complaints · Юр. требование [все]
+
+**Где:** Конец раздела 4 «Reklamacje», перед разделом 5
+
+
+**Сейчас:**
+
+> 4. Reklamację rozpatrujemy i informujemy o wyniku w terminie 14 dni od otrzymania zgłoszenia. W razie jej uwzględnienia naprawimy lub wymienimy Towar albo obniżymy cenę lub zwrócimy należność; koszty uzasadnionej reklamacji ponosi Sprzedawca.
+
+
+**Почему проблема:** На странице рекламаций нет обязательной информации о внесудебном разрешении споров: WIIH, powiatowy rzecznik konsumentów, платформа ODR. В Регламенте это есть (§14), но именно страницу рекламаций проверяющий читает как самостоятельный документ, и UOKiK требует размещать эту информацию там, где описывается порядок рекламации.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Pozasądowe rozwiązywanie sporów
+Jeżeli nie zgodzą się Państwo z naszym stanowiskiem, mogą Państwo skorzystać z pozasądowych sposobów rozpatrywania reklamacji: wniosku do wojewódzkiego inspektora Inspekcji Handlowej o pozasądowe rozwiązanie sporu, pomocy powiatowego lub miejskiego rzecznika konsumentów albo stałego polubownego sądu konsumenckiego. Informacje o tych procedurach dostępne są na stronie UOKiK: https://www.uokik.gov.pl. Skorzystanie z nich jest dobrowolne.
+```
+
+
+*UA:*
+
+```
+Позасудове вирішення спорів
+Якщо ви не погоджуєтеся з нашим рішенням, ви можете скористатися позасудовими способами розгляду претензій: звернутися до воєводського інспектора Торговельної інспекції (WIIH) із заявою про позасудове вирішення спору, до повітового чи міського уповноваженого із захисту прав споживачів або до постійного третейського суду у справах споживачів. Інформація про ці процедури є на сайті UOKiK: https://www.uokik.gov.pl. Користування ними добровільне.
+```
+
+
+*EN:*
+
+```
+Out-of-court dispute resolution
+If you disagree with our decision, you may use out-of-court complaint procedures: an application to the provincial Trade Inspectorate (WIIH) for out-of-court dispute resolution, help from the district or municipal consumer ombudsman, or the permanent consumer arbitration court. Information about these procedures is available on the UOKiK website: https://www.uokik.gov.pl. Using them is voluntary.
+```
+
+
+**Куда вписать / примечание:** Добавить новым разделом в конец /claims-and-complaints, перед приложением с формуляром. Текст дословно согласован с §14 Регламента, чтобы страницы не расходились.
+
+
+*Правки носителей: UA: полонізм «полюбовний суд» (sąd polubowny) — українською це третейський суд*
+
+
+### 03-04 · /contacts · Кривой перевод [PL]
+
+**Где:** Formularz kontaktowy — lista rozwijana tematu wiadomości
+
+
+**Сейчас:**
+
+> Zwroty / Sprawdź dostępność / Współpraca
+
+
+**Почему проблема:** Lista nie ma etykiety ani pustej opcji startowej, więc domyślnie zaznaczone jest «Zwroty» — każda wiadomość wysłana bez zmiany pola trafia do obsługi jako zwrot. Do tego jedna pozycja jest czasownikiem w trybie rozkazującym («Sprawdź dostępność», «Дізнатися про наявність», «Check Availability») wśród rzeczowników — lista czyta się niespójnie.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Temat wiadomości | Zwroty | Dostępność produktu | Współpraca
+```
+
+
+*UA:*
+
+```
+Тема повідомлення | Повернення | Наявність товару | Співпраця
+```
+
+
+*EN:*
+
+```
+Message subject | Returns | Product availability | Collaboration
+```
+
+
+**Куда вписать / примечание:** Pierwsza pozycja («Temat wiadomości») ma być nieaktywną opcją domyślną, żeby nic nie było wstępnie wybrane. Atrybut placeholder="Temat" na <select> nic nie wyświetla — przeglądarki go ignorują.
+
+
+### 03-05 · /contacts · Заглушка [PL]
+
+**Где:** Karta «Skontaktuj się z nami» — blok ikon społecznościowych pod adresem e-mail
+
+
+**Сейчас:**
+
+> <div class="contacts-card__social"></div>
+
+
+**Почему проблема:** Kontener na linki do social mediów jest pusty we wszystkich trzech lokalizacjach — na stronie kontaktowej nie ma ani jednego odnośnika do Instagrama czy Facebooka. Dla marki premium dla dzieci, która żyje z Instagrama, to widoczna dziura; poza tym w stopce też ich nie ma.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Obserwuj nas
+```
+
+
+*UA:*
+
+```
+Стежте за нами
+```
+
+
+*EN:*
+
+```
+Follow us
+```
+
+
+**Куда вписать / примечание:** Wpisać nagłówek i uzupełnić adresy profili [uzupełnić: Instagram, Facebook, ewentualnie Pinterest]. Jeśli marka świadomie nie prowadzi social mediów, blok trzeba usunąć z szablonu, a nie zostawiać pustego.
+
+
+### 03-18 · /contacts · Заглушка [PL]
+
+**Где:** Meta description strony kontaktowej
+
+
+**Сейчас:**
+
+> Kontakt
+
+
+**Почему проблема:** Meta description jest kopią tytułu — jedno słowo, w każdej z trzech lokalizacji («Kontakt», «Контакти», «Contacts»). To pole widzi klient w wynikach wyszukiwania i przy udostępnianiu linku; jedno słowo nie mówi ani gdzie jest butik, ani kiedy odpowiadamy.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Napisz do nas, zadzwoń albo odwiedź nasz butik przy ul. Mokotowskiej 51/53 w Warszawie. Odpowiadamy od poniedziałku do piątku, 9:00–18:00.
+```
+
+
+*UA:*
+
+```
+Напишіть нам, зателефонуйте або завітайте до нашого бутика на вул. Mokotowska 51/53 у Варшаві. Відповідаємо з понеділка до п’ятниці, 9:00–18:00.
+```
+
+
+*EN:*
+
+```
+Write to us, call, or visit our boutique at ul. Mokotowska 51/53 in Warsaw. We reply Monday to Friday, 9:00–18:00.
+```
+
+
+**Куда вписать / примечание:** Pole «Meta description» w ustawieniach strony /contacts, osobno dla każdej lokalizacji.
+
+
+*Правки носителей: PL: Zakres godzin przez łącznik zamiast półpauzy.; UA: у суцільному тексті вживаємо «вул.», латинське «ul.» лишаємо лише в поштових адресах; дефіс замість тире в діапазоні годин; EN: Hyphen instead of en dash in the time range.*
+
+
+### 19-03 · /contacts · Опечатка [PL]
+
+**Где:** Карточка «Skontaktuj się z nami», строка адреса (contacts-card__address)
+
+
+**Сейчас:**
+
+> Marcina Kasprzaka 31/119 01-234 Warszawa
+
+
+**Почему проблема:** В польской версии адрес начинается без «ul.», хотя в украинской и английской версиях того же блока стоит «ul. Marcina Kasprzaka 31/119 01-234 Warszawa». Расхождение между локалями в юридическом адресе — ровно то, на чём спотыкается автоматическая сверка при верификации Przelewy24 и что выглядит небрежно в основной, польской версии. Заодно нет разделителя между номером дома и почтовым индексом и нет страны. Написание должно быть одинаковым во всех трёх локалях, различаться могут только город и страна.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska
+```
+
+
+*UA:*
+
+```
+ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща
+```
+
+
+*EN:*
+
+```
+ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland
+```
+
+
+**Куда вписать / примечание:** Админка: /contacts → карточка контактов «Skontaktuj się z nami» → поле адреса. Правится в польской локали; в UA и EN достаточно добавить запятые и страну.
+
+
+*Правки носителей: UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»*
+
+
+### 19-09 · /contacts · Юр. требование [все]
+
+**Где:** Карточки «Skontaktuj się z nami» и «Butik» — адрес местонахождения и адрес для возвратов
+
+
+**Сейчас:**
+
+> ul. Mokotowska 51/53, lok. 44 00-542 Warszawa
+
+
+**Почему проблема:** У компании два разных адреса, и они делают разную работу: ul. Marcina Kasprzaka 31/119 — юридический адрес местонахождения из KRS, ul. Mokotowska 51/53 — бутик, и именно на него регламент велит отправлять возвраты и рекламации («Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa»). Сейчас на странице контактов эта разница нигде не объяснена: карточка «Butik» выглядит как ещё одна точка продаж, и покупатель, оформляющий возврат, легко отправит посылку на юридический адрес, где её никто не примет. art. 12 ust. 1 pkt 2 ustawy o prawach konsumenta прямо разделяет адрес предприятия и адрес, по которому потребитель может подавать претензии, если он другой. Для Przelewy24 явно названный адрес возвратов — плюс к доверию.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Adres siedziby (dane rejestrowe, korespondencja urzędowa): ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska
+Adres do zwrotów i reklamacji: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, Polska
+Prosimy nie wysyłać zwrotów na adres siedziby.
+```
+
+
+*UA:*
+
+```
+Адреса місцезнаходження (реєстраційні дані, офіційне листування): ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща
+Адреса для повернень і претензій: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, Польща
+Просимо не надсилати повернення на адресу місцезнаходження.
+```
+
+
+*EN:*
+
+```
+Registered office (company records, official correspondence): ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland
+Address for returns and complaints: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53 lok. 44, 00-542 Warsaw, Poland
+Please do not send returns to the registered office.
+```
+
+
+**Куда вписать / примечание:** Админка: /contacts, отдельная строка под блоком реквизитов из 19-04. Сверить с /warranty-and-returns/polityka-zwrotow и §8-§9 регламента, чтобы адрес возвратов везде был записан одинаково, вместе с номером помещения lok. 44.
+
+
+*Правки носителей: UA: у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»; різнобій «рекламації/претензії»*
+
+
+### 19-10 · /contacts · Юр. требование [все]
+
+**Где:** Карточка «Skontaktuj się z nami» и форма «Twoja wiadomość» — срок ответа на обращения
+
+
+**Сейчас:**
+
+> Pn-Pt: od 9:00 do 18:00
+Sb-Nd: Zamknięte
+
+
+**Почему проблема:** Часы работы указаны, а срок ответа — нет: покупатель, отправивший сообщение через форму, не знает, ждать ему сутки или неделю. Регламент при этом уже называет конкретный срок для рекламаций — 14 дней («Sprzedawca rozpatrzy reklamację i poinformuje Klienta o jej wyniku drogą elektroniczną w terminie 14 dni»), и его стоит повторить на контактах, чтобы страница и регламент не расходились. Для Przelewy24 наличие заявленного времени ответа и работающего канала связи — часть проверки того, что за магазином стоит живая поддержка. Формулировка ниже опирается только на то, что уже написано в регламенте, кроме срока первичного ответа — его надо подтвердить.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Odpowiadamy w dni robocze, zwykle w ciągu [уточнить: 1-2 dni roboczych] od otrzymania wiadomości. Reklamacje rozpatrujemy i informujemy o wyniku w terminie 14 dni od zgłoszenia. Wiadomości wysłane w weekend odbieramy w najbliższy dzień roboczy.
+```
+
+
+*UA:*
+
+```
+Відповідаємо в робочі дні, зазвичай протягом [уточнити: 1–2 робочі дні] від отримання повідомлення. Претензії розглядаємо та повідомляємо про результат протягом 14 днів із дня звернення. Повідомлення, надіслані у вихідні, опрацьовуємо найближчого робочого дня.
+```
+
+
+*EN:*
+
+```
+We usually reply within [уточнить: 1–2 working days] of receiving your message. Complaints are reviewed and answered within 14 days of submission. Messages sent at the weekend are picked up on the next working day.
+```
+
+
+**Куда вписать / примечание:** Админка: /contacts, под часами работы и рядом с формой «Twoja wiadomość» / «Ваше повідомлення» / «Your message». Срок 14 дней взят из §10 регламента — не выдуман; срок первичного ответа надо подтвердить у заказчика.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; неперекладене польське «1-2 dni roboczych» усередині українського речення; різнобій «рекламації/претензії»; EN: Polish left inside the English placeholder; hyphen instead of an en dash; "working days" repeated.*
+
+
+### 19-11 · /contacts · Юр. требование [все]
+
+**Где:** Страница контактов целиком — чего ещё не хватает для верификации Przelewy24 и доверия покупателя
+
+
+**Сейчас:**
+
+> Skontaktuj się z nami
+Marcina Kasprzaka 31/119 01-234 Warszawa
++48 (517) 689-849
+Pn-Pt: od 9:00 do 18:00
+Sb-Nd: Zamknięte
+hello@lapetitebloom.com
+
+
+**Почему проблема:** Чеклист того, что верификатор Przelewy24 ищет на странице контактов и не находит, и что покупателю нужно, чтобы решиться на предоплату. 1. Полные реквизиты продавца — название, адрес, KRS, NIP, kapitał zakładowy (19-04). 2. Юридический адрес и отдельно адрес для возвратов, с пояснением, чем они отличаются (19-09). 3. Рабочие часы поддержки — есть, но не отделены от часов бутика, из-за чего кажется, что телефон работает до 19:00 (карточка «Butik» показывает 10:00-19:00). 4. Срок ответа на обращения (19-10). 5. Форма контакта — есть («Twoja wiadomość» / «Wyślij wiadomość»), но без подтверждения отправки и без указания, куда уходит сообщение и в какие сроки будет ответ. 6. Адрес электронной почты для рекламаций, отдельно от общего (19-08). Ниже — сводный текст на страницу, который закрывает пункты 3, 5 и 6.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Obsługa klienta
+Telefon i e-mail: pn.–pt. 9:00–18:00. W soboty i niedziele biuro jest nieczynne — wiadomości odbieramy w najbliższy dzień roboczy. Godziny otwarcia butiku przy ul. Mokotowskiej podajemy osobno, poniżej.
+Formularz kontaktowy: wiadomość trafia do naszego zespołu obsługi klienta pod adres hello@lapetitebloom.com. Po wysłaniu otrzymasz potwierdzenie na podany adres e-mail.
+Reklamacje i zwroty: kontakt@lapetitebloom.com oraz adres do odesłania towaru podany wyżej.
+```
+
+
+*UA:*
+
+```
+Служба підтримки
+Телефон і електронна пошта: пн–пт, 9:00–18:00. У суботу та неділю офіс не працює — повідомлення опрацьовуємо найближчого робочого дня. Години роботи бутика на вул. Mokotowska вказані окремо, нижче.
+Форма зв’язку: повідомлення надходить до нашої служби підтримки на адресу hello@lapetitebloom.com. Після надсилання ви отримаєте підтвердження на вказану електронну пошту.
+Претензії та повернення: kontakt@lapetitebloom.com, а також адреса для відправлення товару, зазначена вище.
+```
+
+
+*EN:*
+
+```
+Customer service
+Phone and email: Mon–Fri, 9:00–18:00. The office is closed at the weekend — messages are picked up on the next working day. Opening hours of the Mokotowska boutique are listed separately below.
+Contact form: your message reaches our customer service team at hello@lapetitebloom.com. You will receive a confirmation at the email address you provide.
+Returns and complaints: kontakt@lapetitebloom.com, and the return address given above.
+```
+
+
+**Куда вписать / примечание:** Админка: /contacts, вводный текст над карточками контактов. Пункт про подтверждение отправки формы требует технической проверки — сейчас после «Wyślij wiadomość» не видно ни экрана благодарности, ни письма-подтверждения; если их нет, обещание в тексте давать нельзя, пока не сделают.
+
+
+*Правки носителей: PL: Łączniki zamiast półpauz w zakresie dni i godzin oraz trzeci wariant skrótu dni na stronie („pon.-pt.” obok „Pn–Pt” i „pn-pt”).; UA: прямий апостроф замість типографського «’»; дефіси замість тире в діапазонах; різнобій «бутік/бутик» — уніфіковано на «бутик»; різнобій «рекламації/претензії»; EN: Hyphens instead of en dashes in the day and time ranges.*
+
+
+### 07-04 · /deklaracja-dostepnosci · Юр. требование [PL]
+
+**Где:** Раздел «Status zgodności», 2-е предложение
+
+
+**Сейчас:**
+
+> Jako mikroprzedsiębiorca nie jesteśmy prawnie zobowiązani do spełnienia wymogów Europejskiego Aktu o Dostępności, jednak dobrowolnie podejmujemy działania na rzecz poprawy dostępności.
+
+
+**Почему проблема:** Первое, что читатель видит в декларации доступности, — заявление о том, что закон компанию не обязывает. Это, во-первых, факт, который надо проверить (исключение для микропредприятий в European Accessibility Act применяется к услугам и зависит от численности сотрудников и оборота — если магазин перерастёт порог, страница станет ложным заявлением), во-вторых, тон противоречит самому смыслу документа. Формулировку стоит перевернуть: сначала обязательство, потом оговорка о статусе.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Dostępność traktujemy jako część jakości obsługi, dlatego pracujemy nad zgodnością serwisu ze standardem WCAG 2.1 na poziomie AA. [уточнить: potwierdzić z prawnikiem status mikroprzedsiębiorcy i zakres obowiązków wynikających z Europejskiego Aktu o Dostępności — jeżeli wyłączenie ma zostać wskazane, umieścić je na końcu sekcji, a nie na początku].
+```
+
+
+*UA:*
+
+```
+Доступність для нас — частина якості сервісу, тому ми працюємо над відповідністю сайту стандарту WCAG 2.1 рівня AA. [уточнити: підтвердити з юристом статус мікропідприємства та обсяг обов’язків за Європейським актом про доступність — якщо виняток усе ж треба згадати, розмістити його наприкінці розділу, а не на початку].
+```
+
+
+*EN:*
+
+```
+We treat accessibility as part of the quality of our service, which is why we are working towards WCAG 2.1 level AA compliance. [уточнить: confirm with a lawyer the microenterprise status and the scope of obligations under the European Accessibility Act — if the exemption is to be mentioned, place it at the end of the section rather than at the start].
+```
+
+
+**Куда вписать / примечание:** Правка текстовая, но требует юридического подтверждения статуса микропредприятия на дату запуска.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 07-05 · /deklaracja-dostepnosci · Битая ссылка [PL]
+
+**Где:** Разметка тела страницы (div.page-description) — то же на /regulamin-kart-podarunkowych, /zgody-klauzule-i-regulamin-newslettera, /personal-data-requests во всех трёх локалях
+
+
+**Сейчас:**
+
+> <p><span style="background-color:transparent;color:#000000;">Status zgodności</span></p>
+
+
+**Почему проблема:** Заголовки разделов («Status zgodności», «Znane ograniczenia», «Informacje zwrotne i kontakt», «Data», а на других страницах — пункты 1–8) свёрстаны обычными абзацами, на всей странице единственный настоящий заголовок — H1. Экранный диктор не может перейти по разделам — это провал WCAG 1.3.1 на самой странице о доступности. Дополнительно: в каждом абзаце жёстко зашит color:#000000 (ломает контраст и любую тёмную тему, WCAG 1.4.3/1.4.8), адреса kontakt@lapetitebloom.com на трёх из четырёх страниц — обычный текст без mailto, а перекрёстные ссылки на «Regulamin Sklepu» и «Politykę prywatności» не кликабельны ни на одной из четырёх страниц.
+
+
+**Куда вписать / примечание:** Технически: в визуальном редакторе страниц перевести названия разделов в H2 (для нумерованных пунктов регламентов — в списки OL/LI), убрать inline-стиль style="background-color:transparent;color:#000000" из всех абзацев, обернуть адреса в <a href="mailto:…">, а упоминания Regulaminu Sklepu и Polityki prywatności — в ссылки на /terms-of-use и /privacy-policy (с префиксом локали).
+
+
+### 07-15 · /deklaracja-dostepnosci · Кривой перевод [EN]
+
+**Где:** URL страниц во всех локалях (canonical и hreflang)
+
+
+**Сейчас:**
+
+> https://lapetitebloom.com/en/deklaracja-dostepnosci
+
+
+**Почему проблема:** Слаги служебных страниц не локализуются: английский и украинский посетитель получает польский адрес — /en/deklaracja-dostepnosci, /en/regulamin-kart-podarunkowych, /ua/zgody-klauzule-i-regulamin-newslettera. Причём в самом польском слаге ещё и потеряна диакритика (dostepnosci). Правило при этом непоследовательное: часть страниц имеет английские слаги даже в польской локали — /personal-data-requests, /privacy-policy, /terms-of-use, /delivery-and-payment. Читаемость адреса и доверие страдают, для языковых версий это ещё и слабый сигнал релевантности. Переезд не срочный: сайт закрыт от индексации, так что менять адреса дешевле сейчас, чем после запуска.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+/deklaracja-dostepnosci → /deklaracja-dostepnosci (bez zmian) · /regulamin-kart-podarunkowych · /regulamin-newslettera · /wnioski-o-dane-osobowe
+```
+
+
+*UA:*
+
+```
+/ua/zaiava-pro-dostupnist · /ua/podarunkovi-kartky · /ua/pravyla-rozsylky · /ua/zapyty-shchodo-personalnykh-danykh
+```
+
+
+*EN:*
+
+```
+/en/accessibility-statement · /en/gift-card-terms · /en/newsletter-terms · /en/personal-data-requests
+```
+
+
+**Куда вписать / примечание:** Выбрать одно правило и применить ко всем служебным страницам: либо локализованные слаги в каждой локали, либо единый английский слаг везде. При смене поставить 301 со старых адресов и обновить canonical, hreflang, пункты футера и sitemap. Оставить как есть тоже допустимо — тогда хотя бы починить диакритику в польском слаге.
+
+
+### 07-16 · /deklaracja-dostepnosci · Заглушка [PL]
+
+**Где:** meta description всех четырёх служебных страниц во всех трёх локалях
+
+
+**Сейчас:**
+
+> meta description: Deklaracja dostepnosci
+
+
+**Почему проблема:** На всех четырёх страницах meta description дословно повторяет заголовок — «Deklaracja dostepnosci», «Regulamin kart podarunkowych», «Personal data requests», «Згоди, положення та правила інформаційної розсилки». Это поле заполнено автоматически и не несёт информации: в выдаче и при шаринге ссылки видно только название. Сайт сейчас под noindex, поэтому правку удобно сделать до запуска.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+/deklaracja-dostepnosci — Jak dbamy o dostępność sklepu La Petite Bloom: status zgodności z WCAG 2.1 AA, znane ograniczenia i kontakt w sprawie barier.
+/regulamin-kart-podarunkowych — Zasady kart podarunkowych La Petite Bloom: termin ważności, płatność kartą, rozliczenie różnicy i zwroty.
+/zgody-klauzule-i-regulamin-newslettera — Treść zgód marketingowych, klauzula informacyjna i regulamin newslettera La Petite Bloom.
+/personal-data-requests — Jak skorzystać z praw wynikających z RODO w La Petite Bloom: gdzie złożyć wniosek i w jakim terminie odpowiadamy.
+```
+
+
+*UA:*
+
+```
+/ua/deklaracja-dostepnosci — Як ми дбаємо про доступність магазину La Petite Bloom: відповідність WCAG 2.1 AA, відомі обмеження та контакти щодо бар’єрів.
+/ua/regulamin-kart-podarunkowych — Правила подарункових карток La Petite Bloom: термін дії, оплата карткою, доплата різниці та повернення.
+/ua/zgody-klauzule-i-regulamin-newslettera — Тексти маркетингових згод, інформаційне повідомлення та правила розсилки La Petite Bloom.
+/ua/personal-data-requests — Як скористатися правами за GDPR у La Petite Bloom: куди надіслати запит і в який термін ми відповідаємо.
+```
+
+
+*EN:*
+
+```
+/en/deklaracja-dostepnosci — How La Petite Bloom approaches accessibility: WCAG 2.1 AA compliance status, known limitations and where to report barriers.
+/en/regulamin-kart-podarunkowych — La Petite Bloom gift card terms: validity, paying with a card, settling the difference and returns.
+/en/zgody-klauzule-i-regulamin-newslettera — Marketing consent wording, privacy notice and newsletter terms at La Petite Bloom.
+/en/personal-data-requests — How to exercise your GDPR rights at La Petite Bloom: where to send a request and how quickly we reply.
+```
+
+
+**Куда вписать / примечание:** Четыре страницы × три локали = 12 полей meta description в админке. Тексты сгруппированы по локали, адрес страницы указан перед каждым.
+
+
+### 07-17 · /deklaracja-dostepnosci · Юр. требование [PL]
+
+**Где:** Раздел «Informacje zwrotne i kontakt» — и все упоминания kontakt@ на /regulamin-kart-podarunkowych и /zgody-klauzule-i-regulamin-newslettera
+
+
+**Сейчас:**
+
+> Uwagi dotyczące dostępności oraz prośby o udostępnienie informacji w alternatywnej formie prosimy kierować na adres: kontakt@lapetitebloom.com.
+
+
+**Почему проблема:** На сайте живут три разных адреса: hello@lapetitebloom.com (контакты, подвал — 165 упоминаний), kontakt@lapetitebloom.com (только юридические страницы — 30) и rodo@lapetitebloom.com (данные — 18). Адрес kontakt@ не указан ни на странице контактов, ни в подвале, то есть подтверждения, что этот ящик вообще существует и кто-то его читает, нет. Юридические сроки (ответ на жалобу о доступности, рекламация по карте, отзыв согласия) привязаны к адресу, который нигде больше не заявлен, — если письма туда не доходят, сроки нарушаются автоматически.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Uwagi dotyczące dostępności oraz prośby o udostępnienie informacji w alternatywnej formie prosimy kierować na adres: [уточнить: kontakt@lapetitebloom.com — potwierdzić, że skrzynka działa i jest obsługiwana, albo zastąpić adresem hello@lapetitebloom.com]. Postaramy się rozwiązać zgłoszony problem w rozsądnym terminie.
+```
+
+
+*UA:*
+
+```
+Зауваження щодо доступності та запити на надання інформації в альтернативному форматі просимо надсилати на адресу: [уточнити: kontakt@lapetitebloom.com — підтвердити, що скринька працює та її опрацьовують, або замінити на hello@lapetitebloom.com]. Ми намагатимемося розв’язати проблему в розумний термін.
+```
+
+
+*EN:*
+
+```
+Please send accessibility comments and requests for information in an alternative format to [уточнить: kontakt@lapetitebloom.com — confirm the mailbox exists and is monitored, or replace it with hello@lapetitebloom.com]. We will do our best to resolve the issue within a reasonable time.
+```
+
+
+**Куда вписать / примечание:** Проверить MX и фактическую обработку kontakt@. Решение принять один раз и применить ко всем юридическим страницам: доступность и рекламации — на один общий адрес, персональные данные — на rodo@.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 04-10 · /delivery-and-payment · Юр. требование [PL]
+
+**Где:** Карточка «Metody płatności», упоминание оператора
+
+
+**Сейчас:**
+
+> Przelewy24 (PayPro S.A.)
+
+
+**Почему проблема:** Оператор назван только брендом и сокращённым названием юрлица — без адреса, регистровых номеров и указания на надзор KNF. Przelewy24 при верификации ожидает, что мерчант корректно идентифицирует оператора платежей на публичной странице, а польская практика информирования потребителя предполагает данные о субъекте, который принимает платёж от его имени.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Podmiotem świadczącym obsługę płatności online jest PayPro S.A. (Przelewy24) z siedzibą w Poznaniu, [уточнить: pełny adres, KRS, NIP, REGON — do przepisania z aktualnej umowy z PayPro], wpisana do rejestru krajowych instytucji płatniczych prowadzonego przez Komisję Nadzoru Finansowego.
+```
+
+
+*UA:*
+
+```
+Обслуговування онлайн-платежів здійснює PayPro S.A. (Przelewy24) із місцезнаходженням у Познані, [уточнити: повна адреса, KRS, NIP, REGON — переписати з чинного договору з PayPro], внесена до реєстру національних платіжних установ, який веде Комісія фінансового нагляду Польщі (Komisja Nadzoru Finansowego).
+```
+
+
+*EN:*
+
+```
+Online payments are handled by PayPro S.A. (Przelewy24), registered office in Poznań, [уточнить: full address, KRS, NIP, REGON — to be copied from the current PayPro agreement], entered in the register of national payment institutions kept by the Polish Financial Supervision Authority (KNF).
+```
+
+
+**Куда вписать / примечание:** Реквизиты PayPro не выдумывать — брать из подписанного договора или из актуальной карточки оператора. Реквизиты самого LPB Sp. z o.o. — зона агента 19, здесь не дублируем.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; назва міста не відмінена; неперекладена й невідмінена польська назва установи*
+
+
+### 04-11 · /delivery-and-payment · Юр. требование [PL]
+
+**Где:** Обе карточки страницы — исходящих ссылок нет ни одной
+
+
+**Сейчас:**
+
+> Sklep internetowy La Petite Bloom · LPB Sp. z o.o. … Metody płatności … Ceny зазначаються в польських злотих (PLN) — в теле страницы нет ни одной ссылки на regulamin, политику возвратов или политику приватности (все ссылки только в шапке и подвале).
+
+
+**Почему проблема:** Страница описывает условия договора (сроки, тарифы, оплата), но не связывает их с документами, где эти условия закреплены: regulamin sklepu, polityka zwrotów i reklamacji, polityka prywatności. Przelewy24 при проверке ищет со страницы оплаты прямой путь к правилам магазина. По ustawa o prawach konsumenta информация о праве отказа от договора в течение 14 дней должна быть доступна потребителю до покупки — на этой странице упоминания права отказа нет вовсе.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Pełne warunki sprzedaży, w tym prawo odstąpienia od umowy w terminie 14 dni, opisuje [Regulamin sklepu internetowego]. Zasady zwrotów i reklamacji znajdziesz w [Polityce zwrotów i reklamacji], a informacje o przetwarzaniu danych — w [Polityce prywatności].
+```
+
+
+*UA:*
+
+```
+Повні умови продажу, зокрема право відмовитися від договору протягом 14 днів, описані в [Правилах інтернет-магазину]. Умови повернення та рекламацій — у [Політиці повернення та претензій], інформація про обробку даних — у [Політиці конфіденційності].
+```
+
+
+*EN:*
+
+```
+The full terms of sale, including your right to withdraw from the contract within 14 days, are set out in our [Online shop terms and conditions]. Return and complaint rules are in the [Returns and complaints policy], and information on data processing is in the [Privacy policy].
+```
+
+
+**Куда вписать / примечание:** Добавить замыкающим абзацем страницы во всех трёх локалях, ссылки — на /terms-of-use, /returns-policy, /privacy-policy с языковыми префиксами.
+
+
+*Правки носителей: EN: "Online store" is an Americanism and clashes with "online shop" used elsewhere.*
+
+
+### 04-12 · /delivery-and-payment · Нет перевода [PL]
+
+**Где:** Карточка «Sposoby i koszty dostawy», строка о зарубежной доставке + подраздел «Dostawa zagraniczna»
+
+
+**Сейчас:**
+
+> - Dostawa zagraniczna — DHL, według taryfy przewoźnika … Wysyłamy na terenie Unii Europejskiej i poza nią. Dla Ukrainy dostępne są Nova Poshta oraz Meest.
+
+
+**Почему проблема:** Тарифов зарубежной доставки на странице нет вообще: ни таблицы по странам, ни диапазона цен, ни сроков для Nova Poshta и Meest — при том что для Польши сроки и цены расписаны подробно. Формулировка «według taryfy przewoźnika» не даёт покупателю узнать сумму до оформления, а это обязательный элемент информации о цене по ustawa o prawach konsumenta (art. 12 ust. 1 pkt 5): все дополнительные расходы должны быть известны до оформления заказа. Сроки 2–5 рабочих дней указаны только для DHL, для украинских перевозчиков — нет.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Koszt dostawy zagranicznej wyliczamy według taryfy przewoźnika i pokazujemy w koszyku przed potwierdzeniem zamówienia. Orientacyjny czas dostawy: DHL 2–5 dni roboczych; Nova Poshta i Meest do Ukrainy [уточнить: liczba dni roboczych i koszt lub widełki kosztu]. Pełną listę krajów, do których wysyłamy, znajdziesz [уточнить: gdzie — w koszyku czy w regulaminie].
+```
+
+
+*UA:*
+
+```
+Вартість міжнародної доставки розраховуємо за тарифом перевізника й показуємо в кошику перед підтвердженням замовлення. Орієнтовний строк доставки: DHL — 2–5 робочих днів; «Нова пошта» та Meest в Україну — [уточнити: кількість робочих днів і вартість або діапазон вартості]. Повний перелік країн, куди ми відправляємо, дивіться [уточнити: де — у кошику чи в правилах магазину].
+```
+
+
+*EN:*
+
+```
+International delivery is charged at the carrier’s rates, and the cost is shown in your basket before you confirm the order. Estimated delivery times: DHL 2–5 working days; Nova Poshta and Meest to Ukraine [уточнить: number of working days and cost or cost range]. The full list of countries we ship to is available [уточнить: where — in the basket or in the shop terms].
+```
+
+
+**Куда вписать / примечание:** Сроки и суммы для Nova Poshta / Meest не выдуманы — их надо получить у магазина. Заодно решить, показывается ли стоимость зарубежной доставки в корзине: если нет, это отдельная задача разработке.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; українську компанію в українському тексті написано латинкою; EN: Straight apostrophes; "calculated at the tariff" is a calque; "business days" is American ("working days" is used elsewhere).*
+
+
+### 04-13 · /delivery-and-payment · Кривой перевод [UA]
+
+**Где:** Карточка «Способи та вартість доставки» → подраздел «Самовивіз»
+
+
+**Сейчас:**
+
+> Самовивіз із бутика за адресою ul. Mokotowska 51/53 у Warszawa можливий після підтвердження наявності Товару.
+
+
+**Почему проблема:** Название города оставлено в польском именительном падеже внутри украинского предложения — «у Warszawa» вместо «у Варшаві»: грамматически ломаная конструкция, характерный след машинного перевода. То же в английской версии: «in Warszawa» вместо «in Warsaw» (название улицы и номер дома при этом справедливо остаются как есть — по ним ищут адрес). Отдельно: адрес самовывоза (ul. Mokotowska 51/53) не совпадает с контактным адресом в подвале (ul. Marcina Kasprzaka 31/119) — для верификации Przelewy24 адреса на сайте должны быть объяснимы.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Możliwy jest odbiór osobisty w butiku przy ul. Mokotowskiej 51/53 w Warszawie, po potwierdzeniu dostępności Towaru. Zamówienie czeka na odbiór 7 dni kalendarzowych od powiadomienia o gotowości.
+```
+
+
+*UA:*
+
+```
+Самовивіз можливий із бутика на вул. Mokotowska 51/53 у Варшаві, після підтвердження наявності Товару. Замовлення зберігається для отримання протягом 7 календарних днів з моменту повідомлення про готовність.
+```
+
+
+*EN:*
+
+```
+Personal collection is available from our boutique at ul. Mokotowska 51/53 in Warsaw, once we have confirmed that the item is in stock. Orders are held for collection for 7 calendar days from the day we tell you the order is ready.
+```
+
+
+**Куда вписать / примечание:** [уточнить: почему адрес бутика (Mokotowska 51/53) отличается от адреса в подвале (Marcina Kasprzaka 31/119) — если это разные точки, стоит подписать: бутик для самовывоза и адрес для корреспонденции.]
+
+
+*Правки носителей: EN: "from the readiness notification" is a calque; rendered as plain English.*
+
+
+### 04-14 · /delivery-and-payment · Опечатка [UA]
+
+**Где:** Карточка «Способи та вартість доставки», перечень тарифов — все четыре строки (те же строки в EN)
+
+
+**Сейчас:**
+
+> - Поштомат InPost 24/7—13,99 zł
+- Кур’єр InPost / DPD—17 zł; післяплата: +20–23 zł
+- Великогабаритне відправлення (понад 25 kg)—99 zł
+- Міжнародна доставка—DHL, відповідно до тарифу перевізника
+
+
+**Почему проблема:** В украинской и английской версиях длинное тире приклеено к тексту без пробелов («24/7—13,99 zł»), тогда как в польской версии оно набрано с пробелами («Paczkomat InPost 24/7 — 13,99 zł») — цены в переведённых версиях читаются как сплошная строка. В украинской строке единица веса осталась латиницей — «понад 25 kg» вместо «25 кг» (ниже на той же странице уже написано «25 кг», то есть внутри одной локали два варианта). В английской версии десятичная запятая «13,99 zł» для британского набора должна быть точкой — «13.99 zł».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+- Paczkomat InPost 24/7 — 13,99 zł
+- Kurier InPost / DPD — 17 zł; za pobraniem +20–23 zł
+- Przesyłka gabarytowa (powyżej 25 kg) — 99 zł
+- Dostawa zagraniczna — DHL, według taryfy przewoźnika
+```
+
+
+*UA:*
+
+```
+- Поштомат InPost 24/7 — 13,99 zł
+- Кур’єр InPost / DPD — 17 zł; післяплата +20–23 zł
+- Великогабаритне відправлення (понад 25 кг) — 99 zł
+- Міжнародна доставка — DHL, за тарифом перевізника
+```
+
+
+*EN:*
+
+```
+- InPost 24/7 parcel locker — 13.99 zł
+- InPost / DPD courier — 17 zł; cash on delivery +20–23 zł
+- Oversized shipment (over 25 kg) — 99 zł
+- International delivery — DHL, at the carrier’s tariff
+```
+
+
+**Куда вписать / примечание:** Сами цифры во всех трёх локалях совпадают (13,99 / 17 / +20–23 / 99 / порог 500 zł / 13:00 / 1 день / 2–5 дней / 30 дней / 7 дней) — правка чисто типографская. Единственное расхождение сумм было внутри украинской карточки оплаты, см. 04-04.
+
+
+*Правки носителей: EN: Straight apostrophe instead of a typographic one.*
+
+
+### 04-15 · /delivery-and-payment · Опечатка [PL]
+
+**Где:** Карточка «Sposoby i koszty dostawy» — разметка подзаголовков и списков (info-page-delivery__description)
+
+
+**Сейчас:**
+
+> <h3><span style="background-color:transparent;color:#000000;">Czas realizacji</span></h3> … <p><span style="background-color:transparent;color:#000000;">Odbiór osobisty</span></p>
+
+
+**Почему проблема:** Разметка блока разъезжается между локалями и внутри самой польской версии: «Czas realizacji» и «Dostawa zagraniczna» набраны как <h3>, а «Odbiór osobisty» — обычным абзацем; в украинской и английской версиях все три подзаголовка — обычные <p>, то есть заголовков в этих локалях нет вовсе. Тарифы свёрстаны псевдосписком (дефис в начале абзаца) вместо <ul>, а между блоками стоят пустые абзацы <p><br>&nbsp;</p> вместо отступов. Для скринридера страница выглядит как сплошной текст без структуры — это же противоречит собственной «Deklaracja dostępności» магазина и мешает верификатору быстро найти нужные разделы.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Podtytuły «Czas realizacji», «Dostawa zagraniczna», «Odbiór osobisty» — jednakowo jako <h3>; wykaz taryf — jako <ul><li>; puste akapity <p><br>&nbsp;</p> usunąć.
+```
+
+
+*UA:*
+
+```
+Підзаголовки «Строк виконання замовлення», «Міжнародна доставка», «Самовивіз» — однаково як <h3>; перелік тарифів — як <ul><li>; порожні абзаци <p><br>&nbsp;</p> прибрати.
+```
+
+
+*EN:*
+
+```
+Subheadings “Order processing time”, “International delivery”, “Personal collection” — all as <h3>; the tariff list — as <ul><li>; remove the empty <p><br>&nbsp;</p> spacers.
+```
+
+
+**Куда вписать / примечание:** Правка в визуальном редакторе карточки: подзаголовки — стилем «Заголовок 3», тарифы — маркированным списком, инлайновые style="background-color:transparent;color:#000000" вычистить (они мешают тёмной теме и переопределяют типографику).
+
+
+*Правки носителей: EN: Guillemets used around English terms; English copy uses curly double quotes.*
+
+
+### 14-19 · /en/boys и все каталоги английской версии · Опечатка [EN]
+
+**Где:** Панель фильтров, названия групп фильтров
+
+
+**Сейчас:**
+
+> Categories / Price, PLN / Brand / Collection / Color / Gender / Size / Shoe size / Socks Size / Size KG / Age / Height Size / Width CM / Lenght cm
+
+
+**Почему проблема:** В английском наборе названий фильтров четыре дефекта сразу: «Lenght cm» — опечатка вместо «Length»; «Color» — американское написание при заявленном британском английском для европейского покупателя; «Height Size», «Socks Size», «Width CM» — рваная капитализация и нелепые склейки («Height Size» дословно «высота размер»). В польском наборе тот же фильтр «Wysokość Rozmiar» — такая же нелепая склейка, а группа выбора пола подписана «Artykuł» (в UA на этом же месте корректное «Стать», в EN «Gender»), то есть в основной локали фильтр пола называется «Артикул».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kategorie / Cena / Marka / Kolekcja / Kolor / Płeć / Rozmiar / Rozmiar buta / Rozmiar skarpet / Waga dziecka (kg) / Wiek / Wzrost (cm) / Szerokość (cm) / Długość (cm)
+```
+
+
+*UA:*
+
+```
+Категорії / Ціна, zł / Бренд / Колекція / Колір / Стать / Розмір / Розмір взуття / Розмір шкарпеток / Вага дитини, кг / Вік / Зріст, см / Ширина, см / Довжина, см
+```
+
+
+*EN:*
+
+```
+Categories / Price (zł) / Brand / Collection / Colour / Gender / Size / Shoe size / Sock size / Child’s weight (kg) / Age / Height (cm) / Width (cm) / Length (cm)
+```
+
+
+**Куда вписать / примечание:** Порядок соответствует текущему порядку групп в панели фильтров, названия даны построчно для переноса в справочник атрибутов. Отдельно: PL «Rozmiar skarpet» → правильнее «Rozmiar skarpetek»; UA «Розмір шкарпетки» в единственном числе → «Розмір шкарпеток». Заголовок панели переведён корректно (Filtry / Фільтр / Filter), а вот кнопки в её шапке — по-русски, см. находку 14-07.
+
+
+*Правки носителей: PL: „Cena, zł” kolidowało z „Cena” z 10-10, a zapis jednostki po przecinku („, kg”, „, cm”) to kalka rosyjskiej/ukraińskiej konwencji — po polsku jednostka w nawiasie.; EN: Slavic "Label, unit" calque in five filter names; straight apostrophe.*
+
+
+### 14-13 · /en/contacts, /en/about, /en · Опечатка [EN]
+
+**Где:** Блок «Boutique» / часы работы бутика на Mokotowskiej, строка воскресенья
+
+
+**Сейчас:**
+
+> Sun: Сlosed
+
+
+**Почему проблема:** В слове «Closed» стоит кириллическая «С» (U+0421) вместо латинской «C» (U+0043). Внешне неотличимо, но строка выпадает из поиска по странице, ломает индексацию и попадает в отчёты о смешанных скриптах. Значение введено вручную в поле часов работы, поэтому одна ошибка тиражируется на три страницы: /en/contacts, /en/about и главную /en. В польской версии там «Zamknięte», в украинской «Зачинено» — эти корректны.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nd: nieczynne
+```
+
+
+*UA:*
+
+```
+Нд: зачинено
+```
+
+
+*EN:*
+
+```
+Sun: Closed
+```
+
+
+**Куда вписать / примечание:** Проверено сплошным сканом на смешанные скрипты по всем 162 снимкам (54 страницы × 3 локали), и по HTML, и по видимому тексту: это ЕДИНСТВЕННАЯ подмена буквы на сайте, других гомоглифов нет — ни в брендах, ни в заголовках, ни в мета-тегах. Править в админке: карточка бутика, поле часов работы, воскресенье, английская локаль. Заодно выровнять сокращения дней в EN — сейчас «Thur» вместо стандартного «Thu», и неделя начинается с воскресенья, хотя в футере той же страницы «Mon-Fri».
+
+
+*Правки носителей: PL: „Zamknięte” to kalka z „Closed”; polskie godziny otwarcia podaje się jako „nieczynne”.; UA: зайва велика літера*
+
+
+### 13-07 · /en/favorites · Кривой перевод [EN]
+
+**Где:** Nazwa sekcji ulubionych: <title>, <h1>, okruszki, pusty stan
+
+
+**Сейчас:**
+
+> Favorites
+
+
+**Почему проблема:** Sklep kieruje ofertę do kupujących w Europie, więc angielski powinien być brytyjski — „favourites”, nie amerykańskie „favorites”. Pisownia amerykańska występuje konsekwentnie: tytuł karty, <h1>, okruszki, komunikat pustej listy i klucze tłumaczeń. Przy okazji tylko wersja EN kończy komunikat kropką („The favorites list is empty.”), PL i UA są bez kropki — warto ujednolicić interpunkcję.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ulubione
+```
+
+
+*UA:*
+
+```
+Обране
+```
+
+
+*EN:*
+
+```
+Favourites
+```
+
+
+**Куда вписать / примечание:** Zmienić w tytule strony, <h1>, okruszkach i grupie tłumaczeń `favorites`. Przycisk w nagłówku i menu mobilnym też używa „Favorites” — to element sprzeczny (nagłówek/stopka są w zakresie agenta 02), warto poprawić razem.
+
+
+### 09-26 · /en/zabawki · Кривой перевод [ua,en]
+
+**Где:** Adresy URL kategorii i produktów w lokalizacjach UA i EN
+
+
+**Сейчас:**
+
+> https://lapetitebloom.com/en/zabawki  •  https://lapetitebloom.com/en/niemowleta  •  https://lapetitebloom.com/en/pielegnacja-i-kosmetyki  •  https://lapetitebloom.com/en/czekolada-do-kapieli-inuwet-jagoda-dla-dzieci-bl647631521
+
+
+**Почему проблема:** Część slugów kategorii pozostała po polsku we wszystkich lokalizacjach: angielski klient ogląda stronę «Toys» pod adresem /en/zabawki, «Babies 0-2» pod /en/niemowleta, «Care and cosmetics» pod /en/pielegnacja-i-kosmetyki. Katalog jest przy tym niekonsekwentny — /kids, /girls, /boys, /footwear, /accessories i /brands mają slugi angielskie, więc trzy polskie wyglądają na przeoczenie, a nie na decyzję. To samo dotyczy wszystkich adresów produktów (/en/…, /ua/… ze zbitką polskich słów).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+/zabawki • /niemowleta • /pielegnacja-i-kosmetyki
+```
+
+
+*UA:*
+
+```
+/ua/igrashky • /ua/nemovliata • /ua/dohliad-i-kosmetyka
+```
+
+
+*EN:*
+
+```
+/en/toys • /en/babies • /en/care-and-cosmetics
+```
+
+
+**Куда вписать / примечание:** Jedna decyzja do podjęcia świadomie: albo slugi lokalizowane (wtedy trzeba dodać przekierowania 301 ze starych adresów), albo jeden wspólny slug dla wszystkich języków — wtedy dla spójności przenieść /zabawki, /niemowleta, /pielegnacja-i-kosmetyki na angielskie odpowiedniki, jak reszta katalogu. Slugi produktów zostawić na osobny etap.
+
+
+### 13-09 · /favorites · Кривой перевод [EN]
+
+**Где:** Rozwijana lista „Sortowanie” — porównanie /favorites i /search
+
+
+**Сейчас:**
+
+> By popularity / Discounted products (na /en/favorites) — By coincidence / Promotional products (na /en/search)
+
+
+**Почему проблема:** Ta sama kontrolka sortowania ma na dwóch stronach różne etykiety dla tych samych opcji: pierwsza pozycja to raz „By popularity”, raz „By coincidence”, a wyprzedaż to raz „Discounted products”, raz „Promotional products”. W PL i UA rozjeżdża się tylko pierwsza pozycja („Według popularności” vs „Przypadkowo”, „За популярністю” vs „За співпадінням”), ale w EN rozjeżdżają się dwie. Wygląda to na dwa niezależne zestawy tłumaczeń dla jednego komponentu.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Trafność / Cena rosnąco / Cena malejąco / Produkty w promocji
+```
+
+
+*UA:*
+
+```
+За релевантністю / Ціна за зростанням / Ціна за спаданням / Акційні товари
+```
+
+
+*EN:*
+
+```
+Relevance / Price: low to high / Price: high to low / On sale
+```
+
+
+**Куда вписать / примечание:** Ujednolicić jeden zestaw kluczy sortowania dla /favorites, /search i stron kategorii.
+
+
+*Правки носителей: UA: та сама опція в 09-27 називається «Акційні товари»; EN: "Price ascending / descending" is database language; UK shops say "low to high".*
+
+
+### 13-14 · /favorites · Нет перевода [PL]
+
+**Где:** Pusty stan listy ulubionych
+
+
+**Сейчас:**
+
+> Lista ulubionych jest pusta
+
+
+**Почему проблема:** Pusty stan to jedno zdanie bez wyjścia: nie ma przycisku prowadzącego do katalogu, nie ma podpowiedzi, jak dodać produkt do ulubionych. Nad pustą listą wyświetla się natomiast pełna kontrolka sortowania („Sortowanie / Według popularności / Cena rosnąco…”), czyli filtr do sortowania zera produktów. Na stronie nie ma też licznika ulubionych — jedyny licznik to pusty <span class="head-qty" data-total-favorites-products="true"> w nagłówku.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nie masz jeszcze ulubionych. Kliknij serduszko przy produkcie, który Ci się spodoba — znajdziesz go potem w tym miejscu.
+```
+
+
+*UA:*
+
+```
+В обраному поки що порожньо. Додайте те, що сподобалося — сердечко біля товару збереже його тут.
+```
+
+
+*EN:*
+
+```
+Nothing in your favourites yet. Tap the heart on a product to keep it here.
+```
+
+
+**Куда вписать / примечание:** Dodać pod tekstem przycisk „Przejdź do zakupów / До покупок / Start shopping” prowadzący do /kids; ukrywać blok sortowania przy pustej liście; przy niepustej liście pokazywać licznik tym samym ciągiem co na wynikach wyszukiwania (patrz 13-01).
+
+
+*Правки носителей: PL: „serduszko przy produkcie zachowa go tutaj” — nienaturalna konstrukcja (serduszko jako sprawca czynności) i niejasne odniesienie zaimka.; UA: розмовне «сподобалось» і пропущене «що» в «поки що»*
+
+
+### 09-20 · /footwear · Кривой перевод [pl,ua,en]
+
+**Где:** Lista podkategorii na stronie /footwear vs. gałąź «Obuwie» w menu głównym
+
+
+**Сейчас:**
+
+> Na stronie: «Buty / Baleriny / Sandały / Buty do wody / Kapcie». W menu: «Buty i baleriny / Sandały / Buty do wody / Kapcie»
+
+
+**Почему проблема:** Ta sama gałąź katalogu ma inny podział w menu i na stronie kategorii: menu skleja «Buty i baleriny» w jedną pozycję, strona rozbija je na dwie. Identycznie w UA («Туфлі та балетки» w menu, «Туфлі» + «Балетки» na stronie) i EN («Shoes and ballet flats» vs «Shoes» + «Ballet flats»). Dodatkowo cała kategoria ma trzy produkty i wszystkie trzy to kapcie — cztery z pięciu podkategorii prowadzą do pustego listingu.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Buty
+Baleriny
+Sandały
+Buty do wody
+Kapcie
+```
+
+
+*UA:*
+
+```
+Туфлі
+Балетки
+Сандалі
+Взуття для води
+Домашні капці
+```
+
+
+*EN:*
+
+```
+Shoes
+Ballet flats
+Sandals
+Water shoes
+Slippers
+```
+
+
+**Куда вписать / примечание:** Ujednolicić menu ze stroną (rozbite pozycje w obu miejscach). Do czasu uzupełnienia asortymentu rozważyć ukrycie podkategorii z zerową liczbą produktów.
+
+
+### 09-18 · /girls · Кривой перевод [pl,ua,en]
+
+**Где:** Lista podkategorii na stronie kategorii vs. lista podkategorii «Dziewczyny 2-12» w menu głównym
+
+
+**Сейчас:**
+
+> Na stronie: «Szorty / Nakrycia głowy / Kostiumy kąpielowe / Kostiumy karnawałowe». W menu: «Sukienki i spódnice / Bluzki i koszule / T-shirty i topy / Bluzy, swetry, kardigany / Spodnie i legginsy / Kurtki i kamizelki / Bielizna i piżamy / Skarpetki i rajstopy / Czapki i nakrycia głowy»
+
+
+**Почему проблема:** Dwie rozjeżdżone listy podkategorii tej samej kategorii: żadna z czterech pozycji ze strony nie występuje w menu, a dziewięć pozycji z menu nie występuje na stronie. Do tego nazwy tego samego typu produktu różnią się między kategoriami: «Kostiumy kąpielowe» tutaj i «Stroje kąpielowe» w niemowlętach, «Nakrycia głowy» tutaj i «Czapki i nakrycia głowy» w menu. Po angielsku ta sama pozycja jest raz «Headgear» (strona), raz «Headwear» (menu), a «Kostiumy karnawałowe» skrócono do samego «Costumes», co gubi sens.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kostiumy kąpielowe → Stroje kąpielowe
+Nakrycia głowy → Czapki i nakrycia głowy
+Kostiumy karnawałowe (bez zmian)
+```
+
+
+*UA:*
+
+```
+Купальники → Купальний одяг
+Головні убори (без змін)
+Карнавальні костюми (без змін)
+```
+
+
+*EN:*
+
+```
+Swimsuits → Swimwear
+Headgear → Hats & headwear
+Costumes → Fancy dress
+```
+
+
+**Куда вписать / примечание:** Uporządkować drzewo kategorii: jedna nazwa dla jednego typu produktu we wszystkich gałęziach, a lista podkategorii na stronie ma odpowiadać liście w menu.
+
+
+*Правки носителей: UA: «Купальне» — не назва категорії; в інших розділах це «Купальний одяг» (02-24)*
+
+
+### 09-22 · /girls · Кривой перевод [pl,ua]
+
+**Где:** H1, title, meta description, okruszki i pozycja w menu — nazwa kategorii
+
+
+**Сейчас:**
+
+> PL: «Dziewczyny 2-12» | UA: «Дівчата 2-12»
+
+
+**Почему проблема:** «Dziewczyny» w polszczyźnie odnosi się do nastolatek i młodych kobiet, nie do dzieci od 2 lat — dla asortymentu 2–12 właściwa forma to «Dziewczynki». Sklep sam używa poprawnej formy w filtrze «Artykuł: Dziewczynka». Analogicznie po ukraińsku: «Дівчата» to dziewczyny, dla dzieci właściwe jest «Дівчатка» (filtr ma «Дівчинка»). Nazwa jest w H1, title, meta description, okruszkach i w menu, więc błąd widać na całej ścieżce zakupowej. Angielskie «Girls 2-12» jest poprawne.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Dziewczynki 2-12
+```
+
+
+*UA:*
+
+```
+Дівчатка 2–12
+```
+
+
+*EN:*
+
+```
+Girls 2–12
+```
+
+
+**Куда вписать / примечание:** Admin → kategorie → «Dziewczyny 2-12»: zmienić nazwę we wszystkich trzech lokalizacjach; title i meta description dziedziczą nazwę, więc zmienią się razem z nią.
+
+
+*Правки носителей: UA: дефіс замість тире в діапазоні; EN: Hyphen instead of an en dash in the age range.*
+
+
+### 09-23 · /girls · Кривой перевод [pl,ua,en]
+
+**Где:** Pusty listing — komunikat zamiast siatki produktów
+
+
+**Сейчас:**
+
+> PL: «Niestety, w tej kategorii produktów nie ma» | UA: «На жаль, у цій категорії товарів немає» | EN: «Sorry, there are no products in this category»
+
+
+**Почему проблема:** Polski szyk zdania jest kaleki — dopełnienie wyrzucone przed orzeczenie brzmi jak tłumaczenie automatyczne; poprawnie: «w tej kategorii nie ma produktów». Poza tym komunikat kończy ścieżkę zakupową ślepo: nie ma ani linku do kategorii nadrzędnej, ani do nowości. Kategoria /girls jest w menu głównym i jest całkowicie pusta (0 towarów), więc ten ekran zobaczy realny ruch.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+W tej kategorii nie ma jeszcze produktów. Zajrzyj do kategorii Dzieci albo napisz do nas — podpowiemy, co wybrać.
+```
+
+
+*UA:*
+
+```
+У цій категорії поки немає товарів. Загляньте до розділу «Діти» або напишіть нам — підкажемо, що обрати.
+```
+
+
+*EN:*
+
+```
+There are no products in this category yet. Have a look at Kids, or write to us — we’ll help you choose.
+```
+
+
+**Куда вписать / примечание:** Słownik tłumaczeń, komunikat pustego listingu. Osobno: kategoria «Dziewczyny 2-12» ma 0 produktów, mimo że jest pozycją menu głównego — albo uzupełnić asortyment przed startem, albo ukryć ją w nawigacji.
+
+
+*Правки носителей: UA: назва розділу без лапок; EN: Straight apostrophe instead of a typographic one.*
+
+
+### 09-10 · /kids · Кривой перевод [ua,en]
+
+**Где:** Podpis (caption) banera w siatce produktów, nad nazwą marki
+
+
+**Сейчас:**
+
+> UA: «Новизна» | EN: «Novelty» (pl: «Nowość»)
+
+
+**Почему проблема:** Ukraińskie «Новизна» to abstrakcyjne pojęcie «nowatorskość», a nie oznaczenie nowej kolekcji — po ukraińsku etykieta brzmi «Новинка». Angielskie «Novelty» w handlu oznacza tani gadżet-zabawkę i w kontekście marki premium działa odwrotnie do zamierzenia; standardowa etykieta to «New in». Ta sama etykieta pojawia się na wszystkich stronach kategorii.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nowość
+```
+
+
+*UA:*
+
+```
+Новинка
+```
+
+
+*EN:*
+
+```
+New in
+```
+
+
+**Куда вписать / примечание:** Admin → banery → pole «podpis»/caption, wersje ua i en. Ten sam ciąg sprawdzić w słowniku etykiet kart produktu, jeśli bejdż «Nowość» jest używany również na kartach.
+
+
+### 09-13 · /kids · Кривой перевод [EN]
+
+**Где:** Panel filtrów, przycisk zamykający na dole — odpowiednik polskiego «Zobacz (371)»
+
+
+**Сейчас:**
+
+> See the (371)
+
+
+**Почему проблема:** Angielskie «See the (371)» jest niegramatyczne — «the» wisi bez rzeczownika. Przycisk zamyka panel filtrów i pokazuje wyniki, więc powinien nazywać czynność. Występuje na wszystkich stronach kategorii (See the (0), See the (3), See the (27), See the (96), See the (157), See the (371)). PL «Zobacz (371)» i UA «Переглянути (371)» są w porządku.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Pokaż wyniki (371)
+```
+
+
+*UA:*
+
+```
+Переглянути (371)
+```
+
+
+*EN:*
+
+```
+Show 371 products
+```
+
+
+**Куда вписать / примечание:** Słownik tłumaczeń, klucz przycisku «js-filter-close» w stopce panelu filtrów. Jeśli szablon wymusza nawias, wystarczy «Show results (371)».
+
+
+*Правки носителей: PL: Ten sam przycisk panelu filtrów opisuje 10-07 jako „Pokaż wyniki (371)” — „Zobacz (371)” nie nazywa czynności. Ujednolicenie.*
+
+
+### 09-25 · /kids · Кривой перевод [UA]
+
+**Где:** Tytuły kart produktów w listingu — kosmetyki kąpielowe
+
+
+**Сейчас:**
+
+> «Куля для ванни Mini U Ракета 150 г — космічна, шипуча» obok «Бомбочка для купання Inuwet Ice Cream Collection — чорна смородина»; «Піна для купання Inuwet 230 ml — для дітей» przy polskim «Płyn do kąpieli Inuwet 230 ml — dla dzieci»
+
+
+**Почему проблема:** Ten sam typ produktu ma w jednym listingu dwie różne nazwy ukraińskie: «Куля для ванни» i «Бомбочка для купання». Panel podkategorii używa jeszcze trzeciej wersji — «Для ванної: піна, бомбочки». Do tego «Płyn do kąpieli» (płyn) przetłumaczono jako «Піна для купання» (piana), a angielska karta mówi «Bubble bath» — trzy lokalizacje opisują trzy różne produkty. Przy 41 pozycjach w kategorii niespójność jest widoczna gołym okiem.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kula do kąpieli (jednolicie dla wszystkich marek); Płyn do kąpieli → Płyn do kąpieli
+```
+
+
+*UA:*
+
+```
+Бомбочка для ванни (єдина назва для всіх марок); Піна для купання → Піна для ванни
+```
+
+
+*EN:*
+
+```
+Bath bomb (single term across brands); Bubble bath → Bubble bath
+```
+
+
+**Куда вписать / примечание:** Ustalić słownik terminów produktowych przed startem i przejechać nim tytuły kart: bath bomb / kula / бомбочка, bubble bath / płyn / піна. Dotyczy /kids i /pielegnacja-i-kosmetyki.
+
+
+### 10-02 · /kids · Кривой перевод [pl,ua,en]
+
+**Где:** Panel filtrów, nazwa filtra z wartościami 60–140
+
+
+**Сейчас:**
+
+> Wysokość Rozmiar / Зріст / Height Size
+
+
+**Почему проблема:** «Wysokość Rozmiar» to sklejka dwóch rzeczowników w mianowniku — nie jest to poprawna polszczyzna. Wartości (60, 80, 104, 128, 140) to wzrost dziecka w centymetrach, więc brakuje też jednostki. EN «Height Size» to kalka z tej sklejki. UA «Зріст» jest poprawne, ale również bez jednostki.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wzrost (cm)
+```
+
+
+*UA:*
+
+```
+Зріст, см
+```
+
+
+*EN:*
+
+```
+Height (cm)
+```
+
+
+**Куда вписать / примечание:** Zakresy typu 80-86, 110-116 zostają bez zmian — to poprawne rozmiary metkowe.
+
+
+*Правки носителей: PL: „Wzrost, cm” to kalka rosyjskiej/ukraińskiej konwencji zapisu jednostki; po polsku jednostkę podaje się w nawiasie.; EN: "Height, cm" is a Slavic label calque; English filter panels bracket the unit.*
+
+
+### 10-06 · /kids · Опечатка [EN]
+
+**Где:** Panel filtrów, nazwy filtrów wymiarowych
+
+
+**Сейчас:**
+
+> Lenght cm
+
+
+**Почему проблема:** Literówka w angielskim słowie «length». Obok stoją niekonsekwentne zapisy: «Width CM» (wersalikami), «Height Size», «Socks Size», «Hats Size», «Size KG» — wielkie litery w środku nazwy, przy jednocześnie poprawnych «Shoe size», «Color», «Gender».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Długość (cm)
+```
+
+
+*UA:*
+
+```
+Довжина, см
+```
+
+
+*EN:*
+
+```
+Length (cm)
+```
+
+
+**Куда вписать / примечание:** Ujednolicić cały blok EN do zapisu zdaniowego: Colour, Size, Shoe size, Sock size, Hat size, Height, cm / Width, cm / Length, cm, Child's weight, kg, Age, Gender, Brand, Collection.
+
+
+*Правки носителей: PL: „Długość, cm” — jak wyżej, jednostka po przecinku to kalka.; EN: "Length, cm" is a Slavic label calque.*
+
+
+### 10-24 · /kids · Опечатка [pl,ua,en]
+
+**Где:** Filtr «Kolor», zapis wartości
+
+
+**Сейчас:**
+
+> CAMEL, ECRU, NAVY BLUE, zielony
+
+
+**Почему проблема:** Cztery wartości łamią zapis reszty listy: trzy są w całości wersalikami, a «zielony» zaczyna się z małej litery i przez to ląduje na samym końcu listy alfabetycznej, pod «Złoty». Lista kolorów sortuje się alfabetycznie, więc niespójna wielkość liter psuje też kolejność.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wielbłądzi / Ecru / Granatowy / Zielony
+```
+
+
+*UA:*
+
+```
+Кемел / Екрю / Темно-синій / Зелений
+```
+
+
+*EN:*
+
+```
+Camel / Ecru / Navy / Green
+```
+
+
+**Куда вписать / примечание:** Ujednolicić cały atrybut do zapisu z wielkiej litery tylko na początku. Uwaga: «NAVY BLUE» po ujednoliceniu staje się duplikatem istniejącego «Granatowy» (EN «Marine») — do scalenia razem z parami z findings 10-14…10-19.
+
+
+### 10-27 · /kids · Кривой перевод [pl,ua,en]
+
+**Где:** Panel filtrów, filtr «Kolekcja» / «Колекція» / «Collection»
+
+
+**Сейчас:**
+
+> KID_BABY, SS26 Kid, Basic leopard, Doggie velvet, Ufo
+
+
+**Почему проблема:** W liście kolekcji stoją klucze techniczne zamiast nazw dla klienta: «KID_BABY» z podkreślnikiem i «SS26 Kid» — wewnętrzne oznaczenie sezonu. Reszta wartości («Basic leopard», «Doggie velvet») jest po angielsku i nieprzetłumaczona w PL i UA, ale to akurat są nazwy własne kolekcji marek i mogą tak zostać — problem dotyczy dwóch kluczy systemowych.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kolekcja
+```
+
+
+*UA:*
+
+```
+Колекція
+```
+
+
+*EN:*
+
+```
+Collection
+```
+
+
+**Куда вписать / примечание:** Usunąć z filtra wartości «KID_BABY» i «SS26 Kid» albo nadać im nazwy handlowe (np. «Wiosna-lato 2026» / «Весна-літо 2026» / «Spring-Summer 2026»). Nazwy wzorów marek (Basic leopard, Doggie velvet, Football, Hearts, Polka dot, Starfall, Striped rib, Travel agency, Ufo) zostają w oryginale we wszystkich lokalach.
+
+
+### 10-29 · /kids · Нет перевода [pl,ua]
+
+**Где:** Panel filtrów, filtr «Wiek» / «Вік» — lista wartości
+
+
+**Сейчас:**
+
+> 1.5y-3y, 1y, 1y-2y, 2Y, 3m, 3Y, 6m, 9m-12m, 9m-18m, 10y, 23-25, 26-28, 29-31, 32-34, 35-37
+
+
+**Почему проблема:** Wartości wieku są zapisane angielskimi skrótami «y» i «m», które w polskiej i ukraińskiej wersji nic nie znaczą — a to jeden z najczęściej używanych filtrów w sklepie dziecięcym. Do tego ten sam wiek zapisany jest na kilka sposobów («2» obok «2Y» obok «2y»), a na końcu listy siedzą wartości 23-25 … 35-37, które nie są wiekiem, tylko rozmiarami skarpet i butów wrzuconymi do złego atrybutu.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+1 rok / 1–2 lata / 3 mies. / 9–12 mies. / 10 lat
+```
+
+
+*UA:*
+
+```
+1 рік / 1–2 роки / 3 міс. / 9–12 міс. / 10 років
+```
+
+
+*EN:*
+
+```
+1 year / 1–2 years / 3 months / 9–12 months / 10 years
+```
+
+
+**Куда вписать / примечание:** Trzy poprawki w katalogu: (1) ujednolicić zapis do jednego formatu i przetłumaczyć jednostki (y → lata/роки/years, m → mies./міс./months); (2) scalić warianty tej samej wartości: 2 = 2Y = 2y, 3 = 3Y = 3y, 4 = 4Y = 4y, 5 = 5Y = 5y, 6 = 6Y = 6y; (3) usunąć z atrybutu «Wiek» wartości 23-25, 26-28, 29-31, 32-34, 35-37 i przenieść je do «Rozmiar skarpet» / «Rozmiar buta», gdzie już istnieją. Same liczby rozmiarów zostają bez zmian.
+
+
+*Правки носителей: PL: Zakresy liczbowe zapisuje się po polsku półpauzą, nie łącznikiem.; UA: дефіси замість тире в діапазонах; EN: Hyphens instead of en dashes in the age ranges.*
+
+
+### 11-20 · /krem-pod-oczy-skin-minimalism-eye-revival-pielegnacja-okolic-oczu-sm-eye-revival · Заглушка [pl,ua,en]
+
+**Где:** Блок GPSR под описанием, «Ostrzeżenia»
+
+
+**Сейчас:**
+
+> Ostrzeżenia: Zapoznaj się z ostrzeżeniami na opakowaniu.
+
+
+**Почему проблема:** Единственное предупреждение на карточке — отсылка «смотрите на упаковке»: до покупки покупатель не получает никакой информации о мерах предосторожности, а после доставки эта фраза уже бессмысленна. Одна и та же строка стоит на товарах всех типов — от крема для кожи вокруг глаз до плюшевой мыши и муслиновой ковдры. У косметики вдобавок нет способа применения, назначения по типу кожи и срока годности после вскрытия. Единственный блок косметической карточки, заполненный полностью и корректно во всех трёх локалях, — состав INCI.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Sposób użycia: rano i wieczorem nanieś niewielką ilość na okolice oczu i delikatnie wklep opuszkami. Środki ostrożności: [уточнить: unikać kontaktu z okiem; do stosowania zewnętrznego]. Pojemność: [уточнить] ml. Okres po otwarciu: [уточнить].
+```
+
+
+*UA:*
+
+```
+Спосіб застосування: вранці та ввечері нанесіть невелику кількість на шкіру навколо очей і делікатно вбийте подушечками пальців. Застереження: [уточнити: уникати потрапляння в очі; лише для зовнішнього застосування]. Об’єм: [уточнити] мл. Термін після відкриття: [уточнити].
+```
+
+
+*EN:*
+
+```
+How to use: morning and evening, apply a small amount around the eyes and pat in gently with your fingertips. Precautions: [уточнить: avoid contact with the eye; for external use only]. Volume: [уточнить] ml. Period after opening: [уточнить].
+```
+
+
+**Куда вписать / примечание:** Общая строка предупреждения в шаблоне должна заполняться по товару, а не подставляться одинаковой. Для косметики добавить поля «Sposób użycia», «Pojemność», «PAO».
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; прямий апостроф замість типографського «’»*
+
+
+### 11-13 · /little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031 · Кривой перевод [EN]
+
+**Где:** Вкладка «Description», 2-й и 5-й пункты
+
+
+**Сейчас:**
+
+> Made from pre-washed organic cotton highest quality fabric
+
+
+**Почему проблема:** Английские описания местами не собраны грамматически: во фразе пропущен предлог, получается «organic cotton highest quality fabric». Плюс написание американское, тогда как по гайдлайну английская локаль британская: «traveling» (пункт 5), «color combination» и «Lustrous gold … casual sneakers» у VEJA, «works well under makeup» у крема, «Add to favorite», «Color», «Catalog». В той же карточке товар назван «swaddle», хотя это kocyk / ковдра — покрывало, а не пелёнка.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Uszyty ze wstępnie pranej bawełny organicznej najwyższej jakości
+```
+
+
+*UA:*
+
+```
+Пошита з попередньо випраної органічної бавовни найвищої якості
+```
+
+
+*EN:*
+
+```
+Made of pre-washed organic cotton of the highest quality
+```
+
+
+**Куда вписать / примечание:** Замены по всей английской локали: traveling → travelling, color → colour, favorite(s) → favourite(s), catalog → catalogue, makeup → make-up, sneakers → trainers, swaddle → blanket (для kocyk).
+
+
+### 11-15 · /little-dutch-kocyk-muslinowy-fairy-blossom-110x140-letni-kocyk-te12194031 · Заглушка [pl,ua,en]
+
+**Где:** Вкладки «Pakowanie na prezent» и «Potrzebujesz pomocy?»
+
+
+**Сейчас:**
+
+> Oferujemy pakowanie prezentów dla Twojego zamówienia. Skontaktuj się z nami po szczegóły.
+
+
+**Почему проблема:** Две из пяти вкладок карточки предлагают связаться с командой, но не дают ни ссылки, ни адреса, ни телефона — покупатель упирается в тупик, хотя контакты есть в футере. Не сказано главного: платная ли подарочная упаковка и где её выбрать. Вторая вкладка, «Potrzebujesz pomocy?», состоит из одной фразы «Skontaktuj się z naszym zespołem, aby uzyskać pomoc przy zamówieniu» и не несёт никакой информации вообще.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zapakujemy zamówienie na prezent — [уточнить: bezpłatnie / za dopłatą X zł]. Wybierz tę opcję w koszyku albo napisz do nas: hello@lapetitebloom.com, +48 517 689 849.
+```
+
+
+*UA:*
+
+```
+Запакуємо замовлення як подарунок — [уточнити: безкоштовно / за доплату X zł]. Оберіть цю опцію в кошику або напишіть нам: hello@lapetitebloom.com, +48 517 689 849.
+```
+
+
+*EN:*
+
+```
+We will gift-wrap your order — [уточнить: free of charge / for an extra X zł]. Choose this option in the basket or write to us: hello@lapetitebloom.com, +48 517 689 849.
+```
+
+
+**Куда вписать / примечание:** Для вкладки «Potrzebujesz pomocy?» тот же принцип — контакт прямо в тексте: PL «Napisz na hello@lapetitebloom.com albo zadzwoń: +48 517 689 849, pn-pt 9:00-18:00. Pomożemy dobrać rozmiar i sprawdzić dostępność.»; UA «Напишіть на hello@lapetitebloom.com або зателефонуйте: +48 517 689 849, пн-пт 9:00-18:00. Допоможемо підібрати розмір і перевірити наявність.»; EN «Write to hello@lapetitebloom.com or call +48 517 689 849, Mon-Fri 9:00-18:00. We will help you with sizing and availability.»
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 11-21 · /myszka-maileg-baby-w-sukience-pudrowy-17-6000-00 · Юр. требование [pl,ua,en]
+
+**Где:** Блок GPSR под описанием и вкладка «Charakterystyka»
+
+
+**Сейчас:**
+
+> Oznakowanie: CE Ostrzeżenia: Przed podaniem dziecku usuń metki i elementy opakowania.
+
+
+**Почему проблема:** У игрушки указан только знак CE и просьба снять бирки. Нет возрастной маркировки — с какого возраста игрушка предназначена, нет предупреждения о мелких деталях, нет материала и размера: в «Charakterystyka» единственная строка — «Marka». Материал (bawełna/len) и цвет упомянуты только в описании и никуда не вынесены. Для игрушки возрастное указание и предупреждение — обязательный минимум по директиве о безопасности игрушек 2009/48/WE и по GPSR, а описание «Mała figurka-przytulanka» прямо намекает на мелкий размер.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wiek: [уточнить: od 0 / od 3 lat]. Wymiary: [уточнить] cm. Materiał: bawełna i len. Ostrzeżenia: przed podaniem dziecku usuń metki i elementy opakowania. [уточнить: Nieodpowiednie dla dzieci poniżej 3 lat — małe elementy.]
+```
+
+
+*UA:*
+
+```
+Вік: [уточнити: від 0 / від 3 років]. Розмір: [уточнити] см. Матеріал: бавовна і льон. Попередження: перед тим як дати дитині, зніміть бирки та елементи упаковки. [уточнити: Не підходить дітям до 3 років — дрібні деталі.]
+```
+
+
+*EN:*
+
+```
+Age: [уточнить: from 0 / from 3 years]. Size: [уточнить] cm. Material: cotton and linen. Warnings: remove all tags and packaging before giving the toy to a child. [уточнить: Not suitable for children under 3 — small parts.]
+```
+
+
+**Куда вписать / примечание:** Возраст, размер и материал вывести отдельными строками в «Charakterystyka» для всей категории «Zabawki», а не только для этой карточки.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+### 11-22 · /myszka-maileg-baby-w-sukience-pudrowy-17-6000-00 · Нет перевода [pl,ua,en]
+
+**Где:** meta description карточки
+
+
+**Сейчас:**
+
+> meta description: Myszka Maileg baby w sukience — pudrowy
+
+
+**Почему проблема:** На всех восьми карточках во всех трёх локалях meta description дословно повторяет title и h1 — отдельного описания для выдачи просто нет. Это шаблон, то есть примерно 3900 страниц (1307 × 3). На карточках с сырым названием из фида в description уходит соответственно «Small Volley ATLANTIC_OURO_BARK» и «Bobo Choses Booo Bo Choses T-shirt 2-3». Сейчас весь сайт под noindex, но к запуску это надо решить, иначе поисковая выдача по всему каталогу будет состоять из повторов заголовка.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Myszka-przytulanka Maileg baby w sukience — bawełna i len, kolor pudrowy. Delikatna figurka na prezent dla najmłodszych. Wysyłamy z Warszawy.
+```
+
+
+*UA:*
+
+```
+Мишеня-обіймашка Maileg у сукні — бавовна і льон, пудровий колір. Ніжна фігурка на подарунок для найменших. Відправляємо з Варшави.
+```
+
+
+*EN:*
+
+```
+Maileg baby mouse in a dress — cotton and linen, powder pink. A gentle little figure to give as a gift. Shipped from Warsaw.
+```
+
+
+**Куда вписать / примечание:** Нужен отдельный шаблон meta description для карточки: название + материал/состав + ключевая характеристика, 140–160 знаков, и возможность переопределить вручную для топовых товаров.
+
+
+*Правки носителей: EN: "gown" is the wrong register for a toy mouse’s dress; "powder colour" is not an English colour name.*
+
+
+### 09-21 · /niemowleta · Опечатка [EN]
+
+**Где:** Lista podkategorii w panelu bocznym kategorii «Babies 0-2»
+
+
+**Сейчас:**
+
+> Rompers& snowsuits
+Rainwear
+Swimwear
+Pajamas
+Rompers
+Bodysuits
+Pants
+Leggings
+Bibs
+Rompers
+
+
+**Почему проблема:** Trzy błędy w jednej liście. «Rompers& snowsuits» — brak spacji przed «&». «Rompers» występuje dwa razy jako osobne pozycje (odpowiedniki PL «Rampersy» i «Pajacyki»), więc klient widzi dwie identycznie nazwane podkategorie. «Pajamas» i «Pants» to pisownia i słownictwo amerykańskie, przy czym menu tego samego sklepu używa brytyjskiego «pyjamas» i «Trousers & leggings» — sklep sam sobie przeczy w obrębie jednej strony.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kombinezony i śpiwory
+Piżamy
+Rampersy
+Body
+Spodnie
+Legginsy
+Śliniaki
+Pajacyki
+```
+
+
+*UA:*
+
+```
+Комбінезони та спальні мішки
+Піжами
+Повзунки
+Боді
+Штани
+Легінси
+Слинявчики
+Пісочники
+```
+
+
+*EN:*
+
+```
+Rompers & snowsuits
+Pyjamas
+Rompers
+Bodysuits
+Trousers
+Leggings
+Bibs
+Dungaree rompers
+```
+
+
+**Куда вписать / примечание:** Najpierw rozstrzygnąć, czym różnią się «Rampersy» od «Pajacyków» — jeśli niczym, scalić podkategorie. Sprawdzić też «Jackets &outerwear» w menu, ten sam brak spacji.
+
+
+### 07-07 · /personal-data-requests · Юр. требование [PL]
+
+**Где:** Абзацы после списка прав — «W sprawach dotyczących danych osobowych napisz do nas na adres…» и далее до конца страницы
+
+
+**Сейчас:**
+
+> W sprawach dotyczących danych osobowych napisz do nas na adres:
+rodo@lapetitebloom.com
+
+
+**Почему проблема:** Формы на странице нет — только адрес почты, и это допустимо, но тогда текст должен заменить форму: сейчас не сказано, кто администратор данных и по какому адресу он зарегистрирован, какие данные указать в письме, как мы проверяем личность заявителя, что рассмотрение бесплатное, что срок в 1 месяц может быть продлён ещё на 2 месяца в сложных случаях, и что у заявителя есть право пожаловаться в надзорный орган. Срок ответа (1 месяц) — единственный полностью раскрытый элемент.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Jak złożyć wniosek
+Napisz na adres rodo@lapetitebloom.com i podaj: imię i nazwisko, adres e-mail powiązany z zamówieniem lub kontem, czego dotyczy wniosek oraz — jeśli sprawa dotyczy newslettera — adres, na który przychodzą wiadomości. Jeżeli nie będziemy w stanie potwierdzić Twojej tożsamości na podstawie tych danych, poprosimy o dodatkowe informacje.
+
+Administrator danych
+Administratorem danych jest LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa.
+
+Termin i koszt
+Rozpatrzenie wniosku jest bezpłatne. Odpowiadamy bez zbędnej zwłoki, najpóźniej w ciągu miesiąca od otrzymania zgłoszenia. Jeżeli sprawa jest złożona, możemy przedłużyć ten termin o kolejne dwa miesiące — poinformujemy Cię o tym wraz z uzasadnieniem.
+
+Skarga
+Jeżeli uznasz, że przetwarzamy Twoje dane niezgodnie z prawem, możesz wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warszawa (uodo.gov.pl).
+```
+
+
+*UA:*
+
+```
+Як подати запит
+Напишіть на адресу rodo@lapetitebloom.com і вкажіть: ім’я та прізвище, адресу електронної пошти, пов’язану із замовленням або обліковим записом, суть запиту та — якщо йдеться про розсилку — адресу, на яку надходять листи. Якщо за цими даними ми не зможемо підтвердити вашу особу, ми попросимо додаткову інформацію.
+
+Контролер даних
+Контролер персональних даних — LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa.
+
+Термін і вартість
+Розгляд запиту безкоштовний. Ми відповідаємо без зайвої затримки, щонайпізніше протягом місяця з дня отримання звернення. Якщо справа складна, ми можемо подовжити цей термін ще на два місяці — і повідомимо вас про це з поясненням причини.
+
+Скарга
+Якщо ви вважаєте, що ми обробляємо ваші дані неправомірно, ви можете подати скаргу до Голови Управління охорони персональних даних Польщі (Prezes Urzędu Ochrony Danych Osobowych), ul. Stawki 2, 00-193 Warszawa (uodo.gov.pl).
+```
+
+
+*EN:*
+
+```
+How to submit a request
+Write to rodo@lapetitebloom.com and include: your name, the email address linked to your order or account, what your request concerns and — if it relates to the newsletter — the address the messages are sent to. If we cannot verify your identity from those details, we will ask for further information.
+
+Data controller
+The data controller is LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw.
+
+Timescale and cost
+Handling your request is free of charge. We reply without undue delay and no later than one month from receipt. If the matter is complex we may extend that period by a further two months, and we will tell you why.
+
+Complaints
+If you believe we are processing your data unlawfully, you may lodge a complaint with the President of the Personal Data Protection Office (Prezes Urzędu Ochrony Danych Osobowych), ul. Stawki 2, 00-193 Warsaw (uodo.gov.pl).
+```
+
+
+**Куда вписать / примечание:** Адрес и почтовый индекс LPB Sp. z o.o. взяты из текста страницы /zgody-klauzule-i-regulamin-newslettera — сверить с реквизитами в KRS (срез 19). Если позже появится форма запроса, лейблы полей: Imię i nazwisko / E-mail / Czego dotyczy wniosek / Treść wniosku.
+
+
+*Правки носителей: EN: City name in Polish inside English copy; "e-mail" normalised to "email".*
+
+
+### 09-16 · /pielegnacja-i-kosmetyki · Кривой перевод [EN]
+
+**Где:** Lista podkategorii w panelu bocznym, pozycje 3, 4 i 6
+
+
+**Сейчас:**
+
+> Masks and plasters
+Lip balm and varnish
+Toothbrushes. Toothpastes.
+
+
+**Почему проблема:** «Plasters» po brytyjsku to plastry opatrunkowe na skaleczenia, a chodzi o płatki kosmetyczne — UA ma poprawnie «патчі». «Varnish» samo w sobie znaczy lakier do drewna; przy PL «Balsam do ust i lakier» chodzi o lakier do paznokci. «Toothbrushes. Toothpastes.» kopiuje polską interpunkcję z kropkami zamiast spójnika — nazwa kategorii nie kończy się kropką.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Maski i płatki
+Balsamy do ust i lakiery do paznokci
+Szczoteczki i pasty do zębów
+```
+
+
+*UA:*
+
+```
+Маски та патчі
+Бальзами для губ і лаки для нігтів
+Зубні щітки та пасти
+```
+
+
+*EN:*
+
+```
+Masks and patches
+Lip balms and nail polish
+Toothbrushes and toothpaste
+```
+
+
+**Куда вписать / примечание:** Admin → kategorie → podkategorie w «Pielęgnacja i kosmetyki». Polskie «Szczoteczki do zębów. Pasty do zębów.» również do poprawy — dwie kropki w nazwie kategorii.
+
+
+### 06-05 · /polityka-cookies · Юр. требование [PL]
+
+**Где:** Вводный блок под h1, после строки «Administratorem danych jest LPB Sp. z o.o.…»
+
+
+**Сейчас:**
+
+> Administratorem danych jest LPB Sp. z o.o.; kontakt: rodo@lapetitebloom.com. Szczegółowe zasady przetwarzania danych opisuje Polityka prywatności.
+
+
+**Почему проблема:** В политике cookies нигде не названо правовое основание установки файлов: нет ссылки ни на ст. 6 GDPR, ни на польский Prawo komunikacji elektronicznej (заменивший ст. 173 Prawo telekomunikacyjne), нет разграничения «необходимые — законный интерес/техническая необходимость» и «аналитика и маркетинг — согласие». Формально документ описывает практику, но не её основание.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Podstawa prawna
+[уточнить у юриста: wskazanie podstawy przechowywania i dostępu do informacji na urządzeniu końcowym — ustawa Prawo komunikacji elektronicznej — oraz podstaw z art. 6 ust. 1 RODO dla poszczególnych kategorii cookies]
+```
+
+
+*UA:*
+
+```
+Правова підстава
+[уточнити у юриста: вказання підстави зберігання інформації на кінцевому пристрої користувача за польським законодавством та підстав за ст. 6 п. 1 GDPR для кожної категорії файлів cookies]
+```
+
+
+*EN:*
+
+```
+Legal basis
+[уточнить у юриста: reference to the Polish electronic communications law as the basis for storing and accessing information on the user’s device, and the Article 6(1) GDPR bases for each cookie category]
+```
+
+
+**Куда вписать / примечание:** Новый раздел между действующими пунктами 2 и 3. Текст самой нормы — только от юриста; здесь готовы заголовок и место вставки.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: Straight apostrophe instead of a typographic one.*
+
+
+### 07-14 · /regulamin-kart-podarunkowych · Юр. требование [PL]
+
+**Где:** Регламент целиком, пункты 1–8
+
+
+**Сейчас:**
+
+> 2. Karta podarunkowa to elektroniczny bon (kod przesyłany na adres e-mail), uprawniający do zapłaty za Towary w Sklepie do wysokości jej wartości.
+
+
+**Почему проблема:** На вопросы, ради которых покупатель открывает эту страницу, регламент отвечает наполовину. Есть: срок действия 12 месяцев (п.3), запрет обмена на деньги и пополнения (п.4), поведение при частичном использовании — остаток сохраняется на карте, разницу доплачиваем (п.5), отказ в течение 14 дней до активации кода (п.6). Нет: номиналов и способа покупки, как проверить остаток, что делать при утере или краже кода, можно ли передать карту другому человеку, покрывает ли карта стоимость доставки, можно ли сочетать с промокодами и скидками, можно ли оплатить картой другую карту, а также срока рассмотрения рекламации из п.8. Пока карт нет в продаже — это некритично, но перед запуском пробелы закрываем.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nominały i zakup
+Karty podarunkowe dostępne są w wartościach [уточнить: nominały] i można je kupić [уточнить: gdzie w Sklepie].
+
+Sprawdzenie salda
+Aktualne saldo sprawdzisz [уточнить: sposób — np. przy realizacji kodu w koszyku lub pisząc na adres kontaktowy].
+
+Utrata kodu
+Kod ma charakter poufny. [уточнить: czy odtwarzamy utracony kod i na jakich zasadach]. Nie odpowiadamy za udostępnienie kodu osobom trzecim.
+
+Przekazanie karty
+Kartę można przekazać innej osobie — do jej realizacji wystarczy sam kod.
+
+Zakres wykorzystania
+Kartą można opłacić Towary [уточнить: czy również koszt dostawy]. [уточнить: czy kartę można łączyć z kodami rabatowymi i promocjami]. Kartą nie można opłacić zakupu kolejnej karty podarunkowej.
+
+Reklamacje
+Reklamacje dotyczące kart rozpatrujemy w ciągu 14 dni od otrzymania zgłoszenia na adres [уточнить: adres e-mail].
+```
+
+
+*UA:*
+
+```
+Номінали та придбання
+Подарункові картки доступні номіналом [уточнити: номінали], придбати їх можна [уточнити: де саме в магазині].
+
+Перевірка залишку
+Поточний залишок можна перевірити [уточнити: спосіб — напр. під час введення коду в кошику або листом на контактну адресу].
+
+Втрата коду
+Код є конфіденційним. [уточнити: чи відновлюємо втрачений код і на яких умовах]. Ми не відповідаємо за передання коду третім особам.
+
+Передання картки
+Картку можна передати іншій особі — для використання достатньо самого коду.
+
+Межі використання
+Карткою можна оплатити Товари [уточнити: чи також вартість доставки]. [уточнити: чи можна поєднувати картку з промокодами та акціями]. Карткою не можна оплатити придбання іншої подарункової картки.
+
+Скарги
+Скарги щодо карток ми розглядаємо протягом 14 днів з дня отримання звернення на адресу [уточнити: адреса електронної пошти].
+```
+
+
+*EN:*
+
+```
+Denominations and purchase
+Gift Cards are available in values of [уточнить: denominations] and can be bought [уточнить: where in the shop].
+
+Checking the balance
+You can check the remaining balance [уточнить: method — e.g. when entering the code at checkout, or by writing to our contact address].
+
+Lost codes
+The code is confidential. [уточнить: whether we reissue a lost code and on what terms]. We are not responsible for codes shared with third parties.
+
+Transferring a card
+A Gift Card may be passed on to someone else — the code alone is enough to redeem it.
+
+What the card covers
+A Gift Card can be used to pay for Goods [уточнить: whether it also covers delivery costs]. [уточнить: whether it can be combined with discount codes and promotions]. A Gift Card cannot be used to buy another Gift Card.
+
+Complaints
+We handle complaints about Gift Cards within 14 days of receiving them at [уточнить: email address].
+```
+
+
+**Куда вписать / примечание:** Все номиналы, способы проверки остатка и правила при утере кода придумывать нельзя — они зависят от того, как карты будут реализованы в движке. Публиковать этот блок только вместе с запуском карт.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: "the store" is an Americanism; "the shop" is used elsewhere; "e-mail" normalised to "email".*
+
+
+### 13-13 · /search · Нет перевода [PL]
+
+**Где:** Rozwijane okno wyszukiwania, stan „brak wyników” (<div class="result result-empty">) i klucze search.empty_products / search.empty_categories
+
+
+**Сейчас:**
+
+> <img src="https://lapetitebloom.com/front/img/search-banner.png" alt="search img">
+
+
+**Почему проблема:** Gdy podpowiedzi nie znajdują nic, w oknie wyszukiwania jest tylko obrazek — bez zdania wyjaśniającego i bez podpowiedzi, co zrobić dalej. Atrybut alt to „search img”, ten sam we wszystkich lokalizacjach, co jest problemem dla czytników ekranu (sklep publikuje Deklarację dostępności). Osobne komunikaty tekstowe istnieją w tłumaczeniach, ale w wersji ukraińskiej są kalką strony biernej: „Товари не знайдені”, „Категорії не знайдені”.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nie znaleźliśmy nic dla tego zapytania. Sprawdź pisownię albo poszukaj po nazwie marki.
+```
+
+
+*UA:*
+
+```
+Нічого не знайшли за цим запитом. Перевірте написання або спробуйте пошук за назвою бренду.
+```
+
+
+*EN:*
+
+```
+We couldn’t find anything for this search. Check the spelling or try a brand name.
+```
+
+
+**Куда вписать / примечание:** window.FenixTranslations.search.empty_products / empty_categories — poprawić UA na „Товарів не знайдено” / „Категорій не знайдено”. Atrybut alt obrazka zlokalizować (np. „Wyszukiwanie”, „Пошук”, „Search”) albo zostawić pusty, jeśli obrazek jest dekoracyjny.
+
+
+*Правки носителей: EN: Straight apostrophe instead of a typographic one.*
+
+
+### 14-16 · /search · Кривой перевод [PL]
+
+**Где:** H1 и <title> страницы результатов поиска при пустом или некорректном запросе
+
+
+**Сейчас:**
+
+> Wynik wyszukiwania dla zapytania: ""
+
+
+**Почему проблема:** Если запрос не передан или передан в неизвестном движку параметре, страница всё равно рендерит шаблон с подставленными пустыми кавычками — и в h1, и в <title>, и в meta. Пользователь видит заголовок «Wynik wyszukiwania dla zapytania: ""» с пустыми кавычками. Одинаково во всех трёх локалях: UA «Результат пошуку за запитом: ""», EN «Search result for query: ""».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wyszukiwanie
+```
+
+
+*UA:*
+
+```
+Пошук
+```
+
+
+*EN:*
+
+```
+Search
+```
+
+
+**Куда вписать / примечание:** Нужна развилка в шаблоне: если запрос пустой — выводить нейтральный заголовок (тексты выше) и предложение воспользоваться строкой поиска; если запрос есть — подставлять его. Заодно заменить прямые кавычки на типографские по локали: PL «…», UA «…», EN “…”. Формулировка при непустом запросе: PL «Wyniki wyszukiwania: {query}», UA «Результати пошуку: {query}», EN «Search results for {query}».
+
+
+### 13-11 · /search?term=sukienka · Кривой перевод [PL]
+
+**Где:** <h1> i <title> strony wyników oraz nagłówek listy kategorii
+
+
+**Сейчас:**
+
+> Wynik wyszukiwania dla zapytania: "sukienka"
+
+
+**Почему проблема:** Nagłówek jest w liczbie pojedynczej („Wynik”, „Результат”, „Search result”), choć pod nim wyświetla się 18 produktów. W wersji angielskiej strona sama sobie przeczy: <h1> mówi „Search result”, a nagłówek listy kategorii kilka wierszy niżej „Search results by category:”. Sformułowanie „dla zapytania:” / „for query:” to język techniczny — w sklepie wystarczy „Wyniki dla”.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wyniki wyszukiwania: „sukienka”
+```
+
+
+*UA:*
+
+```
+Результати пошуку: «sukienka»
+```
+
+
+*EN:*
+
+```
+Search results for “sukienka”
+```
+
+
+**Куда вписать / примечание:** Ten sam ciąg jest używany w <title>, <h1> i okruszkach. Cudzysłowy warto ustawić zgodnie z lokalizacją: PL „…”, UA «…», EN “…”.
+
+
+### 11-09 · /skarpetki-bobo-choses-hug-hairy-monster-dla-dzieci-b226ai001-23-25 · Битая ссылка [ua,en]
+
+**Где:** Атрибуты alt фотографий товара
+
+
+**Сейчас:**
+
+> alt="Шкарпетки Bobo Choses Hug Hairy Monster &amp;mdash; для дітей - фото 1"
+
+
+**Почему проблема:** Название подставляется в alt повторно экранированным: вместо тире в атрибут попадает буквальная строка «&mdash;», её и произносит скринридер. Так же ломаются «110&times;140» вместо «110×140» и «Zdr&oacute;w» вместо «Zdrów». В снимках это 16 украинских и 5 английских страниц; поскольку это шаблон, страдает любая карточка, в названии которой есть тире, знак × или польская диакритика — то есть подавляющее большинство.
+
+
+**Куда вписать / примечание:** Двойное HTML-экранирование при генерации alt: значение уже содержит HTML-сущности, шаблон экранирует их ещё раз. Чинить в шаблоне галереи (снять повторный escape либо хранить название в чистом виде), контент не трогать.
+
+
+### 11-18 · /skarpetki-bobo-choses-hug-hairy-monster-dla-dzieci-b226ai001-23-25 · Нет перевода [pl,ua,en]
+
+**Где:** Блок характеристик / зона под ценой
+
+
+**Сейчас:**
+
+> "sku":"B226AI001-23-25"
+
+
+**Почему проблема:** Артикул есть в разметке schema.org и в URL, но на самой карточке его не видно ни в одной локали: в «Charakterystyka» у носков только «Marka» и «Skład», у мыши Maileg — вообще одна строка «Marka». Покупателю и поддержке не на что сослаться при вопросе или рекламации. Там же нет блока «Zapytaj o produkt»: единственная точка контакта — вкладка «Potrzebujesz pomocy?» без ссылки.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Nr katalogowy: B226AI001-23-25 · Zapytaj o produkt
+```
+
+
+*UA:*
+
+```
+Артикул: B226AI001-23-25 · Запитати про товар
+```
+
+
+*EN:*
+
+```
+Item code: B226AI001-23-25 · Ask about this product
+```
+
+
+**Куда вписать / примечание:** Артикул выводить в характеристиках, значение не переводить. Кнопку «Zapytaj o produkt» можно повесить на ту же форму, что и «Potrzebujesz pomocy?».
+
+
+### 11-23 · /skarpetki-bobo-choses-hug-hairy-monster-dla-dzieci-b226ai001-23-25 · Нет перевода [pl,ua,en]
+
+**Где:** Низ карточки, между вкладками и блоком «Przeglądane»
+
+
+**Сейчас:**
+
+> Skontaktuj się z naszym zespołem, aby uzyskać pomoc przy zamówieniu.
+Przeglądane
+
+
+**Почему проблема:** Блока отзывов и рейтинга на карточке нет вообще: ни звёзд у названия, ни счётчика, ни формы, ни пустого состояния — карточка сразу переходит от вкладки «Potrzebujesz pomocy?» к списку просмотренных. При этом платформа подгружает fenix-review-likes.min.js, то есть модуль отзывов в системе есть и просто не выведен, а в разметке schema.org Product отсутствует aggregateRating. Для премиального магазина, который готовится к запуску и к верификации платежей, отсутствие любых социальных доказательств на карточке — заметная дыра.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Opinie · Ten produkt nie ma jeszcze opinii. Jeśli go masz, napisz kilka słów — pomożesz innym rodzicom w wyborze.
+```
+
+
+*UA:*
+
+```
+Відгуки · Про цей товар ще немає відгуків. Якщо ви вже його купували, напишіть кілька слів — це допоможе іншим батькам обрати.
+```
+
+
+*EN:*
+
+```
+Reviews · There are no reviews yet. If you have this piece, a few words from you will help other parents choose.
+```
+
+
+**Куда вписать / примечание:** Если модуль отзывов к запуску не включают, решение нужно принять осознанно: сейчас это выглядит как незаконченная сборка шаблона, а не как выбор.
+
+
+*Правки носителей: UA: двозначне «він» — незрозуміло, товар це чи відгук; EN: "If you own it" is abrupt and unclear about what "it" is.*
+
+
+### 11-26 · /skarpetki-bobo-choses-hug-hairy-monster-dla-dzieci-b226ai001-23-25 · Нет перевода [pl,ua,en]
+
+**Где:** Блок рекомендаций внизу карточки
+
+
+**Сейчас:**
+
+> Przeglądane
+
+
+**Почему проблема:** Единственный блок рекомендаций на карточке — «Przeglądane», и он наполняется историей самого посетителя: на карточке VEJA, открытой первой, его нет вовсе, а дальше он просто повторяет ранее открытые товары. Для нового покупателя карточка заканчивается ничем. Блока «Podobne produkty» или «Może się spodobać» нет ни на одной из восьми карточек ни в одной локали. Сам заголовок тоже обрублен: «Przeglądane» — причастие без опоры, по-польски естественно «Ostatnio oglądane»; то же с «Переглянуті» и «Viewed».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ostatnio oglądane · Może Ci się spodobać
+```
+
+
+*UA:*
+
+```
+Нещодавно переглянуті · Вам може сподобатися
+```
+
+
+*EN:*
+
+```
+Recently viewed · You may also like
+```
+
+
+**Куда вписать / примечание:** Добавить в шаблон карточки блок похожих товаров (та же категория или бренд) — иначе на 1307 карточках нет ни одного пути дальше, кроме шапки.
+
+
+### 12-20 · /special-offers · Кривой перевод [PL]
+
+**Где:** Nagłówek H1 strony promocji
+
+
+**Сейчас:**
+
+> Akcje
+
+
+**Почему проблема:** «Akcje» по-польски — это акции в значении ценных бумаг или разовые действия, а не скидки; это калька с украинского «Акції». В польской рознице раздел называется «Promocje» или «Wyprzedaże». Английская версия уже правильная («Special Offers»), украинская тоже — расходится только польская, то есть язык-источник.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Promocje
+```
+
+
+*UA:*
+
+```
+Акції
+```
+
+
+*EN:*
+
+```
+Special offers
+```
+
+
+**Куда вписать / примечание:** Поправить h1, название пункта меню и хлебные крошки на польской версии страницы.
+
+
+### 12-21 · /special-offers, /ua/special-offers, /en/special-offers · Кривой перевод [pl,ua,en]
+
+**Где:** Filtry kategorii promocji — czwarta zakładka
+
+
+**Сейчас:**
+
+> pl: "Wyprzedaż" | ua: "Гарячий розпродаж" | en: "Hot sale"
+
+
+**Почему проблема:** Одна и та же вкладка называется по-разному: в польской версии просто «Wyprzedaż», в украинской и английской — «горячая распродажа». Кроме того, вкладки «Ubrania / Buty» переведены в EN как «Clothes / Shoes», хотя в остальном интерфейсе тот же раздел называется «Footwear» — покупатель видит два разных названия одной категории.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wyprzedaż / Odzież / Obuwie / Akcesoria
+```
+
+
+*UA:*
+
+```
+Розпродаж / Одяг / Взуття / Аксесуари
+```
+
+
+*EN:*
+
+```
+Sale / Clothing / Footwear / Accessories
+```
+
+
+**Куда вписать / примечание:** Названия фильтров на странице акций привести к терминологии каталога.
+
+
+### 12-22 · /special-offers, /ua/special-offers, /en/special-offers · Кривой перевод [pl,ua,en]
+
+**Где:** Stan pusty — brak aktywnych promocji
+
+
+**Сейчас:**
+
+> pl: "Obecnie nie ma żadnych aktywnych promocji" | ua: "На даний момент немає акцій, що діють" | en: "There are currently no active promotions"
+
+
+**Почему проблема:** Украинский вариант построен калькой с русского («на даний момент», «акцій, що діють») — по-украински естественно «наразі немає активних акцій». И в трёх локалях это тупик: страница, на которую ведут промо-ссылки и анонс-бар, ничего не предлагает взамен и не даёт пути дальше в каталог.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Teraz nie mamy aktywnych promocji. Zajrzyj do nowej kolekcji albo zapisz się do newslettera — o wyprzedażach informujemy w pierwszej kolejności.
+```
+
+
+*UA:*
+
+```
+Наразі активних акцій немає. Загляньте до нової колекції або підпишіться на розсилку — про розпродажі повідомляємо першими.
+```
+
+
+*EN:*
+
+```
+There are no active promotions at the moment. Have a look at the new collection or subscribe to our newsletter — we announce sales there first.
+```
+
+
+**Куда вписать / примечание:** Добавить в пустое состояние ссылку на каталог и на подписку.
+
+
+### 11-05 · /sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042 · Кривой перевод [pl,en]
+
+**Где:** Вкладка «Charakterystyka», подпись строки
+
+
+**Сейчас:**
+
+> Artykuł
+Dziewczynka
+
+
+**Почему проблема:** Подпись «Artykuł» (артикул, товарная позиция) стоит над значением «Dziewczynka» — это поле пола/адресата. В украинской и английской версиях та же строка называется «Стать» и «Gender», то есть неверна именно польская подпись — на основном языке магазина. Заодно английская подпись цвета «Color» написана по-американски, тогда как по гайдлайну английская локаль британская.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Płeć
+```
+
+
+*UA:*
+
+```
+Стать
+```
+
+
+*EN:*
+
+```
+Gender
+```
+
+
+**Куда вписать / примечание:** Переименовать атрибут в админке. В той же таблице: EN «Color» → «Colour». В хлебных крошках и футере EN «Catalog» → «Catalogue».
+
+
+### 11-12 · /sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042 · Опечатка [UA]
+
+**Где:** Вкладка «Опис товару», пункты 3–6
+
+
+**Сейчас:**
+
+> Сполучається з сандаліями та соломяними капелюхами
+
+
+**Почему проблема:** «соломяними» без апострофа — правильно «солом'яними»; апостроф теряется и в других местах украинских текстов карточки. «Сполучається» — калька с польского «Pasuje», по-украински «пасує» или «поєднується». «Деталь TC сигнатури» — механический перевод «Sygnaturowy detal TC», по-украински так не говорят. «дихаюча» — калька, у тканей это «легка», «повітропроникна». Из последнего пункта выпал хвост «na pełny letni outfit».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Niebieska sukienka w paski — idealna dla małych odkrywczyń
+Okrągły dekolt i delikatne falbanki przy rękawach
+Zamek błyskawiczny z tyłu — łatwe zakładanie
+Charakterystyczny detal TC dodaje elegancji
+Świetna na słoneczne dni — oddychająca i wygodna
+Do sandałów i słomkowego kapelusza — gotowy letni komplet
+```
+
+
+*UA:*
+
+```
+Синя сукня в смужку — для маленьких дослідниць
+Круглий виріз і ніжні рюші біля рукавів
+Блискавка ззаду — сукню легко вдягати
+Фірмова деталь TC додає елегантності
+Для сонячних днів — легка й комфортна
+Пасує до сандалів і солом’яного капелюшка — і літній образ готовий
+```
+
+
+*EN:*
+
+```
+A blue striped dress for little explorers
+Round neckline with delicate ruffles at the sleeves
+Back zip — easy to get on and off
+The signature TC detail adds a touch of elegance
+Made for sunny days — light and comfortable
+Wear with sandals and a straw hat for a complete summer look
+```
+
+
+**Куда вписать / примечание:** Проверить все украинские описания на потерянный апостроф (соломяний, мякий, обєм) — типовая ошибка выгрузки.
+
+
+*Правки носителей: PL: „Sygnaturowy” to kalka z angielskiego „signature” (po polsku „charakterystyczny”), „na cały letni komplet” nie jest idiomatyczne, a „idealna” powtarzało się w dwóch punktach.; UA: прямий апостроф замість типографського «’»*
+
+
+### 11-17 · /sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042 · Кривой перевод [pl,ua,en]
+
+**Где:** Селектор «Oryginalny rozmiar» и строка «Rozmiar» в характеристиках
+
+
+**Сейчас:**
+
+> Oryginalny rozmiar
+5Y 6Y 8Y 4Y … Rozmiar
+4A, 5A, 6A, 8A
+
+
+**Почему проблема:** На одной карточке размеры записаны в двух разных нотациях: в селекторе 5Y, 6Y, 8Y, 4Y, а в характеристиках тот же ряд как 4A, 5A, 6A, 8A. Покупатель не понимает, одно это и то же или нет. Порядок в селекторе не отсортирован — 4Y стоит после 8Y. Таблицы размеров нет ни на одной из восьми карточек: ни ссылки «Tabela rozmiarów», ни сантиметров, ни соответствия возрасту — при том что у VEJA размерный ряд 24-34, а у детской обуви разброс по колодкам большой. Для магазина, где возврат оплачивает продавец, это прямой источник возвратов.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Rozmiar (oznaczenie producenta) · Tabela rozmiarów
+```
+
+
+*UA:*
+
+```
+Розмір (маркування виробника) · Таблиця розмірів
+```
+
+
+*EN:*
+
+```
+Size (as marked by the brand) · Size guide
+```
+
+
+**Куда вписать / примечание:** Свести нотацию к одной (Y или A) в справочнике размеров, отсортировать значения по возрастанию и добавить ссылку на таблицу размеров рядом с селектором.
+
+
+### 11-24 · /sukienka-dziewczeca-robee-niebieska-paski-falbanka-wygodna-ta-dziewcze-cc30042 · Кривой перевод [ua,en]
+
+**Где:** Кнопки действий под ценой
+
+
+**Сейчас:**
+
+> У обране
+
+
+**Почему проблема:** Кнопка избранного в украинской версии подписана «У обране», а во всплывающей подсказке той же кнопки — «До обраного»: два разных варианта в одной локали, причём видимая подпись с неверным предлогом. В английской версии подпись «Add to favorite» (единственное число и американское написание), а подсказка — просто «Favorites». Рядом «Make a reservation in store» — калька с польского вместо естественного «Reserve in store». По гайдлайну английская локаль британская, значит и «Add to cart» лучше заменить на «Add to basket».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Do koszyka · Zarezerwuj w sklepie · Dodaj do ulubionych
+```
+
+
+*UA:*
+
+```
+До кошика · Забронювати в магазині · До обраного
+```
+
+
+*EN:*
+
+```
+Add to basket · Reserve at the boutique · Add to favourites
+```
+
+
+**Куда вписать / примечание:** Подпись кнопки и её title должны совпадать: сейчас в PL label «Dodaj do ulubionych» / title «Do ulubionych», в UA «У обране» / «До обраного», в EN «Add to favorite» / «Favorites».
+
+
+*Правки носителей: UA: «В кошик» — калька з «В корзину»; природніше «До кошика»; EN: "in store" is an Americanism and vague; the shop calls its physical space the boutique.*
+
+
+### 06-16 · /terms-of-use · Юр. требование [PL]
+
+**Где:** §14. Pozasądowe rozwiązywanie sporów, конец раздела
+
+
+**Сейчас:**
+
+> Informacje dostępne są na stronie UOKiK (https://www.uokik.gov.pl). Skorzystanie z tych metod jest dobrowolne.
+
+
+**Почему проблема:** Раздел не упоминает платформу онлайн-разрешения споров (ODR). Это не забытая ссылка в чистом виде: европейская платформа ODR прекратила работу 20.07.2025 и обязанность размещать на неё ссылку отменена, поэтому старую ссылку добавлять не нужно. Но раздел стоит закрыть корректно: сказать, куда потребителю из ЕС идти теперь, и дать адрес электронной почты для досудебного обращения — сейчас в §14 контакта нет вообще, есть только внешний сайт UOKiK.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kontakt w sprawie polubownego rozwiązania sporu: hello@lapetitebloom.com. Informacje o pozasądowych sposobach rozpatrywania reklamacji dostępne są na stronie UOKiK (https://www.uokik.gov.pl). Skorzystanie z tych metod jest dobrowolne. [уточнить у юриста: czy — po zamknięciu unijnej platformy ODR w lipcu 2025 r. — Sprzedawca wskazuje inny podmiot ADR i czy przystępuje do wybranego programu polubownego]
+```
+
+
+*UA:*
+
+```
+Контакт для досудового вирішення спору: hello@lapetitebloom.com. Інформація про позасудові способи розгляду претензій доступна на вебсайті UOKiK (https://www.uokik.gov.pl). Застосування цих способів є добровільним. [уточнити у юриста: чи вказує Продавець — після припинення роботи платформи ODR ЄС у липні 2025 р. — інший орган ADR і чи приєднується він до обраної програми досудового врегулювання]
+```
+
+
+*EN:*
+
+```
+Contact for out-of-court dispute resolution: hello@lapetitebloom.com. Information on out-of-court complaint and redress procedures is available on the UOKiK website (https://www.uokik.gov.pl). Use of these procedures is voluntary. [уточнить у юриста: whether — following the closure of the EU ODR platform in July 2025 — the Seller designates another ADR body and whether it submits to a chosen scheme]
+```
+
+
+**Куда вписать / примечание:** §14 регламента во всех трёх локалях. Важно: не вставлять ссылку ec.europa.eu/consumers/odr — платформа закрыта, битая ссылка в юридическом документе хуже её отсутствия.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; різнобій «рекламації/претензії» — уніфіковано на «претензії»*
+
+
+### 06-17 · /terms-of-use · Юр. требование [PL]
+
+**Где:** §3 «Wymagania techniczne» / §4 «Konto Klienta» — отсутствующий раздел
+
+
+**Сейчас:**
+
+> Do korzystania ze Sklepu potrzebne są: urządzenie z dostępem do Internetu, aktualna przeglądarka, aktywny adres e-mail oraz włączona obsługa plików cookies.
+
+
+**Почему проблема:** Регламент описывает только продажу товара, но магазин оказывает и услуги в электронной форме — аккаунт, список избранного, рассылка. Для них польский закон об оказании услуг электронным путём требует отдельного набора положений: перечень услуг, запрет на размещение противоправного контента и порядок рекламаций по самим услугам (в отличие от рекламаций на товар в §9). Ни одного из этих пунктов в документе нет — при этом §4 про аккаунт есть, то есть услуга оказывается.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Usługi świadczone drogą elektroniczną
+1. Sprzedawca świadczy nieodpłatnie następujące usługi: prowadzenie Konta Klienta, lista ulubionych, koszyk oraz newsletter.
+2. [уточнить у юриста: zakaz dostarczania przez Klienta treści o charakterze bezprawnym]
+3. [уточнить у юриста: tryb reklamacji dotyczących samych usług elektronicznych i termin ich rozpatrzenia]
+```
+
+
+*UA:*
+
+```
+Послуги, що надаються електронним шляхом
+1. Продавець безоплатно надає такі послуги: ведення Облікового запису Клієнта, список обраного, кошик та інформаційна розсилка.
+2. [уточнити у юриста: заборона надання Клієнтом контенту протиправного характеру]
+3. [уточнити у юриста: порядок подання рекламацій щодо самих електронних послуг і строк їх розгляду]
+```
+
+
+*EN:*
+
+```
+Services provided by electronic means
+1. The Seller provides the following services free of charge: the Customer Account, the favourites list, the shopping basket and the newsletter.
+2. [уточнить у юриста: prohibition on the Customer supplying unlawful content]
+3. [уточнить у юриста: complaints procedure for the electronic services themselves and the time limit for handling them]
+```
+
+
+**Куда вписать / примечание:** Новый параграф между §3 и §4 (или расширение §4). Перечень услуг взят с самого сайта (аккаунт, «Ulubione», корзина, рассылка) — фактов не добавлено; сами нормы — от юриста.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: "shopping cart" is American and clashes with "basket" used throughout the checkout copy.*
+
+
+### 06-18 · /terms-of-use · Юр. требование [PL]
+
+**Где:** §4 «Konto Klienta», п. 2 — и раздел «2. Jakie dane przetwarzamy» политики конфиденциальности
+
+
+**Сейчас:**
+
+> 2. Rejestracja wymaga wypełnienia formularza i akceptacji Regulaminu. Dane podane przy rejestracji powinny być aktualne.
+
+
+**Почему проблема:** Магазин детских товаров, но ни регламент, ни политика конфиденциальности нигде не касаются несовершеннолетних: нет требования к дееспособности при регистрации аккаунта и оформлении заказа, нет ни слова о том, что сервис не адресован детям и данные детей не собираются. Для магазина, продающего в ЕС, это заметный пробел в паре документов — тем более что дальше в §11 подробно расписаны требования к безопасности игрушек.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+[уточнить у юриста: wymóg pełnej zdolności do czynności prawnych przy zakładaniu Konta i składaniu Zamówienia oraz oświadczenie, że Sklep nie jest adresowany do dzieci i Sprzedawca nie zbiera świadomie danych osób poniżej [wiek]]
+```
+
+
+*UA:*
+
+```
+[уточнити у юриста: вимога повної дієздатності для створення Облікового запису та оформлення Замовлення, а також застереження про те, що Магазин не адресований дітям і Продавець свідомо не збирає дані осіб віком до [вік]]
+```
+
+
+*EN:*
+
+```
+[уточнить у юриста: requirement of full legal capacity to open an Account and place an Order, plus a statement that the Shop is not directed at children and that the Seller does not knowingly collect data of persons under [age]]
+```
+
+
+**Куда вписать / примечание:** Два места: §4 регламента и новый подпункт в разделе 2 политики конфиденциальности. Формулировка — только от юриста.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: Defined term "Store" left as an Americanism; the Terms elsewhere now say "Shop".*
+
+
+### 11-25 · /trampki-veja-small-volley-atlantic-ouro-bark-zlote-sportowe-buty-ve-smallvolb · Нет перевода [pl,ua,en]
+
+**Где:** Хлебные крошки над названием товара
+
+
+**Сейчас:**
+
+> La Petite Bloom
+Katalog
+VEJA
+
+
+**Почему проблема:** На шести из восьми карточек хлебные крошки схлопнуты до общего «Katalog» — категория товара не подставляется; настоящая крошка есть только у ковдры («Pościel») и у мыши («Pluszaki»). Покупатель не может из карточки вернуться в «Obuwie» или «Sukienki i spódnice», а вся структура каталога для карточки теряется. В английской локали элемент называется «Catalog» — американское написание.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+La Petite Bloom / Dzieci / Obuwie / Buty i baleriny / VEJA
+```
+
+
+*UA:*
+
+```
+La Petite Bloom / Діти / Взуття / Туфлі та балетки / VEJA
+```
+
+
+*EN:*
+
+```
+La Petite Bloom / Kids / Footwear / Shoes and ballet flats / VEJA
+```
+
+
+**Куда вписать / примечание:** Подставлять в крошки основную категорию товара; если категория не задана — это дыра в товарных данных, а не в шаблоне. EN «Catalog» → «Catalogue» (в крошках и в футере).
+
+
+### 14-12 · /ua и /en, все 8 карточек товара · Опечатка [UA]
+
+**Где:** Атрибут alt изображений товара — двойное экранирование HTML-сущностей
+
+
+**Сейчас:**
+
+> alt="Муслінова ковдра Little Dutch Fairy Blossom 110&amp;times;140 см &amp;mdash; літня, бавовна - фото 1"
+
+
+**Почему проблема:** Сущности экранированы дважды: в исходнике лежит &mdash; и &times;, при выводе в атрибут амперсанд экранируется ещё раз и получается &amp;mdash;. Браузер и скринридер читают это буквально, поэтому подпись к фото звучит как «сто десять амперсанд таймс сто сорок». 48 вхождений в украинской версии и 28 в английской, польской версии дефект не касается (там свой дефект — 14-11).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Letni kocyk muślinowy Little Dutch Fairy Blossom 110×140 cm z bawełny, zdjęcie 1
+```
+
+
+*UA:*
+
+```
+Муслінова ковдра Little Dutch Fairy Blossom 110×140 см — літня, бавовна — фото 1
+```
+
+
+*EN:*
+
+```
+Little Dutch Fairy Blossom muslin blanket 110×140 cm in lightweight summer cotton — photo 1
+```
+
+
+**Куда вписать / примечание:** Техническая правка: при сборке alt применяется htmlspecialchars к строке, в которой сущности уже раскодированы не были. Либо декодировать сущности перед экранированием, либо хранить в названиях товаров реальные символы × и — вместо &times; и &mdash;.
+
+
+*Правки носителей: PL: „— letni, bawełna - zdjęcie 1” to telegraficzna wyliczanka z łącznikiem w roli pauzy; przekształcone w poprawne zdanie opisowe alt.; UA: дефіс замість тире перед «фото 1» (пор. 11-08); EN: "lightweight summer, cotton" is garbled; hyphen used instead of an em dash.*
+
+
+### 13-19 · /ua/auth/register · Кривой перевод [UA]
+
+**Где:** Komunikaty walidacji, window.FenixTranslations.validate (phoneFormat, email, minlength/maxlength, uaPhoneFormat)
+
+
+**Сейчас:**
+
+> Введіть телефон у вірному форматі / Введіть дійсну E-mail адресу / Мінімальна кількість символів - 2
+
+
+**Почему проблема:** Ukraińskie komunikaty walidacji są kalkami z rosyjskiego: „у вірному форматі” („вірний” znaczy „wierny”, poprawnie „правильний”), „дійсну E-mail адресу” to szyk z rosyjskiego zamiast „коректну адресу електронної пошти”. We wszystkich trzech lokalizacjach w komunikatach o długości użyto dywizu zamiast dwukropka („- 2”, „- 50”). Dodatkowo w zestawie jest klucz `uaPhoneFormat` z walidacją ukraińskiego numeru telefonu — na sklepie z siedzibą w Warszawie i wysyłką rozliczaną w PLN.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Wpisz numer telefonu w prawidłowym formacie / Wpisz prawidłowy adres e-mail / Minimalna liczba znaków: 2
+```
+
+
+*UA:*
+
+```
+Введіть номер телефону у правильному форматі / Введіть коректну адресу електронної пошти / Мінімальна кількість символів: 2
+```
+
+
+*EN:*
+
+```
+Enter your phone number in the correct format / Enter a valid email address / Minimum number of characters: 2
+```
+
+
+**Куда вписать / примечание:** Grupa window.FenixTranslations.validate. Sprawdzić, czy walidacja telefonu domyślnie oczekuje numeru polskiego (+48), a nie ukraińskiego.
+
+
+*Правки носителей: PL: Ten sam komunikat walidacji brzmi w 12-03, 12-04 i 12-05 „Wpisz…”, a tutaj „Wprowadź…” — dwa czasowniki dla jednego klucza. Ujednolicone na cieplejsze „Wpisz”.; EN: Article inconsistent with the other phone-format messages.*
+
+
+### 06-08 · /ua/privacy-policy · Кривой перевод [UA]
+
+**Где:** Раздел «1. Контролер персональних даних», первое предложение (то же — §2 Правил интернет-магазина)
+
+
+**Сейчас:**
+
+> Контролером персональних даних є LPB Sp. z o.o. із місцезнаходженням у Warszawa, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa
+
+
+**Почему проблема:** «із місцезнаходженням у Warszawa» — латинская форма подставлена в украинское предложение без склонения, читается как машинный перевод. Название города в связном тексте нужно по-украински, тогда как сам адрес регистрации остаётся латиницей. В EN та же проблема мягче: «registered office in Warszawa» — в английском тексте город принято называть Warsaw. Ошибка повторяется в §2 Правил интернет-магазина на обеих локалях.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Administratorem danych osobowych jest LPB Sp. z o.o. z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa
+```
+
+
+*UA:*
+
+```
+Контролером персональних даних є LPB Sp. z o.o. з місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa
+```
+
+
+*EN:*
+
+```
+The data controller is LPB Sp. z o.o., with its registered office at ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland.
+```
+
+
+**Куда вписать / примечание:** Правится в двух местах: /privacy-policy п. 1 и /terms-of-use §2 (там же «Магазин веде LPB Spółka z ograniczoną odpowiedzialnością із місцезнаходженням у Warszawa»).
+
+
+*Правки носителей: EN: GDPR term is "data controller"; "in Warsaw ... Warszawa" duplicated the city in two languages; missing full stop.*
+
+
+### 05-17 · /warranty-and-returns/polityka-zwrotow, /claims-and-complaints · Опечатка [UA]
+
+**Где:** «Політика повернення», абзац про обмін; «Політика повернення та претензій», заголовок приложения
+
+
+**Сейчас:**
+
+> Товари, придбані на сайті , можуть бути обміняні лише в магазині Bloom у країні покупки (крім універмагів та аутлетів).
+
+
+**Почему проблема:** Пробел перед запятой — на месте выпавшей ссылки на сайт (в английском оригинале «Items purchased via website», где тоже потерян артикль). Рядом в UA и EN версиях /claims-and-complaints слиплись тире без пробелов: «Додаток—Форма претензії», «Appendix—Complaint Form», «under the Polish Consumer Rights Act—for any lack of conformity», «upon collection—this facilitates». Мелочь, но на юридической странице читается как машинный экспорт.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Załącznik — Formularz reklamacyjny
+```
+
+
+*UA:*
+
+```
+Додаток — Форма претензії
+```
+
+
+*EN:*
+
+```
+Appendix — Complaint form
+```
+
+
+**Куда вписать / примечание:** Проверить все длинные тире на /claims-and-complaints в UA и EN (четыре случая без пробелов) и убрать пробел перед запятой в UA-версии /warranty-and-returns/polityka-zwrotow; в EN там же вставить артикль: «Items purchased via the website».
+
+
+### 07-02 · /zgody-klauzule-i-regulamin-newslettera · Опечатка [EN]
+
+**Где:** Title, meta description, H1 страницы (EN)
+
+
+**Сейчас:**
+
+> Consents, clauses and newsleter terms and conditions
+
+
+**Почему проблема:** В английском названии страницы «newsleter» вместо «newsletter». Строка используется как <title>, meta description и H1. Заодно украинский заголовок «Згоди, положення та правила інформаційної розсилки» неточен: «klauzule» — это оговорки/застереження, а не «положення», и «інформаційна розсилка» — калька, бренд везде говорит просто «розсилка».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zgody, klauzule i regulamin newslettera
+```
+
+
+*UA:*
+
+```
+Згоди, застереження та правила розсилки
+```
+
+
+*EN:*
+
+```
+Consents, clauses and newsletter terms
+```
+
+
+**Куда вписать / примечание:** Админка → страница newsletter → поля названия в трёх локалях. Тот же текст продублирован в футере — заменить и там (согласовать со срезом 02).
+
+
+### 07-09 · /zgody-klauzule-i-regulamin-newslettera · Кривой перевод [UA]
+
+**Где:** Раздел 1 «Інформаційне повідомлення (для форм)», последнее предложение о жалобе (то же в PL и EN)
+
+
+**Сейчас:**
+
+> Ви маєте право на доступ до даних, їх виправлення, видалення та обмеження обробки, а також право подати скаргу до PUODO.
+
+
+**Почему проблема:** «PUODO» дано без расшифровки и без ссылки. Польскому читателю аббревиатура знакома, украинскому и англоязычному — нет, а именно этот абзац предлагается подставлять в формы на сайте, то есть он попадёт к покупателю в самом чувствительном месте. Нужно полное название органа и адрес сайта.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Administratorem danych jest LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. Dane przetwarzamy w celu realizacji zamówienia, obsługi konta oraz — za zgodą — marketingu. Masz prawo dostępu do danych, ich sprostowania, usunięcia i ograniczenia przetwarzania, a także prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (uodo.gov.pl). Szczegóły znajdziesz w Polityce prywatności. Kontakt: rodo@lapetitebloom.com.
+```
+
+
+*UA:*
+
+```
+Контролер персональних даних — LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. Ми обробляємо дані, щоб виконати замовлення, вести обліковий запис і — за вашою згодою — надсилати маркетингові повідомлення. Ви маєте право на доступ до даних, їх виправлення, видалення та обмеження обробки, а також право подати скаргу до Голови Управління охорони персональних даних Польщі (Prezes Urzędu Ochrony Danych Osobowych, uodo.gov.pl). Докладніше — у Політиці конфіденційності. Контакт: rodo@lapetitebloom.com.
+```
+
+
+*EN:*
+
+```
+The data controller is LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw. We process your data to fulfil orders, manage accounts and — with your consent — for marketing. You have the right to access, rectify, erase and restrict the processing of your data, and to lodge a complaint with the President of the Personal Data Protection Office (Prezes Urzędu Ochrony Danych Osobowych, uodo.gov.pl). Details are in our Privacy Policy. Contact: rodo@lapetitebloom.com.
+```
+
+
+**Куда вписать / примечание:** Этот же абзац должен использоваться в формах регистрации и оформления заказа — обновить одновременно на странице и в шаблонах форм.
+
+
+*Правки носителей: EN: City name in Polish inside English copy.*
+
+
+### 07-12 · /zgody-klauzule-i-regulamin-newslettera · Юр. требование [PL]
+
+**Где:** Раздел 3 «Regulamin newslettera», пункты 1–4
+
+
+**Сейчас:**
+
+> 1. Usługa newslettera jest bezpłatna i dobrowolna; polega na wysyłce wiadomości na podany adres e-mail.
+2. Zapis następuje przez podanie adresu e-mail i potwierdzenie zgody. Wiadomości wysyłane są z systemu Sprzedawcy.
+
+
+**Почему проблема:** Регламент рассылки из четырёх пунктов не закрывает того, что польский регламент электронной услуги обычно содержит: подтверждение подписки (double opt-in) и что происходит, если оно не получено; технические требования (действующий адрес почты, устройство с доступом в интернет); примерная частота писем; порядок и срок рассмотрения рекламаций по самой услуге; возраст подписчика; порядок изменения регламента и уведомления подписчиков; момент прекращения услуги после отзыва согласия. Отзыв согласия описан (пункт 3, ссылка отписки плюс почта) — это единственная часть, к которой вопросов нет. Администратор данных назван (LPB Sp. z o.o.), но без адреса — в отличие от раздела 1 на той же странице.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+5. Zapis potwierdzamy wiadomością wysłaną na podany adres — subskrypcja zaczyna się z chwilą kliknięcia linku potwierdzającego. Bez potwierdzenia adres usuwamy w ciągu [уточнить: liczba] dni.
+6. Do korzystania z usługi potrzebny jest aktywny adres e-mail oraz urządzenie z dostępem do internetu.
+7. Wiadomości wysyłamy [уточнить: przybliżona częstotliwość, np. nie częściej niż raz w tygodniu].
+8. Usługa jest dostępna dla osób pełnoletnich.
+9. Reklamacje dotyczące newslettera prosimy zgłaszać na adres [уточнить: adres e-mail do reklamacji]. Odpowiadamy w ciągu 14 dni od otrzymania zgłoszenia.
+10. Po wycofaniu zgody usuwamy adres z listy wysyłkowej niezwłocznie, nie później niż w ciągu [уточнить: liczba] dni roboczych.
+11. O zmianach regulaminu informujemy subskrybentów e-mailem z [уточнить: liczba]-dniowym wyprzedzeniem. Administratorem danych jest LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa.
+```
+
+
+*UA:*
+
+```
+5. Підписку ми підтверджуємо листом на вказану адресу — вона починає діяти з моменту переходу за посиланням-підтвердженням. Якщо підтвердження немає, ми видаляємо адресу протягом [уточнити: кількість] днів.
+6. Для користування послугою потрібні активна адреса електронної пошти та пристрій із доступом до інтернету.
+7. Листи надсилаємо [уточнити: приблизна частота, напр. не частіше ніж раз на тиждень].
+8. Послуга доступна повнолітнім особам.
+9. Скарги щодо розсилки надсилайте на адресу [уточнити: адреса для скарг]. Ми відповідаємо протягом 14 днів з дня отримання звернення.
+10. Після відкликання згоди ми видаляємо адресу зі списку розсилки невідкладно, щонайпізніше протягом [уточнити: кількість] робочих днів.
+11. Про зміни правил ми повідомляємо підписників електронною поштою за [уточнити: кількість] днів. Контролер персональних даних — LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa.
+```
+
+
+*EN:*
+
+```
+5. We confirm your subscription by email — it starts when you click the confirmation link. If we receive no confirmation, we delete the address within [уточнить: number] days.
+6. To use the service you need an active email address and a device with internet access.
+7. We send messages [уточнить: approximate frequency, e.g. no more than once a week].
+8. The service is available to adults.
+9. Complaints about the newsletter can be sent to [уточнить: complaints email address]. We respond within 14 days of receipt.
+10. Once you withdraw consent we remove your address from the mailing list promptly, and no later than [уточнить: number] working days.
+11. We notify subscribers of changes to these terms by email [уточнить: number] days in advance. The data controller is LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw.
+```
+
+
+**Куда вписать / примечание:** Частоту писем, сроки и адрес для рекламаций подставляет заказчик. Реализована ли сейчас двойная подписка — проверить в системе рассылок: если письма уходят без подтверждения, пункт 5 надо сначала внедрить, а потом публиковать.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»; EN: "e-mail" normalised to "email"; city name in Polish inside English copy.*
+
+
+---
+
+## Мелочь (25)
+
+
+### 14-09 · * · Нет перевода [PL]
+
+**Где:** Иконка поиска в шапке — alt изображения; на всех 54 страницах каждой локали
+
+
+**Сейчас:**
+
+> alt="search img"
+
+
+**Почему проблема:** Служебный английский alt «search img» одинаков во всех трёх локалях. Это внутренняя техническая подпись, попавшая в продакшн: она не переведена, не описывает содержимое и читается скринридером буквально как «search img».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Szukaj
+```
+
+
+*UA:*
+
+```
+Пошук
+```
+
+
+*EN:*
+
+```
+Search
+```
+
+
+**Куда вписать / примечание:** Если картинка декоративная и рядом уже есть подпись/поле поиска — правильнее поставить alt="" и убрать её из дерева доступности. Если это самостоятельная кнопка — использовать локализованный текст выше.
+
+
+### 01-24 · / · Кривой перевод [UA]
+
+**Где:** Секция «Про нас» на главной — весь абзац
+
+
+**Сейчас:**
+
+> «La Petite Bloom» – це історія, народжена з любові … Ласкаво просимо до світу «La Petite Bloom».
+
+
+**Почему проблема:** В украинской версии название бренда четыре раза взято в кавычки-ёлочки, как название учреждения в официальном документе. В польской и английской версиях оно набрано без кавычек. Кавычки вокруг латинского названия читаются канцелярски и расходятся с оформлением бренда на остальных страницах. Там же длинное тире заменено на короткое: «La Petite Bloom» – це історія.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+La Petite Bloom to historia zrodzona z miłości — miłości do dzieci, do domu i do drobnych detali, które upiększają codzienność.
+```
+
+
+*UA:*
+
+```
+La Petite Bloom — це історія, народжена з любові: до дітей, до дому й до дрібниць, які роблять щоденне життя гарнішим.
+```
+
+
+*EN:*
+
+```
+La Petite Bloom is a story born out of love — love for children, for home, and for the little details that make everyday life beautiful.
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → блок «Про нас», локаль ua: снять кавычки вокруг названия во всех четырёх местах, заменить дефис на длинное тире.
+
+
+*Правки носителей: UA: той самий абзац про бренд звучав по-різному в 01-24 і 03-14 — зведено до одного формулювання*
+
+
+### 01-25 · / · Опечатка [EN]
+
+**Где:** Блок новостей на главной — заголовок первой карточки (текст и alt изображения)
+
+
+**Сейчас:**
+
+> Klippan blankets – natural warmth and Scandinavian quality  for the little ones
+
+
+**Почему проблема:** Двойной пробел между «quality» и «for» в заголовке единственной настоящей новости на главной; он же продублирован в alt картинки. В PL и UA версиях этого заголовка пробел одинарный.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych
+```
+
+
+*UA:*
+
+```
+Ковдри Klippan — природне тепло та скандинавська якість для найменших
+```
+
+
+*EN:*
+
+```
+Klippan blankets — natural warmth and Scandinavian quality for the little ones
+```
+
+
+**Куда вписать / примечание:** Админка → Блог → запись «Kocyki Klippan…» → заголовок, локаль en. Заодно во всех трёх локалях заменить короткое тире на длинное.
+
+
+### 01-26 · / · Кривой перевод [ua,en]
+
+**Где:** Заголовок секции категорий (<h2>) и заголовки секций главной в целом
+
+
+**Сейчас:**
+
+> UA: «Купувати за категорією»; EN: «New Arrivals», «Popular Brands», «Latest News» рядом с «Bestsellers», «Shop by category», «About us»
+
+
+**Почему проблема:** Украинский заголовок «Купувати за категорією» — дословный перевод инфинитивом, по-украински заголовок навигации звучит как «Обирайте за категоріями». В английской версии половина заголовков набрана в Title Case («New Arrivals», «Popular Brands», «Latest News»), половина — в sentence case («Shop by category», «About us»): на одной странице два разных типографских стандарта.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kupuj według kategorii
+```
+
+
+*UA:*
+
+```
+Обирайте за категоріями
+```
+
+
+*EN:*
+
+```
+Shop by category / New arrivals / Popular brands / Latest news / Bestsellers / About us — привести все заголовки к sentence case
+```
+
+
+**Куда вписать / примечание:** Админка → Главная → заголовки секций. Выбрать один регистр для английских заголовков и применить его ко всем блокам главной.
+
+
+### 03-13 · /about · Опечатка [PL]
+
+**Где:** Sekcja «O nas», akapit o marce — fragment o artykułach do pielęgnacji
+
+
+**Сейчас:**
+
+> Ubrania, akcesoria, artykuły do ​​pielęgnacji i elementy wystroju
+
+
+**Почему проблема:** Między «do» a «pielęgnacji» stoją dwa niewidoczne znaki U+200B (zero-width space). To typowy ślad po Tłumaczu Google — potwierdza, że polska wersja tekstu o marce, czyli tekstu źródłowego dla całego sklepu, jest maszynowym tłumaczeniem z innego języka. Znaki psują wyszukiwanie na stronie i mogą rozbić łamanie wiersza.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Ubrania, akcesoria, artykuły do pielęgnacji i elementy wystroju, które łączą pokolenia i stają się częścią rodzinnych historii.
+```
+
+
+*UA:*
+
+```
+Одяг, аксесуари, засоби догляду та предмети декору, які пов’язують покоління та стають частиною сімейних історій.
+```
+
+
+*EN:*
+
+```
+Clothing, accessories, care products and décor pieces that connect generations and become part of family stories.
+```
+
+
+**Куда вписать / примечание:** Blok statyczny nr 2, wersja polska. Przekleić akapit jako czysty tekst; warto przejechać całą bazę treści po U+200B.
+
+
+### 03-14 · /about · Кривой перевод [UA]
+
+**Где:** Sekcja «Про нас», akapit o marce — zapis nazwy marki
+
+
+**Сейчас:**
+
+> «La Petite Bloom» – це історія, народжена з любові
+
+
+**Почему проблема:** W wersji ukraińskiej nazwa marki jest cztery razy wzięta w cudzysłów drukarski «...», czego nie ma ani w wersji polskiej, ani angielskiej. Łacińskiej nazwy własnej nie ubieramy w ukraińskie cudzysłowy — marka traci charakter i wygląda jak nazwa firmy z dokumentu urzędowego. Dodatkowo po nazwie stoi półpauza «–», a w reszcie akapitu myślnik «—»; interpunkcja rozjeżdża się w jednym zdaniu.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+La Petite Bloom to historia zrodzona z miłości — miłości do dzieci, do domu i do drobnych detali, które upiększają codzienność.
+```
+
+
+*UA:*
+
+```
+La Petite Bloom — це історія, народжена з любові: до дітей, до дому й до дрібниць, які роблять щоденне життя гарнішим.
+```
+
+
+*EN:*
+
+```
+La Petite Bloom is a story born out of love — love for children, for home, and for the small details that make everyday life beautiful.
+```
+
+
+**Куда вписать / примечание:** Blok statyczny nr 2, wersja ukraińska: usunąć cudzysłowy przy nazwie marki we wszystkich czterech miejscach i ujednolicić myślniki.
+
+
+*Правки носителей: UA: той самий абзац про бренд звучав по-різному в 01-24 і 03-14 — зведено до одного формулювання; прибрано тавтологію «з любові: любові до дітей»*
+
+
+### 09-28 · /accessories · Кривой перевод [EN]
+
+**Где:** Tytuły kart produktów w listingu
+
+
+**Сейчас:**
+
+> «Hair barrette Pico Copenhagen — colorful oval plastic», «Kids socks Tiny Cottons Cherry — soft cotton, colorful», «Pacifier holder Oli & Carol Charly the Chili — natural rubber», «Stick-on earrings Mimi & Lula — kids jewellery for girls»
+
+
+**Почему проблема:** Angielskie tytuły kart mieszają pisownię amerykańską z brytyjską w obrębie jednego listingu: «colorful» i «color» obok poprawnego brytyjskiego «jewellery», «Pacifier holder» (US) zamiast brytyjskiego «dummy clip», «Pajamas» w podkategoriach obok «pyjamas» w menu. Dla sklepu kierowanego do kupującego europejskiego wypada trzymać jedną, brytyjską konwencję.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Spinka do włosów Pico Copenhagen — owalna, kolorowy plastik
+Zawieszka do smoczka Oli & Carol Charly the Chili — kauczuk naturalny
+```
+
+
+*UA:*
+
+```
+Затискач для волосся Pico Copenhagen — овальна, кольоровий пластик
+Тримач для пустушки Oli & Carol Charly the Chili — натуральний каучук
+```
+
+
+*EN:*
+
+```
+Pico Copenhagen hair barrette — colourful oval plastic
+Oli & Carol Charly the Chili dummy clip — natural rubber
+```
+
+
+**Куда вписать / примечание:** Przejechać eksport tytułów EN zamianą colorful→colourful, color→colour, pacifier→dummy, pajamas→pyjamas, favorites→favourites; przy okazji nagłówek filtra «Color» i etykieta «Favorites» w nagłówku strony.
+
+
+*Правки носителей: UA: «заколка» — росіянізм; EN: Product titles used Slavic noun order (type before brand); every other product title on the site is brand-first.*
+
+
+### 08-13 · /blog/kocyki-klippan-naturalne-cieplo-i-skandynawska-jakosc-dla-najmlodszych · Опечатка [EN]
+
+**Где:** H1 / og:title / JSON-LD headline
+
+
+**Сейчас:**
+
+> Klippan blankets – natural warmth and Scandinavian quality  for the little ones
+
+
+**Почему проблема:** В английском заголовке двойной пробел между «quality» и «for». Виден в разметке Schema.org и попадает в шеринг.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kocyki Klippan – naturalne ciepło i skandynawska jakość dla najmłodszych
+```
+
+
+*UA:*
+
+```
+Ковдри Klippan — природне тепло та скандинавська якість для найменших
+```
+
+
+*EN:*
+
+```
+Klippan blankets — natural warmth and Scandinavian quality for the little ones
+```
+
+
+**Куда вписать / примечание:** Админка → Blog → Статьи → kocyki-klippan-... → английская локаль, поле «Заголовок»: убрать лишний пробел.
+
+
+*Правки носителей: UA: коротке тире замість довгого; EN: En dash used where the same headline elsewhere (01-25) uses an em dash.*
+
+
+### 12-16 · /cart, /ua/cart, /en/cart · Битая ссылка [pl,ua,en]
+
+**Где:** Adres /cart
+
+
+**Сейчас:**
+
+> pl: "Błąd - strona nie została znaleziona!" (404) | ua: "Помилка – сторінка не знайдена!" (404) | en: "Error – page not found!" (404)
+
+
+**Почему проблема:** Корзина реализована выдвижной панелью, а страница /cart отдаёт 404 во всех трёх локалях. Внутренних ссылок на /cart в вёрстке нет (проверено по всем снимкам: адрес встречается только в hreflang самой 404-страницы), поэтому пользователи из навигации туда не попадут. Но /cart — привычный адрес, по которому заходят из закладок и внешних ссылок, а на 404-странице ещё и проставлены hreflang-альтернативы на такие же 404.
+
+
+**Куда вписать / примечание:** Поставить 301 с /cart, /ua/cart, /en/cart на /checkout (и его локализованные версии) либо отдавать по этому адресу страницу корзины. Отдельно: убрать hreflang-блок с 404-страниц.
+
+
+### 12-14 · /checkout · Битая ссылка [pl,ua,en]
+
+**Где:** <title> strony oraz nagłówek H1
+
+
+**Сейчас:**
+
+> <title>Koszyk jest pusty</title>, brak <h1> (tekst leży w <p class="checkout-title">), meta description pusty
+
+
+**Почему проблема:** Заголовок вкладки браузера показывает состояние корзины, а не название страницы: покупатель с несколькими открытыми вкладками видит «Koszyk jest pusty» вместо «Koszyk». Заголовка первого уровня на странице нет вообще, поэтому скринридер и хлебные крошки не получают названия шага оформления.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Koszyk / Twój koszyk jest pusty
+```
+
+
+*UA:*
+
+```
+Кошик / Ваш кошик порожній
+```
+
+
+*EN:*
+
+```
+Basket / Your basket is empty
+```
+
+
+**Куда вписать / примечание:** Первое значение — <title> и <h1> страницы, второе — текст пустого состояния внутри страницы. Разделить их.
+
+
+### 03-16 · /contacts, /about · Опечатка [UA]
+
+**Где:** Godziny pracy — zapis w karcie biura i w tabeli butiku
+
+
+**Сейчас:**
+
+> Пн-Пт: з 9-00 до 18-00
+
+
+**Почему проблема:** Godziny są zapisane w trzech różnych konwencjach na tej samej stronie i w każdej lokalizacji inaczej: ukraińskie «з 9-00 до 18-00» (minuty przez łącznik zamiast dwukropka, choć w tabeli butiku tuż obok jest już poprawne «10:00 - 19:00»), polskie «od 9:00 do 18:00», angielskie «9:00-18:00». W wersji angielskiej dochodzi niestandardowy skrót dnia «Thur:» zamiast «Thu».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Pn–Pt: 9:00–18:00 | Czw: 10:00–19:00
+```
+
+
+*UA:*
+
+```
+Пн–Пт: 9:00–18:00 | Чт: 10:00–19:00
+```
+
+
+*EN:*
+
+```
+Mon–Fri: 9:00–18:00 | Thu: 10:00–19:00
+```
+
+
+**Куда вписать / примечание:** Ujednolicić format godzin w karcie biura, w tabeli butiku, na /about i w stopce — wszędzie «GG:MM-GG:MM». W wersji angielskiej poprawić «Thur» na «Thu» w tabeli butiku na /contacts i /about.
+
+
+*Правки носителей: PL: Zakresy dni i godzin przez łącznik zamiast półpauzy — a to właśnie ta znaleziona pozycja ma ustalać jednolitą konwencję zapisu godzin.; UA: дефіси замість тире в діапазонах годин; окремо: «Чт» суперечить «Пн–Пт» — графік треба уточнити в клієнта; EN: Hyphens instead of en dashes in day and time ranges.*
+
+
+### 03-17 · /contacts, /about · Опечатка [PL]
+
+**Где:** Numer telefonu w karcie biura, w karcie butiku i w sekcji butiku na /about
+
+
+**Сейчас:**
+
+> +48 (517) 689-849
+
+
+**Почему проблема:** Numer jest łamany po amerykańsku — nawiasy wokół trzech cyfr i łącznik. W Polsce «517» nie jest numerem kierunkowym, tylko początkiem numeru komórkowego, więc nawiasy sugerują coś, czego nie ma. Poprawny zapis to grupy po trzy cyfry. W atrybucie title tego samego linku jest już zresztą prawidłowe «+48 517 689 849», czyli sam szablon zna właściwy format.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
++48 517 689 849
+```
+
+
+*UA:*
+
+```
++48 517 689 849
+```
+
+
+*EN:*
+
+```
++48 517 689 849
+```
+
+
+**Куда вписать / примечание:** Numer składany jest z trzech spanów (sup / quote / nums) w ustawieniach kontaktowych — poprawka w jednym miejscu naprawi /contacts, /about i stopkę. Numer w href="tel:+48517689849" jest prawidłowy.
+
+
+### 04-16 · /delivery-and-payment · Заглушка [PL]
+
+**Где:** <title> и <meta name="description"> страницы (все три локали)
+
+
+**Сейчас:**
+
+> title: Dostawa i płatność / meta description: Dostawa i płatność (в ua — «Доставка та оплата» / «Доставка та оплата», в en — «Delivery and payment» / «Delivery and payment»)
+
+
+**Почему проблема:** Мета-описание во всех трёх локалях просто дублирует заголовок — поле заполнено формально. Страница про доставку и оплату — одна из самых востребованных в поиске и одна из тех, что смотрит Przelewy24; описание должно называть перевозчиков, порог бесплатной доставки и способы оплаты.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Dostawa InPost, DPD i DHL od 13,99 zł, bezpłatnie od 500 zł. Płatności online przez Przelewy24: BLIK, karty, szybki przelew, Apple Pay, Google Pay, Klarna i PayPo.
+```
+
+
+*UA:*
+
+```
+Доставка InPost, DPD і DHL від 13,99 zł, безкоштовно від 500 zł. Онлайн-оплата через Przelewy24: BLIK, картки, швидкий переказ, Apple Pay, Google Pay, Klarna та PayPo.
+```
+
+
+*EN:*
+
+```
+Delivery by InPost, DPD and DHL from 13.99 zł, free on orders over 500 zł. Online payments via Przelewy24: BLIK, cards, instant transfer, Apple Pay, Google Pay, Klarna and PayPo.
+```
+
+
+**Куда вписать / примечание:** Админка → SEO-поля страницы «Dostawa i płatność» в каждой локали. Держать до ~160 знаков.
+
+
+*Правки носителей: EN: "free over 500 zł" is elliptical; a shopper expects "free on orders over".*
+
+
+### 09-27 · /kids · Нет перевода [pl,ua,en]
+
+**Где:** Pasek narzędzi listingu — lista rozwijana sortowania (element <select class="sorting-select">)
+
+
+**Сейчас:**
+
+> <select class="sorting-select styler" js-catalog-sort-select> … <option>Według popularności</option>
+
+
+**Почему проблема:** Lista sortowania nie ma żadnej etykiety — ani widocznego podpisu «Sortuj», ani atrybutu aria-label. Użytkownik czytnika ekranu słyszy samą wartość «Według popularności» bez informacji, czym jest ten element; wzrokowo pierwsza opcja udaje etykietę. Dotyczy wszystkich stron kategorii i wszystkich trzech lokalizacji. Osobno: angielskie «Discounted products» mówi o przecenach, a polskie źródło «Produkty promocyjne» o promocjach — to nie to samo.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Sortuj: (etykieta) • opcja: Produkty w promocji
+```
+
+
+*UA:*
+
+```
+Сортувати: (мітка) • опція: Акційні товари
+```
+
+
+*EN:*
+
+```
+Sort by: (label) • option: On sale
+```
+
+
+**Куда вписать / примечание:** Dodać widoczną etykietę «Sortuj» / «Сортувати» / «Sort by» przed listą albo przynajmniej aria-label na elemencie <select>. Sprawdzić też pasek paginacji — <div class="pagination"> nie ma elementu <nav> ani aria-label, a linki to same cyfry, bez «Poprzednia»/«Następna».
+
+
+*Правки носителей: PL: Ta sama opcja sortowania nazwana jest w 13-09 „Produkty w promocji”; „Produkty promocyjne” to inna nazwa dla tego samego pola.; EN: "Promotional products" is not a sort option a UK shopper recognises; 13-09 uses "On sale" for the same control.*
+
+
+### 10-05 · /kids · Кривой перевод [UA]
+
+**Где:** Panel filtrów, nazwy filtrów rozmiarowych
+
+
+**Сейчас:**
+
+> Розмір шкарпетки
+
+
+**Почему проблема:** Liczba pojedyncza («розмір шкарпетки» — rozmiar jednej skarpetki) zamiast rodzaju towaru. Pozostałe filtry UA są w poprawnej formie («Розмір взуття»).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Rozmiar skarpet
+```
+
+
+*UA:*
+
+```
+Розмір шкарпеток
+```
+
+
+*EN:*
+
+```
+Sock size
+```
+
+
+### 10-08 · /kids · Кривой перевод [ua,en]
+
+**Где:** Nagłówek panelu filtrów vs przycisk otwierający panel
+
+
+**Сейчас:**
+
+> Фільтр
+
+
+**Почему проблема:** Nagłówek otwartego panelu filtrów jest w liczbie pojedynczej («Фільтр», EN «Filter»), a przycisk, który ten panel otwiera — w mnogiej («Фільтри», EN «Filters»). Dwie różne formy tej samej etykiety na jednym ekranie. W PL obie brzmią «Filtry», więc rozjazd powstał wyłącznie w tłumaczeniach.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Filtry
+```
+
+
+*UA:*
+
+```
+Фільтри
+```
+
+
+*EN:*
+
+```
+Filters
+```
+
+
+### 07-08 · /personal-data-requests · Кривой перевод [UA]
+
+**Где:** Вводный абзац под H1 (то же в EN-версии)
+
+
+**Сейчас:**
+
+> Якщо у вас є запитання щодо обробки ваших персональних даних або ви хочете скористатися своїми правами відповідно до RODO/GDPR, ви можете звернутися до нас електронною поштою.
+
+
+**Почему проблема:** «RODO» — польская аббревиатура регламента, для украинского и английского читателя она ничего не значит и выглядит как непереведённый остаток. В UA и EN достаточно GDPR (в украинском — с расшифровкой при первом упоминании).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Jeśli masz pytania dotyczące przetwarzania Twoich danych osobowych lub chcesz skorzystać ze swoich praw wynikających z RODO, napisz do nas.
+```
+
+
+*UA:*
+
+```
+Якщо у вас є запитання щодо обробки ваших персональних даних або ви хочете скористатися своїми правами за GDPR (Загальним регламентом про захист даних), напишіть нам.
+```
+
+
+*EN:*
+
+```
+If you have questions about how we process your personal data, or you would like to exercise your rights under the GDPR, write to us.
+```
+
+
+**Куда вписать / примечание:** В польской версии «RODO» оставляем — это принятое там название регламента.
+
+
+### 06-07 · /privacy-policy · Кривой перевод [PL]
+
+**Где:** Раздел «4. Odbiorcy danych», первый пункт списка — против раздела «5. Przekazywanie danych poza EOG»
+
+
+**Сейчас:**
+
+> - dostawca hostingu (serwer w Unii Europejskiej);
+
+
+**Почему проблема:** Внутреннее расхождение: в п. 4 сервер описан как находящийся в Евросоюзе, в п. 5 — в Европейской экономической зоне. Это разные территории, и в тексте о трансграничной передаче данных разница существенна. Повторяется во всех трёх локалях («у Європейському Союзі» / «Європейському економічному просторі», «European Union» / «European Economic Area»).
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+- dostawca hostingu (serwery w Europejskim Obszarze Gospodarczym);
+```
+
+
+*UA:*
+
+```
+- постачальнику послуг хостингу (сервери в Європейському економічному просторі);
+```
+
+
+*EN:*
+
+```
+- the hosting provider (servers located in the European Economic Area);
+```
+
+
+**Куда вписать / примечание:** Раздел 4 политики конфиденциальности. Если сервер на самом деле в ЕС, а не в ЕЭЗ — [уточнить у юриста: какую формулировку оставить], но обе точки текста должны говорить одно и то же.
+
+
+### 19-12 · /privacy-policy · Юр. требование [все]
+
+**Где:** Пункт 1 «Administrator danych» / «Контролер даних» / «Data controller»
+
+
+**Сейчас:**
+
+> Administratorem danych osobowych jest LPB Sp. z o.o. z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730, NIP 5273179673, REGON 542537097.
+
+
+**Почему проблема:** Реквизиты администратора данных приведены в третьей редакции — отличной и от регламента (там есть суд и kapitał), и от страницы контактов (там только три номера). Разнобой между тремя документами на одном сайте — то, что бросается в глаза при проверке и создаёт впечатление, что данные копировали наспех. Достаточно привести все три места к одной формулировке из 19-06: добавить страну и суд регистрации, полное фирменное наименование дать один раз, дальше пользоваться сокращением.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Administratorem danych osobowych jest LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska, wpisana do rejestru przedsiębiorców KRS prowadzonego przez [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] pod numerem KRS 0001190730, NIP 5273179673, REGON 542537097.
+```
+
+
+*UA:*
+
+```
+Контролером персональних даних є LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) із місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща, внесена до реєстру підприємців KRS, який веде [уточнити за витягом з KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS], за номером KRS 0001190730, NIP 5273179673, REGON 542537097.
+```
+
+
+*EN:*
+
+```
+The data controller is LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), with its registered office at ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland, entered in the register of entrepreneurs of the KRS kept by [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] under KRS number 0001190730, NIP 5273179673, REGON 542537097.
+```
+
+
+**Куда вписать / примечание:** Админка: /privacy-policy → пункт 1. Правится во всех трёх локалях одинаково: меняются только слова вокруг номеров, сами номера и название компании остаются как есть.
+
+
+*Правки носителей: UA: російська вставка «по выписке KRS»; росіянізм «уточнить» замість «уточнити»; у поштовому рядку місто транслітеровано, хоча в решті документів адреса подана як «01-234 Warszawa, Польща»; EN: GDPR term is "data controller"; the city was repeated in the registered-office clause.*
+
+
+### 07-18 · /regulamin-kart-podarunkowych · Кривой перевод [UA]
+
+**Где:** Title, H1 и пункт футера (UA) против текста регламента
+
+
+**Сейчас:**
+
+> Правила використання подарункових карт
+
+
+**Почему проблема:** В украинской версии заголовок говорит «подарункових карт», а весь текст регламента ниже — «подарункова картка», «подарункової картки». Разнобой в одном документе, причём в самом заметном месте. По украинской норме для платёжного/подарочного носителя корректнее «картка». Отдельно: сама страница опубликована и стоит в футере, хотя первый же абзац сообщает, что карт в продаже нет — до запуска пункт из футера лучше убрать, чтобы покупатель не приходил в тупик.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Regulamin kart podarunkowych
+```
+
+
+*UA:*
+
+```
+Правила подарункових карток
+```
+
+
+*EN:*
+
+```
+Gift card terms and conditions
+```
+
+
+**Куда вписать / примечание:** Заголовок правится в админке в трёх местах: название страницы (UA), H1 и пункт меню в подвале. Скрытие пункта футера до запуска карт — отдельное решение заказчика.
+
+
+### 13-20 · /search?term=sukienka · Опечатка [PL]
+
+**Где:** Etykieta selektora liczby produktów na stronie (nad listą wyników, obok „Sortowanie”)
+
+
+**Сейчас:**
+
+> Ilość na stronę
+
+
+**Почему проблема:** „Ilość” dotyczy rzeczy niepoliczalnych — produkty się liczy, więc poprawnie jest „liczba”. Wersja ukraińska używa skrótu „Кіл-ть на сторінку”, który w sklepie premium wygląda na niedokończony tekst roboczy.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Produktów na stronie
+```
+
+
+*UA:*
+
+```
+Товарів на сторінці
+```
+
+
+*EN:*
+
+```
+Products per page
+```
+
+
+**Куда вписать / примечание:** Etykieta wspólna dla wyników wyszukiwania i stron kategorii.
+
+
+### 06-02 · /ua/polityka-cookies · Опечатка [UA]
+
+**Где:** title и h1 страницы
+
+
+**Сейчас:**
+
+> Політика щодо файлів COOKIES
+
+
+**Почему проблема:** «COOKIES» набрано капслоком посреди обычного заголовка — единственный такой случай на сайте, выбивается из типографики бренда. В PL и EN то же слово идёт строчными.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Polityka cookies
+```
+
+
+*UA:*
+
+```
+Політика щодо файлів cookie
+```
+
+
+*EN:*
+
+```
+Cookie policy
+```
+
+
+**Куда вписать / примечание:** Правится там же, где 06-01: заголовок, h1 и все пункты меню/футера, где повторяется капслок.
+
+
+*Правки носителей: UA: різнобій «файли cookie / файли cookies» — уніфіковано на «cookie» (як у футері, 02-08)*
+
+
+### 06-09 · /ua/privacy-policy · Кривой перевод [UA]
+
+**Где:** Раздел «1. Контролер персональних даних», второе предложение
+
+
+**Сейчас:**
+
+> Контакт із питань персональних даних: rodo@lapetitebloom.com. Контролер не призначив інспектора із захисту даних (IOD).
+
+
+**Почему проблема:** «IOD» — польская аббревиатура (Inspektor Ochrony Danych), в украинском тексте она ничего не значит. В английской версии на этом же месте корректно стоит DPO, то есть аббревиатуру просто забыли перевести вместе с остальным.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Kontakt w sprawach danych osobowych: rodo@lapetitebloom.com. Administrator nie powołał inspektora ochrony danych (IOD).
+```
+
+
+*UA:*
+
+```
+Контакт із питань персональних даних: rodo@lapetitebloom.com. Контролер не призначив уповноважену особу із захисту персональних даних (DPO).
+```
+
+
+*EN:*
+
+```
+Contact regarding personal data matters: rodo@lapetitebloom.com. The controller has not appointed a Data Protection Officer (DPO).
+```
+
+
+**Куда вписать / примечание:** /privacy-policy, п. 1, украинская версия.
+
+
+### 06-19 · /ua/terms-of-use · Опечатка [UA]
+
+**Где:** §7 п. 5 «Доставка» (то же — §2, блок «Бутик»)
+
+
+**Сейчас:**
+
+> Можливе особисте отримання в бутику за адресою ul. Mokotowskiej 51/53 після підтвердження наявності Товару.
+
+
+**Почему проблема:** Польская падежная форма «Mokotowskiej» перенесена в украинский текст механически: в §2 того же документа улица названа «ul. Mokotowska 51/53», в §7 — «ul. Mokotowskiej 51/53». Один адрес в двух написаниях внутри одного документа. В английской версии ровно та же ошибка: «from the boutique at ul. Mokotowskiej 51/53».
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Możliwy jest odbiór osobisty w butiku przy ul. Mokotowskiej 51/53 po potwierdzeniu dostępności Towaru.
+```
+
+
+*UA:*
+
+```
+Можливе особисте отримання в бутику на вул. Mokotowska 51/53 після підтвердження наявності Товару.
+```
+
+
+*EN:*
+
+```
+Personal collection from the boutique at ul. Mokotowska 51/53 is possible after the availability of the Goods has been confirmed.
+```
+
+
+**Куда вписать / примечание:** В польской версии форма «przy ul. Mokotowskiej» верна — там правка не нужна. Правится UA и EN: §7 п. 5, а также хвост §2 («вхід із ul. Mokotowskiej» / «entrance from ul. Mokotowskiej»).
+
+
+*Правки носителей: UA: у суцільному тексті вживаємо «вул.»*
+
+
+### 05-19 · /warranty-and-returns, /warranty-and-returns/polityka-zwrotow, /warranty-and-returns/gwarancja-na-produkt, /claims-and-complaints · Заглушка [все]
+
+**Где:** meta description всех четырёх страниц во всех трёх локалях
+
+
+**Сейчас:**
+
+> meta description: Gwarancja i zwrot
+
+
+**Почему проблема:** Во всех двенадцати версиях meta description дословно повторяет title и h1 («Gwarancja i zwrot», «Гарантія та повернення», «Warranty and returns», «Polityka zworotow i reklamacji» — с той же опечаткой). Описания страницы нет; при индексации и при шеринге ссылки виден только заголовок.
+
+
+**Предлагаемый текст:**
+
+
+*PL:*
+
+```
+Zwroty w ciągu [уточнить: 14 czy 30] dni, wymiana, reklamacje i wzór formularza odstąpienia od umowy — wszystko, czego potrzebujesz, żeby zwrócić lub zareklamować zamówienie w La Petite Bloom.
+```
+
+
+*UA:*
+
+```
+Повернення протягом [уточнити: 14 чи 30] днів, обмін, претензії та зразок форми відмови від договору — усе, що потрібно, щоб повернути замовлення або подати претензію в La Petite Bloom.
+```
+
+
+*EN:*
+
+```
+Returns within [уточнить: 14 or 30] days, exchanges, complaints and the model withdrawal form — everything you need to return an order or make a claim at La Petite Bloom.
+```
+
+
+**Куда вписать / примечание:** Правится в SEO-полях страниц. Опечатку «zworotow» в meta description /claims-and-complaints снять вместе с находкой 05-11.
+
+
+*Правки носителей: UA: росіянізм «уточнить» замість «уточнити»*
+
+
+---
+
+## Что не проверяли
+
+- **1247 карточек товара из 1307** — Проверено 8 штук разных типов — одежда, обувь, косметика, игрушки, текстиль. Найденные дефекты системные, значит повторяются, но поимённого списка непереведённых карточек нет.
+- **100 категорий из 108 и 41 бренд из 44** — Взяты все категории верхнего уровня и три бренда.
+- **Письма покупателю** — Подтверждение заказа, статусы, восстановление пароля — они отправляются из админки и в обходе сайта не видны.
+- **Реальное прохождение оплаты** — Тестовый заказ не оформлялся: это действие на живом магазине с реальным платёжным оператором.
+- **PDF-документы и вложения** — Если регламент дублируется файлом, он не проверялся.
+- **Вёрстка и отображение** — Аудит текстовый, по HTML. Как длинные украинские и английские строки ложатся в кнопки и плитки, проверяется только глазами в браузере.
+
+Полный проход по всем 1307 карточкам, 108 категориям и 44 брендам в трёх локалях — это примерно 4600 страниц. Он найдёт каждый непереведённый товар поимённо и займёт несколько часов машинного времени.
