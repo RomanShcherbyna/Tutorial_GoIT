@@ -682,7 +682,7 @@
      "locale": "pl,ua,en",
      "title": "Walidacja formularzy — komunikat dla pustego pola wymaganego (klucz validate.required)",
      "current": "pl: \"Podaj hasło ponownie\" | ua: \"Вкажіть пароль ще раз\" | en: \"Enter password again\"",
-     "why": "Это универсальный текст для ЛЮБОГО незаполненного обязательного поля, а написан он про пароль. В чекауте покупатель, не заполнив имя, телефон, город или индекс, увидит «Podaj hasło ponownie» / «Enter password again». Это прямая потеря заказов и провал ручной проверки формы верификатором Przelewy24. Одинаково сломано во всех трёх локалях.",
+     "why": "Это универсальный текст для ЛЮБОГО незаполненного обязательного поля, а написан он про пароль. В чекауте покупатель, не заполнив имя, телефон, город или индекс, увидит «Podaj hasło ponownie» / «Enter password again». Это прямая потеря заказов и провал ручной проверки формы верификатором Przelewy24. Одинаково сломано во всех трёх локалях. Где увидеть: откройте /auth/register или /checkout, оставьте любое поле пустым и нажмите отправку — под полем встанет «Podaj hasło ponownie». Строка одна на всю форму, ключ validate.required, лежит в языковых файлах движка, не в контенте.",
      "pl": "To pole jest wymagane",
      "ua": "Це поле обов’язкове",
      "en": "This field is required",
@@ -692,7 +692,11 @@
      "note": "",
      "owner": "dev",
      "owner_label": "Программисты",
-     "see": []
+     "see": [
+      "https://lapetitebloom.com/auth/register",
+      "https://lapetitebloom.com/checkout",
+      "https://lapetitebloom.com/auth/forgot"
+     ]
     },
     {
      "id": "DOC-09",

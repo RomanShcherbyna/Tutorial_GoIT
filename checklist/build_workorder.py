@@ -203,6 +203,22 @@ FROM_CATALOGUE = {
 }
 
 
+def load_verdicts(cl_path):
+    """What the client has already answered, kept outside the browser.
+
+    The buttons on each fix write to localStorage, which lives in one browser
+    on one machine. Once the answers are handed back they belong here: a fix
+    thrown out stops being printed, an accepted one is marked, and both survive
+    a new laptop. Silence is not an answer — an id absent from this file has
+    simply not been read yet, and is printed exactly as before.
+    """
+    path = os.path.join(os.path.dirname(os.path.abspath(cl_path)),
+                        "verdicts.json")
+    if not os.path.exists(path):
+        return {}
+    return json.load(open(path, encoding="utf-8")).get("answers", {})
+
+
 def is_wording(f):
     return (f.get("owner") != FROM_BASELINKER
             and f.get("issue") in TEXT_ISSUES
@@ -211,14 +227,15 @@ def is_wording(f):
             and f.get("id") not in FROM_CATALOGUE)
 
 
-def collect_partial(checklist):
+def collect_partial(checklist, verdicts):
     out = []
     for g in checklist["groups"]:
         if (g.get("path") in FULL_PAGES or g.get("path") in WRITTEN_PAGES
                 or g.get("key") in COVERED_BY_DOCS):
             continue
-        items = [dict(f, _kind=kind_of(f))
-                 for f in g["fixes"] if is_wording(f)]
+        items = [dict(f, _kind=kind_of(f), _v=verdicts.get(f["id"], {}))
+                 for f in g["fixes"] if is_wording(f)
+                 and verdicts.get(f["id"], {}).get("v") != "no"]
         if not items:
             continue
         owners = [o for o in g.get("owners", [])
@@ -425,6 +442,10 @@ try { var t = localStorage.getItem('lpb-theme'); if (t) document.documentElement
 var KEY = 'lpb-verdicts';
 var A = {};
 try { A = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (_) { A = {}; }
+// Answers already handed back are baked into the file, so opening it on
+// another machine still shows how far the reading got. This browser wins if
+// it disagrees: it holds the newer keystroke.
+for (var _id in SERVER) if (!A[_id]) A[_id] = SERVER[_id];
 
 function persist() {
   try { localStorage.setItem(KEY, JSON.stringify(A)); } catch (_) { }
@@ -483,12 +504,15 @@ document.addEventListener('click', function (e) {
     }
     return;
   }
-  var only = e.target.closest('#onlyans');
+  var only = e.target.closest('#onlyans, #todo');
   if (only) {
     var on = only.getAttribute('aria-pressed') !== 'true';
-    only.setAttribute('aria-pressed', String(on));
+    var want = only.id === 'todo' ? false : true;
+    [].forEach.call(document.querySelectorAll('#onlyans, #todo'), function (b) {
+      b.setAttribute('aria-pressed', String(b === only && on));
+    });
     [].forEach.call(document.querySelectorAll('ol.items > li[data-id]'), function (li) {
-      li.hidden = on && !answered(A[li.dataset.id]);
+      li.hidden = on && answered(A[li.dataset.id]) !== want;
     });
     [].forEach.call(document.querySelectorAll('.doc'), function (d) {
       var list = d.querySelector('ol.items');
@@ -748,10 +772,19 @@ def main():
     checklist = json.load(open(cl_path, encoding="utf-8"))
     tr = json.load(open(tr_path, encoding="utf-8"))
 
+    verdicts = load_verdicts(cl_path)
     full = collect_full(pages_dir, tr)
-    partial, n_crops = attach_crops(collect_partial(checklist),
+    partial, n_crops = attach_crops(collect_partial(checklist, verdicts),
                                     os.environ.get("CROPS_DIR", ""))
     n_items = sum(len(g["items"]) for g in partial)
+    n_dropped = sum(1 for v in verdicts.values() if v.get("v") == "no")
+    n_ok = sum(1 for v in verdicts.values() if v.get("v") == "ok")
+    server = json.dumps({k: v for k, v in verdicts.items()
+                         if v.get("v") != "no"}, ensure_ascii=False)
+    extra = ""
+    if n_ok or n_dropped:
+        extra = (f": согласовано {n_ok}"
+                 + (f", убрано по вашему решению {n_dropped}" if n_dropped else ""))
 
     doc = f"""<title>La Petite Bloom — что менять на сайте</title>
 <style>{CSS}</style>
@@ -781,6 +814,8 @@ def main():
     <div class="answers">
       <button class="btn" id="copy" type="button">Скопировать мои ответы</button>
       <button class="btn" id="show" type="button">Показать текстом</button>
+      <button class="btn" id="todo" type="button" aria-pressed="false">
+        Показать непройденные</button>
       <button class="btn" id="onlyans" type="button" aria-pressed="false">
         Показать только отвеченные</button>
       <span class="cnt" id="cnt"></span>
@@ -793,7 +828,10 @@ def main():
     <p class="secnote" style="margin:.5rem 0 0">На каждой правке две кнопки и
       два поля для комментария — мне и программисту. Ответы держатся в этом
       браузере, никуда сами не уходят; чтобы я их прочитал, нажмите
-      «Скопировать мои ответы» и вставьте в чат.</p>
+      «Скопировать мои ответы» и вставьте в чат. Что уже передано — вшито
+      в файл и видно с любого устройства{extra}. Кнопка «Показать
+      непройденные» оставляет на экране только то, до чего вы ещё не дошли, —
+      так удобно продолжить с места остановки.</p>
     <div class="legend">
       <div><span class="owner o-dev">Программисты</span> шаблон, ссылки, строки движка</div>
       <div><span class="owner o-content">Наш контент</span> меню, акции, баннеры — пишем сами</div>
@@ -823,7 +861,8 @@ def main():
   {''.join(partial_block(g) for g in partial)}
 </div>
 <button class="btn" id="totop" type="button">↑ Наверх</button>
-<script>{JS}</script>"""
+<script>var SERVER = {server};
+{JS}</script>"""
 
     open(out_path, "w", encoding="utf-8").write(doc)
     size = len(doc.encode("utf-8")) / 1024 / 1024
