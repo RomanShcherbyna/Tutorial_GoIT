@@ -172,12 +172,24 @@ FEED_FED = {"11-01", "11-06", "11-07"}
 # Alt attributes stay: an alt is a sentence, and someone has to write it.
 PICTURE_WORK = {"01-01", "01-08", "01-21", "01-22", "13-12", "03-20"}
 
+# Filed against the template, fed by the catalogue. The brand register and its
+# spelling, the category tree and what hangs in each branch, attribute names
+# and their values, stock status — every one of these is a field in
+# BaseLinker. Retyping them on the page holds until the next import.
+FROM_CATALOGUE = {
+    "09-05", "09-07", "09-08",          # реестр брендов, их названия и описания
+    "09-17", "09-19", "09-24",          # дерево категорий и раскладка товаров
+    "14-18", "14-19",                   # имена атрибутов и их значения
+    "11-16",                            # наличие и срок отправки
+}
+
 
 def is_wording(f):
     return (f.get("owner") != FROM_BASELINKER
             and f.get("issue") in TEXT_ISSUES
             and f.get("id") not in FEED_FED
-            and f.get("id") not in PICTURE_WORK)
+            and f.get("id") not in PICTURE_WORK
+            and f.get("id") not in FROM_CATALOGUE)
 
 
 def collect_partial(checklist):
