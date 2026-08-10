@@ -1,0 +1,1776 @@
+{
+ "documents": [
+  {
+   "doc": "1-regulamin-sklepu",
+   "title": "Регламент магазина",
+   "target_path": "/regulamin",
+   "title_pl": "REGULAMIN SKLEPU INTERNETOWEGO LA PETITE BLOOM",
+   "title_ua": "ПРАВИЛА ІНТЕРНЕТ-МАГАЗИНУ LA PETITE BLOOM",
+   "title_en": "LA PETITE BLOOM ONLINE STORE TERMS AND CONDITIONS",
+   "blocks": [
+    {
+     "n": 1,
+     "pl": "REGULAMIN SKLEPU INTERNETOWEGO LA PETITE BLOOM",
+     "ua": "ПРАВИЛА ІНТЕРНЕТ-МАГАЗИНУ LA PETITE BLOOM",
+     "en": "LA PETITE BLOOM ONLINE STORE TERMS AND CONDITIONS"
+    },
+    {
+     "n": 2,
+     "pl": "LPB Sp. z o.o. · www.lapetitebloom.com · obowiązuje od dnia 24.06.2026",
+     "ua": "LPB Sp. z o.o. · www.lapetitebloom.com · чинні з 24.06.2026",
+     "en": "LPB Sp. z o.o. · www.lapetitebloom.com · in force from 24.06.2026"
+    },
+    {
+     "n": 3,
+     "pl": "§1. Definicje",
+     "ua": "§1. Визначення",
+     "en": "§1. Definitions"
+    },
+    {
+     "n": 4,
+     "pl": "Na potrzeby Regulaminu:",
+     "ua": "Для цілей Правил:",
+     "en": "For the purposes of the Terms and Conditions:"
+    },
+    {
+     "n": 5,
+     "pl": "1. Sprzedawca – LPB Sp. z o.o., dane w §2.",
+     "ua": "1. Продавець – LPB Sp. z o.o., дані у §2.",
+     "en": "1. The Seller – LPB Sp. z o.o., details in §2."
+    },
+    {
+     "n": 6,
+     "pl": "2. Sklep – sklep internetowy pod adresem www.lapetitebloom.com.",
+     "ua": "2. Магазин – інтернет-магазин за адресою www.lapetitebloom.com.",
+     "en": "2. The Store – the online store at www.lapetitebloom.com."
+    },
+    {
+     "n": 7,
+     "pl": "3. Klient – osoba dokonująca zakupów w Sklepie.",
+     "ua": "3. Клієнт – особа, яка здійснює покупки в Магазині.",
+     "en": "3. The Customer – a person making purchases in the Store."
+    },
+    {
+     "n": 8,
+     "pl": "4. Konsument – Klient będący osobą fizyczną dokonującą zakupu w celu niezwiązanym z działalnością gospodarczą lub zawodową.",
+     "ua": "4. Споживач – Клієнт, який є фізичною особою і здійснює покупку з метою, не пов’язаною з господарською або професійною діяльністю.",
+     "en": "4. The Consumer – a Customer who is a natural person making a purchase for a purpose not connected with their business or professional activity."
+    },
+    {
+     "n": 9,
+     "pl": "5. PNPK – przedsiębiorca na prawach konsumenta: osoba fizyczna prowadząca działalność gospodarczą, zawierająca umowę niemającą dla niej charakteru zawodowego.",
+     "ua": "5. PNPK – підприємець на правах споживача (przedsiębiorca na prawach konsumenta): фізична особа, яка провадить господарську діяльність і укладає договір, що не має для неї професійного характеру.",
+     "en": "5. PNPK – an entrepreneur with consumer rights (przedsiębiorca na prawach konsumenta): a natural person conducting business activity who concludes a contract that is not of a professional nature for them."
+    },
+    {
+     "n": 10,
+     "pl": "6. Towar – produkt prezentowany w Sklepie.",
+     "ua": "6. Товар – продукт, представлений у Магазині.",
+     "en": "6. The Goods – a product presented in the Store."
+    },
+    {
+     "n": 11,
+     "pl": "7. Umowa – umowa sprzedaży zawierana między Klientem a Sprzedawcą za pośrednictwem Sklepu.",
+     "ua": "7. Договір – договір купівлі-продажу, що укладається між Клієнтом і Продавцем за посередництвом Магазину.",
+     "en": "7. The Contract – the contract of sale concluded between the Customer and the Seller via the Store."
+    },
+    {
+     "n": 12,
+     "pl": "§2. Sprzedawca i kontakt",
+     "ua": "§2. Продавець і контакти",
+     "en": "§2. The Seller and contact details"
+    },
+    {
+     "n": 13,
+     "pl": "Sklep prowadzi LPB Spółka z ograniczoną odpowiedzialnością z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, kapitał zakładowy 5 000 zł.",
+     "ua": "Магазин веде LPB Spółka z ograniczoną odpowiedzialnością з місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, статутний капітал 5 000 zł.",
+     "en": "The Store is operated by LPB Spółka z ograniczoną odpowiedzialnością with its registered office in Warsaw, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730 (Sąd Rejonowy dla m.st. Warszawy w Warszawie, Wydział Gospodarczy Krajowego Rejestru Sądowego), NIP 5273179673, REGON 542537097, share capital 5 000 zł."
+    },
+    {
+     "n": 14,
+     "pl": "Kontakt:",
+     "ua": "Контакти:",
+     "en": "Contact:"
+    },
+    {
+     "n": 15,
+     "pl": "- Obsługa klienta i wsparcie – hello@lapetitebloom.com",
+     "ua": "- Обслуговування клієнтів і підтримка – hello@lapetitebloom.com",
+     "en": "- Customer service and support – hello@lapetitebloom.com"
+    },
+    {
+     "n": 16,
+     "pl": "- Zwroty i reklamacje – hello@lapetitebloom.com (opcjonalnie alias zwroty@/reklamacje@)",
+     "ua": "- Повернення та рекламації – hello@lapetitebloom.com (опційно аліас zwroty@/reklamacje@)",
+     "en": "- Returns and complaints – hello@lapetitebloom.com (optionally the alias zwroty@/reklamacje@)"
+    },
+    {
+     "n": 17,
+     "pl": "- Sprawy danych osobowych (RODO) – rodo@lapetitebloom.com",
+     "ua": "- Питання персональних даних (GDPR) – rodo@lapetitebloom.com",
+     "en": "- Personal data matters (GDPR) – rodo@lapetitebloom.com"
+    },
+    {
+     "n": 18,
+     "pl": "Butik: ul. Mokotowska 51/53, Warszawa – lokal usługowy, parter, wejście od ul. Mokotowskiej.",
+     "ua": "Бутік: ul. Mokotowska 51/53, Warszawa – сервісне приміщення, перший поверх, вхід з боку ul. Mokotowska.",
+     "en": "Boutique: ul. Mokotowska 51/53, Warszawa – commercial unit, ground floor, entrance from ul. Mokotowska."
+    },
+    {
+     "n": 19,
+     "pl": "Rachunek bankowy do zwrotów: PL46 1020 1185 0000 4202 0416 4430.",
+     "ua": "Банківський рахунок для повернення коштів: PL46 1020 1185 0000 4202 0416 4430.",
+     "en": "Bank account for refunds: PL46 1020 1185 0000 4202 0416 4430."
+    },
+    {
+     "n": 20,
+     "pl": "§3. Wymagania techniczne",
+     "ua": "§3. Технічні вимоги",
+     "en": "§3. Technical requirements"
+    },
+    {
+     "n": 21,
+     "pl": "Do korzystania ze Sklepu potrzebne są: urządzenie z dostępem do Internetu, aktualna przeglądarka, aktywny adres e-mail oraz włączona obsługa plików cookies.",
+     "ua": "Для користування Магазином потрібні: пристрій із доступом до Інтернету, актуальний браузер, активна адреса електронної пошти та увімкнена підтримка файлів cookie.",
+     "en": "To use the Store you need: a device with internet access, an up-to-date browser, an active email address and cookies enabled."
+    },
+    {
+     "n": 22,
+     "pl": "§4. Konto Klienta",
+     "ua": "§4. Акаунт Клієнта",
+     "en": "§4. Customer account"
+    },
+    {
+     "n": 23,
+     "pl": "1. Założenie konta jest dobrowolne i bezpłatne; zakupów można dokonywać także bez rejestracji.",
+     "ua": "1. Створення акаунта (облікового запису) є добровільним і безкоштовним; покупки можна здійснювати також без реєстрації.",
+     "en": "1. Setting up an account is voluntary and free of charge; purchases may also be made without registration."
+    },
+    {
+     "n": 24,
+     "pl": "2. Rejestracja wymaga wypełnienia formularza i akceptacji Regulaminu. Dane podane przy rejestracji powinny być aktualne.",
+     "ua": "2. Реєстрація вимагає заповнення форми та прийняття Правил. Дані, надані під час реєстрації, мають бути актуальними.",
+     "en": "2. Registration requires completing a form and accepting the Terms and Conditions. The data provided on registration should be up to date."
+    },
+    {
+     "n": 25,
+     "pl": "3. Klient może w każdej chwili usunąć konto; nie wpływa to na umowy zawarte wcześniej.",
+     "ua": "3. Клієнт може будь-коли видалити акаунт; це не впливає на договори, укладені раніше.",
+     "en": "3. The Customer may delete the account at any time; this does not affect contracts concluded earlier."
+    },
+    {
+     "n": 26,
+     "pl": "§5. Zamówienie i zawarcie umowy",
+     "ua": "§5. Замовлення та укладення договору",
+     "en": "§5. Orders and conclusion of the contract"
+    },
+    {
+     "n": 27,
+     "pl": "1. Informacje o Towarach stanowią zaproszenie do zawarcia umowy, nie ofertę w rozumieniu Kodeksu cywilnego.",
+     "ua": "1. Інформація про Товари є запрошенням до укладення договору, а не офертою у розумінні Kodeks cywilny (Цивільний кодекс).",
+     "en": "1. Information about the Goods constitutes an invitation to conclude a contract, not an offer within the meaning of the Kodeks cywilny (Civil Code)."
+    },
+    {
+     "n": 28,
+     "pl": "2. Zamówienie składa się przez dodanie Towarów do koszyka, wybór dostawy i płatności oraz potwierdzenie zamówienia z obowiązkiem zapłaty.",
+     "ua": "2. Замовлення оформлюється шляхом додавання Товарів до кошика, вибору доставки та оплати, а також підтвердження замовлення із зобов’язанням оплати.",
+     "en": "2. An order is placed by adding the Goods to the cart, selecting delivery and payment, and confirming the order with an obligation to pay."
+    },
+    {
+     "n": 29,
+     "pl": "3. Umowa zostaje zawarta z chwilą otrzymania przez Klienta potwierdzenia przyjęcia zamówienia na adres e-mail.",
+     "ua": "3. Договір вважається укладеним у момент отримання Клієнтом підтвердження прийняття замовлення на адресу електронної пошти.",
+     "en": "3. The Contract is concluded at the moment the Customer receives confirmation of acceptance of the order at their email address."
+    },
+    {
+     "n": 30,
+     "pl": "4. Ceny podane są w złotych (PLN) i są cenami brutto (zawierają VAT). Wiążąca jest cena z chwili złożenia zamówienia.",
+     "ua": "4. Ціни вказані у злотих (PLN) і є цінами брутто (містять VAT). Обов’язковою є ціна на момент оформлення замовлення.",
+     "en": "4. Prices are given in zloty (PLN) and are gross prices (they include VAT). The binding price is the one in force at the moment the order is placed."
+    },
+    {
+     "n": 31,
+     "pl": "5. Zdjęcia i opisy mają charakter poglądowy; kolory Towarów mogą nieznacznie różnić się od rzeczywistych w zależności od ustawień ekranu.",
+     "ua": "5. Фотографії та описи мають ілюстративний характер; кольори Товарів можуть незначно відрізнятися від реальних залежно від налаштувань екрана.",
+     "en": "5. Photographs and descriptions are illustrative; the colours of the Goods may differ slightly from the actual ones depending on screen settings."
+    },
+    {
+     "n": 32,
+     "pl": "6. Jeśli zamówiony Towar nie jest dostępny, Sprzedawca niezwłocznie poinformuje o tym Klienta i zaproponuje zmianę zamówienia, realizację częściową albo zwróci zapłaconą kwotę.",
+     "ua": "6. Якщо замовлений Товар недоступний, Продавець невідкладно повідомить про це Клієнта і запропонує зміну замовлення, часткове виконання або поверне сплачену суму.",
+     "en": "6. If the ordered Goods are not available, the Seller will inform the Customer without delay and propose a change to the order or partial fulfilment, or will refund the amount paid."
+    },
+    {
+     "n": 33,
+     "pl": "7. Dodanie Towaru do koszyka nie stanowi jego rezerwacji. Rezerwacja następuje dopiero po potwierdzeniu i opłaceniu zamówienia.",
+     "ua": "7. Додавання Товару до кошика не є його резервуванням. Резервування відбувається лише після підтвердження та оплати замовлення.",
+     "en": "7. Adding the Goods to the cart does not constitute a reservation. Reservation takes place only after the order has been confirmed and paid for."
+    },
+    {
+     "n": 34,
+     "pl": "8. Przy każdej obniżce ceny Towaru, obok ceny promocyjnej prezentowana jest najniższa cena, jaka obowiązywała w okresie 30 dni przed obniżką (zgodnie z tzw. dyrektywą Omnibus).",
+     "ua": "8. При кожному зниженні ціни Товару поряд з акційною ціною подається найнижча ціна, яка діяла протягом 30 днів до зниження (згідно з так званою директивою Omnibus).",
+     "en": "8. With every reduction in the price of the Goods, the lowest price that applied in the 30 days before the reduction is presented next to the promotional price (in accordance with the so-called Omnibus Directive)."
+    },
+    {
+     "n": 35,
+     "pl": "§6. Płatności",
+     "ua": "§6. Оплата",
+     "en": "§6. Payments"
+    },
+    {
+     "n": 36,
+     "pl": "1. Płatności online obsługuje Przelewy24 (PayPro S.A., ul. Pastelowa 8, 60-198 Poznań).",
+     "ua": "1. Онлайн-оплату обслуговує Przelewy24 (PayPro S.A., ul. Pastelowa 8, 60-198 Poznań).",
+     "en": "1. Online payments are handled by Przelewy24 (PayPro S.A., ul. Pastelowa 8, 60-198 Poznań)."
+    },
+    {
+     "n": 37,
+     "pl": "2. Dostępne metody: BLIK, karty płatnicze, szybki przelew, Apple Pay, Google Pay, Klarna, PayPo oraz płatność za pobraniem.",
+     "ua": "2. Доступні методи: BLIK, платіжні картки, швидкий переказ, Apple Pay, Google Pay, Klarna, PayPo, а також післяплата.",
+     "en": "2. Available methods: BLIK, payment cards, instant transfer, Apple Pay, Google Pay, Klarna, PayPo and cash on delivery."
+    },
+    {
+     "n": 38,
+     "pl": "3. Przy płatności z góry zamówienie należy opłacić w terminie wskazanym w procesie zakupu; jego brak może skutkować anulowaniem zamówienia.",
+     "ua": "3. У разі передоплати замовлення слід оплатити у строк, зазначений у процесі покупки; його недотримання може призвести до скасування замовлення.",
+     "en": "3. Where payment is made in advance, the order must be paid within the time limit indicated during the purchase process; failure to do so may result in cancellation of the order."
+    },
+    {
+     "n": 39,
+     "pl": "4. Do każdego zamówienia wystawiany jest paragon lub faktura.",
+     "ua": "4. До кожного замовлення видається касовий чек або рахунок-фактура.",
+     "en": "4. A receipt or an invoice is issued for every order."
+    },
+    {
+     "n": 40,
+     "pl": "§7. Dostawa",
+     "ua": "§7. Доставка",
+     "en": "§7. Delivery"
+    },
+    {
+     "n": 41,
+     "pl": "1. Towary dostarczane są na terenie Polski oraz za granicę. Sposoby i koszty dostawy:",
+     "ua": "1. Товари доставляються на території Польщі та за кордон. Способи та вартість доставки:",
+     "en": "1. The Goods are delivered within Poland and abroad. Delivery methods and costs:"
+    },
+    {
+     "n": 42,
+     "pl": "- Paczkomat InPost 24/7 – 13,99 zł;",
+     "ua": "- Поштомат InPost 24/7 – 13,99 zł;",
+     "en": "- InPost parcel locker 24/7 – 13,99 zł;"
+    },
+    {
+     "n": 43,
+     "pl": "- Kurier InPost / DPD – 17 zł; za pobraniem +20–23 zł;",
+     "ua": "- Кур’єр InPost / DPD – 17 zł; післяплата +20–23 zł;",
+     "en": "- InPost / DPD courier – 17 zł; cash on delivery +20–23 zł;"
+    },
+    {
+     "n": 44,
+     "pl": "- przesyłka gabarytowa (powyżej 25 kg) – 99 zł;",
+     "ua": "- великогабаритне відправлення (понад 25 кг) – 99 zł;",
+     "en": "- oversized shipment (over 25 kg) – 99 zł;"
+    },
+    {
+     "n": 45,
+     "pl": "- dostawa zagraniczna – DHL, według taryfy przewoźnika.",
+     "ua": "- закордонна доставка – DHL, за тарифом перевізника.",
+     "en": "- international delivery – DHL, according to the carrier’s tariff."
+    },
+    {
+     "n": 46,
+     "pl": "2. Dostawa jest bezpłatna dla zamówień opłaconych z góry o wartości od 500 zł (Paczkomat i kurier). Płatność za pobraniem jest zawsze dodatkowo płatna.",
+     "ua": "2. Доставка є безкоштовною для замовлень, оплачених наперед, вартістю від 500 zł (поштомат і кур’єр). Післяплата завжди оплачується додатково.",
+     "en": "2. Delivery is free of charge for orders paid in advance with a value from 500 zł (parcel locker and courier). Cash on delivery is always payable in addition."
+    },
+    {
+     "n": 47,
+     "pl": "3. Sprzedawca dokłada starań, aby zamówienia opłacone do godz. 13:00 w dni robocze były wysyłane tego samego dnia roboczego. Podane terminy dostawy są orientacyjne i mogą ulec zmianie w zależności od okoliczności niezależnych od Sprzedawcy lub przewoźnika. W każdym przypadku Towar zostanie wydany nie później niż w terminie 30 dni od dnia zawarcia Umowy.",
+     "ua": "3. Продавець докладає зусиль, щоб замовлення, оплачені до 13:00 у робочі дні, відправлялися того самого робочого дня. Зазначені строки доставки є орієнтовними і можуть змінюватися залежно від обставин, незалежних від Продавця або перевізника. У кожному разі Товар буде виданий не пізніше ніж у строк 30 днів від дня укладення Договору.",
+     "en": "3. The Seller makes every effort to ensure that orders paid for by 13:00 on business days are dispatched on the same business day. The delivery times given are indicative and may change depending on circumstances beyond the control of the Seller or the carrier. In every case the Goods will be released no later than within 30 days from the date of conclusion of the Contract."
+    },
+    {
+     "n": 48,
+     "pl": "4. Przy dostawach poza Unię Europejską ewentualne cła i podatki obciążają odbiorcę przesyłki.",
+     "ua": "4. При доставках за межі Європейського Союзу можливі мита та податки покладаються на одержувача відправлення.",
+     "en": "4. For deliveries outside the European Union, any customs duties and taxes are borne by the recipient of the shipment."
+    },
+    {
+     "n": 49,
+     "pl": "5. Możliwy jest odbiór osobisty w butiku przy ul. Mokotowskiej 51/53 po potwierdzeniu dostępności Towaru.",
+     "ua": "5. Можливий самовивіз у бутіку на ul. Mokotowska 51/53 після підтвердження наявності Товару.",
+     "en": "5. Personal collection is possible at the boutique at ul. Mokotowska 51/53 after confirmation that the Goods are available."
+    },
+    {
+     "n": 50,
+     "pl": "6. Zamówienie do odbioru osobistego oczekuje na Klienta przez 7 dni kalendarzowych od powiadomienia o gotowości do odbioru. Po tym terminie Sprzedawca może skontaktować się z Klientem, a w razie braku odbioru — anulować zamówienie i zwrócić płatność.",
+     "ua": "6. Замовлення для самовивозу очікує на Клієнта протягом 7 календарних днів від повідомлення про готовність до видачі. Після цього строку Продавець може зв’язатися з Клієнтом, а у разі неотримання — скасувати замовлення та повернути кошти.",
+     "en": "6. An order for personal collection awaits the Customer for 7 calendar days from the notification of readiness for collection. After that period the Seller may contact the Customer and, if the order is not collected, cancel the order and refund the payment."
+    },
+    {
+     "n": 51,
+     "pl": "§8. Prawo odstąpienia od umowy",
+     "ua": "§8. Право на відмову від Договору",
+     "en": "§8. Right of withdrawal from the Contract"
+    },
+    {
+     "n": 52,
+     "pl": "1. Konsument oraz PNPK, który zawarł umowę na odległość za pośrednictwem Sklepu internetowego, może odstąpić od niej bez podania przyczyny w terminie 14 dni od objęcia Towaru w posiadanie.",
+     "ua": "1. Споживач, а також PNPK, який уклав договір на відстані за посередництвом Інтернет-магазину, може відмовитися від нього без зазначення причини протягом 14 днів від моменту отримання Товару у володіння.",
+     "en": "1. A Consumer and a PNPK who has concluded a distance contract via the online Store may withdraw from it without giving a reason within 14 days of taking possession of the Goods."
+    },
+    {
+     "n": 53,
+     "pl": "2. Do zachowania terminu wystarczy wysłanie oświadczenia przed jego upływem – na adres hello@lapetitebloom.com lub przy użyciu formularza (Załącznik nr 1).",
+     "ua": "2. Для дотримання строку достатньо надіслати заяву до його спливу – на адресу hello@lapetitebloom.com або з використанням формуляра (Додаток № 1).",
+     "en": "2. To meet the deadline it is sufficient to send the statement before it expires – to hello@lapetitebloom.com or using the form (Appendix No. 1)."
+    },
+    {
+     "n": 54,
+     "pl": "3. Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, w terminie 14 dni od odstąpienia. Bezpośrednie koszty zwrotu ponosi Klient.",
+     "ua": "3. Товар слід відіслати на адресу: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, протягом 14 днів від відмови. Прямі витрати на повернення несе Клієнт.",
+     "en": "3. The Goods must be sent back to: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, within 14 days of withdrawal. The direct costs of return are borne by the Customer."
+    },
+    {
+     "n": 55,
+     "pl": "4. Sprzedawca zwraca wszystkie płatności, w tym koszt najtańszego oferowanego sposobu dostawy, w terminie 14 dni od otrzymania oświadczenia. Zwrot może zostać wstrzymany do otrzymania Towaru lub dowodu jego odesłania.",
+     "ua": "4. Продавець повертає всі платежі, у тому числі вартість найдешевшого із запропонованих способів доставки, протягом 14 днів від отримання заяви. Повернення коштів може бути призупинене до отримання Товару або доказу його відправлення.",
+     "en": "4. The Seller refunds all payments, including the cost of the cheapest delivery method offered, within 14 days of receiving the statement. The refund may be withheld until the Goods are received or proof of their dispatch is provided."
+    },
+    {
+     "n": 56,
+     "pl": "5. Konsument odpowiada za zmniejszenie wartości Towaru wynikające z korzystania z niego w sposób wykraczający poza konieczny do stwierdzenia jego charakteru, cech i funkcjonowania (np. ślady używania, zapach perfum lub kosmetyków, ślady makijażu, pranie, brak oryginalnych metek). W takim przypadku Sprzedawca może obniżyć zwracaną kwotę o wartość odpowiadającą zmniejszeniu wartości Towaru, ustalaną indywidualnie.",
+     "ua": "5. Споживач відповідає за зменшення вартості Товару, що є наслідком користування ним у спосіб, який виходить за межі необхідного для встановлення його характеру, властивостей і функціонування (напр., сліди використання, запах парфумів або косметики, сліди макіяжу, прання, відсутність оригінальних бирок). У такому разі Продавець може зменшити суму, що повертається, на величину, яка відповідає зменшенню вартості Товару та визначається індивідуально.",
+     "en": "5. The Consumer is liable for any diminished value of the Goods resulting from handling them in a manner going beyond what is necessary to establish their nature, characteristics and functioning (e.g. signs of use, the smell of perfume or cosmetics, traces of make-up, washing, missing original labels). In such a case the Seller may reduce the amount refunded by a value corresponding to the diminished value of the Goods, determined individually."
+    },
+    {
+     "n": 57,
+     "pl": "6. Prawo odstąpienia nie przysługuje w odniesieniu do Towarów dostarczanych w zapieczętowanym opakowaniu, których po otwarciu nie można zwrócić ze względu na ochronę zdrowia lub ze względów higienicznych, jeżeli zabezpieczenie (folia, plomba higieniczna) zostało naruszone po doręczeniu. Dotyczy to w szczególności: kosmetyków (m.in. szamponów, odżywek, olejków), szczotek i akcesoriów do włosów, smoczków, butelek niemowlęcych, gryzaków oraz bielizny i strojów kąpielowych. Wyłączenie obejmuje także Towary spersonalizowane oraz treści cyfrowe. Pełny zakres określa art. 38 ustawy o prawach konsumenta.",
+     "ua": "6. Право на відмову не поширюється на Товари, що постачаються в запечатаній упаковці, які після відкриття не можна повернути з міркувань охорони здоров’я або з гігієнічних міркувань, якщо захист (плівка, гігієнічна пломба) було порушено після доставки. Це стосується, зокрема: косметики (у тому числі шампунів, кондиціонерів, олійок), щіток та аксесуарів для волосся, пустушок, дитячих пляшечок, прорізувачів, а також білизни та купальних костюмів. Виключення охоплює також персоналізовані Товари та цифровий контент. Повний обсяг визначає art. 38 ustawy o prawach konsumenta (Закон про права споживача).",
+     "en": "6. The right of withdrawal does not apply to Goods supplied in sealed packaging which cannot be returned once opened for health protection or hygiene reasons, if the seal (film, hygiene seal) was broken after delivery. This applies in particular to: cosmetics (including shampoos, conditioners, oils), hair brushes and accessories, dummies, baby bottles, teethers, as well as underwear and swimwear. The exclusion also covers personalised Goods and digital content. The full scope is set out in art. 38 of the ustawa o prawach konsumenta (Consumer Rights Act)."
+    },
+    {
+     "n": 58,
+     "pl": "7. W przypadku częściowego odstąpienia (zwrot części Towarów) – jeżeli zamówienie objęte było rabatem ilościowym lub bezpłatną dostawą uzależnioną od wartości zamówienia, a po zwrocie pozostałe Towary nie spełniają warunków ich przyznania – Sprzedawca dokonuje ponownego przeliczenia. Zwracana kwota może zostać pomniejszona o utracony rabat lub standardowy koszt dostawy, do wysokości realnie utraconej korzyści.",
+     "ua": "7. У разі часткової відмови (повернення частини Товарів) – якщо замовлення охоплювалося кількісною знижкою або безкоштовною доставкою, залежною від вартості замовлення, а після повернення решта Товарів не відповідає умовам їх надання – Продавець здійснює повторний перерахунок. Сума, що повертається, може бути зменшена на втрачену знижку або стандартну вартість доставки, у межах реально втраченої вигоди.",
+     "en": "7. In the case of partial withdrawal (return of some of the Goods) – if the order was covered by a quantity discount or by free delivery dependent on the order value, and after the return the remaining Goods no longer meet the conditions for granting them – the Seller recalculates the order. The amount refunded may be reduced by the lost discount or the standard delivery cost, up to the amount of the benefit actually lost."
+    },
+    {
+     "n": 59,
+     "pl": "8. Towary przecenione (SALE) podlegają zwrotowi i reklamacji na zasadach ogólnych.",
+     "ua": "8. Уцінені Товари (SALE) підлягають поверненню та рекламації на загальних засадах.",
+     "en": "8. Reduced-price Goods (SALE) are subject to return and complaint on general terms."
+    },
+    {
+     "n": 60,
+     "pl": "9. Prawo odstąpienia, o którym mowa w niniejszym paragrafie, dotyczy wyłącznie umów zawartych na odległość (zakupów w Sklepie internetowym). Do Towarów zakupionych bezpośrednio w butiku stacjonarnym prawo do odstąpienia (zwrotu lub wymiany bez podania przyczyny) nie przysługuje. Niezależnie od kanału zakupu Klientowi przysługują uprawnienia z tytułu niezgodności Towaru z umową (reklamacja), zgodnie z §9.",
+     "ua": "9. Право на відмову, про яке йдеться в цьому параграфі, стосується виключно договорів, укладених на відстані (покупок в Інтернет-магазині). До Товарів, придбаних безпосередньо у стаціонарному бутіку, право на відмову (повернення або обмін без зазначення причини) не застосовується. Незалежно від каналу покупки Клієнтові належать права з підстав невідповідності Товару Договору (рекламація), згідно з §9.",
+     "en": "9. The right of withdrawal referred to in this paragraph applies only to contracts concluded at a distance (purchases in the online Store). For Goods purchased directly in the physical boutique, the right of withdrawal (return or exchange without giving a reason) does not apply. Regardless of the purchase channel, the Customer is entitled to the rights arising from a lack of conformity of the Goods with the Contract (complaint), in accordance with §9."
+    },
+    {
+     "n": 61,
+     "pl": "§9. Reklamacje – niezgodność Towaru z umową",
+     "ua": "§9. Рекламації – невідповідність Товару Договору",
+     "en": "§9. Complaints – lack of conformity of the Goods with the Contract"
+    },
+    {
+     "n": 62,
+     "pl": "1. Sprzedawca odpowiada za zgodność Towaru z umową na zasadach rozdziału 5a ustawy o prawach konsumenta – za brak zgodności istniejący w chwili dostarczenia i ujawniony w ciągu 2 lat, niezależnie od miejsca zakupu (Sklep internetowy lub butik stacjonarny).",
+     "ua": "1. Продавець відповідає за відповідність Товару Договору на засадах розділу 5a ustawy o prawach konsumenta – за відсутність відповідності, яка існувала в момент доставки та виявилася протягом 2 років, незалежно від місця покупки (Інтернет-магазин або стаціонарний бутік).",
+     "en": "1. The Seller is liable for the conformity of the Goods with the Contract under the rules of chapter 5a of the ustawa o prawach konsumenta – for a lack of conformity existing at the time of delivery and revealed within 2 years, regardless of the place of purchase (online Store or physical boutique)."
+    },
+    {
+     "n": 63,
+     "pl": "2. Reklamację można zgłosić na adres hello@lapetitebloom.com, podając opis wady, zdjęcia oraz dowód zakupu.",
+     "ua": "2. Рекламацію можна подати на адресу hello@lapetitebloom.com, зазначивши опис дефекту, фотографії та доказ покупки.",
+     "en": "2. A complaint may be submitted to hello@lapetitebloom.com, giving a description of the defect, photographs and proof of purchase."
+    },
+    {
+     "n": 64,
+     "pl": "3. Reklamowany Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa.",
+     "ua": "3. Товар, щодо якого подано рекламацію, слід відіслати на адресу: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa.",
+     "en": "3. The Goods subject to the complaint must be sent to: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa."
+    },
+    {
+     "n": 65,
+     "pl": "4. Sprzedawca rozpatrzy reklamację i poinformuje Klienta o jej wyniku drogą elektroniczną w terminie 14 dni od otrzymania zgłoszenia.",
+     "ua": "4. Продавець розгляне рекламацію та повідомить Клієнта про її результат електронною поштою протягом 14 днів від отримання звернення.",
+     "en": "4. The Seller will consider the complaint and inform the Customer of its outcome electronically within 14 days of receiving the submission."
+    },
+    {
+     "n": 66,
+     "pl": "5. W razie uwzględnienia reklamacji Sprzedawca – zależnie od żądania i przepisów – naprawi lub wymieni Towar albo obniży cenę lub zwróci należność. Koszty uzasadnionej reklamacji ponosi Sprzedawca.",
+     "ua": "5. У разі задоволення рекламації Продавець – залежно від вимоги та приписів закону – відремонтує або замінить Товар, або знизить ціну чи поверне кошти. Витрати на обґрунтовану рекламацію несе Продавець.",
+     "en": "5. If the complaint is upheld, the Seller will – depending on the request and the applicable provisions – repair or replace the Goods, or reduce the price or refund the amount due. The costs of a justified complaint are borne by the Seller."
+    },
+    {
+     "n": 67,
+     "pl": "6. Zaleca się sprawdzenie stanu przesyłki przy odbiorze. W razie uszkodzenia zalecane jest sporządzenie z przewoźnikiem protokołu szkody lub zgłoszenie uszkodzenia w paczkomacie przy odbiorze – ułatwia to i przyspiesza rozpatrzenie reklamacji. Brak protokołu nie pozbawia Konsumenta prawa do reklamacji.",
+     "ua": "6. Рекомендується перевірити стан відправлення при отриманні. У разі пошкодження рекомендується скласти з перевізником акт про пошкодження або повідомити про пошкодження в поштоматі під час отримання – це полегшує та пришвидшує розгляд рекламації. Відсутність акта не позбавляє Споживача права на рекламацію.",
+     "en": "6. It is recommended to check the condition of the shipment on collection. In the event of damage it is recommended to draw up a damage report with the carrier or to report the damage at the parcel locker on collection – this makes considering the complaint easier and faster. The absence of a report does not deprive the Consumer of the right to make a complaint."
+    },
+    {
+     "n": 68,
+     "pl": "7. Uszkodzenie zewnętrznego opakowania, które nie wpływa na sam Towar i jego przydatność, nie stanowi podstawy reklamacji Towaru. Nie dotyczy to sytuacji, gdy oryginalne opakowanie stanowi istotny element Towaru (np. produkty na prezent) — wówczas ocena następuje indywidualnie.",
+     "ua": "7. Пошкодження зовнішньої упаковки, яке не впливає на сам Товар та його придатність, не є підставою для рекламації Товару. Це не стосується ситуації, коли оригінальна упаковка є суттєвим елементом Товару (напр., подарункові продукти) — тоді оцінка здійснюється індивідуально.",
+     "en": "7. Damage to the outer packaging which does not affect the Goods themselves or their usability is not grounds for a complaint about the Goods. This does not apply where the original packaging is an essential element of the Goods (e.g. gift products) — in which case the assessment is made individually."
+    },
+    {
+     "n": 69,
+     "pl": "§10. Karty podarunkowe",
+     "ua": "§10. Подарункові картки",
+     "en": "§10. Gift cards"
+    },
+    {
+     "n": 70,
+     "pl": "1. Sprzedawca oferuje elektroniczne karty podarunkowe (e-kod na adres e-mail), uprawniające do zapłaty za Towary do wysokości ich wartości.",
+     "ua": "1. Продавець пропонує електронні подарункові картки (е-код на адресу електронної пошти), які дають право оплатити Товари в межах їх вартості.",
+     "en": "1. The Seller offers electronic gift cards (an e-code sent to an email address) entitling the holder to pay for the Goods up to their value."
+    },
+    {
+     "n": 71,
+     "pl": "2. Karta jest ważna 12 miesięcy od zakupu, nie podlega wymianie na gotówkę i nie jest doładowywana.",
+     "ua": "2. Картка дійсна 12 місяців від покупки, не підлягає обміну на готівку і не поповнюється.",
+     "en": "2. The card is valid for 12 months from purchase, cannot be exchanged for cash and cannot be topped up."
+    },
+    {
+     "n": 72,
+     "pl": "3. Zakup karty podarunkowej podlega prawu odstąpienia w terminie 14 dni; w przypadku kart elektronicznych prawo to wygasa z chwilą wykorzystania (aktywacji) kodu.",
+     "ua": "3. Покупка подарункової картки підлягає праву на відмову протягом 14 днів; у випадку електронних карток це право припиняється в момент використання (активації) коду.",
+     "en": "3. The purchase of a gift card is subject to the right of withdrawal within 14 days; in the case of electronic cards this right expires at the moment the code is used (activated)."
+    },
+    {
+     "n": 73,
+     "pl": "§11. Bezpieczeństwo produktów",
+     "ua": "§11. Безпечність продукції",
+     "en": "§11. Product safety"
+    },
+    {
+     "n": 74,
+     "pl": "1. Towary oferowane w Sklepie są bezpieczne i zgodne z obowiązującymi przepisami, w szczególności z rozporządzeniem (UE) 2023/988 w sprawie ogólnego bezpieczeństwa produktów (GPSR).",
+     "ua": "1. Товари, пропоновані в Магазині, є безпечними та відповідають чинним приписам, зокрема регламенту (ЄС) 2023/988 про загальну безпечність продукції (GPSR).",
+     "en": "1. The Goods offered in the Store are safe and compliant with the applicable provisions, in particular with Regulation (EU) 2023/988 on general product safety (GPSR)."
+    },
+    {
+     "n": 75,
+     "pl": "2. Zabawki posiadają oznaczenie CE oraz spełniają normy serii EN 71; przy produktach prezentowane są wymagane ostrzeżenia (np. dotyczące wieku lub małych elementów). Kosmetyki spełniają wymogi rozporządzenia (WE) 1223/2009.",
+     "ua": "2. Іграшки мають маркування CE та відповідають нормам серії EN 71; біля продуктів подаються необхідні застереження (напр., щодо віку або дрібних елементів). Косметика відповідає вимогам регламенту (ЄС) 1223/2009.",
+     "en": "2. Toys bear the CE marking and comply with the EN 71 series of standards; the required warnings (e.g. concerning age or small parts) are presented with the products. Cosmetics comply with the requirements of Regulation (EC) 1223/2009."
+    },
+    {
+     "n": 76,
+     "pl": "3. W karcie produktu Sprzedawca udostępnia wymagane informacje dotyczące bezpieczeństwa oraz dane producenta lub importera (podmiotu odpowiedzialnego), zgodnie z GPSR.",
+     "ua": "3. У картці продукту Продавець надає необхідну інформацію щодо безпеки, а також дані виробника або імпортера (відповідального суб’єкта), згідно з GPSR.",
+     "en": "3. In the product card the Seller provides the required safety information and the details of the manufacturer or importer (the responsible entity), in accordance with the GPSR."
+    },
+    {
+     "n": 77,
+     "pl": "4. W odniesieniu do Towarów sprowadzanych spoza Unii Europejskiej Sprzedawca pełni rolę importera, a w odniesieniu do Towarów nabywanych od marek z terytorium UE – dystrybutora, z odpowiednimi obowiązkami wynikającymi z przepisów o bezpieczeństwie produktów.",
+     "ua": "4. Щодо Товарів, які ввозяться з-поза меж Європейського Союзу, Продавець виконує роль імпортера, а щодо Товарів, придбаних у брендів з території ЄС, – дистриб’ютора, з відповідними обов’язками, що випливають із приписів про безпечність продукції.",
+     "en": "4. In relation to Goods brought in from outside the European Union the Seller acts as the importer, and in relation to Goods purchased from brands within the EU – as the distributor, with the corresponding obligations arising from product safety provisions."
+    },
+    {
+     "n": 78,
+     "pl": "5. Sprzedawca nie dokonuje modyfikacji struktury, opakowania ani oznakowania Towaru; informacje o bezpieczeństwie, etykiety oraz ostrzeżenia pochodzą od producenta lub autoryzowanego importera.",
+     "ua": "5. Продавець не змінює структуру, упаковку чи маркування Товару; інформація про безпеку, етикетки та застереження походять від виробника або авторизованого імпортера.",
+     "en": "5. The Seller does not modify the structure, packaging or labelling of the Goods; safety information, labels and warnings come from the manufacturer or the authorised importer."
+    },
+    {
+     "n": 79,
+     "pl": "§12. Newsletter",
+     "ua": "§12. Розсилка",
+     "en": "§12. Newsletter"
+    },
+    {
+     "n": 80,
+     "pl": "1. Klient może wyrazić zgodę na newsletter, podając adres e-mail i potwierdzając zapis.",
+     "ua": "1. Клієнт може надати згоду на розсилку, вказавши адресу електронної пошти та підтвердивши підписку.",
+     "en": "1. The Customer may consent to the newsletter by providing an email address and confirming the subscription."
+    },
+    {
+     "n": 81,
+     "pl": "2. Zgodę można wycofać w każdej chwili, bez wpływu na zgodność z prawem wcześniejszej wysyłki.",
+     "ua": "2. Згоду можна відкликати будь-коли, без впливу на правомірність надсилання, здійсненого раніше.",
+     "en": "2. Consent may be withdrawn at any time, without affecting the lawfulness of mailings sent earlier."
+    },
+    {
+     "n": 82,
+     "pl": "§13. Dane osobowe",
+     "ua": "§13. Персональні дані",
+     "en": "§13. Personal data"
+    },
+    {
+     "n": 83,
+     "pl": "Administratorem danych jest Sprzedawca. Szczegółowe zasady przetwarzania określa Polityka prywatności dostępna w Sklepie.",
+     "ua": "Контролером персональних даних є Продавець. Детальні засади обробки визначає Політика конфіденційності, доступна в Магазині.",
+     "en": "The data controller is the Seller. Detailed processing rules are set out in the Privacy policy available in the Store."
+    },
+    {
+     "n": 84,
+     "pl": "§14. Pozasądowe rozwiązywanie sporów",
+     "ua": "§14. Позасудове вирішення спорів",
+     "en": "§14. Out-of-court dispute resolution"
+    },
+    {
+     "n": 85,
+     "pl": "Konsument może skorzystać z pozasądowych sposobów rozpatrywania reklamacji, w szczególności:",
+     "ua": "Споживач може скористатися позасудовими способами розгляду рекламацій, зокрема:",
+     "en": "The Consumer may use out-of-court methods of handling complaints, in particular:"
+    },
+    {
+     "n": 86,
+     "pl": "- wniosek do wojewódzkiego inspektora Inspekcji Handlowej (WIIH) o pozasądowe rozwiązanie sporu;",
+     "ua": "- заява до воєводського інспектора Inspekcja Handlowa (WIIH, Торгова інспекція) про позасудове вирішення спору;",
+     "en": "- an application to the voivodeship inspector of the Inspekcja Handlowa (WIIH, Trade Inspection) for out-of-court resolution of the dispute;"
+    },
+    {
+     "n": 87,
+     "pl": "- pomoc powiatowego (miejskiego) rzecznika konsumentów;",
+     "ua": "- допомога повітового (міського) уповноваженого у справах споживачів (powiatowy rzecznik konsumentów);",
+     "en": "- the assistance of the district (municipal) consumer ombudsman (powiatowy rzecznik konsumentów);"
+    },
+    {
+     "n": 88,
+     "pl": "- stały polubowny sąd konsumencki.",
+     "ua": "- постійний полюбовний споживчий суд (stały polubowny sąd konsumencki).",
+     "en": "- the permanent consumer arbitration court (stały polubowny sąd konsumencki)."
+    },
+    {
+     "n": 89,
+     "pl": "Informacje dostępne są na stronie UOKiK (https://www.uokik.gov.pl). Skorzystanie z tych metod jest dobrowolne.",
+     "ua": "Інформація доступна на сайті UOKiK (https://www.uokik.gov.pl). Використання цих методів є добровільним.",
+     "en": "Information is available on the UOKiK website (https://www.uokik.gov.pl). Use of these methods is voluntary."
+    },
+    {
+     "n": 90,
+     "pl": "§15. Postanowienia dotyczące Przedsiębiorców",
+     "ua": "§15. Положення щодо Підприємців",
+     "en": "§15. Provisions concerning Entrepreneurs"
+    },
+    {
+     "n": 91,
+     "pl": "1. Wobec Kupujących niebędących Konsumentami ani PNPK odpowiedzialność Sprzedawcy z tytułu rękojmi zostaje wyłączona na podstawie art. 558 § 1 Kodeksu cywilnego. Odpowiedzialność odszkodowawcza ogranicza się do rzeczywistej szkody, z wyłączeniem utraconych korzyści, w granicach dozwolonych prawem; ograniczeń nie stosuje się w przypadku winy umyślnej. Prawo odstąpienia z §8 takim Kupującym nie przysługuje.",
+     "ua": "1. Щодо Покупців, які не є Споживачами і не є PNPK, відповідальність Продавця з підстав законної гарантії (rękojmia) виключається на підставі art. 558 § 1 Kodeksu cywilnego. Відповідальність за збитки обмежується реальною шкодою, з виключенням упущеної вигоди, у межах, дозволених законом; обмеження не застосовуються у разі умисної вини. Право на відмову з §8 таким Покупцям не належить.",
+     "en": "1. In relation to Buyers who are neither Consumers nor PNPK, the Seller’s liability under the statutory warranty (rękojmia) is excluded on the basis of art. 558 § 1 of the Kodeks cywilny. Liability for damages is limited to actual loss, excluding lost profits, to the extent permitted by law; the limitations do not apply in the case of wilful misconduct. The right of withdrawal under §8 does not apply to such Buyers."
+    },
+    {
+     "n": 92,
+     "pl": "2. Postanowienia o Konsumencie stosuje się odpowiednio do PNPK, z wyłączeniem przepisów zastrzeżonych wyłącznie dla Konsumentów.",
+     "ua": "2. Положення про Споживача застосовуються відповідно до PNPK, за винятком приписів, зарезервованих виключно для Споживачів.",
+     "en": "2. The provisions concerning the Consumer apply accordingly to a PNPK, with the exception of provisions reserved exclusively for Consumers."
+    },
+    {
+     "n": 93,
+     "pl": "3. Sprzedaż w modelu B2B możliwa jest na indywidualnie uzgodnionych warunkach.",
+     "ua": "3. Продаж у моделі B2B можливий на індивідуально узгоджених умовах.",
+     "en": "3. Sales in the B2B model are possible on individually agreed terms."
+    },
+    {
+     "n": 94,
+     "pl": "4. Spory z Kupującymi niebędącymi Konsumentami ani PNPK rozstrzyga sąd właściwy dla siedziby Sprzedawcy.",
+     "ua": "4. Спори з Покупцями, які не є Споживачами і не є PNPK, вирішує суд за місцезнаходженням Продавця.",
+     "en": "4. Disputes with Buyers who are neither Consumers nor PNPK are settled by the court having jurisdiction over the Seller’s registered office."
+    },
+    {
+     "n": 95,
+     "pl": "§16. Postanowienia końcowe",
+     "ua": "§16. Прикінцеві положення",
+     "en": "§16. Final provisions"
+    },
+    {
+     "n": 96,
+     "pl": "1. W sprawach nieuregulowanych stosuje się prawo polskie, w szczególności Kodeks cywilny i ustawę o prawach konsumenta.",
+     "ua": "1. У питаннях, не врегульованих цими Правилами, застосовується польське право, зокрема Kodeks cywilny та ustawa o prawach konsumenta.",
+     "en": "1. In matters not regulated herein, Polish law applies, in particular the Kodeks cywilny and the ustawa o prawach konsumenta."
+    },
+    {
+     "n": 97,
+     "pl": "2. Sprzedawca nie ponosi odpowiedzialności za niewykonanie lub opóźnienie spowodowane siłą wyższą, tj. zdarzeniami od niego niezależnymi (m.in. klęski żywiołowe, powódź, awarie, strajki, działania wojenne, zakłócenia w pracy firm kurierskich).",
+     "ua": "2. Продавець не несе відповідальності за невиконання або затримку, спричинені форс-мажором, тобто подіями, незалежними від нього (зокрема стихійні лиха, повінь, аварії, страйки, воєнні дії, збої в роботі кур’єрських компаній).",
+     "en": "2. The Seller is not liable for non-performance or delay caused by force majeure, i.e. events beyond its control (including natural disasters, flooding, breakdowns, strikes, acts of war, disruptions in the operation of courier companies)."
+    },
+    {
+     "n": 98,
+     "pl": "3. Sprzedawca może zmienić Regulamin z ważnych przyczyn; do zamówień złożonych przed zmianą stosuje się brzmienie z chwili złożenia zamówienia.",
+     "ua": "3. Продавець може змінити Правила з важливих причин; до замовлень, оформлених до зміни, застосовується редакція, чинна на момент оформлення замовлення.",
+     "en": "3. The Seller may amend the Terms and Conditions for important reasons; orders placed before the amendment are governed by the wording in force at the time the order was placed."
+    },
+    {
+     "n": 99,
+     "pl": "4. Regulamin jest dostępny nieodpłatnie w Sklepie w formie umożliwiającej pobranie, zapisanie i wydruk.",
+     "ua": "4. Правила доступні безоплатно в Магазині у формі, що дозволяє їх завантаження, збереження та друк.",
+     "en": "4. The Terms and Conditions are available free of charge in the Store in a form that allows them to be downloaded, saved and printed."
+    },
+    {
+     "n": 100,
+     "pl": "Załącznik nr 1 – Wzór formularza odstąpienia od umowy",
+     "ua": "Додаток № 1 – Зразок формуляра відмови від Договору",
+     "en": "Appendix No. 1 – Model withdrawal form"
+    },
+    {
+     "n": 101,
+     "pl": "(wypełnić i odesłać tylko w przypadku chęci odstąpienia od umowy)",
+     "ua": "(заповнити та надіслати лише у разі бажання відмовитися від Договору)",
+     "en": "(complete and return this form only if you wish to withdraw from the Contract)"
+    },
+    {
+     "n": 102,
+     "pl": "Adresat: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, e-mail: hello@lapetitebloom.com",
+     "ua": "Адресат: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, e-mail: hello@lapetitebloom.com",
+     "en": "Addressee: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, e-mail: hello@lapetitebloom.com"
+    },
+    {
+     "n": 103,
+     "pl": "Niniejszym odstępuję od umowy sprzedaży następujących Towarów: ......................................................",
+     "ua": "Цим повідомляю про відмову від договору купівлі-продажу таких Товарів: ......................................................",
+     "en": "I hereby withdraw from the contract of sale of the following Goods: ......................................................"
+    },
+    {
+     "n": 104,
+     "pl": "Data odbioru: ............ · Numer zamówienia: ............",
+     "ua": "Дата отримання: ............ · Номер замовлення: ............",
+     "en": "Date of receipt: ............ · Order number: ............"
+    },
+    {
+     "n": 105,
+     "pl": "Imię i nazwisko: ............................",
+     "ua": "Ім’я та прізвище: ............................",
+     "en": "Full name: ............................"
+    },
+    {
+     "n": 106,
+     "pl": "Adres: ............................",
+     "ua": "Адреса: ............................",
+     "en": "Address: ............................"
+    },
+    {
+     "n": 107,
+     "pl": "Numer rachunku do zwrotu: ............................",
+     "ua": "Номер рахунку для повернення коштів: ............................",
+     "en": "Account number for the refund: ............................"
+    },
+    {
+     "n": 108,
+     "pl": "Data i podpis (wersja papierowa): ............................",
+     "ua": "Дата та підпис (паперова версія): ............................",
+     "en": "Date and signature (paper version): ............................"
+    }
+   ],
+   "notes": [
+    "§2, блок 13: в реквизитах KRS не указан номер Wydziału Gospodarczego (обычно «XIII Wydział Gospodarczy Krajowego Rejestru Sądowego»). Плейсхолдер сохранён как в оригинале во всех трёх языках — требуется дозаполнение.",
+    "Правило по городам: почтовые адресные строки («ul. Marcina Kasprzaka 31/119, 01-234 Warszawa», «ul. Mokotowska 51/53, Warszawa» в блоках 13, 18, 54, 64, 102) и название суда оставлены латиницей целиком — по глоссарию (раздел «Не переводим»), поскольку это адреса отправки товара и реквизиты. Город переведён (Варшава / Warsaw) только там, где он употреблён в прозе, а не в адресе: «siedzibą w Warszawie» (блок 13). Это компромисс между правилом 4 задания и глоссарием — зафиксировать в тикете.",
+    "§2, блок 13: сумма уставного капитала записана «5 000 zł» одинаково во всех трёх локалях (глоссарий, расхождение №32). На сайте сейчас три разные записи — при публикации не «исправлять» на PLN 5,000.",
+    "§2, блок 16: «(opcjonalnie alias zwroty@/reklamacje@)» — это служебная редакторская пометка, а не текст для покупателя. Переведена дословно, но по глоссарию (группа 7, «Zgoda opcjonalna») такие пометки из опубликованного текста надо убирать. Решение — за юристом/редактором.",
+    "Адрес бутика и адрес возвратов: в документе указано «ul. Mokotowska 51/53, Warszawa» (блоки 18, 49, 54, 64, 102), а в глоссарии — «ul. Mokotowska 51/53, lok. 44, 00-542 Warszawa». В оригинале отсутствуют номер помещения и почтовый индекс; для адреса возврата товара это существенно. Переведено как в оригинале.",
+    "Контактные адреса: документ использует kontakt@ и rodo@; глоссарий фиксирует, что на сайте есть ещё hello@ и что kontakt@ не указан ни в контактах, ни в футере. Требуется сверка с сайтом.",
+    "§7.1 блок 43: «za pobraniem +20–23 zł» — диапазон вместо конкретной суммы. Для цены доставки, объявляемой до заключения договора, требуется точная величина или чёткое правило расчёта. Место под юриста.",
+    "§7.1 блок 45: заграничная доставка описана только через DHL, тогда как глоссарий (группа 5) упоминает также Nova Poshta и Meest для Украины. Возможна неполнота списка перевозчиков.",
+    "§8.1 vs USP-бар сайта: в регламенте право на отказ — 14 дней, а в USP-баре сайта заявлено «Zwrot w ciągu 30 dni» (глоссарий, расхождение №35). В самом документе политика 30-дневного возврата не описана — либо добавить её отдельным пунктом, либо убрать обещание с витрины.",
+    "§8.7 блок 58: перерасчёт при частичном отказе («Zwracana kwota może zostać pomniejszona o utracony rabat lub standardowy koszt dostawy») — потенциально спорное для потребителя условие. Переведено дословно, оценка допустимости — за юристом.",
+    "§9.1 блок 62: ссылка «rozdziału 5a ustawy o prawach konsumenta» дана без повторного пояснения, поскольку перевод-пояснение «(Закон про права споживача)» / «(Consumer Rights Act)» уже дан при первом упоминании в §8.6 (блок 57). Это соответствует правилу 3.",
+    "§11 (Bezpieczeństwo produktów) в этом документе — §11, а §15 — «Postanowienia dotyczące Przedsiębiorców». В глоссарии (расхождение №33) исключение rękojmia по art. 558 § 1 k.c. ошибочно отнесено к «§11 регламента»; фактически это §15.1 (блок 91). Ссылку в глоссарии надо поправить.",
+    "Блок 91: термин «rękojmia» в оригинале не употреблён явно — сказано «odpowiedzialność Sprzedawcy z tytułu rękojmi». В UA/EN дан по глоссарию как «законна гарантія (rękojmia)» / «statutory warranty (rękojmia)», польский термин сохранён в скобках при первом упоминании.",
+    "§14 (блоки 85–89): нет упоминания платформы ODR, которую глоссарий (группа 5) относит к обязательному блоку. Европейская платформа ODR прекратила работу 20.07.2025, поэтому её отсутствие может быть корректным — но расхождение с глоссарием требует подтверждения юриста.",
+    "Блок 2: дата «obowiązuje od dnia 24.06.2026» сохранена как есть.",
+    "Блоки 103–108 (Załącznik nr 1): точечные заполняемые поля «............» сохранены в исходной длине во всех трёх языках.",
+    "Термин «Newsletter» в §12: UA-заголовок переведён как «Розсилка» по решению глоссария (расхождение №13); «інформаційна розсилка», стоящая сейчас на сайте в §12, — калька и не используется.",
+    "UA: «Акаунт (обліковий запис)» введён один раз в §4.1 (блок 23), далее только «акаунт» — по глоссарию (расхождение №8).",
+    "EN: британская орфография выдержана (colour, personalised, labelling, fulfilment); «cart» использован по решению глоссария 0.1 несмотря на британскую локаль."
+   ],
+   "applied_decisions": [
+    "kontakt@ → hello@ (решение заказчика)"
+   ]
+  },
+  {
+   "doc": "2-polityka-prywatnosci",
+   "title": "Политика конфиденциальности",
+   "target_path": "/polityka-prywatnosci",
+   "title_pl": "POLITYKA PRYWATNOŚCI",
+   "title_ua": "Політика конфіденційності",
+   "title_en": "Privacy policy",
+   "blocks": [
+    {
+     "n": 1,
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 24.06.2026"
+    },
+    {
+     "n": 2,
+     "pl": "1. Administrator danych",
+     "ua": "1. Контролер даних",
+     "en": "1. Data controller"
+    },
+    {
+     "n": 3,
+     "pl": "Administratorem danych osobowych jest LPB Sp. z o.o. z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730, NIP 5273179673, REGON 542537097.",
+     "ua": "Контролером персональних даних є LPB Sp. z o.o. з місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730, NIP 5273179673, REGON 542537097.",
+     "en": "The controller of personal data is LPB Sp. z o.o., with its registered office in Warsaw, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730, NIP 5273179673, REGON 542537097."
+    },
+    {
+     "n": 4,
+     "pl": "Kontakt w sprawach danych osobowych: rodo@lapetitebloom.com. Administrator nie powołał inspektora ochrony danych (IOD).",
+     "ua": "Контакт у справах персональних даних: rodo@lapetitebloom.com. Контролер не призначив інспектора із захисту даних (IOD).",
+     "en": "Contact regarding personal data: rodo@lapetitebloom.com. The controller has not appointed a data protection officer (IOD / DPO)."
+    },
+    {
+     "n": 5,
+     "pl": "2. Jakie dane przetwarzamy",
+     "ua": "2. Які дані ми обробляємо",
+     "en": "2. What data we process"
+    },
+    {
+     "n": 6,
+     "pl": "- dane zamówienia: imię i nazwisko, adres dostawy, e-mail, telefon, dane do faktury;",
+     "ua": "- дані замовлення: ім’я та прізвище, адреса доставки, адреса електронної пошти, телефон, дані для рахунку-фактури;",
+     "en": "- order data: full name, delivery address, e-mail address, telephone number, invoicing details;"
+    },
+    {
+     "n": 7,
+     "pl": "- dane konta Klienta (jeśli zostało założone);",
+     "ua": "- дані акаунта Клієнта (якщо його було створено);",
+     "en": "- Customer account data (if an account has been created);"
+    },
+    {
+     "n": 8,
+     "pl": "- dane z zapisu na newsletter (adres e-mail);",
+     "ua": "- дані з підписки на розсилку (адреса електронної пошти);",
+     "en": "- newsletter subscription data (e-mail address);"
+    },
+    {
+     "n": 9,
+     "pl": "- dane z korespondencji, zwrotów i reklamacji;",
+     "ua": "- дані з листування, повернень і рекламацій;",
+     "en": "- data from correspondence, returns and complaints;"
+    },
+    {
+     "n": 10,
+     "pl": "- dane techniczne i pliki cookies (zob. Polityka cookies).",
+     "ua": "- технічні дані та файли cookie (див. Політику щодо файлів cookie).",
+     "en": "- technical data and cookies (see the Cookie policy)."
+    },
+    {
+     "n": 11,
+     "pl": "Sklep nie przyjmuje i nie przechowuje danych płatniczych (numer karty, CVV) — obsługuje je operator płatności.",
+     "ua": "Магазин не приймає і не зберігає платіжних даних (номер картки, CVV) — їх обробляє оператор платежів.",
+     "en": "The Store does not receive or store payment data (card number, CVV) — these are handled by the payment operator."
+    },
+    {
+     "n": 12,
+     "pl": "3. Cele i podstawy prawne",
+     "ua": "3. Цілі та правові підстави",
+     "en": "3. Purposes and legal bases"
+    },
+    {
+     "n": 13,
+     "pl": "1. Realizacja zamówienia i umowy sprzedaży — art. 6 ust. 1 lit. b RODO.",
+     "ua": "1. Виконання замовлення та договору купівлі-продажу — ст. 6 п. 1 літ. b GDPR.",
+     "en": "1. Performance of the order and of the sales contract — Article 6(1)(b) GDPR."
+    },
+    {
+     "n": 14,
+     "pl": "2. Wystawianie i przechowywanie dokumentów księgowych — art. 6 ust. 1 lit. c RODO (obowiązek prawny).",
+     "ua": "2. Виставлення та зберігання бухгалтерських документів — ст. 6 п. 1 літ. c GDPR (юридичний обов’язок).",
+     "en": "2. Issuing and storing accounting documents — Article 6(1)(c) GDPR (legal obligation)."
+    },
+    {
+     "n": 15,
+     "pl": "3. Obsługa zwrotów, reklamacji oraz dochodzenie lub obrona roszczeń — art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes).",
+     "ua": "3. Опрацювання повернень, рекламацій, а також заявлення або захист вимог — ст. 6 п. 1 літ. f GDPR (законний інтерес).",
+     "en": "3. Handling returns and complaints and the pursuit or defence of claims — Article 6(1)(f) GDPR (legitimate interest)."
+    },
+    {
+     "n": 16,
+     "pl": "4. Prowadzenie konta Klienta — art. 6 ust. 1 lit. b RODO.",
+     "ua": "4. Ведення акаунта Клієнта — ст. 6 п. 1 літ. b GDPR.",
+     "en": "4. Maintaining the Customer account — Article 6(1)(b) GDPR."
+    },
+    {
+     "n": 17,
+     "pl": "5. Wysyłka newslettera — art. 6 ust. 1 lit. a RODO (zgoda).",
+     "ua": "5. Надсилання розсилки — ст. 6 п. 1 літ. a GDPR (згода).",
+     "en": "5. Sending the newsletter — Article 6(1)(a) GDPR (consent)."
+    },
+    {
+     "n": 18,
+     "pl": "6. Marketing oraz statystyka/analityka realizowane przez pliki cookies — na podstawie zgody (art. 6 ust. 1 lit. a) lub prawnie uzasadnionego interesu (art. 6 ust. 1 lit. f), zgodnie z ustawieniami zgód.",
+     "ua": "6. Маркетинг, а також статистика/аналітика, що здійснюються за допомогою файлів cookie, — на підставі згоди (ст. 6 п. 1 літ. a) або законного інтересу (ст. 6 п. 1 літ. f), відповідно до налаштувань згод.",
+     "en": "6. Marketing and statistics/analytics carried out through cookies — on the basis of consent (Article 6(1)(a)) or of legitimate interest (Article 6(1)(f)), in accordance with the consent settings."
+    },
+    {
+     "n": 19,
+     "pl": "4. Odbiorcy danych",
+     "ua": "4. Одержувачі даних",
+     "en": "4. Data recipients"
+    },
+    {
+     "n": 20,
+     "pl": "Dane mogą być powierzane zaufanym podmiotom przetwarzającym, wyłącznie w zakresie niezbędnym:",
+     "ua": "Дані можуть бути довірені надійним операторам (обробникам даних) виключно в обсязі, що є необхідним:",
+     "en": "The data may be entrusted to trusted processors, solely to the extent necessary:"
+    },
+    {
+     "n": 21,
+     "pl": "- dostawca hostingu (serwer w Unii Europejskiej);",
+     "ua": "- постачальник хостингу (сервер у Європейському Союзі);",
+     "en": "- the hosting provider (server in the European Union);"
+    },
+    {
+     "n": 22,
+     "pl": "- operator płatności — PayPro S.A. (Przelewy24), ul. Pastelowa 8, 60-198 Poznań;",
+     "ua": "- оператор платежів — PayPro S.A. (Przelewy24), ul. Pastelowa 8, 60-198 Poznań;",
+     "en": "- the payment operator — PayPro S.A. (Przelewy24), ul. Pastelowa 8, 60-198 Poznań;"
+    },
+    {
+     "n": 23,
+     "pl": "- firmy kurierskie — InPost, DPD, DHL;",
+     "ua": "- кур’єрські компанії — InPost, DPD, DHL;",
+     "en": "- courier companies — InPost, DPD, DHL;"
+    },
+    {
+     "n": 24,
+     "pl": "- system obsługi zamówień — BaseLinker sp. z o.o.;",
+     "ua": "- система опрацювання замовлень — BaseLinker sp. z o.o.;",
+     "en": "- the order-handling system — BaseLinker sp. z o.o.;"
+    },
+    {
+     "n": 25,
+     "pl": "- biuro rachunkowe (obsługa księgowa);",
+     "ua": "- бухгалтерська фірма (бухгалтерський супровід);",
+     "en": "- the accounting office (bookkeeping services);"
+    },
+    {
+     "n": 26,
+     "pl": "- Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania).",
+     "ua": "- Google (Google Analytics / Google Ads), а також постачальник банера згод Cookiebot (Usercentrics A/S, Данія).",
+     "en": "- Google (Google Analytics / Google Ads) and the consent banner provider Cookiebot (Usercentrics A/S, Denmark)."
+    },
+    {
+     "n": 27,
+     "pl": "5. Przekazywanie danych poza EOG",
+     "ua": "5. Передавання даних за межі ЄЕП",
+     "en": "5. Transfers of data outside the EEA"
+    },
+    {
+     "n": 28,
+     "pl": "Dane przechowywane są na serwerach w Europejskim Obszarze Gospodarczym. Wyjątkiem mogą być usługi Google — w razie przekazania danych do USA odbywa się ono na podstawie decyzji o adekwatności (EU-US Data Privacy Framework) lub standardowych klauzul umownych (SCC).",
+     "ua": "Дані зберігаються на серверах у Європейському економічному просторі. Винятком можуть бути послуги Google — у разі передавання даних до США воно відбувається на підставі рішення про адекватність (EU-US Data Privacy Framework) або стандартних договірних положень (SCC).",
+     "en": "The data are stored on servers within the European Economic Area. Google services may be an exception — where data are transferred to the USA, the transfer takes place on the basis of an adequacy decision (EU-US Data Privacy Framework) or of standard contractual clauses (SCC)."
+    },
+    {
+     "n": 29,
+     "pl": "6. Okres przechowywania",
+     "ua": "6. Строк зберігання",
+     "en": "6. Retention period"
+    },
+    {
+     "n": 30,
+     "pl": "- dane zamówień i dokumentów księgowych — 5 lat (obowiązek podatkowy);",
+     "ua": "- дані замовлень і бухгалтерських документів — 5 років (податковий обов’язок);",
+     "en": "- order data and accounting documents — 5 years (tax obligation);"
+    },
+    {
+     "n": 31,
+     "pl": "- dane konta — do czasu jego usunięcia;",
+     "ua": "- дані акаунта — до моменту його видалення;",
+     "en": "- account data — until the account is deleted;"
+    },
+    {
+     "n": 32,
+     "pl": "- dane z newslettera — do czasu wycofania zgody;",
+     "ua": "- дані з розсилки — до моменту відкликання згоди;",
+     "en": "- newsletter data — until consent is withdrawn;"
+    },
+    {
+     "n": 33,
+     "pl": "- dane na potrzeby roszczeń — do upływu terminów przedawnienia.",
+     "ua": "- дані для потреб вимог — до спливу строків позовної давності.",
+     "en": "- data needed for claims — until the limitation periods expire."
+    },
+    {
+     "n": 34,
+     "pl": "7. Prawa osoby, której dane dotyczą",
+     "ua": "7. Права суб’єкта даних",
+     "en": "7. Rights of the data subject"
+    },
+    {
+     "n": 35,
+     "pl": "Przysługuje Państwu prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia, wniesienia sprzeciwu oraz cofnięcia zgody w dowolnym momencie (bez wpływu na zgodność z prawem wcześniejszego przetwarzania). Przysługuje także prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).",
+     "ua": "Ви маєте право на доступ до даних, їх виправлення, видалення, обмеження обробки, перенесення даних, право заперечити проти обробки, а також відкликати згоду в будь-який момент (без впливу на правомірність обробки, здійсненої до відкликання). Ви також маєте право подати скаргу до Prezes Urzędu Ochrony Danych Osobowych (Голови Управління з питань захисту персональних даних), ul. Stawki 2, 00-193 Warszawa.",
+     "en": "You have the right to access your data, to have it rectified or erased, to restrict its processing, to data portability, to object, and to withdraw consent at any time (without affecting the lawfulness of processing carried out before the withdrawal). You also have the right to lodge a complaint with the Prezes Urzędu Ochrony Danych Osobowych (President of the Personal Data Protection Office), ul. Stawki 2, 00-193 Warszawa."
+    },
+    {
+     "n": 36,
+     "pl": "8. Realizacja żądań i usuwanie danych",
+     "ua": "8. Виконання запитів і видалення даних",
+     "en": "8. Handling requests and erasure of data"
+    },
+    {
+     "n": 37,
+     "pl": "1. Żądanie należy zgłosić na adres rodo@lapetitebloom.com.",
+     "ua": "1. Запит слід надіслати на адресу rodo@lapetitebloom.com.",
+     "en": "1. The request should be submitted to rodo@lapetitebloom.com."
+    },
+    {
+     "n": 38,
+     "pl": "2. W celu weryfikacji tożsamości prosimy o podanie danych umożliwiających identyfikację (np. imię i nazwisko, adres e-mail, numer zamówienia lub telefon).",
+     "ua": "2. Для перевірки особи просимо вказати дані, що дають змогу вас ідентифікувати (наприклад, ім’я та прізвище, адресу електронної пошти, номер замовлення або телефон).",
+     "en": "2. In order to verify your identity, please provide details that make identification possible (e.g. full name, e-mail address, order number or telephone number)."
+    },
+    {
+     "n": 39,
+     "pl": "3. Odpowiedzi udzielamy bez zbędnej zwłoki, najpóźniej w terminie 1 miesiąca; w sprawach złożonych termin może zostać przedłużony do 3 miesięcy, o czym poinformujemy.",
+     "ua": "3. Ми надаємо відповідь без невиправданої затримки, щонайпізніше протягом 1 місяця; у складних справах строк може бути продовжено до 3 місяців, про що ми повідомимо.",
+     "en": "3. We reply without undue delay, at the latest within 1 month; in complex cases the time limit may be extended to 3 months, of which we will inform you."
+    },
+    {
+     "n": 40,
+     "pl": "4. Dane objęte obowiązkiem prawnym (np. dane na fakturach) nie są usuwane przed upływem wymaganego okresu — w tym czasie ich przetwarzanie zostaje ograniczone.",
+     "ua": "4. Дані, охоплені юридичним обов’язком (наприклад, дані в рахунках-фактурах), не видаляються до спливу необхідного строку — на цей час їх обробка обмежується.",
+     "en": "4. Data covered by a legal obligation (e.g. data on invoices) are not erased before the required period has elapsed — during that time their processing is restricted."
+    },
+    {
+     "n": 41,
+     "pl": "9. Pliki cookies",
+     "ua": "9. Файли cookie",
+     "en": "9. Cookies"
+    },
+    {
+     "n": 42,
+     "pl": "Zasady stosowania plików cookies opisuje odrębna Polityka cookies dostępna w Sklepie.",
+     "ua": "Правила застосування файлів cookie описує окрема Політика щодо файлів cookie, доступна в Магазині.",
+     "en": "The rules for the use of cookies are described in a separate Cookie policy available in the Store."
+    },
+    {
+     "n": 43,
+     "pl": "10. Bezpieczeństwo",
+     "ua": "10. Безпека",
+     "en": "10. Security"
+    },
+    {
+     "n": 44,
+     "pl": "Stosujemy odpowiednie środki techniczne i organizacyjne chroniące dane przed nieuprawnionym dostępem, utratą lub zniszczeniem.",
+     "ua": "Ми застосовуємо належні технічні та організаційні заходи, що захищають дані від несанкціонованого доступу, втрати або знищення.",
+     "en": "We apply appropriate technical and organisational measures protecting the data against unauthorised access, loss or destruction."
+    },
+    {
+     "n": 45,
+     "pl": "11. Dobrowolność danych i brak profilowania",
+     "ua": "11. Добровільність надання даних і відсутність профілювання",
+     "en": "11. Voluntary provision of data and absence of profiling"
+    },
+    {
+     "n": 46,
+     "pl": "Podanie danych jest dobrowolne, lecz niezbędne do zawarcia i realizacji umowy. Nie podejmujemy decyzji opierających się wyłącznie na zautomatyzowanym przetwarzaniu (w tym profilowaniu), które wywoływałyby wobec Klienta skutki prawne.",
+     "ua": "Надання даних є добровільним, але необхідним для укладення та виконання договору. Ми не ухвалюємо рішень, що ґрунтуються виключно на автоматизованій обробці (зокрема на профілюванні) і мали б для Клієнта правові наслідки.",
+     "en": "Providing the data is voluntary but necessary in order to conclude and perform the contract. We do not take decisions based solely on automated processing (including profiling) that would produce legal effects concerning the Customer."
+    },
+    {
+     "n": 47,
+     "pl": "12. Zmiany polityki",
+     "ua": "12. Зміни політики",
+     "en": "12. Changes to the policy"
+    },
+    {
+     "n": 48,
+     "pl": "Polityka może być aktualizowana. Aktualna wersja jest zawsze dostępna w Sklepie.",
+     "ua": "Політика може оновлюватися. Актуальна версія завжди доступна в Магазині.",
+     "en": "The policy may be updated. The current version is always available in the Store."
+    }
+   ],
+   "notes": [
+    "Термин «administrator danych»: в задании допускались «володілець/контролер», глоссарий (раздел 6) прямо предписывает UA «контролер персональних даних» и запрещает «володілець» — переведено как «контролер», EN «data controller».",
+    "RODO: по глоссарию в UA/EN везде «GDPR», ссылки в формате «ст. 6 п. 1 літ. b GDPR» / «Article 6(1)(b) GDPR». Форма «RODO (GDPR)» при первом упоминании не использована, чтобы не ломать единый формат ссылок на статьи — если юрист захочет её вернуть, это блок 13.",
+    "Блок 4, «inspektor ochrony danych (IOD)»: IOD — польская аббревиатура. В UA оставлена как «(IOD)», в EN дано «(IOD / DPO)». Решить, оставлять ли польскую аббревиатуру в переводах или везде писать DPO.",
+    "Блоки 3: KRS/NIP/REGON оставлены голыми кодами. Глоссарий допускает одну поясняющую сноску к KRS при первом упоминании в UA/EN — сноска не добавлена, решение за юристом.",
+    "Блок 20, «podmiot przetwarzający»: UA дано как «оператор (обробник даних)» по терминологии GDPR. Внимание на коллизию: в блоке 22 «operator płatności» → «оператор платежів». Если это мешает, для процессора можно оставить только «обробник даних».",
+    "Блок 27/28, «EOG»: UA — «Європейський економічний простір (ЄЕП)», EN — «European Economic Area (EEA)». В UA-заголовке использована аббревиатура ЄЕП, в тексте — полная форма.",
+    "Заголовок документа в оригинале капсом (POLITYKA PRYWATNOŚCI). title_pl — дословная копия; title_ua/title_en даны в sentence case по общему правилу глоссария о регистре заголовков. Если верстальщик капсует заголовки CSS-ом, разночтения не будет.",
+    "Противоречие между документами: в §4 (получатели данных) названы только Google и Cookiebot, тогда как Политика cookies (док. 3, п. 2.3) упоминает Meta Pixel и TikTok. Если маркетинговые пиксели включаются, Meta и TikTok должны быть перечислены и здесь. Место под юриста.",
+    "Противоречие между документами: §4 называет оператором платежей только PayPro S.A. (Przelewy24), а Политика cookies дополнительно упоминает Klarna и PayPo. Список получателей нужно свести.",
+    "Заголовок §11 «brak profilowania» шире содержания: в теле речь только об отсутствии решений, основанных исключительно на автоматизированной обработке и порождающих правовые последствия, а профилирование через маркетинговые cookies при этом допускается (§3.6). Формулировка заголовка вводит в заблуждение — на проверку юристу.",
+    "§6: «5 lat» без указания точки отсчёта. По польскому налоговому праву срок считается от конца календарного года, в котором истёк срок уплаты налога. Перевод дословный, уточнение — за юристом.",
+    "Даты и адреса (24.06.2026, ul. Marcina Kasprzaka 31/119, ul. Pastelowa 8, ul. Stawki 2) не переведены и не транслитерированы — по правилу 2 и разделу «Не переводим» глоссария. Города в тексте переведены (Warszawie → Варшаві / Warsaw), почтовые адреса оставлены латиницей целиком.",
+    "Название органа PUODO дано по-польски с переводом в скобках при первом упоминании (блок 35); в документе 5 оно встречается уже как аббревиатура PUODO — согласовано."
+   ],
+   "applied_decisions": [
+    "kontakt@ → hello@ (решение заказчика)"
+   ]
+  },
+  {
+   "doc": "3-polityka-cookies",
+   "title": "Политика cookies",
+   "target_path": "/polityka-cookies",
+   "title_pl": "POLITYKA COOKIES",
+   "title_ua": "Політика щодо файлів cookie",
+   "title_en": "Cookie policy",
+   "blocks": [
+    {
+     "n": 1,
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 24.06.2026"
+    },
+    {
+     "n": 2,
+     "pl": "Administratorem danych jest LPB Sp. z o.o.; kontakt: rodo@lapetitebloom.com. Szczegółowe zasady przetwarzania danych opisuje Polityka prywatności.",
+     "ua": "Контролером даних є LPB Sp. z o.o.; контакт: rodo@lapetitebloom.com. Детальні правила обробки даних описує Політика конфіденційності.",
+     "en": "The data controller is LPB Sp. z o.o.; contact: rodo@lapetitebloom.com. Detailed rules on the processing of data are described in the Privacy policy."
+    },
+    {
+     "n": 3,
+     "pl": "1. Czym są pliki cookies",
+     "ua": "1. Що таке файли cookie",
+     "en": "1. What cookies are"
+    },
+    {
+     "n": 4,
+     "pl": "Pliki cookies to niewielkie pliki tekstowe zapisywane na urządzeniu użytkownika podczas korzystania ze Sklepu. Służą m.in. zapewnieniu prawidłowego działania strony, zapamiętaniu wyborów użytkownika oraz — za zgodą — celom statystycznym i marketingowym.",
+     "ua": "Файли cookie — це невеликі текстові файли, які зберігаються на пристрої користувача під час користування Магазином. Вони слугують, зокрема, забезпеченню належної роботи сайту, запам’ятовуванню вибору користувача, а також — за згодою — статистичним і маркетинговим цілям.",
+     "en": "Cookies are small text files saved on the user’s device while the Store is being used. They serve, among other things, to ensure the correct operation of the site, to remember the user’s choices and — with consent — for statistical and marketing purposes."
+    },
+    {
+     "n": 5,
+     "pl": "2. Rodzaje stosowanych cookies",
+     "ua": "2. Види застосовуваних файлів cookie",
+     "en": "2. Types of cookies used"
+    },
+    {
+     "n": 6,
+     "pl": "1. Niezbędne — umożliwiają działanie Sklepu: obsługę koszyka, numer zamówienia, listę ulubionych oraz sesję użytkownika. Nie wymagają zgody.",
+     "ua": "1. Необхідні — забезпечують роботу Магазину: роботу кошика, номер замовлення, список обраного та сесію користувача. Не потребують згоди.",
+     "en": "1. Necessary — they make the Store work: the cart, the order number, the favourites list and the user session. They do not require consent."
+    },
+    {
+     "n": 7,
+     "pl": "2. Analityczne — Google Analytics (GA4); stosowane wyłącznie po wyrażeniu zgody.",
+     "ua": "2. Аналітичні — Google Analytics (GA4); застосовуються виключно після надання згоди.",
+     "en": "2. Analytical — Google Analytics (GA4); used only after consent has been given."
+    },
+    {
+     "n": 8,
+     "pl": "3. Marketingowe — np. Meta Pixel, TikTok; stosowane wyłącznie po wyrażeniu zgody (jeśli zostaną uruchomione).",
+     "ua": "3. Маркетингові — наприклад, Meta Pixel, TikTok; застосовуються виключно після надання згоди (якщо будуть запущені).",
+     "en": "3. Marketing — e.g. Meta Pixel, TikTok; used only after consent has been given (if they are activated)."
+    },
+    {
+     "n": 9,
+     "pl": "4. Funkcjonalne dostawców płatności — Przelewy24, Klarna, PayPo — w zakresie niezbędnym do obsługi płatności.",
+     "ua": "4. Функціональні файли постачальників платежів — Przelewy24, Klarna, PayPo — в обсязі, необхідному для обробки платежів.",
+     "en": "4. Functional cookies of payment providers — Przelewy24, Klarna, PayPo — to the extent necessary to process payments."
+    },
+    {
+     "n": 10,
+     "pl": "Szczegółowy i aktualny wykaz stosowanych plików cookies (nazwy, cele oraz czas przechowywania) dostępny jest w deklaracji zgód w banerze cookies (Cookiebot).",
+     "ua": "Детальний і актуальний перелік застосовуваних файлів cookie (назви, цілі та строк зберігання) доступний у декларації згод у банері cookie (Cookiebot).",
+     "en": "A detailed and up-to-date list of the cookies used (names, purposes and retention time) is available in the consent declaration in the cookie banner (Cookiebot)."
+    },
+    {
+     "n": 11,
+     "pl": "3. Zarządzanie zgodą",
+     "ua": "3. Керування згодою",
+     "en": "3. Managing consent"
+    },
+    {
+     "n": 12,
+     "pl": "Przy pierwszej wizycie wyświetlany jest baner zgód (Cookiebot). Cookies inne niż niezbędne uruchamiane są dopiero po wyrażeniu zgody. Zgodę można w każdej chwili zmienić lub wycofać w ustawieniach cookies, a także poprzez ustawienia przeglądarki.",
+     "ua": "Під час першого відвідування відображається банер згод (Cookiebot). Файли cookie, інші ніж необхідні, запускаються лише після надання згоди. Згоду можна будь-коли змінити або відкликати в налаштуваннях cookie, а також через налаштування браузера.",
+     "en": "On the first visit a consent banner (Cookiebot) is displayed. Cookies other than the necessary ones are activated only after consent has been given. Consent may be changed or withdrawn at any time in the cookie settings and also through the browser settings."
+    },
+    {
+     "n": 13,
+     "pl": "4. Okres przechowywania",
+     "ua": "4. Строк зберігання",
+     "en": "4. Retention period"
+    },
+    {
+     "n": 14,
+     "pl": "Cookies mogą być sesyjne (usuwane po zamknięciu przeglądarki) lub stałe (przechowywane przez określony czas, zależnie od ich rodzaju).",
+     "ua": "Файли cookie можуть бути сесійними (видаляються після закриття браузера) або постійними (зберігаються протягом визначеного часу, залежно від їх виду).",
+     "en": "Cookies may be session cookies (deleted when the browser is closed) or persistent cookies (stored for a specified time, depending on their type)."
+    },
+    {
+     "n": 15,
+     "pl": "5. Odbiorcy i przekazywanie danych",
+     "ua": "5. Одержувачі та передавання даних",
+     "en": "5. Recipients and transfers of data"
+    },
+    {
+     "n": 16,
+     "pl": "Dane z cookies analitycznych i marketingowych mogą trafiać do dostawców tych narzędzi (m.in. Google). Ewentualne przekazanie do USA odbywa się na podstawie EU-US Data Privacy Framework lub standardowych klauzul umownych (SCC).",
+     "ua": "Дані з аналітичних і маркетингових файлів cookie можуть надходити до постачальників цих інструментів (зокрема Google). Можливе передавання до США відбувається на підставі EU-US Data Privacy Framework або стандартних договірних положень (SCC).",
+     "en": "Data from analytical and marketing cookies may be passed on to the providers of those tools (including Google). Any transfer to the USA takes place on the basis of the EU-US Data Privacy Framework or of standard contractual clauses (SCC)."
+    },
+    {
+     "n": 17,
+     "pl": "6. Zmiany",
+     "ua": "6. Зміни",
+     "en": "6. Changes"
+    },
+    {
+     "n": 18,
+     "pl": "Polityka cookies może być aktualizowana; aktualna wersja jest dostępna w Sklepie.",
+     "ua": "Політика щодо файлів cookie може оновлюватися; актуальна версія доступна в Магазині.",
+     "en": "The Cookie policy may be updated; the current version is available in the Store."
+    }
+   ],
+   "notes": [
+    "Слово cookie в UA не переводится и не склоняется («файли cookie», «банер cookie», «налаштування cookie») — по глоссарию. В EN — cookies строчными.",
+    "Название документа: UA «Політика щодо файлів cookie», EN «Cookie policy» (глоссарий, расхождение №11: сейчас в EN-футере стоит непереведённое «Polityka cookies», в UA — капс «COOKIES»). title_pl — дословная копия капса из оригинала, title_ua/title_en — sentence case.",
+    "Блок 6: «koszyk / lista ulubionych» переведены по глоссарию как «кошик» / «список обраного» и «cart» / «favourites list» (не Favorites, не Basket).",
+    "Блок 9 против блока 12 — противоречие в оригинале: cookies платёжных провайдеров названы «funkcjonalne» и подаются как работающие «в необходимом объёме» без упоминания согласия, тогда как п. 3 говорит, что все cookies, кроме необходимых, запускаются только после согласия. Нужно либо отнести их к необходимым, либо подвести под согласие. Место под юриста.",
+    "Блок 8: «jeśli zostaną uruchomione» — условная формулировка о маркетинговых пикселях. В переводе сохранена дословно, но в публичной политике условное наклонение («если будут запущены») юридически шаткое: пользователь не может понять, обрабатываются его данные или нет. На проверку юристу.",
+    "Блок 10: конкретный перечень cookies (названия, цели, срок хранения) в самом документе отсутствует и целиком делегирован баннеру Cookiebot. Если Cookiebot отключён или не грузится, у магазина нет опубликованного перечня — рекомендуется продублировать таблицей на странице.",
+    "Блок 9 упоминает Klarna и PayPo, которых нет в списке получателей в Политике конфиденциальности (док. 2, §4), а блок 8 упоминает Meta и TikTok, которых там тоже нет. Списки третьих лиц в двух документах нужно синхронизировать.",
+    "Названия инструментов и провайдеров (Google Analytics, GA4, Meta Pixel, TikTok, Cookiebot, Przelewy24, Klarna, PayPo, EU-US Data Privacy Framework, SCC) не переводятся — по правилу 2 и разделу «Не переводим» глоссария.",
+    "«Sklep» переведено как «Магазин» / «the Store» с заглавной — как определённый термин, единообразно с документом 2.",
+    "В документе нет ссылки на срок действия согласия и на то, как часто баннер показывается повторно (обычно 12 месяцев) — типичное требование к cookie-политике, сейчас пропущено. Место под юриста."
+   ],
+   "applied_decisions": [
+    "kontakt@ → hello@ (решение заказчика)"
+   ]
+  },
+  {
+   "doc": "4-polityka-zwrotow-i-reklamacji",
+   "title": "Политика возвратов и рекламаций",
+   "target_path": "/zwroty-i-reklamacje",
+   "title_pl": "POLITYKA ZWROTÓW I REKLAMACJI",
+   "title_ua": "Політика повернень і рекламацій",
+   "title_en": "Returns and complaints policy",
+   "blocks": [
+    {
+     "n": 1,
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 24.06.2026"
+    },
+    {
+     "n": 2,
+     "pl": "1. Prawo do odstąpienia od umowy (zwrot)",
+     "ua": "1. Право на відмову від Договору (повернення)",
+     "en": "1. Right to withdraw from the Contract (return)"
+    },
+    {
+     "n": 3,
+     "pl": "Uwaga: prawo do zwrotu bez podania przyczyny w terminie 14 dni dotyczy wyłącznie zakupów dokonanych online (na odległość). Towary kupione w butiku stacjonarnym nie podlegają zwrotowi ani wymianie bez podania przyczyny; przysługuje natomiast reklamacja z tytułu niezgodności Towaru z umową.",
+     "ua": "Увага: право на повернення без пояснення причин упродовж 14 днів стосується виключно покупок, здійснених онлайн (на відстані). Товари, придбані у стаціонарному бутику, не підлягають поверненню чи обміну без пояснення причин; натомість надається право на рекламацію з підстави невідповідності Товару Договору.",
+     "en": "Please note: the right to return without giving a reason within 14 days applies solely to purchases made online (at a distance). Goods bought in the physical boutique are not subject to return or exchange without giving a reason; a complaint on the grounds of lack of conformity of the Goods with the Contract is available instead."
+    },
+    {
+     "n": 4,
+     "pl": "1. Mają Państwo prawo odstąpić od umowy w terminie 14 dni od otrzymania Towaru, bez podania przyczyny.",
+     "ua": "1. Ви маєте право відмовитися від Договору упродовж 14 днів від отримання Товару, без пояснення причин.",
+     "en": "1. You have the right to withdraw from the Contract within 14 days of receiving the Goods, without giving a reason."
+    },
+    {
+     "n": 5,
+     "pl": "2. Oświadczenie wystarczy wysłać przed upływem terminu na adres hello@lapetitebloom.com lub przy użyciu formularza odstąpienia.",
+     "ua": "2. Достатньо надіслати заяву до спливу строку на адресу hello@lapetitebloom.com або скористатися формою відмови.",
+     "en": "2. It is sufficient to send the statement before the deadline expires to hello@lapetitebloom.com or by using the withdrawal form."
+    },
+    {
+     "n": 6,
+     "pl": "3. Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, w terminie 14 dni od odstąpienia. Bezpośrednie koszty zwrotu ponosi Klient.",
+     "ua": "3. Товар слід відіслати на адресу: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, упродовж 14 днів від відмови. Прямі витрати на повернення несе Клієнт.",
+     "en": "3. The Goods must be sent back to: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, within 14 days of the withdrawal. The direct costs of the return are borne by the Customer."
+    },
+    {
+     "n": 7,
+     "pl": "4. Zwrotu płatności (w tym kosztu najtańszej dostawy) dokonujemy w terminie 14 dni od otrzymania oświadczenia; możemy wstrzymać zwrot do otrzymania Towaru lub dowodu odesłania.",
+     "ua": "4. Повернення коштів (у тому числі вартості найдешевшої доставки) здійснюємо упродовж 14 днів від отримання заяви; ми можемо утримати повернення коштів до отримання Товару або доказу його відправлення.",
+     "en": "4. We make the refund (including the cost of the cheapest delivery) within 14 days of receiving the statement; we may withhold the refund until we receive the Goods or proof of their dispatch."
+    },
+    {
+     "n": 8,
+     "pl": "5. Towar powinien być kompletny, bez śladów użytkowania ponad konieczne do sprawdzenia jego cech. Konsument odpowiada za zmniejszenie wartości Towaru wynikające z korzystania ponad ten zakres (np. zapach perfum lub kosmetyków, ślady makijażu, pranie, brak oryginalnych metek); Sprzedawca może wówczas obniżyć zwracaną kwotę o wartość odpowiadającą zmniejszeniu wartości, ustalaną indywidualnie.",
+     "ua": "5. Товар має бути комплектним, без слідів використання понад те, що необхідне для перевірки його властивостей. Споживач відповідає за зменшення вартості Товару, що є наслідком користування понад цей обсяг (напр., запах парфумів або косметики, сліди макіяжу, прання, відсутність оригінальних бирок); Продавець може тоді зменшити суму, що повертається, на величину, яка відповідає зменшенню вартості та визначається індивідуально.",
+     "en": "5. The Goods should be complete, without signs of use beyond what is necessary to check their characteristics. The Consumer is liable for any diminished value of the Goods resulting from use beyond that scope (e.g. the smell of perfume or cosmetics, traces of make-up, washing, missing original labels); the Seller may then reduce the amount refunded by a value corresponding to the diminished value, determined on a case-by-case basis."
+    },
+    {
+     "n": 9,
+     "pl": "6. Przy częściowym zwrocie – jeżeli zamówienie objęte było rabatem ilościowym lub bezpłatną dostawą zależną od wartości zamówienia, a pozostałe Towary nie spełniają już warunków ich przyznania – zwracana kwota może zostać pomniejszona o utracony rabat lub standardowy koszt dostawy, do wysokości realnie utraconej korzyści.",
+     "ua": "6. При частковому поверненні – якщо замовлення було охоплене кількісною знижкою або безкоштовною доставкою, залежною від вартості замовлення, а решта Товарів уже не відповідає умовам їх надання – сума, що повертається, може бути зменшена на втрачену знижку або стандартну вартість доставки, до розміру реально втраченої вигоди.",
+     "en": "6. In the case of a partial return – if the order was covered by a quantity discount or by free delivery dependent on the order value, and the remaining Goods no longer meet the conditions for granting them – the amount refunded may be reduced by the lost discount or by the standard cost of delivery, up to the amount of the benefit actually lost."
+    },
+    {
+     "n": 10,
+     "pl": "2. Wyłączenia prawa do zwrotu",
+     "ua": "2. Винятки з права на повернення",
+     "en": "2. Exclusions from the right of return"
+    },
+    {
+     "n": 11,
+     "pl": "Prawo odstąpienia nie przysługuje w odniesieniu do Towarów w zapieczętowanym opakowaniu, których po otwarciu nie można zwrócić ze względu na ochronę zdrowia lub higienę, jeżeli zabezpieczenie (folia, plomba higieniczna) zostało naruszone po doręczeniu. Dotyczy to w szczególności: kosmetyków (m.in. szamponów, odżywek, olejków), szczotek i akcesoriów do włosów, smoczków, butelek niemowlęcych, gryzaków oraz bielizny i strojów kąpielowych. Wyłączenie obejmuje także Towary spersonalizowane oraz treści cyfrowe. Pełny zakres określa art. 38 ustawy o prawach konsumenta.",
+     "ua": "Право на відмову не надається щодо Товарів у запечатаній упаковці, які після відкриття не можна повернути з огляду на охорону здоров’я або гігієну, якщо захист (плівка, гігієнічна пломба) було порушено після доставлення. Це стосується зокрема: косметики (зокрема шампунів, кондиціонерів, олійок), щіток та аксесуарів для волосся, пустушок, дитячих пляшечок, прорізувачів, а також білизни та купальних костюмів. Виняток охоплює також персоналізовані Товари та цифровий контент. Повний обсяг визначає art. 38 ustawy o prawach konsumenta (ст. 38 Закону про права споживачів).",
+     "en": "The right of withdrawal does not apply to Goods in sealed packaging which cannot be returned after opening for reasons of health protection or hygiene, if the seal (film, hygiene seal) has been broken after delivery. This applies in particular to: cosmetics (including shampoos, conditioners, oils), hairbrushes and hair accessories, dummies, baby bottles, teethers, as well as underwear and swimwear. The exclusion also covers personalised Goods and digital content. The full scope is set out in art. 38 ustawy o prawach konsumenta (Article 38 of the Consumer Rights Act)."
+    },
+    {
+     "n": 12,
+     "pl": "Towary przecenione (SALE) podlegają zwrotowi i reklamacji na zasadach ogólnych.",
+     "ua": "Уцінені Товари (SALE) підлягають поверненню та рекламації на загальних засадах.",
+     "en": "Reduced-price Goods (SALE) are subject to return and complaint on general terms."
+    },
+    {
+     "n": 13,
+     "pl": "3. Wymiana",
+     "ua": "3. Обмін",
+     "en": "3. Exchange"
+    },
+    {
+     "n": 14,
+     "pl": "Wymiana Towaru zakupionego online realizowana jest poprzez zwrot Towaru i złożenie nowego zamówienia. Towary zakupione w butiku stacjonarnym nie podlegają wymianie bez podania przyczyny; w przypadku wady przysługuje reklamacja.",
+     "ua": "Обмін Товару, придбаного онлайн, здійснюється шляхом повернення Товару та оформлення нового замовлення. Товари, придбані у стаціонарному бутику, не підлягають обміну без пояснення причин; у разі дефекту надається право на рекламацію.",
+     "en": "An exchange of Goods purchased online is carried out by returning the Goods and placing a new order. Goods purchased in the physical boutique are not subject to exchange without giving a reason; in the event of a defect, a complaint is available."
+    },
+    {
+     "n": 15,
+     "pl": "4. Reklamacje (niezgodność Towaru z umową)",
+     "ua": "4. Рекламації (невідповідність Товару Договору)",
+     "en": "4. Complaints (lack of conformity of the Goods with the Contract)"
+    },
+    {
+     "n": 16,
+     "pl": "1. Odpowiadamy za zgodność Towaru z umową na zasadach ustawy o prawach konsumenta — za brak zgodności istniejący w chwili dostarczenia i ujawniony w ciągu 2 lat, niezależnie od miejsca zakupu.",
+     "ua": "1. Ми відповідаємо за відповідність Товару Договору на засадах ustawy o prawach konsumenta — за відсутність відповідності, яка існувала в момент доставлення та виявилася упродовж 2 років, незалежно від місця придбання.",
+     "en": "1. We are liable for the conformity of the Goods with the Contract under the ustawa o prawach konsumenta — for a lack of conformity existing at the time of delivery and revealed within 2 years, regardless of the place of purchase."
+    },
+    {
+     "n": 17,
+     "pl": "2. Reklamację prosimy zgłaszać na adres hello@lapetitebloom.com, podając opis wady, zdjęcia oraz dowód zakupu.",
+     "ua": "2. Рекламацію просимо подавати на адресу hello@lapetitebloom.com, зазначивши опис дефекту, фотографії та доказ придбання.",
+     "en": "2. Please submit a complaint to hello@lapetitebloom.com, providing a description of the defect, photographs and proof of purchase."
+    },
+    {
+     "n": 18,
+     "pl": "3. Reklamowany Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa.",
+     "ua": "3. Товар, щодо якого подано рекламацію, слід відіслати на адресу: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa.",
+     "en": "3. The Goods subject to the complaint must be sent back to: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa."
+    },
+    {
+     "n": 19,
+     "pl": "4. Reklamację rozpatrujemy i informujemy o wyniku w terminie 14 dni od otrzymania zgłoszenia. W razie jej uwzględnienia naprawimy lub wymienimy Towar albo obniżymy cenę lub zwrócimy należność; koszty uzasadnionej reklamacji ponosi Sprzedawca.",
+     "ua": "4. Рекламацію розглядаємо та повідомляємо про результат упродовж 14 днів від отримання звернення. У разі її задоволення ми відремонтуємо або замінимо Товар чи знизимо ціну або повернемо кошти; витрати на обґрунтовану рекламацію несе Продавець.",
+     "en": "4. We examine the complaint and inform of the outcome within 14 days of receiving the notification. If it is upheld, we will repair or replace the Goods, or reduce the price or refund the amount due; the costs of a justified complaint are borne by the Seller."
+    },
+    {
+     "n": 20,
+     "pl": "5. Uszkodzenie przesyłki w transporcie",
+     "ua": "5. Пошкодження відправлення під час перевезення",
+     "en": "5. Damage to the shipment in transit"
+    },
+    {
+     "n": 21,
+     "pl": "Zaleca się sprawdzenie stanu przesyłki przy odbiorze. W razie uszkodzenia zalecane jest sporządzenie z kurierem protokołu szkody lub zgłoszenie uszkodzenia w paczkomacie przy odbiorze – ułatwia to i przyspiesza rozpatrzenie sprawy. Brak protokołu nie pozbawia Konsumenta prawa do reklamacji.",
+     "ua": "Рекомендується перевірити стан відправлення під час отримання. У разі пошкодження рекомендовано скласти з кур’єром акт про пошкодження або повідомити про пошкодження в поштоматі під час отримання – це полегшує та пришвидшує розгляд справи. Відсутність акта не позбавляє Споживача права на рекламацію.",
+     "en": "It is recommended to check the condition of the shipment on collection. In the event of damage, it is advisable to draw up a damage report with the courier or to report the damage at the parcel locker on collection – this makes handling the case easier and faster. The absence of a report does not deprive the Consumer of the right to make a complaint."
+    },
+    {
+     "n": 22,
+     "pl": "Uszkodzenie zewnętrznego opakowania, które nie wpływa na sam Towar i jego przydatność, nie stanowi podstawy reklamacji Towaru; nie dotyczy to sytuacji, gdy oryginalne opakowanie stanowi istotny element Towaru (np. produkty na prezent).",
+     "ua": "Пошкодження зовнішньої упаковки, яке не впливає на сам Товар та його придатність, не є підставою для рекламації Товару; це не стосується ситуації, коли оригінальна упаковка є істотним елементом Товару (напр., подарункові товари).",
+     "en": "Damage to the outer packaging which does not affect the Goods themselves or their usability is not grounds for a complaint about the Goods; this does not apply where the original packaging is a material element of the Goods (e.g. gift products)."
+    },
+    {
+     "n": 23,
+     "pl": "Załącznik — Formularz reklamacyjny",
+     "ua": "Додаток — Форма рекламації",
+     "en": "Appendix — Complaint form"
+    },
+    {
+     "n": 24,
+     "pl": "Imię i nazwisko: ............................",
+     "ua": "Ім’я та прізвище: ............................",
+     "en": "Full name: ............................"
+    },
+    {
+     "n": 25,
+     "pl": "Numer zamówienia: ............ · Data zakupu: ............",
+     "ua": "Номер замовлення: ............ · Дата придбання: ............",
+     "en": "Order number: ............ · Date of purchase: ............"
+    },
+    {
+     "n": 26,
+     "pl": "Nazwa reklamowanego Towaru: ............................",
+     "ua": "Назва Товару, щодо якого подається рекламація: ............................",
+     "en": "Name of the Goods subject to the complaint: ............................"
+    },
+    {
+     "n": 27,
+     "pl": "Opis niezgodności / wady: ............................",
+     "ua": "Опис невідповідності / дефекту: ............................",
+     "en": "Description of the lack of conformity / defect: ............................"
+    },
+    {
+     "n": 28,
+     "pl": "Żądanie (naprawa / wymiana / obniżenie ceny / odstąpienie): ............................",
+     "ua": "Вимога (ремонт / заміна / зниження ціни / відмова від Договору): ............................",
+     "en": "Request (repair / replacement / price reduction / withdrawal): ............................"
+    },
+    {
+     "n": 29,
+     "pl": "Adres e-mail i numer rachunku do zwrotu: ............................",
+     "ua": "Адреса електронної пошти та номер рахунку для повернення коштів: ............................",
+     "en": "E-mail address and account number for the refund: ............................"
+    },
+    {
+     "n": 30,
+     "pl": "Data i podpis: ............................",
+     "ua": "Дата та підпис: ............................",
+     "en": "Date and signature: ............................"
+    }
+   ],
+   "notes": [
+    "Блоки 24–30 — бланк формы рекламации. Плейсхолдеры из точек («............................», «............») сохранены символ в символ, длина не менялась ни в одной локали.",
+    "Смысловой узел (блоки 3, 14, 16): 14 дней на отказ без указания причины действуют ТОЛЬКО для покупок онлайн; «только при браке» относится исключительно к стационарному бутику. Рекламация по несоответствию Товару Договору доступна в обоих каналах — это прямо подтверждено в блоке 16 («niezależnie od miejsca zakupu»). Переведено дословно, смысл не расширялся.",
+    "Адрес: в почтовом адресе (блоки 6, 18) «ul. Mokotowska 51/53, Warszawa» оставлен латиницей целиком — так требует глоссарий (раздел «Не переводим»). Это расходится с общим правилом «Warszawa → Варшава / Warsaw»; правило про города применено только к городу в связном тексте (см. документ 6, блок 13). Точку нужно подтвердить с юристом/редактором, чтобы адрес возврата был одинаков во всех локалях.",
+    "Блок 11: «art. 38 ustawy o prawach konsumenta» оставлен по-польски с коротким переводом в скобках при первом упоминании; в блоке 16 (второе упоминание) — только польское название без глоссы. Номер статьи не менялся.",
+    "Блок 27: в EN оставлено «Description of the lack of conformity / defect», хотя глоссарий рекомендует короткое «Description of the defect». Причина — в оригинале два термина через слэш («niezgodności / wady»), сокращение изменило бы состав поля формы. Решение за редактором.",
+    "Блок 12: маркер «(SALE)» оставлен как в оригинале во всех трёх языках. Витрина при этом называет эту рубрику «Wyprzedaż / Розпродаж / Sale» — стоит свериться, чтобы покупатель узнал рубрику.",
+    "Терминология по глоссарию: zwrot → повернення / return, zwrot środków → повернення коштів / refund (в блоке 7 различены явно), reklamacja → рекламація / complaint (не «претензія»), odstąpienie od umowy → відмова від Договору / withdrawal from the Contract, niezgodność Towaru z umową → невідповідність Товару Договору / lack of conformity of the Goods with the Contract.",
+    "Блок 21: «paczkomat» передан описательно — «поштомат» / «parcel locker» (глоссарий), торговая марка InPost в этом абзаце не упомянута.",
+    "Блок 1: дата вступления в силу 24.06.2026 — будущая относительно текущей даты. Проверить, что документ действительно должен публиковаться с отложенной датой, и что она совпадает с документами 7 и 8.",
+    "Потенциальное противоречие вне текста (расхождение №35 глоссария): USP-бар сайта обещает «Zwrot w ciągu 30 dni», а документ даёт 14 дней на отказ. Документ переведён как есть; расхождение — к юристу/маркетингу.",
+    "Блок 4: польская формула вежливости «Mają Państwo» передана как «Ви» / «you» — в UA и EN нет эквивалента формального множественного. Тон документа во всех трёх локалях — обращение на «Ви»/«you».",
+    "Блок 8: оговорка «ustalaną indywidualnie» (сумма уменьшения определяется индивидуально) переведена дословно; критерий в документе не задан — место под юриста."
+   ],
+   "applied_decisions": [
+    "kontakt@ → hello@ (решение заказчика)"
+   ]
+  },
+  {
+   "doc": "5-zgody-i-newsletter",
+   "title": "Согласия и newsletter",
+   "target_path": "(не публичная страница)",
+   "title_pl": "ZGODY, KLAUZULE I REGULAMIN NEWSLETTERA",
+   "title_ua": "Згоди, застереження та правила розсилки",
+   "title_en": "Consents, clauses and newsletter terms",
+   "blocks": [
+    {
+     "n": 1,
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 24.06.2026"
+    },
+    {
+     "n": 2,
+     "pl": "1. Klauzula informacyjna (przy formularzach)",
+     "ua": "1. Інформаційне застереження (біля форм)",
+     "en": "1. Information clause (next to forms)"
+    },
+    {
+     "n": 3,
+     "pl": "Administratorem danych jest LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. Dane przetwarzamy w celu realizacji zamówienia, obsługi konta oraz — za zgodą — marketingu. Przysługuje Państwu prawo dostępu, sprostowania, usunięcia i ograniczenia danych oraz wniesienia skargi do PUODO. Szczegóły w Polityce prywatności. Kontakt: rodo@lapetitebloom.com.",
+     "ua": "Контролером даних є LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. Ми обробляємо дані з метою виконання замовлення, обслуговування акаунта та — за згодою — маркетингу. Ви маєте право на доступ до даних, їх виправлення, видалення та обмеження обробки, а також право подати скаргу до PUODO. Деталі — у Політиці конфіденційності. Контакт: rodo@lapetitebloom.com.",
+     "en": "The data controller is LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. We process the data in order to fulfil orders, to maintain accounts and — with consent — for marketing. You have the right to access, rectification, erasure and restriction of your data, and the right to lodge a complaint with PUODO. Details are set out in the Privacy policy. Contact: rodo@lapetitebloom.com."
+    },
+    {
+     "n": 4,
+     "pl": "2. Checkboxy zgód",
+     "ua": "2. Чекбокси згод",
+     "en": "2. Consent checkboxes"
+    },
+    {
+     "n": 5,
+     "pl": "Wymagany (zakup / rejestracja):",
+     "ua": "Обов’язковий (купівля / реєстрація):",
+     "en": "Required (purchase / registration):"
+    },
+    {
+     "n": 6,
+     "pl": "- Akceptuję Regulamin oraz Politykę prywatności. [pole wymagane]",
+     "ua": "- Я приймаю Правила та Політику конфіденційності. [обов’язкове поле]",
+     "en": "- I accept the Terms and Conditions and the Privacy policy. [required field]"
+    },
+    {
+     "n": 7,
+     "pl": "Opcjonalne:",
+     "ua": "Необов’язкові:",
+     "en": "Optional:"
+    },
+    {
+     "n": 8,
+     "pl": "- Chcę otrzymywać newsletter z informacjami o nowościach i promocjach La Petite Bloom na podany adres e-mail. [opcjonalne]",
+     "ua": "- Я хочу отримувати розсилку з інформацією про новинки та акції La Petite Bloom на вказану адресу електронної пошти. [необов’язково]",
+     "en": "- I would like to receive the newsletter with information about new arrivals and offers from La Petite Bloom at the e-mail address provided. [optional]"
+    },
+    {
+     "n": 9,
+     "pl": "- Wyrażam zgodę na otrzymywanie informacji marketingowych drogą elektroniczną (e-mail), zgodnie z obowiązującymi przepisami i Polityką prywatności. [opcjonalne]",
+     "ua": "- Я даю згоду на отримання маркетингової інформації електронними засобами (електронною поштою) відповідно до чинних приписів і Політики конфіденційності. [необов’язково]",
+     "en": "- I consent to receiving marketing information by electronic means (e-mail), in accordance with the applicable regulations and with the Privacy policy. [optional]"
+    },
+    {
+     "n": 10,
+     "pl": "Zgody muszą być dobrowolne, NIE odznaczone domyślnie i oddzielone od akceptacji Regulaminu.",
+     "ua": "Згоди мають бути добровільними, НЕ позначеними за замовчуванням і відокремленими від прийняття Правил.",
+     "en": "Consents must be voluntary, NOT ticked by default and separate from the acceptance of the Terms and Conditions."
+    },
+    {
+     "n": 11,
+     "pl": "3. Regulamin newslettera",
+     "ua": "3. Правила розсилки",
+     "en": "3. Newsletter terms"
+    },
+    {
+     "n": 12,
+     "pl": "1. Usługa newslettera jest bezpłatna i dobrowolna; polega na wysyłce wiadomości na podany adres e-mail.",
+     "ua": "1. Послуга розсилки є безкоштовною та добровільною; вона полягає в надсиланні повідомлень на вказану адресу електронної пошти.",
+     "en": "1. The newsletter service is free of charge and voluntary; it consists in sending messages to the e-mail address provided."
+    },
+    {
+     "n": 13,
+     "pl": "2. Zapis następuje przez podanie adresu e-mail i potwierdzenie zgody. Wiadomości wysyłane są z systemu Sprzedawcy.",
+     "ua": "2. Підписка здійснюється шляхом зазначення адреси електронної пошти та підтвердження згоди. Повідомлення надсилаються із системи Продавця.",
+     "en": "2. Subscription takes place by providing an e-mail address and confirming consent. Messages are sent from the Seller’s system."
+    },
+    {
+     "n": 14,
+     "pl": "3. Zgodę można wycofać w każdej chwili przez link rezygnacji w wiadomości lub kontakt: hello@lapetitebloom.com.",
+     "ua": "3. Згоду можна відкликати будь-коли за допомогою посилання для відмови в повідомленні або звернувшись на адресу: hello@lapetitebloom.com.",
+     "en": "3. Consent may be withdrawn at any time via the unsubscribe link in the message or by contacting: hello@lapetitebloom.com."
+    },
+    {
+     "n": 15,
+     "pl": "4. Administratorem danych jest LPB Sp. z o.o.; dane przetwarzane są do czasu wycofania zgody.",
+     "ua": "4. Контролером даних є LPB Sp. z o.o.; дані обробляються до моменту відкликання згоди.",
+     "en": "4. The data controller is LPB Sp. z o.o.; the data are processed until consent is withdrawn."
+    },
+    {
+     "n": 16,
+     "pl": "4. Treść baneru cookies (Cookiebot)",
+     "ua": "4. Текст банера cookie (Cookiebot)",
+     "en": "4. Cookie banner text (Cookiebot)"
+    },
+    {
+     "n": 17,
+     "pl": "Nagłówek: „Dbamy o Twoją prywatność”.",
+     "ua": "Заголовок: «Ми дбаємо про вашу приватність».",
+     "en": "Heading: “We care about your privacy”."
+    },
+    {
+     "n": 18,
+     "pl": "Treść: „Używamy plików cookies niezbędnych do działania sklepu oraz — za Twoją zgodą — cookies analitycznych i marketingowych. Możesz zaakceptować wszystkie, odrzucić opcjonalne lub wybrać ustawienia.”",
+     "ua": "Текст: «Ми використовуємо файли cookie, необхідні для роботи магазину, а також — за вашою згодою — аналітичні та маркетингові файли cookie. Ви можете прийняти всі, відхилити необов’язкові або перейти до налаштувань».",
+     "en": "Body: “We use cookies that are necessary for the store to work and — with your consent — analytical and marketing cookies. You can accept all, reject the optional ones or choose your settings.”"
+    },
+    {
+     "n": 19,
+     "pl": "Przyciski: „Akceptuję wszystkie” · „Odrzucam opcjonalne” · „Ustawienia”.",
+     "ua": "Кнопки: «Прийняти всі» · «Відхилити необов’язкові» · «Налаштування».",
+     "en": "Buttons: “Accept all” · “Reject optional” · “Settings”."
+    },
+    {
+     "n": 20,
+     "pl": "Kategorie w ustawieniach: Niezbędne (zawsze aktywne) · Analityczne · Marketingowe.",
+     "ua": "Категорії в налаштуваннях: Необхідні (завжди активні) · Аналітичні · Маркетингові.",
+     "en": "Categories in the settings: Necessary (always active) · Analytical · Marketing."
+    }
+   ],
+   "notes": [
+    "ОШИБКА В ОРИГИНАЛЕ, блок 10: по-польски написано «NIE odznaczone domyślnie», что буквально значит «не снятые по умолчанию», то есть предвыбранные — прямо противоположное требованию GDPR и тому, что документ явно имеет в виду. Правильно по-польски «NIE zaznaczone domyślnie». Перевод сделан по очевидному смыслу (UA «НЕ позначеними за замовчуванням», EN «NOT ticked by default»); польский оригинал нужно исправить у юриста, иначе разработчик может реализовать предвыбранные галочки.",
+    "Служебные пометки [pole wymagane] / [opcjonalne] сохранены в переводе для соответствия структуре, но по глоссарию (раздел 7, «Zgoda opcjonalna») их нельзя показывать покупателю — перед вставкой в интерфейс убрать из всех трёх локалей.",
+    "Тексты чекбоксов (блоки 6, 8, 9) сформулированы от первого лица и целыми предложениями, чтобы вставлялись в интерфейс дословно. Глоссарий отдельно отмечает нынешнюю ошибку на сайте: фраза начинается от первого лица, а заканчивается обращением на «ты» — в этих переводах лицо выдержано.",
+    "«Regulamin» переведён короткой формой: UA «Правила», EN «the Terms and Conditions» (глоссарий запрещает UA «умови та положення»). Полное название документа — «Правила інтернет-магазину» / «Online store terms and conditions».",
+    "«Newsletter» в UA — только «розсилка» (глоссарий, расхождение №13); формы «інформаційна розсилка» и «email-розсилка» не использованы. В EN — «newsletter».",
+    "«Promocje» в блоке 8 переведены как UA «акції» / EN «offers» — по глоссарию (не «Discounted products», не «Sale»: Sale закреплено за «Wyprzedaż»).",
+    "Дублирование согласий: чекбоксы в блоках 8 и 9 покрывают, по сути, одну и ту же обработку (маркетинговые сообщения по e-mail). Два отдельных согласия на одно действие затрудняют доказывание и путают покупателя. Место под юриста: либо объединить, либо чётко развести (например, newsletter vs. персонализированные предложения).",
+    "Расхождение адресов: отзыв согласия на рассылку — kontakt@lapetitebloom.com (блок 14), запросы по данным — rodo@lapetitebloom.com (блок 3). По глоссарию адрес kontakt@ сейчас вообще не опубликован ни в контактах, ни в футере — либо опубликовать, либо заменить на существующий.",
+    "Разнобой в регистре обращения в оригинале: инфоклаузула написана формально («Przysługuje Państwu»), а cookie-баннер — на «ты» («Twoją», «Możesz»). В переводах регистр сохранён поблочно: в блоке 3 UA/EN формально-нейтрально, в блоках 17-18 — обращение на «ви»/«you». Единый регистр нужно выбрать до вёрстки.",
+    "Блок 18: в польском тексте баннера «sklepu» со строчной, тогда как в политиках «Sklep» — определённый термин с заглавной. В переводе баннера оставлена строчная («магазину» / «store»), так как это UI-текст, а не юридический документ.",
+    "Кавычки расставлены по локали: PL „…”, UA «…», EN “…” — по правилу глоссария о кавычках.",
+    "Подписи кнопок баннера даны в императиве без «я» («Прийняти всі» / «Accept all»), в отличие от чекбоксов — это кнопки, а не согласия. Проверить, что они совпадают с реальными подписями в конфигурации Cookiebot.",
+    "В регламенте рассылки нет пункта о частоте рассылки и о возрасте подписчика (13+/16+), а магазин детский — вероятное упущение. Место под юриста.",
+    "PUODO дано аббревиатурой (блок 3), как в оригинале; полная расшифровка с переводом дана в документе 2, блок 35 — при публикации отдельной страницы стоит продублировать расшифровку здесь."
+   ],
+   "applied_decisions": [
+    "kontakt@ → hello@ (решение заказчика)"
+   ]
+  },
+  {
+   "doc": "6-dostawa-i-platnosci",
+   "title": "Доставка и оплата",
+   "target_path": "/dostawa-i-platnosci",
+   "title_pl": "DOSTAWA I PŁATNOŚCI",
+   "title_ua": "Доставка та оплата",
+   "title_en": "Delivery and payment",
+   "blocks": [
+    {
+     "n": 1,
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o.",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o.",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o."
+    },
+    {
+     "n": 2,
+     "pl": "Sposoby i koszty dostawy",
+     "ua": "Способи та вартість доставки",
+     "en": "Delivery methods and costs"
+    },
+    {
+     "n": 3,
+     "pl": "- Paczkomat InPost 24/7 — 13,99 zł",
+     "ua": "- Поштомат InPost 24/7 — 13,99 zł",
+     "en": "- InPost parcel locker 24/7 — 13,99 zł"
+    },
+    {
+     "n": 4,
+     "pl": "- Kurier InPost / DPD — 17 zł; za pobraniem +20–23 zł",
+     "ua": "- Кур’єр InPost / DPD — 17 zł; післяплата +20–23 zł",
+     "en": "- InPost / DPD courier — 17 zł; cash on delivery +20–23 zł"
+    },
+    {
+     "n": 5,
+     "pl": "- Przesyłka gabarytowa (powyżej 25 kg) — 99 zł",
+     "ua": "- Великогабаритне відправлення (понад 25 кг) — 99 zł",
+     "en": "- Oversized shipment (over 25 kg) — 99 zł"
+    },
+    {
+     "n": 6,
+     "pl": "- Dostawa zagraniczna — DHL, według taryfy przewoźnika",
+     "ua": "- Міжнародна доставка — DHL, за тарифом перевізника",
+     "en": "- International delivery — DHL, according to the carrier’s tariff"
+    },
+    {
+     "n": 7,
+     "pl": "Dostawa jest bezpłatna dla zamówień opłaconych z góry od 500 zł (Paczkomat i kurier). Płatność za pobraniem jest zawsze dodatkowo płatna.",
+     "ua": "Доставка безкоштовна для замовлень, оплачених наперед, від 500 zł (поштомат і кур’єр). Післяплата завжди оплачується додатково.",
+     "en": "Delivery is free for orders paid in advance from 500 zł (parcel locker and courier). Cash on delivery is always payable additionally."
+    },
+    {
+     "n": 8,
+     "pl": "Czas realizacji",
+     "ua": "Строк виконання",
+     "en": "Fulfilment time"
+    },
+    {
+     "n": 9,
+     "pl": "Dokładamy starań, aby zamówienia opłacone do godz. 13:00 w dni robocze były wysyłane tego samego dnia roboczego. Orientacyjny czas dostawy: w Polsce zwykle 1 dzień roboczy, przesyłki zagraniczne (DHL) 2–5 dni roboczych. Towar zostanie wydany najpóźniej w terminie 30 dni od zawarcia umowy.",
+     "ua": "Ми докладаємо зусиль, щоб замовлення, оплачені до 13:00 у робочі дні, відправлялися того самого робочого дня. Орієнтовний час доставки: у Польщі зазвичай 1 робочий день, міжнародні відправлення (DHL) 2–5 робочих днів. Товар буде виданий не пізніше ніж у строк 30 днів від укладення Договору.",
+     "en": "We make every effort to dispatch orders paid for by 13:00 on business days on the same business day. Indicative delivery time: in Poland usually 1 business day, international shipments (DHL) 2–5 business days. The Goods will be handed over no later than within 30 days of the conclusion of the Contract."
+    },
+    {
+     "n": 10,
+     "pl": "Dostawa zagraniczna",
+     "ua": "Міжнародна доставка",
+     "en": "International delivery"
+    },
+    {
+     "n": 11,
+     "pl": "Wysyłamy na terenie Unii Europejskiej i poza nią. Dla Ukrainy dostępne są Nova Poshta oraz Meest. Przy dostawach poza UE ewentualne cła i podatki obciążają odbiorcę przesyłki.",
+     "ua": "Ми відправляємо на території Європейського Союзу та за її межі. Для України доступні Nova Poshta та Meest. При доставках за межі ЄС можливі мита та податки покладаються на отримувача відправлення.",
+     "en": "We dispatch within the European Union and beyond it. For Ukraine, Nova Poshta and Meest are available. For deliveries outside the EU, any customs duties and taxes are borne by the recipient of the shipment."
+    },
+    {
+     "n": 12,
+     "pl": "Odbiór osobisty",
+     "ua": "Самовивіз",
+     "en": "Personal collection"
+    },
+    {
+     "n": 13,
+     "pl": "Możliwy jest odbiór w butiku przy ul. Mokotowskiej 51/53 w Warszawie po potwierdzeniu dostępności Towaru. Zamówienie oczekuje na odbiór 7 dni kalendarzowych od powiadomienia o gotowości.",
+     "ua": "Можливий самовивіз у бутику на ul. Mokotowska 51/53 у Варшаві після підтвердження наявності Товару. Замовлення очікує на отримання 7 календарних днів від повідомлення про готовність.",
+     "en": "Collection is possible at the boutique at ul. Mokotowska 51/53 in Warsaw after confirmation of the availability of the Goods. The order awaits collection for 7 calendar days from the notification of readiness."
+    },
+    {
+     "n": 14,
+     "pl": "Metody płatności",
+     "ua": "Способи оплати",
+     "en": "Payment methods"
+    },
+    {
+     "n": 15,
+     "pl": "Płatności online obsługuje Przelewy24 (PayPro S.A.). Dostępne metody: BLIK, karty płatnicze, szybki przelew, Apple Pay, Google Pay, Klarna, PayPo oraz płatność za pobraniem. Ceny podawane są w złotych (PLN) i zawierają podatek VAT (brutto).",
+     "ua": "Онлайн-платежі обслуговує Przelewy24 (PayPro S.A.). Доступні способи: BLIK, платіжні картки, швидкий переказ, Apple Pay, Google Pay, Klarna, PayPo, а також післяплата. Ціни подані у злотих (PLN) і містять податок VAT (брутто).",
+     "en": "Online payments are handled by Przelewy24 (PayPro S.A.). Available methods: BLIK, payment cards, instant bank transfer, Apple Pay, Google Pay, Klarna, PayPo and cash on delivery. Prices are given in zloty (PLN) and include VAT (gross)."
+    }
+   ],
+   "notes": [
+    "Все суммы оставлены в польском написании — «13,99 zł», «17 zł», «99 zł», «500 zł», «+20–23 zł» — во всех трёх локалях, включая украинскую. Это прямо закрывает расхождение №22 глоссария, где на UA-странице сейчас стоит «13,99 PLN».",
+    "Код «PLN» оставлен только в блоке 15 («w złotych (PLN)») — как код валюты в описании цен, а не как витринная цена. Символ «zł» и код «PLN» в одном документе разведены сознательно.",
+    "Разграничение Wysyłka / Dostawa выдержано (глоссарий, группа 5): блок 9 «były wysyłane» → «відправлялися» / «dispatch», а услуга в целом — «Доставка» / «Delivery». В блоках 5, 11 «przesyłka» → «відправлення» / «shipment».",
+    "Блок 13: город в связном тексте переведён («у Варшаві» / «in Warsaw»), а сама улица оставлена латиницей — «ul. Mokotowska 51/53». В польском оригинале улица стоит в предложном падеже («przy ul. Mokotowskiej»); в UA/EN дана словарная форма адреса, чтобы он совпадал с адресом возврата в документе 4 (блоки 6, 18). Расхождение с общим правилом «Warszawa не переводим в составе адреса» — на решение редактора.",
+    "Названия перевозчиков и платёжных сервисов не переводились и не транслитерировались: InPost, DPD, DHL, Nova Poshta, Meest, Przelewy24, PayPro S.A., BLIK, Apple Pay, Google Pay, Klarna, PayPo. «Paczkomat» передан описательно — «поштомат InPost» / «InPost parcel locker» (глоссарий).",
+    "Блок 15 подтверждает актуального оператора платежей — Przelewy24 (PayPro S.A.). Это опровергает текст, который сейчас висит на UA-версии /delivery-and-payment (Tpay.com, счёт на имя Bebe Concept) — расхождение №25 глоссария. Публиковать во всех трёх локалях нужно этот перевод.",
+    "В отличие от документов 4, 7 и 8 у этого документа НЕТ даты вступления в силу и версии. Для страницы с ценами доставки это существенно (цены меняются) — стоит добавить строку «obowiązuje od dnia …» и её переводы.",
+    "Блок 4: «za pobraniem +20–23 zł» — вилка без объяснения, от чего зависит (перевозчик, вес?). Переведено дословно; уточнить у оператора и раскрыть, иначе покупатель не может посчитать итог.",
+    "Блок 7: «Dostawa jest bezpłatna … od 500 zł» — не сказано, считается ли порог 500 zł до или после скидки, и как это соотносится с пунктом 6 документа 4 (удержание стоимости доставки при частичном возврате). Место под юриста.",
+    "Блок 9: «13:00» оставлено в 24-часовом формате и в EN тоже — британская локаль это допускает; если по сайту принят формат «1 pm», нужно унифицировать.",
+    "Блок 11: «Przy dostawach poza UE ewentualne cła i podatki obciążają odbiorcę» — для Украины (Nova Poshta, Meest) это значит, что таможенные платежи ложатся на покупателя. В тексте это не сказано отдельно; при желании усилить формулировку — это правка оригинала, а не перевода."
+   ],
+   "applied_decisions": [
+    "kontakt@ → hello@ (решение заказчика)"
+   ]
+  },
+  {
+   "doc": "7-regulamin-kart-podarunkowych",
+   "title": "Регламент подарочных карт",
+   "target_path": "/regulamin-kart-podarunkowych",
+   "title_pl": "REGULAMIN KART PODARUNKOWYCH",
+   "title_ua": "Правила подарункових карток",
+   "title_en": "Gift card terms and conditions",
+   "blocks": [
+    {
+     "n": 1,
+     "pl": "La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
+     "ua": "La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
+     "en": "La Petite Bloom · LPB Sp. z o.o. · in force from 24.06.2026"
+    },
+    {
+     "n": 2,
+     "pl": "Uwaga: karty podarunkowe nie są obecnie dostępne w ofercie. Niniejszy regulamin wchodzi w życie z chwilą ich udostępnienia w Sklepie.",
+     "ua": "Увага: подарункові картки наразі недоступні в пропозиції. Ці Правила набирають чинності з моменту їх надання в Магазині.",
+     "en": "Please note: gift cards are not currently available in the offer. These Terms and Conditions come into force at the moment the cards are made available in the Store."
+    },
+    {
+     "n": 3,
+     "pl": "1. Wydawcą kart podarunkowych jest LPB Sp. z o.o. (dane jak w Regulaminie Sklepu).",
+     "ua": "1. Емітентом подарункових карток є LPB Sp. z o.o. (дані як у Правилах інтернет-магазину).",
+     "en": "1. The issuer of the gift cards is LPB Sp. z o.o. (details as in the Online store terms and conditions)."
+    },
+    {
+     "n": 4,
+     "pl": "2. Karta podarunkowa to elektroniczny bon (kod przesyłany na adres e-mail), uprawniający do zapłaty za Towary w Sklepie do wysokości jej wartości.",
+     "ua": "2. Подарункова картка — це електронний ваучер (код, що надсилається на адресу електронної пошти), який дає право оплатити Товари в Магазині до розміру її вартості.",
+     "en": "2. A gift card is an electronic voucher (a code sent to an e-mail address) entitling the holder to pay for Goods in the Store up to the value of the card."
+    },
+    {
+     "n": 5,
+     "pl": "3. Karta jest ważna 12 miesięcy od dnia zakupu. Po upływie terminu ważności traci ważność, a niewykorzystane środki nie podlegają zwrotowi.",
+     "ua": "3. Картка дійсна 12 місяців від дня придбання. Після спливу строку дії вона втрачає чинність, а невикористані кошти поверненню не підлягають.",
+     "en": "3. The card is valid for 12 months from the date of purchase. After the validity period expires, it ceases to be valid and any unused funds are not refundable."
+    },
+    {
+     "n": 6,
+     "pl": "4. Karty nie można wymienić na środki pieniężne ani doładować. Można ją wykorzystać w jednej lub kilku transakcjach, do wyczerpania wartości.",
+     "ua": "4. Картку не можна обміняти на грошові кошти чи поповнити. Її можна використати в одній або кількох транзакціях, до вичерпання вартості.",
+     "en": "4. The card cannot be exchanged for cash or topped up. It may be used in one or several transactions, until its value is exhausted."
+    },
+    {
+     "n": 7,
+     "pl": "5. Jeśli wartość zamówienia przewyższa wartość karty, różnicę należy dopłacić dostępną metodą płatności. Jeśli zamówienie jest tańsze, pozostała wartość zostaje na karcie do wykorzystania w terminie ważności.",
+     "ua": "5. Якщо вартість замовлення перевищує вартість картки, різницю слід доплатити доступним способом оплати. Якщо замовлення дешевше, залишок вартості лишається на картці для використання у строк її дії.",
+     "en": "5. If the order value exceeds the value of the card, the difference must be paid using an available payment method. If the order is cheaper, the remaining value stays on the card to be used within the validity period."
+    },
+    {
+     "n": 8,
+     "pl": "6. Zakup karty podlega prawu odstąpienia w terminie 14 dni; prawo to wygasa z chwilą wykorzystania (aktywacji) kodu.",
+     "ua": "6. Придбання картки підлягає праву на відмову упродовж 14 днів; це право припиняється з моменту використання (активації) коду.",
+     "en": "6. The purchase of a card is subject to the right of withdrawal within 14 days; that right expires at the moment the code is used (activated)."
+    },
+    {
+     "n": 9,
+     "pl": "7. W przypadku zwrotu Towarów opłaconych kartą zwrot następuje w formie nowego kodu lub doładowania karty o odpowiedniej wartości.",
+     "ua": "7. У разі повернення Товарів, оплачених карткою, повернення коштів відбувається у формі нового коду або поповнення картки на відповідну вартість.",
+     "en": "7. In the case of a return of Goods paid for with a card, the refund is made in the form of a new code or a top-up of the card by the corresponding value."
+    },
+    {
+     "n": 10,
+     "pl": "8. Reklamacje dotyczące kart można zgłaszać na adres hello@lapetitebloom.com. W sprawach nieuregulowanych stosuje się Regulamin Sklepu.",
+     "ua": "8. Рекламації щодо карток можна подавати на адресу hello@lapetitebloom.com. У питаннях, не врегульованих цими Правилами, застосовуються Правила інтернет-магазину.",
+     "en": "8. Complaints regarding the cards may be submitted to hello@lapetitebloom.com. In matters not regulated herein, the Online store terms and conditions apply."
+    }
+   ],
+   "notes": [
+    "Оговорка о том, что карты пока не в продаже (блок 2), сохранена как отдельный первый блок текста во всех трёх локалях, ровно на том же месте, что и в оригинале.",
+    "Противоречие внутри документа: блок 1 объявляет «obowiązuje od dnia 24.06.2026», а блок 2 говорит, что правила вступают в силу «с момента предоставления карт в Магазине». Две разные даты начала действия в одном документе. Переведено дословно, без сглаживания — место под юриста.",
+    "«Regulamin Sklepu» переведён по глоссарию: UA «Правила інтернет-магазину», EN «Online store terms and conditions». В блоке 10 польское «W sprawach nieuregulowanych» раскрыто как «не врегульованих цими Правилами» / «not regulated herein», чтобы не спутать два документа в одном предложении.",
+    "Блок 5: «niewykorzystane środki nie podlegają zwrotowi» после истечения 12 месяцев — типовая точка риска по потребительскому праву (сгорание неиспользованного номинала). Переведено дословно, к проверке юристом до запуска карт.",
+    "Блок 8: «prawo to wygasa z chwilą wykorzystania (aktywacji) kodu» — в скобках оригинала «использование» и «активация» приравнены, хотя это не обязательно одно и то же действие. Двусмысленность сохранена дословно во всех трёх языках.",
+    "Блок 9: в UA использован термин «повернення коштів» (refund), а не просто «повернення», чтобы отличить возврат денег от возврата Товара в первой части предложения — по глоссарию, группа 5.",
+    "Блок 4: «bon» передан как «ваучер» / «voucher». Вариант «сертифікат» / «certificate» не использован, чтобы не заводить второе название того же инструмента рядом с «карткою».",
+    "Документ не задаёт номиналы карт и не говорит, продаются ли они за деньги или выдаются, а также не описывает, что происходит при частичном возврате заказа, оплаченного картой лишь частично. Пробел в оригинале, не в переводе.",
+    "«Sklep» (с заглавной) переведён как «Магазин» / «the Store» — определённый термин Правил интернет-магазина. Сверить с переводом самих Правил (документ, не входящий в этот пакет), чтобы термин совпадал."
+   ],
+   "applied_decisions": [
+    "kontakt@ → hello@ (решение заказчика)"
+   ]
+  },
+  {
+   "doc": "8-deklaracja-dostepnosci",
+   "title": "Декларация доступности",
+   "target_path": "/deklaracja-dostepnosci",
+   "title_pl": "DEKLARACJA DOSTĘPNOŚCI",
+   "title_ua": "Декларація доступності",
+   "title_en": "Accessibility statement",
+   "blocks": [
+    {
+     "n": 1,
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · data publikacji 24.06.2026",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · дата публікації 24.06.2026",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · date of publication 24.06.2026"
+    },
+    {
+     "n": 2,
+     "pl": "LPB Sp. z o.o. (sklep internetowy La Petite Bloom) dokłada starań, aby strona była dostępna dla jak najszerszego grona użytkowników, w tym osób ze szczególnymi potrzebami.",
+     "ua": "LPB Sp. z o.o. (інтернет-магазин La Petite Bloom) докладає зусиль, щоб сайт був доступним для якнайширшого кола користувачів, у тому числі осіб з особливими потребами.",
+     "en": "LPB Sp. z o.o. (the La Petite Bloom online store) makes every effort to ensure that the website is accessible to the widest possible range of users, including people with special needs."
+    },
+    {
+     "n": 3,
+     "pl": "Status zgodności",
+     "ua": "Статус відповідності",
+     "en": "Compliance status"
+    },
+    {
+     "n": 4,
+     "pl": "Dążymy do zgodności ze standardem WCAG 2.1 na poziomie AA. Jako mikroprzedsiębiorca nie jesteśmy prawnie zobowiązani do spełnienia wymogów Europejskiego Aktu o Dostępności, jednak dobrowolnie podejmujemy działania na rzecz poprawy dostępności.",
+     "ua": "Ми прагнемо відповідності стандарту WCAG 2.1 на рівні AA. Як мікропідприємець ми не зобов’язані юридично виконувати вимоги Europejskiego Aktu o Dostępności (Європейського акта про доступність), однак добровільно вживаємо заходів для покращення доступності.",
+     "en": "We strive for compliance with the WCAG 2.1 standard at level AA. As a micro-enterprise we are not legally obliged to meet the requirements of the Europejski Akt o Dostępności (European Accessibility Act), however we voluntarily take steps to improve accessibility."
+    },
+    {
+     "n": 5,
+     "pl": "Znane ograniczenia",
+     "ua": "Відомі обмеження",
+     "en": "Known limitations"
+    },
+    {
+     "n": 6,
+     "pl": "Niektóre elementy strony mogą nie spełniać jeszcze wszystkich kryteriów dostępności. Pracujemy nad ich sukcesywną poprawą.",
+     "ua": "Деякі елементи сайту можуть ще не відповідати всім критеріям доступності. Ми працюємо над їх послідовним покращенням.",
+     "en": "Some elements of the website may not yet meet all accessibility criteria. We are working on improving them progressively."
+    },
+    {
+     "n": 7,
+     "pl": "Informacje zwrotne i kontakt",
+     "ua": "Зворотний зв’язок і контакт",
+     "en": "Feedback and contact"
+    },
+    {
+     "n": 8,
+     "pl": "Uwagi dotyczące dostępności oraz prośby o udostępnienie informacji w alternatywnej formie prosimy kierować na adres: hello@lapetitebloom.com. Postaramy się rozwiązać zgłoszony problem w rozsądnym terminie.",
+     "ua": "Зауваження щодо доступності та прохання надати інформацію в альтернативній формі просимо надсилати на адресу: hello@lapetitebloom.com. Ми намагатимемося вирішити повідомлену проблему в розумний строк.",
+     "en": "Please send comments on accessibility and requests to provide information in an alternative format to: hello@lapetitebloom.com. We will endeavour to resolve the reported problem within a reasonable time."
+    },
+    {
+     "n": 9,
+     "pl": "Data",
+     "ua": "Дата",
+     "en": "Date"
+    },
+    {
+     "n": 10,
+     "pl": "Deklaracja sporządzona dnia 24.06.2026; będzie aktualizowana w miarę wprowadzania zmian.",
+     "ua": "Декларацію складено 24.06.2026; вона оновлюватиметься в міру внесення змін.",
+     "en": "The statement was drawn up on 24.06.2026; it will be updated as changes are introduced."
+    }
+   ],
+   "notes": [
+    "«WCAG 2.1» и уровень «AA» не переводятся ни в UA, ни в EN — оставлены латиницей, как в оригинале и как требует глоссарий (раздел «Стандарты и рамки»).",
+    "Блок 4: «Europejski Akt o Dostępności» оставлен по-польски с коротким переводом в скобках при первом (и единственном) упоминании — «(Європейського акта про доступність)» / «(European Accessibility Act)». Замечание: это акт ЕС (директива 2019/882), а не польский закон; если редакция предпочтёт официальное название, в UA/EN правильнее «Європейський акт про доступність» / «European Accessibility Act» без польской формы. Решение за юристом.",
+    "Блок 4: утверждение о статусе микропредприятия («Jako mikroprzedsiębiorca») — юридически значимое основание освобождения. Проверить, что LPB Sp. z o.o. действительно соответствует определению микропредприятия, иначе заявление вводит в заблуждение. Плюс: с июня 2025 требования доступности в ЕС распространяются на e-commerce, и исключение для микропредприятий имеет ограниченный объём — место под юриста.",
+    "Блок 6 («Znane ograniczenia») не называет ни одного конкретного ограничения. По практике деклараций доступности здесь ожидается перечень нерешённых проблем и срок их устранения. Пробел в оригинале, не в переводе; переведено дословно.",
+    "Документ не содержит того, что обычно входит в декларацию: дату последнего аудита, метод оценки (самооценка / внешний аудит), процедуру подачи жалобы и надзорный орган. Если декларация должна выполнять формальную функцию, её нужно дополнять в оригинале — и только потом переводить.",
+    "Название документа: в глоссарии зафиксировано, что польская версия сейчас на сайте без диакритики («Deklaracja dostepnosci») — в файле исходника заголовок правильный, «DEKLARACJA DOSTĘPNOŚCI». При публикации PL-заголовок брать отсюда.",
+    "Блок 1 («data publikacji 24.06.2026») и блок 10 («Deklaracja sporządzona dnia 24.06.2026») дублируют одну и ту же дату в двух местах — сохранено как в оригинале. Дата будущая относительно текущего момента; сверить со всем пакетом документов.",
+    "Адрес kontakt@lapetitebloom.com — тот же, что в документах 4 и 7. По глоссарию на сайте параллельно живут hello@ и rodo@, а kontakt@ не указан ни в контактах, ни в футере. Перед публикацией убедиться, что ящик существует и обслуживается.",
+    "Терминология UA: «страна» → «сайт» (не «сторінка»), «osoby ze szczególnymi potrzebami» → «особи з особливими потребами» — устоявшаяся формулировка; апостроф везде типографский «’» («зв’язок», «зобов’язані»)."
+   ],
+   "applied_decisions": [
+    "kontakt@ → hello@ (решение заказчика)"
+   ]
+  }
+ ],
+ "total_blocks": 259
+}

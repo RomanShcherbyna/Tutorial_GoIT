@@ -69,9 +69,17 @@ def valid_ids(checklist):
     return ids
 
 
+def load_translations():
+    path = os.path.join(DATA, "translations.json")
+    if not os.path.exists(path):
+        return {"documents": [], "total_blocks": 0}
+    return json.load(open(path, encoding="utf-8"))
+
+
 init_db()
 CHECKLIST = load_checklist()
 VALID_IDS = valid_ids(CHECKLIST)
+TRANSLATIONS = load_translations()
 
 
 # --------------------------------------------------------------------------
@@ -131,6 +139,12 @@ def api_progress():
             "fixes": CHECKLIST["total_fixes"],
             "by_status": {s: sum(1 for v in page_status.values() if v == s)
                           for s in STATUSES}}
+
+
+@app.get("/api/translations")
+def api_translations():
+    """Documents block by block in PL / UA / EN, ready to copy out."""
+    return JSONResponse(TRANSLATIONS)
 
 
 # --------------------------------------------------------------------------

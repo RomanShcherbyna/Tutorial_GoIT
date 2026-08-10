@@ -54,6 +54,12 @@ PAGE_TITLES = {
     "/blog": "Блог — список",
     "/brands": "Бренды — список",
     "/special-offers": "Акции",
+    # Target pages the documents ask for — they do not exist on the site yet.
+    "/regulamin": "Регламент магазина — НОВАЯ страница",
+    "/polityka-prywatnosci": "Политика конфиденциальности — НОВАЯ страница",
+    "/zwroty-i-reklamacje": "Возвраты и рекламации — НОВАЯ страница",
+    "/dostawa-i-platnosci": "Доставка и оплата — НОВАЯ страница",
+    "/auth/forgot": "Восстановление пароля",
 }
 
 # Groups that are one fix applied to many pages.
@@ -82,13 +88,17 @@ EXCLUDED_REASON = ("Блог сейчас целиком на заглушках
 
 
 def norm_path(raw):
-    """One finding may name several pages or a locale-prefixed one."""
+    """One entry may name several pages, a locale-prefixed one, or carry a
+    parenthetical aside like "/checkout (расчёт доставки)"."""
     if not raw:
         return ""
     first = raw.split(",")[0].strip()
+    first = re.split(r"\s+(?:\(|→|->)", first)[0].strip()
     first = LOCALE_RE.sub("", first) or "/"
     first = first.split("?")[0].rstrip("/") or "/"
-    return first
+    # Some entries describe a location in prose ("подвал всех страниц",
+    # "(global JS) …") rather than naming a URL. Those are site-wide.
+    return first if first.startswith("/") else ""
 
 
 def classify(f, path):
@@ -122,6 +132,66 @@ def urls(path):
             "en": f"https://lapetitebloom.com/en{p}"}
 
 
+# The list is read as "on this page, fix 1, 2, 3", so every fix needs a short
+# imperative line. The audit wrote descriptions; this turns them into actions.
+ACTION_VERB = {
+    "STUB": "Заменить заглушку",
+    "MISSING": "Перевести",
+    "WRONG": "Переписать перевод",
+    "LEFTOVER": "Убрать чужой язык",
+    "TYPO": "Исправить опечатку",
+    "LEGAL": "Добавить по закону",
+    "BROKEN": "Починить ссылку",
+    "PUBLISH": "Выложить документ",
+    "CONFLICT": "Привести к документу",
+    "DEV": "Доработать",
+    "REMOVE": "Убрать",
+}
+
+
+def action_line(f):
+    """One line a developer can read off the list and act on."""
+    subject = (f.get("block") or f.get("why") or "").strip()
+    subject = re.split(r"\s+[—–]\s+", subject)[0]
+    subject = re.sub(r"\s+", " ", subject)
+    if len(subject) > 96:
+        subject = subject[:95].rstrip(" ,.;:") + "…"
+    verb = ACTION_VERB.get(f.get("issue", ""), "Исправить")
+    loc = (f.get("locale") or "all").lower()
+    where = "" if loc in ("all", "") else f" [{loc.upper()}]"
+    return f"{verb}{where} — {subject}" if subject else verb
+
+
+# Which of the client's documents govern which page.
+PAGE_DOCS = {
+    "/regulamin": ["Regulamin sklepu — выложить сюда, со старой /terms-of-use дать 301"],
+    "/polityka-prywatnosci": ["Polityka prywatności — выложить сюда, с /privacy-policy дать 301"],
+    "/zwroty-i-reklamacje": [
+        "Polityka zwrotów i reklamacji — выложить сюда; /warranty-and-returns "
+        "и подстраницы удалить с 301"],
+    "/dostawa-i-platnosci": ["Dostawa i płatności — выложить сюда, с /delivery-and-payment дать 301"],
+    "/terms-of-use": ["Regulamin sklepu → /regulamin"],
+    "/privacy-policy": ["Polityka prywatności → /polityka-prywatnosci"],
+    "/polityka-cookies": ["Polityka cookies → /polityka-cookies"],
+    "/warranty-and-returns": ["Polityka zwrotów i reklamacji → /zwroty-i-reklamacje"],
+    "/warranty-and-returns/polityka-zwrotow": ["Polityka zwrotów i reklamacji → /zwroty-i-reklamacje"],
+    "/warranty-and-returns/gwarancja-na-produkt": ["Polityka zwrotów i reklamacji → /zwroty-i-reklamacje"],
+    "/claims-and-complaints": ["Polityka zwrotów i reklamacji → /zwroty-i-reklamacje"],
+    "/delivery-and-payment": ["Dostawa i płatności → /dostawa-i-platnosci"],
+    "/zgody-klauzule-i-regulamin-newslettera": [
+        "Zgody i newsletter — НЕ публичная страница, страницу убрать"],
+    "/regulamin-kart-podarunkowych": [
+        "Regulamin kart podarunkowych — пока скрыть, карт нет в продаже"],
+    "/deklaracja-dostepnosci": ["Deklaracja dostępności → /deklaracja-dostepnosci"],
+    "/checkout": ["Zgody i newsletter — тексты чекбоксов",
+                  "Regulamin sklepu — ссылка в согласии",
+                  "Dostawa i płatności — способы и надбавка за COD"],
+    "/contacts": ["Regulamin sklepu §2 — реквизиты продавца"],
+    "__global__": ["Regulamin sklepu §2 — реквизиты в футере",
+                   "Все документы — ссылки в футере"],
+}
+
+
 def where_to_fix(f):
     note = (f.get("note") or "").strip()
     if note:
@@ -153,6 +223,7 @@ def fix_from_finding(f):
         "current": f.get("current", ""),
         "why": f.get("why", ""),
         "pl": f.get("pl", ""), "ua": f.get("ua", ""), "en": f.get("en", ""),
+        "action": action_line(f),
         "where": where_to_fix(f),
         "steps": [], "done_when": "", "note": "",
     }
@@ -171,6 +242,7 @@ def fix_from_doc_task(t):
         "current": t.get("current", ""),
         "why": t.get("target", ""),
         "pl": "", "ua": "", "en": "",
+        "action": t.get("title", ""),
         "where": t.get("doc", ""),
         "steps": t.get("steps", []),
         "done_when": t.get("done_when", ""),
@@ -205,8 +277,16 @@ def main():
     if doctasks_path and os.path.exists(doctasks_path):
         for t in json.load(open(doctasks_path, encoding="utf-8")):
             path = norm_path(t.get("path", ""))
-            key = path if path else "__docs__"
-            if key == "__docs__":
+            # The mapping agent sometimes describes a location in prose
+            # ("подвал всех страниц"); that is a site-wide fix, not a page.
+            if path and not path.startswith("/"):
+                path = ""
+            key = path if path else ("__global__" if t.get("path")
+                                     else "__docs__")
+            if key == "__global__":
+                title, desc = TEMPLATES["__global__"]
+                b = bucket(key, title, desc)
+            elif key == "__docs__":
                 b = bucket(key, "Публикация документов",
                            "Выложить документы заказчика и убрать старые страницы")
             else:
@@ -222,6 +302,8 @@ def main():
                          default=4)
         b["from_documents"] = sum(1 for x in b["fixes"]
                                   if x["source"] == "document")
+        b["documents"] = PAGE_DOCS.get(b["key"], [])
+        b["url_label"] = ("lapetitebloom.com" + b["path"]) if b["path"] else ""
 
     excluded = [b for b in buckets.values() if b["key"] in EXCLUDED_KEYS]
     groups = sorted((b for b in buckets.values() if b["key"] not in EXCLUDED_KEYS),
