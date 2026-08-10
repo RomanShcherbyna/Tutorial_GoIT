@@ -67,6 +67,36 @@ def dedupe(items):
     return out
 
 
+
+def apply_fixes(items, fix_dir):
+    """Overlay the native-speaker corrections onto the proposed copy."""
+    if not fix_dir or not os.path.isdir(fix_dir):
+        return items, {}
+    by_id = {f.get("id"): f for f in items}
+    applied = {}
+    for lang in ("pl", "ua", "en"):
+        path = os.path.join(fix_dir, f"{lang}.json")
+        if not os.path.exists(path):
+            continue
+        try:
+            fixes = json.load(open(path, encoding="utf-8"))
+        except Exception as e:  # noqa: BLE001
+            print(f"  !! {lang}.json: {e}")
+            continue
+        n = 0
+        for fx in fixes:
+            tgt = by_id.get(fx.get("id"))
+            if not tgt or not fx.get("corrected"):
+                continue
+            tgt[lang] = fx["corrected"]
+            tgt.setdefault("edits", []).append(
+                f"{lang.upper()}: {fx.get('reason', 'правка носителя')}")
+            n += 1
+        applied[lang] = n
+        print(f"  fixes {lang}: {n}/{len(fixes)} applied")
+    return items, applied
+
+
 def srt(items):
     return sorted(items, key=lambda f: (SEV_ORDER.get(f["severity"], 4),
                                         f.get("path", ""), f.get("id", "")))
@@ -113,6 +143,8 @@ def md_report(items, stats):
                         w(f"\n*{lab}:*\n\n```\n{f[lang]}\n```\n")
             if f.get("note"):
                 w(f"\n**Куда вписать / примечание:** {f['note']}\n")
+            if f.get("edits"):
+                w(f"\n*Правки носителей: {'; '.join(f['edits'])}*\n")
     w(summary.md_tail())
     return "\n".join(L)
 
@@ -326,6 +358,7 @@ table.company td{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 ul.plain{margin:.8rem 0;padding-left:1.1rem}
 ul.plain li{margin-bottom:.5rem;font-size:.93rem;color:var(--muted)}
 ul.plain b{color:var(--ink)}
+.edits{margin:.6rem 0 0;font-size:.78rem;color:var(--muted);font-style:italic}
 .outro{margin:3rem 0 0;padding-top:1.5rem;border-top:2px solid var(--ink)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 """
@@ -388,6 +421,7 @@ def html_report(items, stats):
     {f'<p class="why">{esc(f.get("why"))}</p>' if f.get("why") else ""}
     {lanes_html}
     {f'<p class="note"><b>Куда вписать</b><br>{esc(f.get("note"))}</p>' if f.get("note") else ""}
+    {f'<p class="edits">{esc("; ".join(f.get("edits", [])))}</p>' if f.get("edits") else ""}
   </div>
 </section>""")
 
@@ -439,8 +473,11 @@ def html_report(items, stats):
 
 def main():
     fdir, odir = sys.argv[1], sys.argv[2]
+    fixdir = sys.argv[3] if len(sys.argv) > 3 else None
     print("loading findings:")
     items = dedupe(load(fdir))
+    print("applying native-speaker corrections:")
+    items, applied = apply_fixes(items, fixdir)
     items = srt(items)
     stats = {
         "pages": 54,
