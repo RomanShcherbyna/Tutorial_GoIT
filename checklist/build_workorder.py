@@ -31,6 +31,87 @@ FULL_PAGES = {
     "/deklaracja-dostepnosci",
 }
 
+# Groups whose every item disappears the moment the page above is replaced.
+#
+# The audit found these before the documents arrived, so the same page shows up
+# twice: once as a finished text in part 1, once as a list of paragraph fixes
+# below. Repeating the second list is worse than useless — it reads as extra
+# work that is in fact already done by the replacement.
+#
+# Four of them are the same eight pages under a Polish slug the audit proposed
+# before the client ruled that addresses do not change. "__docs__" holds the
+# translator's notes on the consents document. The /warranty-and-returns trio
+# is being taken down, so its paragraphs are not worth fixing.
+COVERED_BY_DOCS = {
+    "/polityka-prywatnosci", "/regulamin", "/zwroty-i-reklamacje",
+    "/dostawa-i-platnosci", "__docs__",
+    "/warranty-and-returns", "/warranty-and-returns/polityka-zwrotow",
+    "/warranty-and-returns/gwarancja-na-produkt",
+}
+
+# Pages copied from another brand, carrying French consumer law. They are not
+# edited — they come down, in all three locales.
+UNPUBLISH = [
+    "https://lapetitebloom.com/warranty-and-returns",
+    "https://lapetitebloom.com/warranty-and-returns/polityka-zwrotow",
+    "https://lapetitebloom.com/warranty-and-returns/gwarancja-na-produkt",
+    "https://lapetitebloom.com/ua/warranty-and-returns",
+    "https://lapetitebloom.com/ua/warranty-and-returns/polityka-zwrotow",
+    "https://lapetitebloom.com/ua/warranty-and-returns/gwarancja-na-produkt",
+    "https://lapetitebloom.com/en/warranty-and-returns",
+    "https://lapetitebloom.com/en/warranty-and-returns/polityka-zwrotow",
+    "https://lapetitebloom.com/en/warranty-and-returns/gwarancja-na-produkt",
+]
+
+# The handful of things the finished text cannot decide for you. Everything
+# else the audit raised about these documents is already resolved inside them.
+OPEN = [
+    ("Сколько именно стоит наложенный платёж?",
+     "В регламенте и в документе о доставке стоит «+20–23 zł». Цена доставки "
+     "по закону должна быть указана точно, до оформления заказа. Вилку "
+     "верификатор Przelewy24 не пропустит.",
+     "Регламент §7.1 · Доставка и оплата"),
+    ("Порог бесплатной доставки 500 zł считается до скидки или после?",
+     "«Dostawa jest bezpłatna od 500 zł» не говорит, от какой суммы. При "
+     "промокоде покупатель и магазин посчитают по-разному — это спор о цене.",
+     "Доставка и оплата"),
+    ("Чем возим за границу?",
+     "В документах заграничная доставка описана только через DHL. В обсуждении "
+     "звучали Nova Poshta и Meest для Украины. Что из этого правда — от этого "
+     "зависит и текст, и сроки.",
+     "Регламент §7.1 · Доставка и оплата"),
+    ("С какого дня действует документ о доставке?",
+     "У регламента, политики возвратов и согласий стоит 24.06.2026. У доставки "
+     "и оплаты даты нет вообще. Либо ставим ту же, либо свою.",
+     "Доставка и оплата"),
+    ("24.06.2026 — это по-прежнему верная дата вступления в силу?",
+     "Она проставлена в четырёх документах. Сегодня 10.08.2026 — дата уже "
+     "прошла. Если публикуем сейчас, её надо либо оставить как дату редакции, "
+     "либо заменить на дату публикации.",
+     "Регламент · Возвраты · Согласия · Cookies"),
+    ("Адрес бутика и адрес для возвратов — это один и тот же адрес?",
+     "В документах фигурируют ul. Mokotowska 51/53 (бутик) и ul. Marcina "
+     "Kasprzaka 31/119 (регистрация компании). Куда покупатель шлёт посылку — "
+     "должно быть сказано одним адресом и в документе, и в письме, и во "
+     "вкладыше в посылку.",
+     "Регламент §2 · Возвраты и рекламации"),
+    ("USP-бар обещает возврат больше 14 дней — это отдельная акция магазина?",
+     "В регламенте право на отказ — 14 дней по закону. В полосе преимуществ на "
+     "сайте заявлен больший срок. Если это ваша добрая воля, её надо записать "
+     "в регламент; если нет — убрать с сайта.",
+     "Регламент §8.1 · полоса преимуществ на всех страницах"),
+    ("Два согласия на маркетинг — оставляем оба?",
+     "Чекбоксы в блоках 8 и 9 документа о согласиях покрывают, по сути, одну и "
+     "ту же обработку. Лишний чекбокс снижает конверсию и вызывает вопросы у "
+     "проверяющего.",
+     "Согласия и newsletter"),
+    ("Какие адреса почты работают на самом деле?",
+     "Документы используют kontakt@ и rodo@, на сайте указан hello@. Адрес, по "
+     "которому отзывают согласие и подают запрос по GDPR, обязан существовать "
+     "и отвечать.",
+     "Все документы · Контакты"),
+]
+
 OWNER_STYLE = {"dev": "o-dev", "content": "o-content", "catalog": "o-catalog"}
 
 KIND = {
@@ -121,7 +202,7 @@ def attach_crops(groups, crops_dir):
 def collect_partial(checklist):
     out = []
     for g in checklist["groups"]:
-        if g.get("path") in FULL_PAGES:
+        if g.get("path") in FULL_PAGES or g.get("key") in COVERED_BY_DOCS:
             continue
         items = [dict(f, _kind=kind_of(f)) for f in g["fixes"]]
         out.append({**g, "items": items})
@@ -207,6 +288,9 @@ ol.items>li:first-child{border-top:0}
 .lang3 h4{margin:0 0 .25rem;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
  color:var(--accent);font-weight:700}
 .why{margin:.35rem 0 0;font-size:.85rem;color:var(--muted)}
+ul.urls{margin:.9rem 0 0;padding-left:1.1rem}
+ul.urls li{margin:.2rem 0}
+ul.urls code{font-size:.82rem;word-break:break-all}
 .owner{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
  border:1px solid currentColor;padding:.05rem .4rem;white-space:nowrap}
 .o-dev{color:var(--accent)} .o-content{color:var(--now)} .o-catalog{color:#8a6a1f}
@@ -409,6 +493,56 @@ def partial_block(g):
 </section>"""
 
 
+def unpublish_block():
+    rows = "".join(f"<li><code>{esc(u)}</code></li>" for u in UNPUBLISH)
+    return f"""
+<section class="doc closed" data-owners="dev">
+  <header class="dochead">
+    <span class="arrow">▸</span>
+    <span class="dtitle">Снять с публикации — старые страницы возвратов</span>
+    <span class="owner o-dev">Программисты</span>
+    <span class="dmeta">{len(UNPUBLISH)} адресов</span>
+  </header>
+  <div class="docbody">
+    <p class="why">На этих страницах стоит французское потребительское право
+      (L.221-18, L.221-24, Code civil 1641–1649) — текст скопирован у другого
+      бренда и к польскому магазину отношения не имеет. Заменять его не нужно:
+      всё, что должно там быть, уже лежит в готовых документах «Политика
+      возвратов и рекламаций» и «Регламент магазина». Страницы убираются
+      и вычёркиваются из sitemap. Редиректы не нужны — сайт закрыт от
+      индексации.</p>
+    <ul class="urls">{rows}</ul>
+  </div>
+</section>"""
+
+
+def open_block():
+    items = "".join(f"""
+<li data-owner="content">
+  <div class="ihead"><span class="inum"></span>
+    <span class="owner o-content">Наш контент</span>
+    <span class="ikind k-do">Решить</span>
+    <span class="iact">{esc(q)}</span></div>
+  <p class="fld"><b>Где</b> {esc(where)}</p>
+  <p class="fld"><b>Почему</b> {esc(why)}</p>
+</li>""" for q, why, where in OPEN)
+    return f"""
+<section class="doc" data-owners="content">
+  <header class="dochead">
+    <span class="arrow">▸</span>
+    <span class="dtitle">Решить до публикации</span>
+    <span class="owner o-content">Наш контент</span>
+    <span class="dmeta">{len(OPEN)} вопросов</span>
+  </header>
+  <div class="docbody">
+    <p class="why">Это не правки текста — это то, чего в документах нет или
+      сказано двумя способами. Ответьте, и мы допишем в файлы; без ответа
+      публиковать нельзя.</p>
+    <ol class="items">{items}</ol>
+  </div>
+</section>"""
+
+
 def main():
     cl_path, tr_path, pages_dir, out_path = sys.argv[1:5]
     checklist = json.load(open(cl_path, encoding="utf-8"))
@@ -450,11 +584,22 @@ def main():
     в редактор страницы.</p>
   {''.join(full_block(p, i) for i, p in enumerate(full))}
 
-  <h2 class="sec">2. Поменять по абзацам — {len(partial)} страниц, {n_items} правок</h2>
+  <h2 class="sec">2. Снять с публикации</h2>
+  <p class="secnote">Страницы, которые не правятся, а убираются: их содержимое
+    перекрыто готовыми документами из первой части.</p>
+  {unpublish_block()}
+
+  <h2 class="sec">3. Поменять по абзацам — {len(partial)} страниц, {n_items} правок</h2>
   <p class="secnote">Здесь готового документа нет, поэтому меняется не вся
     страница, а отдельные места. У каждой правки свой номер: слева то, что
-    стоит на странице сейчас, справа то, что должно стать, на трёх языках.</p>
+    стоит на странице сейчас, справа то, что должно стать, на трёх языках.
+    Страницы из первой части сюда не попадают — их правки уже внесены
+    в готовый текст.</p>
   {''.join(partial_block(g) for g in partial)}
+
+  <h2 class="sec">4. Решить до публикации — {len(OPEN)} вопросов</h2>
+  <p class="secnote">Вопросы к вам, а не задание программистам.</p>
+  {open_block()}
 </div>
 <button class="btn" id="totop" type="button">↑ Наверх</button>
 <script>{JS}</script>"""
