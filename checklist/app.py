@@ -55,27 +55,42 @@ def init_db():
 def load_checklist():
     path = os.path.join(DATA, "checklist.json")
     if not os.path.exists(path):
-        return {"total": 0, "tasks": [], "areas": [], "severities": [],
-                "issues": [], "claims": []}
+        return {"total_pages": 0, "total_fixes": 0, "groups": [],
+                "severities": [], "issues": [], "claims": []}
     return json.load(open(path, encoding="utf-8"))
+
+
+def valid_ids(checklist):
+    """A page and any single fix inside it can both be ticked off."""
+    ids = set()
+    for g in checklist.get("groups", []):
+        ids.add(g["key"])
+        ids.update(f["id"] for f in g.get("fixes", []))
+    return ids
 
 
 init_db()
 CHECKLIST = load_checklist()
+VALID_IDS = valid_ids(CHECKLIST)
 
 
 # --------------------------------------------------------------------------
+BLANK = {"status": "todo", "comment": "", "updated_by": "", "updated_at": ""}
+
+
 @app.get("/api/checklist")
 def api_checklist():
-    """Tasks plus their current status, in one round trip."""
+    """Pages, their fixes, and every current status in one round trip."""
     with closing(db()) as c:
         state = {r["task_id"]: dict(r)
                  for r in c.execute("SELECT * FROM task_state")}
     data = dict(CHECKLIST)
-    data["tasks"] = [
-        {**t, "state": state.get(t["id"], {"status": "todo", "comment": "",
-                                           "updated_by": "", "updated_at": ""})}
-        for t in CHECKLIST["tasks"]
+    data["groups"] = [
+        {**g,
+         "state": state.get(g["key"], dict(BLANK)),
+         "fixes": [{**f, "state": state.get(f["id"], dict(BLANK))}
+                   for f in g["fixes"]]}
+        for g in CHECKLIST["groups"]
     ]
     data["documents"] = list_documents()
     return JSONResponse(data)
@@ -86,7 +101,7 @@ def api_set_state(task_id: str, payload: dict = Body(...)):
     status = payload.get("status", "todo")
     if status not in STATUSES:
         raise HTTPException(400, f"unknown status: {status}")
-    if not any(t["id"] == task_id for t in CHECKLIST["tasks"]):
+    if task_id not in VALID_IDS:
         raise HTTPException(404, f"unknown task: {task_id}")
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
     with closing(db()) as c:
@@ -106,12 +121,16 @@ def api_set_state(task_id: str, payload: dict = Body(...)):
 
 @app.get("/api/progress")
 def api_progress():
+    """Progress is counted in pages — that is the unit the team works in."""
+    keys = {g["key"] for g in CHECKLIST["groups"]}
     with closing(db()) as c:
-        rows = list(c.execute(
-            "SELECT status, COUNT(*) n FROM task_state GROUP BY status"))
-    counts = {r["status"]: r["n"] for r in rows}
-    done = counts.get("done", 0) + counts.get("skip", 0)
-    return {"total": CHECKLIST["total"], "done": done, "by_status": counts}
+        rows = list(c.execute("SELECT task_id, status FROM task_state"))
+    page_status = {r["task_id"]: r["status"] for r in rows if r["task_id"] in keys}
+    closed = sum(1 for s in page_status.values() if s in ("done", "skip"))
+    return {"pages": CHECKLIST["total_pages"], "pages_done": closed,
+            "fixes": CHECKLIST["total_fixes"],
+            "by_status": {s: sum(1 for v in page_status.values() if v == s)
+                          for s in STATUSES}}
 
 
 # --------------------------------------------------------------------------
@@ -145,7 +164,7 @@ def get_document(path: str):
 
 @app.get("/health")
 def health():
-    return {"ok": True, "tasks": CHECKLIST["total"]}
+    return {"ok": True, "pages": CHECKLIST["total_pages"], "fixes": CHECKLIST["total_fixes"]}
 
 
 @app.get("/", response_class=HTMLResponse)
