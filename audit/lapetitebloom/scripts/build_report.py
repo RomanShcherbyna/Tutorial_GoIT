@@ -51,10 +51,17 @@ def load(findings_dir):
 
 
 def dedupe(items):
+    """Drop only true duplicates.
+
+    Two reviewers quoting the same broken text about different blocks are two
+    findings, not one, so the block is part of the identity — keying on the
+    quote alone silently swallowed whole ready-to-paste blocks.
+    """
     seen, out = {}, []
     for f in items:
         key = (f.get("path", ""), (f.get("current") or "")[:120].strip().lower(),
-               f.get("issue"))
+               f.get("issue"), (f.get("block") or "")[:80].strip().lower(),
+               (f.get("pl") or "")[:80].strip().lower())
         if key in seen and (f.get("current") or "").strip():
             # keep the richer record
             old = seen[key]
