@@ -31,6 +31,8 @@ FULL_PAGES = {
     "/deklaracja-dostepnosci",
 }
 
+OWNER_STYLE = {"dev": "o-dev", "content": "o-content", "catalog": "o-catalog"}
+
 KIND = {
     "replace": ("Заменить", "Такой текст стоит на странице сейчас — его меняем"),
     "add": ("Добавить", "Этого на странице нет, надо дописать"),
@@ -90,6 +92,22 @@ def collect_full(pages_dir, tr):
         out.append({"slug": slug, "title": doc["title"], "urls": page,
                     "langs": langs, "ui": ui, "ui_title": doc.get("ui_title", "")})
     return out
+
+
+OWNER_NAMES = [("dev", "Программисты"), ("content", "Наш контент"),
+               ("catalog", "Каталог / BaseLinker")]
+
+
+def attach_shots(groups, gallery_dir):
+    """A screenshot answers "это где?" faster than any description."""
+    import base64
+    for g in groups:
+        path = (g.get("path") or "").lstrip("/") or "index"
+        f = os.path.join(gallery_dir, "pl", path.replace("/", "__") + ".jpg")
+        if os.path.exists(f):
+            g["shot"] = ("data:image/jpeg;base64,"
+                         + base64.b64encode(open(f, "rb").read()).decode())
+    return groups
 
 
 def collect_partial(checklist):
@@ -181,6 +199,25 @@ ol.items>li:first-child{border-top:0}
 .lang3 h4{margin:0 0 .25rem;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
  color:var(--accent);font-weight:700}
 .why{margin:.35rem 0 0;font-size:.85rem;color:var(--muted)}
+.owner{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+ border:1px solid currentColor;padding:.05rem .4rem;white-space:nowrap}
+.o-dev{color:var(--accent)} .o-content{color:var(--now)} .o-catalog{color:#8a6a1f}
+:root:not([data-theme="light"]) .o-catalog{color:#e0c37a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .o-catalog{color:#e0c37a}}
+:root[data-theme="dark"] .o-catalog{color:#e0c37a}
+.see{margin:.3rem 0 .1rem;font-size:.82rem;color:var(--muted)}
+.see b{font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink)}
+.see a{color:var(--accent);font-family:ui-monospace,Menlo,monospace;font-size:.76rem;
+ text-decoration:none;border-bottom:1px solid var(--line);margin-right:.4rem}
+.see a:hover{border-color:var(--accent)}
+.shotbox{margin:.2rem 0 .9rem;border:1px solid var(--hair);background:var(--sunken)}
+.shotbox summary{cursor:pointer;padding:.45rem .7rem;font-size:.8rem;color:var(--muted)}
+.shotbox summary:hover{color:var(--ink)}
+.shotbox img{display:block;width:100%;max-width:380px;height:auto;margin:.2rem .7rem .7rem;
+ border:1px solid var(--line);background:#fff}
+.legend{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0 0;font-size:.83rem;
+ color:var(--muted)}
+.legend div{display:flex;gap:.4rem;align-items:baseline}
 #totop{position:fixed;right:1rem;bottom:1rem;z-index:30;background:var(--surface);
  box-shadow:0 1px 6px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .2s}
 #totop.on{opacity:1;pointer-events:auto}
@@ -205,6 +242,21 @@ document.addEventListener('click', function (e) {
     });
     [].forEach.call(body.querySelectorAll('.pane'), function (p) {
       p.classList.toggle('on', p.dataset.lang === tab.dataset.lang);
+    });
+    return;
+  }
+  var own = e.target.closest('.toolbar .btn[data-own]');
+  if (own) {
+    [].forEach.call(document.querySelectorAll('.toolbar .btn[data-own]'), function (b) {
+      b.setAttribute('aria-selected', String(b === own));
+    });
+    var k = own.dataset.own;
+    [].forEach.call(document.querySelectorAll('ol.items > li'), function (li) {
+      li.hidden = k !== 'all' && li.dataset.owner !== k;
+    });
+    [].forEach.call(document.querySelectorAll('.doc'), function (d) {
+      var any = d.querySelector('ol.items > li:not([hidden])');
+      d.hidden = !!d.querySelector('ol.items') && !any;
     });
     return;
   }
@@ -289,11 +341,23 @@ def item_block(f):
                 f'<div class="now"><b>Стало</b>{lang_html}</div></div>')
     elif k == "add":
         swap = f'<div class="swap"><div class="now"><b>Добавить</b>{lang_html}</div></div>'
+    owner = f.get("owner", "dev")
+    badge = (f'<span class="owner {OWNER_STYLE[owner]}">'
+             f'{esc(f.get("owner_label",""))}</span>')
+    see = f.get("see_values") or f.get("see") or []
+    see_html = ""
+    if see:
+        see_html = ('<p class="see"><b>Где посмотреть</b> ' + " ".join(
+            f'<a href="{esc(u)}" target="_blank" rel="noopener">'
+            f'{esc(u.replace("https://lapetitebloom.com", "") or "/")}</a>'
+            for u in see[:4]) + "</p>")
     return f"""
-<li>
+<li data-owner="{esc(owner)}">
   <div class="ihead"><span class="inum"></span>
+    {badge}
     <span class="ikind k-{k}">{esc(label)}</span>
     <span class="iact">{esc(f.get('action') or f.get('title'))}</span></div>
+  {see_html}
   {swap}
   {f'<p class="why">{esc(f.get("why"))}</p>' if f.get('why') and k == 'do' else ''}
 </li>"""
@@ -305,16 +369,26 @@ def partial_block(g):
         counts[f["_kind"]] = counts.get(f["_kind"], 0) + 1
     meta = " · ".join(f"{KIND[k][0].lower()}: {n}" for k, n in counts.items())
     url = g.get("url_label", "")
+    owners = "".join(f'<span class="owner {OWNER_STYLE[o]}">'
+                     f'{esc(dict(d for d in OWNER_NAMES)[o])}</span>'
+                     for o in g.get("owners", []))
+    shot = ""
+    if g.get("shot"):
+        shot = (f'<details class="shotbox"><summary>Как эта страница выглядит '
+                f'сейчас</summary><img loading="lazy" src="{g["shot"]}" '
+                f'alt="{esc(g["title"])} — снимок страницы"></details>')
     return f"""
-<section class="doc closed">
+<section class="doc closed" data-owners="{esc(' '.join(g.get('owners', [])))}">
   <header class="dochead">
     <span class="arrow">▸</span>
     <span class="dtitle">{esc(g['title'])}</span>
     {f'<code class="durl">{esc(url)}</code>' if url else ''}
+    {owners}
     <span class="dmeta">{g['count']} правок · {meta}</span>
   </header>
   <div class="docbody">
     {f'<p class="why">{esc(g["desc"])}</p>' if g.get('desc') else ''}
+    {shot}
     <ol class="items">{''.join(item_block(f) for f in g['items'])}</ol>
   </div>
 </section>"""
@@ -326,7 +400,8 @@ def main():
     tr = json.load(open(tr_path, encoding="utf-8"))
 
     full = collect_full(pages_dir, tr)
-    partial = collect_partial(checklist)
+    partial = attach_shots(collect_partial(checklist),
+                           os.environ.get("GALLERY_DIR", ""))
     n_items = sum(len(g["items"]) for g in partial)
 
     doc = f"""<title>La Petite Bloom — что менять на сайте</title>
@@ -339,7 +414,18 @@ def main():
       заменяется целиком — берёте файл и вставляете. Там, где документа нет,
       меняются отдельные абзацы, и на каждый показано что стоит сейчас и что
       должно стать, на трёх языках. Адреса страниц не меняются.</p>
-    <div class="toolbar"><button class="btn" id="theme" type="button">Тема</button></div>
+    <div class="toolbar">
+      <button class="btn" data-own="all" aria-selected="true">Все правки</button>
+      <button class="btn" data-own="dev" aria-selected="false">Программистам</button>
+      <button class="btn" data-own="content" aria-selected="false">Наш контент</button>
+      <button class="btn" data-own="catalog" aria-selected="false">Каталог / BaseLinker</button>
+      <button class="btn" id="theme" type="button">Тема</button>
+    </div>
+    <div class="legend">
+      <div><span class="owner o-dev">Программисты</span> шаблон, ссылки, строки движка</div>
+      <div><span class="owner o-content">Наш контент</span> меню, акции, баннеры — пишем сами</div>
+      <div><span class="owner o-catalog">Каталог / BaseLinker</span> значения атрибутов и товары</div>
+    </div>
   </header>
 
   <h2 class="sec">1. Заменить целиком — {len(full)} страниц</h2>
