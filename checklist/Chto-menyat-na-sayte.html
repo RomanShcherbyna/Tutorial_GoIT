@@ -1577,16 +1577,18 @@ ul.urls code{font-size:.82rem;word-break:break-all}
     
     <ol class="items">
 <li data-owner="dev" data-id="12-01"
-    data-act="Переписать перевод [PL,UA,EN] — Walidacja formularzy">
+    data-act="Свести к одной строке [PL,UA,EN] — сообщение о пустом обязательном поле">
   <div class="ihead"><span class="inum"></span>
     <span class="owner o-dev">Программисты</span>
     <span class="ikind k-replace">Заменить</span>
-    <span class="iact">Переписать перевод [PL,UA,EN] — Walidacja formularzy</span></div>
-  <p class="fld"><b>Где</b> Walidacja formularzy — komunikat dla pustego pola wymaganego (klucz validate.required)</p>
-  <p class="see"><b>Где посмотреть</b> <a href="https://lapetitebloom.com/auth/register" target="_blank" rel="noopener">/auth/register</a> <a href="https://lapetitebloom.com/checkout" target="_blank" rel="noopener">/checkout</a> <a href="https://lapetitebloom.com/auth/forgot" target="_blank" rel="noopener">/auth/forgot</a></p>
-  <p class="fld"><b>Почему</b> Это универсальный текст для ЛЮБОГО незаполненного обязательного поля, а написан он про пароль. В чекауте покупатель, не заполнив имя, телефон, город или индекс, увидит «Podaj hasło ponownie» / «Enter password again». Это прямая потеря заказов и провал ручной проверки формы верификатором Przelewy24. Одинаково сломано во всех трёх локалях. Где увидеть: откройте /auth/register или /checkout, оставьте любое поле пустым и нажмите отправку — под полем встанет «Podaj hasło ponownie». Строка одна на всю форму, ключ validate.required, лежит в языковых файлах движка, не в контенте.</p>
+    <span class="iact">Свести к одной строке [PL,UA,EN] — сообщение о пустом обязательном поле</span></div>
+  <p class="fld"><b>Где</b> Walidacja formularzy — trzy różne komunikaty o pustym polu wymaganym</p>
+  <p class="see"><b>Где посмотреть</b> <a href="https://lapetitebloom.com/auth/register" target="_blank" rel="noopener">/auth/register</a> <a href="https://lapetitebloom.com/checkout" target="_blank" rel="noopener">/checkout</a></p>
+  <p class="fld"><b>Почему</b> ИСПРАВЛЕНО ПО ВАШЕМУ СНИМКУ. Аудит утверждал, что ключ validate.required отдаёт «Podaj hasło ponownie» для любого пустого поля — снимок формы регистрации это опроверг: у имени и фамилии стоит правильное «To pole jest wymagane.». Остаётся меньшее: одно и то же событие описано тремя способами. У имени — констатация с точкой, у почты — та же констатация без точки и с названием поля внутри, у пароля — повеление «Podaj hasło». Три строки под тремя полями одной формы читаются как три разные ошибки. Достаточно одной строки на все поля.</p>
   
-  <div class="swap"><div class="was"><b>Было на странице</b><pre>pl: &quot;Podaj hasło ponownie&quot; | ua: &quot;Вкажіть пароль ще раз&quot; | en: &quot;Enter password again&quot;</pre></div><div class="now"><b>Стало</b><div class="lang3"><div><h4>Polski</h4><pre>To pole jest wymagane</pre></div><div><h4>Українська</h4><pre>Це поле обов’язкове</pre></div><div><h4>English</h4><pre>This field is required</pre></div></div></div></div>
+  <div class="swap"><div class="was"><b>Было на странице</b><pre>Imię, Nazwisko: «To pole jest wymagane.»
+Adres e-mail: «Pole E-mail jest wymagane»
+Hasło: «Podaj hasło»</pre></div><div class="now"><b>Стало</b><div class="lang3"><div><h4>Polski</h4><pre>To pole jest wymagane.</pre></div><div><h4>Українська</h4><pre>Це поле обов’язкове.</pre></div><div><h4>English</h4><pre>This field is required.</pre></div></div></div></div>
   
 <div class="verdict" data-for="12-01">
   <div class="vrow">

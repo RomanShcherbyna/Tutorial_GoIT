@@ -5,7 +5,7 @@
   {
    "key": "blocker",
    "label": "Блокер",
-   "count": 50
+   "count": 49
   },
   {
    "key": "high",
@@ -675,18 +675,18 @@
     {
      "id": "12-01",
      "source": "audit",
-     "severity": "blocker",
-     "severity_label": "Блокер",
+     "severity": "low",
+     "severity_label": "Мелочь",
      "issue": "WRONG",
      "issue_label": "Кривой перевод",
      "locale": "pl,ua,en",
-     "title": "Walidacja formularzy — komunikat dla pustego pola wymaganego (klucz validate.required)",
-     "current": "pl: \"Podaj hasło ponownie\" | ua: \"Вкажіть пароль ще раз\" | en: \"Enter password again\"",
-     "why": "Это универсальный текст для ЛЮБОГО незаполненного обязательного поля, а написан он про пароль. В чекауте покупатель, не заполнив имя, телефон, город или индекс, увидит «Podaj hasło ponownie» / «Enter password again». Это прямая потеря заказов и провал ручной проверки формы верификатором Przelewy24. Одинаково сломано во всех трёх локалях. Где увидеть: откройте /auth/register или /checkout, оставьте любое поле пустым и нажмите отправку — под полем встанет «Podaj hasło ponownie». Строка одна на всю форму, ключ validate.required, лежит в языковых файлах движка, не в контенте.",
-     "pl": "To pole jest wymagane",
-     "ua": "Це поле обов’язкове",
-     "en": "This field is required",
-     "action": "Переписать перевод [PL,UA,EN] — Walidacja formularzy",
+     "title": "Walidacja formularzy — trzy różne komunikaty o pustym polu wymaganym",
+     "current": "Imię, Nazwisko: «To pole jest wymagane.»\nAdres e-mail: «Pole E-mail jest wymagane»\nHasło: «Podaj hasło»",
+     "why": "ИСПРАВЛЕНО ПО ВАШЕМУ СНИМКУ. Аудит утверждал, что ключ validate.required отдаёт «Podaj hasło ponownie» для любого пустого поля — снимок формы регистрации это опроверг: у имени и фамилии стоит правильное «To pole jest wymagane.». Остаётся меньшее: одно и то же событие описано тремя способами. У имени — констатация с точкой, у почты — та же констатация без точки и с названием поля внутри, у пароля — повеление «Podaj hasło». Три строки под тремя полями одной формы читаются как три разные ошибки. Достаточно одной строки на все поля.",
+     "pl": "To pole jest wymagane.",
+     "ua": "Це поле обов’язкове.",
+     "en": "This field is required.",
+     "action": "Свести к одной строке [PL,UA,EN] — сообщение о пустом обязательном поле",
      "steps": [],
      "done_when": "",
      "note": "",
@@ -694,8 +694,7 @@
      "owner_label": "Программисты",
      "see": [
       "https://lapetitebloom.com/auth/register",
-      "https://lapetitebloom.com/checkout",
-      "https://lapetitebloom.com/auth/forgot"
+      "https://lapetitebloom.com/checkout"
      ]
     },
     {
