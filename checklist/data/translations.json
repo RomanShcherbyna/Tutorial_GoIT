@@ -16,9 +16,9 @@
     },
     {
      "n": 2,
-     "pl": "LPB Sp. z o.o. · www.lapetitebloom.com · obowiązuje od dnia 24.06.2026",
-     "ua": "LPB Sp. z o.o. · www.lapetitebloom.com · чинні з 24.06.2026",
-     "en": "LPB Sp. z o.o. · www.lapetitebloom.com · in force from 24.06.2026"
+     "pl": "LPB Sp. z o.o. · www.lapetitebloom.com · obowiązuje od dnia 01.09.2026 · wersja 1.0",
+     "ua": "LPB Sp. z o.o. · www.lapetitebloom.com · чинні з 01.09.2026 · версія 1.0",
+     "en": "LPB Sp. z o.o. · www.lapetitebloom.com · in force from 01.09.2026 · version 1.0"
     },
     {
      "n": 3,
@@ -100,9 +100,9 @@
     },
     {
      "n": 16,
-     "pl": "- Zwroty i reklamacje – hello@lapetitebloom.com (opcjonalnie alias zwroty@/reklamacje@)",
-     "ua": "- Повернення та рекламації – hello@lapetitebloom.com (опційно аліас zwroty@/reklamacje@)",
-     "en": "- [[Returns and complaints|https://lapetitebloom.com/en/claims-and-complaints]] – hello@lapetitebloom.com (optionally the alias zwroty@/reklamacje@)"
+     "pl": "- Zwroty i reklamacje – hello@lapetitebloom.com",
+     "ua": "- Повернення та рекламації – hello@lapetitebloom.com",
+     "en": "- [[Returns and complaints|https://lapetitebloom.com/en/claims-and-complaints]] – hello@lapetitebloom.com"
     },
     {
      "n": 17,
@@ -262,9 +262,9 @@
     },
     {
      "n": 43,
-     "pl": "- Kurier InPost / DPD – 17 zł; za pobraniem +20–23 zł;",
-     "ua": "- Кур’єр InPost / DPD – 17 zł; післяплата +20–23 zł;",
-     "en": "- InPost / DPD courier – 17 zł; cash on delivery +20–23 zł;"
+     "pl": "- Kurier InPost / DPD – 17 zł; za pobraniem +23 zł;",
+     "ua": "- Кур’єр InPost / DPD – 17 zł; післяплата +23 zł;",
+     "en": "- InPost / DPD courier – 17 zł; cash on delivery +23 zł;"
     },
     {
      "n": 44,
@@ -280,9 +280,9 @@
     },
     {
      "n": 46,
-     "pl": "2. Dostawa jest bezpłatna dla zamówień opłaconych z góry o wartości od 500 zł (Paczkomat i kurier). Płatność za pobraniem jest zawsze dodatkowo płatna.",
-     "ua": "2. Доставка є безкоштовною для замовлень, оплачених наперед, вартістю від 500 zł (поштомат і кур’єр). Післяплата завжди оплачується додатково.",
-     "en": "2. Delivery is free of charge for orders paid in advance with a value from 500 zł (parcel locker and courier). Cash on delivery is always payable in addition."
+     "pl": "2. Dostawa jest bezpłatna dla zamówień opłaconych z góry o wartości od 500 zł, liczonej od wartości koszyka po uwzględnieniu rabatów (Paczkomat i kurier). Płatność za pobraniem jest zawsze dodatkowo płatna.",
+     "ua": "2. Доставка є безкоштовною для замовлень, оплачених наперед, вартістю від 500 zł, що рахується від вартості кошика після врахування знижок (поштомат і кур’єр). Післяплата завжди оплачується додатково.",
+     "en": "2. Delivery is free of charge for orders paid in advance with a value from 500 zł, counted from the cart value after discounts have been applied (parcel locker and courier). Cash on delivery is always payable in addition."
     },
     {
      "n": 47,
@@ -729,9 +729,9 @@
    "blocks": [
     {
      "n": 1,
-     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
-     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
-     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 24.06.2026"
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 01.09.2026 · wersja 1.0",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 01.09.2026 · версія 1.0",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 01.09.2026 · version 1.0"
     },
     {
      "n": 2,
@@ -1092,9 +1092,9 @@
    "blocks": [
     {
      "n": 1,
-     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
-     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
-     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 24.06.2026"
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 01.09.2026 · wersja 1.0",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 01.09.2026 · версія 1.0",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 01.09.2026 · version 1.0"
     },
     {
      "n": 2,
@@ -1252,9 +1252,9 @@
    "blocks": [
     {
      "n": 1,
-     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
-     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
-     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 24.06.2026"
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 01.09.2026 · wersja 1.0",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 01.09.2026 · версія 1.0",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 01.09.2026 · version 1.0"
     },
     {
      "n": 2,
@@ -1465,9 +1465,9 @@
    "blocks": [
     {
      "n": 1,
-     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
-     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
-     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 24.06.2026"
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 01.09.2026 · wersja 1.0",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · діє з 01.09.2026 · версія 1.0",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 01.09.2026 · version 1.0"
     },
     {
      "n": 2,
@@ -1513,9 +1513,9 @@
     },
     {
      "n": 9,
-     "pl": "- Wyrażam zgodę na otrzymywanie informacji marketingowych drogą elektroniczną (e-mail), zgodnie z obowiązującymi przepisami i [[Polityką prywatności|https://lapetitebloom.com/privacy-policy]]. [opcjonalne]",
-     "ua": "- Я даю згоду на отримання маркетингової інформації електронними засобами (електронною поштою) відповідно до чинних приписів і [[Політики конфіденційності|https://lapetitebloom.com/ua/privacy-policy]]. [необов’язково]",
-     "en": "- I consent to receiving marketing information by electronic means (e-mail), in accordance with the applicable regulations and with [[the Privacy Policy|https://lapetitebloom.com/en/privacy-policy]]. [optional]"
+     "pl": "- Wyrażam zgodę na otrzymywanie informacji marketingowych drogą elektroniczną — e-mail i SMS — w rozumieniu art. 10 ustawy o świadczeniu usług drogą elektroniczną, zgodnie z obowiązującymi przepisami i [[Polityką prywatności|https://lapetitebloom.com/privacy-policy]]. [opcjonalne]",
+     "ua": "- Я даю згоду на отримання маркетингової інформації електронними засобами — електронною поштою та SMS — у розумінні ст. 10 закону про надання послуг електронними засобами відповідно до чинних приписів і [[Політики конфіденційності|https://lapetitebloom.com/ua/privacy-policy]]. [необов’язково]",
+     "en": "- I consent to receiving marketing information by electronic means — e-mail and SMS — within the meaning of art. 10 of the Act on providing services by electronic means, in accordance with the applicable regulations and with [[the Privacy Policy|https://lapetitebloom.com/en/privacy-policy]]. [optional]"
     },
     {
      "n": 10,
@@ -1721,9 +1721,9 @@
    "blocks": [
     {
      "n": 1,
-     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o.",
-     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o.",
-     "en": "La Petite Bloom online store · LPB Sp. z o.o."
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 01.09.2026 · wersja 1.0",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · чинні з 01.09.2026 · версія 1.0",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · in force from 01.09.2026 · version 1.0"
     },
     {
      "n": 2,
@@ -1739,9 +1739,9 @@
     },
     {
      "n": 4,
-     "pl": "- Kurier InPost / DPD — 17 zł; za pobraniem +20–23 zł",
-     "ua": "- Кур’єр InPost / DPD — 17 zł; післяплата +20–23 zł",
-     "en": "- InPost / DPD courier — 17 zł; cash on delivery +20–23 zł"
+     "pl": "- Kurier InPost / DPD — 17 zł; za pobraniem +23 zł",
+     "ua": "- Кур’єр InPost / DPD — 17 zł; післяплата +23 zł",
+     "en": "- InPost / DPD courier — 17 zł; cash on delivery +23 zł"
     },
     {
      "n": 5,
@@ -1757,9 +1757,9 @@
     },
     {
      "n": 7,
-     "pl": "Dostawa jest bezpłatna dla zamówień opłaconych z góry od 500 zł (Paczkomat i kurier). Płatność za pobraniem jest zawsze dodatkowo płatna.",
-     "ua": "Доставка безкоштовна для замовлень, оплачених наперед, від 500 zł (поштомат і кур’єр). Післяплата завжди оплачується додатково.",
-     "en": "Delivery is free for orders paid in advance from 500 zł (parcel locker and courier). Cash on delivery is always payable additionally."
+     "pl": "Dostawa jest bezpłatna dla zamówień opłaconych z góry od 500 zł, liczonych od wartości koszyka po uwzględnieniu rabatów (Paczkomat i kurier). Płatność za pobraniem jest zawsze dodatkowo płatna.",
+     "ua": "Доставка безкоштовна для замовлень, оплачених наперед, від 500 zł, що рахуються від вартості кошика після врахування знижок (поштомат і кур’єр). Післяплата завжди оплачується додатково.",
+     "en": "Delivery is free for orders paid in advance from 500 zł, counted from the cart value after discounts have been applied (parcel locker and courier). Cash on delivery is always payable additionally."
     },
     {
      "n": 8,
@@ -1781,9 +1781,9 @@
     },
     {
      "n": 11,
-     "pl": "Wysyłamy na terenie Unii Europejskiej i poza nią. Dla Ukrainy dostępne są Nova Poshta oraz Meest. Przy dostawach poza UE ewentualne cła i podatki obciążają odbiorcę przesyłki.",
-     "ua": "Ми відправляємо на території Європейського Союзу та за її межі. Для України доступні Nova Poshta та Meest. При доставках за межі ЄС можливі мита та податки покладаються на отримувача відправлення.",
-     "en": "We dispatch within the European Union and beyond it. For Ukraine, Nova Poshta and Meest are available. For deliveries outside the EU, any customs duties and taxes are borne by the recipient of the shipment."
+     "pl": "Wysyłamy na terenie Unii Europejskiej i poza nią. Przy dostawach poza UE ewentualne cła i podatki obciążają odbiorcę przesyłki.",
+     "ua": "Ми відправляємо на території Європейського Союзу та за її межі. При доставках за межі ЄС можливі мита та податки покладаються на отримувача відправлення.",
+     "en": "We dispatch within the European Union and beyond it. For deliveries outside the EU, any customs duties and taxes are borne by the recipient of the shipment."
     },
     {
      "n": 12,
@@ -1843,9 +1843,9 @@
    "blocks": [
     {
      "n": 1,
-     "pl": "La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 24.06.2026",
-     "ua": "La Petite Bloom · LPB Sp. z o.o. · діє з 24.06.2026",
-     "en": "La Petite Bloom · LPB Sp. z o.o. · in force from 24.06.2026"
+     "pl": "La Petite Bloom · LPB Sp. z o.o. · obowiązuje od dnia 01.09.2026 · wersja 1.0",
+     "ua": "La Petite Bloom · LPB Sp. z o.o. · діє з 01.09.2026 · версія 1.0",
+     "en": "La Petite Bloom · LPB Sp. z o.o. · in force from 01.09.2026 · version 1.0"
     },
     {
      "n": 2,
@@ -1979,9 +1979,9 @@
    "blocks": [
     {
      "n": 1,
-     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · data publikacji 24.06.2026",
-     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · дата публікації 24.06.2026",
-     "en": "La Petite Bloom online store · LPB Sp. z o.o. · date of publication 24.06.2026"
+     "pl": "Sklep internetowy La Petite Bloom · LPB Sp. z o.o. · data publikacji 01.09.2026",
+     "ua": "Інтернет-магазин La Petite Bloom · LPB Sp. z o.o. · дата публікації 01.09.2026",
+     "en": "La Petite Bloom online store · LPB Sp. z o.o. · date of publication 01.09.2026"
     },
     {
      "n": 2,
@@ -2033,9 +2033,9 @@
     },
     {
      "n": 10,
-     "pl": "Deklaracja sporządzona dnia 24.06.2026; będzie aktualizowana w miarę wprowadzania zmian.",
-     "ua": "Декларацію складено 24.06.2026; вона оновлюватиметься в міру внесення змін.",
-     "en": "The statement was drawn up on 24.06.2026; it will be updated as changes are introduced."
+     "pl": "Deklaracja sporządzona dnia 01.09.2026; będzie aktualizowana w miarę wprowadzania zmian.",
+     "ua": "Декларацію складено 01.09.2026; вона оновлюватиметься в міру внесення змін.",
+     "en": "The statement was drawn up on 01.09.2026; it will be updated as changes are introduced."
     }
    ],
    "notes": [

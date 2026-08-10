@@ -20,8 +20,18 @@ DOCX = ("application/vnd.openxmlformats-officedocument"
 
 
 def embed_documents(docs_dir):
+    """Search below the given folder, not only in it.
+
+    The originals live in documents/originals, so a flat glob over "documents"
+    matched nothing and the artifact shipped without a single file — silently,
+    because zero documents is a perfectly valid-looking number."""
     out = []
-    for path in sorted(glob.glob(os.path.join(docs_dir, "*.docx"))):
+    found = glob.glob(os.path.join(docs_dir, "*.docx"))
+    if not found:
+        found = glob.glob(os.path.join(docs_dir, "**", "*.docx"), recursive=True)
+    if not found:
+        print(f"!! в {docs_dir} не найдено ни одного .docx")
+    for path in sorted(found):
         raw = open(path, "rb").read()
         mime = mimetypes.guess_type(path)[0] or DOCX
         out.append({
@@ -189,6 +199,22 @@ def main():
     checklist = json.load(open(checklist_path, encoding="utf-8"))
     translations = json.load(open(tr_path, encoding="utf-8"))
     documents = embed_documents(docs_dir)
+
+    # The eight pages the client's documents replace whole are dropped here for
+    # the same reason they are dropped from the work order: the audit found
+    # them before the documents existed, so every one of those fixes is already
+    # carried out by the replacement text. Listing them again reads as work
+    # still to do. Same for the returns pages, which come down rather than
+    # get edited.
+    from build_workorder import COVERED_BY_DOCS, FULL_PAGES
+    before = checklist["total_fixes"]
+    checklist["groups"] = [g for g in checklist["groups"]
+                           if g.get("key") not in COVERED_BY_DOCS
+                           and g.get("path") not in FULL_PAGES]
+    checklist["total_fixes"] = sum(g["count"] for g in checklist["groups"])
+    checklist["total_pages"] = len(checklist["groups"])
+    print(f"снято как уже решённое заменой документов: "
+          f"{before - checklist['total_fixes']}")
 
     payload = json.dumps({"checklist": checklist, "translations": translations,
                           "documents": documents},

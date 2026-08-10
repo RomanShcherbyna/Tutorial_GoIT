@@ -63,53 +63,54 @@ UNPUBLISH = [
     "https://lapetitebloom.com/en/warranty-and-returns/gwarancja-na-produkt",
 ]
 
-# The handful of things the finished text cannot decide for you. Everything
-# else the audit raised about these documents is already resolved inside them.
-OPEN = [
-    ("Сколько именно стоит наложенный платёж?",
-     "В регламенте и в документе о доставке стоит «+20–23 zł». Цена доставки "
-     "по закону должна быть указана точно, до оформления заказа. Вилку "
-     "верификатор Przelewy24 не пропустит.",
-     "Регламент §7.1 · Доставка и оплата"),
-    ("Порог бесплатной доставки 500 zł считается до скидки или после?",
-     "«Dostawa jest bezpłatna od 500 zł» не говорит, от какой суммы. При "
-     "промокоде покупатель и магазин посчитают по-разному — это спор о цене.",
-     "Доставка и оплата"),
-    ("Чем возим за границу?",
-     "В документах заграничная доставка описана только через DHL. В обсуждении "
-     "звучали Nova Poshta и Meest для Украины. Что из этого правда — от этого "
-     "зависит и текст, и сроки.",
-     "Регламент §7.1 · Доставка и оплата"),
-    ("С какого дня действует документ о доставке?",
-     "У регламента, политики возвратов и согласий стоит 24.06.2026. У доставки "
-     "и оплаты даты нет вообще. Либо ставим ту же, либо свою.",
-     "Доставка и оплата"),
-    ("24.06.2026 — это по-прежнему верная дата вступления в силу?",
-     "Она проставлена в четырёх документах. Сегодня 10.08.2026 — дата уже "
-     "прошла. Если публикуем сейчас, её надо либо оставить как дату редакции, "
-     "либо заменить на дату публикации.",
-     "Регламент · Возвраты · Согласия · Cookies"),
-    ("Адрес бутика и адрес для возвратов — это один и тот же адрес?",
-     "В документах фигурируют ul. Mokotowska 51/53 (бутик) и ul. Marcina "
-     "Kasprzaka 31/119 (регистрация компании). Куда покупатель шлёт посылку — "
-     "должно быть сказано одним адресом и в документе, и в письме, и во "
-     "вкладыше в посылку.",
-     "Регламент §2 · Возвраты и рекламации"),
-    ("USP-бар обещает возврат больше 14 дней — это отдельная акция магазина?",
-     "В регламенте право на отказ — 14 дней по закону. В полосе преимуществ на "
-     "сайте заявлен больший срок. Если это ваша добрая воля, её надо записать "
-     "в регламент; если нет — убрать с сайта.",
-     "Регламент §8.1 · полоса преимуществ на всех страницах"),
-    ("Два согласия на маркетинг — оставляем оба?",
-     "Чекбоксы в блоках 8 и 9 документа о согласиях покрывают, по сути, одну и "
-     "ту же обработку. Лишний чекбокс снижает конверсию и вызывает вопросы у "
-     "проверяющего.",
-     "Согласия и newsletter"),
-    ("Какие адреса почты работают на самом деле?",
-     "Документы используют kontakt@ и rodo@, на сайте указан hello@. Адрес, по "
-     "которому отзывают согласие и подают запрос по GDPR, обязан существовать "
-     "и отвечать.",
-     "Все документы · Контакты"),
+# Nine things the finished text could not decide on its own. The client decided
+# them; this is the record of what was chosen and where each answer landed, so
+# nobody has to reopen the question later to find out what was agreed.
+DECIDED = [
+    ("Наложенный платёж стоит 23 zł",
+     "Стояла вилка «+20–23 zł». Цена доставки должна быть точной до "
+     "оформления заказа — вилку проверяющий не пропустит.",
+     "Регламент §7.1 · Доставка и оплата — проставлено в трёх языках"),
+    ("Бесплатная доставка — от 500 zł по корзине после скидок",
+     "Было просто «od 500 zł», и при промокоде магазин с покупателем "
+     "посчитали бы по-разному.",
+     "Регламент §7.2 · Доставка и оплата — дописано «liczonej od wartości "
+     "koszyka po uwzględnieniu rabatów»"),
+    ("За границу возит DHL",
+     "Документ противоречил сам себе: в перечне тарифов стоял DHL, а ниже "
+     "было сказано, что для Украины доступны Nova Poshta и Meest. "
+     "Оставлен DHL — упоминание двух других служб из текста убрано.",
+     "Доставка и оплата, абзац о заграничной отправке"),
+    ("Все восемь документов вступают в силу 01.09.2026, версия 1.0",
+     "Стояло 24.06.2026 — дата, которая уже прошла, при том что магазин "
+     "не открыт. Документ утверждал бы, что был в силе, когда покупателей "
+     "не было. Это первая редакция, предупреждать об изменении правил "
+     "некого, поэтому дата равна дню публикации. У «Доставки и оплаты» "
+     "даты не было вообще — теперь та же. Сдвинется запуск — меняется одно "
+     "число в шапке каждого документа.",
+     "Шапка всех восьми документов · декларация доступности ещё в конце"),
+    ("Возврат шлём на Mokotowska 51/53, реквизиты фирмы — Kasprzaka 31/119",
+     "В документах это уже разведено правильно, менять ничего не пришлось: "
+     "адрес компании стоит в реквизитах, адрес возврата — в порядке возврата "
+     "и в бланке отказа. Осталась задача проставить адрес возврата в "
+     "интерфейсе, письмах и вкладыше в посылку.",
+     "Регламент §2 и §8 · Возвраты и рекламации"),
+    ("Срок возврата — 14 дней",
+     "В полосе преимуществ на всех страницах сайта обещано 30 дней, "
+     "в регламенте — 14 по закону. Обещание с сайта снимается.",
+     "Полоса преимуществ, все страницы, три языка — задача DOC-09, "
+     "текст на замену теперь есть"),
+    ("Оба согласия на маркетинг остаются",
+     "Два чекбокса читались как одно и то же разрешение. Оставлены оба, "
+     "но разведены по каналам: первый — рассылка о новинках и акциях, "
+     "второй — электронные каналы, e-mail и SMS, по ст. 10 uśude.",
+     "Согласия и newsletter, тексты чекбоксов"),
+    ("Почта — hello@ и rodo@",
+     "В переводах эти адреса уже стояли, kontakt@ не встречался ни разу. "
+     "Убрана только редакторская пометка «(opcjonalnie alias "
+     "zwroty@/reklamacje@)» — покупателю незачем читать заметку о том, "
+     "какие ящики мы, может быть, когда-нибудь заведём.",
+     "Регламент §2, список контактов"),
 ]
 
 OWNER_STYLE = {"dev": "o-dev", "content": "o-content", "catalog": "o-catalog"}
@@ -288,6 +289,34 @@ ol.items>li:first-child{border-top:0}
 .lang3 h4{margin:0 0 .25rem;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
  color:var(--accent);font-weight:700}
 .why{margin:.35rem 0 0;font-size:.85rem;color:var(--muted)}
+.verdict{margin:.7rem 0 0;padding-top:.55rem;border-top:1px dashed var(--hair)}
+.vrow{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+.vbtn{font:inherit;font-size:.73rem;letter-spacing:.05em;text-transform:uppercase;
+ background:transparent;border:1px solid var(--line);color:var(--muted);
+ padding:.3rem .65rem;cursor:pointer;white-space:nowrap}
+.vbtn:hover{color:var(--ink);border-color:var(--muted)}
+.vbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.v-ok[aria-pressed="true"]{background:var(--now);border-color:var(--now);color:#fff}
+.v-no[aria-pressed="true"]{background:var(--was);border-color:var(--was);color:#fff}
+.v-note[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.vstate{font-size:.76rem;color:var(--muted)}
+.notes{display:grid;gap:.5rem;margin-top:.55rem}
+.notes label{display:block;font-size:.66rem;letter-spacing:.09em;
+ text-transform:uppercase;color:var(--accent);font-weight:700}
+.notes textarea{display:block;width:100%;margin-top:.25rem;font:inherit;
+ font-size:.88rem;padding:.45rem .55rem;background:var(--sunken);color:var(--ink);
+ border:1px solid var(--line);resize:vertical}
+.notes textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+li.is-no{opacity:.45}
+li.is-ok > .ihead{border-left:3px solid var(--now);padding-left:.5rem}
+.answers{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;
+ margin:.9rem 0 0;padding:.6rem .7rem;background:var(--sunken);
+ border:1px solid var(--line)}
+.answers .cnt{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.answers .cnt b{color:var(--ink)}
+#dumptext{width:100%;font:inherit;font-family:ui-monospace,Menlo,monospace;
+ font-size:.8rem;padding:.5rem .6rem;background:var(--sunken);color:var(--ink);
+ border:1px solid var(--line);resize:vertical}
 ul.urls{margin:.9rem 0 0;padding-left:1.1rem}
 ul.urls li{margin:.2rem 0}
 ul.urls code{font-size:.82rem;word-break:break-all}
@@ -371,6 +400,155 @@ document.getElementById('totop').addEventListener('click', function () {
   scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 });
 try { var t = localStorage.getItem('lpb-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (_) { }
+
+// ---- ответы читателя -------------------------------------------------
+// Held in this browser and nowhere else: the page is a static file, so there
+// is no server to post to. One button turns everything typed here into a file
+// to hand back — that is the whole round trip.
+var KEY = 'lpb-verdicts';
+var A = {};
+try { A = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (_) { A = {}; }
+
+function persist() {
+  try { localStorage.setItem(KEY, JSON.stringify(A)); } catch (_) { }
+  paint();
+}
+
+function entry(id) { return (A[id] = A[id] || {}); }
+
+function answered(a) {
+  return !!(a && (a.v || (a.claude || '').trim() || (a.dev || '').trim()));
+}
+
+function paint() {
+  var ok = 0, no = 0, notes = 0;
+  [].forEach.call(document.querySelectorAll('ol.items > li[data-id]'), function (li) {
+    var a = A[li.dataset.id] || {};
+    li.classList.toggle('is-ok', a.v === 'ok');
+    li.classList.toggle('is-no', a.v === 'no');
+    var box = li.querySelector('.verdict');
+    if (!box) return;
+    [].forEach.call(box.querySelectorAll('.vbtn'), function (b) {
+      b.setAttribute('aria-pressed', String(
+        b.dataset.v === 'note' ? !!((a.claude || '') + (a.dev || '')).trim()
+          : a.v === b.dataset.v));
+    });
+    var s = box.querySelector('.vstate');
+    var bits = [];
+    if (a.v === 'ok') bits.push('согласен');
+    if (a.v === 'no') bits.push('убрать');
+    if ((a.claude || '').trim()) bits.push('есть комментарий мне');
+    if ((a.dev || '').trim()) bits.push('есть комментарий программисту');
+    s.textContent = bits.join(' · ');
+    if (a.v === 'ok') ok++;
+    if (a.v === 'no') no++;
+    if ((a.claude || '').trim() || (a.dev || '').trim()) notes++;
+  });
+  var total = document.querySelectorAll('ol.items > li[data-id]').length;
+  document.getElementById('cnt').innerHTML =
+    'отвечено <b>' + (ok + no) + '</b> из ' + total +
+    ' · согласен <b>' + ok + '</b> · убрать <b>' + no + '</b>' +
+    ' · с комментарием <b>' + notes + '</b>';
+}
+
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('.vbtn');
+  if (b) {
+    var box = b.closest('.verdict'), id = box.dataset.for, a = entry(id);
+    if (b.dataset.v === 'note') {
+      var n = box.querySelector('.notes');
+      n.hidden = !n.hidden;
+      if (!n.hidden) n.querySelector('textarea').focus();
+    } else {
+      a.v = a.v === b.dataset.v ? '' : b.dataset.v;
+      a.act = b.closest('li').dataset.act || '';
+      persist();
+    }
+    return;
+  }
+  var only = e.target.closest('#onlyans');
+  if (only) {
+    var on = only.getAttribute('aria-pressed') !== 'true';
+    only.setAttribute('aria-pressed', String(on));
+    [].forEach.call(document.querySelectorAll('ol.items > li[data-id]'), function (li) {
+      li.hidden = on && !answered(A[li.dataset.id]);
+    });
+    [].forEach.call(document.querySelectorAll('.doc'), function (d) {
+      var list = d.querySelector('ol.items');
+      d.hidden = !!list && !d.querySelector('ol.items > li:not([hidden])');
+      if (!d.hidden && on) d.classList.remove('closed');
+    });
+  }
+});
+
+document.addEventListener('input', function (e) {
+  var ta = e.target.closest('.notes textarea');
+  if (!ta) return;
+  var box = ta.closest('.verdict'), a = entry(box.dataset.for);
+  a[ta.dataset.to] = ta.value;
+  a.act = ta.closest('li').dataset.act || '';
+  persist();
+});
+
+function collect() {
+  var out = [];
+  [].forEach.call(document.querySelectorAll('ol.items > li[data-id]'), function (li) {
+    var a = A[li.dataset.id];
+    if (!answered(a)) return;
+    var page = li.closest('.doc').querySelector('.dtitle').textContent.trim();
+    out.push({
+      id: li.dataset.id, page: page, action: li.dataset.act || '',
+      verdict: a.v === 'ok' ? 'согласен' : a.v === 'no' ? 'убрать' : '',
+      dlya_claude: (a.claude || '').trim(),
+      dlya_programmista: (a.dev || '').trim()
+    });
+  });
+  return JSON.stringify({ document: 'Что менять на сайте', answers: out },
+    null, 1);
+}
+
+// Copy is the whole hand-back path: a publicly shared artifact may not save
+// files, so the text has to travel through the clipboard. If the clipboard is
+// refused too, the textarea below is the answer that always works.
+function reveal(text) {
+  var box = document.getElementById('dump');
+  var ta = document.getElementById('dumptext');
+  ta.value = text;
+  box.hidden = false;
+  ta.focus();
+  ta.select();
+}
+
+document.getElementById('copy').addEventListener('click', function (e) {
+  var text = collect(), btn = e.target;
+  function done(okFlag) {
+    btn.textContent = okFlag ? 'Скопировано' : 'Не вышло — текст ниже';
+    setTimeout(function () { btn.textContent = 'Скопировать мои ответы'; }, 2000);
+    if (!okFlag) reveal(text);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () { done(true); },
+      function () { done(false); });
+  } else { done(false); }
+});
+
+document.getElementById('show').addEventListener('click', function () {
+  var box = document.getElementById('dump');
+  if (!box.hidden) { box.hidden = true; return; }
+  reveal(collect());
+});
+
+// Restore what was typed before, then draw the counters.
+[].forEach.call(document.querySelectorAll('.verdict'), function (box) {
+  var a = A[box.dataset.for];
+  if (!a) return;
+  [].forEach.call(box.querySelectorAll('textarea'), function (ta) {
+    if (a[ta.dataset.to]) ta.value = a[ta.dataset.to];
+  });
+  if ((a.claude || '').trim() || (a.dev || '').trim())
+    box.querySelector('.notes').hidden = false;
+});
+paint();
 """
 
 
@@ -453,7 +631,8 @@ def item_block(f):
                 f'</summary><img loading="lazy" src="{f["crop"]}" '
                 f'alt="Место правки {esc(f["id"])}"></details>')
     return f"""
-<li data-owner="{esc(owner)}">
+<li data-owner="{esc(owner)}" data-id="{esc(f['id'])}"
+    data-act="{esc(f.get('action') or place)}">
   <div class="ihead"><span class="inum"></span>
     {badge}
     <span class="ikind k-{k}">{esc(label)}</span>
@@ -463,7 +642,33 @@ def item_block(f):
   {f'<p class="fld"><b>Почему</b> {esc(f.get("why"))}</p>' if f.get('why') else ''}
   {crop}
   {swap}
+  {verdict_block(f['id'])}
 </li>"""
+
+
+def verdict_block(fid):
+    """Two buttons and two comment boxes on every fix.
+
+    The client reads this list and needs to answer back: keep it, or throw it
+    out — and sometimes say why, separately to me and to the developer. The
+    answers live in the reader's own browser and leave it only when they press
+    «Выгрузить ответы», which writes one file to hand back.
+    """
+    return f"""
+<div class="verdict" data-for="{esc(fid)}">
+  <div class="vrow">
+    <button class="vbtn v-ok" type="button" data-v="ok">Согласен</button>
+    <button class="vbtn v-no" type="button" data-v="no">Удалить лишнее</button>
+    <button class="vbtn v-note" type="button" data-v="note">Комментарий</button>
+    <span class="vstate"></span>
+  </div>
+  <div class="notes" hidden>
+    <label>Мне (Claude)<textarea rows="2" data-to="claude"
+      placeholder="Что переписать, что уточнить, что не так"></textarea></label>
+    <label>Программисту<textarea rows="2" data-to="dev"
+      placeholder="Пояснение для того, кто будет править"></textarea></label>
+  </div>
+</div>"""
 
 
 def partial_block(g):
@@ -516,28 +721,29 @@ def unpublish_block():
 </section>"""
 
 
-def open_block():
+def decided_block():
     items = "".join(f"""
 <li data-owner="content">
   <div class="ihead"><span class="inum"></span>
     <span class="owner o-content">Наш контент</span>
-    <span class="ikind k-do">Решить</span>
-    <span class="iact">{esc(q)}</span></div>
-  <p class="fld"><b>Где</b> {esc(where)}</p>
-  <p class="fld"><b>Почему</b> {esc(why)}</p>
-</li>""" for q, why, where in OPEN)
+    <span class="ikind k-replace">Решено</span>
+    <span class="iact">{esc(what)}</span></div>
+  <p class="fld"><b>Почему спрашивали</b> {esc(why)}</p>
+  <p class="fld"><b>Где в тексте</b> {esc(where)}</p>
+</li>""" for what, why, where in DECIDED)
     return f"""
 <section class="doc" data-owners="content">
   <header class="dochead">
     <span class="arrow">▸</span>
-    <span class="dtitle">Решить до публикации</span>
+    <span class="dtitle">Решения, которые уже внесены в файлы</span>
     <span class="owner o-content">Наш контент</span>
-    <span class="dmeta">{len(OPEN)} вопросов</span>
+    <span class="dmeta">{len(DECIDED)} решений</span>
   </header>
   <div class="docbody">
-    <p class="why">Это не правки текста — это то, чего в документах нет или
-      сказано двумя способами. Ответьте, и мы допишем в файлы; без ответа
-      публиковать нельзя.</p>
+    <p class="why">Эти вопросы готовый текст решить не мог — суммы, даты,
+      перевозчик, адреса. Решения приняты и уже стоят в файлах из первой
+      части; здесь они записаны, чтобы через месяц не выяснять заново,
+      о чём договорились.</p>
     <ol class="items">{items}</ol>
   </div>
 </section>"""
@@ -570,6 +776,22 @@ def main():
       <button class="btn" data-own="catalog" aria-selected="false">Каталог / BaseLinker</button>
       <button class="btn" id="theme" type="button">Тема</button>
     </div>
+    <div class="answers">
+      <button class="btn" id="copy" type="button">Скопировать мои ответы</button>
+      <button class="btn" id="show" type="button">Показать текстом</button>
+      <button class="btn" id="onlyans" type="button" aria-pressed="false">
+        Показать только отвеченные</button>
+      <span class="cnt" id="cnt"></span>
+    </div>
+    <div id="dump" hidden>
+      <p class="secnote" style="margin:.6rem 0 .3rem">Выделите всё и вставьте
+        мне в чат — я разберу и перепишу список.</p>
+      <textarea id="dumptext" rows="12" readonly></textarea>
+    </div>
+    <p class="secnote" style="margin:.5rem 0 0">На каждой правке две кнопки и
+      два поля для комментария — мне и программисту. Ответы держатся в этом
+      браузере, никуда сами не уходят; чтобы я их прочитал, нажмите
+      «Скопировать мои ответы» и вставьте в чат.</p>
     <div class="legend">
       <div><span class="owner o-dev">Программисты</span> шаблон, ссылки, строки движка</div>
       <div><span class="owner o-content">Наш контент</span> меню, акции, баннеры — пишем сами</div>
@@ -597,9 +819,10 @@ def main():
     в готовый текст.</p>
   {''.join(partial_block(g) for g in partial)}
 
-  <h2 class="sec">4. Решить до публикации — {len(OPEN)} вопросов</h2>
-  <p class="secnote">Вопросы к вам, а не задание программистам.</p>
-  {open_block()}
+  <h2 class="sec">4. Что решили — {len(DECIDED)} решений</h2>
+  <p class="secnote">Не задание, а запись: что было спорным и как решили.
+    В файлы первой части это уже внесено.</p>
+  {decided_block()}
 </div>
 <button class="btn" id="totop" type="button">↑ Наверх</button>
 <script>{JS}</script>"""
