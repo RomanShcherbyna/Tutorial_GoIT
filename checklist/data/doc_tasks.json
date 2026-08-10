@@ -1,44 +1,5 @@
 [
  {
-  "id": "DOC-01",
-  "kind": "PUBLISH",
-  "area": "Регламент",
-  "title": "Опубликовать Regulamin sklepu на слаге /regulamin и поставить 301 с /terms-of-use",
-  "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 1 п.1 «Regulamin sklepu → /regulamin (подвал «Regulamin»)»; текст — 1-regulamin-sklepu.txt целиком",
-  "path": "/terms-of-use, /ua/terms-of-use, /en/terms-of-use",
-  "current": "Страница живёт на слаге /terms-of-use. Текст на ней уже правильный: «REGULAMIN SKLEPU INTERNETOWEGO LA PETITE BLOOM / LPB Sp. z o.o. · www.lapetitebloom.com · obowiązuje od dnia 24.06.2026». Слага /regulamin на сайте нет: в pl/index.html нет ни одной ссылки href=\"https://lapetitebloom.com/regulamin\", а неизвестные адреса отдают 404 (проверено на /this-page-does-not-exist-404-probe → status 404).",
-  "target": "Документ доступен по адресу lapetitebloom.com/regulamin (и /ua/regulamin, /en/regulamin). Старый /terms-of-use отдаёт 301 на новый адрес. В подвале пункт называется «Regulamin».",
-  "severity": "high",
-  "steps": [
-   "Сменить слаг страницы Regulamin с terms-of-use на regulamin во всех трёх локалях (pl без префикса, ua = /ua/regulamin, en = /en/regulamin).",
-   "Настроить постоянный редирект 301: /terms-of-use → /regulamin, /ua/terms-of-use → /ua/regulamin, /en/terms-of-use → /en/regulamin.",
-   "Обновить все внутренние ссылки на старый слаг. В pl/index.html их 4 шт.: href=\"https://lapetitebloom.com/terms-of-use\" — два в подвале (меню «Klientowi») и два в согласии newsletter-формы (мобильная и десктопная разметка). То же в ua/ и en/.",
-   "Проверить, что текст на новой странице совпадает с 1-regulamin-sklepu.txt посимвольно, включая Załącznik nr 1.",
-   "Обновить canonical и hreflang на новый URL, отдать новую карту сайта."
-  ],
-  "done_when": "GET /regulamin = 200 и содержит §1–§16 + Załącznik nr 1; GET /terms-of-use = 301 → /regulamin; поиск по HTML всех трёх локалей не находит ни одной живой ссылки на /terms-of-use.",
-  "note": ""
- },
- {
-  "id": "DOC-02",
-  "kind": "PUBLISH",
-  "area": "Приватность",
-  "title": "Перенести Politykę prywatności на слаг /polityka-prywatnosci с 301 с /privacy-policy",
-  "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 1 п.2 «Polityka prywatności → /polityka-prywatnosci»; текст — 2-polityka-prywatnosci.txt",
-  "path": "/privacy-policy, /ua/privacy-policy, /en/privacy-policy",
-  "current": "Слаг /privacy-policy. В pl/index.html 4 ссылки href=\"https://lapetitebloom.com/privacy-policy\" (подвал + согласие newsletter). Слага /polityka-prywatnosci не существует.",
-  "target": "Документ доступен по /polityka-prywatnosci (+/ua/, /en/), старый адрес отдаёт 301.",
-  "severity": "high",
-  "steps": [
-   "Сменить слаг на polityka-prywatnosci во всех трёх локалях.",
-   "301: /privacy-policy → /polityka-prywatnosci (и локальные варианты).",
-   "Обновить 4 ссылки в pl (аналогично в ua/en): подвал «Polityka prywatności» и текст согласия под формой newsletter.",
-   "Обновить canonical, hreflang, sitemap."
-  ],
-  "done_when": "GET /polityka-prywatnosci = 200 с разделами 1–12 из документа; GET /privacy-policy = 301; в HTML нет живых ссылок на старый слаг.",
-  "note": ""
- },
- {
   "id": "DOC-03",
   "kind": "PUBLISH",
   "area": "Cookies",
@@ -55,46 +16,6 @@
    "Проверить, что декларация подтягивает язык локали (pl/uk/en)."
   ],
   "done_when": "На /polityka-cookies (все локали) под пунктом 6 отрисовывается таблица Cookiebot с именами, целями и сроками cookies; в баннере согласий есть кликабельная ссылка на эту страницу.",
-  "note": ""
- },
- {
-  "id": "DOC-04",
-  "kind": "PUBLISH",
-  "area": "Возвраты",
-  "title": "Опубликовать Politykę zwrotów i reklamacji на /zwroty-i-reklamacje и свести туда все старые адреса возвратов",
-  "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 1 п.4 «Polityka zwrotów i reklamacji → /zwroty-i-reklamacje (+ ссылка в карточке и чекауте)»; текст — 4-polityka-zwrotow-i-reklamacji.txt",
-  "path": "/claims-and-complaints, /warranty-and-returns (+ 2 подстраницы), все три локали",
-  "current": "Правильный текст документа уже лежит на /claims-and-complaints (заголовок на сайте — «Polityka zworotow i reklamacji», с опечаткой). Параллельно живут три страницы со старым французским текстом: /warranty-and-returns, /warranty-and-returns/polityka-zwrotow, /warranty-and-returns/gwarancja-na-produkt. То есть у одного вопроса четыре адреса.",
-  "target": "Один адрес /zwroty-i-reklamacje (+/ua/, /en/) с текстом документа 4. Все остальные адреса — 301 на него. Заголовок без опечатки: «Polityka zwrotów i reklamacji».",
-  "severity": "blocker",
-  "steps": [
-   "Сменить слаг /claims-and-complaints на /zwroty-i-reklamacje во всех трёх локалях.",
-   "Исправить заголовок и title страницы: «Polityka zworotow i reklamacji» → «Polityka zwrotów i reklamacji».",
-   "301 на новый адрес со всех четырёх старых: /claims-and-complaints, /warranty-and-returns, /warranty-and-returns/polityka-zwrotow, /warranty-and-returns/gwarancja-na-produkt — и с их /ua/ и /en/ вариантов.",
-   "Обновить 2 ссылки в подвале pl/index.html (href=\"https://lapetitebloom.com/claims-and-complaints\") и такие же в ua/en.",
-   "Добавить ссылку на /zwroty-i-reklamacje в карточку товара (блок доставки/возврата) и на шаг оформления заказа — этого требует инструкция.",
-   "Удалить сами старые страницы из CMS после включения редиректов (см. DOC-20)."
-  ],
-  "done_when": "GET /zwroty-i-reklamacje = 200 с разделами 1–5 и формуляром рекламации; все четыре старых URL в трёх локалях отдают 301 на него; в карточке товара и в чекауте есть рабочая ссылка на эту страницу.",
-  "note": ""
- },
- {
-  "id": "DOC-05",
-  "kind": "PUBLISH",
-  "area": "Доставка и оплата",
-  "title": "Перенести Dostawę i płatności на слаг /dostawa-i-platnosci с 301 с /delivery-and-payment",
-  "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 1 п.6 «Dostawa i płatności → /dostawa-i-platnosci»; текст — 6-dostawa-i-platnosci.txt",
-  "path": "/delivery-and-payment, /ua/delivery-and-payment, /en/delivery-and-payment",
-  "current": "Слаг /delivery-and-payment. В подвале 2 ссылки на него (pl/index.html). Слага /dostawa-i-platnosci не существует.",
-  "target": "Документ доступен по /dostawa-i-platnosci (+/ua/, /en/), старый адрес отдаёт 301.",
-  "severity": "high",
-  "steps": [
-   "Сменить слаг на dostawa-i-platnosci во всех трёх локалях.",
-   "301: /delivery-and-payment → /dostawa-i-platnosci и локальные варианты.",
-   "Обновить ссылки в подвале всех локалей.",
-   "Одновременно вычистить содержимое страницы: см. DOC-21 (чужой счёт), DOC-22 (Tpay), DOC-23 (украинский текст в pl)."
-  ],
-  "done_when": "GET /dostawa-i-platnosci = 200 и содержит разделы «Sposoby i koszty dostawy», «Czas realizacji», «Dostawa zagraniczna», «Odbiór osobisty», «Metody płatności» из документа 6; старый URL = 301.",
   "note": ""
  },
  {
@@ -191,7 +112,7 @@
    "Проверить, что нигде не осталось упоминаний бренда «Bloom» вместо «La Petite Bloom» и ссылок на «Ogólne Warunki Sprzedaży» / «General Terms and Conditions of Sale»."
   ],
   "done_when": "Все 9 URL отдают 301; поиск по HTML сайта не находит подстрок «Kodeksu Konsumenta», «L.221-18», «L217-3», «Bloom Outlet», «nota kredytowa», «store credit».",
-  "note": "Пересекается с находками аудита 05-01, 05-02, 05-05, 05-06, 05-07, 05-08 — здесь задача не переписать текст, а удалить страницы целиком."
+  "note": "Адреса страниц не меняем. Эти три страницы не связаны ни с одним документом и противоречат политике возвратов — решение заказчика: переписать их содержимое или снять с публикации."
  },
  {
   "id": "DOC-11",
@@ -659,26 +580,6 @@
   ],
   "done_when": "Сценарий возврата зависит от выбранного канала покупки; онлайн-покупатель не ограничен условием «только при браке»; покупатель из бутика видит доступную ему рекламацию; во всех текстах 14 дней явно относятся к онлайну.",
   "note": ""
- },
- {
-  "id": "DOC-35",
-  "kind": "DEV",
-  "area": "Подвал",
-  "title": "После смены слагов прогнать все ссылки подвала на 404",
-  "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 3 E: «Все ссылки в подвале рабочие (без 404)»",
-  "path": "подвал всех страниц, все три локали",
-  "current": "Сейчас в подвале 9 пунктов: Regulamin sklepu internetowego, Polityka prywatności, Polityka cookies, Polityka zworotow i reklamacji, Zgody klauzule i regulamin newslettera, Dostawa i płatność, Regulamin kart podarunkowych, Deklaracja dostepnosci, Kontakt. После задач DOC-01…DOC-08 меняются четыре слага, две страницы уходят из подвала. Сайт отдаёт настоящий 404 на несуществующие адреса (проверено на /this-page-does-not-exist-404-probe → status 404), поэтому оборванная ссылка будет видна сразу.",
-  "target": "Подвал: Regulamin → /regulamin, Polityka prywatności → /polityka-prywatnosci, Polityka cookies → /polityka-cookies, Polityka zwrotów i reklamacji → /zwroty-i-reklamacje, Dostawa i płatności → /dostawa-i-platnosci, Deklaracja dostępności → /deklaracja-dostepnosci, Kontakt → /contacts. Пункты «Zgody…» и «Regulamin kart podarunkowych» из подвала убраны.",
-  "severity": "blocker",
-  "steps": [
-   "После выполнения DOC-01…DOC-08 обновить все пункты меню подвала во всех трёх локалях.",
-   "Прогнать краулером все ссылки подвала со всех 54 страниц каждой локали и убедиться, что ни одна не отдаёт 404 и ни одна не проходит через цепочку редиректов длиннее одного шага.",
-   "Проверить, что ссылки сохраняют локаль: со страницы /ua/… пункты подвала ведут на /ua/….",
-   "То же самое проверить для дублирующего списка страниц в шапке/мобильном меню — в снимках он повторяет подвал.",
-   "Обновить sitemap.xml и отправить на переобход."
-  ],
-  "done_when": "Краулер по всем страницам трёх локалей возвращает 200 на каждой ссылке подвала; ни одного 404 и ни одной двойной цепочки редиректов; локаль сохраняется при переходе.",
-  "note": "Битые ссылки в подвале на юридические документы — прямое основание для отказа при ручной проверке магазина оператором платежей, поэтому blocker."
  },
  {
   "id": "DOC-36",

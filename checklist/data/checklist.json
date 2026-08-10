@@ -1,16 +1,16 @@
 {
  "total_pages": 34,
- "total_fixes": 449,
+ "total_fixes": 444,
  "severities": [
   {
    "key": "blocker",
    "label": "Блокер",
-   "count": 52
+   "count": 50
   },
   {
    "key": "high",
    "label": "Критично",
-   "count": 169
+   "count": 166
   },
   {
    "key": "medium",
@@ -55,19 +55,14 @@
    "count": 16
   },
   {
-   "key": "DEV",
-   "label": "Доработка",
-   "count": 14
-  },
-  {
    "key": "CONFLICT",
    "label": "Расходится с документом",
    "count": 13
   },
   {
-   "key": "PUBLISH",
-   "label": "Выложить документ",
-   "count": 8
+   "key": "DEV",
+   "label": "Доработка",
+   "count": 13
   },
   {
    "key": "LEFTOVER",
@@ -78,6 +73,11 @@
    "key": "REMOVE",
    "label": "Убрать",
    "count": 5
+  },
+  {
+   "key": "PUBLISH",
+   "label": "Выложить документ",
+   "count": 4
   }
  ],
  "groups": [
@@ -333,31 +333,6 @@
      "note": ""
     },
     {
-     "id": "DOC-05",
-     "source": "document",
-     "severity": "high",
-     "severity_label": "Критично",
-     "issue": "PUBLISH",
-     "issue_label": "Выложить документ",
-     "locale": "all",
-     "title": "Перенести Dostawę i płatności на слаг /dostawa-i-platnosci с 301 с /delivery-and-payment",
-     "current": "Слаг /delivery-and-payment. В подвале 2 ссылки на него (pl/index.html). Слага /dostawa-i-platnosci не существует.",
-     "why": "Документ доступен по /dostawa-i-platnosci (+/ua/, /en/), старый адрес отдаёт 301.",
-     "pl": "",
-     "ua": "",
-     "en": "",
-     "action": "Перенести Dostawę i płatności на слаг /dostawa-i-platnosci с 301 с /delivery-and-payment",
-     "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 1 п.6 «Dostawa i płatności → /dostawa-i-platnosci»; текст — 6-dostawa-i-platnosci.txt",
-     "steps": [
-      "Сменить слаг на dostawa-i-platnosci во всех трёх локалях.",
-      "301: /delivery-and-payment → /dostawa-i-platnosci и локальные варианты.",
-      "Обновить ссылки в подвале всех локалей.",
-      "Одновременно вычистить содержимое страницы: см. DOC-21 (чужой счёт), DOC-22 (Tpay), DOC-23 (украинский текст в pl)."
-     ],
-     "done_when": "GET /dostawa-i-platnosci = 200 и содержит разделы «Sposoby i koszty dostawy», «Czas realizacji», «Dostawa zagraniczna», «Odbiór osobisty», «Metody płatności» из документа 6; старый URL = 301.",
-     "note": ""
-    },
-    {
      "id": "DOC-15",
      "source": "document",
      "severity": "high",
@@ -515,10 +490,10 @@
      "note": ""
     }
    ],
-   "count": 21,
+   "count": 20,
    "blockers": 6,
    "worst": 0,
-   "from_documents": 4,
+   "from_documents": 3,
    "documents": [
     "Dostawa i płatności → /dostawa-i-platnosci"
    ],
@@ -619,32 +594,6 @@
      ],
      "done_when": "В подвале одно добровольное согласие на рассылку с текстом из документа 5; чекбокс пуст при загрузке; регламент и политика приватности упомянуты справочно со ссылками; факт согласия логируется.",
      "note": ""
-    },
-    {
-     "id": "DOC-35",
-     "source": "document",
-     "severity": "blocker",
-     "severity_label": "Блокер",
-     "issue": "DEV",
-     "issue_label": "Доработка",
-     "locale": "all",
-     "title": "После смены слагов прогнать все ссылки подвала на 404",
-     "current": "Сейчас в подвале 9 пунктов: Regulamin sklepu internetowego, Polityka prywatności, Polityka cookies, Polityka zworotow i reklamacji, Zgody klauzule i regulamin newslettera, Dostawa i płatność, Regulamin kart podarunkowych, Deklaracja dostepnosci, Kontakt. После задач DOC-01…DOC-08 меняются четыре слага, две страницы уходят из подвала. Сайт отдаёт настоящий 404 на несуществующие адреса (проверено на /this-page-does-not-exist-404-probe → status 404), поэтому оборванная ссылка будет видна сразу.",
-     "why": "Подвал: Regulamin → /regulamin, Polityka prywatności → /polityka-prywatnosci, Polityka cookies → /polityka-cookies, Polityka zwrotów i reklamacji → /zwroty-i-reklamacje, Dostawa i płatności → /dostawa-i-platnosci, Deklaracja dostępności → /deklaracja-dostepnosci, Kontakt → /contacts. Пункты «Zgody…» и «Regulamin kart podarunkowych» из подвала убраны.",
-     "pl": "",
-     "ua": "",
-     "en": "",
-     "action": "После смены слагов прогнать все ссылки подвала на 404",
-     "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 3 E: «Все ссылки в подвале рабочие (без 404)»",
-     "steps": [
-      "После выполнения DOC-01…DOC-08 обновить все пункты меню подвала во всех трёх локалях.",
-      "Прогнать краулером все ссылки подвала со всех 54 страниц каждой локали и убедиться, что ни одна не отдаёт 404 и ни одна не проходит через цепочку редиректов длиннее одного шага.",
-      "Проверить, что ссылки сохраняют локаль: со страницы /ua/… пункты подвала ведут на /ua/….",
-      "То же самое проверить для дублирующего списка страниц в шапке/мобильном меню — в снимках он повторяет подвал.",
-      "Обновить sitemap.xml и отправить на переобход."
-     ],
-     "done_when": "Краулер по всем страницам трёх локалей возвращает 200 на каждой ссылке подвала; ни одного 404 и ни одной двойной цепочки редиректов; локаль сохраняется при переходе.",
-     "note": "Битые ссылки в подвале на юридические документы — прямое основание для отказа при ручной проверке магазина оператором платежей, поэтому blocker."
     },
     {
      "id": "02-02",
@@ -1925,10 +1874,10 @@
      "note": "[уточнить у заказчика: есть ли у части ассортимента сертификация Fairtrade и в какие страны реально идёт доставка]"
     }
    ],
-   "count": 68,
-   "blockers": 5,
+   "count": 67,
+   "blockers": 4,
    "worst": 0,
-   "from_documents": 15,
+   "from_documents": 14,
    "documents": [
     "Regulamin sklepu §2 — реквизиты в футере",
     "Все документы — ссылки в футере"
@@ -3555,7 +3504,7 @@
       "Проверить, что нигде не осталось упоминаний бренда «Bloom» вместо «La Petite Bloom» и ссылок на «Ogólne Warunki Sprzedaży» / «General Terms and Conditions of Sale»."
      ],
      "done_when": "Все 9 URL отдают 301; поиск по HTML сайта не находит подстрок «Kodeksu Konsumenta», «L.221-18», «L217-3», «Bloom Outlet», «nota kredytowa», «store credit».",
-     "note": "Пересекается с находками аудита 05-01, 05-02, 05-05, 05-06, 05-07, 05-08 — здесь задача не переписать текст, а удалить страницы целиком."
+     "note": "Адреса страниц не меняем. Эти три страницы не связаны ни с одним документом и противоречат политике возвратов — решение заказчика: переписать их содержимое или снять с публикации."
     },
     {
      "id": "DOC-11",
@@ -6796,32 +6745,6 @@
      "note": ""
     },
     {
-     "id": "DOC-01",
-     "source": "document",
-     "severity": "high",
-     "severity_label": "Критично",
-     "issue": "PUBLISH",
-     "issue_label": "Выложить документ",
-     "locale": "all",
-     "title": "Опубликовать Regulamin sklepu на слаге /regulamin и поставить 301 с /terms-of-use",
-     "current": "Страница живёт на слаге /terms-of-use. Текст на ней уже правильный: «REGULAMIN SKLEPU INTERNETOWEGO LA PETITE BLOOM / LPB Sp. z o.o. · www.lapetitebloom.com · obowiązuje od dnia 24.06.2026». Слага /regulamin на сайте нет: в pl/index.html нет ни одной ссылки href=\"https://lapetitebloom.com/regulamin\", а неизвестные адреса отдают 404 (проверено на /this-page-does-not-exist-404-probe → status 404).",
-     "why": "Документ доступен по адресу lapetitebloom.com/regulamin (и /ua/regulamin, /en/regulamin). Старый /terms-of-use отдаёт 301 на новый адрес. В подвале пункт называется «Regulamin».",
-     "pl": "",
-     "ua": "",
-     "en": "",
-     "action": "Опубликовать Regulamin sklepu на слаге /regulamin и поставить 301 с /terms-of-use",
-     "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 1 п.1 «Regulamin sklepu → /regulamin (подвал «Regulamin»)»; текст — 1-regulamin-sklepu.txt целиком",
-     "steps": [
-      "Сменить слаг страницы Regulamin с terms-of-use на regulamin во всех трёх локалях (pl без префикса, ua = /ua/regulamin, en = /en/regulamin).",
-      "Настроить постоянный редирект 301: /terms-of-use → /regulamin, /ua/terms-of-use → /ua/regulamin, /en/terms-of-use → /en/regulamin.",
-      "Обновить все внутренние ссылки на старый слаг. В pl/index.html их 4 шт.: href=\"https://lapetitebloom.com/terms-of-use\" — два в подвале (меню «Klientowi») и два в согласии newsletter-формы (мобильная и десктопная разметка). То же в ua/ и en/.",
-      "Проверить, что текст на новой странице совпадает с 1-regulamin-sklepu.txt посимвольно, включая Załącznik nr 1.",
-      "Обновить canonical и hreflang на новый URL, отдать новую карту сайта."
-     ],
-     "done_when": "GET /regulamin = 200 и содержит §1–§16 + Załącznik nr 1; GET /terms-of-use = 301 → /regulamin; поиск по HTML всех трёх локалей не находит ни одной живой ссылки на /terms-of-use.",
-     "note": ""
-    },
-    {
      "id": "DOC-19",
      "source": "document",
      "severity": "high",
@@ -6922,195 +6845,14 @@
      "note": ""
     }
    ],
-   "count": 13,
-   "blockers": 1,
-   "worst": 0,
-   "from_documents": 2,
-   "documents": [
-    "Regulamin sklepu → /regulamin"
-   ],
-   "url_label": "lapetitebloom.com/terms-of-use"
-  },
-  {
-   "key": "/claims-and-complaints",
-   "title": "Рекламации",
-   "desc": "",
-   "path": "/claims-and-complaints",
-   "urls": {
-    "pl": "https://lapetitebloom.com/claims-and-complaints",
-    "ua": "https://lapetitebloom.com/ua/claims-and-complaints",
-    "en": "https://lapetitebloom.com/en/claims-and-complaints"
-   },
-   "fixes": [
-    {
-     "id": "DOC-04",
-     "source": "document",
-     "severity": "blocker",
-     "severity_label": "Блокер",
-     "issue": "PUBLISH",
-     "issue_label": "Выложить документ",
-     "locale": "all",
-     "title": "Опубликовать Politykę zwrotów i reklamacji на /zwroty-i-reklamacje и свести туда все старые адреса возвратов",
-     "current": "Правильный текст документа уже лежит на /claims-and-complaints (заголовок на сайте — «Polityka zworotow i reklamacji», с опечаткой). Параллельно живут три страницы со старым французским текстом: /warranty-and-returns, /warranty-and-returns/polityka-zwrotow, /warranty-and-returns/gwarancja-na-produkt. То есть у одного вопроса четыре адреса.",
-     "why": "Один адрес /zwroty-i-reklamacje (+/ua/, /en/) с текстом документа 4. Все остальные адреса — 301 на него. Заголовок без опечатки: «Polityka zwrotów i reklamacji».",
-     "pl": "",
-     "ua": "",
-     "en": "",
-     "action": "Опубликовать Politykę zwrotów i reklamacji на /zwroty-i-reklamacje и свести туда все старые адреса возвратов",
-     "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 1 п.4 «Polityka zwrotów i reklamacji → /zwroty-i-reklamacje (+ ссылка в карточке и чекауте)»; текст — 4-polityka-zwrotow-i-reklamacji.txt",
-     "steps": [
-      "Сменить слаг /claims-and-complaints на /zwroty-i-reklamacje во всех трёх локалях.",
-      "Исправить заголовок и title страницы: «Polityka zworotow i reklamacji» → «Polityka zwrotów i reklamacji».",
-      "301 на новый адрес со всех четырёх старых: /claims-and-complaints, /warranty-and-returns, /warranty-and-returns/polityka-zwrotow, /warranty-and-returns/gwarancja-na-produkt — и с их /ua/ и /en/ вариантов.",
-      "Обновить 2 ссылки в подвале pl/index.html (href=\"https://lapetitebloom.com/claims-and-complaints\") и такие же в ua/en.",
-      "Добавить ссылку на /zwroty-i-reklamacje в карточку товара (блок доставки/возврата) и на шаг оформления заказа — этого требует инструкция.",
-      "Удалить сами старые страницы из CMS после включения редиректов (см. DOC-20)."
-     ],
-     "done_when": "GET /zwroty-i-reklamacje = 200 с разделами 1–5 и формуляром рекламации; все четыре старых URL в трёх локалях отдают 301 на него; в карточке товара и в чекауте есть рабочая ссылка на эту страницу.",
-     "note": ""
-    },
-    {
-     "id": "05-09",
-     "source": "audit",
-     "severity": "high",
-     "severity_label": "Критично",
-     "issue": "LEGAL",
-     "issue_label": "Юр. требование",
-     "locale": "all",
-     "title": "«Polityka zworotow i reklamacji», п. 1.2; приложение в конце страницы",
-     "current": "2. Oświadczenie wystarczy wysłać przed upływem terminu na adres kontakt@lapetitebloom.com lub przy użyciu formularza odstąpienia.",
-     "why": "Страница ссылается на «formularz odstąpienia», но на самой странице его нет и ссылки на него тоже нет (в HTML этого абзаца нет ни одного <a>). В приложении к странице приведён только «Formularz reklamacyjny» — это другой документ. Образец формуляра отказа от договора обязателен по польскому закону (załącznik nr 2 do ustawy o prawach konsumenta) и должен быть доступен потребителю; сейчас он спрятан в «Załącznik nr 1» на /terms-of-use и ниоткуда не линкуется. На страницах /warranty-and-returns и /warranty-and-returns/polityka-zwrotow формуляра нет вообще.",
-     "pl": "Wzór formularza odstąpienia od umowy\n(wypełnić i odesłać tylko w przypadku chęci odstąpienia od umowy)\nAdresat: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: kod pocztowy] Warszawa, e-mail: kontakt@lapetitebloom.com\nNiniejszym odstępuję od umowy sprzedaży następujących Towarów: ......\nData odbioru: ...... · Numer zamówienia: ......\nImię i nazwisko: ......\nAdres: ......\nData i podpis (tylko w wersji papierowej): ......\nFormularz można też pobrać jako plik PDF [уточнить: link do pliku] albo skopiować z Regulaminu, Załącznik nr 1.",
-     "ua": "Зразок форми відмови від договору\n(заповніть і надішліть лише тоді, коли хочете відмовитися від договору)\nАдресат: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнити: поштовий індекс] Warszawa, e-mail: kontakt@lapetitebloom.com\nЦим повідомляю про відмову від договору купівлі-продажу таких Товарів: ......\nДата отримання: ...... · Номер замовлення: ......\nІм’я та прізвище: ......\nАдреса: ......\nДата та підпис (лише для паперової версії): ......\nФорму також можна завантажити у форматі PDF [уточнити: посилання на файл] або скопіювати з Правил магазину, Додаток № 1.",
-     "en": "Model withdrawal form\n(complete and return this form only if you wish to withdraw from the contract)\nTo: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: postcode] Warsaw, Poland, email: kontakt@lapetitebloom.com\nI hereby give notice that I withdraw from the contract of sale of the following Goods: ......\nDate of receipt: ...... · Order number: ......\nName: ......\nAddress: ......\nDate and signature (paper version only): ......\nYou can also download the form as a PDF [уточнить: link to file] or copy it from the Terms and Conditions, Appendix No. 1.",
-     "action": "Добавить по закону — «Polityka zworotow i reklamacji», п. 1.2; приложение в конце страницы",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    },
-    {
-     "id": "05-10",
-     "source": "audit",
-     "severity": "high",
-     "severity_label": "Критично",
-     "issue": "STUB",
-     "issue_label": "Заглушка",
-     "locale": "all",
-     "title": "«Załącznik — Formularz reklamacyjny», блок из семи строк с точками в конце страницы",
-     "current": "Załącznik — Formularz reklamacyjny\nImię i nazwisko: ............................\nNumer zamówienia: ............ · Data zakupu: ............",
-     "why": "«Форма рекламации» — это не форма: в HTML страницы нет ни одного поля ввода (в <main> ноль <input>, <textarea>, <button>), только абзацы с многоточиями. Скачать её тоже нельзя — файла нет. Адреса kontakt@lapetitebloom.com в тексте не сделаны ссылками mailto. Покупателю предлагается вручную переписать семь строк в письмо. Для проверки Przelewy24 достаточно рабочего канала подачи рекламации, но в нынешнем виде страница не даёт ни формы, ни файла, ни кликабельного контакта.",
-     "pl": "Zgłoszenie reklamacyjne\nReklamację prosimy wysłać na kontakt@lapetitebloom.com — w treści wiadomości prosimy podać: imię i nazwisko, numer zamówienia, datę zakupu, nazwę Towaru, opis niezgodności, żądanie (naprawa, wymiana, obniżenie ceny albo odstąpienie od umowy), adres e-mail oraz numer rachunku do zwrotu. Prosimy dołączyć zdjęcia wady i dowód zakupu. Formularz do wypełnienia można też pobrać w formacie PDF [уточнить: link do pliku]. Odpowiadamy w terminie 14 dni od otrzymania zgłoszenia.",
-     "ua": "Подання претензії\nПретензію надсилайте на kontakt@lapetitebloom.com — у листі вкажіть: ім’я та прізвище, номер замовлення, дату покупки, назву Товару, опис невідповідності, вимогу (ремонт, заміна, зменшення ціни або відмова від Договору), адресу електронної пошти та номер рахунку для повернення коштів. Додайте фотографії дефекту та підтвердження покупки. Форму для заповнення також можна завантажити у форматі PDF [уточнити: посилання на файл]. Ми відповідаємо протягом 14 днів з дня отримання звернення.",
-     "en": "Submitting a complaint\nPlease send your complaint to kontakt@lapetitebloom.com, stating: your name, order number, date of purchase, name of the Goods, a description of the defect, the remedy you are asking for (repair, replacement, price reduction or withdrawal) and your email address. Please attach photographs of the defect and proof of purchase. You can also download the form as a PDF [уточнить: link to file]. We reply within 14 days of receiving the complaint.",
-     "action": "Заменить заглушку — «Załącznik",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    },
-    {
-     "id": "05-11",
-     "source": "audit",
-     "severity": "high",
-     "severity_label": "Критично",
-     "issue": "TYPO",
-     "issue_label": "Опечатка",
-     "locale": "pl",
-     "title": "h1 страницы, <title> и meta description",
-     "current": "Polityka zworotow i reklamacji",
-     "why": "В заголовке h1 и в title главной страницы возвратов две ошибки сразу: «zworotow» вместо «zwrotów» (переставлены буквы и потеряна диакритика). Это самый заметный текст на странице, которую Przelewy24 открывает первой, и он же стоит ссылкой в меню и подвале во всех трёх локалях.",
-     "pl": "Polityka zwrotów i reklamacji",
-     "ua": "Політика повернення та претензій",
-     "en": "Returns and complaints policy",
-     "action": "Исправить опечатку [PL] — h1 страницы, <title> и meta description",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    },
-    {
-     "id": "05-12",
-     "source": "audit",
-     "severity": "high",
-     "severity_label": "Критично",
-     "issue": "WRONG",
-     "issue_label": "Кривой перевод",
-     "locale": "all",
-     "title": "Пункты 1.2 и 4.2 — адрес для заявления об отказе и для рекламации",
-     "current": "2. Reklamację prosimy zgłaszać na adres kontakt@lapetitebloom.com, podając opis wady, zdjęcia oraz dowód zakupu.",
-     "why": "Для отказа от договора и рекламации указан адрес kontakt@lapetitebloom.com, а во всём остальном сайте (подвал всех страниц, контакты) указан hello@lapetitebloom.com. Какой из двух ящиков рабочий — из сайта не следует. Заявление об отказе, отправленное на несуществующий адрес, юридически всё равно считается поданным, но покупатель его не получит подтверждения, а продавец пропустит 14-дневный срок возврата денег.",
-     "pl": "Reklamację prosimy zgłaszać na adres [уточнить: kontakt@lapetitebloom.com czy hello@lapetitebloom.com], podając opis wady, zdjęcia oraz dowód zakupu.",
-     "ua": "Претензію просимо надсилати на адресу [уточнити: kontakt@lapetitebloom.com чи hello@lapetitebloom.com], додаючи опис дефекту, фотографії та підтвердження покупки.",
-     "en": "Please send your complaint to [уточнить: kontakt@lapetitebloom.com or hello@lapetitebloom.com], including a description of the defect, photographs and proof of purchase.",
-     "action": "Переписать перевод — Пункты 1.2 и 4.2",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    },
-    {
-     "id": "05-13",
-     "source": "audit",
-     "severity": "high",
-     "severity_label": "Критично",
-     "issue": "WRONG",
-     "issue_label": "Кривой перевод",
-     "locale": "all",
-     "title": "Пункты 1.3 и 4.3 — адрес для отправки товара",
-     "current": "3. Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, w terminie 14 dni od odstąpienia. Bezpośrednie koszty zwrotu ponosi Klient.",
-     "why": "Адрес возврата (ul. Mokotowska 51/53) не совпадает с адресом компании в подвале и на странице контактов (ul. Marcina Kasprzaka 31/119). Двух адресов на сайте нигде не объясняют, почтового индекса нет ни у одного из них. Покупатель отправляет посылку по адресу, который может оказаться нерабочим, и теряет право на возврат денег из-за «неполучения товара».",
-     "pl": "Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: kod pocztowy] Warszawa, w terminie 14 dni od odstąpienia. Jest to adres wyłącznie do zwrotów i reklamacji; korespondencję prosimy kierować na adres siedziby podany w zakładce Kontakt.",
-     "ua": "Товар необхідно надіслати на адресу: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнити: поштовий індекс] Warszawa, протягом 14 днів з дня відмови від Договору. Це адреса лише для повернень і претензій; листування просимо надсилати на адресу компанії, зазначену в розділі «Контакти».",
-     "en": "Please send the Goods to: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: postcode] Warsaw, Poland, within 14 days of withdrawal. This address is for returns and complaints only; general correspondence should go to the registered address shown on the Contact page.",
-     "action": "Переписать перевод — Пункты 1.3 и 4.3",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    },
-    {
-     "id": "05-15",
-     "source": "audit",
-     "severity": "medium",
-     "severity_label": "Средне",
-     "issue": "LEGAL",
-     "issue_label": "Юр. требование",
-     "locale": "all",
-     "title": "«Załącznik — Formularz reklamacyjny», строка «Adres e-mail i numer rachunku do zwrotu»",
-     "current": "Adres e-mail i numer rachunku do zwrotu: ............................",
-     "why": "Единственное место, где сказано, как покупатель получает деньги обратно по рекламации, — просьба указать номер банковского счёта. Это противоречит правилу возврата тем же способом оплаты, которое действует для отказа от договора (п. 1.4), и плохо смотрится при верификации в Przelewy24: возврат онлайн-платежа должен идти обратно на ту же карту или тот же перевод, а не на произвольный счёт.",
-     "pl": "Zwrot należności z tytułu uwzględnionej reklamacji wykonujemy tą samą metodą płatności, którą Klient zapłacił za zamówienie. Numer rachunku prosimy podać tylko wtedy, gdy zwrot tą samą metodą nie jest możliwy (np. wygasła karta) — poprosimy o niego w odpowiedzi na zgłoszenie.",
-     "ua": "Кошти за задоволеною претензією ми повертаємо тим самим способом оплати, яким Клієнт оплатив замовлення. Номер рахунку просимо вказувати лише тоді, коли повернення тим самим способом неможливе (наприклад, картка втратила чинність) — ми запитаємо його у відповіді на звернення.",
-     "en": "If we uphold your complaint, we refund you using the same payment method you used for the order. Please give us a bank account number only if a refund by the original method is not possible (for example, an expired card) — we will ask for it when we reply.",
-     "action": "Добавить по закону — «Załącznik",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    },
-    {
-     "id": "05-18",
-     "source": "audit",
-     "severity": "medium",
-     "severity_label": "Средне",
-     "issue": "LEGAL",
-     "issue_label": "Юр. требование",
-     "locale": "all",
-     "title": "Конец раздела 4 «Reklamacje», перед разделом 5",
-     "current": "4. Reklamację rozpatrujemy i informujemy o wyniku w terminie 14 dni od otrzymania zgłoszenia. W razie jej uwzględnienia naprawimy lub wymienimy Towar albo obniżymy cenę lub zwrócimy należność; koszty uzasadnionej reklamacji ponosi Sprzedawca.",
-     "why": "На странице рекламаций нет обязательной информации о внесудебном разрешении споров: WIIH, powiatowy rzecznik konsumentów, платформа ODR. В Регламенте это есть (§14), но именно страницу рекламаций проверяющий читает как самостоятельный документ, и UOKiK требует размещать эту информацию там, где описывается порядок рекламации.",
-     "pl": "Pozasądowe rozwiązywanie sporów\nJeżeli nie zgodzą się Państwo z naszym stanowiskiem, mogą Państwo skorzystać z pozasądowych sposobów rozpatrywania reklamacji: wniosku do wojewódzkiego inspektora Inspekcji Handlowej o pozasądowe rozwiązanie sporu, pomocy powiatowego lub miejskiego rzecznika konsumentów albo stałego polubownego sądu konsumenckiego. Informacje o tych procedurach dostępne są na stronie UOKiK: https://www.uokik.gov.pl. Skorzystanie z nich jest dobrowolne.",
-     "ua": "Позасудове вирішення спорів\nЯкщо ви не погоджуєтеся з нашим рішенням, ви можете скористатися позасудовими способами розгляду претензій: звернутися до воєводського інспектора Торговельної інспекції (WIIH) із заявою про позасудове вирішення спору, до повітового чи міського уповноваженого із захисту прав споживачів або до постійного третейського суду у справах споживачів. Інформація про ці процедури є на сайті UOKiK: https://www.uokik.gov.pl. Користування ними добровільне.",
-     "en": "Out-of-court dispute resolution\nIf you disagree with our decision, you may use out-of-court complaint procedures: an application to the provincial Trade Inspectorate (WIIH) for out-of-court dispute resolution, help from the district or municipal consumer ombudsman, or the permanent consumer arbitration court. Information about these procedures is available on the UOKiK website: https://www.uokik.gov.pl. Using them is voluntary.",
-     "action": "Добавить по закону — Конец раздела 4 «Reklamacje», перед разделом 5",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    }
-   ],
-   "count": 8,
+   "count": 12,
    "blockers": 1,
    "worst": 0,
    "from_documents": 1,
    "documents": [
-    "Polityka zwrotów i reklamacji → /zwroty-i-reklamacje"
+    "Regulamin sklepu → /regulamin"
    ],
-   "url_label": "lapetitebloom.com/claims-and-complaints"
+   "url_label": "lapetitebloom.com/terms-of-use"
   },
   {
    "key": "/search",
@@ -8793,145 +8535,158 @@
    "url_label": "lapetitebloom.com/about"
   },
   {
-   "key": "/privacy-policy",
-   "title": "Политика конфиденциальности",
+   "key": "/claims-and-complaints",
+   "title": "Рекламации",
    "desc": "",
-   "path": "/privacy-policy",
+   "path": "/claims-and-complaints",
    "urls": {
-    "pl": "https://lapetitebloom.com/privacy-policy",
-    "ua": "https://lapetitebloom.com/ua/privacy-policy",
-    "en": "https://lapetitebloom.com/en/privacy-policy"
+    "pl": "https://lapetitebloom.com/claims-and-complaints",
+    "ua": "https://lapetitebloom.com/ua/claims-and-complaints",
+    "en": "https://lapetitebloom.com/en/claims-and-complaints"
    },
    "fixes": [
     {
-     "id": "06-06",
+     "id": "05-09",
      "source": "audit",
      "severity": "high",
      "severity_label": "Критично",
      "issue": "LEGAL",
      "issue_label": "Юр. требование",
-     "locale": "pl",
-     "title": "Раздел «4. Odbiorcy danych», список получателей",
-     "current": "Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania).",
-     "why": "Два документа противоречат друг другу. Политика cookies называет Meta Pixel, TikTok, Klarna и PayPo, а в списке получателей данных в политике конфиденциальности их нет — там только Google и Cookiebot. Также не назван поставщик рассылки, через которого уходит newsletter, и не назван хостинг-провайдер. Для покупателя это значит, что часть получателей его данных не раскрыта.",
-     "pl": "Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania);\n- dostawcy narzędzi marketingowych — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — wpisać wyłącznie te, które faktycznie zostaną uruchomione];\n- dostawcy płatności odroczonych — Klarna i PayPo, w zakresie wybranej metody płatności;\n- dostawca systemu wysyłki newslettera — [уточнить: nazwa i siedziba];\n- dostawca hostingu — [уточнить: nazwa i siedziba].",
-     "ua": "Google (Google Analytics / Google Ads), а також постачальнику банера керування згодами Cookiebot (Usercentrics A/S, Данія);\n- постачальникам маркетингових інструментів — [уточнити у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — вказати лише ті, що будуть фактично активовані];\n- постачальникам послуг відстроченої оплати — Klarna та PayPo, в обсязі обраного способу оплати;\n- постачальнику системи розсилки — [уточнити: назва та місцезнаходження];\n- постачальнику хостингу — [уточнити: назва та місцезнаходження].",
-     "en": "Google (Google Analytics / Google Ads) and the provider of the Cookiebot consent banner (Usercentrics A/S, Denmark);\n- providers of marketing tools — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — list only those actually enabled];\n- deferred-payment providers — Klarna and PayPo, where you choose that payment method;\n- the newsletter delivery provider — [уточнить: name and registered office];\n- the hosting provider — [уточнить: name and registered office].",
-     "action": "Добавить по закону [PL] — Раздел «4. Odbiorcy danych», список получателей",
+     "locale": "all",
+     "title": "«Polityka zworotow i reklamacji», п. 1.2; приложение в конце страницы",
+     "current": "2. Oświadczenie wystarczy wysłać przed upływem terminu na adres kontakt@lapetitebloom.com lub przy użyciu formularza odstąpienia.",
+     "why": "Страница ссылается на «formularz odstąpienia», но на самой странице его нет и ссылки на него тоже нет (в HTML этого абзаца нет ни одного <a>). В приложении к странице приведён только «Formularz reklamacyjny» — это другой документ. Образец формуляра отказа от договора обязателен по польскому закону (załącznik nr 2 do ustawy o prawach konsumenta) и должен быть доступен потребителю; сейчас он спрятан в «Załącznik nr 1» на /terms-of-use и ниоткуда не линкуется. На страницах /warranty-and-returns и /warranty-and-returns/polityka-zwrotow формуляра нет вообще.",
+     "pl": "Wzór formularza odstąpienia od umowy\n(wypełnić i odesłać tylko w przypadku chęci odstąpienia od umowy)\nAdresat: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: kod pocztowy] Warszawa, e-mail: kontakt@lapetitebloom.com\nNiniejszym odstępuję od umowy sprzedaży następujących Towarów: ......\nData odbioru: ...... · Numer zamówienia: ......\nImię i nazwisko: ......\nAdres: ......\nData i podpis (tylko w wersji papierowej): ......\nFormularz można też pobrać jako plik PDF [уточнить: link do pliku] albo skopiować z Regulaminu, Załącznik nr 1.",
+     "ua": "Зразок форми відмови від договору\n(заповніть і надішліть лише тоді, коли хочете відмовитися від договору)\nАдресат: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнити: поштовий індекс] Warszawa, e-mail: kontakt@lapetitebloom.com\nЦим повідомляю про відмову від договору купівлі-продажу таких Товарів: ......\nДата отримання: ...... · Номер замовлення: ......\nІм’я та прізвище: ......\nАдреса: ......\nДата та підпис (лише для паперової версії): ......\nФорму також можна завантажити у форматі PDF [уточнити: посилання на файл] або скопіювати з Правил магазину, Додаток № 1.",
+     "en": "Model withdrawal form\n(complete and return this form only if you wish to withdraw from the contract)\nTo: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: postcode] Warsaw, Poland, email: kontakt@lapetitebloom.com\nI hereby give notice that I withdraw from the contract of sale of the following Goods: ......\nDate of receipt: ...... · Order number: ......\nName: ......\nAddress: ......\nDate and signature (paper version only): ......\nYou can also download the form as a PDF [уточнить: link to file] or copy it from the Terms and Conditions, Appendix No. 1.",
+     "action": "Добавить по закону — «Polityka zworotow i reklamacji», п. 1.2; приложение в конце страницы",
      "steps": [],
      "done_when": "",
      "note": ""
     },
     {
-     "id": "DOC-02",
-     "source": "document",
+     "id": "05-10",
+     "source": "audit",
      "severity": "high",
      "severity_label": "Критично",
-     "issue": "PUBLISH",
-     "issue_label": "Выложить документ",
+     "issue": "STUB",
+     "issue_label": "Заглушка",
      "locale": "all",
-     "title": "Перенести Politykę prywatności на слаг /polityka-prywatnosci с 301 с /privacy-policy",
-     "current": "Слаг /privacy-policy. В pl/index.html 4 ссылки href=\"https://lapetitebloom.com/privacy-policy\" (подвал + согласие newsletter). Слага /polityka-prywatnosci не существует.",
-     "why": "Документ доступен по /polityka-prywatnosci (+/ua/, /en/), старый адрес отдаёт 301.",
-     "pl": "",
-     "ua": "",
-     "en": "",
-     "action": "Перенести Politykę prywatności на слаг /polityka-prywatnosci с 301 с /privacy-policy",
-     "doc": "0-instrukcja-wdrozenia, ЧАСТЬ 1 п.2 «Polityka prywatności → /polityka-prywatnosci»; текст — 2-polityka-prywatnosci.txt",
-     "steps": [
-      "Сменить слаг на polityka-prywatnosci во всех трёх локалях.",
-      "301: /privacy-policy → /polityka-prywatnosci (и локальные варианты).",
-      "Обновить 4 ссылки в pl (аналогично в ua/en): подвал «Polityka prywatności» и текст согласия под формой newsletter.",
-      "Обновить canonical, hreflang, sitemap."
-     ],
-     "done_when": "GET /polityka-prywatnosci = 200 с разделами 1–12 из документа; GET /privacy-policy = 301; в HTML нет живых ссылок на старый слаг.",
+     "title": "«Załącznik — Formularz reklamacyjny», блок из семи строк с точками в конце страницы",
+     "current": "Załącznik — Formularz reklamacyjny\nImię i nazwisko: ............................\nNumer zamówienia: ............ · Data zakupu: ............",
+     "why": "«Форма рекламации» — это не форма: в HTML страницы нет ни одного поля ввода (в <main> ноль <input>, <textarea>, <button>), только абзацы с многоточиями. Скачать её тоже нельзя — файла нет. Адреса kontakt@lapetitebloom.com в тексте не сделаны ссылками mailto. Покупателю предлагается вручную переписать семь строк в письмо. Для проверки Przelewy24 достаточно рабочего канала подачи рекламации, но в нынешнем виде страница не даёт ни формы, ни файла, ни кликабельного контакта.",
+     "pl": "Zgłoszenie reklamacyjne\nReklamację prosimy wysłać na kontakt@lapetitebloom.com — w treści wiadomości prosimy podać: imię i nazwisko, numer zamówienia, datę zakupu, nazwę Towaru, opis niezgodności, żądanie (naprawa, wymiana, obniżenie ceny albo odstąpienie od umowy), adres e-mail oraz numer rachunku do zwrotu. Prosimy dołączyć zdjęcia wady i dowód zakupu. Formularz do wypełnienia można też pobrać w formacie PDF [уточнить: link do pliku]. Odpowiadamy w terminie 14 dni od otrzymania zgłoszenia.",
+     "ua": "Подання претензії\nПретензію надсилайте на kontakt@lapetitebloom.com — у листі вкажіть: ім’я та прізвище, номер замовлення, дату покупки, назву Товару, опис невідповідності, вимогу (ремонт, заміна, зменшення ціни або відмова від Договору), адресу електронної пошти та номер рахунку для повернення коштів. Додайте фотографії дефекту та підтвердження покупки. Форму для заповнення також можна завантажити у форматі PDF [уточнити: посилання на файл]. Ми відповідаємо протягом 14 днів з дня отримання звернення.",
+     "en": "Submitting a complaint\nPlease send your complaint to kontakt@lapetitebloom.com, stating: your name, order number, date of purchase, name of the Goods, a description of the defect, the remedy you are asking for (repair, replacement, price reduction or withdrawal) and your email address. Please attach photographs of the defect and proof of purchase. You can also download the form as a PDF [уточнить: link to file]. We reply within 14 days of receiving the complaint.",
+     "action": "Заменить заглушку — «Załącznik",
+     "steps": [],
+     "done_when": "",
      "note": ""
     },
     {
-     "id": "06-08",
+     "id": "05-11",
+     "source": "audit",
+     "severity": "high",
+     "severity_label": "Критично",
+     "issue": "TYPO",
+     "issue_label": "Опечатка",
+     "locale": "pl",
+     "title": "h1 страницы, <title> и meta description",
+     "current": "Polityka zworotow i reklamacji",
+     "why": "В заголовке h1 и в title главной страницы возвратов две ошибки сразу: «zworotow» вместо «zwrotów» (переставлены буквы и потеряна диакритика). Это самый заметный текст на странице, которую Przelewy24 открывает первой, и он же стоит ссылкой в меню и подвале во всех трёх локалях.",
+     "pl": "Polityka zwrotów i reklamacji",
+     "ua": "Політика повернення та претензій",
+     "en": "Returns and complaints policy",
+     "action": "Исправить опечатку [PL] — h1 страницы, <title> и meta description",
+     "steps": [],
+     "done_when": "",
+     "note": ""
+    },
+    {
+     "id": "05-12",
+     "source": "audit",
+     "severity": "high",
+     "severity_label": "Критично",
+     "issue": "WRONG",
+     "issue_label": "Кривой перевод",
+     "locale": "all",
+     "title": "Пункты 1.2 и 4.2 — адрес для заявления об отказе и для рекламации",
+     "current": "2. Reklamację prosimy zgłaszać na adres kontakt@lapetitebloom.com, podając opis wady, zdjęcia oraz dowód zakupu.",
+     "why": "Для отказа от договора и рекламации указан адрес kontakt@lapetitebloom.com, а во всём остальном сайте (подвал всех страниц, контакты) указан hello@lapetitebloom.com. Какой из двух ящиков рабочий — из сайта не следует. Заявление об отказе, отправленное на несуществующий адрес, юридически всё равно считается поданным, но покупатель его не получит подтверждения, а продавец пропустит 14-дневный срок возврата денег.",
+     "pl": "Reklamację prosimy zgłaszać na adres [уточнить: kontakt@lapetitebloom.com czy hello@lapetitebloom.com], podając opis wady, zdjęcia oraz dowód zakupu.",
+     "ua": "Претензію просимо надсилати на адресу [уточнити: kontakt@lapetitebloom.com чи hello@lapetitebloom.com], додаючи опис дефекту, фотографії та підтвердження покупки.",
+     "en": "Please send your complaint to [уточнить: kontakt@lapetitebloom.com or hello@lapetitebloom.com], including a description of the defect, photographs and proof of purchase.",
+     "action": "Переписать перевод — Пункты 1.2 и 4.2",
+     "steps": [],
+     "done_when": "",
+     "note": ""
+    },
+    {
+     "id": "05-13",
+     "source": "audit",
+     "severity": "high",
+     "severity_label": "Критично",
+     "issue": "WRONG",
+     "issue_label": "Кривой перевод",
+     "locale": "all",
+     "title": "Пункты 1.3 и 4.3 — адрес для отправки товара",
+     "current": "3. Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, Warszawa, w terminie 14 dni od odstąpienia. Bezpośrednie koszty zwrotu ponosi Klient.",
+     "why": "Адрес возврата (ul. Mokotowska 51/53) не совпадает с адресом компании в подвале и на странице контактов (ul. Marcina Kasprzaka 31/119). Двух адресов на сайте нигде не объясняют, почтового индекса нет ни у одного из них. Покупатель отправляет посылку по адресу, который может оказаться нерабочим, и теряет право на возврат денег из-за «неполучения товара».",
+     "pl": "Towar należy odesłać na adres: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: kod pocztowy] Warszawa, w terminie 14 dni od odstąpienia. Jest to adres wyłącznie do zwrotów i reklamacji; korespondencję prosimy kierować na adres siedziby podany w zakładce Kontakt.",
+     "ua": "Товар необхідно надіслати на адресу: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнити: поштовий індекс] Warszawa, протягом 14 днів з дня відмови від Договору. Це адреса лише для повернень і претензій; листування просимо надсилати на адресу компанії, зазначену в розділі «Контакти».",
+     "en": "Please send the Goods to: LPB Sp. z o.o. (La Petite Bloom), ul. Mokotowska 51/53, [уточнить: postcode] Warsaw, Poland, within 14 days of withdrawal. This address is for returns and complaints only; general correspondence should go to the registered address shown on the Contact page.",
+     "action": "Переписать перевод — Пункты 1.3 и 4.3",
+     "steps": [],
+     "done_when": "",
+     "note": ""
+    },
+    {
+     "id": "05-15",
      "source": "audit",
      "severity": "medium",
      "severity_label": "Средне",
-     "issue": "WRONG",
-     "issue_label": "Кривой перевод",
-     "locale": "ua",
-     "title": "Раздел «1. Контролер персональних даних», первое предложение (то же — §2 Правил интернет-магазина)",
-     "current": "Контролером персональних даних є LPB Sp. z o.o. із місцезнаходженням у Warszawa, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa",
-     "why": "«із місцезнаходженням у Warszawa» — латинская форма подставлена в украинское предложение без склонения, читается как машинный перевод. Название города в связном тексте нужно по-украински, тогда как сам адрес регистрации остаётся латиницей. В EN та же проблема мягче: «registered office in Warszawa» — в английском тексте город принято называть Warsaw. Ошибка повторяется в §2 Правил интернет-магазина на обеих локалях.",
-     "pl": "Administratorem danych osobowych jest LPB Sp. z o.o. z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa",
-     "ua": "Контролером персональних даних є LPB Sp. z o.o. з місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa",
-     "en": "The data controller is LPB Sp. z o.o., with its registered office at ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland.",
-     "action": "Переписать перевод [UA] — Раздел «1. Контролер персональних даних», первое предложение (то же",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    },
-    {
-     "id": "06-07",
-     "source": "audit",
-     "severity": "low",
-     "severity_label": "Мелочь",
-     "issue": "WRONG",
-     "issue_label": "Кривой перевод",
-     "locale": "pl",
-     "title": "Раздел «4. Odbiorcy danych», первый пункт списка — против раздела «5. Przekazywanie danych poza EOG»",
-     "current": "dostawca hostingu (serwer w Unii Europejskiej);",
-     "why": "Внутреннее расхождение: в п. 4 сервер описан как находящийся в Евросоюзе, в п. 5 — в Европейской экономической зоне. Это разные территории, и в тексте о трансграничной передаче данных разница существенна. Повторяется во всех трёх локалях («у Європейському Союзі» / «Європейському економічному просторі», «European Union» / «European Economic Area»).",
-     "pl": "dostawca hostingu (serwery w Europejskim Obszarze Gospodarczym);",
-     "ua": "постачальнику послуг хостингу (сервери в Європейському економічному просторі);",
-     "en": "the hosting provider (servers located in the European Economic Area);",
-     "action": "Переписать перевод [PL] — Раздел «4. Odbiorcy danych», первый пункт списка",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    },
-    {
-     "id": "06-09",
-     "source": "audit",
-     "severity": "low",
-     "severity_label": "Мелочь",
-     "issue": "WRONG",
-     "issue_label": "Кривой перевод",
-     "locale": "ua",
-     "title": "Раздел «1. Контролер персональних даних», второе предложение",
-     "current": "Контакт із питань персональних даних: rodo@lapetitebloom.com. Контролер не призначив інспектора із захисту даних (IOD).",
-     "why": "«IOD» — польская аббревиатура (Inspektor Ochrony Danych), в украинском тексте она ничего не значит. В английской версии на этом же месте корректно стоит DPO, то есть аббревиатуру просто забыли перевести вместе с остальным.",
-     "pl": "Kontakt w sprawach danych osobowych: rodo@lapetitebloom.com. Administrator nie powołał inspektora ochrony danych (IOD).",
-     "ua": "Контакт із питань персональних даних: rodo@lapetitebloom.com. Контролер не призначив уповноважену особу із захисту персональних даних (DPO).",
-     "en": "Contact regarding personal data matters: rodo@lapetitebloom.com. The controller has not appointed a Data Protection Officer (DPO).",
-     "action": "Переписать перевод [UA] — Раздел «1. Контролер персональних даних», второе предложение",
-     "steps": [],
-     "done_when": "",
-     "note": ""
-    },
-    {
-     "id": "19-12",
-     "source": "audit",
-     "severity": "low",
-     "severity_label": "Мелочь",
      "issue": "LEGAL",
      "issue_label": "Юр. требование",
      "locale": "all",
-     "title": "Пункт 1 «Administrator danych» / «Контролер даних» / «Data controller»",
-     "current": "Administratorem danych osobowych jest LPB Sp. z o.o. z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730, NIP 5273179673, REGON 542537097.",
-     "why": "Реквизиты администратора данных приведены в третьей редакции — отличной и от регламента (там есть суд и kapitał), и от страницы контактов (там только три номера). Разнобой между тремя документами на одном сайте — то, что бросается в глаза при проверке и создаёт впечатление, что данные копировали наспех. Достаточно привести все три места к одной формулировке из 19-06: добавить страну и суд регистрации, полное фирменное наименование дать один раз, дальше пользоваться сокращением.",
-     "pl": "Administratorem danych osobowych jest LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska, wpisana do rejestru przedsiębiorców KRS prowadzonego przez [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] pod numerem KRS 0001190730, NIP 5273179673, REGON 542537097.",
-     "ua": "Контролером персональних даних є LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) із місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща, внесена до реєстру підприємців KRS, який веде [уточнити за витягом з KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS], за номером KRS 0001190730, NIP 5273179673, REGON 542537097.",
-     "en": "The data controller is LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), with its registered office at ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland, entered in the register of entrepreneurs of the KRS kept by [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] under KRS number 0001190730, NIP 5273179673, REGON 542537097.",
-     "action": "Добавить по закону — Пункт 1 «Administrator danych» / «Контролер даних» / «Data controller»",
+     "title": "«Załącznik — Formularz reklamacyjny», строка «Adres e-mail i numer rachunku do zwrotu»",
+     "current": "Adres e-mail i numer rachunku do zwrotu: ............................",
+     "why": "Единственное место, где сказано, как покупатель получает деньги обратно по рекламации, — просьба указать номер банковского счёта. Это противоречит правилу возврата тем же способом оплаты, которое действует для отказа от договора (п. 1.4), и плохо смотрится при верификации в Przelewy24: возврат онлайн-платежа должен идти обратно на ту же карту или тот же перевод, а не на произвольный счёт.",
+     "pl": "Zwrot należności z tytułu uwzględnionej reklamacji wykonujemy tą samą metodą płatności, którą Klient zapłacił za zamówienie. Numer rachunku prosimy podać tylko wtedy, gdy zwrot tą samą metodą nie jest możliwy (np. wygasła karta) — poprosimy o niego w odpowiedzi na zgłoszenie.",
+     "ua": "Кошти за задоволеною претензією ми повертаємо тим самим способом оплати, яким Клієнт оплатив замовлення. Номер рахунку просимо вказувати лише тоді, коли повернення тим самим способом неможливе (наприклад, картка втратила чинність) — ми запитаємо його у відповіді на звернення.",
+     "en": "If we uphold your complaint, we refund you using the same payment method you used for the order. Please give us a bank account number only if a refund by the original method is not possible (for example, an expired card) — we will ask for it when we reply.",
+     "action": "Добавить по закону — «Załącznik",
+     "steps": [],
+     "done_when": "",
+     "note": ""
+    },
+    {
+     "id": "05-18",
+     "source": "audit",
+     "severity": "medium",
+     "severity_label": "Средне",
+     "issue": "LEGAL",
+     "issue_label": "Юр. требование",
+     "locale": "all",
+     "title": "Конец раздела 4 «Reklamacje», перед разделом 5",
+     "current": "4. Reklamację rozpatrujemy i informujemy o wyniku w terminie 14 dni od otrzymania zgłoszenia. W razie jej uwzględnienia naprawimy lub wymienimy Towar albo obniżymy cenę lub zwrócimy należność; koszty uzasadnionej reklamacji ponosi Sprzedawca.",
+     "why": "На странице рекламаций нет обязательной информации о внесудебном разрешении споров: WIIH, powiatowy rzecznik konsumentów, платформа ODR. В Регламенте это есть (§14), но именно страницу рекламаций проверяющий читает как самостоятельный документ, и UOKiK требует размещать эту информацию там, где описывается порядок рекламации.",
+     "pl": "Pozasądowe rozwiązywanie sporów\nJeżeli nie zgodzą się Państwo z naszym stanowiskiem, mogą Państwo skorzystać z pozasądowych sposobów rozpatrywania reklamacji: wniosku do wojewódzkiego inspektora Inspekcji Handlowej o pozasądowe rozwiązanie sporu, pomocy powiatowego lub miejskiego rzecznika konsumentów albo stałego polubownego sądu konsumenckiego. Informacje o tych procedurach dostępne są na stronie UOKiK: https://www.uokik.gov.pl. Skorzystanie z nich jest dobrowolne.",
+     "ua": "Позасудове вирішення спорів\nЯкщо ви не погоджуєтеся з нашим рішенням, ви можете скористатися позасудовими способами розгляду претензій: звернутися до воєводського інспектора Торговельної інспекції (WIIH) із заявою про позасудове вирішення спору, до повітового чи міського уповноваженого із захисту прав споживачів або до постійного третейського суду у справах споживачів. Інформація про ці процедури є на сайті UOKiK: https://www.uokik.gov.pl. Користування ними добровільне.",
+     "en": "Out-of-court dispute resolution\nIf you disagree with our decision, you may use out-of-court complaint procedures: an application to the provincial Trade Inspectorate (WIIH) for out-of-court dispute resolution, help from the district or municipal consumer ombudsman, or the permanent consumer arbitration court. Information about these procedures is available on the UOKiK website: https://www.uokik.gov.pl. Using them is voluntary.",
+     "action": "Добавить по закону — Конец раздела 4 «Reklamacje», перед разделом 5",
      "steps": [],
      "done_when": "",
      "note": ""
     }
    ],
-   "count": 6,
+   "count": 7,
    "blockers": 0,
    "worst": 1,
-   "from_documents": 1,
+   "from_documents": 0,
    "documents": [
-    "Polityka prywatności → /polityka-prywatnosci"
+    "Polityka zwrotów i reklamacji → /zwroty-i-reklamacje"
    ],
-   "url_label": "lapetitebloom.com/privacy-policy"
+   "url_label": "lapetitebloom.com/claims-and-complaints"
   },
   {
    "key": "/zgody-klauzule-i-regulamin-newslettera",
@@ -9074,6 +8829,122 @@
     "Zgody i newsletter — НЕ публичная страница, страницу убрать"
    ],
    "url_label": "lapetitebloom.com/zgody-klauzule-i-regulamin-newslettera"
+  },
+  {
+   "key": "/privacy-policy",
+   "title": "Политика конфиденциальности",
+   "desc": "",
+   "path": "/privacy-policy",
+   "urls": {
+    "pl": "https://lapetitebloom.com/privacy-policy",
+    "ua": "https://lapetitebloom.com/ua/privacy-policy",
+    "en": "https://lapetitebloom.com/en/privacy-policy"
+   },
+   "fixes": [
+    {
+     "id": "06-06",
+     "source": "audit",
+     "severity": "high",
+     "severity_label": "Критично",
+     "issue": "LEGAL",
+     "issue_label": "Юр. требование",
+     "locale": "pl",
+     "title": "Раздел «4. Odbiorcy danych», список получателей",
+     "current": "Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania).",
+     "why": "Два документа противоречат друг другу. Политика cookies называет Meta Pixel, TikTok, Klarna и PayPo, а в списке получателей данных в политике конфиденциальности их нет — там только Google и Cookiebot. Также не назван поставщик рассылки, через которого уходит newsletter, и не назван хостинг-провайдер. Для покупателя это значит, что часть получателей его данных не раскрыта.",
+     "pl": "Google (Google Analytics / Google Ads) oraz dostawca banera zgód Cookiebot (Usercentrics A/S, Dania);\n- dostawcy narzędzi marketingowych — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — wpisać wyłącznie te, które faktycznie zostaną uruchomione];\n- dostawcy płatności odroczonych — Klarna i PayPo, w zakresie wybranej metody płatności;\n- dostawca systemu wysyłki newslettera — [уточнить: nazwa i siedziba];\n- dostawca hostingu — [уточнить: nazwa i siedziba].",
+     "ua": "Google (Google Analytics / Google Ads), а також постачальнику банера керування згодами Cookiebot (Usercentrics A/S, Данія);\n- постачальникам маркетингових інструментів — [уточнити у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — вказати лише ті, що будуть фактично активовані];\n- постачальникам послуг відстроченої оплати — Klarna та PayPo, в обсязі обраного способу оплати;\n- постачальнику системи розсилки — [уточнити: назва та місцезнаходження];\n- постачальнику хостингу — [уточнити: назва та місцезнаходження].",
+     "en": "Google (Google Analytics / Google Ads) and the provider of the Cookiebot consent banner (Usercentrics A/S, Denmark);\n- providers of marketing tools — [уточнить у юриста: Meta Platforms Ireland Ltd., TikTok Technology Ltd. — list only those actually enabled];\n- deferred-payment providers — Klarna and PayPo, where you choose that payment method;\n- the newsletter delivery provider — [уточнить: name and registered office];\n- the hosting provider — [уточнить: name and registered office].",
+     "action": "Добавить по закону [PL] — Раздел «4. Odbiorcy danych», список получателей",
+     "steps": [],
+     "done_when": "",
+     "note": ""
+    },
+    {
+     "id": "06-08",
+     "source": "audit",
+     "severity": "medium",
+     "severity_label": "Средне",
+     "issue": "WRONG",
+     "issue_label": "Кривой перевод",
+     "locale": "ua",
+     "title": "Раздел «1. Контролер персональних даних», первое предложение (то же — §2 Правил интернет-магазина)",
+     "current": "Контролером персональних даних є LPB Sp. z o.o. із місцезнаходженням у Warszawa, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa",
+     "why": "«із місцезнаходженням у Warszawa» — латинская форма подставлена в украинское предложение без склонения, читается как машинный перевод. Название города в связном тексте нужно по-украински, тогда как сам адрес регистрации остаётся латиницей. В EN та же проблема мягче: «registered office in Warszawa» — в английском тексте город принято называть Warsaw. Ошибка повторяется в §2 Правил интернет-магазина на обеих локалях.",
+     "pl": "Administratorem danych osobowych jest LPB Sp. z o.o. z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa",
+     "ua": "Контролером персональних даних є LPB Sp. z o.o. з місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa",
+     "en": "The data controller is LPB Sp. z o.o., with its registered office at ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland.",
+     "action": "Переписать перевод [UA] — Раздел «1. Контролер персональних даних», первое предложение (то же",
+     "steps": [],
+     "done_when": "",
+     "note": ""
+    },
+    {
+     "id": "06-07",
+     "source": "audit",
+     "severity": "low",
+     "severity_label": "Мелочь",
+     "issue": "WRONG",
+     "issue_label": "Кривой перевод",
+     "locale": "pl",
+     "title": "Раздел «4. Odbiorcy danych», первый пункт списка — против раздела «5. Przekazywanie danych poza EOG»",
+     "current": "dostawca hostingu (serwer w Unii Europejskiej);",
+     "why": "Внутреннее расхождение: в п. 4 сервер описан как находящийся в Евросоюзе, в п. 5 — в Европейской экономической зоне. Это разные территории, и в тексте о трансграничной передаче данных разница существенна. Повторяется во всех трёх локалях («у Європейському Союзі» / «Європейському економічному просторі», «European Union» / «European Economic Area»).",
+     "pl": "dostawca hostingu (serwery w Europejskim Obszarze Gospodarczym);",
+     "ua": "постачальнику послуг хостингу (сервери в Європейському економічному просторі);",
+     "en": "the hosting provider (servers located in the European Economic Area);",
+     "action": "Переписать перевод [PL] — Раздел «4. Odbiorcy danych», первый пункт списка",
+     "steps": [],
+     "done_when": "",
+     "note": ""
+    },
+    {
+     "id": "06-09",
+     "source": "audit",
+     "severity": "low",
+     "severity_label": "Мелочь",
+     "issue": "WRONG",
+     "issue_label": "Кривой перевод",
+     "locale": "ua",
+     "title": "Раздел «1. Контролер персональних даних», второе предложение",
+     "current": "Контакт із питань персональних даних: rodo@lapetitebloom.com. Контролер не призначив інспектора із захисту даних (IOD).",
+     "why": "«IOD» — польская аббревиатура (Inspektor Ochrony Danych), в украинском тексте она ничего не значит. В английской версии на этом же месте корректно стоит DPO, то есть аббревиатуру просто забыли перевести вместе с остальным.",
+     "pl": "Kontakt w sprawach danych osobowych: rodo@lapetitebloom.com. Administrator nie powołał inspektora ochrony danych (IOD).",
+     "ua": "Контакт із питань персональних даних: rodo@lapetitebloom.com. Контролер не призначив уповноважену особу із захисту персональних даних (DPO).",
+     "en": "Contact regarding personal data matters: rodo@lapetitebloom.com. The controller has not appointed a Data Protection Officer (DPO).",
+     "action": "Переписать перевод [UA] — Раздел «1. Контролер персональних даних», второе предложение",
+     "steps": [],
+     "done_when": "",
+     "note": ""
+    },
+    {
+     "id": "19-12",
+     "source": "audit",
+     "severity": "low",
+     "severity_label": "Мелочь",
+     "issue": "LEGAL",
+     "issue_label": "Юр. требование",
+     "locale": "all",
+     "title": "Пункт 1 «Administrator danych» / «Контролер даних» / «Data controller»",
+     "current": "Administratorem danych osobowych jest LPB Sp. z o.o. z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, KRS 0001190730, NIP 5273179673, REGON 542537097.",
+     "why": "Реквизиты администратора данных приведены в третьей редакции — отличной и от регламента (там есть суд и kapitał), и от страницы контактов (там только три номера). Разнобой между тремя документами на одном сайте — то, что бросается в глаза при проверке и создаёт впечатление, что данные копировали наспех. Достаточно привести все три места к одной формулировке из 19-06: добавить страну и суд регистрации, полное фирменное наименование дать один раз, дальше пользоваться сокращением.",
+     "pl": "Administratorem danych osobowych jest LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) z siedzibą w Warszawie, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska, wpisana do rejestru przedsiębiorców KRS prowadzonego przez [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] pod numerem KRS 0001190730, NIP 5273179673, REGON 542537097.",
+     "ua": "Контролером персональних даних є LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.) із місцезнаходженням у Варшаві, ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща, внесена до реєстру підприємців KRS, який веде [уточнити за витягом з KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS], за номером KRS 0001190730, NIP 5273179673, REGON 542537097.",
+     "en": "The data controller is LPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.), with its registered office at ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland, entered in the register of entrepreneurs of the KRS kept by [уточнить по выписке KRS: Sąd Rejonowy dla m.st. Warszawy w Warszawie, __ Wydział Gospodarczy KRS] under KRS number 0001190730, NIP 5273179673, REGON 542537097.",
+     "action": "Добавить по закону — Пункт 1 «Administrator danych» / «Контролер даних» / «Data controller»",
+     "steps": [],
+     "done_when": "",
+     "note": ""
+    }
+   ],
+   "count": 5,
+   "blockers": 0,
+   "worst": 1,
+   "from_documents": 0,
+   "documents": [
+    "Polityka prywatności → /polityka-prywatnosci"
+   ],
+   "url_label": "lapetitebloom.com/privacy-policy"
   },
   {
    "key": "/special-offers",

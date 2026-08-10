@@ -102,7 +102,7 @@
      "n": 16,
      "pl": "- Zwroty i reklamacje – hello@lapetitebloom.com (opcjonalnie alias zwroty@/reklamacje@)",
      "ua": "- Повернення та рекламації – hello@lapetitebloom.com (опційно аліас zwroty@/reklamacje@)",
-     "en": "- Returns and complaints – hello@lapetitebloom.com (optionally the alias zwroty@/reklamacje@)"
+     "en": "- [[Returns and complaints|https://lapetitebloom.com/en/claims-and-complaints]] – hello@lapetitebloom.com (optionally the alias zwroty@/reklamacje@)"
     },
     {
      "n": 17,
@@ -173,8 +173,8 @@
     {
      "n": 28,
      "pl": "2. Zamówienie składa się przez dodanie Towarów do koszyka, wybór dostawy i płatności oraz potwierdzenie zamówienia z obowiązkiem zapłaty.",
-     "ua": "2. Замовлення оформлюється шляхом додавання Товарів до кошика, вибору доставки та оплати, а також підтвердження замовлення із зобов’язанням оплати.",
-     "en": "2. An order is placed by adding the Goods to the cart, selecting delivery and payment, and confirming the order with an obligation to pay."
+     "ua": "2. Замовлення оформлюється шляхом додавання Товарів до кошика, вибору [[Доставки та оплати|https://lapetitebloom.com/ua/delivery-and-payment]], а також підтвердження замовлення із зобов’язанням оплати.",
+     "en": "2. An order is placed by adding the Goods to the cart, selecting [[Delivery and Payment|https://lapetitebloom.com/en/delivery-and-payment]], and confirming the order with an obligation to pay."
     },
     {
      "n": 29,
@@ -502,9 +502,9 @@
     },
     {
      "n": 83,
-     "pl": "Administratorem danych jest Sprzedawca. Szczegółowe zasady przetwarzania określa Polityka prywatności dostępna w Sklepie.",
-     "ua": "Контролером персональних даних є Продавець. Детальні засади обробки визначає Політика конфіденційності, доступна в Магазині.",
-     "en": "The data controller is the Seller. Detailed processing rules are set out in the Privacy policy available in the Store."
+     "pl": "Administratorem danych jest Sprzedawca. Szczegółowe zasady przetwarzania określa [[Polityka prywatności|https://lapetitebloom.com/privacy-policy]] dostępna w Sklepie.",
+     "ua": "Контролером персональних даних є Продавець. Детальні засади обробки визначає [[Політика конфіденційності|https://lapetitebloom.com/ua/privacy-policy]], доступна в Магазині.",
+     "en": "The data controller is the Seller. Detailed processing rules are set out in [[the Privacy Policy|https://lapetitebloom.com/en/privacy-policy]] available in the Store."
     },
     {
      "n": 84,
@@ -680,6 +680,43 @@
    ],
    "applied_decisions": [
     "kontakt@ → hello@ (решение заказчика)"
+   ],
+   "page": {
+    "pl": "https://lapetitebloom.com/terms-of-use",
+    "ua": "https://lapetitebloom.com/ua/terms-of-use",
+    "en": "https://lapetitebloom.com/en/terms-of-use"
+   },
+   "links": [
+    {
+     "doc": "zwroty",
+     "name": "Returns and complaints",
+     "url": "https://lapetitebloom.com/en/claims-and-complaints"
+    },
+    {
+     "doc": "dostawa",
+     "name": "Доставки та оплати",
+     "url": "https://lapetitebloom.com/ua/delivery-and-payment"
+    },
+    {
+     "doc": "dostawa",
+     "name": "Delivery and Payment",
+     "url": "https://lapetitebloom.com/en/delivery-and-payment"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "Polityka prywatności",
+     "url": "https://lapetitebloom.com/privacy-policy"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "Політика конфіденційності",
+     "url": "https://lapetitebloom.com/ua/privacy-policy"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "the Privacy Policy",
+     "url": "https://lapetitebloom.com/en/privacy-policy"
+    }
    ]
   },
   {
@@ -742,13 +779,13 @@
      "n": 9,
      "pl": "- dane z korespondencji, zwrotów i reklamacji;",
      "ua": "- дані з листування, повернень і рекламацій;",
-     "en": "- data from correspondence, returns and complaints;"
+     "en": "- data from correspondence, [[Returns and complaints|https://lapetitebloom.com/en/claims-and-complaints]];"
     },
     {
      "n": 10,
-     "pl": "- dane techniczne i pliki cookies (zob. Polityka cookies).",
+     "pl": "- dane techniczne i pliki cookies (zob. [[Polityka cookies|https://lapetitebloom.com/polityka-cookies]]).",
      "ua": "- технічні дані та файли cookie (див. Політику щодо файлів cookie).",
-     "en": "- technical data and cookies (see the Cookie policy)."
+     "en": "- technical data and cookies (see [[the Cookie Policy|https://lapetitebloom.com/en/polityka-cookies]])."
     },
     {
      "n": 11,
@@ -778,7 +815,7 @@
      "n": 15,
      "pl": "3. Obsługa zwrotów, reklamacji oraz dochodzenie lub obrona roszczeń — art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes).",
      "ua": "3. Опрацювання повернень, рекламацій, а також заявлення або захист вимог — ст. 6 п. 1 літ. f GDPR (законний інтерес).",
-     "en": "3. Handling returns and complaints and the pursuit or defence of claims — Article 6(1)(f) GDPR (legitimate interest)."
+     "en": "3. Handling [[Returns and complaints|https://lapetitebloom.com/en/claims-and-complaints]] and the pursuit or defence of claims — Article 6(1)(f) GDPR (legitimate interest)."
     },
     {
      "n": 16,
@@ -938,9 +975,9 @@
     },
     {
      "n": 42,
-     "pl": "Zasady stosowania plików cookies opisuje odrębna Polityka cookies dostępna w Sklepie.",
-     "ua": "Правила застосування файлів cookie описує окрема Політика щодо файлів cookie, доступна в Магазині.",
-     "en": "The rules for the use of cookies are described in a separate Cookie policy available in the Store."
+     "pl": "Zasady stosowania plików cookies opisuje odrębna [[Polityka cookies|https://lapetitebloom.com/polityka-cookies]] dostępna w Sklepie.",
+     "ua": "[[Правила|https://lapetitebloom.com/ua/terms-of-use]] застосування файлів cookie описує окрема [[Політика щодо файлів cookie|https://lapetitebloom.com/ua/polityka-cookies]], доступна в Магазині.",
+     "en": "The rules for the use of cookies are described in a separate [[Cookie Policy|https://lapetitebloom.com/en/polityka-cookies]] available in the Store."
     },
     {
      "n": 43,
@@ -996,6 +1033,53 @@
    ],
    "applied_decisions": [
     "kontakt@ → hello@ (решение заказчика)"
+   ],
+   "page": {
+    "pl": "https://lapetitebloom.com/privacy-policy",
+    "ua": "https://lapetitebloom.com/ua/privacy-policy",
+    "en": "https://lapetitebloom.com/en/privacy-policy"
+   },
+   "links": [
+    {
+     "doc": "zwroty",
+     "name": "Returns and complaints",
+     "url": "https://lapetitebloom.com/en/claims-and-complaints"
+    },
+    {
+     "doc": "cookies",
+     "name": "Polityka cookies",
+     "url": "https://lapetitebloom.com/polityka-cookies"
+    },
+    {
+     "doc": "cookies",
+     "name": "the Cookie Policy",
+     "url": "https://lapetitebloom.com/en/polityka-cookies"
+    },
+    {
+     "doc": "zwroty",
+     "name": "Returns and complaints",
+     "url": "https://lapetitebloom.com/en/claims-and-complaints"
+    },
+    {
+     "doc": "cookies",
+     "name": "Polityka cookies",
+     "url": "https://lapetitebloom.com/polityka-cookies"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Правила",
+     "url": "https://lapetitebloom.com/ua/terms-of-use"
+    },
+    {
+     "doc": "cookies",
+     "name": "Політика щодо файлів cookie",
+     "url": "https://lapetitebloom.com/ua/polityka-cookies"
+    },
+    {
+     "doc": "cookies",
+     "name": "Cookie Policy",
+     "url": "https://lapetitebloom.com/en/polityka-cookies"
+    }
    ]
   },
   {
@@ -1014,9 +1098,9 @@
     },
     {
      "n": 2,
-     "pl": "Administratorem danych jest LPB Sp. z o.o.; kontakt: rodo@lapetitebloom.com. Szczegółowe zasady przetwarzania danych opisuje Polityka prywatności.",
-     "ua": "Контролером даних є LPB Sp. z o.o.; контакт: rodo@lapetitebloom.com. Детальні правила обробки даних описує Політика конфіденційності.",
-     "en": "The data controller is LPB Sp. z o.o.; contact: rodo@lapetitebloom.com. Detailed rules on the processing of data are described in the Privacy policy."
+     "pl": "Administratorem danych jest LPB Sp. z o.o.; kontakt: rodo@lapetitebloom.com. Szczegółowe zasady przetwarzania danych opisuje [[Polityka prywatności|https://lapetitebloom.com/privacy-policy]].",
+     "ua": "Контролером даних є LPB Sp. z o.o.; контакт: rodo@lapetitebloom.com. Детальні [[Правила|https://lapetitebloom.com/ua/terms-of-use]] обробки даних описує [[Політика конфіденційності|https://lapetitebloom.com/ua/privacy-policy]].",
+     "en": "The data controller is LPB Sp. z o.o.; contact: rodo@lapetitebloom.com. Detailed rules on the processing of data are described in [[the Privacy Policy|https://lapetitebloom.com/en/privacy-policy]]."
     },
     {
      "n": 3,
@@ -1129,6 +1213,33 @@
    ],
    "applied_decisions": [
     "kontakt@ → hello@ (решение заказчика)"
+   ],
+   "page": {
+    "pl": "https://lapetitebloom.com/polityka-cookies",
+    "ua": "https://lapetitebloom.com/ua/polityka-cookies",
+    "en": "https://lapetitebloom.com/en/polityka-cookies"
+   },
+   "links": [
+    {
+     "doc": "prywatnosc",
+     "name": "Polityka prywatności",
+     "url": "https://lapetitebloom.com/privacy-policy"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Правила",
+     "url": "https://lapetitebloom.com/ua/terms-of-use"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "Політика конфіденційності",
+     "url": "https://lapetitebloom.com/ua/privacy-policy"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "the Privacy Policy",
+     "url": "https://lapetitebloom.com/en/privacy-policy"
+    }
    ]
   },
   {
@@ -1336,7 +1447,13 @@
    ],
    "applied_decisions": [
     "kontakt@ → hello@ (решение заказчика)"
-   ]
+   ],
+   "page": {
+    "pl": "https://lapetitebloom.com/claims-and-complaints",
+    "ua": "https://lapetitebloom.com/ua/claims-and-complaints",
+    "en": "https://lapetitebloom.com/en/claims-and-complaints"
+   },
+   "links": []
   },
   {
    "doc": "5-zgody-i-newsletter",
@@ -1360,9 +1477,9 @@
     },
     {
      "n": 3,
-     "pl": "Administratorem danych jest LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. Dane przetwarzamy w celu realizacji zamówienia, obsługi konta oraz — za zgodą — marketingu. Przysługuje Państwu prawo dostępu, sprostowania, usunięcia i ograniczenia danych oraz wniesienia skargi do PUODO. Szczegóły w Polityce prywatności. Kontakt: rodo@lapetitebloom.com.",
-     "ua": "Контролером даних є LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. Ми обробляємо дані з метою виконання замовлення, обслуговування акаунта та — за згодою — маркетингу. Ви маєте право на доступ до даних, їх виправлення, видалення та обмеження обробки, а також право подати скаргу до PUODO. Деталі — у Політиці конфіденційності. Контакт: rodo@lapetitebloom.com.",
-     "en": "The data controller is LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. We process the data in order to fulfil orders, to maintain accounts and — with consent — for marketing. You have the right to access, rectification, erasure and restriction of your data, and the right to lodge a complaint with PUODO. Details are set out in the Privacy policy. Contact: rodo@lapetitebloom.com."
+     "pl": "Administratorem danych jest LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. Dane przetwarzamy w celu realizacji zamówienia, obsługi konta oraz — za zgodą — marketingu. Przysługuje Państwu prawo dostępu, sprostowania, usunięcia i ograniczenia danych oraz wniesienia skargi do PUODO. Szczegóły w [[Polityce prywatności|https://lapetitebloom.com/privacy-policy]]. Kontakt: rodo@lapetitebloom.com.",
+     "ua": "Контролером даних є LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. Ми обробляємо дані з метою виконання замовлення, обслуговування акаунта та — за згодою — маркетингу. Ви маєте право на доступ до даних, їх виправлення, видалення та обмеження обробки, а також право подати скаргу до PUODO. Деталі — у [[Політиці конфіденційності|https://lapetitebloom.com/ua/privacy-policy]]. Контакт: rodo@lapetitebloom.com.",
+     "en": "The data controller is LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa. We process the data in order to fulfil orders, to maintain accounts and — with consent — for marketing. You have the right to access, rectification, erasure and restriction of your data, and the right to lodge a complaint with PUODO. Details are set out in [[the Privacy Policy|https://lapetitebloom.com/en/privacy-policy]]. Contact: rodo@lapetitebloom.com."
     },
     {
      "n": 4,
@@ -1378,9 +1495,9 @@
     },
     {
      "n": 6,
-     "pl": "- Akceptuję Regulamin oraz Politykę prywatności. [pole wymagane]",
-     "ua": "- Я приймаю Правила та Політику конфіденційності. [обов’язкове поле]",
-     "en": "- I accept the Terms and Conditions and the Privacy policy. [required field]"
+     "pl": "- Akceptuję [[Regulamin|https://lapetitebloom.com/terms-of-use]] oraz Politykę prywatności. [pole wymagane]",
+     "ua": "- Я приймаю [[Правила|https://lapetitebloom.com/ua/terms-of-use]] та Політику конфіденційності. [обов’язкове поле]",
+     "en": "- I accept [[the Terms and Conditions|https://lapetitebloom.com/en/terms-of-use]] and [[the Privacy Policy|https://lapetitebloom.com/en/privacy-policy]]. [required field]"
     },
     {
      "n": 7,
@@ -1396,20 +1513,20 @@
     },
     {
      "n": 9,
-     "pl": "- Wyrażam zgodę na otrzymywanie informacji marketingowych drogą elektroniczną (e-mail), zgodnie z obowiązującymi przepisami i Polityką prywatności. [opcjonalne]",
-     "ua": "- Я даю згоду на отримання маркетингової інформації електронними засобами (електронною поштою) відповідно до чинних приписів і Політики конфіденційності. [необов’язково]",
-     "en": "- I consent to receiving marketing information by electronic means (e-mail), in accordance with the applicable regulations and with the Privacy policy. [optional]"
+     "pl": "- Wyrażam zgodę na otrzymywanie informacji marketingowych drogą elektroniczną (e-mail), zgodnie z obowiązującymi przepisami i [[Polityką prywatności|https://lapetitebloom.com/privacy-policy]]. [opcjonalne]",
+     "ua": "- Я даю згоду на отримання маркетингової інформації електронними засобами (електронною поштою) відповідно до чинних приписів і [[Політики конфіденційності|https://lapetitebloom.com/ua/privacy-policy]]. [необов’язково]",
+     "en": "- I consent to receiving marketing information by electronic means (e-mail), in accordance with the applicable regulations and with [[the Privacy Policy|https://lapetitebloom.com/en/privacy-policy]]. [optional]"
     },
     {
      "n": 10,
-     "pl": "Zgody muszą być dobrowolne, NIE odznaczone domyślnie i oddzielone od akceptacji Regulaminu.",
-     "ua": "Згоди мають бути добровільними, НЕ позначеними за замовчуванням і відокремленими від прийняття Правил.",
-     "en": "Consents must be voluntary, NOT ticked by default and separate from the acceptance of the Terms and Conditions."
+     "pl": "Zgody muszą być dobrowolne, NIE odznaczone domyślnie i oddzielone od akceptacji [[Regulaminu|https://lapetitebloom.com/terms-of-use]].",
+     "ua": "Згоди мають бути добровільними, НЕ позначеними за замовчуванням і відокремленими від прийняття [[Правил|https://lapetitebloom.com/ua/terms-of-use]].",
+     "en": "Consents must be voluntary, NOT ticked by default and separate from the acceptance of [[the Terms and Conditions|https://lapetitebloom.com/en/terms-of-use]]."
     },
     {
      "n": 11,
-     "pl": "3. Regulamin newslettera",
-     "ua": "3. Правила розсилки",
+     "pl": "3. [[Regulamin|https://lapetitebloom.com/terms-of-use]] newslettera",
+     "ua": "3. [[Правила|https://lapetitebloom.com/ua/terms-of-use]] розсилки",
      "en": "3. Newsletter terms"
     },
     {
@@ -1485,6 +1602,88 @@
    ],
    "applied_decisions": [
     "kontakt@ → hello@ (решение заказчика)"
+   ],
+   "page": {
+    "pl": "https://lapetitebloom.com/zgody-klauzule-i-regulamin-newslettera",
+    "ua": "https://lapetitebloom.com/ua/zgody-klauzule-i-regulamin-newslettera",
+    "en": "https://lapetitebloom.com/en/zgody-klauzule-i-regulamin-newslettera"
+   },
+   "links": [
+    {
+     "doc": "prywatnosc",
+     "name": "Polityce prywatności",
+     "url": "https://lapetitebloom.com/privacy-policy"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "Політиці конфіденційності",
+     "url": "https://lapetitebloom.com/ua/privacy-policy"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "the Privacy Policy",
+     "url": "https://lapetitebloom.com/en/privacy-policy"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Regulamin",
+     "url": "https://lapetitebloom.com/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Правила",
+     "url": "https://lapetitebloom.com/ua/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "the Terms and Conditions",
+     "url": "https://lapetitebloom.com/en/terms-of-use"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "the Privacy Policy",
+     "url": "https://lapetitebloom.com/en/privacy-policy"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "Polityką prywatności",
+     "url": "https://lapetitebloom.com/privacy-policy"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "Політики конфіденційності",
+     "url": "https://lapetitebloom.com/ua/privacy-policy"
+    },
+    {
+     "doc": "prywatnosc",
+     "name": "the Privacy Policy",
+     "url": "https://lapetitebloom.com/en/privacy-policy"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Regulaminu",
+     "url": "https://lapetitebloom.com/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Правил",
+     "url": "https://lapetitebloom.com/ua/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "the Terms and Conditions",
+     "url": "https://lapetitebloom.com/en/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Regulamin",
+     "url": "https://lapetitebloom.com/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Правила",
+     "url": "https://lapetitebloom.com/ua/terms-of-use"
+    }
    ]
   },
   {
@@ -1601,7 +1800,13 @@
    ],
    "applied_decisions": [
     "kontakt@ → hello@ (решение заказчика)"
-   ]
+   ],
+   "page": {
+    "pl": "https://lapetitebloom.com/delivery-and-payment",
+    "ua": "https://lapetitebloom.com/ua/delivery-and-payment",
+    "en": "https://lapetitebloom.com/en/delivery-and-payment"
+   },
+   "links": []
   },
   {
    "doc": "7-regulamin-kart-podarunkowych",
@@ -1619,15 +1824,15 @@
     },
     {
      "n": 2,
-     "pl": "Uwaga: karty podarunkowe nie są obecnie dostępne w ofercie. Niniejszy regulamin wchodzi w życie z chwilą ich udostępnienia w Sklepie.",
-     "ua": "Увага: подарункові картки наразі недоступні в пропозиції. Ці Правила набирають чинності з моменту їх надання в Магазині.",
-     "en": "Please note: gift cards are not currently available in the offer. These Terms and Conditions come into force at the moment the cards are made available in the Store."
+     "pl": "Uwaga: karty podarunkowe nie są obecnie dostępne w ofercie. Niniejszy [[Regulamin|https://lapetitebloom.com/terms-of-use]] wchodzi w życie z chwilą ich udostępnienia w Sklepie.",
+     "ua": "Увага: подарункові картки наразі недоступні в пропозиції. Ці [[Правила|https://lapetitebloom.com/ua/terms-of-use]] набирають чинності з моменту їх надання в Магазині.",
+     "en": "Please note: gift cards are not currently available in the offer. These [[Terms and Conditions|https://lapetitebloom.com/en/terms-of-use]] come into force at the moment the cards are made available in the Store."
     },
     {
      "n": 3,
-     "pl": "1. Wydawcą kart podarunkowych jest LPB Sp. z o.o. (dane jak w Regulaminie Sklepu).",
-     "ua": "1. Емітентом подарункових карток є LPB Sp. z o.o. (дані як у Правилах інтернет-магазину).",
-     "en": "1. The issuer of the gift cards is LPB Sp. z o.o. (details as in the Online store terms and conditions)."
+     "pl": "1. Wydawcą kart podarunkowych jest LPB Sp. z o.o. (dane jak w [[Regulaminie Sklepu|https://lapetitebloom.com/terms-of-use]]).",
+     "ua": "1. Емітентом подарункових карток є LPB Sp. z o.o. (дані як у [[Правилах інтернет-магазину|https://lapetitebloom.com/ua/terms-of-use]]).",
+     "en": "1. The issuer of the gift cards is LPB Sp. z o.o. (details as in the Online store [[Terms and Conditions|https://lapetitebloom.com/en/terms-of-use]])."
     },
     {
      "n": 4,
@@ -1667,9 +1872,9 @@
     },
     {
      "n": 10,
-     "pl": "8. Reklamacje dotyczące kart można zgłaszać na adres hello@lapetitebloom.com. W sprawach nieuregulowanych stosuje się Regulamin Sklepu.",
-     "ua": "8. Рекламації щодо карток можна подавати на адресу hello@lapetitebloom.com. У питаннях, не врегульованих цими Правилами, застосовуються Правила інтернет-магазину.",
-     "en": "8. Complaints regarding the cards may be submitted to hello@lapetitebloom.com. In matters not regulated herein, the Online store terms and conditions apply."
+     "pl": "8. Reklamacje dotyczące kart można zgłaszać na adres hello@lapetitebloom.com. W sprawach nieuregulowanych stosuje się [[Regulamin Sklepu|https://lapetitebloom.com/terms-of-use]].",
+     "ua": "8. Рекламації щодо карток можна подавати на адресу hello@lapetitebloom.com. У питаннях, не врегульованих цими Правилами, застосовуються [[Правила інтернет-магазину|https://lapetitebloom.com/ua/terms-of-use]].",
+     "en": "8. Complaints regarding the cards may be submitted to hello@lapetitebloom.com. In matters not regulated herein, the Online store [[Terms and Conditions|https://lapetitebloom.com/en/terms-of-use]] apply."
     }
    ],
    "notes": [
@@ -1685,6 +1890,58 @@
    ],
    "applied_decisions": [
     "kontakt@ → hello@ (решение заказчика)"
+   ],
+   "page": {
+    "pl": "https://lapetitebloom.com/regulamin-kart-podarunkowych",
+    "ua": "https://lapetitebloom.com/ua/regulamin-kart-podarunkowych",
+    "en": "https://lapetitebloom.com/en/regulamin-kart-podarunkowych"
+   },
+   "links": [
+    {
+     "doc": "regulamin",
+     "name": "Regulamin",
+     "url": "https://lapetitebloom.com/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Правила",
+     "url": "https://lapetitebloom.com/ua/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Terms and Conditions",
+     "url": "https://lapetitebloom.com/en/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Regulaminie Sklepu",
+     "url": "https://lapetitebloom.com/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Правилах інтернет-магазину",
+     "url": "https://lapetitebloom.com/ua/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Terms and Conditions",
+     "url": "https://lapetitebloom.com/en/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Regulamin Sklepu",
+     "url": "https://lapetitebloom.com/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Правила інтернет-магазину",
+     "url": "https://lapetitebloom.com/ua/terms-of-use"
+    },
+    {
+     "doc": "regulamin",
+     "name": "Terms and Conditions",
+     "url": "https://lapetitebloom.com/en/terms-of-use"
+    }
    ]
   },
   {
@@ -1769,7 +2026,13 @@
    ],
    "applied_decisions": [
     "kontakt@ → hello@ (решение заказчика)"
-   ]
+   ],
+   "page": {
+    "pl": "https://lapetitebloom.com/deklaracja-dostepnosci",
+    "ua": "https://lapetitebloom.com/ua/deklaracja-dostepnosci",
+    "en": "https://lapetitebloom.com/en/deklaracja-dostepnosci"
+   },
+   "links": []
   }
  ],
  "total_blocks": 259
