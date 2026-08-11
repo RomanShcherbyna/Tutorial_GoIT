@@ -107,6 +107,18 @@ ITEMS = [
   "Третье место с текстом чужого бренда. Написан свой подзаголовок: все акции и распродажи La Petite Bloom в одном месте."),
 ]
 
+# Часть строк на экране не существует — они живут в коде страницы. Для них
+# снимок показывает исходник с подсвеченной строкой, и подпись говорит об этом
+# прямо, чтобы никто не искал этот текст глазами на сайте.
+SHOT_CAPTION = {
+ "01-13": "Код главной страницы: подсвечена строка <title>, следом — description",
+ "01-14": "Первый заголовок главной — сразу h2 «Nowości»; тега h1 на странице нет",
+ "09-04": "Код страницы категории: title и description совпадают дословно",
+ "11-22": "Код карточки товара: description дословно повторяет название",
+ "13-21": "Форма восстановления пароля целиком — пояснений нет",
+ "03-05": "Карточка контактов: под адресом почты пусто — там должны быть соцсети",
+}
+
 GDPR_NOTE = (
  "Отдельно: страница «Запросы по персональным данным» (/personal-data-requests) "
  "написана целиком — на ней не хватало половины обязательного по GDPR. Она лежит "
@@ -122,7 +134,7 @@ def img_uri(path):
 
 
 def main():
-    cl_path, crops, thumbs, out = sys.argv[1:5]
+    cl_path, crops, spots, out = sys.argv[1:5]
     d = json.load(open(cl_path, encoding="utf-8"))
     F = {f["id"]: f for g in d["groups"] for f in g["fixes"]}
 
@@ -136,10 +148,13 @@ def main():
         for lang, name in (("pl", "Polski"), ("ua", "Українська"), ("en", "English")):
             t = member_text(f, lang, member) or (f.get(lang) or "")
             texts[lang] = (name, t.strip())
-        # снимок: точная вырезка, если есть, иначе страница целиком
-        crop = img_uri(os.path.join(crops, member + ".jpg")) or \
-               img_uri(os.path.join(crops, fid + ".jpg"))
-        page_shot = "" if crop else img_uri(os.path.join(thumbs, "pl", shot + ".jpg"))
+        # Снимок всегда показывает место правки, а не страницу целиком:
+        # снимок страницы доказывает, что она существует, но не показывает, что
+        # менять, — а утверждают именно это. Часть мест снята прицельно
+        # (spots), остальные — общей съёмкой (crops).
+        crop = (img_uri(os.path.join(spots, fid + ".jpg"))
+                or img_uri(os.path.join(crops, member + ".jpg"))
+                or img_uri(os.path.join(crops, fid + ".jpg")))
         links = " ".join(
             f'<a href="https://lapetitebloom.com{u}" target="_blank" rel="noopener">{esc(u)}</a>'
             for u in urls if u.startswith("/"))
@@ -148,13 +163,9 @@ def main():
             for name, t in texts.values() if t)
         shot_html = ""
         if crop:
+            cap = SHOT_CAPTION.get(fid, "Это место на странице, обведено красным")
             shot_html = (f'<figure><img loading="lazy" src="{crop}" '
-                         f'alt="Это место на странице"><figcaption>Это место на '
-                         f'странице, ошибка обведена</figcaption></figure>')
-        elif page_shot:
-            shot_html = (f'<figure><img loading="lazy" src="{page_shot}" '
-                         f'alt="Страница целиком"><figcaption>Страница, о которой '
-                         f'идёт речь (вырезки этого места нет)</figcaption></figure>')
+                         f'alt="{esc(cap)}"><figcaption>{esc(cap)}</figcaption></figure>')
         cards.append(f"""
 <article id="{esc(fid)}">
   <header><span class="num">{n}</span>
