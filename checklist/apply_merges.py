@@ -22,12 +22,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_workorder import load_verdicts  # noqa: E402
 
 
-def block(f, field):
+def block(f, field, title):
     txt = (f.get(field) or "").strip()
     if not txt:
         return ""
-    head = f"— {f['id']} · {(f.get('title') or '').strip()}"
-    return head + "\n" + txt
+    return f"— {f['id']} · {title}\n" + txt
 
 
 def main():
@@ -49,17 +48,20 @@ def main():
         rest = [m for m in ids if m != lead_id]
         lead = F[lead_id]
 
+        # Блоки собираются до переименования: подпись блока — это место
+        # правки, и у ведущей оно должно остаться прежним, иначе её собственный
+        # блок ссылается сам на себя и место теряется.
+        order = [lead_id] + rest
+        titles = {m: (F[m].get("title") or "").strip() for m in order}
         lead["title"] = c["task_title"]
         lead["action"] = "Заменить — " + c["task_title"]
         lead["merge_mechanism"] = c["mechanism"]
-        order = [lead_id] + rest
         for field in ("current", "pl", "ua", "en"):
-            parts = [block(F[m], field) for m in order]
+            parts = [block(F[m], field, titles[m]) for m in order]
             parts = [p for p in parts if p]
             if parts:
                 lead[field] = "\n\n".join(parts)
-        heads = "\n".join(
-            f"• {F[m]['id']} — {(F[m].get('title') or '').strip()}" for m in order)
+        heads = "\n".join(f"• {m} — {titles[m]}" for m in order)
         lead["why"] = (
             f"Одна работа вместо {len(order)}: {c['mechanism']}\n\n"
             f"Закрывает разом:\n{heads}\n\n"
