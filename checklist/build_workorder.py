@@ -388,6 +388,23 @@ ul.urls code{font-size:.82rem;word-break:break-all}
 """
 
 JS = """
+// Свернуть или развернуть разом. Кнопка называется по тому, что сделает
+// следующий щелчок, а решает по большинству: если открыто хоть что-то — закрыть.
+(function () {
+  var fold = document.getElementById('fold');
+  if (!fold) return;
+  fold.addEventListener('click', function () {
+    var docs = [].slice.call(document.querySelectorAll('section.doc'));
+    var close = docs.some(function (d) { return !d.classList.contains('closed'); });
+    docs.forEach(function (d) {
+      d.classList.toggle('closed', close);
+      var a = d.querySelector('.arrow');
+      if (a) a.textContent = close ? '▸' : '▾';
+    });
+    fold.textContent = close ? 'Развернуть всё' : 'Свернуть всё';
+  });
+})();
+
 document.addEventListener('click', function (e) {
   var head = e.target.closest('.dochead');
   if (head && !e.target.closest('a')) {
@@ -741,10 +758,13 @@ def partial_block(g):
                      f'{esc(dict(d for d in OWNER_NAMES)[o])}</span>'
                      for o in g.get("owners", []))
     shot = ""
+    # Группы открыты сразу. Свёрнутые заголовки прятали не только правки, но и
+    # кнопки с полями для ответа: страница выглядела как список из двух десятков
+    # строк, и не было видно, что внутри вообще есть с чем работать.
     return f"""
-<section class="doc closed" data-owners="{esc(' '.join(g.get('owners', [])))}">
+<section class="doc" data-owners="{esc(' '.join(g.get('owners', [])))}">
   <header class="dochead">
-    <span class="arrow">▸</span>
+    <span class="arrow">▾</span>
     <span class="dtitle">{esc(g['title'])}</span>
     {f'<code class="durl">{esc(url)}</code>' if url else ''}
     {owners}
@@ -824,6 +844,7 @@ def main():
       <button class="btn" data-own="all" aria-selected="true">Все правки</button>
       <button class="btn" data-own="dev" aria-selected="false">Программистам</button>
       <button class="btn" data-own="content" aria-selected="false">Наш контент</button>
+      <button class="btn" id="fold" type="button">Свернуть всё</button>
       <button class="btn" id="theme" type="button">Тема</button>
     </div>
     <div class="answers">
