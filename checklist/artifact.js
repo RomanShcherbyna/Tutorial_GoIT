@@ -38,6 +38,39 @@
       }).join('') + '</div>';
   }
 
+
+  var VKEY = 'lpb-verdicts';
+  var V = {};
+  try { V = JSON.parse(localStorage.getItem(VKEY) || '{}'); } catch (e) { V = {}; }
+  function vsave() { try { localStorage.setItem(VKEY, JSON.stringify(V)); } catch (e) { } }
+  function vget(id) { return V[id] || {}; }
+  function vstate(a) {
+    if (!a) return '';
+    if (a.v === 'ok') return 'Согласен';
+    if (a.v === 'no') return 'Удалить';
+    if ((a.claude || '').trim() || (a.dev || '').trim()) return 'С комментарием';
+    return '';
+  }
+  function verdict(f) {
+    var a = vget(f.id);
+    var open = ((a.claude || '').trim() || (a.dev || '').trim()) ? '' : ' hidden';
+    return '<div class="verdict" data-for="' + esc(f.id) + '">' +
+      '<div class="vrow">' +
+      '<button class="vbtn v-ok" type="button" data-v="ok" aria-pressed="' +
+        (a.v === 'ok') + '">Согласен</button>' +
+      '<button class="vbtn v-no" type="button" data-v="no" aria-pressed="' +
+        (a.v === 'no') + '">Удалить</button>' +
+      '<button class="vbtn v-note" type="button" data-v="note">Комментарий</button>' +
+      '<span class="vstate">' + esc(vstate(a)) + '</span></div>' +
+      '<div class="notes"' + open + '>' +
+      '<label>Мне (Claude)<textarea rows="2" data-to="claude" ' +
+        'placeholder="Что переписать, что уточнить, что не так">' +
+        esc(a.claude || '') + '</textarea></label>' +
+      '<label>Программисту<textarea rows="2" data-to="dev" ' +
+        'placeholder="Пояснение для того, кто будет править">' +
+        esc(a.dev || '') + '</textarea></label></div></div>';
+  }
+
   function fixHtml(f, num) {
     var steps = (f.steps && f.steps.length)
       ? '<ol class="steps">' + f.steps.map(function (x) {
@@ -54,7 +87,8 @@
       (f.why ? '<p class="why">' + esc(f.why) + '</p>' : '') + steps +
       (f.done_when ? '<p class="why"><b>Готово, когда:</b> ' + esc(f.done_when) + '</p>' : '') +
       lanes(f, f.id) +
-      (f.note ? '<p class="note">' + esc(f.note) + '</p>' : '') + '</article>';
+      (f.note ? '<p class="note">' + esc(f.note) + '</p>' : '') +
+      verdict(f) + '</article>';
   }
 
   function groupHtml(g) {
@@ -66,14 +100,14 @@
     if (g.blockers) badges += '<span class="badge b-blocker">' + g.blockers + ' блокеров</span>';
     if (g.from_documents) badges += '<span class="badge b-doc">' + g.from_documents + ' из документов</span>';
     return '<section class="grp is-' + st(g.key) + '" data-key="' + esc(g.key) + '">' +
-      '<header class="grphead"><button class="toggle" type="button" aria-expanded="false">' +
-      '<span class="tw-arrow">▸</span><span class="gtitle">' + esc(g.title) + '</span>' +
+      '<header class="grphead"><button class="toggle" type="button" aria-expanded="true">' +
+      '<span class="tw-arrow">▾</span><span class="gtitle">' + esc(g.title) + '</span>' +
       (g.url_label ? '<code class="gurl">' + esc(g.url_label) + '</code>' : '') +
       '<span class="gcount">' + g.count + ' правок</span>' + badges + '</button>' +
       '<div class="ghead-right">' + (links ? '<span class="links">' + links + '</span>' : '') +
       sel(g.key) + '</div></header>' +
       (g.desc ? '<p class="gdesc">' + esc(g.desc) + '</p>' : '') +
-      '<div class="fixes" hidden>' +
+      '<div class="fixes">' +
       (g.documents && g.documents.length
         ? '<p class="gdocs"><b>Документы:</b> ' +
           g.documents.map(esc).join(' · ') + '</p>' : '') +
@@ -204,6 +238,33 @@
       document.getElementById('p-tasks').classList.toggle('on', tab.dataset.tab === 'tasks');
       document.getElementById('p-docs').classList.toggle('on', tab.dataset.tab === 'docs');
     }
+  });
+
+
+  // Ответы: щелчок по кнопке и правка в поле пишутся сразу, без «сохранить».
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.vbtn');
+    if (!b) return;
+    var box = b.closest('.verdict'), id = box.dataset.for, a = vget(id);
+    if (b.dataset.v === 'note') {
+      var n = box.querySelector('.notes');
+      n.hidden = !n.hidden;
+      if (!n.hidden) n.querySelector('textarea').focus();
+    } else {
+      a.v = (a.v === b.dataset.v) ? '' : b.dataset.v;
+      V[id] = a; vsave();
+      box.querySelector('.v-ok').setAttribute('aria-pressed', String(a.v === 'ok'));
+      box.querySelector('.v-no').setAttribute('aria-pressed', String(a.v === 'no'));
+      box.querySelector('.vstate').textContent = vstate(a);
+    }
+  });
+  document.addEventListener('input', function (e) {
+    var t = e.target;
+    if (!t.matches('.verdict textarea')) return;
+    var box = t.closest('.verdict'), id = box.dataset.for, a = vget(id);
+    a[t.dataset.to] = t.value;
+    V[id] = a; vsave();
+    box.querySelector('.vstate').textContent = vstate(a);
   });
 
   document.addEventListener('change', function (e) {

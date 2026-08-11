@@ -189,6 +189,23 @@ select.st{font:inherit;font-size:.78rem;padding:.28rem .4rem;background:var(--su
 #totop{position:fixed;right:1rem;bottom:1rem;z-index:30;background:var(--surface);
   box-shadow:0 1px 6px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .2s}
 #totop.on{opacity:1;pointer-events:auto}
+.verdict{margin:.7rem 0 0;padding-top:.55rem;border-top:1px dashed var(--hair)}
+.vrow{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+.vbtn{font:inherit;font-size:.73rem;letter-spacing:.05em;text-transform:uppercase;
+  background:transparent;border:1px solid var(--line);color:var(--muted);
+  padding:.3rem .65rem;cursor:pointer;white-space:nowrap}
+.vbtn:hover{color:var(--ink);border-color:var(--muted)}
+.vbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.v-ok[aria-pressed="true"]{background:var(--done);border-color:var(--done);color:#fff}
+.v-no[aria-pressed="true"]{background:var(--blocker);border-color:var(--blocker);color:#fff}
+.vstate{font-size:.76rem;color:var(--muted)}
+.notes{display:grid;gap:.5rem;margin-top:.55rem}
+.notes label{display:block;font-size:.66rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--accent);font-weight:700}
+.notes textarea{display:block;width:100%;margin-top:.25rem;font:inherit;
+  font-size:.88rem;padding:.45rem .55rem;background:var(--sunken);color:var(--ink);
+  border:1px solid var(--line);resize:vertical}
+.notes textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 @media (max-width:800px){.lanes{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 """
@@ -251,6 +268,11 @@ def main():
     </div>
     <div id="list"></div>
     <p class="excluded" id="excluded" hidden></p>
+    <p class="hint"><b>На каждой правке три кнопки: «Согласен», «Удалить»,
+      «Комментарий».</b> Они те же, что в рабочем документе, и память у них общая:
+      ответ, поставленный здесь, виден и там. Отметки живут в этом браузере и сами
+      никуда не уходят — чтобы я их прочитал, нажмите «Скопировать мои ответы»
+      в рабочем документе и вставьте в чат.</p>
     <p class="hint"><b>Отметки «готово» сохраняются в вашем браузере.</b>
       У коллеги по той же ссылке будет свой список — общие отметки появятся,
       когда чек-лист развернут на своём сервере.</p>
