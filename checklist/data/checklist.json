@@ -846,7 +846,7 @@
      "locale": "pl",
      "title": "Футер, колонка «Klientowi» + список юр. страниц в бургер-меню (ссылка на /claims-and-complaints)",
      "current": "Polityka zworotow i reklamacji",
-     "why": "Опечатка («zworotow» вместо «zwrotów») плюс полностью потеряна диакритика. Это название обязательного юридического документа, выведенное в футере каждой страницы — именно то, что смотрят при верификации в Przelewy24 и что первым бросается в глаза польскому покупателю.",
+     "why": "Опечатка («zworotow» вместо «zwrotów») плюс полностью потеряна диакритика. Это название обязательного юридического документа, выведенное в футере каждой страницы — именно то, что смотрят при верификации в Przelewy24 и что первым бросается в глаза польскому покупателю.\n\nСюда же входило отдельным пунктом (DOC-24): «Polityka zwrotów i reklamacji» и «Deklaracja dostępności» — как называются сами документы.",
      "pl": "Polityka zwrotów i reklamacji",
      "ua": "Політика повернення та претензій",
      "en": "Returns and complaints policy",
@@ -966,7 +966,7 @@
      "locale": "pl,ua,en",
      "title": "Поиск в шапке, анимированный плейсхолдер поля ввода (PlaceholderAnimator)",
      "current": "const placeholderWord = [ \"Baby\", \"Child\", \"Beauty\", \"Woman\", \"Newborn\", ];",
-     "why": "Подсказки, которые по очереди появляются в поле поиска, захардкожены по-английски и идентичны в PL, UA и EN. Польский покупатель видит в поиске «Baby», «Woman», «Newborn» — и подставленный по подсказке английский запрос ничего не найдёт, потому что каталог польский. Скрипт выводится на каждой странице.",
+     "why": "Подсказки, которые по очереди появляются в поле поиска, захардкожены по-английски и идентичны в PL, UA и EN. Польский покупатель видит в поиске «Baby», «Woman», «Newborn» — и подставленный по подсказке английский запрос ничего не найдёт, потому что каталог польский. Скрипт выводится на каждой странице.\n\nСюда же входило отдельным пунктом (14-10): Массив подсказок в строке поиска захардкожен по-английски в инлайн-скрипте и не зависит от локали: в польской версии плейсхолдер циклично печатает «Baby», «Child», «Beauty», «Woman», «Newborn» рядом с польским «Szukaj...», в украинской — рядом с «Пошук...». Это самый заметный элемент шапки, он анимируется и притягивает взгляд. Дополнительно слова не совпадают с реальными разделами каталога (в меню Dzieci / Kobiety / Dla domu, никакого «Beauty» верхним уровнем нет).",
      "pl": "Sukienka, Body, Trampki, Kocyk, Przytulanka",
      "ua": "Малюк, Дитина, Догляд, Жінка, Новонароджений",
      "en": "Dress, Bodysuit, Trainers, Blanket, Soft toy",
@@ -1014,7 +1014,7 @@
      "locale": "en",
      "title": "Карточка товара, кнопка «в избранное» (title), все листинги и главная",
      "current": "title=\"To the selected\"",
-     "why": "Дословная калька с польского «Do ulubionych» / украинского «До обраного», по-английски бессмыслица. Это единственная подпись кнопки (иконка без текста), она повторяется по 16 раз на странице и на всех листингах EN-версии.",
+     "why": "Дословная калька с польского «Do ulubionych» / украинского «До обраного», по-английски бессмыслица. Это единственная подпись кнопки (иконка без текста), она повторяется по 16 раз на странице и на всех листингах EN-версии.\n\nСюда же входило отдельным пунктом (12-06): Машинный перевод украинского «До обраного / З обраного / В обраному». По-английски «To the selected» не значит ничего; кнопка сохранения товара — ключевой шаг к покупке, и в EN-версии она подписана бессмыслицей. Рядом ещё и «Add to favorite» в единственном числе. Британский вариант — favourites.",
      "pl": "Do ulubionych",
      "ua": "До обраного",
      "en": "Add to favourites",
@@ -1084,7 +1084,7 @@
      "locale": "pl,ua,en",
      "title": "Попап «Język i waluta», список валют",
      "current": "Hrywna (UAH) / Dolar amerykański (USD) / Euro (EUR) / Złoty polski (PLN) — UA: Гривня (UAH) / Доллар США (USD) / Евро (EUR) / Польський злотий (PLN) — EN: Hryvnia (UAH) / Dollar USA (USD) / Euro (EUR) / Polish Zloty (PLN)",
-     "why": "В UA два русизма подряд: «Доллар» (укр. «долар», одна «л») и «Евро» (укр. «Євро», с Є). В EN «Dollar USA» — калька с польского порядка слов, по-английски «US dollar»; «Polish Zloty» без диакритики и с ошибочной капитализацией (валюта — не имя собственное). Попап валют — часть платёжного контура, его смотрят при верификации Przelewy24.",
+     "why": "В UA два русизма подряд: «Доллар» (укр. «долар», одна «л») и «Евро» (укр. «Євро», с Є). В EN «Dollar USA» — калька с польского порядка слов, по-английски «US dollar»; «Polish Zloty» без диакритики и с ошибочной капитализацией (валюта — не имя собственное). Попап валют — часть платёжного контура, его смотрят при верификации Przelewy24.\n\nСюда же входило отдельным пунктом (14-21): Два названия валют из четырёх написаны по-русски: «Доллар США» (українською «Долар США», з однією «л») и «Евро» (українською «Євро», через Є). Русской локали на сайте нет, эти строки — остаток от исходного языка движка, попавший в украинский словарь. В английском списке та же группа сломана иначе: «Dollar USA» — неверный порядок слов, по-английски это «US Dollar».",
      "pl": "Hrywna (UAH) / Dolar amerykański (USD) / Euro (EUR) / Złoty polski (PLN)",
      "ua": "Гривня (UAH) / Долар США (USD) / Євро (EUR) / Польський злотий (PLN)",
      "en": "Hryvnia (UAH) / US dollar (USD) / Euro (EUR) / Polish złoty (PLN)",
@@ -1130,10 +1130,10 @@
      "locale": "pl,ua,en",
      "title": "Футер, контактный блок (footer-contact-item), адрес",
      "current": "Marcina Kasprzaka 31/119 (в UA и EN: ul. Marcina Kasprzaka 31/119)",
-     "why": "Адрес в футере оборван: нет индекса, города и страны — на каждой странице всех трёх локалей. На /contacts тот же адрес выведен полностью («Marcina Kasprzaka 31/119 01-234 Warszawa»), то есть данные в системе есть, в футер их просто не вывели. Плюс в PL-версии потерян префикс «ul.», который в UA и EN на месте. Для покупателя из UA/EN футер вообще не сообщает, что магазин находится в Польше; для верификации в Przelewy24 адрес продавца в подвале — стандартное требование.",
-     "pl": "LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska",
-     "ua": "LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща",
-     "en": "LPB Sp. z o.o., ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland",
+     "why": "Адрес в футере оборван: нет индекса, города и страны — на каждой странице всех трёх локалей. На /contacts тот же адрес выведен полностью («Marcina Kasprzaka 31/119 01-234 Warszawa»), то есть данные в системе есть, в футер их просто не вывели. Плюс в PL-версии потерян префикс «ul.», который в UA и EN на месте. Для покупателя из UA/EN футер вообще не сообщает, что магазин находится в Польше; для верификации в Przelewy24 адрес продавца в подвале — стандартное требование.\n\nПо вашему решению: в контактном блоке футера, рядом с телефоном и часами, должен стоять адрес магазина на Mokotowskiej — покупатель читает это как «где мы находимся». Адрес регистрации на Kasprzaka остаётся только в юридической строке ниже (19-05).",
+     "pl": "ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, Polska",
+     "ua": "ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, Польща",
+     "en": "ul. Mokotowska 51/53 lok. 44, 00-542 Warsaw, Poland",
      "action": "Перевести [PL,UA,EN] — Футер, контактный блок (footer-contact-item), адрес",
      "steps": [],
      "done_when": "",
@@ -1178,7 +1178,7 @@
      "locale": "ua",
      "title": "Walidacja telefonu w formularzu zamówienia",
      "current": "Введіть телефон у вірному форматі",
-     "why": "«У вірному форматі» — русизм (калька с «в верном формате»); по-украински «правильному» / «коректному». Плюс «введіть телефон» вместо «номер телефону». Это сообщение видно в чекауте на шаге контактных данных — самый чувствительный момент. Ни одна из трёх локалей при этом не подсказывает ожидаемый формат. Проверено по живому сайту 10.08.2026: строка присутствует в window.FenixTranslations.validate дословно, во всех названных локалях.",
+     "why": "«У вірному форматі» — русизм (калька с «в верном формате»); по-украински «правильному» / «коректному». Плюс «введіть телефон» вместо «номер телефону». Это сообщение видно в чекауте на шаге контактных данных — самый чувствительный момент. Ни одна из трёх локалей при этом не подсказывает ожидаемый формат. Проверено по живому сайту 10.08.2026: строка присутствует в window.FenixTranslations.validate дословно, во всех названных локалях.\n\nСюда же входило отдельным пунктом (14-05): «Вірний» українською означає «відданий», а не «правильний» — це поширений русизм. Правильно: «у правильному форматі». Сообщение видит каждый украиноязычный покупатель, ошибившийся в телефоне при оформлении заказа.",
      "pl": "Wpisz numer telefonu wraz z numerem kierunkowym kraju, np. +48 512 345 678",
      "ua": "Введіть номер телефону разом з кодом країни, наприклад +48 512 345 678",
      "en": "Enter your phone number including the country code, for example +48 512 345 678",
@@ -1214,7 +1214,9 @@
      "owner_label": "Программисты",
      "see": [],
      "verified": "подтверждено",
-     "verified_note": "цитата найдена на странице в снимке сайта"
+     "verified_note": "цитата найдена на странице в снимке сайта",
+     "merged_into": "02-14",
+     "merged_note": "Тот же дефект, что и в 02-14. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "14-01",
@@ -1286,7 +1288,9 @@
      "owner_label": "Наш контент",
      "see": [],
      "verified": "подтверждено",
-     "verified_note": "цитата найдена на странице в снимке сайта"
+     "verified_note": "цитата найдена на странице в снимке сайта",
+     "merged_into": "02-12",
+     "merged_note": "Тот же дефект, что и в 02-12. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "DOC-16",
@@ -1499,7 +1503,7 @@
      "locale": "pl,ua,en",
      "title": "Кнопка «наверх» в правом нижнем углу (btn-scroll-top)",
      "current": "<button class=\"btn-scroll-top\" type=\"button\" aria-label=\"scroll up\">",
-     "why": "Единственное текстовое описание кнопки не переведено ни в одной локали — везде английская служебная строка в нижнем регистре. Кнопка есть на каждой странице; для скринридера это единственный способ понять, что она делает.",
+     "why": "Единственное текстовое описание кнопки не переведено ни в одной локали — везде английская служебная строка в нижнем регистре. Кнопка есть на каждой странице; для скринридера это единственный способ понять, что она делает.\n\nСюда же входило отдельным пунктом (14-08): aria-label захардкожен по-английски и одинаков во всех трёх локалях. В польской и украинской версии скринридер объявляет кнопку по-английски. Плюс сама формулировка не по гайдлайнам доступности: подпись должна называть действие («Wróć na górę strony»), а не направление скролла.",
      "pl": "Wróć na górę strony",
      "ua": "Нагору",
      "en": "Back to top",
@@ -2007,7 +2011,9 @@
      "owner_label": "Программисты",
      "see": [],
      "verified": "подтверждено",
-     "verified_note": "цитата найдена на странице в снимке сайта"
+     "verified_note": "цитата найдена на странице в снимке сайта",
+     "merged_into": "12-03",
+     "merged_note": "Тот же дефект, что и в 12-03. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "14-06",
@@ -2055,7 +2061,9 @@
      "owner_label": "Программисты",
      "see": [],
      "verified": "подтверждено",
-     "verified_note": "цитата найдена на странице в снимке сайта"
+     "verified_note": "цитата найдена на странице в снимке сайта",
+     "merged_into": "02-11",
+     "merged_note": "Тот же дефект, что и в 02-11. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "14-17",
@@ -2123,7 +2131,9 @@
      "owner_label": "Программисты",
      "see": [],
      "verified": "подтверждено",
-     "verified_note": "в UA-версии валюты названы по-русски: «Доллар США», «Евро» — проверено и на живом сайте"
+     "verified_note": "в UA-версии валюты названы по-русски: «Доллар США», «Евро» — проверено и на живом сайте",
+     "merged_into": "02-26",
+     "merged_note": "Тот же дефект, что и в 02-26. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "DOC-22",
@@ -2180,7 +2190,9 @@
      "owner_label": "Наш контент",
      "see": [],
      "verified": "подтверждено",
-     "verified_note": "цитата найдена на странице в снимке сайта"
+     "verified_note": "цитата найдена на странице в снимке сайта",
+     "merged_into": "02-05",
+     "merged_note": "Тот же дефект, что и в 02-05. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "DOC-25",
@@ -4097,18 +4109,18 @@
     {
      "id": "03-07",
      "source": "audit",
-     "severity": "high",
-     "severity_label": "Критично",
+     "severity": "blocker",
+     "severity_label": "Блокер",
      "issue": "TYPO",
      "issue_label": "Опечатка",
      "locale": "pl",
-     "title": "Nagłówek strony pod h1 «Kontakt» oraz adres w karcie «Skontaktuj się z nami»",
-     "current": "LPB Sp. z o.o. ul.",
-     "why": "Skrót «ul.» wisi na końcu linii z nazwą spółki i jest oderwany od adresu. W wersji polskiej adres poniżej zaczyna się od «Marcina Kasprzaka 31/119 01-234 Warszawa» — bez «ul.» w ogóle, a w wersji ukraińskiej i angielskiej od «ul. Marcina Kasprzaka 31/119», czyli «ul.» jest zdublowane. Adres siedziby na stronie kontaktowej to jedna z rzeczy, na które patrzy Przelewy24 przy weryfikacji.",
-     "pl": "LPB Sp. z o.o.\nul. Marcina Kasprzaka 31/119, 01-234 Warszawa",
-     "ua": "LPB Sp. z o.o.\nul. Marcina Kasprzaka 31/119, 01-234 Warszawa",
-     "en": "LPB Sp. z o.o.\nul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland",
-     "action": "Исправить опечатку [PL] — Nagłówek strony pod h1 «Kontakt» oraz adres w karcie «Skontaktuj się z nami»",
+     "title": "Страница контактов, адреса: подзаголовок под h1 и строка адреса в карточке «Skontaktuj się z nami»",
+     "current": "Подзаголовок под h1 (page-top__descr, одно поле, два абзаца):\n«LPB Sp. z o.o. ul.» — обрыв на слове «ul.», улицы нет\n«NIP: 5273179673; REGON: 542537097; KRS: 0001190730»\n\nКарточка «Skontaktuj się z nami» (contacts-card__address):\n«Marcina Kasprzaka 31/119 01-234 Warszawa»",
+     "why": "Два адреса делают разную работу, и на странице они перепутаны. ul. Marcina Kasprzaka 31/119 — адрес регистрации фирмы, он нужен только в реквизитах. ul. Mokotowska 51/53 — магазин, где вы находитесь и работаете, и куда регламент велит слать возвраты. Сейчас карточка «Skontaktuj się z nami», то есть та, по которой покупатель решает, куда идти и куда писать, показывает адрес регистрации.\n\nПодзаголовок под h1 — это одно поле (page-top__descr → text-formatted) с двумя абзацами. Первый абзац оборван на «ul.»: вёрстка разнесла «LPB Sp. z o.o. ul. Marcina Kasprzaka…» на две части, и улица потерялась. Реквизиты уже лежат во втором абзаце того же поля — значит, ничего добавлять некуда: убрать обрывок и дописать недостающее прямо здесь.\n\nПо закону: art. 206 § 1 KSH требует полное наименование, местонахождение и адрес, суд и номер KRS, NIP и kapitał zakładowy; art. 12 ust. 1 pkt 2 ustawy o prawach konsumenta отдельно требует назвать адрес для претензий, если он отличается от адреса предприятия. Обрывок «ul.» — вдобавок польское слово, висящее без перевода в UA и EN.\n\nНомер отдела суда (Wydział Gospodarczy KRS) не указан ни на сайте, ни в вашем документе — оставлен на заполнение по выписке.",
+     "pl": "Подзаголовок под h1 — вместо двух абзацев один блок:\nLPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.)\nAdres siedziby (dane rejestrowe): ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Polska\nSąd Rejonowy dla m.st. Warszawy w Warszawie, [__] Wydział Gospodarczy Krajowego Rejestru Sądowego\nKRS: 0001190730 · NIP: 5273179673 · REGON: 542537097 · Kapitał zakładowy: 5 000,00 PLN\n\nАдрес в карточке «Skontaktuj się z nami»:\nButik i obsługa klienta: ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, Polska\nTu też przyjmujemy zwroty i reklamacje. Prosimy nie wysyłać przesyłek na adres siedziby.",
+     "ua": "Підзаголовок під h1 — замість двох абзаців один блок:\nLPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.)\nАдреса реєстрації: ul. Marcina Kasprzaka 31/119, 01-234 Warszawa, Польща\nSąd Rejonowy dla m.st. Warszawy w Warszawie, [__] Wydział Gospodarczy Krajowego Rejestru Sądowego\nKRS: 0001190730 · NIP: 5273179673 · REGON: 542537097 · Статутний капітал: 5 000,00 PLN\n\nАдреса в картці «Зв’яжіться з нами»:\nБутик і підтримка: ul. Mokotowska 51/53 lok. 44, 00-542 Warszawa, Польща\nТут же приймаємо повернення та претензії. Просимо не надсилати посилки на адресу реєстрації.",
+     "en": "Subtitle under h1 — one block instead of two paragraphs:\nLPB Spółka z ograniczoną odpowiedzialnością (LPB Sp. z o.o.)\nRegistered office: ul. Marcina Kasprzaka 31/119, 01-234 Warsaw, Poland\nSąd Rejonowy dla m.st. Warszawy w Warszawie, [__] Wydział Gospodarczy Krajowego Rejestru Sądowego\nKRS: 0001190730 · NIP: 5273179673 · REGON: 542537097 · Share capital: PLN 5,000.00\n\nAddress in the “Contact us” card:\nBoutique and customer service: ul. Mokotowska 51/53 lok. 44, 00-542 Warsaw, Poland\nThis is also where returns and complaints are received. Please do not send parcels to the registered office.",
+     "action": "Заменить — Страница контактов, оба адресных блока разом",
      "steps": [],
      "done_when": "",
      "note": "",
@@ -4120,7 +4132,7 @@
       "https://lapetitebloom.com/en/contacts"
      ],
      "verified": "подтверждено",
-     "verified_note": "цитата найдена на странице в снимке сайта"
+     "verified_note": "оба блока найдены в снимке страницы: обрыв «LPB Sp. z o.o. ul.» и адрес Kasprzaka в карточке"
     },
     {
      "id": "03-08",
@@ -4264,7 +4276,9 @@
       "https://lapetitebloom.com/contacts",
       "https://lapetitebloom.com/ua/contacts",
       "https://lapetitebloom.com/en/contacts"
-     ]
+     ],
+     "merged_into": "03-07",
+     "merged_note": "Тот же дефект, что и в 03-07. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "03-04",
@@ -4374,7 +4388,9 @@
       "https://lapetitebloom.com/en/contacts"
      ],
      "verified": "подтверждено",
-     "verified_note": "цитата найдена на странице в снимке сайта"
+     "verified_note": "цитата найдена на странице в снимке сайта",
+     "merged_into": "03-07",
+     "merged_note": "Тот же дефект, что и в 03-07. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "19-09",
@@ -6492,7 +6508,7 @@
      "locale": "pl,ua,en",
      "title": "Opis kategorii pod H1 «Dzieci» / «Діти» / «Kids» (blok nad paskiem sortowania)",
      "current": "Nos collections subliment le quotidien comme les moments d’exception où les matières naturelles sont privilégiées. Fidèle à son esprit de transmission, la Maison perpétue l’art de créer des pièces d’exception, conçues pour être chéries, conservées et pour",
-     "why": "Największa kategoria sklepu ma zamiast opisu francuski tekst-rybę, urwany w połowie zdania na «et pour». Identyczny francuski akapit stoi we wszystkich trzech wersjach językowych — polskiej, ukraińskiej i angielskiej. W wersji UA ten sam akapit powtarza się drugi raz pod listingiem produktów, tym razem w pełnej długości.",
+     "why": "Największa kategoria sklepu ma zamiast opisu francuski tekst-rybę, urwany w połowie zdania na «et pour». Identyczny francuski akapit stoi we wszystkich trzech wersjach językowych — polskiej, ukraińskiej i angielskiej. W wersji UA ten sam akapit powtarza się drugi raz pod listingiem produktów, tym razem w pełnej długości.\n\nСюда же входило отдельным пунктом (09-02): Ten sam francuski tekst-ryba co na /kids, we wszystkich trzech lokalizacjach. Kategoria niemowlęca jest wizytówką sklepu premium — francuski placeholder podważa wiarygodność przy weryfikacji Przelewy24.",
      "pl": "Ubrania, buty i zabawki dla dzieci od pierwszych dni do dwunastu lat. Wybieramy marki, które pracują na naturalnych tkaninach i szyją tak, by rzecz przetrwała kolejne dziecko: Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Tiny Cottons. Kolekcje uzupełniamy delikatnymi kosmetykami do kąpieli i zabawkami, które zostają w domu na lata.",
      "ua": "Одяг, взуття та іграшки для дітей від перших днів до дванадцяти років. Ми обираємо бренди, які працюють із натуральними тканинами й шиють так, щоб річ перейшла наступній дитині: Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Tiny Cottons. Колекції доповнюємо делікатною косметикою для купання та іграшками, які лишаються вдома на роки.",
      "en": "Clothing, footwear and toys for children from their first days to twelve years. We choose labels that work with natural fabrics and cut their clothes to be passed down: Liewood, Bobo Choses, Mini Rodini, Konges Sløjd, Tiny Cottons. The collections are rounded out with gentle bath care and toys that stay in the house for years.",
@@ -6524,7 +6540,9 @@
      "note": "",
      "owner": "content",
      "owner_label": "Наш контент",
-     "see": []
+     "see": [],
+     "merged_into": "09-01",
+     "merged_note": "Тот же дефект, что и в 09-01. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "09-03",
@@ -9181,7 +9199,7 @@
      "locale": "pl",
      "title": "Strona /search bez parametru zapytania — <h1> i komunikat pod nim",
      "current": "Wynik wyszukiwania dla zapytania: \"\"",
-     "why": "Wejście na /search bez zapytania (np. z zakładki albo po wyczyszczeniu pola) daje nagłówek z pustym cudzysłowem i komunikat „Wyszukiwanie nie dało wyników”, czyli sklep informuje o braku wyników wyszukiwania, którego nikt nie przeprowadził. To samo trafia do <title>, więc karta przeglądarki nazywa się „Wynik wyszukiwania dla zapytania: \"\"”. Identycznie w UA („Результат пошуку за запитом: \"\"”) i EN („Search result for query: \"\"”).",
+     "why": "Wejście na /search bez zapytania (np. z zakładki albo po wyczyszczeniu pola) daje nagłówek z pustym cudzysłowem i komunikat „Wyszukiwanie nie dało wyników”, czyli sklep informuje o braku wyników wyszukiwania, którego nikt nie przeprowadził. To samo trafia do <title>, więc karta przeglądarki nazywa się „Wynik wyszukiwania dla zapytania: \"\"”. Identycznie w UA („Результат пошуку за запитом: \"\"”) i EN („Search result for query: \"\"”).\n\nСюда же входило отдельным пунктом (13-11): Nagłówek jest w liczbie pojedynczej („Wynik”, „Результат”, „Search result”), choć pod nim wyświetla się 18 produktów. W wersji angielskiej strona sama sobie przeczy: <h1> mówi „Search result”, a nagłówek listy kategorii kilka wierszy niżej „Search results by category:”. Sformułowanie „dla zapytania:” / „for query:” to język techniczny — w sklepie wystarczy „Wyniki dla”.",
      "pl": "Czego szukasz? Wpisz nazwę produktu, markę lub kategorię.",
      "ua": "Що ви шукаєте? Введіть назву товару, бренд або категорію.",
      "en": "What are you looking for? Enter a product name, brand or category.",
@@ -9251,7 +9269,9 @@
       "https://lapetitebloom.com/search",
       "https://lapetitebloom.com/ua/search",
       "https://lapetitebloom.com/en/search"
-     ]
+     ],
+     "merged_into": "13-10",
+     "merged_note": "Тот же дефект, что и в 13-10. Сведено в одну правку, чтобы не править одно место дважды."
     },
     {
      "id": "13-13",

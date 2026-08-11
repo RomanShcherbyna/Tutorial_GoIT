@@ -236,7 +236,8 @@ def collect_partial(checklist, verdicts):
         items = [dict(f, _kind=kind_of(f), _v=verdicts.get(f["id"], {}))
                  for f in g["fixes"] if is_wording(f)
                  and verdicts.get(f["id"], {}).get("v") != "no"
-                 and f.get("verified") != "не подтвердилось"]
+                 and f.get("verified") != "не подтвердилось"
+                 and not f.get("merged_into")]
         if not items:
             continue
         owners = [o for o in g.get("owners", [])
