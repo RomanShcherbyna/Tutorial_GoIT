@@ -228,6 +228,18 @@ def main():
     checklist["groups"] = [g for g in checklist["groups"]
                            if g.get("key") not in COVERED_BY_DOCS
                            and g.get("path") not in FULL_PAGES]
+    # Правки, которые правятся не на сайте, а в BaseLinker: значения атрибутов,
+    # фильтры, тексты товаров. Ими занимается отдельный документ, и держать их
+    # здесь — значит показывать одну работу в двух местах.
+    from_bl = 0
+    for g in checklist["groups"]:
+        keep = [f for f in g["fixes"] if f.get("owner") != "catalog"]
+        from_bl += len(g["fixes"]) - len(keep)
+        g["fixes"] = keep
+        g["count"] = len(keep)
+    checklist["groups"] = [g for g in checklist["groups"] if g["count"]]
+    print(f"снято как работа в BaseLinker: {from_bl}")
+
     checklist["total_fixes"] = sum(g["count"] for g in checklist["groups"])
     checklist["total_pages"] = len(checklist["groups"])
     print(f"снято как уже решённое заменой документов: "
@@ -268,6 +280,10 @@ def main():
     </div>
     <div id="list"></div>
     <p class="excluded" id="excluded" hidden></p>
+    <p class="hint"><b>Здесь только то, что правится на самом сайте.</b>
+      Значения атрибутов, фильтры и тексты товаров приходят из BaseLinker —
+      править их на странице бесполезно, следующая выгрузка перезапишет. Они
+      вынесены в отдельный документ про BaseLinker и отсюда убраны.</p>
     <p class="hint"><b>На каждой правке три кнопки: «Согласен», «Удалить»,
       «Комментарий».</b> Они те же, что в рабочем документе, и память у них общая:
       ответ, поставленный здесь, виден и там. Отметки живут в этом браузере и сами
