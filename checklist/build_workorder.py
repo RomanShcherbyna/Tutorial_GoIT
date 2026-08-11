@@ -363,6 +363,27 @@ ul.urls code{font-size:.82rem;word-break:break-all}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .o-catalog{color:#e0c37a}}
 :root[data-theme="dark"] .o-catalog{color:#e0c37a}
 .see{margin:.3rem 0 .1rem;font-size:.82rem;color:var(--muted)}
+.thread{margin-top:.6rem;display:none}
+.thread.on{display:block}
+.thread .msg{padding:.45rem 0;border-top:1px solid var(--hair);font-size:.88rem}
+.thread .msg:first-child{border-top:0}
+.thread .who{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);font-weight:700}
+.thread .when{color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none}
+.thread .body{white-space:pre-wrap;margin:.15rem 0 0}
+.thread .del{float:right;background:none;border:0;color:var(--muted);cursor:pointer;
+  font:inherit;font-size:.75rem;padding:0 .2rem}
+.thread .del:hover{color:var(--was)}
+.thread form{display:flex;gap:.4rem;margin-top:.5rem;align-items:flex-start}
+.thread textarea{flex:1;font:inherit;font-size:.88rem;padding:.4rem .5rem;
+  background:var(--sunken);color:var(--ink);border:1px solid var(--line);resize:vertical}
+.thread button.send{font:inherit;font-size:.73rem;letter-spacing:.05em;
+  text-transform:uppercase;background:transparent;border:1px solid var(--line);
+  color:var(--muted);padding:.4rem .7rem;cursor:pointer;white-space:nowrap}
+.thread button.send:hover{color:var(--ink);border-color:var(--muted)}
+.who-you{margin:.4rem 0 0;font-size:.8rem;color:var(--muted)}
+.who-you input{font:inherit;font-size:.82rem;padding:.2rem .4rem;background:var(--sunken);
+  color:var(--ink);border:1px solid var(--line);width:12rem}
 .ver{margin:.35rem 0 .1rem;padding-left:.6rem;font-size:.82rem;color:var(--muted)}
 .ver.ok{border-left:2px solid var(--now)}
 .ver.eyes{border-left:2px solid var(--was)}
@@ -389,6 +410,154 @@ ul.urls code{font-size:.82rem;word-break:break-all}
 """
 
 JS = """
+
+// ——— Общий разбор ———————————————————————————————————————————————
+// Тот же файл умеет работать в двух видах. Скачанный на диск — как раньше:
+// ответы лежат в браузере того, кто их поставил. Отданный сервером — общий:
+// ответы и переписка видны всем, кто открыл ссылку.
+//
+// Разделение сделано одним признаком: сервер подставляет window.LPB_API. Без
+// него ни одна строка ниже не выполняется, и файл остаётся самодостаточным.
+(function () {
+  var API = window.LPB_API;
+  if (!API) return;
+
+  var WHO = 'lpb-who';
+  var me = '';
+  try { me = localStorage.getItem(WHO) || ''; } catch (_) { }
+  var rev = -1;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function when(iso) {
+    var d = new Date(iso);
+    return isNaN(d) ? '' : d.toLocaleString('ru-RU',
+      { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+  }
+  function ask(msg) { var box = document.getElementById('shared-note'); if (box) box.textContent = msg; }
+
+  function send(path, method, body) {
+    return fetch(API + path, {
+      method: method, headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(body)
+    }).then(function (r) {
+      if (!r.ok) throw new Error(r.status === 401 ? 'нужен пароль' : 'сервер отказал');
+      return r.json();
+    });
+  }
+
+  // Имя нужно, чтобы в ленте было видно, кто что сказал. Спрашивается один раз
+  // и хранится у себя — на сервер уходит только подпись под репликой.
+  function nameRow() {
+    var wrap = document.createElement('p');
+    wrap.className = 'who-you';
+    wrap.innerHTML = 'Вы подписываетесь как: <input id="whoami" placeholder="имя" value="'
+      + esc(me) + '">';
+    var bar = document.querySelector('.answers');
+    if (bar) bar.appendChild(wrap);
+    var inp = wrap.querySelector('#whoami');
+    inp.addEventListener('input', function () {
+      me = inp.value.slice(0, 60);
+      try { localStorage.setItem(WHO, me); } catch (_) { }
+    });
+  }
+
+  function threadHtml(list) {
+    var msgs = (list || []).map(function (m) {
+      return '<div class="msg" data-key="' + esc(m.key) + '">' +
+        '<button class="del" type="button" title="удалить реплику">×</button>' +
+        '<div class="who">' + esc(m.by) +
+        ' <span class="when">' + esc(when(m.at)) +
+        (m.to === 'dev' ? ' · программисту' : ' · Claude') + '</span></div>' +
+        '<p class="body">' + esc(m.text) + '</p></div>';
+    }).join('');
+    return msgs +
+      '<form><textarea rows="2" placeholder="Написать по этой правке — увидят все"></textarea>' +
+      '<button class="send" type="submit">Отправить</button></form>';
+  }
+
+  function paint(state) {
+    document.querySelectorAll('.verdict').forEach(function (box) {
+      var id = box.dataset.for;
+      var v = (state.verdicts || {})[id];
+      var ok = box.querySelector('.v-ok'), no = box.querySelector('.v-no');
+      ok.setAttribute('aria-pressed', String(!!v && v.v === 'ok'));
+      no.setAttribute('aria-pressed', String(!!v && v.v === 'no'));
+      var st = box.querySelector('.vstate');
+      st.textContent = !v || !v.v ? ''
+        : (v.v === 'ok' ? 'Согласен' : 'Удалить') + (v.by ? ' — ' + v.by : '');
+      var th = box.querySelector('.thread');
+      var open = th.querySelector('textarea');
+      var draft = open ? open.value : '';
+      th.innerHTML = threadHtml((state.threads || {})[id]);
+      th.classList.add('on');
+      th.hidden = false;
+      if (draft) th.querySelector('textarea').value = draft;
+      var li = box.closest('li');
+      if (li) li.classList.toggle('is-ok', !!v && v.v === 'ok');
+      if (li) li.classList.toggle('is-no', !!v && v.v === 'no');
+    });
+  }
+
+  function pull() {
+    return fetch(API + '/state', { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (s) { if (s.rev !== rev) { rev = s.rev; paint(s); } })
+      .catch(function () { ask('Связь с сервером потеряна — обновите страницу.'); });
+  }
+
+  // Кнопки в общем виде значат другое: не «моя пометка», а «решение по правке»,
+  // поэтому свои обработчики с localStorage надо перехватить до них.
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.vbtn');
+    if (b && b.dataset.v !== 'note') {
+      e.stopPropagation();
+      var box = b.closest('.verdict');
+      var was = b.getAttribute('aria-pressed') === 'true';
+      send('/verdict', 'POST', { id: box.dataset.for, v: was ? '' : b.dataset.v, by: me })
+        .then(pull).catch(function (err) { ask(err.message); });
+      return;
+    }
+    var del = e.target.closest('.thread .del');
+    if (del) {
+      var msg = del.closest('.msg'), t = del.closest('.verdict');
+      send('/comment', 'DELETE', { id: t.dataset.for, key: msg.dataset.key })
+        .then(pull).catch(function (err) { ask(err.message); });
+    }
+  }, true);
+
+  document.addEventListener('submit', function (e) {
+    var form = e.target.closest('.thread form');
+    if (!form) return;
+    e.preventDefault();
+    var box = form.closest('.verdict');
+    var ta = form.querySelector('textarea');
+    var text = ta.value.trim();
+    if (!text) return;
+    ta.value = '';
+    send('/comment', 'POST', { id: box.dataset.for, text: text, by: me })
+      .then(pull).catch(function (err) { ta.value = text; ask(err.message); });
+  });
+
+  nameRow();
+  var hint = document.querySelector('.answers');
+  if (hint) {
+    var p = document.createElement('span');
+    p.className = 'cnt';
+    p.id = 'shared-note';
+    p.textContent = 'Общий разбор: ответы и комментарии видят все.';
+    hint.appendChild(p);
+  }
+  pull();
+  setInterval(pull, 7000);
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) pull();
+  });
+})();
+
 // Свернуть или развернуть разом. Кнопка называется по тому, что сделает
 // следующий щелчок, а решает по большинству: если открыто хоть что-то — закрыть.
 (function () {
@@ -749,6 +918,7 @@ def verdict_block(fid):
     <button class="vbtn v-note" type="button" data-v="note">Комментарий</button>
     <span class="vstate"></span>
   </div>
+  <div class="thread" hidden></div>
   <div class="notes" hidden>
     <label>Мне (Claude)<textarea rows="2" data-to="claude"
       placeholder="Что переписать, что уточнить, что не так"></textarea></label>
