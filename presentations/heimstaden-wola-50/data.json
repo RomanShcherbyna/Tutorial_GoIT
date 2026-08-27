@@ -1,0 +1,267 @@
+{
+  "source": "https://oferty.heimstaden.pl (API: https://api.flater.pl/newsearch?url=https://oferty.heimstaden.pl)",
+  "collected_at": "2026-08-26",
+  "filter": "Warszawa, dzielnica Wola, powierzchnia >= 50 m2",
+  "warszawa_total": 159,
+  "wola_total": 24,
+  "wola_offers": [
+    {
+      "id": 42216,
+      "area_m2": 50.99,
+      "name": "2-room | 50.99 m2 | Balcony | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0104",
+      "available_from": "2026-08-26",
+      "photos_count": 8,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42216-2-pokojowe-5099-m2-balkon-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42307,
+      "area_m2": 41.78,
+      "name": "2-room | 41.78 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "1101",
+      "available_from": "2026-08-26",
+      "photos_count": 9,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42307-2-pokojowe-4178-m2-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42321,
+      "area_m2": 41.78,
+      "name": "2-room | 41.78 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "1301",
+      "available_from": "2026-08-26",
+      "photos_count": 9,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42321-2-pokojowe-4178-m2-internet-w-cenie-13p"
+    },
+    {
+      "id": 42224,
+      "area_m2": 40.73,
+      "name": "2-room | 40.73 m2 | Internet included | Pet friendly | No commission",
+      "address": "Grzybowska 49",
+      "flat": "0205",
+      "available_from": "2026-08-26",
+      "photos_count": 7,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42224-2-pokojowe-4073-m2-internet-w-cenie-pet-friendly-bez-prowizji"
+    },
+    {
+      "id": 42265,
+      "area_m2": 40.73,
+      "name": "2-room | 40.73 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0501",
+      "available_from": "2026-08-26",
+      "photos_count": 7,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42265-2-pokojowe-4073-m2-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42279,
+      "area_m2": 40.73,
+      "name": "2-room | 40.73 m2 | Internet included | 0% commission | Air conditioning",
+      "address": "Grzybowska 49",
+      "flat": "0701",
+      "available_from": "2026-08-26",
+      "photos_count": 7,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42279-2-pokojowe-4073-m2-internet-w-cenie-0-prowizji-klimatyzacja"
+    },
+    {
+      "id": 42330,
+      "area_m2": 38.9,
+      "name": "Studio | 38.9 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "1403",
+      "available_from": "2026-08-26",
+      "photos_count": 6,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42330-studio-389-m2-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42215,
+      "area_m2": 37.18,
+      "name": "Studio | 37.18 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0103",
+      "available_from": "2026-08-26",
+      "photos_count": 5,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42215-studio-3718-m2-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42222,
+      "area_m2": 37.18,
+      "name": "Studio | 37.18 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0203",
+      "available_from": "2026-08-26",
+      "photos_count": 6,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42222-studio-3718-m2-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42237,
+      "area_m2": 37.18,
+      "name": "Studio | 37.18 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0303",
+      "available_from": "2026-08-26",
+      "photos_count": 6,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42237-studio-3718-m2-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42218,
+      "area_m2": 34.24,
+      "name": "Studio | 34.24 m2 | Balcony | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0106",
+      "available_from": "2026-08-26",
+      "photos_count": 7,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42218-studio-3424-m2-balkon-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42263,
+      "area_m2": 34.24,
+      "name": "Studio | 34.24 m2 | Balcony | Internet included | Directly from owner",
+      "address": "Grzybowska 49",
+      "flat": "0414",
+      "available_from": "2026-09-01",
+      "photos_count": 7,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42263-studio-3424-m2-balkon-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42232,
+      "area_m2": 33.17,
+      "name": "Studio | 33.17 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0213",
+      "available_from": "2026-08-26",
+      "photos_count": 6,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42232-studio-3317-m2-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42319,
+      "area_m2": 31.49,
+      "name": "Studio | 31.49 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "1206",
+      "available_from": "2026-08-26",
+      "photos_count": 6,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42319-studio-3149-m2-internet-w-cenie-browary-ac"
+    },
+    {
+      "id": 42340,
+      "area_m2": 31.49,
+      "name": "Studio | 15th floor! - Panorama of Warsaw | 31.49 m2 | No commission | Now available! ",
+      "address": "Grzybowska 49",
+      "flat": "1506",
+      "available_from": "2026-08-26",
+      "photos_count": 6,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42340-studio-15-pietro-3149-m2-bezposrednio-juz-dostepne"
+    },
+    {
+      "id": 42270,
+      "area_m2": 31.49,
+      "name": "Studio | 31.49 m2 | Terrace | Internet included | Directly from owner",
+      "address": "Grzybowska 49",
+      "flat": "0506",
+      "available_from": "2026-09-01",
+      "photos_count": 6,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42270-studio-3149-m2-taras-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42225,
+      "area_m2": 31.24,
+      "name": "Studio | 31.24 m2 | July for free | 0% Commission | Air conditioning",
+      "address": "Grzybowska 49",
+      "flat": "0206",
+      "available_from": "2026-08-26",
+      "photos_count": 9,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42225-studio-3124-m2-prowizja-0-promocja-do-konca-sierpnia"
+    },
+    {
+      "id": 42280,
+      "area_m2": 31.24,
+      "name": "Studio | 31.24 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0702",
+      "available_from": "2026-08-26",
+      "photos_count": 7,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42280-studio-3124-m2-internet-w-cenie-bezposrednio-pet-friendly"
+    },
+    {
+      "id": 42336,
+      "area_m2": 31.24,
+      "name": "Studio | 31.24 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "1502",
+      "available_from": "2026-08-26",
+      "photos_count": 7,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42336-studio-31-m2-15-pietro-pets-friendly-ac-rabat"
+    },
+    {
+      "id": 42289,
+      "area_m2": 30.53,
+      "name": "Studio | 30.53 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0804",
+      "available_from": "2026-08-26",
+      "photos_count": 7,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42289-studio-3053-m2-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42303,
+      "area_m2": 30.53,
+      "name": "Studio | 30.53 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "1004",
+      "available_from": "2026-08-26",
+      "photos_count": 8,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42303-studio-3053-m2-internet-w-cenie-ac-norblin"
+    },
+    {
+      "id": 42282,
+      "area_m2": 30.53,
+      "name": "Studio | 30.53 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0704",
+      "available_from": "2026-08-26",
+      "photos_count": 7,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42282-studio-3053-m2-internet-w-cenie-bezposrednio"
+    },
+    {
+      "id": 42257,
+      "area_m2": 30.53,
+      "name": "Studio | 30.53 m2 | Internet included | Direct",
+      "address": "Grzybowska 49",
+      "flat": "0408",
+      "available_from": "2026-08-26",
+      "photos_count": 6,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42257-duze-studio-z-balkonem-top-lokalizacja-internet-w-cenie"
+    },
+    {
+      "id": 42244,
+      "area_m2": 30.25,
+      "name": "Studio | 30.25 m2 | Balcony | Internet included | 0% Commission | AC",
+      "address": "Grzybowska 49",
+      "flat": "0310",
+      "available_from": "2026-08-26",
+      "photos_count": 6,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42244-studio-3025-m2-balkon-internet-w-cenie-0-prowizji-ac"
+    }
+  ],
+  "matching_offers": [
+    {
+      "id": 42216,
+      "area_m2": 50.99,
+      "url": "https://oferty.heimstaden.pl/warszawa/offers/42216-2-pokojowe-5099-m2-balkon-internet-w-cenie-bezposrednio",
+      "video_3d": "https://my.matterport.com/show/?m=QdbufVrYA3d",
+      "photos": [
+        "https://flater-pl.s3.eu-north-1.amazonaws.com/images/rooms/42216/b6c38451-d678-4f24-bc68-185298da99d3.jpeg",
+        "https://flater-pl.s3.eu-north-1.amazonaws.com/images/rooms/42216/bb37a6d9-e4d6-48ef-85ba-6f2ff8b2fc5a.jpeg",
+        "https://flater-pl.s3.eu-north-1.amazonaws.com/images/rooms/42216/3b96998b-84d6-48b9-8856-307e7a7217cf.jpeg",
+        "https://flater-pl.s3.eu-north-1.amazonaws.com/images/rooms/42216/dfec6b62-03f9-4577-ab1f-41b578bab797.jpeg",
+        "https://flater-pl.s3.eu-north-1.amazonaws.com/images/rooms/42216/e7c4f9d0-c4d8-4bf2-a8f5-a8ecbd2f7f20.jpeg",
+        "https://flater-pl.s3.eu-north-1.amazonaws.com/images/rooms/42216/6499c0d0-4394-44f0-812d-9ac5fefcc24a.jpeg",
+        "https://flater-pl.s3.eu-north-1.amazonaws.com/images/rooms/42216/3f8dd8c9-4c49-4ff3-a9e9-4151de939dd8.jpeg",
+        "https://flater-pl.s3.eu-north-1.amazonaws.com/images/rooms/42216/95458112-0f6c-44a3-8dce-603696f406b9.jpeg"
+      ]
+    }
+  ]
+}
